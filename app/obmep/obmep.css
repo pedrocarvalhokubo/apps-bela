@@ -1,0 +1,2190 @@
+.obmep-app {
+  --cream: #fff8ef;
+  --paper: #fffdf9;
+  --indigo: #28306f;
+  --ink: #363753;
+  --coral: #ff6b5e;
+  --coral-dark: #e95149;
+  --aqua: #2ec4b6;
+  --sun: #ffc857;
+  --mint: #b9eadf;
+  --lilac: #e9e7f7;
+  --line: rgba(40, 48, 111, 0.12);
+}
+
+.obmep-app * {
+  box-sizing: border-box;
+}
+
+.obmep-app {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+.obmep-app {
+  margin: 0;
+  background: var(--cream);
+  color: var(--indigo);
+  font-family: "Nunito Sans", "Avenir Next", Avenir, system-ui, sans-serif;
+  overscroll-behavior-y: none;
+}
+
+.obmep-app button,
+.obmep-app a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.obmep-app button {
+  font: inherit;
+}
+
+.obmep-app .app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 28px clamp(20px, 6vw, 96px) 42px;
+  isolation: isolate;
+}
+
+.obmep-app .app-shell::before {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: radial-gradient(rgba(40, 48, 111, 0.07) 0.8px, transparent 0.8px);
+  background-size: 24px 24px;
+  content: "";
+  mask-image: linear-gradient(to bottom, black, transparent 68%);
+}
+
+.obmep-app .topbar,
+.obmep-app .hero,
+.obmep-app .themes-section,
+.obmep-app footer {
+  width: min(1240px, 100%);
+  margin-inline: auto;
+}
+
+.obmep-app .topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 72px;
+}
+
+.obmep-app .topbar h1 {
+  margin: 0;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.obmep-app .eyebrow {
+  margin: 0 0 2px;
+  color: #686a90;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.obmep-app .brand-mark {
+  position: relative;
+  width: 70px;
+  height: 44px;
+  flex: 0 0 70px;
+}
+
+.obmep-app .brand-mark > span {
+  position: absolute;
+  display: block;
+  filter: drop-shadow(0 4px 6px rgba(40, 48, 111, 0.14));
+}
+
+.obmep-app .brand-circle {
+  top: 8px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.obmep-app .brand-triangle {
+  top: 1px;
+  left: 27px;
+  width: 0;
+  height: 0;
+  border-right: 16px solid transparent;
+  border-bottom: 30px solid var(--sun);
+  border-left: 16px solid transparent;
+}
+
+.obmep-app .brand-square {
+  top: 6px;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--aqua);
+  transform: rotate(4deg);
+}
+
+.obmep-app .round-button {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin-left: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #e8a91a;
+  font-size: 1.45rem;
+  place-items: center;
+  box-shadow: 0 8px 24px rgba(40, 48, 111, 0.08);
+}
+
+.obmep-app .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(330px, 0.8fr);
+  gap: 26px;
+  margin-top: 32px;
+}
+
+.obmep-app .hero-copy,
+.obmep-app .start-card {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  box-shadow: 0 16px 40px rgba(55, 43, 25, 0.08);
+}
+
+.obmep-app .hero-copy {
+  padding: clamp(26px, 4vw, 48px);
+  background: rgba(255, 253, 249, 0.92);
+}
+
+.obmep-app .level-pill,
+.obmep-app .question-count {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: #5f6190;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.obmep-app .hero h2 {
+  margin: 18px 0 8px;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  font-weight: 950;
+  letter-spacing: -0.055em;
+  line-height: 0.96;
+}
+
+.obmep-app .hero h2 span {
+  display: block;
+  color: var(--coral);
+}
+
+.obmep-app .hero-copy > p {
+  margin: 0;
+  color: #5e607c;
+  font-size: clamp(1rem, 2vw, 1.22rem);
+  font-weight: 650;
+}
+
+.obmep-app .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.obmep-app .stats article {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+}
+
+.obmep-app .stat-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .aqua {
+  background: #d9f6f2;
+  color: #159f94;
+}
+
+.obmep-app .sun {
+  background: #fff0bd;
+  color: #c98d08;
+}
+
+.obmep-app .lilac {
+  background: var(--lilac);
+  color: #676ab0;
+}
+
+.obmep-app .mint {
+  background: #dcf6ee;
+  color: #218f79;
+}
+
+.obmep-app .coral {
+  background: #ffe2dd;
+  color: var(--coral-dark);
+}
+
+.obmep-app .stats strong,
+.obmep-app .stats small {
+  display: block;
+}
+
+.obmep-app .stats strong {
+  overflow: hidden;
+  font-size: 1.16rem;
+  font-weight: 950;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.obmep-app .stats small {
+  margin-top: 1px;
+  color: #73748c;
+  font-size: 0.7rem;
+  font-weight: 750;
+}
+
+.obmep-app .start-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding: 30px;
+  background: var(--indigo);
+  color: white;
+}
+
+.obmep-app .start-card::before,
+.obmep-app .start-card::after {
+  position: absolute;
+  border: 2px dashed rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  content: "";
+}
+
+.obmep-app .start-card::before {
+  top: -104px;
+  right: -78px;
+  width: 260px;
+  height: 260px;
+}
+
+.obmep-app .start-card::after {
+  top: 25px;
+  right: 80px;
+  width: 84px;
+  height: 84px;
+}
+
+.obmep-app .start-orbit {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  display: grid;
+  width: 76px;
+  height: 76px;
+  border: 9px solid var(--aqua);
+  border-radius: 50%;
+  background: var(--sun);
+  color: var(--indigo);
+  font-size: 1.9rem;
+  font-weight: 950;
+  place-items: center;
+  transform: rotate(7deg);
+}
+
+.obmep-app .start-card p {
+  position: relative;
+  margin: 0 0 8px;
+  color: #b7b9d7;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.obmep-app .start-card h3 {
+  position: relative;
+  max-width: 320px;
+  margin: 0 0 24px;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  line-height: 1.15;
+}
+
+.obmep-app .start-card button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 64px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 20px;
+  background: var(--coral);
+  color: white;
+  cursor: pointer;
+  font-weight: 950;
+  box-shadow: 0 7px 0 var(--coral-dark);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.obmep-app .start-card button:active {
+  box-shadow: 0 3px 0 var(--coral-dark);
+  transform: translateY(4px);
+}
+
+.obmep-app .themes-section {
+  padding-top: 54px;
+}
+
+.obmep-app .section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.obmep-app .section-heading h2 {
+  margin: 2px 0 0;
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-weight: 950;
+  letter-spacing: -0.045em;
+}
+
+.obmep-app .theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.obmep-app .theme-card {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) 24px;
+  align-items: center;
+  min-height: 118px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--indigo);
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(40, 48, 111, 0.08);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.obmep-app .theme-card:hover,
+.obmep-app .theme-card:focus-visible {
+  border-color: rgba(255, 107, 94, 0.72);
+  outline: none;
+  box-shadow: 0 12px 28px rgba(40, 48, 111, 0.13);
+  transform: translateY(-3px);
+}
+
+.obmep-app .theme-card:active {
+  transform: scale(0.98);
+}
+
+.obmep-app .theme-icon {
+  display: grid;
+  width: 62px;
+  height: 72px;
+  border-radius: 18px;
+  font-size: 1.55rem;
+  font-weight: 950;
+  letter-spacing: -0.08em;
+  place-items: center;
+  box-shadow: inset 0 -4px 0 rgba(40, 48, 111, 0.07);
+}
+
+.obmep-app .theme-copy {
+  min-width: 0;
+}
+
+.obmep-app .theme-copy small,
+.obmep-app .theme-copy strong {
+  display: block;
+}
+
+.obmep-app .theme-copy small {
+  margin-bottom: 5px;
+  color: #8a8ba3;
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.obmep-app .theme-copy strong {
+  min-height: 42px;
+  font-size: 1.05rem;
+  font-weight: 950;
+  line-height: 1.15;
+}
+
+.obmep-app .mini-progress {
+  display: block;
+  overflow: hidden;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: #ececf4;
+}
+
+.obmep-app .mini-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--aqua);
+}
+
+.obmep-app .card-arrow {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.obmep-app footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 42px;
+  color: #77788f;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.obmep-app footer p {
+  margin: 0;
+}
+
+.obmep-app .paper-shape {
+  position: absolute;
+  z-index: -1;
+  filter: drop-shadow(0 8px 12px rgba(40, 48, 111, 0.09));
+}
+
+.obmep-app .shape-one {
+  top: -64px;
+  left: -72px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--lilac);
+}
+
+.obmep-app .shape-two {
+  top: 122px;
+  right: -46px;
+  width: 118px;
+  height: 118px;
+  background: var(--coral);
+  transform: rotate(24deg);
+}
+
+.obmep-app .shape-three {
+  right: 7vw;
+  bottom: -32px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.obmep-app .quiz-shell,
+.obmep-app .summary-shell {
+  min-height: 100vh;
+  padding: 22px clamp(16px, 5vw, 72px) 42px;
+  background:
+    radial-gradient(circle at 5% 8%, rgba(46, 196, 182, 0.15), transparent 18%),
+    radial-gradient(circle at 94% 7%, rgba(255, 200, 87, 0.2), transparent 16%),
+    var(--cream);
+}
+
+.obmep-app .quiz-topbar,
+.obmep-app .quiz-progress,
+.obmep-app .question-layout {
+  width: min(1260px, 100%);
+  margin-inline: auto;
+}
+
+.obmep-app .quiz-topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  min-height: 62px;
+}
+
+.obmep-app .back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 7px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--indigo);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.obmep-app .quiz-theme {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 0.84rem;
+  font-weight: 950;
+}
+
+.obmep-app .quiz-theme span {
+  font-size: 1rem;
+}
+
+.obmep-app .quiz-score {
+  justify-self: end;
+  min-width: 68px;
+  padding: 12px 15px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+  color: #ce940d;
+  font-weight: 950;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(40, 48, 111, 0.07);
+}
+
+.obmep-app .quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 22px;
+}
+
+.obmep-app .quiz-progress > span {
+  flex: 0 0 auto;
+  color: #70718d;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.obmep-app .quiz-progress > i {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: #e9e7e3;
+}
+
+.obmep-app .quiz-progress b {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--aqua), #58d8cb);
+  transition: width 400ms ease;
+}
+
+.obmep-app .question-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(310px, 0.72fr);
+  align-items: start;
+  gap: 22px;
+  margin-top: 18px;
+}
+
+.obmep-app .question-card,
+.obmep-app .coach-card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 18px 46px rgba(55, 43, 25, 0.09);
+}
+
+.obmep-app .question-card {
+  padding: clamp(24px, 4vw, 48px);
+  background: rgba(255, 253, 249, 0.96);
+}
+
+.obmep-app .question-card h1 {
+  max-width: 890px;
+  margin: 7px 0 24px;
+  color: var(--indigo);
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  font-weight: 950;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.obmep-app .visual-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 176px;
+  margin: 20px 0 24px;
+  padding: 20px;
+  border: 1px dashed rgba(40, 48, 111, 0.2);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(233, 231, 247, 0.52), rgba(255, 255, 255, 0.82)),
+    white;
+}
+
+.obmep-app .visual-note {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: white;
+  color: #7b7c93;
+  font-size: 0.7rem;
+  font-weight: 850;
+}
+
+.obmep-app .shape-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  grid-template-rows: repeat(3, 48px);
+}
+
+.obmep-app .shape-grid span {
+  border: 1px dashed transparent;
+}
+
+.obmep-app .shape-grid span.active {
+  border: 2px solid var(--indigo);
+  background: rgba(46, 196, 182, 0.42);
+}
+
+.obmep-app .cube-tower {
+  display: flex;
+  flex-direction: column;
+}
+
+.obmep-app .cube-tower i {
+  position: relative;
+  display: block;
+  width: 58px;
+  height: 47px;
+  border: 3px solid var(--indigo);
+  background: linear-gradient(135deg, #c7f2e9 0 50%, #89dfd1 50%);
+  transform: skewY(-3deg);
+}
+
+.obmep-app .floor-line {
+  position: absolute;
+  bottom: 15px;
+  width: 150px;
+  border-top: 4px solid var(--indigo);
+  color: #77788f;
+  font-size: 0.66rem;
+  font-weight: 850;
+  text-align: center;
+}
+
+.obmep-app .equation-stage {
+  gap: 13px;
+  color: var(--indigo);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+.obmep-app .math-tile {
+  display: grid;
+  min-width: 76px;
+  min-height: 68px;
+  padding: 10px;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 950;
+  text-align: center;
+  place-items: center;
+}
+
+.obmep-app .closed-box {
+  display: grid;
+  width: 62px;
+  height: 62px;
+  border: 3px solid var(--indigo);
+  border-radius: 12px 12px 18px 18px;
+  background: var(--sun);
+  color: var(--indigo);
+  font-weight: 950;
+  place-items: center;
+  box-shadow: inset 0 -8px 0 rgba(40, 48, 111, 0.1);
+}
+
+.obmep-app .chests {
+  gap: 12px;
+}
+
+.obmep-app .chests article {
+  display: flex;
+  width: min(190px, 31%);
+  min-height: 125px;
+  padding: 14px;
+  border: 2px solid var(--indigo);
+  border-radius: 14px 14px 24px 24px;
+  background: #fff0bd;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: inset 0 -9px 0 rgba(40, 48, 111, 0.09);
+}
+
+.obmep-app .chests article:nth-child(2) {
+  background: #d9f6f2;
+}
+
+.obmep-app .chests article:nth-child(3) {
+  background: #ffe2dd;
+}
+
+.obmep-app .chests strong {
+  font-size: 1.25rem;
+}
+
+.obmep-app .chests span {
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.obmep-app .flags {
+  gap: 10px;
+}
+
+.obmep-app .flags span {
+  display: grid;
+  width: 56px;
+  height: 70px;
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 50% 100%, 0 76%);
+  color: white;
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .flags .blue {
+  background: #536ed8;
+}
+
+.obmep-app .flags .green {
+  background: #2db396;
+}
+
+.obmep-app .flags .yellow {
+  background: #e4ae21;
+}
+
+.obmep-app .date-jump {
+  gap: 24px;
+}
+
+.obmep-app .date-jump > span {
+  display: grid;
+  width: 110px;
+  min-height: 124px;
+  overflow: hidden;
+  border: 2px solid var(--indigo);
+  border-radius: 18px;
+  background: white;
+  text-align: center;
+}
+
+.obmep-app .date-jump small {
+  display: grid;
+  min-height: 26px;
+  background: var(--coral);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .date-jump strong {
+  font-size: 2.4rem;
+}
+
+.obmep-app .date-jump .mystery-date small:first-child {
+  background: var(--indigo);
+  font-size: 1rem;
+}
+
+.obmep-app .time-cards {
+  gap: 16px;
+  font-size: 1.5rem;
+}
+
+.obmep-app .time-cards span {
+  padding: 18px 22px;
+  border: 3px solid var(--indigo);
+  border-radius: 18px;
+  background: white;
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 950;
+}
+
+.obmep-app .path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 54px);
+  grid-template-rows: repeat(3, 54px);
+  background-image:
+    linear-gradient(to right, transparent 25px, var(--indigo) 26px 28px, transparent 29px),
+    linear-gradient(to bottom, transparent 25px, var(--indigo) 26px 28px, transparent 29px);
+  background-size: 54px 54px;
+}
+
+.obmep-app .path-grid span {
+  position: relative;
+  display: grid;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 3px solid var(--indigo);
+  border-radius: 50%;
+  background: white;
+  color: var(--indigo);
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .path-grid span:first-child,
+.obmep-app .path-grid span:nth-child(7) {
+  width: 32px;
+  height: 32px;
+  background: var(--sun);
+}
+
+.obmep-app .gate-circle {
+  position: relative;
+  display: grid;
+  width: 150px;
+  height: 150px;
+  border: 5px dashed var(--aqua);
+  border-radius: 50%;
+  place-items: center;
+}
+
+.obmep-app .gate-circle span {
+  position: absolute;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: white;
+  color: var(--indigo);
+  font-weight: 950;
+  place-items: center;
+  box-shadow: 0 5px 12px rgba(40, 48, 111, 0.14);
+}
+
+.obmep-app .gate-circle b {
+  color: var(--coral);
+  font-size: 2.5rem;
+}
+
+.obmep-app .gate-a {
+  top: -20px;
+}
+
+.obmep-app .gate-b {
+  top: 55px;
+  right: -20px;
+}
+
+.obmep-app .gate-c {
+  bottom: -20px;
+}
+
+.obmep-app .gate-d {
+  top: 55px;
+  left: -20px;
+}
+
+.obmep-app .outfits {
+  gap: 22px;
+}
+
+.obmep-app .outfits > div {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.obmep-app .outfits span {
+  min-width: 150px;
+  padding: 9px 14px;
+  border-radius: 12px;
+  background: #ffe2dd;
+  font-size: 0.75rem;
+  font-weight: 850;
+}
+
+.obmep-app .outfits span:nth-child(2) {
+  background: #dfe6ff;
+}
+
+.obmep-app .outfits span:nth-child(3) {
+  background: #dcf6ee;
+}
+
+.obmep-app .digit-cards {
+  gap: 12px;
+}
+
+.obmep-app .digit-cards span {
+  display: grid;
+  width: 66px;
+  height: 78px;
+  border: 3px solid var(--indigo);
+  border-radius: 18px;
+  background: white;
+  font-size: 2rem;
+  font-weight: 950;
+  place-items: center;
+  box-shadow: 0 7px 0 var(--lilac);
+}
+
+.obmep-app .digit-cards b {
+  margin-left: 12px;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+}
+
+.obmep-app .number-sequence {
+  gap: 10px;
+}
+
+.obmep-app .number-sequence span {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--indigo);
+  color: white;
+  font-size: 1.28rem;
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .number-sequence span::after {
+  position: absolute;
+  color: #9394a9;
+  content: "";
+}
+
+.obmep-app .number-sequence .unknown {
+  background: var(--coral);
+}
+
+.obmep-app .number-machine {
+  gap: 18px;
+}
+
+.obmep-app .number-machine > div {
+  display: grid;
+  grid-template-columns: repeat(4, 44px);
+  gap: 7px;
+}
+
+.obmep-app .number-machine small {
+  grid-column: 1 / -1;
+  color: #7b7c93;
+  font-size: 0.65rem;
+  font-weight: 950;
+  text-align: center;
+}
+
+.obmep-app .number-machine strong {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: white;
+  place-items: center;
+  box-shadow: 0 4px 10px rgba(40, 48, 111, 0.1);
+}
+
+.obmep-app .number-machine > span {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--sun);
+  font-size: 1.8rem;
+  place-items: center;
+}
+
+.obmep-app .pitcher {
+  gap: 26px;
+}
+
+.obmep-app .jug {
+  display: grid;
+  width: 100px;
+  height: 122px;
+  border: 4px solid var(--indigo);
+  border-radius: 18px 18px 32px 32px;
+  background: linear-gradient(to top, rgba(46, 196, 182, 0.65) 64%, white 64%);
+  font-size: 1.2rem;
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .pitcher > div {
+  display: grid;
+  grid-template-columns: repeat(3, 38px);
+  gap: 8px;
+}
+
+.obmep-app .pitcher i {
+  display: grid;
+  width: 38px;
+  height: 50px;
+  border: 3px solid var(--indigo);
+  border-radius: 7px 7px 14px 14px;
+  background: linear-gradient(to top, rgba(46, 196, 182, 0.5) 55%, white 55%);
+  font-style: normal;
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .ribbons {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.obmep-app .ribbons span {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 78%;
+  min-height: 48px;
+  padding: 0 18px;
+  background: var(--aqua);
+  color: var(--indigo);
+  font-weight: 950;
+  clip-path: polygon(0 0, 100% 0, 96% 50%, 100% 100%, 0 100%, 4% 50%);
+}
+
+.obmep-app .ribbons span:last-child {
+  width: 58%;
+  background: var(--sun);
+}
+
+.obmep-app .chart {
+  align-items: end;
+  gap: 18px;
+  padding-bottom: 24px;
+}
+
+.obmep-app .chart > div {
+  display: grid;
+  grid-template-rows: 24px 100px 20px;
+  align-items: end;
+  justify-items: center;
+  gap: 4px;
+}
+
+.obmep-app .chart i {
+  display: block;
+  width: 42px;
+  max-height: 96px;
+  border-radius: 10px 10px 2px 2px;
+  background: var(--aqua);
+}
+
+.obmep-app .chart > div:nth-child(2) i {
+  background: var(--sun);
+}
+
+.obmep-app .chart > div:nth-child(3) i {
+  background: #8a88ce;
+}
+
+.obmep-app .chart > div:nth-child(4) i {
+  background: var(--coral);
+}
+
+.obmep-app .chart small {
+  font-size: 0.64rem;
+  font-weight: 950;
+}
+
+.obmep-app .votes {
+  align-items: stretch;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.obmep-app .votes > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(420px, 100%);
+  min-height: 42px;
+  margin-inline: auto;
+  padding: 0 15px;
+  border-radius: 12px;
+  background: #ffe2dd;
+  font-weight: 850;
+}
+
+.obmep-app .votes > div:nth-child(2) {
+  background: #ffdce9;
+}
+
+.obmep-app .votes > div:nth-child(3) {
+  background: #fff0bd;
+}
+
+.obmep-app .answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.obmep-app .answer-grid button {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 24px;
+  align-items: center;
+  min-height: 70px;
+  padding: 10px 14px;
+  border: 2px solid rgba(40, 48, 111, 0.12);
+  border-radius: 19px;
+  background: white;
+  color: var(--indigo);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, transform 150ms ease, background 150ms ease;
+}
+
+.obmep-app .answer-grid button:hover:not(:disabled),
+.obmep-app .answer-grid button:focus-visible:not(:disabled) {
+  border-color: var(--aqua);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.obmep-app .answer-grid button:active:not(:disabled) {
+  transform: scale(0.985);
+}
+
+.obmep-app .answer-grid button > span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--lilac);
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .answer-grid button strong {
+  padding-inline: 8px;
+  font-size: 0.98rem;
+  font-weight: 900;
+}
+
+.obmep-app .answer-grid button > i {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.obmep-app .answer-grid .wrong-option {
+  border-color: rgba(255, 107, 94, 0.4);
+  background: #fff3f1;
+  color: #ad7672;
+  opacity: 0.76;
+}
+
+.obmep-app .answer-grid .correct-option {
+  border-color: var(--aqua);
+  background: #e9faf6;
+}
+
+.obmep-app .coach-card {
+  position: sticky;
+  top: 18px;
+  min-height: 420px;
+  padding: 30px;
+  background: var(--indigo);
+  color: white;
+}
+
+.obmep-app .coach-card.wrong {
+  background: #765399;
+}
+
+.obmep-app .coach-card.correct {
+  background: #147f76;
+}
+
+.obmep-app .coach-face {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 24px;
+  border: 8px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: var(--sun);
+  color: var(--indigo);
+  font-size: 1.8rem;
+  font-weight: 950;
+  place-items: center;
+}
+
+.obmep-app .coach-card .eyebrow {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.obmep-app .coach-card h2 {
+  margin: 6px 0 20px;
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  line-height: 1.16;
+}
+
+.obmep-app .coach-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #d8d9ed;
+  font-size: 0.88rem;
+  font-weight: 720;
+  line-height: 1.65;
+}
+
+.obmep-app .coach-note {
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.obmep-app .hint-box,
+.obmep-app .explanation {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.11);
+  font-weight: 780;
+  line-height: 1.5;
+}
+
+.obmep-app .explanation strong,
+.obmep-app .explanation span {
+  display: block;
+}
+
+.obmep-app .explanation p {
+  margin: 8px 0 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.obmep-app .explanation span {
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: #d3fff7;
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.obmep-app .next-button {
+  width: 100%;
+  min-height: 58px;
+  margin-top: 18px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--sun);
+  color: var(--indigo);
+  cursor: pointer;
+  font-weight: 950;
+  box-shadow: 0 6px 0 #d09a24;
+}
+
+.obmep-app .summary-shell {
+  display: grid;
+  place-items: center;
+}
+
+.obmep-app .summary-card {
+  width: min(700px, 100%);
+  padding: clamp(30px, 6vw, 62px);
+  border: 1px solid var(--line);
+  border-radius: 34px;
+  background: rgba(255, 253, 249, 0.96);
+  color: var(--indigo);
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(55, 43, 25, 0.12);
+}
+
+.obmep-app .medal {
+  display: grid;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 24px;
+  border: 13px solid var(--aqua);
+  border-radius: 50%;
+  background: var(--sun);
+  color: white;
+  font-size: 2.8rem;
+  place-items: center;
+  box-shadow: 0 10px 0 #e1a929;
+  transform: rotate(-4deg);
+}
+
+.obmep-app .summary-card h1 {
+  margin: 6px 0 12px;
+  font-size: clamp(2.1rem, 6vw, 4rem);
+  font-weight: 950;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.obmep-app .summary-card > p:not(.eyebrow) {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #686a84;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.obmep-app .summary-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.obmep-app .summary-stats article {
+  padding: 16px 10px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: white;
+}
+
+.obmep-app .summary-stats strong,
+.obmep-app .summary-stats span {
+  display: block;
+}
+
+.obmep-app .summary-stats strong {
+  font-size: 1.8rem;
+  font-weight: 950;
+}
+
+.obmep-app .summary-stats span {
+  margin-top: 3px;
+  color: #797a91;
+  font-size: 0.7rem;
+  font-weight: 850;
+}
+
+.obmep-app .summary-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.obmep-app .summary-actions button {
+  min-height: 58px;
+  padding: 0 20px;
+  border-radius: 18px;
+  cursor: pointer;
+  font-weight: 950;
+}
+
+.obmep-app .primary-action {
+  border: 0;
+  background: var(--coral);
+  color: white;
+}
+
+.obmep-app .secondary-action {
+  border: 2px solid var(--indigo);
+  background: white;
+  color: var(--indigo);
+}
+
+.obmep-app .modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  padding: 18px;
+  background: rgba(25, 28, 69, 0.48);
+  backdrop-filter: blur(8px);
+  place-items: center;
+}
+
+.obmep-app .progress-modal {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: min(760px, 92vh);
+  overflow: auto;
+  padding: 32px;
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: 0 30px 80px rgba(25, 28, 69, 0.3);
+}
+
+.obmep-app .modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: white;
+  color: var(--indigo);
+  cursor: pointer;
+  font-size: 1.5rem;
+  place-items: center;
+}
+
+.obmep-app .progress-modal h2 {
+  margin: 5px 0 8px;
+  font-size: 2rem;
+  font-weight: 950;
+}
+
+.obmep-app .progress-modal > p:not(.eyebrow) {
+  margin: 0;
+  color: #70718a;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.obmep-app .progress-big {
+  margin: 22px 0 14px;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--indigo);
+  color: white;
+  text-align: center;
+}
+
+.obmep-app .progress-big strong,
+.obmep-app .progress-big span {
+  display: block;
+}
+
+.obmep-app .progress-big strong {
+  font-size: 2.2rem;
+  font-weight: 950;
+}
+
+.obmep-app .progress-big span {
+  color: #c8cae1;
+  font-size: 0.72rem;
+  font-weight: 850;
+}
+
+.obmep-app .progress-list {
+  display: grid;
+  gap: 7px;
+}
+
+.obmep-app .progress-list > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  font-size: 0.8rem;
+  font-weight: 820;
+}
+
+.obmep-app .progress-list strong {
+  color: #676ab0;
+}
+
+@media (max-width: 980px) {
+  .obmep-app .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .obmep-app .start-card {
+    min-height: 290px;
+  }
+
+  .obmep-app .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .obmep-app .question-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .obmep-app .coach-card {
+    position: static;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 680px) {
+  .obmep-app .app-shell {
+    padding: 18px 14px 28px;
+  }
+
+  .obmep-app .topbar {
+    min-height: 58px;
+  }
+
+  .obmep-app .brand-mark {
+    width: 54px;
+    flex-basis: 54px;
+    transform: scale(0.82);
+    transform-origin: left center;
+  }
+
+  .obmep-app .round-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
+  .obmep-app .hero {
+    margin-top: 20px;
+  }
+
+  .obmep-app .hero-copy,
+  .obmep-app .start-card {
+    border-radius: 24px;
+  }
+
+  .obmep-app .hero-copy {
+    padding: 24px 18px;
+  }
+
+  .obmep-app .hero h2 {
+    font-size: clamp(2.35rem, 13vw, 3.5rem);
+  }
+
+  .obmep-app .stats {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+
+  .obmep-app .stats article {
+    min-height: 66px;
+  }
+
+  .obmep-app .start-card {
+    min-height: 280px;
+    padding: 22px;
+  }
+
+  .obmep-app .themes-section {
+    padding-top: 42px;
+  }
+
+  .obmep-app .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .obmep-app .theme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .obmep-app .theme-card {
+    min-height: 108px;
+  }
+
+  .obmep-app footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .obmep-app .quiz-shell,
+  .obmep-app .summary-shell {
+    padding: 12px 12px 28px;
+  }
+
+  .obmep-app .quiz-topbar {
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+  }
+
+  .obmep-app .back-button {
+    width: 48px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .obmep-app .back-button span {
+    display: none;
+  }
+
+  .obmep-app .quiz-theme {
+    justify-self: center;
+    min-height: 42px;
+    padding: 7px 10px;
+    font-size: 0.68rem;
+    text-align: center;
+  }
+
+  .obmep-app .quiz-score {
+    min-width: 52px;
+    padding-inline: 10px;
+  }
+
+  .obmep-app .quiz-progress {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 16px;
+  }
+
+  .obmep-app .question-layout {
+    margin-top: 12px;
+  }
+
+  .obmep-app .question-card,
+  .obmep-app .coach-card {
+    border-radius: 23px;
+  }
+
+  .obmep-app .question-card {
+    padding: 22px 15px;
+  }
+
+  .obmep-app .question-card h1 {
+    font-size: 1.46rem;
+  }
+
+  .obmep-app .visual-stage {
+    min-height: 150px;
+    overflow: hidden;
+    margin-block: 16px 18px;
+    padding: 14px;
+  }
+
+  .obmep-app .answer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .obmep-app .answer-grid button {
+    min-height: 64px;
+  }
+
+  .obmep-app .coach-card {
+    padding: 24px 20px;
+  }
+
+  .obmep-app .flags {
+    gap: 5px;
+  }
+
+  .obmep-app .flags span {
+    width: 39px;
+    height: 54px;
+  }
+
+  .obmep-app .date-jump {
+    gap: 10px;
+  }
+
+  .obmep-app .date-jump > span {
+    width: 82px;
+  }
+
+  .obmep-app .date-jump > b {
+    font-size: 0.8rem;
+  }
+
+  .obmep-app .time-cards {
+    gap: 8px;
+  }
+
+  .obmep-app .time-cards span {
+    padding: 13px 10px;
+  }
+
+  .obmep-app .chests {
+    align-items: stretch;
+  }
+
+  .obmep-app .chests article {
+    width: 33%;
+    min-height: 116px;
+    padding: 9px;
+  }
+
+  .obmep-app .chests span {
+    font-size: 0.62rem;
+  }
+
+  .obmep-app .outfits {
+    gap: 10px;
+  }
+
+  .obmep-app .outfits span {
+    min-width: 116px;
+    padding-inline: 9px;
+    font-size: 0.64rem;
+  }
+
+  .obmep-app .number-sequence {
+    gap: 5px;
+  }
+
+  .obmep-app .number-sequence span {
+    width: 48px;
+    height: 48px;
+  }
+
+  .obmep-app .number-machine {
+    gap: 8px;
+  }
+
+  .obmep-app .number-machine > div {
+    grid-template-columns: repeat(4, 34px);
+    gap: 4px;
+  }
+
+  .obmep-app .number-machine strong {
+    width: 34px;
+    height: 38px;
+  }
+
+  .obmep-app .number-machine > span {
+    width: 44px;
+    height: 44px;
+  }
+
+  .obmep-app .pitcher {
+    gap: 14px;
+  }
+
+  .obmep-app .summary-card {
+    padding-inline: 18px;
+  }
+
+  .obmep-app .summary-stats {
+    gap: 6px;
+  }
+
+  .obmep-app .summary-stats strong {
+    font-size: 1.4rem;
+  }
+
+  .obmep-app .summary-actions {
+    flex-direction: column;
+  }
+
+  .obmep-app .progress-modal {
+    padding: 28px 18px 22px;
+  }
+}
+
+/* Banco oficial OBMEP Mirim */
+
+.obmep-app .level-switch,
+.obmep-app .exam-section {
+  width: min(1240px, 100%);
+  margin-inline: auto;
+}
+
+.obmep-app .level-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 10px 28px rgba(40, 48, 111, 0.06);
+}
+
+.obmep-app .level-switch button {
+  display: flex;
+  min-height: 68px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  color: #777995;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  transition: 180ms ease;
+}
+
+.obmep-app .level-switch button.active {
+  background: var(--indigo);
+  color: white;
+  box-shadow: 0 10px 24px rgba(40, 48, 111, 0.2);
+}
+
+.obmep-app .level-switch strong {
+  font-size: 0.96rem;
+  font-weight: 950;
+}
+
+.obmep-app .level-switch span {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.obmep-app .exam-section {
+  padding-top: 62px;
+}
+
+.obmep-app .exam-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.obmep-app .exam-grid button {
+  position: relative;
+  display: grid;
+  min-height: 148px;
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 92% 16%, rgba(255, 200, 87, 0.42), transparent 22%),
+    white;
+  color: var(--indigo);
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 12px 28px rgba(55, 43, 25, 0.07);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.obmep-app .exam-grid button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 34px rgba(55, 43, 25, 0.11);
+}
+
+.obmep-app .exam-grid button > span {
+  color: var(--coral);
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.obmep-app .exam-grid button > strong {
+  margin-top: 4px;
+  font-size: 1.42rem;
+  font-weight: 950;
+}
+
+.obmep-app .exam-grid button > small {
+  margin-top: 7px;
+  color: #74758e;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.obmep-app .exam-grid button > i {
+  align-self: end;
+  margin-top: 14px;
+  color: #4e51a0;
+  font-size: 0.76rem;
+  font-style: normal;
+  font-weight: 950;
+}
+
+.obmep-app .question-source-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.obmep-app .question-source-row > span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: #63658f;
+  font-size: 0.68rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.obmep-app .official-question-card h1 {
+  margin-bottom: 16px;
+  font-size: clamp(1.25rem, 2.3vw, 1.82rem);
+}
+
+.obmep-app .official-image-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 210px;
+  overflow: hidden;
+  padding: clamp(10px, 2vw, 20px);
+  border: 1px solid rgba(40, 48, 111, 0.15);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(233, 231, 247, 0.35), rgba(255, 255, 255, 0.85)),
+    white;
+  cursor: zoom-in;
+}
+
+.obmep-app .official-image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  margin: auto;
+  object-fit: contain;
+}
+
+.obmep-app .official-image-button > span {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #5d5f81;
+  font-size: 0.67rem;
+  font-weight: 900;
+  box-shadow: 0 5px 16px rgba(40, 48, 111, 0.09);
+}
+
+.obmep-app .official-answer-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.obmep-app .official-answer-grid button {
+  min-width: 0;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.obmep-app .official-answer-grid button > strong {
+  font-size: 0.74rem;
+}
+
+.obmep-app .official-solution {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid rgba(46, 196, 182, 0.28);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.obmep-app .official-solution > strong {
+  color: #237c72;
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.obmep-app .official-solution > p {
+  margin: 0 0 2px;
+  color: #71738c;
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.obmep-app .official-solution > button {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+  cursor: zoom-in;
+}
+
+.obmep-app .official-solution img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.obmep-app .image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  overflow: auto;
+  padding: 68px 18px 24px;
+  background: rgba(24, 27, 63, 0.92);
+  cursor: zoom-out;
+  place-items: start center;
+}
+
+.obmep-app .image-modal img {
+  width: min(1180px, 100%);
+  height: auto;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
+  cursor: default;
+}
+
+.obmep-app .image-modal-close {
+  position: fixed;
+  top: 14px;
+  right: 18px;
+  z-index: 101;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  background: white;
+  color: var(--indigo);
+  cursor: pointer;
+  font-size: 1.6rem;
+  place-items: center;
+}
+
+@media (max-width: 900px) {
+  .obmep-app .exam-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .obmep-app .official-answer-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .obmep-app .official-answer-grid button > strong {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .obmep-app .level-switch {
+    margin-top: 14px;
+    border-radius: 18px;
+  }
+
+  .obmep-app .level-switch button {
+    min-height: 64px;
+    padding: 10px 12px;
+    border-radius: 13px;
+  }
+
+  .obmep-app .level-switch strong {
+    font-size: 0.82rem;
+  }
+
+  .obmep-app .level-switch span {
+    font-size: 0.61rem;
+  }
+
+  .obmep-app .exam-section {
+    padding-top: 42px;
+  }
+
+  .obmep-app .exam-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .obmep-app .exam-grid button {
+    min-height: 132px;
+    padding: 16px;
+    border-radius: 19px;
+  }
+
+  .obmep-app .question-source-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .obmep-app .question-source-row > span {
+    white-space: normal;
+  }
+
+  .obmep-app .official-image-button {
+    min-height: 150px;
+    padding: 6px;
+    border-radius: 17px;
+  }
+
+  .obmep-app .official-image-button > span {
+    right: 7px;
+    bottom: 7px;
+  }
+
+  .obmep-app .official-answer-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .obmep-app .official-answer-grid button {
+    min-height: 58px;
+    padding: 6px;
+  }
+
+  .obmep-app .official-answer-grid button > span {
+    width: 34px;
+    height: 34px;
+    margin: 0;
+  }
+
+  .obmep-app .official-solution {
+    padding: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .obmep-app *,
+  .obmep-app *::before,
+  .obmep-app *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

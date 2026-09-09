@@ -1,0 +1,15 @@
+<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Levar o progresso da Bela</title>
+<style>body{font:18px system-ui;max-width:620px;margin:48px auto;padding:20px;color:#28306f}button{font:inherit;padding:16px;background:#28306f;color:white;border:0;border-radius:12px}</style>
+<h1>Levar meu progresso</h1><p>Faça isso no mesmo navegador usado para estudar. O arquivo permite conectar o novo app ao seu progresso; guarde-o só com sua família.</p>
+<button id="export">Salvar meu progresso</button><p id="status" role="status"></p>
+<script>
+document.getElementById('export').onclick=()=>{
+ try{
+  const backup={format:'bela-progress',version:1,exportedAt:new Date().toISOString(),deviceToken:localStorage.getItem('bela-device-token'),study:JSON.parse(localStorage.getItem('bela-study-progress')||'null'),obmep:JSON.parse(localStorage.getItem('bela-obmep-progress-v1')||'null')};
+  if(!backup.deviceToken&&!backup.study&&!backup.obmep)throw new Error('Não encontrei progresso neste navegador. Tente no aparelho em que você estuda.');
+  const url=URL.createObjectURL(new Blob([JSON.stringify(backup)],{type:'application/json'}));
+  const a=document.createElement('a');a.href=url;a.download=backup.deviceToken?'bela-materias-progresso.json':'bela-obmep-progresso.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  document.getElementById('status').textContent='Arquivo salvo. No app novo, abra “Trazer meu progresso” e selecione este arquivo.';
+ }catch(e){document.getElementById('status').textContent=e.message;}
+};
+</script></html>
