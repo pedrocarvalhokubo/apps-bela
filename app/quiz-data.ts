@@ -9,6 +9,7 @@ export type QuizQuestion = {
   topic: string;
   prompt: string;
   support: string;
+  hints?: [string, string];
   format?: "choice" | "association";
   concept?: string;
   visualKey?: "history-trade" | "history-wildlife" | "history-technology" | "history-payments" | "ela-story" | "ela-character" | "ela-senses" | "math-groups" | "math-data-time";

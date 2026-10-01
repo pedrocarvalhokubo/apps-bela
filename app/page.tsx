@@ -12,6 +12,7 @@ import {
   type SubjectKey,
 } from "./curriculum-data";
 import { deepStudyByLesson } from "./deep-content";
+import { questionHint } from "./quiz-hints";
 
 type View = "home" | "science" | "learn" | "infographic" | "quiz" | "results" | "parent";
 
@@ -709,7 +710,7 @@ export default function Home() {
       const wrongOption = currentQuestion.options.find((option) => option.id === selectedOption);
       setEliminatedOptions((current) => [...current, selectedOption]);
       setQuestionMistakes((count) => count + 1);
-      setThinkingFeedback(`${wrongOption?.explanation ?? "Essa alternativa não combina com as pistas."} ${currentQuestion.support}`);
+      setThinkingFeedback(`${wrongOption?.explanation ?? "Essa alternativa não combina com as pistas."} ${questionHint(currentQuestion, questionMistakes + 1)}`);
       setSelectedOption(null);
       return;
     }

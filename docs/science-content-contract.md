@@ -1,12 +1,12 @@
 # Science Term 3 editorial contract
 
-Based on existing `StudySubject`, `StudyLesson`, `QuizQuestion`, and `DeepStudy`; no database or progress migration is needed. Keep the existing 33 lesson IDs and all quiz IDs. Add only `science` / `science-general` and eight unique `science-*` lesson IDs.
+Based on existing `StudySubject`, `StudyLesson`, `QuizQuestion`, and `DeepStudy`; no database or progress migration is needed. Keep the existing 33 lesson IDs and all quiz IDs. Add only `science` / `science-general` and eight unique `s3-*` lesson IDs.
 
 The canonical editorial JSON must contain:
 
 - `scienceSubject`: `{key:"science",name:"Science",icon,eyebrow,title,description,assessmentDate:"",quizId:"science-general",lessons:[...]}`.
 - Each lesson: `{id,number:string,icon,title,subtitle,intro,facts:[{term,text}],remember,tone,quizId:"science-general"}`. English teaching text with Portuguese support. Use existing tones (`blue`, `green`, etc.) as observed in curriculum-data.ts.
-- `scienceQuiz`: 20 `{id:number,topic,prompt,support,format:"choice"|"association",concept?,correct,options:[{id,label,explanation}]}`. Option IDs `a,b,c,d`; `correct` equals one option ID. `support` is the hint. Every option has an explanation. Association questions display `concept` and selectable descriptions. Do not use a new visualKey unless engineering implements it.
+- `scienceQuiz`: 20 `{id:number,topic,prompt,support,format:"choice"|"association",concept?,correct,options:[{id,label,explanation}]}`. Option IDs `a,b,c,d`; `correct` equals one option ID. `support` is the initial support; optional `hints:[firstHint,secondHint]` supplies two graduated hints after mistakes. Every option has an explanation. Association questions display `concept` and selectable descriptions. Do not use a new visualKey unless engineering implements it.
 - `scienceDeepStudyByLesson`: keyed by the eight lesson IDs, each `{title,paragraphs:string[],vocabulary:[emoji,English,Portuguese][],example,challenge}`.
 - `scienceInfographicPages`: four `{src,alt,width:number,height:number,label}` using public-relative paths under `/infographics/`.
 - `scienceDownloads`: `{exam:"/materials/science-term3-exam.pdf",answerKey:"/materials/science-term3-answer-key.pdf"}`.

@@ -11,7 +11,7 @@ export function validateScienceContent(data) {
   assert.equal(subject.lessons.length, 8);
   const ids = new Set();
   for (const lesson of subject.lessons) {
-    assert.match(lesson.id, /^science-[a-z0-9-]+$/);
+    assert.match(lesson.id, /^s3-[a-z0-9-]+$/);
     assert.ok(!ids.has(lesson.id), 'duplicate lesson'); ids.add(lesson.id);
     for (const field of ['number', 'icon', 'title', 'subtitle', 'intro', 'remember', 'tone']) text(lesson[field], `${lesson.id}.${field}`);
     assert.equal(lesson.quizId, 'science-general');
@@ -32,6 +32,7 @@ export function validateScienceContent(data) {
     for (const field of ['topic', 'prompt', 'support']) text(question[field], `question.${field}`);
     assert.ok(!question.format || ['choice', 'association'].includes(question.format));
     if (question.format === 'association') { text(question.concept, 'concept'); associations++; }
+    if (question.hints) { assert.equal(question.hints.length, 2); question.hints.forEach(h => text(h, 'hint')); }
     assert.equal(question.options.length, 4);
     assert.deepEqual(question.options.map(o => o.id), ['a','b','c','d']);
     assert.ok(question.options.some(o => o.id === question.correct));
