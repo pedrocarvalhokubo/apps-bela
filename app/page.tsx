@@ -12,6 +12,7 @@ import {
   type SubjectKey,
 } from "./curriculum-data";
 import { deepStudyByLesson } from "./deep-content";
+import { scienceInfographicPages, scienceMaterialsReady } from "./science-data";
 import { questionHint } from "./quiz-hints";
 
 type View = "home" | "science" | "learn" | "infographic" | "quiz" | "results" | "parent";
@@ -130,6 +131,7 @@ function friendlyParentError(error: unknown, fallback: string) {
 }
 
 const subjects: Array<{ key?: SubjectKey; name: string; icon: IconName; detail: string; status: "ready" | "soon"; color: string }> = [
+  { key: "science", name: "Science", icon: "science", detail: "8 aulas • inglês e português", status: "ready", color: "science" },
   { key: "portuguese", name: "Português", icon: "portuguese", detail: "Aulas e quizzes", status: "ready", color: "portuguese" },
   { key: "geography", name: "Geografia", icon: "geography", detail: "Aulas e quizzes", status: "ready", color: "geography" },
   { key: "math", name: "Math", icon: "math", detail: "Aulas e quizzes", status: "ready", color: "math" },
@@ -138,6 +140,7 @@ const subjects: Array<{ key?: SubjectKey; name: string; icon: IconName; detail: 
 ];
 
 const emptyQuizStats = (): Record<QuizId, QuizStats> => ({
+  "science-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   math: { bestScore: 0, attempts: 0, totalAnswered: 0 },
   ela: { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "geography-sectors": { bestScore: 0, attempts: 0, totalAnswered: 0 },
@@ -157,7 +160,7 @@ const emptyQuizStats = (): Record<QuizId, QuizStats> => ({
 const defaultSubject: SubjectKey = "geography";
 const defaultQuiz: QuizId = "geography-general";
 const defaultLesson = curriculumSubjects.geography.lessons[0].id;
-const availableSubjects = new Set<SubjectKey>(["math", "ela", "geography", "history", "portuguese"]);
+const availableSubjects = new Set<SubjectKey>(["science", "math", "ela", "geography", "history", "portuguese"]);
 const availableQuizzes = new Set<QuizId>(Object.keys(quizCatalog) as QuizId[]);
 const availableLessonIds = new Set(Object.values(curriculumSubjects).flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
 
@@ -441,7 +444,7 @@ export default function Home() {
   }, []);
 
   const activeSubjectData = curriculumSubjects[activeSubject];
-  const reviewInfographicPages = activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
+  const reviewInfographicPages = activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
   const currentLessons = activeSubjectData.lessons;
   const completedCurrentLessons = currentLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const learnProgress = Math.round((completedCurrentLessons / currentLessons.length) * 100);
@@ -494,6 +497,7 @@ export default function Home() {
 
   const nextSteps = useMemo(() => {
     const schedule: Array<{ subject: SubjectKey; name: string; date: string; shortDate: string; lessons: StudyLesson[] }> = [
+      { subject: "science", name: "Science", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.science.lessons },
       { subject: "geography", name: "Geografia", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.geography.lessons },
       { subject: "ela", name: "E.L.A.", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.ela.lessons },
       { subject: "math", name: "Math", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.math.lessons },
@@ -644,6 +648,9 @@ export default function Home() {
   };
 
   const startQuiz = (quizId: QuizId) => {
+    if (!quizCatalog[quizId].questions.length) return;
+    setTerm(quizCatalog[quizId].subject === "science" ? 3 : 2);
+    setInfographicPage(0);
     setActiveSubject(quizCatalog[quizId].subject);
     setActiveQuizId(quizId);
     setQuizIndex(0);
@@ -659,6 +666,8 @@ export default function Home() {
 
   const openSubject = (subject: SubjectKey) => {
     setActiveSubject(subject);
+    setTerm(subject === "science" ? 3 : 2);
+    setInfographicPage(0);
     const firstLesson = curriculumSubjects[subject].lessons[0].id;
     setOpenLesson(firstLesson);
     go("science");
@@ -853,7 +862,7 @@ export default function Home() {
             </a>
             <div className="calendar-card">
               <span><AppIcon name="calendar" /></span>
-              <div><small>MATERIAL PARA ESTUDAR</small><strong>História • E.L.A. • Geografia • Math • Português</strong><em>Conteúdo criado somente a partir dos materiais enviados.</em></div>
+              <div><small>MATERIAL PARA ESTUDAR</small><strong>Science • História • E.L.A. • Geografia • Math • Português</strong><em>Conteúdo criado somente a partir dos materiais enviados.</em></div>
             </div>
           </section>
 
@@ -872,9 +881,9 @@ export default function Home() {
               </div>
             </div>
 
-            {term === 2 ? (
+            {term === 2 || term === 3 ? (
               <div className="subject-grid">
-                {subjects.map((subject) => (
+                {subjects.filter(subject => term === 3 ? subject.key === "science" : subject.key !== "science").map((subject) => (
                   <button
                     key={subject.name}
                     className={`subject-card ${subject.color} ${subject.status === "soon" ? "subject-soon" : ""}`}
@@ -933,7 +942,7 @@ export default function Home() {
               <span className="path-arrow">→</span>
             </button>
 
-            {(activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese") && (
+            {(activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || (activeSubject === "science" && scienceMaterialsReady)) && (
               <button className="path-card path-info" onClick={() => { setInfographicPage(0); go("infographic"); }}>
                 <span className="path-number">2</span>
                 <span className="path-art"><AppIcon name="art" /></span>
@@ -941,7 +950,7 @@ export default function Home() {
                   <small>{activeSubject === "ela" ? "VISUAL REVIEW" : "REVISÃO VISUAL"}</small>
                   <strong>{activeSubject === "ela" ? "Exam infographic" : "Infográficos da prova"}</strong>
                   <p>{activeSubject === "ela" ? "Start with the exam map, then explore one deep-review page for each topic." : "Veja um mapa visual de cada assunto e explique os exemplos com suas palavras."}</p>
-                  <em>{activeSubject === "ela" ? "8 illustrated review pages" : "5 páginas ilustradas"}</em>
+                  <em>{activeSubject === "ela" ? "8 illustrated review pages" : `${reviewInfographicPages.length} páginas ilustradas`}</em>
                 </span>
                 <span className="path-arrow">→</span>
               </button>
@@ -961,7 +970,7 @@ export default function Home() {
               </a>
             )}
 
-            <button className="path-card path-quiz" onClick={() => startQuiz(activeSubjectData.quizId)}>
+            <button className="path-card path-quiz" disabled={!quizCatalog[activeSubjectData.quizId].questions.length} onClick={() => startQuiz(activeSubjectData.quizId)}>
               <span className="path-number">{activeSubject === "geography" ? "4" : activeSubject === "ela" ? "3" : "2"}</span>
               <span className="path-art"><AppIcon name="medal" /></span>
               <span className="path-content">
@@ -1026,7 +1035,7 @@ export default function Home() {
         </div>
       )}
 
-      {view === "infographic" && (activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese") && (
+      {view === "infographic" && (activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || (activeSubject === "science" && scienceMaterialsReady)) && (
         <div className="page infographic-page ela-infographic-page">
           <button className="back-button" onClick={() => go("science")}>← {activeSubject === "ela" ? "Back to E.L.A." : `Voltar para ${activeSubjectData.name}`}</button>
           <div className="infographic-heading">
@@ -1135,7 +1144,7 @@ export default function Home() {
               ))}
             </aside>
 
-            <article className={`lesson-content ${activeLesson.tone}`}>
+            <article className={`lesson-content ${activeLesson.tone} ${activeSubject === "science" ? "science-lesson" : ""}`}>
               <div className="lesson-title-row">
                 <span className="lesson-big-icon"><AppIcon name={activeSubject === "ela" ? "language" : activeSubject} /></span>
                 <div>
@@ -1163,7 +1172,7 @@ export default function Home() {
                 return (
                   <section className="deep-study" aria-label="Conteúdo para aprofundar">
                     <div className="deep-study-heading"><span>🔎</span><div><small>APROFUNDE</small><h3>{deep.title}</h3></div></div>
-                    <div className="deep-paragraphs">{deep.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+                    <div className="deep-paragraphs">{deep.paragraphs.filter((paragraph) => activeSubject !== "science" || !activeLesson.facts.some((fact) => paragraph.endsWith(fact.text))).map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
                     <h4>🧠 Palavras importantes</h4>
                     <div className="vocabulary-grid">{deep.vocabulary.map(([icon, term, meaning]) => <div key={term}><span>{icon}</span><p><strong>{term}</strong><small>{meaning}</small></p></div>)}</div>
                     <div className="deep-example"><span>💡</span><p><small>EXEMPLO GUIADO</small><strong>{deep.example}</strong></p></div>
@@ -1177,7 +1186,7 @@ export default function Home() {
                 <p><small>LEMBRE-SE</small><strong>{activeLesson.remember}</strong></p>
               </div>
 
-              {activeLesson.quizId && (
+              {activeLesson.quizId && quizCatalog[activeLesson.quizId].questions.length > 0 && (
                 <button className="lesson-quiz-button" onClick={() => startQuiz(activeLesson.quizId!)}>
                   Testar somente este assunto <span>→</span>
                 </button>

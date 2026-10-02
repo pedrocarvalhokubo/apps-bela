@@ -3,8 +3,11 @@ import { elaQuiz, mathQuiz, term2AddedSubjects } from "./term2-data";
 import { geographyFieldCityQuiz, geographyGeneralQuiz, geographyMaterialsQuiz, geographyOriginQuiz, geographyRecyclingQuiz, geographySectorsQuiz, geographySubject } from "./geography-data";
 import { portugueseQuiz, portugueseSubject } from "./portuguese-data";
 
-export type SubjectKey = "math" | "ela" | "geography" | "history" | "portuguese";
+import { scienceSubject, scienceQuiz } from "./science-data";
+
+export type SubjectKey = "math" | "ela" | "geography" | "history" | "portuguese" | "science";
 export type QuizId =
+  | "science-general"
   | "math"
   | "ela"
   | "geography-sectors"
@@ -254,6 +257,7 @@ export const historyGeneralQuiz: QuizQuestion[] = [
 
 export const curriculumSubjects: Record<SubjectKey, StudySubject> = {
   ...term2AddedSubjects,
+  science: scienceSubject,
   geography: geographySubject,
   history: {
     key: "history",
@@ -315,6 +319,7 @@ export const curriculumSubjects: Record<SubjectKey, StudySubject> = {
 };
 
 export const quizCatalog: Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }> = {
+  "science-general": { title: "Science Term 3 Challenge", subject: "science", questions: scienceQuiz },
   math: { title: "Math Term 2 Challenge", subject: "math", questions: mathQuiz },
   ela: { title: "E.L.A. Term 2 Challenge", subject: "ela", questions: elaQuiz },
   "geography-sectors": { title: "Quiz • Setores da economia", subject: "geography", questions: geographySectorsQuiz },

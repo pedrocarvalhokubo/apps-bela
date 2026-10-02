@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 
-export function validateScienceContent(data) {
+export function validateScienceContent(data, { lessonsOnly = false } = {}) {
   const text = (value, field) => assert.ok(typeof value === 'string' && value.trim(), `${field}: expected nonempty text`);
   const subject = data.scienceSubject;
   assert.equal(subject.key, 'science');
@@ -23,6 +23,7 @@ export function validateScienceContent(data) {
     assert.ok(deep.vocabulary.length > 0);
     deep.vocabulary.forEach(v => { assert.equal(v.length, 3); v.forEach(t => text(t, 'vocabulary')); });
   }
+  if (lessonsOnly) return data;
   assert.equal(data.scienceQuiz.length, 20);
   const questionIds = new Set();
   let associations = 0;
@@ -41,7 +42,7 @@ export function validateScienceContent(data) {
   assert.ok(associations > 0, 'at least one association required');
   assert.equal(data.scienceInfographicPages.length, 4);
   for (const page of data.scienceInfographicPages) {
-    assert.match(page.src, /^\/infographics\/[a-z0-9-]+\.(webp|png|jpg)$/);
+    assert.match(page.src, /^\/(?:science-term3\/)?infographics\/[a-z0-9-]+\.(webp|png|jpg)$/);
     text(page.alt, 'image.alt'); text(page.label, 'image.label');
     assert.ok(page.width > 0 && page.height > 0);
   }
@@ -50,6 +51,6 @@ export function validateScienceContent(data) {
   return data;
 }
 if (process.argv[1]?.endsWith('validate-science-content.mjs') && process.argv[2]) {
-  validateScienceContent(JSON.parse(readFileSync(process.argv[2], 'utf8')));
-  console.log('Science editorial contract validated: 8 lessons, 20 questions, 4 infographics, 2 PDFs');
+  validateScienceContent(JSON.parse(readFileSync(process.argv[2], 'utf8')), { lessonsOnly: process.argv.includes('--lessons-only') });
+  console.log(process.argv.includes('--lessons-only') ? 'Science editorial lessons validated (partial; not release-ready)' : 'Science editorial contract validated: 8 lessons, 20 questions, 4 infographics, 2 PDFs');
 }

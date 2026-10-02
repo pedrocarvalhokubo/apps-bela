@@ -19,3 +19,9 @@ Integration checklist after material arrival:
 5. Include Science in learning missions and set term 3 on direct Science navigation. Reset infographic index when switching subjects to prevent out-of-range page access.
 6. Pack new public assets losslessly, validate all preserved files against previous manifest, build/test, QA desktop/mobile on isolated temporary local profile. Exercise 8 lessons, 20 questions, two hint stages, association, all infographic pages/zoom/downloads and both PDFs.
 7. Checkpoint remotely before publishing. Only after complete checks update main, observe Railway terminal SUCCESS and confirm live health and release commit, then read-only production QA without answering as Bela.
+
+## Editorial v0 integration (2026-10-02)
+
+Canonical `science-app-content.json` Library `libfile_740204166aec81919d12ada5ef6ecd5c`, version 0, materialized through official helper. Eight bilingual lessons / 74 vocabulary entries integrated with stable `s3-*` IDs. Science card only in term 3, original five subjects remain in term 2. Graduated hints ready; quiz empty and disabled, materials gated pending real assets. No production publish.
+
+QA: all eight lessons navigated in isolated local preview; English/Portuguese introductions, fact text and vocabulary rendered. Exact duplicate deep paragraphs suppressed only in Science display, preserving canonical JSON. Mobile 390×844 screenshot inspected: document width 390, no page horizontal overflow; lesson rail scrolls independently. Node 24.21.0 obtained from official npm package; all four tests passed under Node24. Existing 457 assets verified unchanged. Production profile never used.

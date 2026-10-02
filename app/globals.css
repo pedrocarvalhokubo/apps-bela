@@ -3539,3 +3539,12 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 }
 
 .unified-nav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:12px max(16px,calc((100vw - 1240px)/2));background:#fff;border-bottom:1px solid #ddd;color:#28306f}.unified-nav a{padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px;color:inherit}.unified-nav a[aria-current="page"]{background:#28306f;color:#fff}.unified-nav a:focus-visible{outline:3px solid #1a998e;outline-offset:3px}.obmep-app .sync-notice{font-size:14px;text-align:right;color:#4c5175}
+
+.science .subject-icon { background: #dff4f0; }
+.subject-hero-science { background: #e8f7f3; }
+.subject-hero-science .subject-hero-icon { background: #d2ede6; }
+.subject-hero-science p, .lesson-content .fact-stack p, .lesson-intro, .deep-study p { white-space: pre-line; }
+.path-card:disabled { opacity: .55; cursor: default; }
+
+.science-lesson .fact-stack strong { display: block; margin-bottom: 1rem; }
+.science-lesson .deep-study h3, .science-lesson .deep-example strong, .science-lesson .deep-challenge strong, .science-lesson .remember-box strong { white-space: pre-line; }

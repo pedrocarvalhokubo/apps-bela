@@ -1,3 +1,4 @@
+import { scienceDeepStudyByLesson } from "./science-data";
 export type DeepStudy = {
   title: string;
   paragraphs: string[];
@@ -9,6 +10,7 @@ export type DeepStudy = {
 const deep = (title: string, paragraphs: string[], vocabulary: Array<[string, string, string]>, example: string, challenge: string): DeepStudy => ({ title, paragraphs, vocabulary, example, challenge });
 
 export const deepStudyByLesson: Record<string, DeepStudy> = {
+  ...scienceDeepStudyByLesson,
   "math-meaning-multiplication": deep("Veja a multiplicação de três jeitos", ["A mesma situação pode aparecer como grupos iguais, adição repetida ou array. Quatro grupos de 6 são 6 + 6 + 6 + 6 e também 4 × 6 = 24.", "Em um array, as quantidades ficam organizadas em linhas e colunas com o mesmo número de objetos."], [["🧺","Equal groups","grupos com a mesma quantidade"],["✖️","Factors","números multiplicados"],["🎯","Product","resultado"]], "5 grupos de 4: 4 + 4 + 4 + 4 + 4 = 20.", "Desenhe um array que represente 24."),
   "math-facts": deep("Use padrões para construir fatos", ["A contagem 6, 12, 18, 24 mostra os múltiplos de 6 e ajuda a recuperar a tabuada.", "Um fato conhecido vira ponte: se você sabe 6 × 5 = 30, pode somar mais um grupo de 6 para descobrir 6 × 6 = 36."], [["🪜","Skip counting","saltos iguais"],["🔁","Multiples","resultados da tabuada"],["🧠","Known fact","fato que já sabemos"]], "6 × 6 = 6 × 5 + 6 = 36.", "Use 9 × 5 para descobrir 9 × 6."),
   "math-decompose": deep("Quebre números sem mudar o valor", ["Decompor é separar um número em partes mais fáceis, geralmente dezenas e unidades.", "Multiplique cada parte pelo outro número e depois some os dois resultados."], [["🧩","Break down","separar em partes"],["📦","Partial product","resultado de cada parte"],["🔢","Place value","valor da posição"]], "6 × 14 = (6 × 10) + (6 × 4) = 84.", "Resolva 7 × 23 separando 23 em 20 + 3."),
