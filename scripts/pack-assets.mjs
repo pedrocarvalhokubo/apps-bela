@@ -16,7 +16,7 @@ walk('public');
 const tmp=mkdtempSync(join(tmpdir(),'bela-pack-'));
 try{
   const archive=join(tmp,'public.tar.gz');
-  execFileSync('tar',['--sort=name','--mtime=2026-01-01','--owner=0','--group=0','--numeric-owner','-czf',archive,'public']);
+  execFileSync('python3',['scripts/pack-assets.py',archive]);
   const bytes=readFileSync(archive), parts=[];
   mkdirSync('.asset-bundle',{recursive:true});
   for(const f of readdirSync('.asset-bundle'))if(/^public-\d+\.part\.b64$/.test(f))rmSync(join('.asset-bundle',f));

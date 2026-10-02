@@ -15,5 +15,24 @@ test('canonical Science lessons preserve stable editorial IDs and bilingual teac
 });
 
 test('partial Science bundle cannot pass the release gate', () => {
-  if (!content.scienceQuiz.length) assert.throws(() => validateScienceContent(content));
+  assert.throws(() => validateScienceContent({ ...content, scienceQuiz: [] }));
+});
+
+
+test('release bundle includes complete questions, assets and matching activities', () => {
+  validateScienceContent(content);
+  for (const resource of [...content.scienceInfographicPages, ...content.scienceDownloads]) {
+    const bytes = readFileSync(new URL('../public' + resource.src, import.meta.url));
+    assert.ok(bytes.length > 1000);
+    if (resource.src.endsWith('.pdf')) assert.equal(bytes.subarray(0,4).toString(), '%PDF');
+  }
+  const matching = JSON.parse(readFileSync(new URL('../app/science-matching.json', import.meta.url), 'utf8'));
+  assert.equal(matching.activities.length,4);
+  for (const activity of matching.activities) {
+    assert.ok(content.scienceSubject.lessons.some(l => l.id === activity.lessonId));
+    assert.ok(activity.pairs.length >= 3);
+    assert.equal(new Set(activity.pairs.map(p => p.left.en)).size, activity.pairs.length);
+    assert.equal(new Set(activity.pairs.map(p => p.right.en)).size, activity.pairs.length);
+    assert.ok(activity.hint.en && activity.hint.pt);
+  }
 });

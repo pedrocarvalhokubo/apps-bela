@@ -40,4 +40,8 @@ Questões OBMEP Mirim: materiais oficiais do IMPA/OBMEP, com fontes preservadas 
 
 ## Arquivos visuais
 
-Os 457 arquivos públicos estão no pacote sem perdas `.asset-bundle`, com verificação SHA-256. `npm run build`, `npm run dev` e `npm start` restauram automaticamente `public/` antes de executar. Isso preserva cada imagem, PDF e recurso sem depender de links dos sites antigos. Para editar ou adicionar imagens: execute `node scripts/restore-assets.mjs`, edite `public/`, execute `npm run assets:pack` e inclua as alterações de `.asset-bundle` no commit. O build recusa arquivos locais divergentes, evitando sobrescrever edições não empacotadas.
+Os 463 arquivos públicos estão no pacote sem perdas `.asset-bundle`, com verificação SHA-256. `npm run build`, `npm run dev` e `npm start` restauram automaticamente `public/` antes de executar. Isso preserva cada imagem, PDF e recurso sem depender de links dos sites antigos. Para editar ou adicionar imagens: execute `node scripts/restore-assets.mjs`, edite `public/`, execute `npm run assets:pack` e inclua as alterações de `.asset-bundle` no commit. O build recusa arquivos locais divergentes, evitando sobrescrever edições não empacotadas.
+
+## Science • III trimestre
+
+O módulo Science inclui oito aulas bilíngues, 74 vocabulários, quiz de vinte questões com duas pistas graduais e explicações, quatro atividades de associação, quatro infográficos e PDFs de prova/gabarito. Materiais derivados das fontes autorizadas; nenhuma foto original de apostila de aluno é publicada. Veja `docs/science-release-review.md` para validação e plano de publicação.

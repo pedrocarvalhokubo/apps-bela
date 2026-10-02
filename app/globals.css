@@ -3548,3 +3548,12 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 
 .science-lesson .fact-stack strong { display: block; margin-bottom: 1rem; }
 .science-lesson .deep-study h3, .science-lesson .deep-example strong, .science-lesson .deep-challenge strong, .science-lesson .remember-box strong { white-space: pre-line; }
+
+.science-matching { border: 1px solid #d5e5df; border-radius: 20px; padding: 24px; margin: 24px 0; background: #f2faf6; }
+.science-matching h3 small, .science-match-row label small { display: block; font-weight: 400; margin-top: 6px; }
+.science-match-row { margin: 20px 0; }
+.science-match-row select { width: 100%; min-height: 48px; margin-top: 8px; padding: 10px; border: 1px solid #92b8ae; border-radius: 10px; background: white; color: #173a63; white-space: normal; }
+.science-match-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.science-match-actions button { min-height: 44px; padding: 10px 14px; border: 1px solid #81a99e; border-radius: 10px; background: white; color: #173a63; }
+.science-match-actions button:disabled { opacity: .5; }
+.match-correct { color: #19684d; } .match-retry { color: #8b4621; }

@@ -11,8 +11,9 @@ import {
   type StudyLesson,
   type SubjectKey,
 } from "./curriculum-data";
+import ScienceMatching from "./components/ScienceMatching";
 import { deepStudyByLesson } from "./deep-content";
-import { scienceInfographicPages, scienceMaterialsReady } from "./science-data";
+import { scienceInfographicPages, scienceMaterialsReady, scienceDownloads, scienceTopicTitle } from "./science-data";
 import { questionHint } from "./quiz-hints";
 
 type View = "home" | "science" | "learn" | "infographic" | "quiz" | "results" | "parent";
@@ -510,7 +511,7 @@ export default function Home() {
     if (weak) {
       steps.push({
         subject: weak.subject as SubjectKey,
-        title: `Reforçar: ${weak.topic}`,
+        title: `Reforçar: ${weak.subject === "science" ? scienceTopicTitle(weak.topic) : weak.topic}`,
         detail: `Você acertou ${Math.round((weak.correct / weak.attempts) * 100)}% até agora. Vamos praticar com calma.`,
         badge: "PRIORIDADE",
         kind: "weak",
@@ -524,7 +525,7 @@ export default function Home() {
     }
     const review = topicSignals.find((topic) => topic.attempts >= 3 && topic.correct / topic.attempts >= 0.8 && topic.reviewAttempts === 0);
     if (review && steps.length < 3) {
-      steps.push({ subject: review.subject as SubjectKey, title: `Revisão: ${review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
+      steps.push({ subject: review.subject as SubjectKey, title: `Revisão: ${review.subject === "science" ? scienceTopicTitle(review.topic) : review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
     }
     return steps.slice(0, 3);
   }, [completedLessons, topicSignals]);
@@ -956,6 +957,14 @@ export default function Home() {
               </button>
             )}
 
+            {activeSubject === "science" && scienceMaterialsReady && scienceDownloads.map(download => (
+              <a key={download.id} className="path-card path-test" href={download.src} download>
+                <span className="path-art"><AppIcon name="note" /></span>
+                <span className="path-content"><small>DOWNLOAD PDF</small><strong>{download.label}</strong><p>Baixar e imprimir • Download and print</p><em>PDF A4 • {download.pages} páginas</em></span>
+                <span className="path-arrow">↓</span>
+              </a>
+            ))}
+
             {activeSubject === "geography" && (
               <a className="path-card path-test" href="/materials/prova-geografia.pdf" download>
                 <span className="path-number">3</span>
@@ -971,7 +980,7 @@ export default function Home() {
             )}
 
             <button className="path-card path-quiz" disabled={!quizCatalog[activeSubjectData.quizId].questions.length} onClick={() => startQuiz(activeSubjectData.quizId)}>
-              <span className="path-number">{activeSubject === "geography" ? "4" : activeSubject === "ela" ? "3" : "2"}</span>
+              <span className="path-number">{activeSubject === "geography" ? "4" : activeSubject === "ela" || activeSubject === "science" ? "3" : "2"}</span>
               <span className="path-art"><AppIcon name="medal" /></span>
               <span className="path-content">
                 <small>DEPOIS</small>
@@ -1181,6 +1190,8 @@ export default function Home() {
                 );
               })()}
 
+              {activeSubject === "science" && <ScienceMatching key={activeLesson.id} lessonId={activeLesson.id} />}
+
               <div className="remember-box">
                 <span><AppIcon name="brain" /></span>
                 <p><small>LEMBRE-SE</small><strong>{activeLesson.remember}</strong></p>
@@ -1188,7 +1199,7 @@ export default function Home() {
 
               {activeLesson.quizId && quizCatalog[activeLesson.quizId].questions.length > 0 && (
                 <button className="lesson-quiz-button" onClick={() => startQuiz(activeLesson.quizId!)}>
-                  Testar somente este assunto <span>→</span>
+                  {activeSubject === "science" ? "Praticar o quiz de Science" : "Testar somente este assunto"} <span>→</span>
                 </button>
               )}
 
@@ -1255,7 +1266,7 @@ export default function Home() {
                         const needsReview = accuracy >= 80 && !mastered;
                         return <div key={`${topic.subject}-${topic.topic}`} className="mastery-row">
                           <span className={`mastery-dot ${mastered ? "mastered" : needsReview ? "review" : "practice"}`}>{mastered ? "✓" : needsReview ? "↻" : "!"}</span>
-                          <div><strong>{topic.topic}</strong><small>{topic.subject.toUpperCase()} • {topic.attempts} respostas</small><i><b style={{ width: `${accuracy}%` }} /></i></div>
+                          <div><strong>{topic.subject === "science" ? scienceTopicTitle(topic.topic) : topic.topic}</strong><small>{topic.subject.toUpperCase()} • {topic.attempts} respostas</small><i><b style={{ width: `${accuracy}%` }} /></i></div>
                           <em>{accuracy}%<small>{mastered ? "dominado" : needsReview ? "revisar depois" : "reforçar"}</small></em>
                         </div>;
                       })}
@@ -1293,7 +1304,7 @@ export default function Home() {
                       const option = question?.options.find((item) => item.id === wrong.selected);
                       return <article key={`${wrong.quizId}-${wrong.questionId}-${wrong.createdAt}-${index}`}>
                         <span>{wrong.subject === "math" ? "∑" : wrong.subject === "ela" ? "Aa" : wrong.subject === "geography" ? "◎" : "◷"}</span>
-                        <div><small>{wrong.subject.toUpperCase()} • {wrong.topic}</small><strong>{question?.prompt ?? `Questão ${wrong.questionId}`}</strong><p>Marcou: {option?.label ?? wrong.selected.toUpperCase()}</p></div>
+                        <div><small>{wrong.subject.toUpperCase()} • {wrong.subject === "science" ? scienceTopicTitle(wrong.topic) : wrong.topic}</small><strong>{question?.prompt ?? `Questão ${wrong.questionId}`}</strong><p>Marcou: {option?.label ?? wrong.selected.toUpperCase()}</p></div>
                         <time>{new Date(Number(wrong.createdAt)).toLocaleDateString("pt-BR")}</time>
                       </article>;
                     })}
@@ -1322,7 +1333,7 @@ export default function Home() {
 
           <section className="question-card">
             <div className="question-meta">
-              <span>{currentQuestion.topic}</span>
+              <span>{activeSubject === "science" ? scienceTopicTitle(currentQuestion.topic) : currentQuestion.topic}</span>
               <span>{answerChecked
                 ? isPortugueseMode ? "Resposta explicada" : "Answer explained"
                 : isPortugueseMode ? "Escolha uma resposta" : "Choose an answer"}</span>
@@ -1502,7 +1513,7 @@ export default function Home() {
                   const percent = Math.round((item.correct / item.total) * 100);
                   return (
                     <div key={item.topic}>
-                      <p><strong>{item.topic}</strong><span>{item.correct}/{item.total}</span></p>
+                      <p><strong>{activeSubject === "science" ? scienceTopicTitle(item.topic) : item.topic}</strong><span>{item.correct}/{item.total}</span></p>
                       <div><i style={{ width: `${percent}%` }} /></div>
                     </div>
                   );

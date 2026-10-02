@@ -13,4 +13,6 @@ export const scienceDeepStudyByLesson: Record<string, DeepStudy> = Object.fromEn
 );
 export const scienceInfographicPages = content.scienceInfographicPages;
 // Enabled only after all canonical assets are inspected and packed.
-export const scienceMaterialsReady = false;
+export const scienceMaterialsReady = true;
+export const scienceDownloads = content.scienceDownloads;
+export const scienceTopicTitle = (topic: string) => scienceSubject.lessons.find(lesson => lesson.id === topic)?.title ?? topic;

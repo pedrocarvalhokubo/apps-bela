@@ -1,0 +1,204 @@
+{
+  "activities": [
+    {
+      "id": "s3-match-hearing",
+      "lessonId": "s3-hearing",
+      "type": "matching",
+      "title": {
+        "en": "Parts and jobs",
+        "pt": "Partes e funções"
+      },
+      "pairs": [
+        {
+          "left": {
+            "en": "Ear canal",
+            "pt": "Canal auditivo"
+          },
+          "right": {
+            "en": "Guides waves to the eardrum",
+            "pt": "Conduz ondas ao tímpano"
+          }
+        },
+        {
+          "left": {
+            "en": "Eardrum",
+            "pt": "Tímpano"
+          },
+          "right": {
+            "en": "Vibrates when waves arrive",
+            "pt": "Vibra com a chegada das ondas"
+          }
+        },
+        {
+          "left": {
+            "en": "Cochlea",
+            "pt": "Cóclea"
+          },
+          "right": {
+            "en": "Changes vibrations into nerve signals",
+            "pt": "Transforma vibrações em sinais nervosos"
+          }
+        },
+        {
+          "left": {
+            "en": "Auditory nerve",
+            "pt": "Nervo auditivo"
+          },
+          "right": {
+            "en": "Carries signals to the brain",
+            "pt": "Leva sinais ao cérebro"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Follow the pathway from outside to inside.",
+        "pt": "Siga o caminho de fora para dentro."
+      }
+    },
+    {
+      "id": "s3-match-rocks",
+      "lessonId": "s3-rock-types",
+      "type": "matching",
+      "title": {
+        "en": "Rock type and formation",
+        "pt": "Tipo de rocha e formação"
+      },
+      "pairs": [
+        {
+          "left": {
+            "en": "Igneous",
+            "pt": "Ígnea"
+          },
+          "right": {
+            "en": "Molten rock cools and hardens",
+            "pt": "Material fundido esfria e endurece"
+          }
+        },
+        {
+          "left": {
+            "en": "Sedimentary",
+            "pt": "Sedimentar"
+          },
+          "right": {
+            "en": "Sediments accumulate, compact and cement",
+            "pt": "Sedimentos se acumulam, compactam e cimentam"
+          }
+        },
+        {
+          "left": {
+            "en": "Metamorphic",
+            "pt": "Metamórfica"
+          },
+          "right": {
+            "en": "Existing rock changes with heat and pressure",
+            "pt": "Rocha existente muda sob calor e pressão"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Compare cooling, accumulating and changing.",
+        "pt": "Compare resfriar, acumular e transformar."
+      }
+    },
+    {
+      "id": "s3-match-processes",
+      "lessonId": "s3-weathering-erosion",
+      "type": "matching",
+      "title": {
+        "en": "Read the evidence",
+        "pt": "Leia as evidências"
+      },
+      "pairs": [
+        {
+          "left": {
+            "en": "Roots split a rock in place",
+            "pt": "Raízes partem uma rocha no local"
+          },
+          "right": {
+            "en": "Weathering",
+            "pt": "Intemperismo"
+          }
+        },
+        {
+          "left": {
+            "en": "Water carries soil downstream",
+            "pt": "Água leva solo rio abaixo"
+          },
+          "right": {
+            "en": "Erosion",
+            "pt": "Erosão"
+          }
+        },
+        {
+          "left": {
+            "en": "Sediment settles into layers",
+            "pt": "Sedimentos se depositam em camadas"
+          },
+          "right": {
+            "en": "Deposition",
+            "pt": "Deposição"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Look for breaking, moving or settling.",
+        "pt": "Procure fragmentação, transporte ou deposição."
+      }
+    },
+    {
+      "id": "s3-match-soil",
+      "lessonId": "s3-soil",
+      "type": "matching",
+      "title": {
+        "en": "Protect soil",
+        "pt": "Proteja o solo"
+      },
+      "pairs": [
+        {
+          "left": {
+            "en": "Vegetation",
+            "pt": "Vegetação"
+          },
+          "right": {
+            "en": "Roots hold soil",
+            "pt": "Raízes seguram o solo"
+          }
+        },
+        {
+          "left": {
+            "en": "Ground cover",
+            "pt": "Cobertura do solo"
+          },
+          "right": {
+            "en": "Protects the surface from rain and wind",
+            "pt": "Protege a superfície da chuva e do vento"
+          }
+        },
+        {
+          "left": {
+            "en": "Terraces",
+            "pt": "Terraços"
+          },
+          "right": {
+            "en": "Slow runoff on slopes",
+            "pt": "Reduzem o escoamento em encostas"
+          }
+        },
+        {
+          "left": {
+            "en": "Cover crops",
+            "pt": "Culturas de cobertura"
+          },
+          "right": {
+            "en": "Protect fields between main crops",
+            "pt": "Protegem campos entre cultivos principais"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Connect each method with how it helps.",
+        "pt": "Relacione cada método a como ele ajuda."
+      }
+    }
+  ]
+}

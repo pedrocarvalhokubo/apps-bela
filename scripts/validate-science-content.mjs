@@ -46,8 +46,10 @@ export function validateScienceContent(data, { lessonsOnly = false } = {}) {
     text(page.alt, 'image.alt'); text(page.label, 'image.label');
     assert.ok(page.width > 0 && page.height > 0);
   }
-  assert.equal(data.scienceDownloads.exam, '/materials/science-term3-exam.pdf');
-  assert.equal(data.scienceDownloads.answerKey, '/materials/science-term3-answer-key.pdf');
+  assert.equal(data.scienceDownloads.length, 2);
+  assert.deepEqual(data.scienceDownloads.map(d => d.src), ['/science-term3/assessment/science-term-3-review.pdf', '/science-term3/assessment/science-term-3-answer-key.pdf']);
+  for (const download of data.scienceDownloads) { text(download.label, 'download.label'); assert.ok(download.pages > 0); }
+  assert.ok(data.scienceQuiz.every(q => ids.has(q.topic) && q.hints?.length === 2));
   return data;
 }
 if (process.argv[1]?.endsWith('validate-science-content.mjs') && process.argv[2]) {
