@@ -517,6 +517,37 @@
     "public/science-term3/infographics/sound-hearing.png": "76695ba3b3da51e94501cc77f9ada366973468b68413b7fce23aab5ca3835ff4",
     "public/science-term3/infographics/weathering-erosion.png": "ad51be51fed6ccfcfc3b4f16e0e2a9c91d85410a61227a84a1b5813d983e1312",
     "public/sw.js": "165b44a0756f1d99de1ec895e40f0d56d7cd4c4803037275c0c987713c70c1e1",
-    "public/window.svg": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1"
-  }
+    "public/window.svg": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
+    "public/infographics/history3-1.png": "86535d0bf5d103d327a540f0e9d8483b20f63756190faf417dd8fac78cb4aace",
+    "public/infographics/history3-2.png": "7c790ee493a5836d2d0a0aa45080f64f51c4549abb53ef8cf846a96aff950a75",
+    "public/infographics/history3-3.png": "f975a970d0908e38087f603f7d1e497773d2021006663c50ee1734efe20f04d3",
+    "public/infographics/history3-4.png": "969f19b55ddb29b3486514a455a9b493f55c6ade22af8ab030c17bd17abcbff4",
+    "public/infographics/history3-5.png": "e674c094c73c49477ed913644d2d7608f2c2d1009dcc1a45cb23c6b5828b0778",
+    "public/infographics/history3-6.png": "b35046b89875c10ca16b3e5c397468bb5ea3e878920923680116aece4b51f97b",
+    "public/materials/historia3-guia.pdf": "79e80941b4c01ee114932ff7e9cb97504374fbab833a700e759bf8cf69f89534",
+    "public/materials/historia3-simulado-a.pdf": "114a6783aa026082af9ac22b0938cc7e6933ae775ff01585acbbb4aa47810654",
+    "public/materials/historia3-simulado-b.pdf": "84467929078ecd26119ea65ff7eaf3361486ee8023d4c0c3e81fa0fcb3328848",
+    "public/materials/historia3-gabarito.pdf": "73f618eb52a30a7dae38e8c6e32b896906bc88049266ef51e93dec2b2dd4eb4d"
+  },
+  "supplements": [
+    {
+      "sha256": "9198b8482e28f4d9095f9f7bdd0442bbc0a29fbaa0498f9db6bb49f09a436aa0",
+      "parts": [
+        "history3-000.part.b64",
+        "history3-001.part.b64",
+        "history3-002.part.b64",
+        "history3-003.part.b64",
+        "history3-004.part.b64",
+        "history3-005.part.b64",
+        "history3-006.part.b64",
+        "history3-007.part.b64",
+        "history3-008.part.b64",
+        "history3-009.part.b64",
+        "history3-010.part.b64",
+        "history3-011.part.b64",
+        "history3-012.part.b64",
+        "history3-013.part.b64"
+      ]
+    }
+  ]
 }

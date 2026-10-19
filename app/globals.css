@@ -3557,3 +3557,6 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 .science-match-actions button { min-height: 44px; padding: 10px 14px; border: 1px solid #81a99e; border-radius: 10px; background: white; color: #173a63; }
 .science-match-actions button:disabled { opacity: .5; }
 .match-correct { color: #19684d; } .match-retry { color: #8b4621; }
+
+.history3-lesson-map { display:block; width:min(100%, 430px); height:auto; margin:24px auto; border-radius:20px; }
+@media print { .history3-lesson-map { max-height:600px; object-fit:contain; } }

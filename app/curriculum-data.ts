@@ -1,3 +1,4 @@
+import { history3Catalog } from './history3-data';
 import type { QuizQuestion } from "./quiz-data";
 import { elaQuiz, mathQuiz, term2AddedSubjects } from "./term2-data";
 import { geographyFieldCityQuiz, geographyGeneralQuiz, geographyMaterialsQuiz, geographyOriginQuiz, geographyRecyclingQuiz, geographySectorsQuiz, geographySubject } from "./geography-data";
@@ -7,6 +8,7 @@ import { scienceSubject, scienceQuiz } from "./science-data";
 
 export type SubjectKey = "math" | "ela" | "geography" | "history" | "portuguese" | "science";
 export type QuizId =
+  | "history3-diversity" | "history3-origins" | "history3-slavery" | "history3-routes" | "history3-colonization" | "history3-culture" | "history3-diaspora" | "history3-general" | "history3-mock-a" | "history3-mock-b"
   | "science-general"
   | "math"
   | "ela"
@@ -319,6 +321,7 @@ export const curriculumSubjects: Record<SubjectKey, StudySubject> = {
 };
 
 export const quizCatalog: Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }> = {
+  ...history3Catalog as Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }>,
   "science-general": { title: "Science Term 3 Challenge", subject: "science", questions: scienceQuiz },
   math: { title: "Math Term 2 Challenge", subject: "math", questions: mathQuiz },
   ela: { title: "E.L.A. Term 2 Challenge", subject: "ela", questions: elaQuiz },

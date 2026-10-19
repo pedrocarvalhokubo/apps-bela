@@ -14,6 +14,7 @@ import {
 import ScienceMatching from "./components/ScienceMatching";
 import { deepStudyByLesson } from "./deep-content";
 import { scienceInfographicPages, scienceMaterialsReady, scienceDownloads, scienceTopicTitle } from "./science-data";
+import { history3Subject, history3Infographics, history3Downloads, studySubject, quizTerm, resumeTerm } from "./history3-data";
 import { questionHint } from "./quiz-hints";
 
 type View = "home" | "science" | "learn" | "infographic" | "quiz" | "results" | "parent";
@@ -100,6 +101,7 @@ type QuizStats = {
 };
 
 type SavedProgress = {
+  term?: number;
   completedLessons: string[];
   quizStats?: QuizStats;
   quizStatsById: Record<QuizId, QuizStats>;
@@ -141,6 +143,16 @@ const subjects: Array<{ key?: SubjectKey; name: string; icon: IconName; detail: 
 ];
 
 const emptyQuizStats = (): Record<QuizId, QuizStats> => ({
+  "history3-diversity": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-origins": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-slavery": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-routes": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-colonization": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-culture": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-diaspora": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-mock-a": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "history3-mock-b": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "science-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   math: { bestScore: 0, attempts: 0, totalAnswered: 0 },
   ela: { bestScore: 0, attempts: 0, totalAnswered: 0 },
@@ -163,7 +175,7 @@ const defaultQuiz: QuizId = "geography-general";
 const defaultLesson = curriculumSubjects.geography.lessons[0].id;
 const availableSubjects = new Set<SubjectKey>(["science", "math", "ela", "geography", "history", "portuguese"]);
 const availableQuizzes = new Set<QuizId>(Object.keys(quizCatalog) as QuizId[]);
-const availableLessonIds = new Set(Object.values(curriculumSubjects).flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
+const availableLessonIds = new Set([...Object.values(curriculumSubjects), history3Subject].flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
 
 const elaInfographicPages = [
   { src: "/infographics/ela-term2-review-v1.webp", alt: "E.L.A. Term 2 exam map", width: 1024, height: 1536, label: "Map" },
@@ -293,10 +305,11 @@ export default function Home() {
           }
           setQuizStatsById(restoredStats);
           setActiveSubject(safeSubject(parsed.activeSubject));
+          setTerm(parsed.term === 2 || parsed.term === 3 ? parsed.term : quizTerm(safeQuiz(parsed.activeQuizId)) === 3 || parsed.openLesson?.startsWith("h3-") ? 3 : 2);
           setActiveQuizId(safeQuiz(parsed.activeQuizId));
           setLastStudyView(safeStudyView(parsed.lastStudyView));
           const savedLesson = parsed.openLesson ?? defaultLesson;
-          setOpenLesson(Object.values(curriculumSubjects).some((subject) => subject.lessons.some((lesson) => lesson.id === savedLesson)) ? savedLesson : defaultLesson);
+          setOpenLesson(availableLessonIds.has(savedLesson) ? savedLesson : defaultLesson);
           setQuizIndex(parsed.quizIndex ?? 0);
           setSelectedOption(parsed.selectedOption ?? null);
           setAnswerChecked(parsed.answerChecked ?? false);
@@ -339,10 +352,11 @@ export default function Home() {
           }
           setQuizStatsById(syncedStats);
           setActiveSubject(safeSubject(saved.activeSubject));
+          setTerm(saved.term === 2 || saved.term === 3 ? saved.term : quizTerm(safeQuiz(saved.activeQuizId)) === 3 || saved.openLesson?.startsWith("h3-") ? 3 : 2);
           setActiveQuizId(safeQuiz(saved.activeQuizId));
           setLastStudyView(safeStudyView(saved.lastStudyView));
           const syncedLesson = saved.openLesson ?? defaultLesson;
-          setOpenLesson(Object.values(curriculumSubjects).some((subject) => subject.lessons.some((lesson) => lesson.id === syncedLesson)) ? syncedLesson : defaultLesson);
+          setOpenLesson(availableLessonIds.has(syncedLesson) ? syncedLesson : defaultLesson);
           setDoubtQuestionIds((saved.doubtQuestionIds ?? []).filter((id) => availableQuizzes.has(String(id).split(":")[0] as QuizId)));
           setStudyNotes(saved.studyNotes ?? "");
         }
@@ -382,6 +396,7 @@ export default function Home() {
   useEffect(() => {
     if (!storageReady) return;
     const progress: SavedProgress = {
+      term,
       completedLessons,
       quizStatsById,
       lastStudyView,
@@ -416,6 +431,7 @@ export default function Home() {
     return () => window.clearTimeout(timer);
   }, [
     answerChecked,
+    term,
     activeQuizId,
     activeSubject,
     completedLessons,
@@ -444,13 +460,14 @@ export default function Home() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const activeSubjectData = curriculumSubjects[activeSubject];
-  const reviewInfographicPages = activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
+  const activeSubjectData = studySubject(curriculumSubjects, activeSubject, term);
+  const isHistory3 = activeSubject === "history" && term === 3;
+  const reviewInfographicPages = isHistory3 ? history3Infographics : activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
   const currentLessons = activeSubjectData.lessons;
   const completedCurrentLessons = currentLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const learnProgress = Math.round((completedCurrentLessons / currentLessons.length) * 100);
   const currentQuestions = quizCatalog[activeQuizId].questions;
-  const allLessons = Object.values(curriculumSubjects).flatMap((subject) => subject.lessons);
+  const allLessons = [...Object.values(curriculumSubjects), history3Subject].flatMap((subject) => subject.lessons);
   const completedAllLessons = allLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const totalBestAnswers = Object.values(quizStatsById).reduce((sum, stats) => sum + stats.bestScore, 0);
   const totalQuizQuestions = Object.values(quizCatalog).reduce((sum, quiz) => sum + quiz.questions.length, 0);
@@ -502,7 +519,7 @@ export default function Home() {
       { subject: "geography", name: "Geografia", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.geography.lessons },
       { subject: "ela", name: "E.L.A.", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.ela.lessons },
       { subject: "math", name: "Math", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.math.lessons },
-      { subject: "history", name: "História", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.history.lessons },
+      { subject: "history", name: "História", date: "", shortDate: "ESTUDAR", lessons: history3Subject.lessons },
     ];
     const steps: Array<{ subject: SubjectKey; title: string; detail: string; badge: string; kind: string }> = [];
     const weak = [...topicSignals]
@@ -650,7 +667,7 @@ export default function Home() {
 
   const startQuiz = (quizId: QuizId) => {
     if (!quizCatalog[quizId].questions.length) return;
-    setTerm(quizCatalog[quizId].subject === "science" ? 3 : 2);
+    setTerm(quizTerm(quizId));
     setInfographicPage(0);
     setActiveSubject(quizCatalog[quizId].subject);
     setActiveQuizId(quizId);
@@ -665,16 +682,18 @@ export default function Home() {
     go("quiz");
   };
 
-  const openSubject = (subject: SubjectKey) => {
+  const openSubject = (subject: SubjectKey, selectedTerm = subject === "science" ? 3 : subject === "history" ? term : 2) => {
     setActiveSubject(subject);
-    setTerm(subject === "science" ? 3 : 2);
+    setTerm(selectedTerm);
     setInfographicPage(0);
-    const firstLesson = curriculumSubjects[subject].lessons[0].id;
+    const firstLesson = studySubject(curriculumSubjects, subject, selectedTerm).lessons[0].id;
     setOpenLesson(firstLesson);
     go("science");
   };
 
   const resumeStudy = () => {
+    setTerm(resumeTerm(activeSubject, openLesson, activeQuizId, lastStudyView));
+    setInfographicPage(0);
     go(lastStudyView);
   };
 
@@ -846,7 +865,7 @@ export default function Home() {
             </div>
             <div className="mission-list">
               {nextSteps.map((step, index) => (
-                <button key={`${step.subject}-${step.title}`} className={`mission-card mission-${step.kind}`} onClick={() => openSubject(step.subject)}>
+                <button key={`${step.subject}-${step.title}`} className={`mission-card mission-${step.kind}`} onClick={() => openSubject(step.subject, step.subject === "science" || (step.subject === "history" && history3Subject.lessons.some(lesson => step.title.includes(lesson.title))) ? 3 : 2)}>
                   <span className="mission-check">{index + 1}</span>
                   <span><small>{step.badge}</small><strong>{step.title}</strong><em>{step.detail}</em></span>
                   <b>→</b>
@@ -884,7 +903,7 @@ export default function Home() {
 
             {term === 2 || term === 3 ? (
               <div className="subject-grid">
-                {subjects.filter(subject => term === 3 ? subject.key === "science" : subject.key !== "science").map((subject) => (
+                {subjects.filter(subject => term === 3 ? subject.key === "science" || subject.key === "history" : subject.key !== "science").map((subject) => (
                   <button
                     key={subject.name}
                     className={`subject-card ${subject.color} ${subject.status === "soon" ? "subject-soon" : ""}`}
@@ -894,7 +913,7 @@ export default function Home() {
                     <span className="subject-icon"><AppIcon name={subject.icon} /></span>
                     <span className="subject-copy">
                       <strong>{subject.name}</strong>
-                      <small>{subject.detail}</small>
+                      <small>{term === 3 && subject.key === "history" ? "África e Brasil • 7 aulas" : subject.detail}</small>
                     </span>
                     {subject.status === "ready" ? <span className="subject-arrow">→</span> : <span className="soon-pill">Em breve</span>}
                   </button>
@@ -943,7 +962,7 @@ export default function Home() {
               <span className="path-arrow">→</span>
             </button>
 
-            {(activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || (activeSubject === "science" && scienceMaterialsReady)) && (
+            {(activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || isHistory3 || (activeSubject === "science" && scienceMaterialsReady)) && (
               <button className="path-card path-info" onClick={() => { setInfographicPage(0); go("infographic"); }}>
                 <span className="path-number">2</span>
                 <span className="path-art"><AppIcon name="art" /></span>
@@ -957,6 +976,18 @@ export default function Home() {
               </button>
             )}
 
+            {isHistory3 && history3Downloads.map(download => (
+              <a key={download.id} className="path-card path-test" href={download.src} download>
+                <span className="path-art"><AppIcon name="note" /></span>
+                <span className="path-content"><small>MATERIAL PARA IMPRIMIR</small><strong>{download.label}</strong><p>{download.id === "key" ? "Confira depois de responder. Respostas abertas aceitam outras palavras com a mesma ideia." : "Leia com calma e responda com suas palavras."}</p><em>PDF A4 • {download.pages} páginas</em></span>
+                <span className="path-arrow">↓</span>
+              </a>
+            ))}
+            {isHistory3 && (["history3-mock-a", "history3-mock-b"] as QuizId[]).map(id => (
+              <button key={id} className="path-card path-quiz" onClick={() => startQuiz(id)}>
+                <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRATICAR NO APP</small><strong>{quizCatalog[id].title}</strong><p>Quatorze questões, pistas graduais e explicações para cada alternativa.</p><em>Melhor: {quizStatsById[id].bestScore}/14</em></span><span className="path-arrow">→</span>
+              </button>
+            ))}
             {activeSubject === "science" && scienceMaterialsReady && scienceDownloads.map(download => (
               <a key={download.id} className="path-card path-test" href={download.src} download>
                 <span className="path-art"><AppIcon name="note" /></span>
@@ -1044,7 +1075,7 @@ export default function Home() {
         </div>
       )}
 
-      {view === "infographic" && (activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || (activeSubject === "science" && scienceMaterialsReady)) && (
+      {view === "infographic" && (activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || isHistory3 || (activeSubject === "science" && scienceMaterialsReady)) && (
         <div className="page infographic-page ela-infographic-page">
           <button className="back-button" onClick={() => go("science")}>← {activeSubject === "ela" ? "Back to E.L.A." : `Voltar para ${activeSubjectData.name}`}</button>
           <div className="infographic-heading">
@@ -1165,7 +1196,7 @@ export default function Home() {
 
               <p className="lesson-intro">{activeLesson.intro}</p>
 
-              <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />
+              {isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
 
               <div className="fact-stack">
                 {activeLesson.facts.map((fact, index) => (

@@ -1,0 +1,1418 @@
+{
+  "historySubject": {
+    "key": "history",
+    "name": "História",
+    "icon": "🌍",
+    "eyebrow": "HISTÓRIA • III TRIMESTRE",
+    "title": "África e a formação do Brasil",
+    "description": "Sete aulas para compreender diversidade, liberdade, rotas, cultura e resistência. Estude com calma, explique com suas palavras e pratique.",
+    "assessmentDate": "",
+    "quizId": "history3-general",
+    "lessons": [
+      {
+        "id": "h3-diversity",
+        "number": "01",
+        "icon": "🌍",
+        "title": "África: muitas histórias",
+        "subtitle": "Um continente diverso, com conhecimentos e governos",
+        "intro": "A África é um continente, formado por vários países. Seus povos têm diferentes línguas, religiões, culturas e modos de viver. Sua história não começou com a chegada dos europeus.",
+        "facts": [
+          {
+            "term": "Diversidade",
+            "text": "existem sociedades com histórias e formas de organização diferentes."
+          },
+          {
+            "term": "Conhecimentos",
+            "text": "povos africanos desenvolveram agricultura, comércio, artes e técnicas."
+          },
+          {
+            "term": "Reinos",
+            "text": "Congo e Mali são exemplos citados no material."
+          },
+          {
+            "term": "História ampla",
+            "text": "estudar apenas a escravidão esconderia grande parte dessa história."
+          }
+        ],
+        "remember": "África é continente. Diversidade significa que seus povos não são todos iguais.",
+        "tone": "orange",
+        "quizId": "history3-diversity"
+      },
+      {
+        "id": "h3-origins",
+        "number": "02",
+        "icon": "🔎",
+        "title": "O berço da humanidade",
+        "subtitle": "Fósseis ajudam a conhecer o passado",
+        "intro": "A África é chamada de berço da humanidade porque ali surgiram os primeiros seres humanos. Fósseis encontrados no continente ajudam os pesquisadores a estudar esse passado.",
+        "facts": [
+          {
+            "term": "Berço",
+            "text": "a palavra indica origem ou começo nesse contexto."
+          },
+          {
+            "term": "Fósseis",
+            "text": "são restos ou vestígios de seres vivos de épocas antigas."
+          },
+          {
+            "term": "Evidências",
+            "text": "os pesquisadores estudam descobertas para explicar a história humana."
+          }
+        ],
+        "remember": "Os fósseis são evidências usadas para estudar a origem e a evolução humana.",
+        "tone": "mint",
+        "quizId": "history3-origins"
+      },
+      {
+        "id": "h3-slavery",
+        "number": "03",
+        "icon": "🕊️",
+        "title": "Escravidão e falta de liberdade",
+        "subtitle": "Regras diferentes não tornavam a escravidão justa",
+        "intro": "Em algumas sociedades africanas já havia pessoas escravizadas antes do tráfico pelo Atlântico. Isso podia acontecer após guerras ou por dívidas. As situações variavam conforme a sociedade e a época.",
+        "facts": [
+          {
+            "term": "Trabalho",
+            "text": "pessoas escravizadas podiam trabalhar em casas ou na agricultura."
+          },
+          {
+            "term": "Variações",
+            "text": "em certos casos havia possibilidade de integração à comunidade ou libertação."
+          },
+          {
+            "term": "Liberdade",
+            "text": "viver perto de uma família não significava poder escolher a própria vida."
+          },
+          {
+            "term": "Comparação",
+            "text": "essas situações não foram idênticas à escravidão colonial no Brasil."
+          }
+        ],
+        "remember": "A escravidão é injusta porque retira a liberdade. Não existiu uma única forma igual em toda a África.",
+        "tone": "blue",
+        "quizId": "history3-slavery"
+      },
+      {
+        "id": "h3-routes",
+        "number": "04",
+        "icon": "🧭",
+        "title": "Duas rotas, dois espaços",
+        "subtitle": "Saara e oceano Atlântico",
+        "intro": "Transaariano significa através do Saara. Transatlântico significa através do oceano Atlântico. As duas rotas ligavam espaços diferentes e existiram em épocas que, em parte, se sobrepuseram.",
+        "facts": [
+          {
+            "term": "Transaariana",
+            "text": "caravanas cruzavam o deserto do Saara, ligando regiões africanas."
+          },
+          {
+            "term": "Circulação",
+            "text": "nessas rotas havia sal, ouro e outros produtos; também pessoas escravizadas."
+          },
+          {
+            "term": "Transatlântica",
+            "text": "navios levavam africanos à força para as Américas, incluindo o Brasil."
+          },
+          {
+            "term": "Exploração",
+            "text": "o tráfico pelo Atlântico alcançou enorme escala e sustentou a exploração colonial."
+          }
+        ],
+        "remember": "Transaariana: Saara e caravanas. Transatlântica: Atlântico e navios.",
+        "tone": "purple",
+        "quizId": "history3-routes"
+      },
+      {
+        "id": "h3-colonization",
+        "number": "05",
+        "icon": "📜",
+        "title": "Colonização e independências",
+        "subtitle": "Uma sequência histórica para compreender",
+        "intro": "Potências europeias dominaram territórios africanos e os dividiram conforme seus interesses. Muitas divisões desrespeitaram identidades e formas de organização dos povos que já viviam ali.",
+        "facts": [
+          {
+            "term": "Antes",
+            "text": "sociedades africanas já produziam conhecimentos e tinham formas de governo."
+          },
+          {
+            "term": "Domínio colonial",
+            "text": "colonizadores buscavam controlar territórios, recursos e trabalho."
+          },
+          {
+            "term": "Independências",
+            "text": "o material destaca os processos de independência após a Segunda Guerra Mundial."
+          },
+          {
+            "term": "Consequências",
+            "text": "a colonização deixou marcas e contribuiu para conflitos."
+          }
+        ],
+        "remember": "A ordem é: sociedades africanas organizadas, colonização europeia, processos de independência.",
+        "tone": "orange",
+        "quizId": "history3-colonization"
+      },
+      {
+        "id": "h3-culture",
+        "number": "06",
+        "icon": "🥁",
+        "title": "Cultura afro-brasileira e resistência",
+        "subtitle": "Criações, conhecimentos e tradições vivas",
+        "intro": "A cultura afro-brasileira reúne expressões criadas e preservadas por pessoas negras no Brasil, em diálogo com diferentes tradições africanas e brasileiras.",
+        "facts": [
+          {
+            "term": "Comida",
+            "text": "o acarajé é um exemplo trabalhado nas atividades."
+          },
+          {
+            "term": "Música e movimento",
+            "text": "berimbau, capoeira, jongo, maracatu e samba de roda aparecem na lista."
+          },
+          {
+            "term": "Memória e religião",
+            "text": "história oral, griôs, orixás e povos de terreiro também fazem parte do estudo."
+          },
+          {
+            "term": "Resistência",
+            "text": "quilombos e Zumbi dos Palmares remetem às lutas contra a escravidão."
+          }
+        ],
+        "remember": "A contribuição africana está na cultura, nos conhecimentos, no trabalho e nas lutas por direitos.",
+        "tone": "mint",
+        "quizId": "history3-culture"
+      },
+      {
+        "id": "h3-diaspora",
+        "number": "07",
+        "icon": "🌊",
+        "title": "Diáspora e formação do Brasil",
+        "subtitle": "Contribuições, violência e combate ao racismo",
+        "intro": "Diáspora é o deslocamento de um povo para diferentes regiões. No estudo, a diáspora africana inclui a retirada forçada de milhões de pessoas da África pelo tráfico transatlântico.",
+        "facts": [
+          {
+            "term": "Forçada",
+            "text": "as pessoas eram retiradas de suas terras contra a própria vontade."
+          },
+          {
+            "term": "Estimativas do texto",
+            "text": "entre os séculos XVI e XIX, cerca de 12 milhões foram transportados; aproximadamente 40% tiveram o Brasil como destino."
+          },
+          {
+            "term": "Formação do país",
+            "text": "africanos e descendentes trabalharam, formaram famílias, resistiram e participaram da construção do Brasil."
+          },
+          {
+            "term": "Reconhecimento",
+            "text": "valorizar contribuições exige também lembrar a violência e combater o racismo."
+          }
+        ],
+        "remember": "A contribuição cultural não apaga a violência da escravidão. Reconhecer essa história ajuda a combater o racismo.",
+        "tone": "blue",
+        "quizId": "history3-diaspora"
+      }
+    ]
+  },
+  "historyDeepStudyByLesson": {
+    "h3-diversity": {
+      "title": "Um continente diverso, com conhecimentos e governos",
+      "paragraphs": [
+        "Um continente reúne países e muitas sociedades. Não devemos falar como se todas as pessoas africanas tivessem uma única cultura.",
+        "Muito antes do domínio europeu, já havia cidades, reinos, produção de alimentos, trocas e conhecimentos. As pessoas africanas continuam criando e transformando suas sociedades."
+      ],
+      "vocabulary": [
+        [
+          "🌍",
+          "Continente",
+          "grande porção de terras que reúne países"
+        ],
+        [
+          "🎨",
+          "Diversidade",
+          "existência de diferenças entre povos e modos de viver"
+        ],
+        [
+          "🏛️",
+          "Reino",
+          "forma de organização política governada por um rei ou uma rainha"
+        ]
+      ],
+      "example": "Dizer que toda a África tem uma só língua apaga as diferenças entre seus povos.",
+      "challenge": "Explique por que estudar a África somente pela escravidão conta uma história incompleta. Dê dois exemplos de sua diversidade."
+    },
+    "h3-origins": {
+      "title": "Fósseis ajudam a conhecer o passado",
+      "paragraphs": [
+        "Os primeiros seres humanos não deixaram relatos escritos sobre sua origem. Por isso, pesquisadores estudam vestígios materiais, incluindo fósseis.",
+        "A expressão berço da humanidade se refere à origem humana. Ela não significa que a África seja um país ou que todos os seus povos tenham a mesma história."
+      ],
+      "vocabulary": [
+        [
+          "🔎",
+          "Evidência",
+          "vestígio que ajuda a sustentar uma explicação"
+        ],
+        [
+          "🦴",
+          "Fóssil",
+          "resto ou marca de um ser vivo antigo"
+        ],
+        [
+          "🌱",
+          "Origem",
+          "começo de algo"
+        ]
+      ],
+      "example": "Um fóssil humano encontrado e estudado ajuda a conhecer seres humanos que viveram há muito tempo.",
+      "challenge": "Por que a África é chamada de berço da humanidade? Que descoberta ajuda a estudar esse passado?"
+    },
+    "h3-slavery": {
+      "title": "Regras diferentes não tornavam a escravidão justa",
+      "paragraphs": [
+        "No material, a escravidão doméstica aparece ligada à casa ou à comunidade de quem dominava a pessoa. Não se deve confundir proximidade com liberdade.",
+        "Também havia comércio de pessoas escravizadas para outras regiões. O tráfico transatlântico ampliou muito essa exploração e levou milhões de pessoas à força para as Américas.",
+        "O texto também cita redes de comércio ligadas ao norte da África antes da expansão portuguesa. Com os portugueses, o tráfico pelo Atlântico ganhou grande escala. Isso não significa que todos os africanos eram escravizados ou participavam desse comércio.",
+        "As regras variaram no tempo e no espaço. Evite afirmações como todos eram escravizados, todos trabalhavam em casas ou era igual em todo lugar.",
+        "Além de guerras e dívidas, o material cita, em situações específicas, punições por delitos graves e venda de membros de comunidades em dificuldades. São exemplos de algumas sociedades: não eram uma regra única para todo o continente e não justificam a escravidão."
+      ],
+      "vocabulary": [
+        [
+          "🕊️",
+          "Liberdade",
+          "poder fazer escolhas sobre a própria vida"
+        ],
+        [
+          "⛓️",
+          "Escravização",
+          "transformação de uma pessoa em alguém dominado e sem liberdade"
+        ],
+        [
+          "🏠",
+          "Doméstica",
+          "ligada à casa ou à comunidade"
+        ]
+      ],
+      "example": "Uma pessoa obrigada a trabalhar, sem poder decidir se queria ficar ou sair, não era livre, mesmo vivendo perto da família que a dominava.",
+      "challenge": "Compare escravidão doméstica e venda de pessoas para outras regiões. O que muda? O que as duas situações retiram da pessoa?"
+    },
+    "h3-routes": {
+      "title": "Saara e oceano Atlântico",
+      "paragraphs": [
+        "Para comparar rotas, observe por onde passavam, como as pessoas eram transportadas e quais regiões eram ligadas.",
+        "Não é correto afirmar que só mercadorias circulavam nessas rotas. Houve comércio de pessoas escravizadas, uma grave violência contra seres humanos."
+      ],
+      "vocabulary": [
+        [
+          "🏜️",
+          "Transaariana",
+          "através do deserto do Saara"
+        ],
+        [
+          "🌊",
+          "Transatlântica",
+          "através do oceano Atlântico"
+        ],
+        [
+          "🐪",
+          "Caravana",
+          "grupo que percorre um trajeto em conjunto"
+        ]
+      ],
+      "example": "Caravanas no deserto: rota transaariana. Navios entre África e Américas: rota transatlântica.",
+      "challenge": "Monte uma comparação com três itens: espaço atravessado, transporte e o que ou quem circulava."
+    },
+    "h3-colonization": {
+      "title": "Uma sequência histórica para compreender",
+      "paragraphs": [
+        "A presença de história e de governos africanos vem antes da colonização europeia. Por isso, não faz sentido começar a história africana com a chegada dos colonizadores.",
+        "Independência significa deixar de estar sob o domínio político de outro país. As diferentes sociedades viveram processos próprios; não ocorreu tudo de uma única vez."
+      ],
+      "vocabulary": [
+        [
+          "🏛️",
+          "Colonização",
+          "domínio de territórios e povos por uma potência"
+        ],
+        [
+          "🕊️",
+          "Independência",
+          "fim do domínio político colonial"
+        ],
+        [
+          "📜",
+          "Sequência histórica",
+          "organização de acontecimentos no tempo"
+        ]
+      ],
+      "example": "Se uma atividade pede a ordem histórica, primeiro vêm as sociedades já organizadas, depois o domínio europeu e, mais tarde, as independências.",
+      "challenge": "Explique como uma divisão territorial feita sem respeitar os povos locais pode causar problemas."
+    },
+    "h3-culture": {
+      "title": "Criações, conhecimentos e tradições vivas",
+      "paragraphs": [
+        "Cultura não é só comida ou festa. Inclui palavras, conhecimentos, memórias, literatura, músicas, crenças e maneiras de celebrar.",
+        "As manifestações afro-brasileiras continuam vivas e se transformam. Devem ser reconhecidas e respeitadas, incluindo suas dimensões religiosas.",
+        "Quilombos foram espaços de resistência à escravidão. Zumbi dos Palmares é uma referência dessa resistência."
+      ],
+      "vocabulary": [
+        [
+          "🥁",
+          "Cultura afro-brasileira",
+          "expressões negras formadas na história do Brasil"
+        ],
+        [
+          "🗣️",
+          "História oral",
+          "memória transmitida pela fala"
+        ],
+        [
+          "✊",
+          "Resistência",
+          "ação contra a dominação e a injustiça"
+        ],
+        [
+          "🏘️",
+          "Quilombo",
+          "comunidade ligada à resistência à escravidão"
+        ],
+        [
+          "🗣️",
+          "Griô",
+          "pessoa que preserva e transmite histórias e conhecimentos pela oralidade"
+        ],
+        [
+          "🕯️",
+          "Orixás",
+          "divindades de religiões de matriz africana"
+        ],
+        [
+          "📚",
+          "Literatura afro-brasileira",
+          "produção literária ligada a experiências e expressões negras no Brasil"
+        ]
+      ],
+      "example": "Acarajé: alimentação e tradição. Berimbau: música ligada à capoeira. Quilombo: resistência.",
+      "challenge": "Escolha duas manifestações e explique sua relação com a cultura afro-brasileira. Depois, cite um exemplo de resistência."
+    },
+    "h3-diaspora": {
+      "title": "Contribuições, violência e combate ao racismo",
+      "paragraphs": [
+        "A população brasileira se formou com contribuições de povos indígenas, africanos, europeus e outros grupos. Não se deve reduzir a participação africana ao trabalho na agricultura.",
+        "Os números do texto são estimativas históricas aproximadas. Para esta revisão, importa compreender a dimensão do deslocamento e o papel do Brasil nesse processo.",
+        "Africanos e seus descendentes preservaram e criaram culturas, conhecimentos e formas de resistência. Estudar isso não transforma a escravidão em algo positivo ou necessário."
+      ],
+      "vocabulary": [
+        [
+          "🌍",
+          "Diáspora",
+          "deslocamento de um povo para diferentes regiões"
+        ],
+        [
+          "🧭",
+          "Forçada",
+          "feita contra a vontade de quem foi deslocado"
+        ],
+        [
+          "✊",
+          "Racismo",
+          "discriminação e desigualdade relacionadas à raça ou à cor"
+        ]
+      ],
+      "example": "Conhecer a capoeira e o acarajé é valorizar contribuições. Reconhecer a escravidão e enfrentar o racismo também faz parte desse estudo.",
+      "challenge": "Explique por que precisamos estudar tanto as contribuições culturais quanto a violência da escravidão."
+    }
+  },
+  "historyQuiz": [
+    {
+      "id": 1,
+      "topic": "África: muitas histórias",
+      "prompt": "Por que a África não pode ser chamada de um único país?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Pense na diferença entre país e continente.",
+        "Um continente pode reunir muitos países."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Porque é um continente que reúne vários países.",
+          "explanation": "Correto. A África reúne vários países e muitos povos."
+        },
+        {
+          "id": "b",
+          "label": "Porque é uma cidade.",
+          "explanation": "Reveja: um continente não é uma cidade."
+        },
+        {
+          "id": "c",
+          "label": "Porque todos falam a mesma língua.",
+          "explanation": "Reveja: há muitas línguas no continente."
+        },
+        {
+          "id": "d",
+          "label": "Porque não existem governos.",
+          "explanation": "Reveja: há países e diferentes governos."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "África: muitas histórias",
+      "prompt": "Qual exemplo mostra a diversidade africana?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Diversidade tem relação com diferenças.",
+        "Compare línguas e culturas de povos diferentes."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Uma única cultura em todos os lugares.",
+          "explanation": "Reveja: as culturas não são todas iguais."
+        },
+        {
+          "id": "b",
+          "label": "Diferentes línguas, religiões e modos de viver.",
+          "explanation": "Correto. A diversidade aparece nas línguas, crenças, culturas e formas de organização."
+        },
+        {
+          "id": "c",
+          "label": "Ausência de história antes dos europeus.",
+          "explanation": "Reveja: já havia sociedades com história."
+        },
+        {
+          "id": "d",
+          "label": "Todos os povos com a mesma organização.",
+          "explanation": "Reveja: as organizações também variavam."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "África: muitas histórias",
+      "prompt": "O que os exemplos dos reinos do Congo e do Mali ajudam a entender?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Lembre o que existia antes do domínio europeu.",
+        "Um reino é uma forma de organização política."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Que a história começou na colonização.",
+          "explanation": "Reveja: esses reinos mostram uma história anterior."
+        },
+        {
+          "id": "b",
+          "label": "Que todos os reinos eram iguais.",
+          "explanation": "Reveja: os exemplos mostram histórias diferentes."
+        },
+        {
+          "id": "c",
+          "label": "Que já havia formas de governo e organização na África.",
+          "explanation": "Correto. As sociedades africanas já tinham governos e conhecimentos."
+        },
+        {
+          "id": "d",
+          "label": "Que não havia comércio.",
+          "explanation": "Reveja: povos africanos desenvolveram comércio."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "África: muitas histórias",
+      "prompt": "Estudar a África somente pela escravidão é suficiente?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Pense no que ficaria de fora desse estudo.",
+        "Agricultura, artes e governos também fazem parte da história."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sim, porque não havia outras atividades.",
+          "explanation": "Reveja: havia agricultura, artes, comércio e governos."
+        },
+        {
+          "id": "b",
+          "label": "Sim, porque todos tinham a mesma história.",
+          "explanation": "Reveja: as sociedades têm histórias diversas."
+        },
+        {
+          "id": "c",
+          "label": "Não, porque a escravidão nunca existiu.",
+          "explanation": "Reveja: a escravidão existiu e precisa ser estudada."
+        },
+        {
+          "id": "d",
+          "label": "Não, porque esconderia conhecimentos, culturas e outras histórias.",
+          "explanation": "Correto. Devemos estudar a escravidão dentro de uma história muito mais ampla."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "O berço da humanidade",
+      "prompt": "O que significa berço da humanidade?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Berço pode indicar começo.",
+        "A expressão se refere à origem humana."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Lugar de origem dos primeiros seres humanos.",
+          "explanation": "Correto. A África é chamada assim por sua relação com a origem dos primeiros seres humanos."
+        },
+        {
+          "id": "b",
+          "label": "Um país com uma única cultura.",
+          "explanation": "Reveja: a expressão não trata de uma cultura única."
+        },
+        {
+          "id": "c",
+          "label": "Lugar onde começou a colonização europeia.",
+          "explanation": "Reveja: trata da origem humana."
+        },
+        {
+          "id": "d",
+          "label": "Uma cidade chamada Berço.",
+          "explanation": "Reveja: é uma expressão sobre a origem."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "O berço da humanidade",
+      "prompt": "Que descobertas ajudam a estudar a origem humana na África?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Busque um vestígio de seres vivos antigos.",
+        "Restos ou marcas antigos podem ser preservados."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Apenas notícias atuais.",
+          "explanation": "Reveja: notícias atuais não são vestígios desses seres humanos."
+        },
+        {
+          "id": "b",
+          "label": "Fósseis de seres humanos antigos.",
+          "explanation": "Correto. Fósseis ajudam a estudar a evolução humana."
+        },
+        {
+          "id": "c",
+          "label": "Somente mapas coloniais.",
+          "explanation": "Reveja: os mapas coloniais são muito mais recentes."
+        },
+        {
+          "id": "d",
+          "label": "Apenas anúncios de produtos.",
+          "explanation": "Reveja: anúncios não comprovam a origem humana."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "O berço da humanidade",
+      "prompt": "Qual é uma atitude de quem pesquisa o passado?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Como podemos sustentar uma explicação?",
+        "O pesquisador examina o que foi encontrado."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Inventar respostas sem examinar nada.",
+          "explanation": "Reveja: uma explicação precisa de evidências."
+        },
+        {
+          "id": "b",
+          "label": "Usar somente a imaginação.",
+          "explanation": "Reveja: imaginação não substitui evidências."
+        },
+        {
+          "id": "c",
+          "label": "Estudar vestígios e comparar evidências.",
+          "explanation": "Correto. Vestígios e evidências ajudam a construir explicações sobre o passado."
+        },
+        {
+          "id": "d",
+          "label": "Ignorar todas as descobertas.",
+          "explanation": "Reveja: descobertas ajudam a pesquisa."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "O berço da humanidade",
+      "prompt": "Qual frase usa corretamente as ideias estudadas?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Junte origem humana e diversidade.",
+        "Uma mesma região pode ter uma história antiga e muitos povos diferentes."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "A África é um país sem diferenças.",
+          "explanation": "Reveja: é continente diverso."
+        },
+        {
+          "id": "b",
+          "label": "Ser berço da humanidade significa ter só uma língua.",
+          "explanation": "Reveja: origem humana não significa cultura única."
+        },
+        {
+          "id": "c",
+          "label": "A história africana começou com os navios europeus.",
+          "explanation": "Reveja: a história africana é muito anterior."
+        },
+        {
+          "id": "d",
+          "label": "A África reúne muitos povos e tem evidências antigas da história humana.",
+          "explanation": "Correto. A origem humana e a diversidade são ideias compatíveis."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "Escravidão e falta de liberdade",
+      "prompt": "O que podia levar à escravização em algumas sociedades africanas?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Lembre os exemplos de situações do material.",
+        "Prisioneiros de guerra e pessoas com dívidas são exemplos citados."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Guerras ou dívidas, conforme o lugar e a época.",
+          "explanation": "Correto. As regras variavam entre sociedades e épocas."
+        },
+        {
+          "id": "b",
+          "label": "Escolher livremente um emprego.",
+          "explanation": "Reveja: escravidão envolve falta de liberdade."
+        },
+        {
+          "id": "c",
+          "label": "Todas as pessoas terem a mesma cultura.",
+          "explanation": "Reveja: isso não explica a escravização."
+        },
+        {
+          "id": "d",
+          "label": "Somente a chegada dos europeus.",
+          "explanation": "Reveja: já havia formas anteriores de escravidão."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "topic": "Escravidão e falta de liberdade",
+      "prompt": "Viver perto da família que dominava a pessoa significava ser livre?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Observe se a pessoa podia fazer suas próprias escolhas.",
+        "Estar perto de uma família não garante o direito de sair ou decidir."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sim, a proximidade garantia liberdade.",
+          "explanation": "Reveja: proximidade não significa liberdade."
+        },
+        {
+          "id": "b",
+          "label": "Não, pois ela não podia escolher livremente sua vida.",
+          "explanation": "Correto. Integração ou proximidade não apagavam a falta de liberdade."
+        },
+        {
+          "id": "c",
+          "label": "Sim, toda escravidão era um trabalho escolhido.",
+          "explanation": "Reveja: não era uma escolha livre."
+        },
+        {
+          "id": "d",
+          "label": "Sim, trabalhar em casa nunca pode ser forçado.",
+          "explanation": "Reveja: o trabalho doméstico também podia ser imposto."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "Escravidão e falta de liberdade",
+      "prompt": "Qual afirmação evita uma generalização errada?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Cuidado com palavras como todos e sempre.",
+        "O material destaca variações conforme lugar e época."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Tudo era igual em toda a África.",
+          "explanation": "Reveja: existiam diferenças."
+        },
+        {
+          "id": "b",
+          "label": "Todas as pessoas trabalhavam em casas.",
+          "explanation": "Reveja: também havia trabalho agrícola e outras situações."
+        },
+        {
+          "id": "c",
+          "label": "As regras da escravidão variavam entre sociedades e épocas.",
+          "explanation": "Correto. A diversidade também precisa ser considerada no estudo da escravidão."
+        },
+        {
+          "id": "d",
+          "label": "Era idêntica à escravidão colonial brasileira.",
+          "explanation": "Reveja: as situações históricas não eram idênticas."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "Escravidão e falta de liberdade",
+      "prompt": "Qual diferença aparece na comparação proposta pelo material?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Compare permanência na comunidade e deslocamento.",
+        "A mudança de região não torna nenhuma das situações justa."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Na doméstica todos eram livres.",
+          "explanation": "Reveja: não tinham liberdade para escolher sua vida."
+        },
+        {
+          "id": "b",
+          "label": "No comércio as pessoas viajavam sempre por vontade própria.",
+          "explanation": "Reveja: eram tratadas como mercadoria e forçadas."
+        },
+        {
+          "id": "c",
+          "label": "As duas situações eram passeios.",
+          "explanation": "Reveja: ambas envolviam dominação e violência."
+        },
+        {
+          "id": "d",
+          "label": "Na escravidão doméstica havia vínculo com a casa ou comunidade; no comércio para outras regiões, pessoas eram vendidas e deslocadas.",
+          "explanation": "Correto. Há diferenças, mas ambas retiravam a liberdade das pessoas."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "Duas rotas, dois espaços",
+      "prompt": "Qual associação está correta?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Encontre Saara no nome da rota.",
+        "Caravanas cruzavam o deserto."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Transaariana: deserto do Saara e caravanas.",
+          "explanation": "Correto. A rota transaariana atravessava o Saara."
+        },
+        {
+          "id": "b",
+          "label": "Transaariana: oceano Pacífico e aviões.",
+          "explanation": "Reveja: o nome se refere ao Saara."
+        },
+        {
+          "id": "c",
+          "label": "Transatlântica: deserto do Saara e caravanas.",
+          "explanation": "Reveja: essa associação é transaariana."
+        },
+        {
+          "id": "d",
+          "label": "Transaariana: somente cidades brasileiras.",
+          "explanation": "Reveja: ligava regiões através do Saara."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "Duas rotas, dois espaços",
+      "prompt": "Como milhões de africanos foram levados à força para as Américas?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Qual oceano separa África e Américas?",
+        "Transatlântico significa através do Atlântico."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Em caravanas pelo Saara até o Brasil.",
+          "explanation": "Reveja: a travessia até as Américas era marítima."
+        },
+        {
+          "id": "b",
+          "label": "Em navios pela rota transatlântica.",
+          "explanation": "Correto. Navios atravessavam o Atlântico levando pessoas escravizadas."
+        },
+        {
+          "id": "c",
+          "label": "Em aviões no século XVI.",
+          "explanation": "Reveja: o transporte citado é o navio."
+        },
+        {
+          "id": "d",
+          "label": "Em viagens de férias escolhidas.",
+          "explanation": "Reveja: o deslocamento foi forçado."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "Duas rotas, dois espaços",
+      "prompt": "Só mercadorias circulavam nas rotas estudadas?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Lembre a violência descrita no material.",
+        "As rotas também foram usadas para deslocar pessoas sem liberdade."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sim, apenas ouro.",
+          "explanation": "Reveja: também circulavam sal, outros produtos e pessoas escravizadas."
+        },
+        {
+          "id": "b",
+          "label": "Sim, apenas alimentos.",
+          "explanation": "Reveja: o texto também trata do comércio de pessoas."
+        },
+        {
+          "id": "c",
+          "label": "Não. Também houve comércio de pessoas escravizadas.",
+          "explanation": "Correto. Seres humanos foram tratados como mercadoria, uma grave violência."
+        },
+        {
+          "id": "d",
+          "label": "Não havia nenhuma circulação.",
+          "explanation": "Reveja: as rotas ligavam regiões e movimentavam produtos e pessoas."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "topic": "Duas rotas, dois espaços",
+      "prompt": "Qual comparação distingue as duas rotas?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Compare os espaços atravessados.",
+        "Uma rota é associada a deserto e a outra a oceano."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "As duas cruzavam somente o mesmo deserto.",
+          "explanation": "Reveja: a transatlântica era marítima."
+        },
+        {
+          "id": "b",
+          "label": "Uma existiu apenas depois de a outra acabar.",
+          "explanation": "Reveja: suas épocas se sobrepuseram em parte."
+        },
+        {
+          "id": "c",
+          "label": "As duas usavam somente aviões.",
+          "explanation": "Reveja: o material apresenta caravanas e navios."
+        },
+        {
+          "id": "d",
+          "label": "Uma cruzava o Saara; a outra, o oceano Atlântico.",
+          "explanation": "Correto. As rotas passavam por espaços diferentes e suas épocas se sobrepuseram em parte."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "Colonização e independências",
+      "prompt": "Qual é a sequência histórica correta?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "O que já existia antes da chegada dos colonizadores?",
+        "As sociedades africanas tinham conhecimentos e governos antes da colonização."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sociedades africanas organizadas → colonização europeia → processos de independência.",
+          "explanation": "Correto. Essa sequência reconhece a história africana anterior ao domínio europeu."
+        },
+        {
+          "id": "b",
+          "label": "Independência → colonização → primeiras sociedades.",
+          "explanation": "Reveja: as sociedades já existiam antes do domínio europeu."
+        },
+        {
+          "id": "c",
+          "label": "Colonização → independência → começo de toda a história africana.",
+          "explanation": "Reveja: a história africana começou muito antes."
+        },
+        {
+          "id": "d",
+          "label": "Independência → primeiras sociedades → colonização.",
+          "explanation": "Reveja: essa ordem coloca a independência antes do domínio colonial."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "Colonização e independências",
+      "prompt": "A divisão colonial dos territórios respeitou sempre os povos locais?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Pense em quem controlava as decisões coloniais.",
+        "Os interesses das potências europeias orientavam as divisões."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sim, todas as identidades foram respeitadas.",
+          "explanation": "Reveja: o material destaca o desrespeito a identidades."
+        },
+        {
+          "id": "b",
+          "label": "Não. Muitas divisões seguiram interesses dos colonizadores.",
+          "explanation": "Correto. Fronteiras impostas podiam desrespeitar os povos e contribuir para conflitos."
+        },
+        {
+          "id": "c",
+          "label": "Sim, só os povos locais tomaram as decisões.",
+          "explanation": "Reveja: potências europeias impuseram seus interesses."
+        },
+        {
+          "id": "d",
+          "label": "Não havia povos vivendo ali.",
+          "explanation": "Reveja: já havia sociedades organizadas."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "topic": "Colonização e independências",
+      "prompt": "O que significa independência nesse estudo?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Independência se relaciona ao fim de uma dominação.",
+        "Pense em decidir o próprio governo sem o controle colonial."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Passar a obedecer a outra potência.",
+          "explanation": "Reveja: isso mantém uma forma de dominação."
+        },
+        {
+          "id": "b",
+          "label": "Apagar a história anterior.",
+          "explanation": "Reveja: a história permanece."
+        },
+        {
+          "id": "c",
+          "label": "Deixar de estar sob o domínio político colonial.",
+          "explanation": "Correto. É a saída do domínio político colonial."
+        },
+        {
+          "id": "d",
+          "label": "Todos os povos passarem a ter uma só cultura.",
+          "explanation": "Reveja: independência não elimina a diversidade."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "Colonização e independências",
+      "prompt": "Que período o material destaca para os processos de independência?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Lembre o marco histórico citado no texto.",
+        "O texto menciona uma guerra mundial e o período posterior a ela."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Antes de existirem sociedades africanas.",
+          "explanation": "Reveja: as sociedades são muito anteriores."
+        },
+        {
+          "id": "b",
+          "label": "Somente antes de surgir a humanidade.",
+          "explanation": "Reveja: não faz sentido histórico."
+        },
+        {
+          "id": "c",
+          "label": "Apenas antes de qualquer colonização.",
+          "explanation": "Reveja: a independência vem após o domínio colonial."
+        },
+        {
+          "id": "d",
+          "label": "Após a Segunda Guerra Mundial.",
+          "explanation": "Correto. O material destaca as independências no período após a Segunda Guerra Mundial."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "Cultura afro-brasileira e resistência",
+      "prompt": "Qual conjunto traz exemplos de cultura afro-brasileira do material?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Pense em comida, movimento e música.",
+        "A atividade apresenta um vocabulário da cultura afro-brasileira."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Acarajé, capoeira e samba de roda.",
+          "explanation": "Correto. São expressões citadas nas atividades."
+        },
+        {
+          "id": "b",
+          "label": "Somente moedas e senhas.",
+          "explanation": "Reveja: esses não são os exemplos culturais trabalhados."
+        },
+        {
+          "id": "c",
+          "label": "Somente mapas de fronteiras.",
+          "explanation": "Reveja: o estudo cultural apresenta comida, música e outras expressões."
+        },
+        {
+          "id": "d",
+          "label": "Somente fósseis humanos.",
+          "explanation": "Reveja: fósseis se relacionam à origem humana."
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "Cultura afro-brasileira e resistência",
+      "prompt": "A cultura afro-brasileira inclui apenas alimentos?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Lembre a variedade do vocabulário estudado.",
+        "Berimbau, história oral e povos de terreiro aparecem na lista."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Sim, não há contribuições em outras áreas.",
+          "explanation": "Reveja: há muitas outras expressões."
+        },
+        {
+          "id": "b",
+          "label": "Não. Inclui músicas, conhecimentos, memórias, crenças e outras expressões.",
+          "explanation": "Correto. A contribuição cultural é ampla e continua viva."
+        },
+        {
+          "id": "c",
+          "label": "Sim, música não faz parte de cultura.",
+          "explanation": "Reveja: música é uma expressão cultural."
+        },
+        {
+          "id": "d",
+          "label": "Não, porque nenhuma comida faz parte da cultura.",
+          "explanation": "Reveja: comidas também integram tradições culturais."
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "Cultura afro-brasileira e resistência",
+      "prompt": "Qual relação entre quilombos e Zumbi dos Palmares aparece na revisão?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Pense nas lutas contra a dominação.",
+        "A palavra resistência ajuda a fazer a associação."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Defesa da falta de liberdade.",
+          "explanation": "Reveja: a resistência enfrentava a dominação."
+        },
+        {
+          "id": "b",
+          "label": "Somente venda de mercadorias.",
+          "explanation": "Reveja: essa não é a relação estudada."
+        },
+        {
+          "id": "c",
+          "label": "Resistência à escravidão.",
+          "explanation": "Correto. Quilombos e Zumbi são referências de resistência à escravidão."
+        },
+        {
+          "id": "d",
+          "label": "Origem dos fósseis humanos.",
+          "explanation": "Reveja: fósseis pertencem a outro tema."
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "Cultura afro-brasileira e resistência",
+      "prompt": "O que é história oral?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Oral está relacionado à fala.",
+        "Pense em histórias e saberes passados entre gerações por meio de relatos."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Uma cultura sem memória.",
+          "explanation": "Reveja: a oralidade preserva e transmite memória."
+        },
+        {
+          "id": "b",
+          "label": "Somente um documento digitado.",
+          "explanation": "Reveja: a característica é a transmissão oral."
+        },
+        {
+          "id": "c",
+          "label": "Um tipo de transporte marítimo.",
+          "explanation": "Reveja: não é um meio de transporte."
+        },
+        {
+          "id": "d",
+          "label": "Transmissão de memórias e conhecimentos pela fala.",
+          "explanation": "Correto. A fala pode transmitir histórias, memórias e conhecimentos."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "Diáspora e formação do Brasil",
+      "prompt": "O que significa diáspora?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Pense no movimento de pessoas.",
+        "Um povo passa a viver em diferentes lugares."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Deslocamento de um povo para diferentes regiões.",
+          "explanation": "Correto. Diáspora é o deslocamento de um povo para diferentes regiões."
+        },
+        {
+          "id": "b",
+          "label": "Criação de um reino em um só lugar.",
+          "explanation": "Reveja: a ideia é dispersão ou deslocamento."
+        },
+        {
+          "id": "c",
+          "label": "Somente uma compra de produtos.",
+          "explanation": "Reveja: não define movimento de um povo."
+        },
+        {
+          "id": "d",
+          "label": "União de todos em um só país.",
+          "explanation": "Reveja: a diáspora envolve diferentes regiões."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "Diáspora e formação do Brasil",
+      "prompt": "Por que a diáspora africana estudada é chamada de forçada?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Observe se havia liberdade para escolher.",
+        "O tráfico arrancava pessoas de suas terras."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Porque escolheram viajar de férias.",
+          "explanation": "Reveja: não se tratou de turismo."
+        },
+        {
+          "id": "b",
+          "label": "Porque pessoas foram retiradas de suas terras contra a própria vontade.",
+          "explanation": "Correto. Milhões foram deslocados sem poder decidir livremente."
+        },
+        {
+          "id": "c",
+          "label": "Porque todas receberam convites e puderam recusar.",
+          "explanation": "Reveja: não havia escolha livre."
+        },
+        {
+          "id": "d",
+          "label": "Porque não existiam famílias na África.",
+          "explanation": "Reveja: as pessoas tinham famílias e comunidades."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "Diáspora e formação do Brasil",
+      "prompt": "Que estimativas o texto apresenta para o tráfico transatlântico?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Os valores são aproximados e mostram a dimensão da violência.",
+        "Lembre: milhões de pessoas e uma grande parcela destinada ao Brasil."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "12 pessoas; 100% destinadas ao Brasil.",
+          "explanation": "Reveja: a escala foi de milhões e o Brasil não foi o único destino."
+        },
+        {
+          "id": "b",
+          "label": "12 milhões; nenhuma destinada ao Brasil.",
+          "explanation": "Reveja: o Brasil recebeu uma grande parcela."
+        },
+        {
+          "id": "c",
+          "label": "Cerca de 12 milhões de pessoas; aproximadamente 40% destinadas ao Brasil.",
+          "explanation": "Correto. São estimativas históricas apresentadas no material, entre os séculos XVI e XIX."
+        },
+        {
+          "id": "d",
+          "label": "Apenas mil pessoas; 1% destinadas ao Brasil.",
+          "explanation": "Reveja: não são as estimativas apresentadas."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "topic": "Diáspora e formação do Brasil",
+      "prompt": "Qual atitude reúne as duas ideias centrais do estudo?",
+      "support": "Leia com calma e compare as quatro alternativas. Se precisar, você receberá uma pista ao tentar.",
+      "hints": [
+        "Não deixe de lado nem as contribuições nem os direitos das pessoas.",
+        "Reconhecimento cultural e combate ao racismo precisam caminhar juntos."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Valorizar as festas e esquecer a escravidão.",
+          "explanation": "Reveja: as contribuições não apagam a violência."
+        },
+        {
+          "id": "b",
+          "label": "Afirmar que africanos não participaram da formação do Brasil.",
+          "explanation": "Reveja: a participação foi profunda."
+        },
+        {
+          "id": "c",
+          "label": "Dizer que a violência foi necessária para criar cultura.",
+          "explanation": "Reveja: a criação cultural não justifica a escravidão."
+        },
+        {
+          "id": "d",
+          "label": "Valorizar as contribuições africanas, lembrar a violência e combater o racismo.",
+          "explanation": "Correto. Estudar contribuições e violência ajuda a compreender a história e enfrentar o racismo."
+        }
+      ]
+    }
+  ],
+  "historyInfographicPages": [
+    {
+      "src": "/infographics/history3-1.png",
+      "alt": "Diversidade africana e fósseis como evidência da origem humana",
+      "width": 1024,
+      "height": 1536,
+      "label": "África e origens"
+    },
+    {
+      "src": "/infographics/history3-2.png",
+      "alt": "Variações da escravidão e a falta de liberdade",
+      "width": 1024,
+      "height": 1536,
+      "label": "Liberdade"
+    },
+    {
+      "src": "/infographics/history3-3.png",
+      "alt": "Comparação entre rotas transaarianas e transatlânticas",
+      "width": 1024,
+      "height": 1536,
+      "label": "Rotas"
+    },
+    {
+      "src": "/infographics/history3-4.png",
+      "alt": "Sequência de sociedades, colonização e independências",
+      "width": 1024,
+      "height": 1536,
+      "label": "Colonização"
+    },
+    {
+      "src": "/infographics/history3-5.png",
+      "alt": "Exemplos de cultura afro-brasileira e resistência",
+      "width": 1024,
+      "height": 1536,
+      "label": "Cultura"
+    },
+    {
+      "src": "/infographics/history3-6.png",
+      "alt": "Diáspora forçada, formação do Brasil e combate ao racismo",
+      "width": 1024,
+      "height": 1536,
+      "label": "Diáspora"
+    }
+  ],
+  "historyDownloads": [
+    {
+      "id": "guide",
+      "src": "/materials/historia3-guia.pdf",
+      "label": "Guia de estudo e revisão",
+      "pages": 7
+    },
+    {
+      "id": "exam-a",
+      "src": "/materials/historia3-simulado-a.pdf",
+      "label": "Simulado A • para imprimir",
+      "pages": 4
+    },
+    {
+      "id": "exam-b",
+      "src": "/materials/historia3-simulado-b.pdf",
+      "label": "Simulado B • para imprimir",
+      "pages": 4
+    },
+    {
+      "id": "key",
+      "src": "/materials/historia3-gabarito.pdf",
+      "label": "Gabarito explicado • responsável",
+      "pages": 6
+    }
+  ]
+}
