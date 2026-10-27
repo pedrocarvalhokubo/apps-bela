@@ -1,0 +1,1644 @@
+{
+  "lessons": [
+    {
+      "id": "s3-fossil-discovery",
+      "number": "09",
+      "icon": "🔎",
+      "title": "Reading: a fossil discovery in Brazil",
+      "subtitle": "Leitura: pistas sobre a origem dos dinossauros",
+      "intro": "A fossil is evidence. Read what was found, where it was found and what scientists can learn from it.\n\nUm fóssil é uma evidência. Leia o que foi encontrado, onde e o que os cientistas podem aprender.",
+      "facts": [
+        {
+          "term": "A very old reptile / Um réptil muito antigo",
+          "text": "The school reading describes Gondwanax paraisensis, a small reptile with a long tail that lived about 237 million years ago, during the Triassic Period. It compares the animal with a small dog in size. This is a comparison of size, not a claim that it was a dog.\n\nO texto escolar descreve Gondwanax paraisensis, um pequeno réptil de cauda longa que viveu há cerca de 237 milhões de anos, no período Triássico. Compara o tamanho do animal ao de um cachorro pequeno; isso não significa que ele fosse um cachorro."
+        },
+        {
+          "term": "Discovery and study / Descoberta e estudo",
+          "text": "Pedro Lucas Porcela Aurélio found the fossil in Paraíso do Sul, in southern Brazil. The material was donated to CAPPA at the Federal University of Santa Maria. Paleontologist Rodrigo Temp Müller studied the bones. The finder and the researcher had different roles.\n\nPedro Lucas Porcela Aurélio encontrou o fóssil em Paraíso do Sul, no sul do Brasil. O material foi doado ao CAPPA da Universidade Federal de Santa Maria. O paleontólogo Rodrigo Temp Müller estudou os ossos. Quem encontrou e quem pesquisou tiveram papéis diferentes."
+        },
+        {
+          "term": "What can the evidence tell us? / O que a evidência revela?",
+          "text": "The fossil belongs to a group called silesaurids. Scientists debate whether these animals were early dinosaurs or very close relatives. Comparing their bones can help explain the origin and early evolution of dinosaurs. The reading presents a question being investigated, not proof that every ancient reptile was a dinosaur.\n\nO fóssil pertence a um grupo chamado silessaurídeos. Cientistas discutem se eram dinossauros primitivos ou parentes muito próximos. Comparar os ossos ajuda a entender a origem e a evolução inicial dos dinossauros. O texto apresenta uma questão em investigação, não uma prova de que todo réptil antigo era dinossauro."
+        }
+      ],
+      "remember": "Evidence helps us investigate. It does not answer every question at once.\n\nEvidências ajudam a investigar. Elas não respondem a todas as perguntas de uma vez.",
+      "tone": "teal",
+      "quizId": "science3-fossil-discovery"
+    },
+    {
+      "id": "s3-hurricane",
+      "number": "10",
+      "icon": "🌧️",
+      "title": "Reading: Hurricane Matthew",
+      "subtitle": "Leitura: observe, compare e explique",
+      "intro": "Hurricane Matthew affected Haiti and other places in 2016. Strong winds, heavy rain and waves changed landscapes. Compare evidence from before and after.\n\nO furacão Matthew atingiu o Haiti e outros lugares em 2016. Ventos fortes, chuva intensa e ondas mudaram paisagens. Compare evidências de antes e depois.",
+      "facts": [
+        {
+          "term": "Haiti from space / Haiti visto do espaço",
+          "text": "The satellite images near the Cavaillon River show more green vegetation before the hurricane and browner land afterwards. Damage to vegetation and sediment carried by water help explain the change. Green loss is an observation; explaining its cause requires the reading and other evidence.\n\nAs imagens de satélite próximas ao rio Cavaillon mostram mais vegetação verde antes do furacão e terreno mais amarronzado depois. Danos à vegetação e sedimentos transportados pela água ajudam a explicar a mudança. A perda de verde é uma observação; explicar a causa exige o texto e outras evidências."
+        },
+        {
+          "term": "Dunes on the coast / Dunas no litoral",
+          "text": "A separate before-and-after photograph in the material shows a new opening through a sand dune near St. Augustine, Florida, USA. Storm waves moved sand and opened a connection between the ocean and the estuary. These USGS dune photographs are from Florida; they are not satellite photographs of Haiti.\n\nOutra comparação do material mostra uma abertura nova numa duna próxima de St. Augustine, na Flórida, EUA. Ondas da tempestade transportaram areia e abriram uma ligação entre o oceano e o estuário. Essas fotos de dunas do USGS são da Flórida; não são imagens de satélite do Haiti."
+        },
+        {
+          "term": "Connect the processes / Relacione os processos",
+          "text": "Weathering breaks or changes rock in place. Erosion removes and transports material. Deposition leaves that material in a new place. Water carrying soil or waves carrying sand are examples of erosion. When the transported material settles, deposition happens. A storm can cause rapid natural changes. People also change landscapes through farming and construction.\n\nO intemperismo fragmenta ou altera rochas no local. A erosão remove e transporta material. A deposição deixa esse material em um novo lugar. Água levando solo ou ondas levando areia são exemplos de erosão. Quando o material transportado se acumula, ocorre deposição. Uma tempestade pode causar mudanças naturais rápidas. Pessoas também mudam paisagens com agricultura e construção."
+        }
+      ],
+      "remember": "Observe first. Explain with evidence. Keep the place and date of each image together.\n\nObserve primeiro. Explique com evidências. Mantenha o local e a data de cada imagem juntos.",
+      "tone": "teal",
+      "quizId": "science3-hurricane"
+    }
+  ],
+  "deepStudy": {
+    "s3-fossil-discovery": {
+      "title": "Reading: a fossil discovery in Brazil",
+      "paragraphs": [
+        "Read again and separate the observation from the explanation. Use a detail from the text to support each answer.\n\nReleia e separe a observação da explicação. Use um detalhe do texto para justificar cada resposta."
+      ],
+      "vocabulary": [
+        [
+          "🔎",
+          "fossil",
+          "fóssil"
+        ],
+        [
+          "🔎",
+          "reptile",
+          "réptil"
+        ],
+        [
+          "🔎",
+          "evidence",
+          "evidência"
+        ],
+        [
+          "🔎",
+          "Triassic",
+          "Triássico"
+        ],
+        [
+          "🔎",
+          "paleontologist",
+          "paleontólogo"
+        ]
+      ],
+      "example": "Where? Paraíso do Sul. When did the animal live? About 237 million years ago. Why study it? To investigate early dinosaur evolution.\n\nOnde? Paraíso do Sul. Quando o animal viveu? Há cerca de 237 milhões de anos. Por que estudá-lo? Para investigar a evolução inicial dos dinossauros.",
+      "challenge": "Explain the difference between discovering a fossil and studying its meaning.\n\nExplique a diferença entre encontrar um fóssil e estudar seu significado."
+    },
+    "s3-hurricane": {
+      "title": "Reading: Hurricane Matthew",
+      "paragraphs": [
+        "Read again and separate the observation from the explanation. Use a detail from the text to support each answer.\n\nReleia e separe a observação da explicação. Use um detalhe do texto para justificar cada resposta."
+      ],
+      "vocabulary": [
+        [
+          "🌧️",
+          "before / after",
+          "antes / depois"
+        ],
+        [
+          "🌧️",
+          "vegetation",
+          "vegetação"
+        ],
+        [
+          "🌧️",
+          "sediment",
+          "sedimento"
+        ],
+        [
+          "🌧️",
+          "dune",
+          "duna"
+        ],
+        [
+          "🌧️",
+          "deposition",
+          "deposição"
+        ]
+      ],
+      "example": "Observation: a gap appears in the dune. Explanation: storm waves eroded and transported sand.\n\nObservação: apareceu uma abertura na duna. Explicação: ondas da tempestade erodiram e transportaram areia.",
+      "challenge": "Describe two visible changes and explain one using erosion.\n\nDescreva duas mudanças visíveis e explique uma usando o conceito de erosão."
+    }
+  },
+  "extraFacts": {
+    "s3-rock-types": [
+      {
+        "term": "Examples and uses / Exemplos e usos",
+        "text": "Igneous: granite for buildings, basalt for roads, pumice as an abrasive. Sedimentary: sandstone for buildings and limestone for cement. Metamorphic: marble for sculptures and slate for roofing. Granite and rhyolite can form from similar magma but have different textures because of cooling rates. Devils Tower is made of phonolite porphyry, an igneous rock.\n\nÍgneas: granito em construções, basalto em estradas e pedra-pomes como abrasivo. Sedimentares: arenito em construções e calcário na produção de cimento. Metamórficas: mármore em esculturas e ardósia em telhados. Granito e riolito podem se formar de magma semelhante, mas apresentam texturas diferentes pela velocidade de resfriamento. Devils Tower é formado por fonolito porfirítico, uma rocha ígnea."
+      }
+    ],
+    "s3-landscapes": [
+      {
+        "term": "A visual vocabulary / Vocabulário visual",
+        "text": "A cliff is a steep rock face; a canyon is a deep valley with steep sides. A mesa has a broad flat top and steep sides; a butte is smaller. An isthmus is a narrow strip of land joining larger areas. A delta forms where a river deposits sediment. Dunes are hills of sand; a glacier is a large mass of ice moving slowly. A canal in the school guide is human-made, not a natural landform.\n\nUma falésia é uma face rochosa íngreme; um cânion é um vale profundo de lados íngremes. Uma mesa tem topo plano amplo e lados íngremes; um butte é menor. Um istmo é uma faixa estreita de terra unindo áreas maiores. Um delta se forma onde um rio deposita sedimentos. Dunas são montes de areia; uma geleira é uma grande massa de gelo que se move lentamente. O canal do guia escolar é construído pelas pessoas, não uma forma natural do relevo."
+      }
+    ],
+    "s3-rocks-minerals": [
+      {
+        "term": "More mineral uses / Mais usos dos minerais",
+        "text": "Calcite is a main mineral in natural chalk. Halite is the mineral form of common salt. Some drawing materials use mineral pigments or fillers. Quartz helps clocks keep time; it is not a battery that powers them. Graphite in a pencil is not the metal lead.\n\nCalcita é um dos principais minerais do giz natural. Halita é a forma mineral do sal comum. Alguns materiais de desenho usam pigmentos ou cargas minerais. Quartzo ajuda relógios a marcar o tempo; não é uma bateria que fornece energia. O grafite do lápis não é o metal chumbo."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": 3401,
+      "topic": "s3-sound",
+      "prompt": "Which change makes a sound higher-pitched? / O que deixa o som mais agudo?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Separate pitch from volume. / Separe altura e volume.",
+        "Think about speed, not size. / Pense na rapidez, não no tamanho."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Faster vibrations / Vibrações mais rápidas",
+          "explanation": "Pitch increases with vibration rate. / A altura aumenta com a frequência das vibrações."
+        },
+        {
+          "id": "b",
+          "label": "Bigger vibrations / Vibrações maiores",
+          "explanation": "This changes loudness. / Isso muda a intensidade."
+        },
+        {
+          "id": "c",
+          "label": "A brighter object / Um objeto mais brilhante",
+          "explanation": "Brightness describes light. / Brilho descreve luz."
+        },
+        {
+          "id": "d",
+          "label": "Slower vibrations / Vibrações mais lentas",
+          "explanation": "These make a lower pitch. / Elas tornam o som mais grave."
+        }
+      ]
+    },
+    {
+      "id": 3402,
+      "topic": "s3-sound",
+      "prompt": "What is an echo? / O que é um eco?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Think about a sound returning. / Pense no som voltando.",
+        "A wall can reflect waves. / Uma parede pode refletir ondas."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "A new musical instrument / Um novo instrumento",
+          "explanation": "An echo is reflection, not an instrument. / Eco é reflexão."
+        },
+        {
+          "id": "b",
+          "label": "Reflected sound heard again / Som refletido ouvido novamente",
+          "explanation": "A surface reflects the sound back. / Uma superfície reflete o som de volta."
+        },
+        {
+          "id": "c",
+          "label": "Light from a mirror / Luz de um espelho",
+          "explanation": "A mirror reflects light; an echo is sound. / O eco é sonoro."
+        },
+        {
+          "id": "d",
+          "label": "Sound with no vibration / Som sem vibração",
+          "explanation": "Sound starts with vibration. / O som começa com vibração."
+        }
+      ]
+    },
+    {
+      "id": 3403,
+      "topic": "s3-sound",
+      "prompt": "Which pair gives a natural sound first? / Qual par começa com um som natural?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Classify the source. / Classifique a origem.",
+        "Loud sounds can still be natural. / Sons fortes também podem ser naturais."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Car horn, bird / Buzina, pássaro",
+          "explanation": "The horn is human-made. / A buzina é fabricada."
+        },
+        {
+          "id": "b",
+          "label": "Bell, river / Sino, rio",
+          "explanation": "The bell is artificial. / O sino é artificial."
+        },
+        {
+          "id": "c",
+          "label": "Thunder, phone / Trovão, telefone",
+          "explanation": "Thunder is natural; a phone is human-made. / Trovão é natural; telefone é fabricado."
+        },
+        {
+          "id": "d",
+          "label": "Alarm, rain / Alarme, chuva",
+          "explanation": "The first is artificial. / O primeiro é artificial."
+        }
+      ]
+    },
+    {
+      "id": 3404,
+      "topic": "s3-sound",
+      "prompt": "A drum vibrates with bigger movements. What usually increases? / Vibrações maiores aumentam o quê?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Compare loud and quiet. / Compare forte e fraco.",
+        "Size of vibration affects loudness. / Tamanho da vibração afeta a intensidade."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Pitch only / Só a altura",
+          "explanation": "Pitch depends on rate. / Altura depende da frequência."
+        },
+        {
+          "id": "b",
+          "label": "The number of ears / O número de ouvidos",
+          "explanation": "This is unrelated. / Isso não tem relação."
+        },
+        {
+          "id": "c",
+          "label": "The colour of sound / A cor do som",
+          "explanation": "Colour is not this sound property. / Cor não é essa propriedade sonora."
+        },
+        {
+          "id": "d",
+          "label": "Volume / Intensidade",
+          "explanation": "Bigger vibrations usually make a louder sound. / Vibrações maiores produzem som mais forte."
+        }
+      ]
+    },
+    {
+      "id": 3405,
+      "topic": "s3-hearing",
+      "prompt": "Which part guides waves towards the eardrum? / Qual parte conduz ondas ao tímpano?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Start at the outer ear. / Comece pelo ouvido externo.",
+        "Look for the tunnel-like passage. / Procure a passagem em forma de túnel."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Ear canal / Canal auditivo",
+          "explanation": "Waves travel through the canal. / As ondas percorrem o canal."
+        },
+        {
+          "id": "b",
+          "label": "Brain / Cérebro",
+          "explanation": "It interprets signals later. / Interpreta os sinais depois."
+        },
+        {
+          "id": "c",
+          "label": "Cochlea / Cóclea",
+          "explanation": "It is further inside. / Fica mais internamente."
+        },
+        {
+          "id": "d",
+          "label": "Auditory nerve / Nervo auditivo",
+          "explanation": "It carries nerve signals. / Leva sinais nervosos."
+        }
+      ]
+    },
+    {
+      "id": 3406,
+      "topic": "s3-hearing",
+      "prompt": "What does the eardrum do when waves arrive? / O que faz o tímpano?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Its name reminds you of a drum. / Pense na pele de um tambor.",
+        "Sound makes the membrane move. / O som faz a membrana se mover."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "It turns into bone. / Vira osso.",
+          "explanation": "It remains a membrane. / Continua sendo uma membrana."
+        },
+        {
+          "id": "b",
+          "label": "It vibrates. / Ele vibra.",
+          "explanation": "The thin membrane moves with sound. / A membrana vibra com o som."
+        },
+        {
+          "id": "c",
+          "label": "It produces light. / Produz luz.",
+          "explanation": "Hearing is not a light process. / Audição não é um processo luminoso."
+        },
+        {
+          "id": "d",
+          "label": "It understands words. / Entende palavras.",
+          "explanation": "The brain interprets sounds. / O cérebro interpreta sons."
+        }
+      ]
+    },
+    {
+      "id": 3407,
+      "topic": "s3-hearing",
+      "prompt": "Which sequence is correct? / Qual sequência está correta?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Follow outside to inside. / Siga de fora para dentro.",
+        "The membrane passes vibration to small bones. / A membrana transmite vibração aos ossículos."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Cochlea, canal, bones / Cóclea, canal, ossos",
+          "explanation": "The canal comes before the cochlea. / O canal vem antes da cóclea."
+        },
+        {
+          "id": "b",
+          "label": "Bones, brain, eardrum / Ossos, cérebro, tímpano",
+          "explanation": "The eardrum comes before these bones. / O tímpano vem antes dos ossículos."
+        },
+        {
+          "id": "c",
+          "label": "Eardrum, tiny bones, cochlea / Tímpano, ossículos, cóclea",
+          "explanation": "Vibrations pass in this order. / As vibrações passam nessa ordem."
+        },
+        {
+          "id": "d",
+          "label": "Brain, canal, eardrum / Cérebro, canal, tímpano",
+          "explanation": "The brain comes at the end. / O cérebro vem ao final."
+        }
+      ]
+    },
+    {
+      "id": 3408,
+      "topic": "s3-hearing",
+      "prompt": "Which statement about the cochlea is correct? / Qual afirmação sobre a cóclea está correta?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Remember the snail-shaped part. / Lembre a parte em caracol.",
+        "After this part, follow nerve signals. / Depois dela, siga sinais nervosos."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "It is the outer ear. / É o ouvido externo.",
+          "explanation": "It belongs to the inner ear. / Pertence ao ouvido interno."
+        },
+        {
+          "id": "b",
+          "label": "It is the same as the eardrum. / É o mesmo que tímpano.",
+          "explanation": "These are different structures. / São estruturas diferentes."
+        },
+        {
+          "id": "c",
+          "label": "It carries air straight into the brain. / Leva ar ao cérebro.",
+          "explanation": "The nerve carries signals, not air. / O nervo leva sinais, não ar."
+        },
+        {
+          "id": "d",
+          "label": "It helps turn vibrations into nerve signals. / Ajuda a transformar vibrações em sinais nervosos.",
+          "explanation": "The signals then travel to the brain. / Os sinais seguem para o cérebro."
+        }
+      ]
+    },
+    {
+      "id": 3409,
+      "topic": "s3-rocks-minerals",
+      "prompt": "Granite contains quartz, feldspar and mica. What are these? / O que são esses componentes do granito?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Think of the ingredients of a rock. / Pense nos componentes da rocha.",
+        "A rock can contain more than one mineral. / Uma rocha pode conter mais de um mineral."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Minerals / Minerais",
+          "explanation": "Different minerals can make up one rock. / Minerais diferentes formam uma rocha."
+        },
+        {
+          "id": "b",
+          "label": "Three fossils / Três fósseis",
+          "explanation": "They are not preserved organisms. / Não são organismos preservados."
+        },
+        {
+          "id": "c",
+          "label": "Types of rain / Tipos de chuva",
+          "explanation": "They are solid materials. / São materiais sólidos."
+        },
+        {
+          "id": "d",
+          "label": "Parts of an ear / Partes do ouvido",
+          "explanation": "They are geological materials. / São materiais geológicos."
+        }
+      ]
+    },
+    {
+      "id": 3410,
+      "topic": "s3-rocks-minerals",
+      "prompt": "Why is graphite useful in pencils? / Por que grafite é usado em lápis?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Match a property to its use. / Relacione propriedade e uso.",
+        "Think about the line you draw. / Pense na linha que você desenha."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "It is melted lead. / É chumbo derretido.",
+          "explanation": "Pencil graphite is not the metal lead. / Grafite não é chumbo."
+        },
+        {
+          "id": "b",
+          "label": "It leaves a mark on paper. / Deixa marca no papel.",
+          "explanation": "Its properties suit writing. / Suas propriedades permitem escrever."
+        },
+        {
+          "id": "c",
+          "label": "It makes every pencil a diamond. / Torna o lápis um diamante.",
+          "explanation": "Graphite and diamond are different minerals. / São minerais diferentes."
+        },
+        {
+          "id": "d",
+          "label": "It powers the pencil like a battery. / Alimenta o lápis como bateria.",
+          "explanation": "Ordinary pencils do not need batteries. / Lápis comuns não usam bateria."
+        }
+      ]
+    },
+    {
+      "id": 3411,
+      "topic": "s3-rocks-minerals",
+      "prompt": "Which mineral is used to help watches keep time? / Qual mineral ajuda relógios a marcar o tempo?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Look at useful minerals. / Consulte os usos dos minerais.",
+        "It is also one component of granite. / Também é componente do granito."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Topsoil / Solo superficial",
+          "explanation": "Soil is not a single mineral. / Solo não é um único mineral."
+        },
+        {
+          "id": "b",
+          "label": "A sand dune / Uma duna",
+          "explanation": "A dune is a land feature. / Duna é uma feição do terreno."
+        },
+        {
+          "id": "c",
+          "label": "Quartz / Quartzo",
+          "explanation": "Quartz is used for timekeeping. / Quartzo é usado na marcação do tempo."
+        },
+        {
+          "id": "d",
+          "label": "A fossil shell / Uma concha fossilizada",
+          "explanation": "A fossil is not the timekeeping mineral. / Não é o mineral usado para isso."
+        }
+      ]
+    },
+    {
+      "id": 3412,
+      "topic": "s3-rocks-minerals",
+      "prompt": "Which group lists mineral properties? / Qual grupo lista propriedades dos minerais?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Think about what you observe or test. / Pense no que se observa ou testa.",
+        "Shiny versus dull is one example. / Brilhante ou opaco é um exemplo."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Birthday, age and address / Aniversário, idade e endereço",
+          "explanation": "These do not describe mineral properties. / Não descrevem propriedades minerais."
+        },
+        {
+          "id": "b",
+          "label": "Loudness, music and words / Volume, música e palavras",
+          "explanation": "These concern sounds. / Dizem respeito a sons."
+        },
+        {
+          "id": "c",
+          "label": "Only the price / Somente o preço",
+          "explanation": "Price is not a physical mineral property. / Preço não é uma propriedade física."
+        },
+        {
+          "id": "d",
+          "label": "Colour, hardness and shine / Cor, dureza e brilho",
+          "explanation": "These help describe and compare minerals. / Ajudam a descrever e comparar."
+        }
+      ]
+    },
+    {
+      "id": 3413,
+      "topic": "s3-rock-types",
+      "prompt": "Which rock forms by slow cooling underground? / Qual rocha se forma pelo resfriamento lento no subsolo?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Look for an intrusive igneous rock. / Procure uma ígnea intrusiva.",
+        "Slow cooling gives crystals time to grow. / Resfriamento lento permite cristais maiores."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Granite / Granito",
+          "explanation": "Granite is intrusive and often has visible crystals. / Granito é intrusivo e costuma ter cristais visíveis."
+        },
+        {
+          "id": "b",
+          "label": "Marble / Mármore",
+          "explanation": "Marble is metamorphic. / Mármore é metamórfico."
+        },
+        {
+          "id": "c",
+          "label": "Sandstone / Arenito",
+          "explanation": "Sandstone forms from sediment. / Arenito vem de sedimentos."
+        },
+        {
+          "id": "d",
+          "label": "Slate / Ardósia",
+          "explanation": "Slate is metamorphic. / Ardósia é metamórfica."
+        }
+      ]
+    },
+    {
+      "id": 3414,
+      "topic": "s3-rock-types",
+      "prompt": "What is the usual order for many sedimentary rocks? / Qual a ordem usual para muitas rochas sedimentares?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Start with layers of sediment. / Comece com camadas de sedimentos.",
+        "Pressing and mineral binding follow. / Depois vêm compressão e união por minerais."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Cementation before any sediment exists / Cimentação antes de haver sedimento",
+          "explanation": "Grains must exist to become cemented. / É preciso haver grãos para uni-los."
+        },
+        {
+          "id": "b",
+          "label": "Deposition, compaction, cementation / Deposição, compactação, cimentação",
+          "explanation": "Sediments settle, are pressed and become bound. / Sedimentos se acumulam, são comprimidos e unidos."
+        },
+        {
+          "id": "c",
+          "label": "Melting, flying, freezing / Fusão, voo, congelamento",
+          "explanation": "This does not describe sedimentary formation. / Não descreve a formação sedimentar."
+        },
+        {
+          "id": "d",
+          "label": "Hearing, reflecting, ringing / Ouvir, refletir, tocar",
+          "explanation": "These concern sound. / Referem-se ao som."
+        }
+      ]
+    },
+    {
+      "id": 3415,
+      "topic": "s3-rock-types",
+      "prompt": "Which transformation is correct? / Qual transformação está correta?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Find a metamorphic change. / Procure uma transformação metamórfica.",
+        "The new rock can be used in sculptures. / A nova rocha pode ser usada em esculturas."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Quartz to a living shell / Quartzo em concha viva",
+          "explanation": "Rocks do not become living animals. / Rochas não se tornam animais vivos."
+        },
+        {
+          "id": "b",
+          "label": "Shale to granite without melting / Folhelho em granito sem fusão",
+          "explanation": "Granite forms from molten material. / Granito se forma de material fundido."
+        },
+        {
+          "id": "c",
+          "label": "Limestone to marble / Calcário em mármore",
+          "explanation": "Heat and pressure can transform limestone. / Calor e pressão podem transformar calcário."
+        },
+        {
+          "id": "d",
+          "label": "Marble to fresh lava by pressure alone / Mármore em lava só por pressão",
+          "explanation": "Melting needs sufficient heat and is a different process. / Fusão é outro processo."
+        }
+      ]
+    },
+    {
+      "id": 3416,
+      "topic": "s3-rock-types",
+      "prompt": "Which statement compares intrusive and extrusive rocks correctly? / Qual comparação está correta?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Compare surface and underground. / Compare superfície e subsolo.",
+        "Time to cool affects crystal size. / O tempo de resfriamento afeta os cristais."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Both must contain fossils. / Ambas precisam ter fósseis.",
+          "explanation": "Fossils are not a requirement. / Fósseis não são requisito."
+        },
+        {
+          "id": "b",
+          "label": "Extrusive rocks never come from lava. / Extrusivas nunca vêm de lava.",
+          "explanation": "Extrusive rocks form at the surface from lava. / Extrusivas se formam na superfície a partir de lava."
+        },
+        {
+          "id": "c",
+          "label": "Intrusive means formed from sand layers. / Intrusiva significa formada de areia em camadas.",
+          "explanation": "That describes a sedimentary pathway. / Isso descreve um caminho sedimentar."
+        },
+        {
+          "id": "d",
+          "label": "Intrusive rocks usually cool more slowly. / Intrusivas costumam esfriar mais devagar.",
+          "explanation": "Underground cooling gives crystals more time. / No subsolo, os cristais têm mais tempo."
+        }
+      ]
+    },
+    {
+      "id": 3417,
+      "topic": "s3-fossils",
+      "prompt": "Which can be a fossil? / Qual pode ser um fóssil?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Look for remains or traces of life. / Procure restos ou vestígios de vida.",
+        "A footprint is a trace. / Uma pegada é um vestígio."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "A preserved ancient footprint / Uma pegada antiga preservada",
+          "explanation": "A trace of life can be a fossil. / Um vestígio de vida pode ser fóssil."
+        },
+        {
+          "id": "b",
+          "label": "Any new plastic toy / Qualquer brinquedo plástico novo",
+          "explanation": "A new toy is not ancient life evidence. / Não é evidência de vida antiga."
+        },
+        {
+          "id": "c",
+          "label": "Every old rock / Toda rocha antiga",
+          "explanation": "Age alone does not make a fossil. / A idade sozinha não define fóssil."
+        },
+        {
+          "id": "d",
+          "label": "Only a living dinosaur / Só um dinossauro vivo",
+          "explanation": "Fossils are preserved evidence, not living animals. / São evidências preservadas."
+        }
+      ]
+    },
+    {
+      "id": 3418,
+      "topic": "s3-fossils",
+      "prompt": "Where are fossils often preserved? / Onde fósseis são frequentemente preservados?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Think of burial under layers. / Pense no soterramento em camadas.",
+        "Sand and mud can cover remains. / Areia e lama podem cobrir restos."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Only in clouds / Só em nuvens",
+          "explanation": "Clouds do not preserve these remains as rock. / Nuvens não preservam esses restos em rochas."
+        },
+        {
+          "id": "b",
+          "label": "In sedimentary rocks / Em rochas sedimentares",
+          "explanation": "Sediment layers can bury and protect remains. / Camadas podem cobrir e proteger restos."
+        },
+        {
+          "id": "c",
+          "label": "Only in fresh lava / Só em lava recém-formada",
+          "explanation": "Hot lava is not the usual preservation environment. / Não é o ambiente usual de preservação."
+        },
+        {
+          "id": "d",
+          "label": "Inside phone batteries / Em baterias de telefone",
+          "explanation": "This is not a fossil-forming setting. / Não é um ambiente de fossilização."
+        }
+      ]
+    },
+    {
+      "id": 3419,
+      "topic": "s3-fossils",
+      "prompt": "Why do scientists study fossils? / Por que cientistas estudam fósseis?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Ask what information is preserved. / Pense na informação preservada.",
+        "Clues can describe ancient organisms. / Pistas podem descrever organismos antigos."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "To learn the exact future / Para saber o futuro exato",
+          "explanation": "Evidence about the past does not reveal an exact future. / Evidências do passado não revelam o futuro exato."
+        },
+        {
+          "id": "b",
+          "label": "To turn every fossil back into an animal / Para reviver todo fóssil",
+          "explanation": "This is not what fossil study does. / Não é isso que o estudo faz."
+        },
+        {
+          "id": "c",
+          "label": "To investigate past life and environments / Para investigar a vida e os ambientes do passado",
+          "explanation": "Fossils provide evidence about Earth history. / Fósseis oferecem evidências da história da Terra."
+        },
+        {
+          "id": "d",
+          "label": "To prove all rocks were animals / Para provar que toda rocha foi animal",
+          "explanation": "Many rocks have no biological origin. / Muitas rochas não têm origem biológica."
+        }
+      ]
+    },
+    {
+      "id": 3420,
+      "topic": "s3-fossils",
+      "prompt": "Which sequence can lead to a fossil? / Qual sequência pode levar a um fóssil?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Think about sediment covering remains. / Pense em sedimentos cobrindo restos.",
+        "Preservation needs suitable conditions and time. / Preservação exige condições e tempo."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "An animal dies and instantly becomes granite / Um animal morre e vira granito na hora",
+          "explanation": "Fossil formation is not instant granite formation. / Não é formação instantânea de granito."
+        },
+        {
+          "id": "b",
+          "label": "Every animal survives inside a stone / Todo animal vive dentro de pedra",
+          "explanation": "A fossil is not a living animal in stone. / Um fóssil não é um animal vivo na pedra."
+        },
+        {
+          "id": "c",
+          "label": "A cloud paints a bone / Uma nuvem pinta um osso",
+          "explanation": "This is not a preservation process. / Não é um processo de preservação."
+        },
+        {
+          "id": "d",
+          "label": "Remains buried, layers build up, preservation over time / Soterramento, acúmulo de camadas, preservação",
+          "explanation": "This is one possible pathway, not a guarantee. / É um caminho possível, não uma garantia."
+        }
+      ]
+    },
+    {
+      "id": 3421,
+      "topic": "s3-landscapes",
+      "prompt": "What is a landscape? / O que é uma paisagem?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Think of the whole view. / Pense na vista completa.",
+        "Trees, hills, rivers and buildings can appear together. / Árvores, morros, rios e prédios podem aparecer juntos."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "The visible features of an area / Os elementos visíveis de uma área",
+          "explanation": "It can include natural and human-made features. / Pode incluir elementos naturais e humanos."
+        },
+        {
+          "id": "b",
+          "label": "Only mountains / Só montanhas",
+          "explanation": "Mountains are only one possible part. / Montanhas são apenas uma parte possível."
+        },
+        {
+          "id": "c",
+          "label": "Only buildings / Só prédios",
+          "explanation": "Natural features are included too. / Elementos naturais também entram."
+        },
+        {
+          "id": "d",
+          "label": "Only things underground / Só o que fica no subsolo",
+          "explanation": "Landscape concerns the visible scene. / Paisagem é a cena visível."
+        }
+      ]
+    },
+    {
+      "id": 3422,
+      "topic": "s3-landscapes",
+      "prompt": "Which landform is surrounded by water? / Qual forma é cercada por água?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Compare island and peninsula. / Compare ilha e península.",
+        "One is completely separated by water. / Uma é totalmente separada pela água."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Plateau / Planalto",
+          "explanation": "A plateau has an elevated relatively flat top. / Tem topo elevado relativamente plano."
+        },
+        {
+          "id": "b",
+          "label": "Island / Ilha",
+          "explanation": "An island has water all around it. / Uma ilha é cercada por água."
+        },
+        {
+          "id": "c",
+          "label": "Peninsula / Península",
+          "explanation": "It remains connected to a larger land area. / Continua ligada a uma área maior."
+        },
+        {
+          "id": "d",
+          "label": "Valley / Vale",
+          "explanation": "A valley is low land between higher areas. / É uma área baixa entre áreas elevadas."
+        }
+      ]
+    },
+    {
+      "id": 3423,
+      "topic": "s3-landscapes",
+      "prompt": "Which description matches a plateau? / Qual descrição corresponde a um planalto?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Look at elevation and shape. / Observe altura e formato.",
+        "The top is flatter than a pointed mountain peak. / O topo é mais plano que um pico pontudo."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Always a low valley / Sempre um vale baixo",
+          "explanation": "A valley and a plateau differ. / Vale e planalto são diferentes."
+        },
+        {
+          "id": "b",
+          "label": "A human-made water channel / Um canal construído",
+          "explanation": "That describes a canal. / Isso descreve um canal."
+        },
+        {
+          "id": "c",
+          "label": "Elevated land with a relatively flat top / Terreno elevado com topo relativamente plano",
+          "explanation": "This is the characteristic shape. / Essa é a forma característica."
+        },
+        {
+          "id": "d",
+          "label": "A deep narrow crack in a pencil / Uma fenda no lápis",
+          "explanation": "This is not a landform. / Não é uma forma do relevo."
+        }
+      ]
+    },
+    {
+      "id": 3424,
+      "topic": "s3-landscapes",
+      "prompt": "Which feature is human-made? / Qual elemento é construído pelas pessoas?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Not every item in a picture list is natural. / Nem todo item de uma figura é natural.",
+        "Think of an engineered water passage. / Pense numa passagem de água construída."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Mountain / Montanha",
+          "explanation": "This is natural. / É natural."
+        },
+        {
+          "id": "b",
+          "label": "Valley / Vale",
+          "explanation": "This is a natural landform. / É uma forma natural."
+        },
+        {
+          "id": "c",
+          "label": "Island / Ilha",
+          "explanation": "A natural island is a landform, unlike a constructed canal. / Uma ilha natural é relevo; um canal construído não."
+        },
+        {
+          "id": "d",
+          "label": "Canal / Canal",
+          "explanation": "A canal is built to carry water or boats. / Um canal é construído para água ou embarcações."
+        }
+      ]
+    },
+    {
+      "id": 3425,
+      "topic": "s3-weathering-erosion",
+      "prompt": "Water freezes inside a crack and splits a rock. What is this? / Gelo abre uma fenda na rocha. O que é?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Has the material moved away? / O material foi transportado?",
+        "Breaking in place is the clue. / Quebrar no local é a pista."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Weathering / Intemperismo",
+          "explanation": "The rock breaks in place. / A rocha se quebra no local."
+        },
+        {
+          "id": "b",
+          "label": "Only deposition / Só deposição",
+          "explanation": "Deposition means transported material settles. / Deposição é acúmulo de material transportado."
+        },
+        {
+          "id": "c",
+          "label": "Hearing / Audição",
+          "explanation": "This is a rock process. / É um processo nas rochas."
+        },
+        {
+          "id": "d",
+          "label": "Cementation / Cimentação",
+          "explanation": "Cementation binds grains instead of splitting rock. / Cimentação une grãos."
+        }
+      ]
+    },
+    {
+      "id": 3426,
+      "topic": "s3-weathering-erosion",
+      "prompt": "A river carries soil downstream. What is happening? / Um rio leva solo correnteza abaixo. O que ocorre?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Watch what the water carries. / Observe o que a água leva.",
+        "Moving material is the important action. / Transportar material é a ação importante."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Sound reflection / Reflexão sonora",
+          "explanation": "This is moving soil, not sound. / É solo em movimento, não som."
+        },
+        {
+          "id": "b",
+          "label": "Erosion and transport / Erosão e transporte",
+          "explanation": "Material is moving to another place. / O material vai para outro lugar."
+        },
+        {
+          "id": "c",
+          "label": "Only cooling of magma / Só resfriamento de magma",
+          "explanation": "No molten rock is described. / Não há rocha fundida na situação."
+        },
+        {
+          "id": "d",
+          "label": "Only growth of crystals / Só crescimento de cristais",
+          "explanation": "The key action is transport. / A ação central é transportar."
+        }
+      ]
+    },
+    {
+      "id": 3427,
+      "topic": "s3-weathering-erosion",
+      "prompt": "Which pair correctly contrasts the processes? / Qual par diferencia os processos?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Separate breaking from carrying. / Separe quebrar de carregar.",
+        "A root opens a crack; a river carries the pieces. / Uma raiz abre a fenda; um rio leva os pedaços."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Both always mean melting / Ambos sempre significam fusão",
+          "explanation": "Neither requires melting. / Nenhum exige fusão."
+        },
+        {
+          "id": "b",
+          "label": "Both happen only indoors / Ambos só ocorrem dentro de casa",
+          "explanation": "They shape outdoor landscapes. / Eles transformam paisagens naturais."
+        },
+        {
+          "id": "c",
+          "label": "Weathering breaks; erosion moves / Intemperismo quebra; erosão transporta",
+          "explanation": "The distinction is breaking in place versus removal and transport. / A diferença é fragmentar no local versus remover e transportar."
+        },
+        {
+          "id": "d",
+          "label": "Weathering moves; erosion only freezes / Intemperismo transporta; erosão só congela",
+          "explanation": "This reverses and narrows the processes incorrectly. / A comparação está invertida e incorreta."
+        }
+      ]
+    },
+    {
+      "id": 3428,
+      "topic": "s3-weathering-erosion",
+      "prompt": "Sand carried by water settles in a new place. What is the settling called? / Como se chama o acúmulo da areia transportada?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Think about the end of transport. / Pense no fim do transporte.",
+        "The material is being left behind. / O material está sendo deixado no local."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Vibration / Vibração",
+          "explanation": "This describes repeated movement, not sediment settling. / Não descreve o acúmulo de sedimentos."
+        },
+        {
+          "id": "b",
+          "label": "Metamorphism / Metamorfismo",
+          "explanation": "This changes existing rock under heat and pressure. / Transforma rocha por calor e pressão."
+        },
+        {
+          "id": "c",
+          "label": "Eardrum movement / Movimento do tímpano",
+          "explanation": "This belongs to hearing. / Isso pertence à audição."
+        },
+        {
+          "id": "d",
+          "label": "Deposition / Deposição",
+          "explanation": "Transported sediment is laid down. / O sedimento transportado se deposita."
+        }
+      ]
+    },
+    {
+      "id": 3429,
+      "topic": "s3-soil",
+      "prompt": "How do roots protect soil? / Como raízes protegem o solo?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Think of a network inside the soil. / Pense numa rede dentro do solo.",
+        "Roots connect and hold particles. / Raízes ajudam a manter partículas juntas."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "They help hold it in place. / Ajudam a segurá-lo.",
+          "explanation": "Roots reduce how easily soil washes or blows away. / Reduzem a facilidade de remoção do solo."
+        },
+        {
+          "id": "b",
+          "label": "They make soil weightless. / Deixam o solo sem peso.",
+          "explanation": "Roots do not remove its weight. / Raízes não eliminam o peso."
+        },
+        {
+          "id": "c",
+          "label": "They turn it into lava. / Transformam em lava.",
+          "explanation": "Roots do not melt soil. / Raízes não derretem solo."
+        },
+        {
+          "id": "d",
+          "label": "They always increase runoff. / Sempre aumentam a enxurrada.",
+          "explanation": "Vegetation generally helps protect soil. / Vegetação geralmente ajuda a proteger."
+        }
+      ]
+    },
+    {
+      "id": 3430,
+      "topic": "s3-soil",
+      "prompt": "Why are terraces useful on steep slopes? / Por que terraços ajudam em encostas?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Look at the step-like shape. / Observe o formato de degraus.",
+        "Compare fast runoff with slower runoff. / Compare enxurrada rápida e escoamento lento."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "They stop all rain forever. / Impedem toda chuva para sempre.",
+          "explanation": "Terraces manage runoff, not weather. / Atuam no escoamento, não no clima."
+        },
+        {
+          "id": "b",
+          "label": "They slow water flowing downhill. / Desaceleram a água que desce.",
+          "explanation": "Slower runoff can carry away less soil. / Escoamento mais lento pode remover menos solo."
+        },
+        {
+          "id": "c",
+          "label": "They make the slope steeper everywhere. / Aumentam toda a inclinação.",
+          "explanation": "Terraces create flatter steps. / Terraços criam degraus mais planos."
+        },
+        {
+          "id": "d",
+          "label": "They remove every plant. / Retiram todas as plantas.",
+          "explanation": "Plants can grow on terraces. / Plantas podem crescer nos terraços."
+        }
+      ]
+    },
+    {
+      "id": 3431,
+      "topic": "s3-soil",
+      "prompt": "Which action leaves soil less protected? / Qual ação deixa o solo menos protegido?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Which choice removes protection? / Qual opção retira a proteção?",
+        "Leaves and roots act as protection. / Folhas e raízes ajudam a proteger."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Adding mulch / Cobrir com material vegetal",
+          "explanation": "Mulch shields the soil. / A cobertura protege o solo."
+        },
+        {
+          "id": "b",
+          "label": "Keeping plant roots / Manter raízes",
+          "explanation": "Roots help hold soil. / Raízes ajudam a segurar o solo."
+        },
+        {
+          "id": "c",
+          "label": "Removing vegetation and leaving bare soil / Retirar vegetação e deixar solo exposto",
+          "explanation": "Bare soil is easier for water and wind to remove. / Solo exposto é mais fácil de remover."
+        },
+        {
+          "id": "d",
+          "label": "Planting cover crops / Plantar cobertura",
+          "explanation": "Cover crops protect the surface. / Plantas de cobertura protegem a superfície."
+        }
+      ]
+    },
+    {
+      "id": 3432,
+      "topic": "s3-soil",
+      "prompt": "What do barriers and ground cover have in common? / O que barreiras e cobertura do solo têm em comum?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Think about their purpose. / Pense no objetivo.",
+        "Both aim to keep soil in place. / Ambos buscam manter o solo no lugar."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "They create fossils instantly. / Criam fósseis na hora.",
+          "explanation": "Soil protection is not instant fossil formation. / Proteção do solo não é fossilização instantânea."
+        },
+        {
+          "id": "b",
+          "label": "They always make rivers faster. / Sempre aceleram rios.",
+          "explanation": "Barriers can slow runoff. / Barreiras podem desacelerar o escoamento."
+        },
+        {
+          "id": "c",
+          "label": "They remove the need for all plants. / Eliminam a necessidade de plantas.",
+          "explanation": "Vegetation remains useful. / Vegetação continua útil."
+        },
+        {
+          "id": "d",
+          "label": "They can reduce soil loss. / Podem reduzir a perda de solo.",
+          "explanation": "Different methods can limit erosion. / Métodos diferentes podem limitar a erosão."
+        }
+      ]
+    },
+    {
+      "id": 3433,
+      "topic": "s3-fossil-discovery",
+      "prompt": "Where was Gondwanax paraisensis found? / Onde foi encontrado?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Find the place name in the reading. / Localize o nome do lugar.",
+        "The name paraisensis honours the town. / O nome paraisensis homenageia a cidade."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Paraíso do Sul, Brazil / Paraíso do Sul, Brasil",
+          "explanation": "The reading identifies this town. / O texto identifica esse município."
+        },
+        {
+          "id": "b",
+          "label": "Haiti / Haiti",
+          "explanation": "Haiti is part of the hurricane reading. / Haiti aparece na leitura do furacão."
+        },
+        {
+          "id": "c",
+          "label": "On the Moon / Na Lua",
+          "explanation": "The fossil came from Earth. / O fóssil veio da Terra."
+        },
+        {
+          "id": "d",
+          "label": "In a modern aquarium / Num aquário moderno",
+          "explanation": "It was found in rock. / Foi encontrado em rocha."
+        }
+      ]
+    },
+    {
+      "id": 3434,
+      "topic": "s3-fossil-discovery",
+      "prompt": "About when did the animal live? / Aproximadamente quando o animal viveu?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Separate the age from the discovery date. / Separe idade e data da descoberta.",
+        "The text places it in the Triassic. / O texto situa o animal no Triássico."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "After the fossil was found / Depois de encontrarem o fóssil",
+          "explanation": "The animal lived long before its discovery. / O animal viveu muito antes da descoberta."
+        },
+        {
+          "id": "b",
+          "label": "237 million years ago / Há 237 milhões de anos",
+          "explanation": "This is the approximate age in the reading. / É a idade aproximada do texto."
+        },
+        {
+          "id": "c",
+          "label": "237 days ago / Há 237 dias",
+          "explanation": "The timescale is millions of years. / A escala é de milhões de anos."
+        },
+        {
+          "id": "d",
+          "label": "In 2016 / Em 2016",
+          "explanation": "That date belongs to Hurricane Matthew. / Essa data é do furacão Matthew."
+        }
+      ]
+    },
+    {
+      "id": 3435,
+      "topic": "s3-fossil-discovery",
+      "prompt": "Why is this discovery useful? / Por que essa descoberta é útil?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Ask what researchers are investigating. / Veja o que os pesquisadores investigam.",
+        "The key is the origin of a group of animals. / O ponto é a origem de um grupo de animais."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "It proves rocks cannot change. / Prova que rochas não mudam.",
+          "explanation": "Rocks change through geological processes. / Rochas mudam por processos geológicos."
+        },
+        {
+          "id": "b",
+          "label": "It predicts the next hurricane. / Prevê o próximo furacão.",
+          "explanation": "This fossil does not predict storms. / Esse fóssil não prevê tempestades."
+        },
+        {
+          "id": "c",
+          "label": "It offers clues about early dinosaur evolution. / Oferece pistas da evolução inicial dos dinossauros.",
+          "explanation": "Scientists compare the bones with other animals. / Cientistas comparam ossos de animais."
+        },
+        {
+          "id": "d",
+          "label": "It proves every fossil is a dinosaur. / Prova que todo fóssil é dinossauro.",
+          "explanation": "Fossils include many different organisms. / Fósseis incluem muitos organismos."
+        }
+      ]
+    },
+    {
+      "id": 3436,
+      "topic": "s3-fossil-discovery",
+      "prompt": "What is still debated in the reading? / O que ainda é debatido no texto?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Look for a question, not a certainty. / Procure uma dúvida, não uma certeza.",
+        "Compare early dinosaur and close relative. / Compare dinossauro primitivo e parente próximo."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Whether the fossil is a ringing phone / Se o fóssil é um telefone tocando",
+          "explanation": "The discovery is fossil evidence, not a phone. / É evidência fóssil, não um telefone."
+        },
+        {
+          "id": "b",
+          "label": "Whether Haiti is in Paraíso do Sul / Se Haiti fica em Paraíso do Sul",
+          "explanation": "These are different places and readings. / São lugares e leituras diferentes."
+        },
+        {
+          "id": "c",
+          "label": "Whether the animal is alive today / Se o animal está vivo hoje",
+          "explanation": "It is an ancient fossil species. / Trata-se de uma espécie fóssil antiga."
+        },
+        {
+          "id": "d",
+          "label": "Whether silesaurids were early dinosaurs or close relatives / Se eram dinossauros primitivos ou parentes próximos",
+          "explanation": "The text presents alternative scientific interpretations. / O texto apresenta interpretações científicas."
+        }
+      ]
+    },
+    {
+      "id": 3437,
+      "topic": "s3-hurricane",
+      "prompt": "What changed in the Haiti images after Matthew? / O que mudou nas imagens do Haiti?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "a",
+      "hints": [
+        "Compare green and brown areas. / Compare áreas verdes e marrons.",
+        "Strong winds and rain damaged vegetation. / Vento e chuva danificaram a vegetação."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Less green vegetation / Menos vegetação verde",
+          "explanation": "The after image shows vegetation loss. / A imagem posterior mostra perda de vegetação."
+        },
+        {
+          "id": "b",
+          "label": "A new glacier covered the island / Uma geleira cobriu a ilha",
+          "explanation": "That is not shown or described. / Isso não é mostrado nem descrito."
+        },
+        {
+          "id": "c",
+          "label": "Every river vanished forever / Todos os rios sumiram para sempre",
+          "explanation": "The evidence does not support that claim. / A evidência não sustenta essa afirmação."
+        },
+        {
+          "id": "d",
+          "label": "No visible change / Nenhuma mudança visível",
+          "explanation": "The images show changes. / As imagens mostram mudanças."
+        }
+      ]
+    },
+    {
+      "id": 3438,
+      "topic": "s3-hurricane",
+      "prompt": "Waves removed sand from a dune. Which process moved it? / Ondas removeram areia. Qual processo a transportou?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "b",
+      "hints": [
+        "Focus on the moving sand. / Foque na areia em movimento.",
+        "Erosion carries material away. / Erosão transporta material."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Only cementation / Só cimentação",
+          "explanation": "Cementation binds grains; it does not transport the dune. / Cimentação une grãos."
+        },
+        {
+          "id": "b",
+          "label": "Erosion / Erosão",
+          "explanation": "Erosion removes and transports sediment. / Erosão remove e transporta sedimentos."
+        },
+        {
+          "id": "c",
+          "label": "Igneous cooling / Resfriamento ígneo",
+          "explanation": "No cooling magma is involved. / Não há magma resfriando."
+        },
+        {
+          "id": "d",
+          "label": "Hearing / Audição",
+          "explanation": "This is a landscape process. / É um processo na paisagem."
+        }
+      ]
+    },
+    {
+      "id": 3439,
+      "topic": "s3-hurricane",
+      "prompt": "Where were the USGS dune photographs taken? / Onde foram feitas as fotos das dunas do USGS?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "c",
+      "hints": [
+        "Read the caption, not only the heading. / Leia a legenda, não só o título.",
+        "Two different places appear in this material. / O material apresenta dois lugares diferentes."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "Paraíso do Sul / Paraíso do Sul",
+          "explanation": "That is the fossil discovery location. / É o local da descoberta fóssil."
+        },
+        {
+          "id": "b",
+          "label": "Inside the ear / Dentro do ouvido",
+          "explanation": "An ear is not a coastal landscape. / O ouvido não é uma paisagem litorânea."
+        },
+        {
+          "id": "c",
+          "label": "Florida, USA / Flórida, EUA",
+          "explanation": "They show the coast near St. Augustine. / Mostram o litoral próximo de St. Augustine."
+        },
+        {
+          "id": "d",
+          "label": "The Cavaillon River, Haiti / Rio Cavaillon, Haiti",
+          "explanation": "The Haiti images are a separate satellite comparison. / As imagens do Haiti são outra comparação."
+        }
+      ]
+    },
+    {
+      "id": 3440,
+      "topic": "s3-hurricane",
+      "prompt": "Which sentence is an observation from before-and-after images? / Qual frase é uma observação das imagens?",
+      "support": "Read the lesson and use evidence. / Leia a aula e use evidências.",
+      "format": "choice",
+      "correct": "d",
+      "hints": [
+        "Describe only what you can see. / Descreva apenas o que vê.",
+        "A visible gap is different from explaining its cause. / Ver uma abertura é diferente de explicar a causa."
+      ],
+      "options": [
+        {
+          "id": "a",
+          "label": "All storms always make identical gaps. / Toda tempestade cria aberturas iguais.",
+          "explanation": "This is an unsupported generalisation. / É uma generalização sem apoio."
+        },
+        {
+          "id": "b",
+          "label": "No plants can ever return. / Nenhuma planta pode voltar.",
+          "explanation": "The images do not prove this future claim. / As imagens não provam essa previsão."
+        },
+        {
+          "id": "c",
+          "label": "The sand disappeared from Earth. / A areia sumiu da Terra.",
+          "explanation": "Sand was moved; it did not vanish from the planet. / A areia foi transportada."
+        },
+        {
+          "id": "d",
+          "label": "There is a new gap in the dune. / Há uma nova abertura na duna.",
+          "explanation": "This describes a visible change. / Descreve uma mudança visível."
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "id": "science-write-1",
+      "lesson": "s3-sound",
+      "prompt": "Give four natural and four artificial sound examples. Classify by source. / Dê quatro exemplos de cada origem.",
+      "answer": "Natural: birds, rain, thunder, flowing water. Artificial: alarm, car horn, phone, loudspeaker. Other justified examples are acceptable."
+    },
+    {
+      "id": "science-write-2",
+      "lesson": "s3-sound",
+      "prompt": "Explain pitch, volume and echo. Can a sound be high-pitched and quiet? / Explique altura, intensidade e eco.",
+      "answer": "Pitch depends on vibration rate; volume on vibration size; echo is reflected sound. Yes: a whistle played softly can be high-pitched and quiet."
+    },
+    {
+      "id": "science-write-3",
+      "lesson": "s3-hearing",
+      "prompt": "Put in order: brain; cochlea; ear canal; tiny bones; eardrum; auditory nerve. / Ordene o caminho da audição.",
+      "answer": "Ear canal → eardrum → tiny bones → cochlea → auditory nerve → brain. The outer ear helps collect incoming waves."
+    },
+    {
+      "id": "science-write-4",
+      "lesson": "s3-hearing",
+      "prompt": "Explain the jobs of the eardrum, cochlea and auditory nerve. / Explique a função de cada parte.",
+      "answer": "Eardrum vibrates. The cochlea helps change vibrations into nerve signals. The auditory nerve carries signals to the brain, which interprets them."
+    },
+    {
+      "id": "science-write-5",
+      "lesson": "s3-rocks-minerals",
+      "prompt": "Explain rock versus mineral. Name three minerals and one use for each. / Diferencie e dê exemplos com usos.",
+      "answer": "A rock contains one or more minerals. A mineral is a natural solid with characteristic composition and structure. Quartz: timekeeping; graphite: pencils; diamond: jewellery."
+    },
+    {
+      "id": "science-write-6",
+      "lesson": "s3-rocks-minerals",
+      "prompt": "Granite contains quartz, feldspar and mica. Which is the rock? List three properties used to describe minerals. / Identifique a rocha e as propriedades.",
+      "answer": "Granite is the rock; quartz, feldspar and mica are minerals. Colour, hardness and shine are examples of properties."
+    },
+    {
+      "id": "science-write-7",
+      "lesson": "s3-rock-types",
+      "prompt": "Compare intrusive and extrusive igneous rocks. Give three igneous examples and uses. / Compare e dê exemplos.",
+      "answer": "Intrusive: slower cooling underground, often larger crystals. Extrusive: faster cooling at the surface, usually smaller crystals. Granite: buildings; basalt: roads; pumice: abrasive."
+    },
+    {
+      "id": "science-write-8",
+      "lesson": "s3-rock-types",
+      "prompt": "Explain sedimentary and metamorphic formation. Give two examples and uses of each, and complete: limestone → __; shale → __; granite → __.",
+      "answer": "Sedimentary: accumulated sediments, often compacted and cemented; sandstone: building; limestone: cement. Metamorphic: heat/pressure without wholesale melting; marble: sculpture; slate: roofing. Transformations: marble, slate, gneiss."
+    },
+    {
+      "id": "science-write-9",
+      "lesson": "s3-fossils",
+      "prompt": "Explain what fossils are, where they are often found and how some form. / Explique fósseis, ocorrência e formação.",
+      "answer": "Preserved remains or traces of ancient life, often in sedimentary rocks. Remains may be buried by sediment; layers accumulate and minerals may fill or replace material over time. Not every organism becomes a fossil."
+    },
+    {
+      "id": "science-write-10",
+      "lesson": "s3-fossils",
+      "prompt": "Why are fossils useful? Give a fossil example that is not a dinosaur bone. / Explique a importância e dê outro exemplo.",
+      "answer": "They provide evidence of past life and environments. Examples include a fossil leaf, shell or footprint. Accept other valid remains or traces."
+    },
+    {
+      "id": "science-write-11",
+      "lesson": "s3-landscapes",
+      "prompt": "Describe a landscape with two natural and two human-made features. Name five landforms. / Descreva uma paisagem e cite formas de relevo.",
+      "answer": "Example: mountains and a river, with a bridge and houses. Landforms: mountain, valley, plateau, island, peninsula. Other accurate examples are accepted."
+    },
+    {
+      "id": "science-write-12",
+      "lesson": "s3-landscapes",
+      "prompt": "Compare island/peninsula and valley/plateau. Is a constructed canal a natural landform? Explain. / Compare as formas.",
+      "answer": "Island: surrounded by water; peninsula: connected to larger land. Valley: low between higher land; plateau: elevated with a relatively flat top. A constructed canal is human-made."
+    },
+    {
+      "id": "science-write-13",
+      "lesson": "s3-weathering-erosion",
+      "prompt": "Classify and explain: ice splits a rock; a river carries fragments; sand settles at a river mouth. / Classifique as três situações.",
+      "answer": "Weathering: breaking in place. Erosion/transport: river carries fragments. Deposition: transported sand settles."
+    },
+    {
+      "id": "science-write-14",
+      "lesson": "s3-weathering-erosion",
+      "prompt": "Describe how roots and freezing water can break rocks. Then explain how wind can move the pieces. / Explique os processos.",
+      "answer": "Growing roots widen cracks. Water expands when it freezes in cracks. Wind can carry loose particles away: erosion/transport follows or accompanies weathering."
+    },
+    {
+      "id": "science-write-15",
+      "lesson": "s3-soil",
+      "prompt": "List five ways to reduce soil erosion. Explain two. / Cite cinco métodos e explique dois.",
+      "answer": "Vegetation, ground cover/mulch, barriers, terraces, cover crops. Roots hold soil; cover shields it; barriers and terraces slow runoff. Cover crops protect otherwise bare fields."
+    },
+    {
+      "id": "science-write-16",
+      "lesson": "s3-soil",
+      "prompt": "A field on a slope loses soil in heavy rain. Propose two measures and explain how they help. / Proponha duas medidas.",
+      "answer": "For example, terraces reduce runoff speed and cover crops help hold and shield soil. Accept other justified methods from the lesson; no method guarantees zero erosion."
+    },
+    {
+      "id": "science-write-17",
+      "lesson": "s3-fossil-discovery",
+      "prompt": "Read the fossil text. Identify the animal, place, approximate age and geological period. / Identifique os quatro dados.",
+      "answer": "Gondwanax paraisensis; Paraíso do Sul, southern Brazil; about 237 million years ago; Triassic Period."
+    },
+    {
+      "id": "science-write-18",
+      "lesson": "s3-fossil-discovery",
+      "prompt": "Who found the fossil? Who studied it? Why is it important, and what question remains debated? / Explique os papéis e a importância.",
+      "answer": "Pedro Lucas Porcela Aurélio found it; Rodrigo Temp Müller studied it at UFSM/CAPPA. It offers clues to early dinosaur evolution. Whether silesaurids were early dinosaurs or close relatives remains debated in the reading."
+    },
+    {
+      "id": "science-write-19",
+      "lesson": "s3-hurricane",
+      "prompt": "Compare the Haiti images with the Florida account in the lesson. Describe a change in each place. / Compare as imagens do Haiti com o relato da Flórida.",
+      "answer": "Haiti: less green vegetation and more brown/sediment-rich areas after the storm. Florida: a new inlet/gap through the dune. Do not identify the Florida dune photographs as Haiti."
+    },
+    {
+      "id": "science-write-20",
+      "lesson": "s3-hurricane",
+      "prompt": "Explain how Matthew changed the landscape using erosion and deposition. Suggest one way vegetation helps protect soil. / Use os conceitos.",
+      "answer": "Water and waves removed and transported soil/sand: erosion. Sediment accumulated elsewhere: deposition. Vegetation helps hold soil with roots and shields the surface. A storm is a natural agent; its impacts can be rapid."
+    }
+  ],
+  "sources": [
+    {
+      "label": "UFSM — Gondwanax paraisensis",
+      "url": "https://www.ufsm.br/2024/10/14/descoberto-em-paraiso-do-sul-um-dos-mais-antigos-precursores-dos-dinossauros"
+    },
+    {
+      "label": "NASA Earth Observatory — Hurricane Matthew in Haiti",
+      "url": "https://science.nasa.gov/earth/earth-observatory/hurricane-matthews-aftermath-in-haiti-88933/"
+    },
+    {
+      "label": "USGS — Before and after Hurricane Matthew",
+      "url": "https://www.usgs.gov/news/featured-story/and-after-photos-se-beach-dunes-lost-hurricane-matthew"
+    }
+  ]
+}

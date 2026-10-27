@@ -13,9 +13,10 @@ import {
 } from "./curriculum-data";
 import { ela3Subject, ela3Infographics, ela3ImageForLesson } from "./ela3-data";
 import Ela3Practice from "./components/Ela3Practice";
+import SciencePractice from "./components/SciencePractice";
 import ScienceMatching from "./components/ScienceMatching";
 import { deepStudyByLesson } from "./deep-content";
-import { scienceInfographicPages, scienceMaterialsReady, scienceDownloads, scienceTopicTitle } from "./science-data";
+import { scienceInfographicPages, scienceMaterialsReady, scienceDownloads, scienceTopicTitle, scienceImageForLesson, scienceSubject } from "./science-data";
 import { history3Subject, history3Infographics, history3Downloads, studySubject, quizTerm, resumeTerm } from "./history3-data";
 import { questionHint } from "./quiz-hints";
 
@@ -136,7 +137,7 @@ function friendlyParentError(error: unknown, fallback: string) {
 }
 
 const subjects: Array<{ key?: SubjectKey; name: string; icon: IconName; detail: string; status: "ready" | "soon"; color: string }> = [
-  { key: "science", name: "Science", icon: "science", detail: "8 aulas • inglês e português", status: "ready", color: "science" },
+  { key: "science", name: "Science", icon: "science", detail: `${scienceSubject.lessons.length} aulas • inglês e português`, status: "ready", color: "science" },
   { key: "portuguese", name: "Português", icon: "portuguese", detail: "Aulas e quizzes", status: "ready", color: "portuguese" },
   { key: "geography", name: "Geografia", icon: "geography", detail: "Aulas e quizzes", status: "ready", color: "geography" },
   { key: "math", name: "Math", icon: "math", detail: "Aulas e quizzes", status: "ready", color: "math" },
@@ -145,6 +146,19 @@ const subjects: Array<{ key?: SubjectKey; name: string; icon: IconName; detail: 
 ];
 
 const emptyQuizStats = (): Record<QuizId, QuizStats> => ({
+  "science3-sound": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-hearing": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-rocks-minerals": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-rock-types": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-fossils": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-landscapes": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-weathering-erosion": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-soil": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-fossil-discovery": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-hurricane": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-mock-a": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "science3-mock-b": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "ela3-blends": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "ela3-verbs": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "ela3-adverbs": { bestScore: 0, attempts: 0, totalAnswered: 0 },
@@ -1011,6 +1025,11 @@ export default function Home() {
                 <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRATICAR NO APP</small><strong>{quizCatalog[id].title}</strong><p>Quatorze questões, pistas graduais e explicações para cada alternativa.</p><em>Melhor: {quizStatsById[id].bestScore}/14</em></span><span className="path-arrow">→</span>
               </button>
             ))}
+            {activeSubject === "science" && (["science3-mock-a", "science3-mock-b"] as QuizId[]).map(id => (
+              <button key={id} className="path-card path-quiz" onClick={() => startQuiz(id)}>
+                <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRACTICE TEST</small><strong>{quizCatalog[id].title}</strong><p>20 questions • all ten topics • hints and explanations.</p><em>Best: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span>
+              </button>
+            ))}
             {activeSubject === "science" && scienceMaterialsReady && scienceDownloads.map(download => (
               <a key={download.id} className="path-card path-test" href={download.src} download>
                 <span className="path-art"><AppIcon name="note" /></span>
@@ -1219,7 +1238,7 @@ export default function Home() {
 
               <p className="lesson-intro">{activeLesson.intro}</p>
 
-              {isEla3 ? <Image className="history3-lesson-map" {...ela3ImageForLesson(activeLesson.id)} /> : isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
+              {isEla3 ? <Image className="history3-lesson-map" {...ela3ImageForLesson(activeLesson.id)} /> : isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : activeSubject === "science" ? <Image className="history3-lesson-map" src={scienceImageForLesson(activeLesson.id).src} alt={scienceImageForLesson(activeLesson.id).alt} width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
 
               <div className="fact-stack">
                 {activeLesson.facts.map((fact, index) => (
@@ -1245,7 +1264,7 @@ export default function Home() {
               })()}
 
               {isEla3 && <Ela3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
-              {activeSubject === "science" && <ScienceMatching key={activeLesson.id} lessonId={activeLesson.id} />}
+              {activeSubject === "science" && <><ScienceMatching key={activeLesson.id} lessonId={activeLesson.id} /><SciencePractice key={`practice-${activeLesson.id}`} lessonId={activeLesson.id} /></>}
 
               <div className="remember-box">
                 <span><AppIcon name="brain" /></span>
@@ -1254,7 +1273,7 @@ export default function Home() {
 
               {activeLesson.quizId && quizCatalog[activeLesson.quizId].questions.length > 0 && (
                 <button className="lesson-quiz-button" onClick={() => startQuiz(activeLesson.quizId!)}>
-                  {activeSubject === "science" ? "Praticar o quiz de Science" : "Testar somente este assunto"} <span>→</span>
+                  Testar somente este assunto <span>→</span>
                 </button>
               )}
 

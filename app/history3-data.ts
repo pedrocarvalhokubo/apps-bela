@@ -15,6 +15,6 @@ export const history3Catalog = Object.fromEntries([
   ['history3-mock-b', { title: 'História • Simulado B', subject: 'history', questions: history3Quiz.filter((_,i) => i%4 >= 2) }],
 ]) as Partial<Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }>>;
 export const studySubject = (subjects: Record<SubjectKey, StudySubject>, subject: SubjectKey, term: number) => subject === 'ela' && term === 3 ? ela3Subject : subject === 'history' && term === 3 ? history3Subject : subjects[subject];
-export const quizTerm = (id: QuizId) => id === 'science-general' || id.startsWith('history3-') || id.startsWith('ela3-') ? 3 : 2;
+export const quizTerm = (id: QuizId) => id === 'science-general' || id.startsWith('science3-') || id.startsWith('history3-') || id.startsWith('ela3-') ? 3 : 2;
 
 export const resumeTerm = (subject: SubjectKey, lessonId: string, quizId: QuizId, view: string) => view === 'quiz' ? quizTerm(quizId) : subject === 'science' || (subject === 'ela' && lessonId.startsWith('e3-')) || (subject === 'history' && lessonId.startsWith('h3-')) ? 3 : 2;

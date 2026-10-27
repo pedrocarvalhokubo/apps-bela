@@ -3567,3 +3567,7 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 .ela3-practice textarea { box-sizing: border-box; width: 100%; resize: vertical; padding: 14px; border: 1px solid #91b8b0; border-radius: 12px; background: white; color: #173d42; font: inherit; }
 .ela3-practice details { margin-top: 18px; padding: 16px; border-radius: 12px; background: white; }
 .ela3-practice summary { cursor: pointer; font-weight: 700; }
+
+.science-evidence { margin: 24px 0; }
+.science-evidence img { display: block; width: 100%; height: auto; border-radius: 18px; }
+.science-evidence figcaption { color: #53616d; font-size: 13px; line-height: 1.6; margin-top: 8px; }

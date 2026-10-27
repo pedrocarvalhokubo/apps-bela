@@ -530,7 +530,10 @@
     "public/materials/historia3-gabarito.pdf": "73f618eb52a30a7dae38e8c6e32b896906bc88049266ef51e93dec2b2dd4eb4d",
     "public/infographics/ela3-sounds.webp": "2c9fc707759dd52776304bc6ce1c1da4567df0feeade9451d72b800ab9abeafe",
     "public/infographics/ela3-words.webp": "b32087c82321608625198e75fe7b63fc92c148c9cc090a93335f86b43ed5b505",
-    "public/infographics/ela3-reading.webp": "9da70c34725bc416b1256061dfbaaac572699984a1ef3f0b0f3a8cfaeb8d3220"
+    "public/infographics/ela3-reading.webp": "9da70c34725bc416b1256061dfbaaac572699984a1ef3f0b0f3a8cfaeb8d3220",
+    "public/science-term3/evidence/haiti-comparison.jpg": "fe999e35b6d644e2d708447d6242362dd5caa294aabd67cf276ff00882637862",
+    "public/science-term3/assessment/science-complete-review.pdf": "4f74ab2337bfbfda727d801e5234feaf03ab5327f93e232d0ff531191eea9d2f",
+    "public/science-term3/assessment/science-complete-answer-key.pdf": "425f31a27541407301c017a0a341325e4ca1fdecf3f0cf21251ab3252fb7f341"
   },
   "supplements": [
     {
@@ -562,6 +565,14 @@
         "ela3-004.part.b64",
         "ela3-005.part.b64",
         "ela3-006.part.b64"
+      ]
+    },
+    {
+      "sha256": "a85cce1bca2d517937e9a61e1dfa659caf920703ce2b7b143b7ef249cf8cd680",
+      "parts": [
+        "science-extension-000.part.b64",
+        "science-extension-001.part.b64",
+        "science-extension-002.part.b64"
       ]
     }
   ]
