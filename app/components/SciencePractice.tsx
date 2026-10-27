@@ -1,25 +1,17 @@
 "use client";
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useWrittenDraft } from '../../lib/use-written-draft';
 import { sciencePractice, scienceSources } from '../science-data';
 
 function WrittenTask({task}: {task: typeof sciencePractice[number]}) {
-  const [draft, setDraft] = useState('');
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    try { setDraft(localStorage.getItem(`bela-${task.id}`) ?? ''); } catch { /* Keep the task usable without storage. */ }
-    setReady(true);
-  }, [task.id]);
+  const {draft,ready,status,change} = useWrittenDraft(`bela-${task.id}`);
   return <section className="ela3-practice" aria-label="Science writing practice">
     <small>✍️ YOUR TURN • AGORA É COM VOCÊ</small>
     <h3>{task.prompt}</h3>
     <label htmlFor={task.id}>Your answer • Sua resposta</label>
-    <textarea id={task.id} value={draft} disabled={!ready} rows={5} onChange={event => {
-      setDraft(event.target.value);
-      try { localStorage.setItem(`bela-${task.id}`, event.target.value); } catch { /* Keep editable in memory. */ }
-    }} placeholder="Write in English. You can also use your notebook." />
-    <small>Rascunho neste aparelho. Você também pode responder no caderno.</small>
+    <textarea id={task.id} value={draft} disabled={!ready} rows={5} onChange={event => change(event.target.value)} placeholder="Write in English. You can also use your notebook." />
+    <small>{status} Você também pode responder no caderno.</small>
     <details><summary>Compare after trying • Ver sugestão depois de tentar</summary><p>{task.answer}</p><p>Outras palavras são aceitas quando explicam as mesmas ideias. Confira com um adulto.</p></details>
   </section>;
 }

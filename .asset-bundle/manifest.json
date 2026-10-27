@@ -516,7 +516,7 @@
     "public/science-term3/infographics/rocks-minerals.png": "e560715f08f00b3a8c1fae8be6ae4b7be232c78b7d515c9f8467a79fb4838244",
     "public/science-term3/infographics/sound-hearing.png": "76695ba3b3da51e94501cc77f9ada366973468b68413b7fce23aab5ca3835ff4",
     "public/science-term3/infographics/weathering-erosion.png": "ad51be51fed6ccfcfc3b4f16e0e2a9c91d85410a61227a84a1b5813d983e1312",
-    "public/sw.js": "165b44a0756f1d99de1ec895e40f0d56d7cd4c4803037275c0c987713c70c1e1",
+    "public/sw.js": "fecca52c19157688de86b5a92c6267b47243f3ef1d3cae88189da2822482ea3c",
     "public/window.svg": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
     "public/infographics/history3-1.png": "86535d0bf5d103d327a540f0e9d8483b20f63756190faf417dd8fac78cb4aace",
     "public/infographics/history3-2.png": "7c790ee493a5836d2d0a0aa45080f64f51c4549abb53ef8cf846a96aff950a75",
@@ -573,6 +573,12 @@
         "science-extension-000.part.b64",
         "science-extension-001.part.b64",
         "science-extension-002.part.b64"
+      ]
+    },
+    {
+      "sha256": "9575b68b7e9b8a03734e93cb84adc34766a81d8f7e112f5cc1b179cc280eee81",
+      "parts": [
+        "auth-v2-000.part.b64"
       ]
     }
   ]

@@ -1,5 +1,7 @@
+export const dynamic='force-dynamic';
 import {
   getD1,
+  failedAuth, rateLimited, clearFailures, validBelaPassword,
   getDevice,
   getParentSession,
   hashPin,
@@ -28,12 +30,12 @@ async function createSession(profileId: string) {
   const timestamp = now();
   await d1.prepare(
     "INSERT INTO parent_sessions (token_hash, profile_id, expires_at, created_at) VALUES (?, ?, ?, ?)",
-  ).bind(tokenHash, profileId, timestamp + 8 * 60 * 60 * 1000, timestamp).run();
+  ).bind(tokenHash, profileId, timestamp + 15 * 60 * 1000, timestamp).run();
   return token;
 }
 
 export async function POST(request: Request) {
-  const body = await request.json().catch(() => ({})) as { action?: string; pin?: string };
+  const body = await request.json().catch(() => ({})) as { action?: string; pin?: string; setupCode?: string };
   const device = await getDevice(request);
   if (!device) return unauthorized();
   const d1 = await getD1();
@@ -45,6 +47,12 @@ export async function POST(request: Request) {
     const existing = await d1.prepare("SELECT 1 AS present FROM parent_settings WHERE profile_id = ?")
       .bind(device.profileId).first();
     if (existing) return Response.json({ ok: false, error: "O PIN já foi configurado" }, { status: 409 });
+    const bucket='parent-setup:'+device.profileId;
+    if(await rateLimited(bucket))return Response.json({error:'Muitas tentativas. Aguarde 15 minutos.'},{status:429});
+    const setup=(body.setupCode??'').replace(/[-\s]/g,'').toUpperCase();
+    if(!process.env.BELA_PARENT_SETUP_HASH || await sha256(setup)!==process.env.BELA_PARENT_SETUP_HASH){await failedAuth(bucket);return Response.json({error:'Código de configuração inválido.'},{status:401});}
+    if(await validBelaPassword(body.pin))return Response.json({error:'Escolha um PIN diferente da senha da Bela.'},{status:400});
+    await clearFailures(bucket);
     const salt = randomToken();
     const pinHash = await hashPin(body.pin, salt);
     await d1.prepare(
@@ -76,16 +84,6 @@ export async function POST(request: Request) {
   const session = await getParentSession(request);
   if (!session || session.profileId !== device.profileId) return unauthorized("Sessão parental expirada");
 
-  if (body.action === "create-pair") {
-    const code = randomCode();
-    const codeHash = await sha256(code);
-    const expiresAt = now() + 10 * 60 * 1000;
-    await d1.prepare(
-      "INSERT INTO pairing_codes (code_hash, profile_id, expires_at, used_at, created_at) VALUES (?, ?, ?, NULL, ?)",
-    ).bind(codeHash, device.profileId, expiresAt, now()).run();
-    return Response.json({ ok: true, code, expiresAt });
-  }
-
   if (body.action === "analytics") {
     const topicRows = await d1.prepare(
       `SELECT subject, topic,
@@ -102,8 +100,11 @@ export async function POST(request: Request) {
     const state = await d1.prepare(
       "SELECT state_json AS stateJson, updated_at AS updatedAt FROM study_state WHERE profile_id = ?",
     ).bind(device.profileId).first<{ stateJson: string; updatedAt: number }>();
+    const timeline=await d1.prepare(`SELECT date(created_at/1000,'unixepoch','-3 hours') AS day,COUNT(*) AS attempts,SUM(correct) AS correct FROM attempts WHERE profile_id=? GROUP BY day ORDER BY day DESC LIMIT 30`).bind(device.profileId).all();
+    const drafts=await d1.prepare('SELECT task_id AS taskId,answer,updated_at AS updatedAt FROM written_drafts WHERE profile_id=? ORDER BY updated_at DESC').bind(device.profileId).all();
+    const summary=await d1.prepare('SELECT COUNT(*) AS attempts,SUM(correct) AS correct,MAX(created_at) AS lastAt FROM attempts WHERE profile_id=?').bind(device.profileId).first();
     return Response.json({
-      ok: true,
+      ok: true, timeline:timeline.results,drafts:drafts.results,summary,
       topics: topicRows.results,
       wrongAnswers: wrongRows.results,
       state: state ? JSON.parse(state.stateJson) : null,

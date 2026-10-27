@@ -43,19 +43,38 @@ export async function hashPin(pin: string, salt: string) {
   return Array.from(new Uint8Array(bits), (byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 
+export const ACCOUNT_PROFILE_ID = "bela-account-v2";
+export const AUTH_COOKIE = "bela-session-v2";
+export function safeMutation(request: Request) {
+  if (request.method === 'GET') return true;
+  const origin=request.headers.get('origin');
+  try { if(origin && new URL(origin).host !== request.headers.get('host')) return false; } catch { return false; }
+  return request.headers.get('content-type')?.includes('application/json') === true;
+}
+export function sessionCookie(request: Request) {
+  return request.headers.get('cookie')?.split(';').map(s=>s.trim()).find(s=>s.startsWith(AUTH_COOKIE+'='))?.slice(AUTH_COOKIE.length+1) ?? '';
+}
 export async function getDevice(request: Request): Promise<DeviceContext | null> {
-  const token = request.headers.get("x-bela-device-token")?.trim();
-  if (!token) return null;
-  const d1 = await getD1();
-  const tokenHash = await sha256(token);
-  const row = await d1.prepare("SELECT profile_id AS profileId FROM devices WHERE token_hash = ?")
-    .bind(tokenHash)
-    .first<{ profileId: string }>();
-  if (!row) return null;
-  await d1.prepare("UPDATE devices SET last_seen_at = ? WHERE token_hash = ?")
-    .bind(now(), tokenHash)
-    .run();
-  return { profileId: row.profileId, tokenHash };
+  if(!safeMutation(request))return null;
+  const token=sessionCookie(request);
+  if(!/^[a-f0-9]{48}$/.test(token))return null;
+  const d1=await getD1(),tokenHash=await sha256(token);
+  const row=await d1.prepare("SELECT profile_id AS profileId FROM login_sessions WHERE token_hash=? AND expires_at>?").bind(tokenHash,now()).first<{profileId:string}>();
+  return row?{profileId:row.profileId,tokenHash}:null;
+}
+export async function rateLimited(bucket: string) {
+  const db=await getD1();
+  const row=await db.prepare('SELECT count,window_start FROM auth_failures WHERE bucket=?').bind(bucket).first<{count:number;window_start:number}>();
+  return Boolean(row && row.count>=5 && row.window_start>now()-15*60*1000);
+}
+export async function failedAuth(bucket: string) {
+  const db=await getD1(),time=now();
+  await db.prepare(`INSERT INTO auth_failures(bucket,count,window_start) VALUES(?,1,?) ON CONFLICT(bucket) DO UPDATE SET count=CASE WHEN window_start<? THEN 1 ELSE count+1 END,window_start=CASE WHEN window_start<? THEN ? ELSE window_start END`).bind(bucket,time,time-15*60*1000,time-15*60*1000,time).run();
+}
+export async function clearFailures(bucket:string) {await (await getD1()).prepare('DELETE FROM auth_failures WHERE bucket=?').bind(bucket).run();}
+export async function validBelaPassword(password: string) {
+  const salt=process.env.BELA_LOGIN_SALT,hash=process.env.BELA_LOGIN_HASH;
+  return Boolean(salt && hash && await hashPin(password,salt)===hash);
 }
 
 export async function getParentSession(request: Request) {

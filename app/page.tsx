@@ -1,8 +1,13 @@
 "use client";
+import {registerPendingSave} from '../lib/pending-saves';
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import Image from "next/image";
-import QRCode from "qrcode";
+import {useStudyAccount} from './components/AuthGate';
+import HistoryImport from './components/HistoryImport';
+import {studyStorage} from '../lib/study-storage';
+import {submitAttempt} from "../lib/attempt-client";
+import {mergeStudy} from '../lib/study-merge';
 import { ensureDevice } from "../lib/device-client";
 import {
   curriculumSubjects,
@@ -95,6 +100,9 @@ type ParentAnalytics = {
     createdAt: number;
   }>;
   state: SavedProgress | null;
+  timeline?: Array<{day:string;attempts:number;correct:number}>;
+  summary?: {attempts:number;correct:number;lastAt:number|null};
+  drafts?: Array<{taskId:string;answer:string;updatedAt:number}>;
 };
 
 type QuizStats = {
@@ -126,6 +134,8 @@ const parentErrorMessages = new Set([
   "O PIN já foi configurado",
   "PIN inválido",
   "PIN incorreto",
+  "Código de configuração inválido.",
+  "Escolha um PIN diferente da senha da Bela.",
   "Muitas tentativas. Aguarde 15 minutos.",
   "Dispositivo não conectado",
   "Sessão parental expirada",
@@ -285,6 +295,12 @@ function GeographyQuestionVisual({ topic }: { topic: string }) {
 }
 
 export default function Home() {
+  const {mode}=useStudyAccount();
+  const isGuest=mode==='guest';
+  const revision=useRef(0);
+  const syncQueue=useRef(Promise.resolve());
+  const [connectRetry,setConnectRetry]=useState(0);
+  const [parentSetupCode,setParentSetupCode]=useState('');
   const [view, setView] = useState<View>("home");
   const [term, setTerm] = useState(3);
   const [openLesson, setOpenLesson] = useState<string>(defaultLesson);
@@ -317,15 +333,12 @@ export default function Home() {
   const [parentToken, setParentToken] = useState("");
   const [parentError, setParentError] = useState("");
   const [parentAnalytics, setParentAnalytics] = useState<ParentAnalytics | null>(null);
-  const [pairLink, setPairLink] = useState("");
-  const [pairQr, setPairQr] = useState("");
-  const [pairExpiresAt, setPairExpiresAt] = useState<number | null>(null);
   const [pairMessage, setPairMessage] = useState("");
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       try {
-        const saved = window.localStorage.getItem("bela-study-progress");
+        const saved = studyStorage.getItem("bela-study-progress");
         if (saved) {
           const parsed = JSON.parse(saved) as Partial<SavedProgress>;
           setCompletedLessons((parsed.completedLessons ?? []).filter((id) => availableLessonIds.has(id)));
@@ -357,23 +370,23 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!storageReady) return;
+    if (!storageReady || isGuest) return;
     let cancelled = false;
 
     const connect = async () => {
       setSyncState("syncing");
       try {
-        const params = new URLSearchParams(window.location.search);
-        const pairingCode = params.get("pair");
         const token = await ensureDevice();
-        if (pairingCode) setPairMessage("Aparelho conectado ao progresso da Bela!");
+
 
         if (cancelled) return;
         const response = await fetch("/api/sync", { headers: { "x-bela-device-token": token } });
-        const result = await response.json() as { state?: Partial<SavedProgress> | null; topics?: TopicSignal[] };
+        const result = await response.json() as { state?: Partial<SavedProgress> | null; topics?: TopicSignal[]; updatedAt?: number };
         if (!response.ok) throw new Error("Sincronização indisponível");
-        if (result.state) {
-          const saved = result.state;
+        revision.current=Number(result.updatedAt)||0;
+        const cached=JSON.parse(studyStorage.getItem('bela-study-progress')??'{}');
+        if (result.state || Object.keys(cached).length) {
+          const saved = (studyStorage.getItem('study-unsynced')==='yes' ? mergeStudy(result.state??{},cached) : result.state??cached) as Partial<SavedProgress>;
           setCompletedLessons((saved.completedLessons ?? []).filter((id) => availableLessonIds.has(id)));
           const syncedStats = { ...emptyQuizStats() };
           for (const id of availableQuizzes) {
@@ -387,6 +400,8 @@ export default function Home() {
           setOpenLesson(availableLessonIds.has(syncedLesson) ? syncedLesson : defaultLesson);
           setDoubtQuestionIds((saved.doubtQuestionIds ?? []).filter((id) => availableQuizzes.has(String(id).split(":")[0] as QuizId)));
           setStudyNotes(saved.studyNotes ?? "");
+          setQuizIndex(saved.quizIndex??0);setSelectedOption(saved.selectedOption??null);
+          setAnswerChecked(saved.answerChecked??false);setQuizAnswers(saved.quizAnswers??[]);setResultAnswers(saved.resultAnswers??[]);
         }
         setTopicSignals((result.topics ?? []).filter((item) => availableSubjects.has(item.subject as SubjectKey)).map((item) => ({
           ...item,
@@ -404,7 +419,10 @@ export default function Home() {
 
     void connect();
     return () => { cancelled = true; };
-  }, [storageReady]);
+  }, [storageReady,isGuest,connectRetry]);
+
+  useEffect(()=>{const online=()=>setConnectRetry(n=>n+1);window.addEventListener('online',online);return()=>window.removeEventListener('online',online);},[]);
+  useEffect(()=>{if(!parentToken)return;const timer=setTimeout(()=>{setParentToken('');setParentAnalytics(null);sessionStorage.removeItem('bela-parent-token');},15*60*1000);return()=>clearTimeout(timer);},[parentToken]);
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
@@ -440,22 +458,31 @@ export default function Home() {
       studyNotes,
     };
     try {
-      window.localStorage.setItem("bela-study-progress", JSON.stringify(progress));
+      const serialized=JSON.stringify(progress),prior=studyStorage.getItem("bela-study-progress");
+      if(prior && prior!==serialized && !isGuest)studyStorage.setItem("study-unsynced","yes");
+      studyStorage.setItem("bela-study-progress", serialized);
     } catch {
       // Mantém a experiência funcional mesmo se o navegador bloquear o salvamento.
     }
     if (!deviceToken) return;
-    const timer = window.setTimeout(() => {
+    const save = () => {
       setSyncState("syncing");
-      fetch("/api/sync", {
-        method: "POST",
-        headers: { "content-type": "application/json", "x-bela-device-token": deviceToken },
-        body: JSON.stringify({ state: progress, updatedAt: Date.now() }),
-      }).then((response) => {
-        if (!response.ok) throw new Error("sync");
-        setSyncState("synced");
-      }).catch(() => setSyncState("offline"));
-    }, 650);
+      syncQueue.current=syncQueue.current.catch(()=>{}).then(async()=>{
+        try {
+          const response=await fetch('/api/sync',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({state:progress,revision:revision.current})});
+          if(!response.ok)throw new Error('sync');const result=await response.json();revision.current=result.updatedAt;
+          if(studyStorage.getItem('bela-study-progress')===JSON.stringify(progress))studyStorage.removeItem('study-unsynced');
+          if(result.conflict){
+            setCompletedLessons((result.state.completedLessons??[]).filter((id:string)=>availableLessonIds.has(id)));
+            setQuizStatsById({...emptyQuizStats(),...result.state.quizStatsById});
+          }
+          setSyncState('synced');
+        } catch {setSyncState('offline');throw new Error('O progresso aguarda conexão para sincronizar.');}
+      });
+      return syncQueue.current;
+    };
+    registerPendingSave('study',save);
+    const timer = window.setTimeout(() => {void save().catch(()=>{});},650);
     return () => window.clearTimeout(timer);
   }, [
     answerChecked,
@@ -522,7 +549,7 @@ export default function Home() {
     [currentLessons, openLesson],
   );
 
-  const currentQuestion = currentQuestions[quizIndex];
+  const currentQuestion = currentQuestions[quizIndex] ?? currentQuestions[0];
   const resultScore = resultAnswers.filter((answer) => answer.correct).length;
   const resultPercent = Math.round((resultScore / currentQuestions.length) * 100);
   const activeQuizTitle = quizCatalog[activeQuizId].title;
@@ -578,11 +605,8 @@ export default function Home() {
   }, [completedLessons, topicSignals, term]);
 
   const recordAttempt = (selected: string, correct: boolean) => {
-    if (!deviceToken) return;
-    fetch("/api/attempts", {
-      method: "POST",
-      headers: { "content-type": "application/json", "x-bela-device-token": deviceToken },
-      body: JSON.stringify({
+    if (isGuest) return;
+    submitAttempt({
         subject: activeSubject,
         quizId: activeQuizId,
         questionId: currentQuestion.id,
@@ -590,9 +614,8 @@ export default function Home() {
         selected,
         correct,
         isReview: quizStatsById[activeQuizId].attempts > 0,
-      }),
-    }).then(async (response) => {
-      if (!response.ok) throw new Error("attempt");
+      }).then(async (saved) => {
+      if (!saved) throw new Error("attempt");
       const refreshed = await fetch("/api/sync", { headers: { "x-bela-device-token": deviceToken } });
       const result = await refreshed.json() as { topics?: TopicSignal[] };
       setTopicSignals((result.topics ?? []).filter((item) => availableSubjects.has(item.subject as SubjectKey)).map((item) => ({
@@ -634,6 +657,7 @@ export default function Home() {
     if (!deviceToken) return;
     try {
       const response = await fetch("/api/parent", { headers: { "x-bela-device-token": deviceToken } });
+      if(!response.ok)throw new Error("auth");
       const result = await response.json() as { hasPin?: boolean };
       setParentHasPin(Boolean(result.hasPin));
       const savedToken = window.sessionStorage.getItem("bela-parent-token") ?? "";
@@ -642,7 +666,8 @@ export default function Home() {
         await loadParentAnalytics(savedToken);
       }
     } catch {
-      setParentError("Não foi possível abrir a área parental agora.");
+      setParentToken("");setParentAnalytics(null);window.sessionStorage.removeItem("bela-parent-token");
+      setParentError("Entre com o PIN dos pais para continuar.");
     }
   };
 
@@ -652,45 +677,19 @@ export default function Home() {
       const response = await fetch("/api/parent", {
         method: "POST",
         headers: { "content-type": "application/json", "x-bela-device-token": deviceToken },
-        body: JSON.stringify({ action: parentHasPin ? "verify-pin" : "setup-pin", pin: parentPin }),
+        body: JSON.stringify({ action: parentHasPin ? "verify-pin" : "setup-pin", pin: parentPin, setupCode:parentSetupCode }),
       });
       const result = await response.json() as { parentToken?: string; error?: string };
       if (!response.ok || !result.parentToken) throw new Error(result.error ?? "PIN inválido");
       setParentToken(result.parentToken);
       setParentHasPin(true);
-      setParentPin("");
+      setParentPin("");setParentSetupCode("");
       window.sessionStorage.setItem("bela-parent-token", result.parentToken);
       await loadParentAnalytics(result.parentToken);
     } catch (error) {
       setParentError(friendlyParentError(
         error,
         "Não foi possível validar o PIN agora. Tente novamente em alguns instantes.",
-      ));
-    }
-  };
-
-  const createPair = async () => {
-    setParentError("");
-    try {
-      const response = await fetch("/api/parent", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-          "x-bela-device-token": deviceToken,
-          "x-bela-parent-token": parentToken,
-        },
-        body: JSON.stringify({ action: "create-pair" }),
-      });
-      const result = await response.json() as { code?: string; expiresAt?: number; error?: string };
-      if (!response.ok || !result.code || !result.expiresAt) throw new Error(result.error ?? "Não foi possível gerar o link");
-      const link = `${window.location.origin}${window.location.pathname}?pair=${result.code}`;
-      setPairLink(link);
-      setPairExpiresAt(result.expiresAt);
-      setPairQr(await QRCode.toDataURL(link, { width: 260, margin: 1, color: { dark: "#173a63", light: "#ffffff" } }));
-    } catch (error) {
-      setParentError(friendlyParentError(
-        error,
-        "Não foi possível gerar o pareamento agora. Tente novamente em alguns instantes.",
       ));
     }
   };
@@ -736,7 +735,7 @@ export default function Home() {
 
   const resetProgress = () => {
     try {
-      window.localStorage.removeItem("bela-study-progress");
+      studyStorage.removeItem("bela-study-progress");
     } catch {
       // O estado visível ainda é reiniciado mesmo se o armazenamento estiver bloqueado.
     }
@@ -832,23 +831,23 @@ export default function Home() {
 
         <div className="header-actions">
           <span className={`sync-chip sync-${syncState}`} title={syncState === "synced" ? "Progresso sincronizado" : "Sincronização em andamento"}>
-            <AppIcon name="sync" /> {syncState === "synced" ? "Salvo" : syncState === "offline" ? "Offline" : "Salvando"}
+            <AppIcon name="sync" /> {isGuest ? "Sem salvar" : syncState === "synced" ? "Salvo na conta" : syncState === "offline" ? "Offline" : "Salvando"}
           </span>
-          <div className="profile-chip" aria-label="Perfil de Bela">
+          <div className="profile-chip" aria-label={isGuest?"Perfil de convidado":"Perfil de Bela"}>
             <AppIcon name="star" />
-            <b>Bela</b>
+            <b>{isGuest?"Convidado":"Bela"}</b>
           </div>
-          <button className="parent-trigger" onClick={openParent} aria-label="Abrir área parental">
+          {!isGuest && <button className="parent-trigger" onClick={openParent} aria-label="Abrir área parental">
             <AppIcon name="lock" /> <span>Pais</span>
-          </button>
+          </button>}
           {!isStandalone && (
             <button className="install-trigger" onClick={() => setShowInstall(true)} aria-label="Instalar no iPhone">
               <span>▣</span> <span>Instalar</span>
             </button>
           )}
-          <button className="reset-trigger" onClick={() => setShowReset(true)} aria-label="Reiniciar progresso das matérias">
+          {isGuest && <button className="reset-trigger" onClick={() => setShowReset(true)} aria-label="Reiniciar progresso das matérias">
             ↻ <span>Reiniciar</span>
-          </button>
+          </button>}
         </div>
       </header>
 
@@ -856,7 +855,7 @@ export default function Home() {
         <div className="page home-page">
           <section className="welcome-card">
             <div className="welcome-copy">
-              <span className="eyebrow"><AppIcon name="spark" /> OLÁ, BELA!</span>
+              <span className="eyebrow"><AppIcon name="spark" /> {isGuest?"OLÁ, CONVIDADO!":"OLÁ, BELA!"}</span>
               <h1>Qual aventura vamos estudar hoje?</h1>
               <p>
                 Explore missões visuais, pratique por assunto e avance até se sentir supersegura para a prova.
@@ -1303,8 +1302,9 @@ export default function Home() {
               <span className="pin-illustration">🔐</span>
               <h2>{parentHasPin === false ? "Crie o PIN dos pais" : "Digite o PIN dos pais"}</h2>
               <p>{parentHasPin === false
-                ? "Use de 4 a 6 números. Esse PIN protegerá respostas, dificuldades e o pareamento de novos aparelhos."
+                ? "Use o código privado de configuração recebido por Pedro e escolha um PIN de 4 a 6 números, diferente da senha da Bela."
                 : "A área da Bela continua livre para estudar; somente este acompanhamento fica protegido."}</p>
+              {parentHasPin===false && <label>Código privado de configuração<input value={parentSetupCode} onChange={e=>setParentSetupCode(e.target.value)} autoComplete="off" aria-label="Código privado de configuração" placeholder="Código entregue a Pedro" /></label>}
               <input
                 value={parentPin}
                 onChange={(event) => setParentPin(event.target.value.replace(/\D/g, "").slice(0, 6))}
@@ -1325,7 +1325,7 @@ export default function Home() {
                 <div><span>📚</span><strong>{parentAnalytics?.state?.completedLessons.length ?? 0}</strong><small>aulas concluídas</small></div>
                 <div><span>🎯</span><strong>{parentAnalytics?.topics.filter((topic) => topic.attempts > 0 && topic.correct / topic.attempts >= .8 && topic.reviewAttempts > 0 && topic.reviewCorrect / topic.reviewAttempts >= .8).length ?? 0}</strong><small>assuntos dominados</small></div>
                 <div><span>💡</span><strong>{parentAnalytics?.topics.filter((topic) => topic.attempts >= 2 && topic.correct / topic.attempts < .8).length ?? 0}</strong><small>assuntos para reforçar</small></div>
-                <div><span>✍️</span><strong>{parentAnalytics?.wrongAnswers.length ?? 0}</strong><small>erros recentes registrados</small></div>
+                <div><span>✍️</span><strong>{parentAnalytics?.summary?.attempts ?? 0}</strong><small>respostas no histórico</small></div>
               </section>
 
               <div className="parent-dashboard-grid">
@@ -1348,26 +1348,14 @@ export default function Home() {
                   ) : <div className="empty-parent"><span>🌱</span><p>Os indicadores aparecerão assim que Bela responder às primeiras questões.</p></div>}
                 </section>
 
-                <aside className="parent-panel pair-panel">
-                  <span className="eyebrow teal">NOVO APARELHO</span>
-                  <h2>Conectar iPhone ou iPad</h2>
-                  <p>Gere um QR de uso único. Ele expira em 10 minutos e conecta o novo aparelho ao mesmo progresso.</p>
-                  {!pairLink ? (
-                    <button className="primary-button" onClick={createPair}>Gerar QR e link seguro</button>
-                  ) : (
-                    <div className="pair-result">
-                      {pairQr && <Image src={pairQr} alt="QR Code para conectar o aparelho da Bela" width={260} height={260} unoptimized />}
-                      <small>Válido até {pairExpiresAt ? new Date(pairExpiresAt).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" }) : ""}</small>
-                      <div>
-                        <button onClick={() => navigator.clipboard.writeText(pairLink)}>Copiar link</button>
-                        <button onClick={() => { setPairLink(""); setPairQr(""); void createPair(); }}>Gerar outro</button>
-                      </div>
-                    </div>
-                  )}
-                  {parentError && <span className="form-error">{parentError}</span>}
-                </aside>
+                <aside className="parent-panel"><span className="eyebrow teal">EM QUALQUER APARELHO</span><h2>Uma conta, o mesmo histórico</h2><p>Entre como Bela com a senha dela no iPhone, iPad ou computador. O histórico fica associado à conta.</p><p>Para consultar este painel em outro aparelho, entre como Bela e informe o PIN exclusivo dos pais.</p><p>Última resposta: {parentAnalytics?.summary?.lastAt ? new Date(parentAnalytics.summary.lastAt).toLocaleString('pt-BR',{timeZone:'America/Bahia'}) : 'ainda não registrada'}.</p></aside>
               </div>
 
+              <HistoryImport parentToken={parentToken} />
+              <section className="parent-panel"><span className="eyebrow teal">EVOLUÇÃO</span><h2>Respostas por dia</h2><p>Últimos 30 dias com atividade. Cada tentativa conta, inclusive após uma pista. Horários da Bahia.</p>
+                {parentAnalytics?.timeline?.length ? <div className="history-table"><table><thead><tr><th>Dia</th><th>Respostas</th><th>Acertos</th><th>Aproveitamento</th></tr></thead><tbody>{parentAnalytics.timeline.map(day=><tr key={day.day}><td>{day.day.split('-').reverse().join('/')}</td><td>{day.attempts}</td><td>{day.correct}</td><td>{Math.round(day.correct/day.attempts*100)}%</td></tr>)}</tbody></table></div>:<p>As primeiras respostas formarão a evolução diária.</p>}
+              </section>
+              <section className="parent-panel"><h2>Atividades escritas</h2><p>Rascunhos da conta, sem correção automática.</p>{parentAnalytics?.drafts?.filter(d=>d.answer).length?parentAnalytics.drafts.filter(d=>d.answer).map(d=><details key={d.taskId}><summary>{d.taskId.replace('bela-science-write-','Ciências • atividade ').replace('bela-ela3-practice-e3-','ELA • ')} — {new Date(d.updatedAt).toLocaleDateString('pt-BR',{timeZone:'America/Bahia'})}</summary><p style={{whiteSpace:'pre-wrap'}}>{d.answer}</p></details>):<p>Ainda não há respostas escritas salvas.</p>}</section>
               <section className="parent-panel errors-panel">
                 <div className="panel-heading"><div><span className="eyebrow teal">RESPOSTAS QUE PRECISARAM DE AJUDA</span><h2>Erros recentes</h2></div><small>O app registra cada tentativa, inclusive quando ela acerta depois da pista.</small></div>
                 {parentAnalytics?.wrongAnswers.length ? (
@@ -1664,7 +1652,7 @@ export default function Home() {
       )}
 
       <footer>
-        <span>Feito para a Bela estudar no seu ritmo • progresso sincronizado entre aparelhos</span>
+        <span>{isGuest ? "Modo convidado • sem gravar avanço no banco" : "Feito para a Bela estudar no seu ritmo • histórico salvo na conta"}</span>
         <span className="footer-stars"><AppIcon name="star" /><AppIcon name="star" /><AppIcon name="star" /></span>
       </footer>
     </main>

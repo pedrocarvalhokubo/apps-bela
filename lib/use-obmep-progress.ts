@@ -1,5 +1,7 @@
 "use client";
+import {registerPendingSave} from './pending-saves';
 import { useEffect, useState } from "react";
+import {getStudyMode,studyStorage} from "./study-storage";
 import { ensureDevice } from "./device-client";
 import { mergeProgress, type ProgressRecord } from "./obmep-progress";
 
@@ -12,10 +14,11 @@ export function useObmepProgress() {
   useEffect(() => {
     let cancelled = false;
     let local: ProgressRecord = {};
-    try { local = JSON.parse(localStorage.getItem("bela-obmep-progress-v1") || "{}"); } catch {}
+    try { local = JSON.parse(studyStorage.getItem("bela-obmep-progress-v1") || "{}"); } catch {}
     setProgress(local);
     void ensureDevice().then(async (token) => {
       if (cancelled) return;
+      if(!token){setSyncMessage("Convidado • progresso apenas nesta sessão");return;}
       setDeviceToken(token);
       const response = await fetch("/api/obmep", { headers: { "x-bela-device-token": token } });
       if (!response.ok) throw new Error("sync");
@@ -32,16 +35,18 @@ export function useObmepProgress() {
   }, []);
   useEffect(() => {
     if (!ready) return;
-    try { localStorage.setItem("bela-obmep-progress-v1", JSON.stringify(progress)); } catch {}
+    try { studyStorage.setItem("bela-obmep-progress-v1", JSON.stringify(progress)); } catch {}
     if (!deviceToken) return;
-    const timer = setTimeout(() => {
+    const save=async () => {
       setSyncMessage("Salvando progresso…");
-      void fetch("/api/obmep", {
+      await fetch("/api/obmep", {
         method: "POST", headers: { "content-type": "application/json", "x-bela-device-token": deviceToken },
         body: JSON.stringify({ progress }),
       }).then((r) => { if (!r.ok) throw new Error("sync"); setSyncMessage("Progresso sincronizado"); })
-        .catch(() => setSyncMessage("Salvo neste aparelho. Tentaremos sincronizar ao reconectar."));
-    }, 350);
+        .catch(() => {setSyncMessage("Salvo neste aparelho. Tentaremos sincronizar ao reconectar.");throw new Error("O progresso OBMEP aguarda sincronização.");});
+    };
+    registerPendingSave("obmep",save);
+    const timer=setTimeout(()=>{void save().catch(()=>{});},350);
     return () => clearTimeout(timer);
   }, [progress, ready, deviceToken, retry]);
   return { progress, setProgress, syncMessage, deviceToken };

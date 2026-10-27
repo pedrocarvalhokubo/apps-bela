@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import AuthGate from "./components/AuthGate";
 import UnifiedNav from "./components/UnifiedNav";
 
 
@@ -44,7 +45,7 @@ export default function RootLayout({
       <body
         className="antialiased"
       >
-        <UnifiedNav />{children}
+        <AuthGate><UnifiedNav />{children}</AuthGate>
       </body>
     </html>
   );

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import {getStudyMode} from "../../lib/study-storage";
+import {submitAttempt} from "../../lib/attempt-client";
 import { useObmepProgress } from "../../lib/use-obmep-progress";
 import {
   type LevelId,
@@ -132,12 +134,9 @@ export default function Home() {
       return;
     }
 
-    if (deviceToken) void fetch("/api/attempts", {
-      method: "POST", headers: { "content-type": "application/json", "x-bela-device-token": deviceToken },
-      body: JSON.stringify({ subject: "obmep", quizId: currentQuestion.id, questionId: currentQuestion.number,
+    if (getStudyMode()==='bela') void submitAttempt({ subject: "obmep", quizId: currentQuestion.id, questionId: currentQuestion.number,
         topic: themeMeta[currentQuestion.theme].name, selected: letters[optionIndex],
-        correct: optionIndex === currentQuestion.answer, isReview: Boolean(progress[currentQuestion.id]?.solved) }),
-    }).catch(() => {});
+        correct: optionIndex === currentQuestion.answer, isReview: Boolean(progress[currentQuestion.id]?.solved) });
     if (optionIndex === currentQuestion.answer) {
       const firstTry = wrongAttempts === 0;
       setProgress((previous) => ({
