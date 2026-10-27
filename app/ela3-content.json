@@ -1,0 +1,1975 @@
+{
+  "subject": {
+    "key": "ela",
+    "name": "E.L.A.",
+    "icon": "📚",
+    "eyebrow": "ELA • 3º TRIMESTRE",
+    "title": "Words, stories & discoveries",
+    "description": "10 aulas • sons, gramática, palavras e leitura • explicações em inglês com apoio em português",
+    "assessmentDate": "",
+    "quizId": "ela3-general",
+    "lessons": [
+      {
+        "id": "e3-blends",
+        "number": "01",
+        "icon": "📚",
+        "title": "Blends and digraphs",
+        "subtitle": "Hear the sounds • Escute os sons",
+        "intro": "A blend keeps the sounds of its consonants. A digraph uses two letters for one sound. Say the word slowly and listen, instead of counting only letters.",
+        "facts": [
+          {
+            "term": "Blends:",
+            "text": "fl in flag, gr in grape, st in star, cl in clap and tr in train. You can hear each consonant."
+          },
+          {
+            "term": "Digraphs:",
+            "text": "sh in ship, ch in cheese, th in thin and ph in phone make one sound."
+          },
+          {
+            "term": "More blends:",
+            "text": "crab, flame, brick, plant, glad, drift and straw."
+          },
+          {
+            "term": "Watch wh:",
+            "text": "what and whale start with /w/ in many accents; whole starts with /h/. Do not assume every wh word sounds the same."
+          }
+        ],
+        "remember": "Blend: hear each consonant. Digraph: two letters work as one sound.",
+        "tone": "purple",
+        "quizId": "ela3-blends"
+      },
+      {
+        "id": "e3-verbs",
+        "number": "02",
+        "icon": "📚",
+        "title": "Verbs",
+        "subtitle": "Actions and states • Ações e estados",
+        "intro": "A verb tells what someone or something does, or describes a state of being. Runs is an action; is can connect someone to a description.",
+        "facts": [
+          {
+            "term": "Action:",
+            "text": "The girl runs. The dog eats. The children play."
+          },
+          {
+            "term": "State of being:",
+            "text": "He is happy. They are ready. I am calm."
+          },
+          {
+            "term": "Find the verb:",
+            "text": "Ask: what does the subject do? Or what word connects the subject to its state?"
+          },
+          {
+            "term": "Read in context:",
+            "text": "In “She walks quietly”, walks is the verb and quietly tells how she walks."
+          }
+        ],
+        "remember": "A verb can show an action OR a state of being.",
+        "tone": "orange",
+        "quizId": "ela3-verbs"
+      },
+      {
+        "id": "e3-adverbs",
+        "number": "03",
+        "icon": "📚",
+        "title": "Adverbs of manner",
+        "subtitle": "How does it happen? • Como acontece?",
+        "intro": "An adverb can describe a verb, an adjective or another adverb. This review practises adverbs of manner: words that tell HOW an action happens.",
+        "facts": [
+          {
+            "term": "Ask how:",
+            "text": "The turtle moves slowly. Slowly describes moves."
+          },
+          {
+            "term": "Often add -ly:",
+            "text": "slow → slowly; calm → calmly; beautiful → beautifully; loud → loudly."
+          },
+          {
+            "term": "Change y to i:",
+            "text": "easy → easily; happy → happily; lazy → lazily."
+          },
+          {
+            "term": "Not always -ly:",
+            "text": "good → well; hard can stay hard. In “She works hard”, hard is the adverb."
+          }
+        ],
+        "remember": "Find the action, then ask HOW. Check the spelling!",
+        "tone": "green",
+        "quizId": "ela3-adverbs"
+      },
+      {
+        "id": "e3-homophones",
+        "number": "04",
+        "icon": "📚",
+        "title": "Homophones",
+        "subtitle": "Same sound, different words • Mesmo som",
+        "intro": "Homophones sound the same but have different meanings and, in the pairs studied here, different spellings. Read the sentence to choose the meaning you need.",
+        "facts": [
+          {
+            "term": "People and things:",
+            "text": "son / sun; pair / pear; flower / flour."
+          },
+          {
+            "term": "Actions and places:",
+            "text": "see / sea; meet / meat; knew / new; wear / where."
+          },
+          {
+            "term": "Useful contrasts:",
+            "text": "right / write; road / rode; paws / pause; weak / week; steel / steal."
+          },
+          {
+            "term": "Three-way clues:",
+            "text": "two = 2; too = also or more than needed; to = direction or part of an infinitive. Their shows possession; they’re means they are; there indicates a place."
+          }
+        ],
+        "remember": "The sound is a clue. The sentence decides the meaning.",
+        "tone": "blue",
+        "quizId": "ela3-homophones"
+      },
+      {
+        "id": "e3-homographs",
+        "number": "05",
+        "icon": "📚",
+        "title": "Homographs and homonyms",
+        "subtitle": "One spelling, different meanings • O contexto decide",
+        "intro": "Homographs have the same spelling but different meanings; pronunciation can be the same or different. The examples in your review also share the same pronunciation and are called homonyms in the worksheet.",
+        "facts": [
+          {
+            "term": "bat:",
+            "text": "a flying mammal OR an object used to hit a ball."
+          },
+          {
+            "term": "palm and wave:",
+            "text": "palm: part of a hand or a tree. wave: moving water or a greeting gesture."
+          },
+          {
+            "term": "bark, nail, ring:",
+            "text": "bark: dog sound / tree covering; nail: fingernail / metal fastener; ring: jewellery / a bell’s sound or the action."
+          },
+          {
+            "term": "More examples:",
+            "text": "hand: body part / clock pointer; ball: toy / formal dance; seal: animal / close securely; light: brightness / not heavy; fair: event / just."
+          }
+        ],
+        "remember": "Same spelling does not guarantee the same meaning. Read the context.",
+        "tone": "purple",
+        "quizId": "ela3-homographs"
+      },
+      {
+        "id": "e3-genres",
+        "number": "06",
+        "icon": "📚",
+        "title": "Fiction and non-fiction",
+        "subtitle": "Imagine or inform? • A intenção do texto",
+        "intro": "Fiction presents imagined stories. Non-fiction gives information about real people, places, events or ideas. Look at the purpose and evidence, not just whether the book has pictures.",
+        "facts": [
+          {
+            "term": "Fiction:",
+            "text": "Invented characters and events; often a setting, plot, problem and solution. It may entertain or communicate a message."
+          },
+          {
+            "term": "Not always magic:",
+            "text": "A realistic made-up story is still fiction. Fiction may use real places."
+          },
+          {
+            "term": "Non-fiction:",
+            "text": "Uses facts and real information to teach or explain. Examples include biographies, textbooks and informational articles."
+          },
+          {
+            "term": "Ask why:",
+            "text": "Is the author mainly telling an imagined story or explaining real information? Both types can have illustrations."
+          }
+        ],
+        "remember": "Fiction: imagined story. Non-fiction: information grounded in reality.",
+        "tone": "orange",
+        "quizId": "ela3-genres"
+      },
+      {
+        "id": "e3-informational",
+        "number": "07",
+        "icon": "📚",
+        "title": "Informational text features",
+        "subtitle": "Find your way through facts • Recursos do texto",
+        "intro": "Informational texts teach readers about a topic. Features such as titles, subheadings, pictures, captions and glossaries make facts easier to find and understand.",
+        "facts": [
+          {
+            "term": "Title:",
+            "text": "Names or sums up the whole topic. A subheading introduces a smaller section."
+          },
+          {
+            "term": "Paragraphs and lists:",
+            "text": "Paragraphs group related information. Bullet points help list important details."
+          },
+          {
+            "term": "Images and captions:",
+            "text": "Photographs, illustrations and diagrams support information. A caption explains an image; a label names a part."
+          },
+          {
+            "term": "Glossary:",
+            "text": "Defines special words used in the text. Look there when a term is unfamiliar."
+          }
+        ],
+        "remember": "Title = whole topic. Subheading = section. Caption = image. Glossary = word meaning.",
+        "tone": "green",
+        "quizId": "ela3-informational"
+      },
+      {
+        "id": "e3-biography",
+        "number": "08",
+        "icon": "📚",
+        "title": "Biography and autobiography",
+        "subtitle": "Who tells the life story? • Quem escreve?",
+        "intro": "A biography is a factual account of someone’s life written by another person. An autobiography is written by the person whose life it describes.",
+        "facts": [
+          {
+            "term": "Biography:",
+            "text": "Usually uses third person: he, she or they. The author researches another person’s life."
+          },
+          {
+            "term": "Autobiography:",
+            "text": "Usually uses first person: I, me, my, we. Auto means self."
+          },
+          {
+            "term": "Chronological order:",
+            "text": "Important events are commonly organised from earliest to latest, using dates and sequence words."
+          },
+          {
+            "term": "What to include:",
+            "text": "Birth and childhood, influences, important events, achievements and relevant feelings or quotations. Explain why the person is remembered."
+          }
+        ],
+        "remember": "Biography: another author. Autobiography: the person writes their own life.",
+        "tone": "blue",
+        "quizId": "ela3-biography"
+      },
+      {
+        "id": "e3-dahl",
+        "number": "09",
+        "icon": "📚",
+        "title": "Reading: Roald Dahl",
+        "subtitle": "Read a life story • Encontre as evidências",
+        "intro": "Read the short biography below. Use dates, names and subheadings to locate answers. Explain each answer with information from the text.",
+        "facts": [
+          {
+            "term": "Early life:",
+            "text": "Roald Dahl was born on 13 September 1916 in Llandaff, Wales. His parents were Norwegian. His mother’s stories helped shape his imagination."
+          },
+          {
+            "term": "School:",
+            "text": "He attended St Peter’s and later Repton. The study passage describes his skill in sports, including boxing, and his experience tasting chocolate."
+          },
+          {
+            "term": "Work and writing:",
+            "text": "He worked for an oil company, joined the RAF, and was injured in a plane crash in Libya in 1940. In 1942, C. S. Forester encouraged him to write about flying."
+          },
+          {
+            "term": "Stories and legacy:",
+            "text": "His children’s books include James and the Giant Peach, Charlie and the Chocolate Factory, The BFG, The Twits and Matilda. He died on 23 November 1990."
+          }
+        ],
+        "remember": "For a reading question, find the sentence that supports your answer.",
+        "tone": "purple",
+        "quizId": "ela3-dahl"
+      },
+      {
+        "id": "e3-spiders",
+        "number": "10",
+        "icon": "📚",
+        "title": "Reading: Spiders",
+        "subtitle": "Facts, headings and glossary • Leia para aprender",
+        "intro": "Read this informational text about spiders. Notice how each section groups related facts. Practise choosing subheadings and finding evidence, rather than memorising every number.",
+        "facts": [
+          {
+            "term": "Family and body:",
+            "text": "Spiders are arachnids and invertebrates. They have eight legs, an exoskeleton and two main body regions: cephalothorax and abdomen."
+          },
+          {
+            "term": "Habitats:",
+            "text": "Some spiders live in burrows. Others shelter in gaps between bricks, among plants or in wood piles."
+          },
+          {
+            "term": "Size:",
+            "text": "Spiders come in many sizes. The Goliath birdeater is a large tarantula from northern South America."
+          },
+          {
+            "term": "Food:",
+            "text": "Many spiders eat insects. Some catch prey in webs; others hunt without a web. Many use venom to subdue prey."
+          }
+        ],
+        "remember": "Find the main idea of each paragraph, then choose its subheading.",
+        "tone": "orange",
+        "quizId": "ela3-spiders"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": 3301,
+      "topic": "Blends and digraphs",
+      "prompt": "Which word begins with a blend?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Say the beginning of each word slowly.",
+        "Look for two consonant sounds that stay separate."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "flag",
+          "explanation": "Correct. In flag, /f/ and /l/ can both be heard."
+        },
+        {
+          "id": "b",
+          "label": "ship",
+          "explanation": "Try again. sh in ship is a digraph."
+        },
+        {
+          "id": "c",
+          "label": "cheese",
+          "explanation": "Try again. ch in cheese is a digraph."
+        },
+        {
+          "id": "d",
+          "label": "phone",
+          "explanation": "Try again. ph in phone makes the /f/ sound."
+        }
+      ]
+    },
+    {
+      "id": 3302,
+      "topic": "Blends and digraphs",
+      "prompt": "What do sh in shower and ph in photo have in common?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Count sounds, not letters.",
+        "Two letters can work together as one sound."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Both make the same sound.",
+          "explanation": "Try again. sh and ph make different sounds."
+        },
+        {
+          "id": "b",
+          "label": "Both are digraphs.",
+          "explanation": "Correct. Each letter pair represents one sound."
+        },
+        {
+          "id": "c",
+          "label": "Both are vowels.",
+          "explanation": "Try again. These are consonant letter groups."
+        },
+        {
+          "id": "d",
+          "label": "Both are blends.",
+          "explanation": "Try again. You do not hear separate s+h or p+h sounds."
+        }
+      ]
+    },
+    {
+      "id": 3303,
+      "topic": "Blends and digraphs",
+      "prompt": "Which group contains only words beginning with blends?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Listen to the first two consonants.",
+        "A mixed group is not an all-blend group."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "thin, ship, photo",
+          "explanation": "Try again. th, sh and ph are digraphs."
+        },
+        {
+          "id": "b",
+          "label": "star, cheese, phone",
+          "explanation": "Try again. Only star begins with a blend in this group."
+        },
+        {
+          "id": "c",
+          "label": "crab, plant, drift",
+          "explanation": "Correct. cr, pl and dr keep the consonant sounds."
+        },
+        {
+          "id": "d",
+          "label": "cheese, phone, shower",
+          "explanation": "Try again. ch, ph and sh are digraphs."
+        }
+      ]
+    },
+    {
+      "id": 3304,
+      "topic": "Blends and digraphs",
+      "prompt": "In train, what happens to the t and r sounds?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Say train slowly.",
+        "A blend keeps its consonant sounds."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "They always become the sh sound.",
+          "explanation": "Try again. sh belongs to a different letter group."
+        },
+        {
+          "id": "b",
+          "label": "Both letters are silent.",
+          "explanation": "Try again. The beginning of train is not silent."
+        },
+        {
+          "id": "c",
+          "label": "Only a vowel can be heard.",
+          "explanation": "Try again. t and r are consonants."
+        },
+        {
+          "id": "d",
+          "label": "Both can be heard in the blend.",
+          "explanation": "Correct. tr is the blend studied in train."
+        }
+      ]
+    },
+    {
+      "id": 3305,
+      "topic": "Verbs",
+      "prompt": "Find the verb: “She runs every morning.”",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Ask what she does.",
+        "Look for the action."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "runs",
+          "explanation": "Correct. Runs tells what she does."
+        },
+        {
+          "id": "b",
+          "label": "She",
+          "explanation": "Try again. She is the subject pronoun."
+        },
+        {
+          "id": "c",
+          "label": "every",
+          "explanation": "Try again. Every helps describe the time expression."
+        },
+        {
+          "id": "d",
+          "label": "morning",
+          "explanation": "Try again. Morning names a time of day."
+        }
+      ]
+    },
+    {
+      "id": 3306,
+      "topic": "Verbs",
+      "prompt": "Find the verb: “He is happy.”",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "A verb need not show movement.",
+        "Look for a form of be."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "There is no verb.",
+          "explanation": "Try again. A sentence about a state still has a verb."
+        },
+        {
+          "id": "b",
+          "label": "is",
+          "explanation": "Correct. Is connects he to his state."
+        },
+        {
+          "id": "c",
+          "label": "happy",
+          "explanation": "Try again. Happy is an adjective."
+        },
+        {
+          "id": "d",
+          "label": "He",
+          "explanation": "Try again. He is a pronoun."
+        }
+      ]
+    },
+    {
+      "id": 3307,
+      "topic": "Verbs",
+      "prompt": "Which sentence uses a verb to describe a state?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Compare actions with being.",
+        "Look for am, is or are."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "They draw pictures.",
+          "explanation": "Try again. Draw is an action."
+        },
+        {
+          "id": "b",
+          "label": "They open books.",
+          "explanation": "Try again. Open is an action."
+        },
+        {
+          "id": "c",
+          "label": "They are ready.",
+          "explanation": "Correct. Are connects they with ready."
+        },
+        {
+          "id": "d",
+          "label": "They jump high.",
+          "explanation": "Try again. Jump is an action."
+        }
+      ]
+    },
+    {
+      "id": 3308,
+      "topic": "Verbs",
+      "prompt": "In “The dog ate hungrily”, which word is the verb?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Ask: what did the dog do?",
+        "The verb names the action, not how it happened."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "dog",
+          "explanation": "Try again. Dog names the animal."
+        },
+        {
+          "id": "b",
+          "label": "hungrily",
+          "explanation": "Try again. Hungrily describes how it ate."
+        },
+        {
+          "id": "c",
+          "label": "The",
+          "explanation": "Try again. The introduces the noun."
+        },
+        {
+          "id": "d",
+          "label": "ate",
+          "explanation": "Correct. Ate tells what the dog did."
+        }
+      ]
+    },
+    {
+      "id": 3309,
+      "topic": "Adverbs of manner",
+      "prompt": "The girl balanced ___ on the beam.",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Imagine keeping your balance.",
+        "Choose how she acts, using the adverb form."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "carefully",
+          "explanation": "Correct. Carefully describes how she kept her balance."
+        },
+        {
+          "id": "b",
+          "label": "loudly",
+          "explanation": "Try again. Loudly describes sound, not careful balancing."
+        },
+        {
+          "id": "c",
+          "label": "angrily",
+          "explanation": "Try again. Angrily describes anger, which the sentence does not suggest."
+        },
+        {
+          "id": "d",
+          "label": "careful",
+          "explanation": "Try again. Careful is an adjective; the action needs an adverb."
+        }
+      ]
+    },
+    {
+      "id": 3310,
+      "topic": "Adverbs of manner",
+      "prompt": "What is the adverb formed from happy?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Check the final y.",
+        "The ending becomes -ily."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "happy",
+          "explanation": "Try again. Happy is the adjective."
+        },
+        {
+          "id": "b",
+          "label": "happily",
+          "explanation": "Correct. Change y to i and add ly: happily."
+        },
+        {
+          "id": "c",
+          "label": "happyly",
+          "explanation": "Try again. The y changes to i before ly."
+        },
+        {
+          "id": "d",
+          "label": "happyness",
+          "explanation": "Try again. This is not the adverb spelling."
+        }
+      ]
+    },
+    {
+      "id": 3311,
+      "topic": "Adverbs of manner",
+      "prompt": "The sloth climbed the tree ___.",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Think of how a sloth moves.",
+        "Use the adverb, not just the adjective."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "loudly",
+          "explanation": "Try again. Loudly describes sound."
+        },
+        {
+          "id": "b",
+          "label": "slow",
+          "explanation": "Try again. Use the adverb slowly for this exercise."
+        },
+        {
+          "id": "c",
+          "label": "slowly",
+          "explanation": "Correct. Slowly fits the movement of the sloth."
+        },
+        {
+          "id": "d",
+          "label": "angrily",
+          "explanation": "Try again. Angrily adds anger with no clue."
+        }
+      ]
+    },
+    {
+      "id": 3312,
+      "topic": "Adverbs of manner",
+      "prompt": "Which sentence uses an adverb correctly?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Find the action and its description.",
+        "How does she sing?"
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "She sings beautiful.",
+          "explanation": "Try again. Beautiful is an adjective."
+        },
+        {
+          "id": "b",
+          "label": "She sings beauty.",
+          "explanation": "Try again. Beauty is a noun."
+        },
+        {
+          "id": "c",
+          "label": "She beautifully song.",
+          "explanation": "Try again. This sentence is missing a correctly used verb."
+        },
+        {
+          "id": "d",
+          "label": "She sings beautifully.",
+          "explanation": "Correct. Beautifully describes sings."
+        }
+      ]
+    },
+    {
+      "id": 3313,
+      "topic": "Homophones",
+      "prompt": "The lion has big ___.",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "The sentence needs an animal body part.",
+        "Which spelling names its feet?"
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "paws",
+          "explanation": "Correct. Paws are the animal’s feet."
+        },
+        {
+          "id": "b",
+          "label": "pause",
+          "explanation": "Try again. Pause means a short stop."
+        },
+        {
+          "id": "c",
+          "label": "pears",
+          "explanation": "Try again. Pears are fruit."
+        },
+        {
+          "id": "d",
+          "label": "pairs",
+          "explanation": "Try again. Pairs means groups of two."
+        }
+      ]
+    },
+    {
+      "id": 3314,
+      "topic": "Homophones",
+      "prompt": "The children put ___ hats on.",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Who owns the hats?",
+        "Try replacing they’re with they are."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "then",
+          "explanation": "Try again. Then tells sequence or time."
+        },
+        {
+          "id": "b",
+          "label": "their",
+          "explanation": "Correct. Their shows that the hats belong to the children."
+        },
+        {
+          "id": "c",
+          "label": "they’re",
+          "explanation": "Try again. They’re means they are; that does not fit before hats."
+        },
+        {
+          "id": "d",
+          "label": "there",
+          "explanation": "Try again. There points to a place."
+        }
+      ]
+    },
+    {
+      "id": 3315,
+      "topic": "Homophones",
+      "prompt": "We need ___ to bake a cake.",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Think about a recipe ingredient.",
+        "Same sound as flower, different spelling."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "floor",
+          "explanation": "Try again. Floor is the surface you walk on."
+        },
+        {
+          "id": "b",
+          "label": "flew",
+          "explanation": "Try again. Flew is the past of fly."
+        },
+        {
+          "id": "c",
+          "label": "flour",
+          "explanation": "Correct. Flour is a baking ingredient."
+        },
+        {
+          "id": "d",
+          "label": "flower",
+          "explanation": "Try again. A flower is part of a plant."
+        }
+      ]
+    },
+    {
+      "id": 3316,
+      "topic": "Homophones",
+      "prompt": "Choose the correct pair: “I can ___ the ___.”",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "The first gap is an action.",
+        "The second gap names a place with water."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "sea / see",
+          "explanation": "Try again. The action and the noun are reversed."
+        },
+        {
+          "id": "b",
+          "label": "see / see",
+          "explanation": "Try again. The second space needs the name of the water."
+        },
+        {
+          "id": "c",
+          "label": "sea / sea",
+          "explanation": "Try again. The first space needs an action verb."
+        },
+        {
+          "id": "d",
+          "label": "see / sea",
+          "explanation": "Correct. See is the action; sea is the water."
+        }
+      ]
+    },
+    {
+      "id": 3317,
+      "topic": "Homographs and homonyms",
+      "prompt": "Which word fits both? “A ___ flew at night.” “He used a ___ to hit the ball.”",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "One spelling must work in both gaps.",
+        "Think of an animal and sports equipment."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "bat",
+          "explanation": "Correct. Bat has both meanings in these sentences."
+        },
+        {
+          "id": "b",
+          "label": "bird",
+          "explanation": "Try again. A bird flies, but it is not the sports tool."
+        },
+        {
+          "id": "c",
+          "label": "ball",
+          "explanation": "Try again. A ball is hit; it is not the tool that hits it."
+        },
+        {
+          "id": "d",
+          "label": "bark",
+          "explanation": "Try again. Bark is a dog sound or tree covering."
+        }
+      ]
+    },
+    {
+      "id": 3318,
+      "topic": "Homographs and homonyms",
+      "prompt": "“The dog barks.” “The tree has bark.” What changes?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Compare what the sentences describe.",
+        "The word refers to different things."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Bark always means a dog.",
+          "explanation": "Try again. The tree sentence uses the covering meaning."
+        },
+        {
+          "id": "b",
+          "label": "The meaning of bark.",
+          "explanation": "Correct. Context gives the word different meanings."
+        },
+        {
+          "id": "c",
+          "label": "The spelling of bark.",
+          "explanation": "Try again. The key spelling bark is the same."
+        },
+        {
+          "id": "d",
+          "label": "Bark always means a tree.",
+          "explanation": "Try again. The dog sentence uses a sound or action."
+        }
+      ]
+    },
+    {
+      "id": 3319,
+      "topic": "Homographs and homonyms",
+      "prompt": "Which pair shows two meanings of light?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look for the same word in both phrases.",
+        "Does it mean brightness in one and weight in the other?"
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "A sunny day / a dark night",
+          "explanation": "Try again. These describe opposites without using light twice."
+        },
+        {
+          "id": "b",
+          "label": "A new lamp / an old lamp",
+          "explanation": "Try again. New and old describe age."
+        },
+        {
+          "id": "c",
+          "label": "A bright light / a light bag",
+          "explanation": "Correct. The first light means illumination; the second means not heavy."
+        },
+        {
+          "id": "d",
+          "label": "A light bag / a heavy bag",
+          "explanation": "Try again. This contrasts light with heavy, but does not show two meanings of light."
+        }
+      ]
+    },
+    {
+      "id": 3320,
+      "topic": "Homographs and homonyms",
+      "prompt": "A homograph always has the same ___ as another word with a different meaning.",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Think about graph: written form.",
+        "The written letters match."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "meaning",
+          "explanation": "Try again. The meanings are different."
+        },
+        {
+          "id": "b",
+          "label": "number of objects",
+          "explanation": "Try again. Object quantity is unrelated."
+        },
+        {
+          "id": "c",
+          "label": "sentence",
+          "explanation": "Try again. The words can appear in different sentences."
+        },
+        {
+          "id": "d",
+          "label": "spelling",
+          "explanation": "Correct. Same spelling is what defines a homograph."
+        }
+      ]
+    },
+    {
+      "id": 3321,
+      "topic": "Fiction and non-fiction",
+      "prompt": "A dragon borrows a book and flies to the moon. What is this likely to be?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Ask whether the events are imagined.",
+        "The dragon is a fantasy character."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Fiction",
+          "explanation": "Correct. The imagined dragon adventure signals fiction."
+        },
+        {
+          "id": "b",
+          "label": "A factual biography",
+          "explanation": "Try again. A biography gives facts about a real person."
+        },
+        {
+          "id": "c",
+          "label": "An instruction manual",
+          "explanation": "Try again. This is a story, not a sequence of instructions."
+        },
+        {
+          "id": "d",
+          "label": "A news report",
+          "explanation": "Try again. The invented event is not presented with factual evidence."
+        }
+      ]
+    },
+    {
+      "id": 3322,
+      "topic": "Fiction and non-fiction",
+      "prompt": "Which is a non-fiction example?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look for real information.",
+        "A true subject is different from an imagined adventure."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "A made-up story set in a real city",
+          "explanation": "Try again. A real setting does not make invented events factual."
+        },
+        {
+          "id": "b",
+          "label": "A factual book about spiders",
+          "explanation": "Correct. A factual book teaches real information."
+        },
+        {
+          "id": "c",
+          "label": "A tale about a talking spider",
+          "explanation": "Try again. Talking animals in an invented story signal fiction."
+        },
+        {
+          "id": "d",
+          "label": "A fantasy novel",
+          "explanation": "Try again. A fantasy novel is fiction."
+        }
+      ]
+    },
+    {
+      "id": 3323,
+      "topic": "Fiction and non-fiction",
+      "prompt": "Can a realistic made-up story be fiction?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Think about who created the events.",
+        "Invented does not mean impossible."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "No, fiction cannot include people.",
+          "explanation": "Try again. People can be fictional characters."
+        },
+        {
+          "id": "b",
+          "label": "No, pictures make it non-fiction.",
+          "explanation": "Try again. Pictures occur in both genres."
+        },
+        {
+          "id": "c",
+          "label": "Yes, because its events are invented.",
+          "explanation": "Correct. Fiction does not require magic."
+        },
+        {
+          "id": "d",
+          "label": "No, fiction always has magic.",
+          "explanation": "Try again. Realistic fiction can have no magic."
+        }
+      ]
+    },
+    {
+      "id": 3324,
+      "topic": "Fiction and non-fiction",
+      "prompt": "Which clue is best for identifying non-fiction?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look at content rather than decoration.",
+        "What information does the author provide?"
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "It has colourful pictures.",
+          "explanation": "Try again. Fiction can also have pictures."
+        },
+        {
+          "id": "b",
+          "label": "It is longer than one page.",
+          "explanation": "Try again. Length does not determine genre."
+        },
+        {
+          "id": "c",
+          "label": "It has a title.",
+          "explanation": "Try again. Both genres can have titles."
+        },
+        {
+          "id": "d",
+          "label": "It gives factual information about its subject.",
+          "explanation": "Correct. Facts and purpose are stronger clues than appearance."
+        }
+      ]
+    },
+    {
+      "id": 3325,
+      "topic": "Informational text features",
+      "prompt": "Where would you find the meaning of exoskeleton?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look for a feature that defines words.",
+        "It is a short list of terms and meanings."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "In the glossary",
+          "explanation": "Correct. A glossary explains specialist words."
+        },
+        {
+          "id": "b",
+          "label": "Only in the title",
+          "explanation": "Try again. The title names the topic, not every term."
+        },
+        {
+          "id": "c",
+          "label": "In a fictional character list",
+          "explanation": "Try again. A character list belongs to a different reading task."
+        },
+        {
+          "id": "d",
+          "label": "In the author’s favourite colour",
+          "explanation": "Try again. That information would not define the word."
+        }
+      ]
+    },
+    {
+      "id": 3326,
+      "topic": "Informational text features",
+      "prompt": "Which subheading fits a paragraph about where spiders live?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Summarise the paragraph in a few words.",
+        "Where an animal lives is its habitat."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Early life of a writer",
+          "explanation": "Try again. The paragraph is about animals’ homes."
+        },
+        {
+          "id": "b",
+          "label": "Habitats",
+          "explanation": "Correct. Habitats tells where animals live."
+        },
+        {
+          "id": "c",
+          "label": "Food",
+          "explanation": "Try again. Food tells what they eat."
+        },
+        {
+          "id": "d",
+          "label": "Size",
+          "explanation": "Try again. Size tells how big they are."
+        }
+      ]
+    },
+    {
+      "id": 3327,
+      "topic": "Informational text features",
+      "prompt": "What does a caption do?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look near a picture.",
+        "The short sentence helps you understand that picture."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Always tells an imaginary story",
+          "explanation": "Try again. Captions can explain factual images."
+        },
+        {
+          "id": "b",
+          "label": "Lists every word in the language",
+          "explanation": "Try again. A glossary or dictionary defines words; a caption explains an image."
+        },
+        {
+          "id": "c",
+          "label": "Explains a photograph or illustration",
+          "explanation": "Correct. Captions describe the related image."
+        },
+        {
+          "id": "d",
+          "label": "Names the entire book only",
+          "explanation": "Try again. A main title names the whole topic."
+        }
+      ]
+    },
+    {
+      "id": 3328,
+      "topic": "Informational text features",
+      "prompt": "Which set contains informational text features?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Think about finding facts and definitions.",
+        "Choose tools that organise information."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Magic spells, villains and quests",
+          "explanation": "Try again. Those are possible story elements."
+        },
+        {
+          "id": "b",
+          "label": "Only rhyming words",
+          "explanation": "Try again. Rhymes do not define informational text."
+        },
+        {
+          "id": "c",
+          "label": "Only dialogue and a plot twist",
+          "explanation": "Try again. Stories can use these elements, but they are not the features asked for."
+        },
+        {
+          "id": "d",
+          "label": "Subheadings, captions and glossary",
+          "explanation": "Correct. These features organise and explain information."
+        }
+      ]
+    },
+    {
+      "id": 3329,
+      "topic": "Biography and autobiography",
+      "prompt": "Who writes an autobiography?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Think about the prefix auto.",
+        "Whose life is the writer describing?"
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "The person whose life it describes",
+          "explanation": "Correct. Auto means self: the person writes about their own life."
+        },
+        {
+          "id": "b",
+          "label": "Always a different researcher",
+          "explanation": "Try again. That describes a biography, not an autobiography."
+        },
+        {
+          "id": "c",
+          "label": "Only a person’s teacher",
+          "explanation": "Try again. The teacher could write a biography but is not required."
+        },
+        {
+          "id": "d",
+          "label": "Only a newspaper editor",
+          "explanation": "Try again. The writer’s job does not define autobiography."
+        }
+      ]
+    },
+    {
+      "id": 3330,
+      "topic": "Biography and autobiography",
+      "prompt": "Which opening most clearly suggests autobiography?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look for first person.",
+        "The narrator refers to themself."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "They worked as writers.",
+          "explanation": "Try again. They suggests third-person narration."
+        },
+        {
+          "id": "b",
+          "label": "I was born in a small town.",
+          "explanation": "Correct. I suggests the writer is describing their own life."
+        },
+        {
+          "id": "c",
+          "label": "She was born in a small town.",
+          "explanation": "Try again. She suggests third-person narration."
+        },
+        {
+          "id": "d",
+          "label": "He grew up near the sea.",
+          "explanation": "Try again. He suggests third-person narration."
+        }
+      ]
+    },
+    {
+      "id": 3331,
+      "topic": "Biography and autobiography",
+      "prompt": "What does chronological order mean?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Use dates as clues.",
+        "What happened first, next and last?"
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "In alphabetical order of people",
+          "explanation": "Try again. Alphabetical order is different from chronology."
+        },
+        {
+          "id": "b",
+          "label": "In any random order",
+          "explanation": "Try again. Random order does not show sequence."
+        },
+        {
+          "id": "c",
+          "label": "From the earliest event to the latest",
+          "explanation": "Correct. Chronology follows the order in time."
+        },
+        {
+          "id": "d",
+          "label": "From the longest word to the shortest",
+          "explanation": "Try again. Word length is not time order."
+        }
+      ]
+    },
+    {
+      "id": 3332,
+      "topic": "Biography and autobiography",
+      "prompt": "Can a biography describe a person who is still alive?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "A life story can still be continuing.",
+        "Who writes matters more than whether the subject is alive."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "No, biographies require a death.",
+          "explanation": "Try again. Death is not required for a biography."
+        },
+        {
+          "id": "b",
+          "label": "No, only fiction describes living people.",
+          "explanation": "Try again. Non-fiction can describe living people."
+        },
+        {
+          "id": "c",
+          "label": "Only if the author is the same person.",
+          "explanation": "Try again. The same person writing their life makes it autobiography."
+        },
+        {
+          "id": "d",
+          "label": "Yes, it can describe their life so far.",
+          "explanation": "Correct. A biography may describe a living person."
+        }
+      ]
+    },
+    {
+      "id": 3333,
+      "topic": "Reading: Roald Dahl",
+      "prompt": "According to the passage, in which country was Roald Dahl born?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Read the early-life section.",
+        "Do not confuse his birthplace with his parents’ origin."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Wales",
+          "explanation": "Correct. The early-life section names Llandaff, Wales."
+        },
+        {
+          "id": "b",
+          "label": "Norway",
+          "explanation": "Try again. Norway was his parents’ country of origin."
+        },
+        {
+          "id": "c",
+          "label": "England",
+          "explanation": "Try again. He later lived in England, but was born in Wales."
+        },
+        {
+          "id": "d",
+          "label": "Scotland",
+          "explanation": "Try again. Scotland is not his birthplace in the passage."
+        }
+      ]
+    },
+    {
+      "id": 3334,
+      "topic": "Reading: Roald Dahl",
+      "prompt": "Which event matches 1940 in the passage?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Find the date in the work section.",
+        "Look for an event during his time as a pilot."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "He died.",
+          "explanation": "Try again. He died in 1990."
+        },
+        {
+          "id": "b",
+          "label": "His plane crashed in Libya.",
+          "explanation": "Correct. The work section places the crash in 1940."
+        },
+        {
+          "id": "c",
+          "label": "He was born.",
+          "explanation": "Try again. His birth was in 1916."
+        },
+        {
+          "id": "d",
+          "label": "His sister Astri died.",
+          "explanation": "Try again. Astri died in 1920."
+        }
+      ]
+    },
+    {
+      "id": 3335,
+      "topic": "Reading: Roald Dahl",
+      "prompt": "Who encouraged Dahl to write about his flying experiences?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look in Becoming a writer.",
+        "Find the name of the other author."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Charlie",
+          "explanation": "Try again. Charlie is a character, not the author named."
+        },
+        {
+          "id": "b",
+          "label": "Matilda",
+          "explanation": "Try again. Matilda is a character and book title."
+        },
+        {
+          "id": "c",
+          "label": "C. S. Forester",
+          "explanation": "Correct. The passage names C. S. Forester."
+        },
+        {
+          "id": "d",
+          "label": "Astri",
+          "explanation": "Try again. Astri was his sister."
+        }
+      ]
+    },
+    {
+      "id": 3336,
+      "topic": "Reading: Roald Dahl",
+      "prompt": "Which school experience helped inspire Charlie and the Chocolate Factory?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look for a link between his experience and his book.",
+        "Which experience involved a food?"
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Learning to make shoes",
+          "explanation": "Try again. The passage does not give that connection."
+        },
+        {
+          "id": "b",
+          "label": "Living in a castle",
+          "explanation": "Try again. The passage does not give that connection."
+        },
+        {
+          "id": "c",
+          "label": "Studying spiders",
+          "explanation": "Try again. The spider text is a separate reading."
+        },
+        {
+          "id": "d",
+          "label": "Tasting chocolate",
+          "explanation": "Correct. The school paragraph links chocolate tasting to the book."
+        }
+      ]
+    },
+    {
+      "id": 3337,
+      "topic": "Reading: Spiders",
+      "prompt": "Why is the Spiders passage non-fiction?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Look at the purpose of the text.",
+        "Does it teach facts or tell an invented adventure?"
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "It explains real information about spiders.",
+          "explanation": "Correct. The text presents facts and explanations."
+        },
+        {
+          "id": "b",
+          "label": "It has a magical hero.",
+          "explanation": "Try again. There is no magical hero in this passage."
+        },
+        {
+          "id": "c",
+          "label": "It tells an invented adventure.",
+          "explanation": "Try again. The text is not an imagined adventure."
+        },
+        {
+          "id": "d",
+          "label": "It has no headings.",
+          "explanation": "Try again. It has headings, but facts are the main genre clue."
+        }
+      ]
+    },
+    {
+      "id": 3338,
+      "topic": "Reading: Spiders",
+      "prompt": "Which subheading fits: “Many spiders catch insects in webs or hunt them”?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Identify the shared idea in the sentence.",
+        "Insects are described as prey."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "School life",
+          "explanation": "Try again. It is not about school."
+        },
+        {
+          "id": "b",
+          "label": "Food",
+          "explanation": "Correct. The sentence describes what spiders eat and how they catch food."
+        },
+        {
+          "id": "c",
+          "label": "Size",
+          "explanation": "Try again. The sentence is not about size."
+        },
+        {
+          "id": "d",
+          "label": "Birth of a writer",
+          "explanation": "Try again. It is not about a writer."
+        }
+      ]
+    },
+    {
+      "id": 3339,
+      "topic": "Reading: Spiders",
+      "prompt": "What does exoskeleton mean in the glossary?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Find the word in the glossary.",
+        "Exo refers to the outside."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "A type of spider food",
+          "explanation": "Try again. The word describes body structure, not food."
+        },
+        {
+          "id": "b",
+          "label": "The soft centre of a book",
+          "explanation": "Try again. It is a biology word here, not a book part."
+        },
+        {
+          "id": "c",
+          "label": "A hard outer support and covering",
+          "explanation": "Correct. The glossary gives this meaning."
+        },
+        {
+          "id": "d",
+          "label": "An extra pair of wings",
+          "explanation": "Try again. Spiders do not have wings."
+        }
+      ]
+    },
+    {
+      "id": 3340,
+      "topic": "Reading: Spiders",
+      "prompt": "Which statement is a fact from the passage?",
+      "support": "Read carefully. Use the lesson and the clues in the sentence.",
+      "hints": [
+        "Use the sentence in the passage as evidence.",
+        "Beware of statements using all when the text says some or many."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Spiders tell bedtime stories.",
+          "explanation": "Try again. That would be an imagined story."
+        },
+        {
+          "id": "b",
+          "label": "All spiders live in the same habitat.",
+          "explanation": "Try again. The text describes different habitats."
+        },
+        {
+          "id": "c",
+          "label": "All spiders catch food in webs.",
+          "explanation": "Try again. The text also describes spiders that hunt without webs."
+        },
+        {
+          "id": "d",
+          "label": "Spiders have eight legs.",
+          "explanation": "Correct. The body section states that spiders have eight legs."
+        }
+      ]
+    }
+  ],
+  "deepStudy": {
+    "e3-blends": {
+      "title": "Explore • Blends and digraphs",
+      "paragraphs": [
+        "Em flag, ouvimos /f/ e /l/. Em ship, sh representa um único som. Compare as palavras em voz alta: flag / ship; train / cheese.",
+        "Sort the words by the highlighted letter group, not by the whole word. A word can contain more than one interesting group. Practise with fl, gr, st, cl, tr, sh, ch, th and ph."
+      ],
+      "vocabulary": [
+        [
+          "🚩",
+          "blend",
+          "consonant sounds stay separate"
+        ],
+        [
+          "🚢",
+          "digraph",
+          "two letters represent one sound"
+        ],
+        [
+          "👂",
+          "sound",
+          "what you hear"
+        ]
+      ],
+      "example": "flag → fl → blend. ship → sh → digraph. photo → ph → digraph.",
+      "challenge": "Sort these words: crab, cheese, plant, shower, drift, photo. Then explain your choices aloud."
+    },
+    "e3-verbs": {
+      "title": "Explore • Verbs",
+      "paragraphs": [
+        "Não procure apenas movimentos. Am, is e are também são verbos. Em “He is happy”, happy descreve a pessoa; is é o verbo.",
+        "The word changes its job with the sentence. In “We play”, play is a verb. To identify a verb, read the whole sentence and find the action or state."
+      ],
+      "vocabulary": [
+        [
+          "🏃",
+          "run",
+          "an action"
+        ],
+        [
+          "😊",
+          "is",
+          "a form of be"
+        ],
+        [
+          "👤",
+          "subject",
+          "who or what the sentence is about"
+        ]
+      ],
+      "example": "The children play happily. Who? The children. Do what? Play. How? Happily.",
+      "challenge": "Write one sentence with an action verb and one with am, is or are."
+    },
+    "e3-adverbs": {
+      "title": "Explore • Adverbs of manner",
+      "paragraphs": [
+        "Compare: “a careful girl” describes a noun. “The girl walks carefully” describes the action. Choose an adverb to answer how she walks.",
+        "Context matters: a gymnast balances carefully, a sloth climbs slowly, a hungry dog eats hungrily and children wait patiently. Do not choose only by the -ly ending; the meaning must fit.",
+        "Quickly, quietly, gracefully, bravely, gently, calmly, honestly and patiently describe different ways of acting. Practise turning an adjective into an adverb, then using it in a sentence."
+      ],
+      "vocabulary": [
+        [
+          "🐢",
+          "slowly",
+          "devagar"
+        ],
+        [
+          "🤫",
+          "quietly",
+          "sem fazer barulho"
+        ],
+        [
+          "⏳",
+          "patiently",
+          "com paciência"
+        ]
+      ],
+      "example": "Happy describes a person: a happy boy. Happily describes an action: the boy played happily.",
+      "challenge": "Complete: easy → ___; lazy → ___; beautiful → ___. Then write a sentence with carefully."
+    },
+    "e3-homophones": {
+      "title": "Explore • Homophones",
+      "paragraphs": [
+        "Use meaning first. “The lion has big paws” needs the name of its feet. “Take a pause” needs a word for a short stop. They sound alike but cannot be swapped.",
+        "Check their / they’re / there by replacing they’re with they are. “Their hats” means the hats belong to them. “Over there” points to a place.",
+        "Read this practice passage: “I knew it would be a good day. The sky was blue. I went to meet my friend by the sea. We saw two ducks. At home, we used flour to bake a cake. I write in my journal.” Each choice depends on meaning."
+      ],
+      "vocabulary": [
+        [
+          "🌊",
+          "sea / see",
+          "ocean / look with your eyes"
+        ],
+        [
+          "🍐",
+          "pear / pair",
+          "fruit / two matching things"
+        ],
+        [
+          "✍️",
+          "write / right",
+          "put words on paper / correct or a direction"
+        ]
+      ],
+      "example": "Their kite is over there. They’re happy. Replace they’re with they are to check.",
+      "challenge": "Write eight homophone pairs. Use two pairs in sentences that make their meanings clear."
+    },
+    "e3-homographs": {
+      "title": "Explore • Homographs and homonyms",
+      "paragraphs": [
+        "A sentence tells which meaning fits. “The bat flew at night” suggests the animal. “She hit the ball with a bat” suggests sports equipment.",
+        "The worksheet uses the heading homograph and the word homonym. Keep the distinction clear: same spelling defines a homograph. The examples palm, bat and wave also have the same pronunciation.",
+        "For a paired-sentence exercise, the SAME word must fit both gaps. Check both sentences before choosing. “Put your hand up” and “The clock hand points to twelve” use one spelling with different meanings."
+      ],
+      "vocabulary": [
+        [
+          "🦇",
+          "bat",
+          "animal / sports equipment"
+        ],
+        [
+          "🌳",
+          "bark",
+          "tree covering / dog sound"
+        ],
+        [
+          "💡",
+          "light",
+          "brightness / not heavy"
+        ]
+      ],
+      "example": "The dog can bark. The tree has rough bark. Same spelling and sound; different meanings.",
+      "challenge": "Write two sentences for each word: nail, ring, light and fair. Show a different meaning in each sentence."
+    },
+    "e3-genres": {
+      "title": "Explore • Fiction and non-fiction",
+      "paragraphs": [
+        "A story about a dragon who borrows a library book is fiction. A factual article explaining how a library works is non-fiction. The subject alone does not decide the genre.",
+        "Novels, folktales, pourquoi stories and short stories can be fiction. Biographies, news reports and factual textbooks are non-fiction. A pourquoi story gives an imaginative explanation for why something is the way it is.",
+        "Some non-fiction texts tell real events as a story. So do not decide only from “beginning, middle and end”. Check whether the events are presented as factual or invented."
+      ],
+      "vocabulary": [
+        [
+          "🐉",
+          "fiction",
+          "imagined story"
+        ],
+        [
+          "🔎",
+          "non-fiction",
+          "real information"
+        ],
+        [
+          "🎯",
+          "purpose",
+          "why the author writes"
+        ]
+      ],
+      "example": "A talking spider opening a café → fiction. An article about spider habitats → non-fiction.",
+      "challenge": "Choose a book or a paragraph. Name its genre and point to two clues that support your choice."
+    },
+    "e3-informational": {
+      "title": "Explore • Informational text features",
+      "paragraphs": [
+        "Read the title before the paragraph. Then use the subheading to predict what that section will explain. A paragraph about where spiders live needs a habitat subheading, not a food subheading.",
+        "Photographs show appearance. Diagrams can label body parts. Captions tell us what the image shows. None of these replaces reading the text carefully.",
+        "The worksheet practises spotting four features in “Spiders”: facts, photographs, subheadings and a glossary. An informational text need not contain every possible feature."
+      ],
+      "vocabulary": [
+        [
+          "📖",
+          "subheading",
+          "section heading"
+        ],
+        [
+          "🖼️",
+          "caption",
+          "text explaining a picture"
+        ],
+        [
+          "🔤",
+          "glossary",
+          "definitions of special words"
+        ]
+      ],
+      "example": "Title: Spiders. Subheading: Food. Caption: A spider on its web. Glossary: prey = an animal hunted for food.",
+      "challenge": "Create a mini information page: title, two subheadings, three facts, a drawing with a caption, and one glossary entry."
+    },
+    "e3-biography": {
+      "title": "Explore • Biography and autobiography",
+      "paragraphs": [
+        "Compare these made-up practice sentences. Biography: “She learned to draw when she was six.” Autobiography: “I learned to draw when I was six.” The information can be similar, but the writer’s position changes.",
+        "A biography can be about a living person. It does not need to end with a death. An autobiography may describe a particular period rather than every moment of someone’s life.",
+        "Use dates as evidence of sequence. A quotation in a biography may contain I because the author quotes the subject; one pronoun alone is not enough to classify the whole text.",
+        "Uma autobiografia é um relato da própria pessoa; uma biografia depende da pesquisa de outro autor. Ambas devem ser lidas com atenção às fontes e ao ponto de vista."
+      ],
+      "vocabulary": [
+        [
+          "✍️",
+          "autobiography",
+          "self-written life story"
+        ],
+        [
+          "👥",
+          "biography",
+          "life written by another person"
+        ],
+        [
+          "🗓️",
+          "chronological",
+          "earliest to latest"
+        ]
+      ],
+      "example": "First: born. Next: childhood. Later: work and achievements. Finally: later life or what the person does now.",
+      "challenge": "Write a short fictional practice autobiography using I. Rewrite two sentences as a biography using he, she or they."
+    },
+    "e3-dahl": {
+      "title": "Explore • Reading: Roald Dahl",
+      "paragraphs": [
+        "EARLY LIFE — Roald Dahl was born in Wales in 1916. His parents came from Norway. His sister Astri died in 1920, and his father died soon afterwards. His mother told stories about trolls and magical creatures. These stories influenced his imagination.",
+        "SCHOOL AND WORK — He went to boarding school at nine and later studied at Repton. The reading passage describes boxing as one of his strengths. Tasting chocolates at school later helped inspire Charlie and the Chocolate Factory. After working for an oil company in Africa, he became an RAF pilot. He was injured in a crash in Libya in 1940.",
+        "BECOMING A WRITER — In Washington, D.C., in 1942, author C. S. Forester encouraged Dahl to describe his flying experiences. Dahl also told stories to his children. His family life and imagination contributed to his writing. Among his well-known books are James and the Giant Peach, The BFG and Matilda.",
+        "READING STRATEGY — Match 1916 to his birth, 1920 to Astri’s death and 1940 to the crash in Libya. For a personal achievement and a professional achievement, use examples such as raising a family and writing successful books. This review is an adaptation for comprehension, not a quotation of Dahl’s own autobiography."
+      ],
+      "vocabulary": [
+        [
+          "📍",
+          "Wales",
+          "country of birth"
+        ],
+        [
+          "🛩️",
+          "RAF",
+          "Royal Air Force"
+        ],
+        [
+          "🏆",
+          "achievement",
+          "something a person accomplishes"
+        ]
+      ],
+      "example": "Question: Who encouraged him to write about flying? Evidence: “author C. S. Forester encouraged Dahl”. Answer with the name and the relevant detail.",
+      "challenge": "Write a timeline with three dates. Then explain how childhood chocolate tasting influenced one of his books."
+    },
+    "e3-spiders": {
+      "title": "Explore • Reading: Spiders",
+      "paragraphs": [
+        "FAMILY AND BODY — Spiders are arachnids. Unlike insects, which have six legs, spiders have eight. Their bodies have an outer skeleton called an exoskeleton. Their two main regions are the cephalothorax and abdomen.",
+        "HOMES — Trapdoor spiders live in burrows. Other spiders find shelter among vegetation, between bricks or in wood piles. Different species live in different habitats.",
+        "SIZE AND FOOD — Spiders vary greatly in size. The Goliath birdeater is a large tarantula. Many spiders catch insects for food. Web-building spiders can trap prey in silk; other spiders hunt. Many inject venom into prey.",
+        "GLOSSARY — Exoskeleton: a hard outer support and covering. Hairy: covered with hairs. Scuttle: move quickly with short steps. Prey: an animal hunted for food. Caption: words that explain a picture.",
+        "TEXT DETECTIVE — This is non-fiction because it presents real information about spiders. It has facts, subheadings and a glossary. A photograph with an explanatory caption would add visual information. A talking spider with an invented adventure would be fiction."
+      ],
+      "vocabulary": [
+        [
+          "🕷️",
+          "arachnid",
+          "group that includes spiders"
+        ],
+        [
+          "🛡️",
+          "exoskeleton",
+          "hard outer support and covering"
+        ],
+        [
+          "🦗",
+          "prey",
+          "animal hunted for food"
+        ]
+      ],
+      "example": "“Some spiders live in burrows; others shelter between bricks.” Best subheading: Homes or Habitats, because both sentences explain where spiders live.",
+      "challenge": "Write five facts from the text. Then propose subheadings for homes, size, body and food, and define exoskeleton in your own words."
+    }
+  },
+  "practice": [
+    {
+      "lesson": "e3-blends",
+      "prompt": "Sort: crab, cheese, flame, photo, plant, shower, drift, straw.",
+      "answer": "Blends: crab, flame, plant, drift, straw. Digraphs: cheese, photo, shower."
+    },
+    {
+      "lesson": "e3-verbs",
+      "prompt": "Underline the verbs: She runs every morning. He is happy. The children play quietly.",
+      "answer": "runs; is; play. Quietly explains how they play."
+    },
+    {
+      "lesson": "e3-adverbs",
+      "prompt": "Write the adverbs: easy, happy, loud, correct, slow, calm, lazy, beautiful.",
+      "answer": "easily, happily, loudly, correctly, slowly, calmly, lazily, beautifully."
+    },
+    {
+      "lesson": "e3-homophones",
+      "prompt": "Complete: The bridge is made of (steal / steel). She (new / knew) the answer. Her shoes are (two / too) small.",
+      "answer": "steel; knew; too. Steel is a metal; knew is the past of know; too means excessively."
+    },
+    {
+      "lesson": "e3-homographs",
+      "prompt": "Use the same word twice: Put your ___ up. The clock ___ points to twelve. Then write two meanings of nail.",
+      "answer": "hand / hand. Nail: a fingernail and a metal fastener."
+    },
+    {
+      "lesson": "e3-genres",
+      "prompt": "Write one fiction example and one non-fiction example about the sea. Explain the difference.",
+      "answer": "Example: an imagined story about a talking fish is fiction; a factual article about sea animals is non-fiction. Other justified examples are valid."
+    },
+    {
+      "lesson": "e3-informational",
+      "prompt": "Match these purposes to a feature: whole topic; section topic; picture explanation; special word definition.",
+      "answer": "Title; subheading; caption; glossary."
+    },
+    {
+      "lesson": "e3-biography",
+      "prompt": "Explain biography vs autobiography. Put these events in time order: first job, birth, school years.",
+      "answer": "Biography: another author writes someone’s life. Autobiography: the subject writes their own life. Order: birth → school years → first job."
+    },
+    {
+      "lesson": "e3-dahl",
+      "prompt": "Match the dates 1916, 1920 and 1940 to events in the reading. Name one personal and one professional achievement.",
+      "answer": "1916: born; 1920: Astri died; 1940: plane crash in Libya. Possible achievements: raising a family and writing successful books. Accept other supported examples."
+    },
+    {
+      "lesson": "e3-spiders",
+      "prompt": "Write five facts from Spiders. Suggest subheadings for paragraphs about where they live and what they eat.",
+      "answer": "Possible facts: arachnids; invertebrates; eight legs; exoskeleton; two main body regions; some live in burrows; many eat insects. Headings: Habitats / Homes and Food / Diet."
+    }
+  ],
+  "infographics": [
+    {
+      "src": "/infographics/ela3-sounds.webp",
+      "alt": "Blends, digraphs, verbs and adverbs illustrated with clay objects",
+      "width": 1024,
+      "height": 1536,
+      "label": "Sounds & actions"
+    },
+    {
+      "src": "/infographics/ela3-words.webp",
+      "alt": "Homophones and homographs with illustrated examples",
+      "width": 1024,
+      "height": 1536,
+      "label": "Word detectives"
+    },
+    {
+      "src": "/infographics/ela3-reading.webp",
+      "alt": "Fiction, non-fiction, informational features and life stories",
+      "width": 1024,
+      "height": 1536,
+      "label": "Reading explorers"
+    }
+  ]
+}

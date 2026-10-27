@@ -527,7 +527,10 @@
     "public/materials/historia3-guia.pdf": "79e80941b4c01ee114932ff7e9cb97504374fbab833a700e759bf8cf69f89534",
     "public/materials/historia3-simulado-a.pdf": "114a6783aa026082af9ac22b0938cc7e6933ae775ff01585acbbb4aa47810654",
     "public/materials/historia3-simulado-b.pdf": "84467929078ecd26119ea65ff7eaf3361486ee8023d4c0c3e81fa0fcb3328848",
-    "public/materials/historia3-gabarito.pdf": "73f618eb52a30a7dae38e8c6e32b896906bc88049266ef51e93dec2b2dd4eb4d"
+    "public/materials/historia3-gabarito.pdf": "73f618eb52a30a7dae38e8c6e32b896906bc88049266ef51e93dec2b2dd4eb4d",
+    "public/infographics/ela3-sounds.webp": "2c9fc707759dd52776304bc6ce1c1da4567df0feeade9451d72b800ab9abeafe",
+    "public/infographics/ela3-words.webp": "b32087c82321608625198e75fe7b63fc92c148c9cc090a93335f86b43ed5b505",
+    "public/infographics/ela3-reading.webp": "9da70c34725bc416b1256061dfbaaac572699984a1ef3f0b0f3a8cfaeb8d3220"
   },
   "supplements": [
     {
@@ -547,6 +550,18 @@
         "history3-011.part.b64",
         "history3-012.part.b64",
         "history3-013.part.b64"
+      ]
+    },
+    {
+      "sha256": "93a5a747d0f4284cd3819bd0c444751e7ae333ccaa1fe97550c9fc90efcd5b5a",
+      "parts": [
+        "ela3-000.part.b64",
+        "ela3-001.part.b64",
+        "ela3-002.part.b64",
+        "ela3-003.part.b64",
+        "ela3-004.part.b64",
+        "ela3-005.part.b64",
+        "ela3-006.part.b64"
       ]
     }
   ]

@@ -6,6 +6,7 @@ import ts from 'typescript';
 
 const content = JSON.parse(readFileSync(new URL('../app/history3-content.json', import.meta.url), 'utf8'));
 const source = readFileSync(new URL('../app/history3-data.ts', import.meta.url), 'utf8')
+  .replace("import { ela3Subject } from './ela3-data';", `const ela3Subject = ${JSON.stringify(JSON.parse(readFileSync(new URL('../app/ela3-content.json', import.meta.url), 'utf8')).subject)};`)
   .replace("import content from './history3-content.json';", `const content = ${JSON.stringify(content)};`);
 const compiled = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const { history3Catalog, history3Subject, studySubject, quizTerm, resumeTerm } = await import('data:text/javascript;base64,' + Buffer.from(compiled).toString('base64'));

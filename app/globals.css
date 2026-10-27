@@ -3560,3 +3560,10 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 
 .history3-lesson-map { display:block; width:min(100%, 430px); height:auto; margin:24px auto; border-radius:20px; }
 @media print { .history3-lesson-map { max-height:600px; object-fit:contain; } }
+/* ELA Term 3 open practice: keyboard accessible, with answers hidden until requested. */
+.ela3-practice { margin-top: 24px; padding: 24px; border: 2px solid #cde8df; border-radius: 20px; background: #f3fbf6; }
+.ela3-practice h3 { margin: 8px 0 16px; }
+.ela3-practice label { display: block; font-weight: 700; margin: 18px 0 8px; }
+.ela3-practice textarea { box-sizing: border-box; width: 100%; resize: vertical; padding: 14px; border: 1px solid #91b8b0; border-radius: 12px; background: white; color: #173d42; font: inherit; }
+.ela3-practice details { margin-top: 18px; padding: 16px; border-radius: 12px; background: white; }
+.ela3-practice summary { cursor: pointer; font-weight: 700; }

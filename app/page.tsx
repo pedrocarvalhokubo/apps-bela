@@ -11,6 +11,8 @@ import {
   type StudyLesson,
   type SubjectKey,
 } from "./curriculum-data";
+import { ela3Subject, ela3Infographics, ela3ImageForLesson } from "./ela3-data";
+import Ela3Practice from "./components/Ela3Practice";
 import ScienceMatching from "./components/ScienceMatching";
 import { deepStudyByLesson } from "./deep-content";
 import { scienceInfographicPages, scienceMaterialsReady, scienceDownloads, scienceTopicTitle } from "./science-data";
@@ -143,6 +145,20 @@ const subjects: Array<{ key?: SubjectKey; name: string; icon: IconName; detail: 
 ];
 
 const emptyQuizStats = (): Record<QuizId, QuizStats> => ({
+  "ela3-blends": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-verbs": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-adverbs": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-homophones": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-homographs": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-genres": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-informational": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-biography": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-dahl": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-spiders": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-mock-a": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "ela3-mock-b": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+
   "history3-diversity": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "history3-origins": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "history3-slavery": { bestScore: 0, attempts: 0, totalAnswered: 0 },
@@ -170,12 +186,12 @@ const emptyQuizStats = (): Record<QuizId, QuizStats> => ({
   "portuguese-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
 });
 
-const defaultSubject: SubjectKey = "geography";
-const defaultQuiz: QuizId = "geography-general";
-const defaultLesson = curriculumSubjects.geography.lessons[0].id;
+const defaultSubject: SubjectKey = "ela";
+const defaultQuiz: QuizId = "ela3-general";
+const defaultLesson = ela3Subject.lessons[0].id;
 const availableSubjects = new Set<SubjectKey>(["science", "math", "ela", "geography", "history", "portuguese"]);
 const availableQuizzes = new Set<QuizId>(Object.keys(quizCatalog) as QuizId[]);
-const availableLessonIds = new Set([...Object.values(curriculumSubjects), history3Subject].flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
+const availableLessonIds = new Set([...Object.values(curriculumSubjects), history3Subject, ela3Subject].flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
 
 const elaInfographicPages = [
   { src: "/infographics/ela-term2-review-v1.webp", alt: "E.L.A. Term 2 exam map", width: 1024, height: 1536, label: "Map" },
@@ -256,7 +272,7 @@ function GeographyQuestionVisual({ topic }: { topic: string }) {
 
 export default function Home() {
   const [view, setView] = useState<View>("home");
-  const [term, setTerm] = useState(2);
+  const [term, setTerm] = useState(3);
   const [openLesson, setOpenLesson] = useState<string>(defaultLesson);
   const [completedLessons, setCompletedLessons] = useState<string[]>([]);
   const [quizStatsById, setQuizStatsById] = useState<Record<QuizId, QuizStats>>(emptyQuizStats);
@@ -305,7 +321,6 @@ export default function Home() {
           }
           setQuizStatsById(restoredStats);
           setActiveSubject(safeSubject(parsed.activeSubject));
-          setTerm(parsed.term === 2 || parsed.term === 3 ? parsed.term : quizTerm(safeQuiz(parsed.activeQuizId)) === 3 || parsed.openLesson?.startsWith("h3-") ? 3 : 2);
           setActiveQuizId(safeQuiz(parsed.activeQuizId));
           setLastStudyView(safeStudyView(parsed.lastStudyView));
           const savedLesson = parsed.openLesson ?? defaultLesson;
@@ -352,7 +367,6 @@ export default function Home() {
           }
           setQuizStatsById(syncedStats);
           setActiveSubject(safeSubject(saved.activeSubject));
-          setTerm(saved.term === 2 || saved.term === 3 ? saved.term : quizTerm(safeQuiz(saved.activeQuizId)) === 3 || saved.openLesson?.startsWith("h3-") ? 3 : 2);
           setActiveQuizId(safeQuiz(saved.activeQuizId));
           setLastStudyView(safeStudyView(saved.lastStudyView));
           const syncedLesson = saved.openLesson ?? defaultLesson;
@@ -461,13 +475,14 @@ export default function Home() {
   }, []);
 
   const activeSubjectData = studySubject(curriculumSubjects, activeSubject, term);
+  const isEla3 = activeSubject === "ela" && term === 3;
   const isHistory3 = activeSubject === "history" && term === 3;
-  const reviewInfographicPages = isHistory3 ? history3Infographics : activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
+  const reviewInfographicPages = isEla3 ? ela3Infographics : isHistory3 ? history3Infographics : activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
   const currentLessons = activeSubjectData.lessons;
   const completedCurrentLessons = currentLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const learnProgress = Math.round((completedCurrentLessons / currentLessons.length) * 100);
   const currentQuestions = quizCatalog[activeQuizId].questions;
-  const allLessons = [...Object.values(curriculumSubjects), history3Subject].flatMap((subject) => subject.lessons);
+  const allLessons = [...Object.values(curriculumSubjects), history3Subject, ela3Subject].flatMap((subject) => subject.lessons);
   const completedAllLessons = allLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const totalBestAnswers = Object.values(quizStatsById).reduce((sum, stats) => sum + stats.bestScore, 0);
   const totalQuizQuestions = Object.values(quizCatalog).reduce((sum, quiz) => sum + quiz.questions.length, 0);
@@ -517,16 +532,17 @@ export default function Home() {
     const schedule: Array<{ subject: SubjectKey; name: string; date: string; shortDate: string; lessons: StudyLesson[] }> = [
       { subject: "science", name: "Science", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.science.lessons },
       { subject: "geography", name: "Geografia", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.geography.lessons },
-      { subject: "ela", name: "E.L.A.", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.ela.lessons },
+      { subject: "ela", name: "E.L.A.", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "ela", term).lessons },
       { subject: "math", name: "Math", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.math.lessons },
-      { subject: "history", name: "História", date: "", shortDate: "ESTUDAR", lessons: history3Subject.lessons },
+      { subject: "history", name: "História", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "history", term).lessons },
     ];
-    const steps: Array<{ subject: SubjectKey; title: string; detail: string; badge: string; kind: string }> = [];
+    const steps: Array<{ term: number; subject: SubjectKey; title: string; detail: string; badge: string; kind: string }> = [];
     const weak = [...topicSignals]
       .filter((topic) => topic.attempts >= 2 && topic.correct / topic.attempts < 0.8)
       .sort((a, b) => a.correct / a.attempts - b.correct / b.attempts)[0];
     if (weak) {
       steps.push({
+        term: weak.subject === "science" || ela3Subject.lessons.some(l => l.title === weak.topic) || history3Subject.lessons.some(l => l.title === weak.topic) ? 3 : 2,
         subject: weak.subject as SubjectKey,
         title: `Reforçar: ${weak.subject === "science" ? scienceTopicTitle(weak.topic) : weak.topic}`,
         detail: `Você acertou ${Math.round((weak.correct / weak.attempts) * 100)}% até agora. Vamos praticar com calma.`,
@@ -534,18 +550,18 @@ export default function Home() {
         kind: "weak",
       });
     }
-    for (const item of schedule) {
+    for (const item of schedule.filter(item => term === 3 ? ["science", "ela", "history"].includes(item.subject) : term === 2 && item.subject !== "science")) {
       const pending = item.lessons.find((lesson) => !completedLessons.includes(lesson.id));
       if (!pending) continue;
-      steps.push({ subject: item.subject, title: pending.title, detail: `${item.name} • continuar os estudos`, badge: item.shortDate, kind: "lesson" });
+      steps.push({ term, subject: item.subject, title: pending.title, detail: `${item.name} • continuar os estudos`, badge: item.shortDate, kind: "lesson" });
       if (steps.length === 3) break;
     }
     const review = topicSignals.find((topic) => topic.attempts >= 3 && topic.correct / topic.attempts >= 0.8 && topic.reviewAttempts === 0);
     if (review && steps.length < 3) {
-      steps.push({ subject: review.subject as SubjectKey, title: `Revisão: ${review.subject === "science" ? scienceTopicTitle(review.topic) : review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
+      steps.push({ term: review.subject === "science" || ela3Subject.lessons.some(l => l.title === review.topic) || history3Subject.lessons.some(l => l.title === review.topic) ? 3 : 2, subject: review.subject as SubjectKey, title: `Revisão: ${review.subject === "science" ? scienceTopicTitle(review.topic) : review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
     }
     return steps.slice(0, 3);
-  }, [completedLessons, topicSignals]);
+  }, [completedLessons, topicSignals, term]);
 
   const recordAttempt = (selected: string, correct: boolean) => {
     if (!deviceToken) return;
@@ -682,7 +698,7 @@ export default function Home() {
     go("quiz");
   };
 
-  const openSubject = (subject: SubjectKey, selectedTerm = subject === "science" ? 3 : subject === "history" ? term : 2) => {
+  const openSubject = (subject: SubjectKey, selectedTerm = subject === "science" ? 3 : subject === "history" || subject === "ela" ? term : 2) => {
     setActiveSubject(subject);
     setTerm(selectedTerm);
     setInfographicPage(0);
@@ -711,6 +727,7 @@ export default function Home() {
       // O estado visível ainda é reiniciado mesmo se o armazenamento estiver bloqueado.
     }
     setCompletedLessons([]);
+    setTerm(3);
     setQuizStatsById(emptyQuizStats());
     setActiveSubject(defaultSubject);
     setActiveQuizId(defaultQuiz);
@@ -865,7 +882,7 @@ export default function Home() {
             </div>
             <div className="mission-list">
               {nextSteps.map((step, index) => (
-                <button key={`${step.subject}-${step.title}`} className={`mission-card mission-${step.kind}`} onClick={() => openSubject(step.subject, step.subject === "science" || (step.subject === "history" && history3Subject.lessons.some(lesson => step.title.includes(lesson.title))) ? 3 : 2)}>
+                <button key={`${step.subject}-${step.title}`} className={`mission-card mission-${step.kind}`} onClick={() => openSubject(step.subject, step.term)}>
                   <span className="mission-check">{index + 1}</span>
                   <span><small>{step.badge}</small><strong>{step.title}</strong><em>{step.detail}</em></span>
                   <b>→</b>
@@ -903,7 +920,7 @@ export default function Home() {
 
             {term === 2 || term === 3 ? (
               <div className="subject-grid">
-                {subjects.filter(subject => term === 3 ? subject.key === "science" || subject.key === "history" : subject.key !== "science").map((subject) => (
+                {subjects.filter(subject => term === 3 ? subject.key === "science" || subject.key === "history" || subject.key === "ela" : subject.key !== "science").map((subject) => (
                   <button
                     key={subject.name}
                     className={`subject-card ${subject.color} ${subject.status === "soon" ? "subject-soon" : ""}`}
@@ -913,7 +930,7 @@ export default function Home() {
                     <span className="subject-icon"><AppIcon name={subject.icon} /></span>
                     <span className="subject-copy">
                       <strong>{subject.name}</strong>
-                      <small>{term === 3 && subject.key === "history" ? "África e Brasil • 7 aulas" : subject.detail}</small>
+                      <small>{term === 3 && subject.key === "ela" ? "Words & reading • 10 aulas" : term === 3 && subject.key === "history" ? "África e Brasil • 7 aulas" : subject.detail}</small>
                     </span>
                     {subject.status === "ready" ? <span className="subject-arrow">→</span> : <span className="soon-pill">Em breve</span>}
                   </button>
@@ -969,13 +986,19 @@ export default function Home() {
                 <span className="path-content">
                   <small>{activeSubject === "ela" ? "VISUAL REVIEW" : "REVISÃO VISUAL"}</small>
                   <strong>{activeSubject === "ela" ? "Exam infographic" : "Infográficos da prova"}</strong>
-                  <p>{activeSubject === "ela" ? "Start with the exam map, then explore one deep-review page for each topic." : "Veja um mapa visual de cada assunto e explique os exemplos com suas palavras."}</p>
-                  <em>{activeSubject === "ela" ? "8 illustrated review pages" : `${reviewInfographicPages.length} páginas ilustradas`}</em>
+                  <p>{isEla3 ? "Explore sounds, word meanings and reading with three illustrated review maps." : activeSubject === "ela" ? "Start with the exam map, then explore one deep-review page for each topic." : "Veja um mapa visual de cada assunto e explique os exemplos com suas palavras."}</p>
+                  <em>{activeSubject === "ela" ? `${reviewInfographicPages.length} illustrated review pages` : `${reviewInfographicPages.length} páginas ilustradas`}</em>
                 </span>
                 <span className="path-arrow">→</span>
               </button>
             )}
 
+            {isEla3 && (["ela3-mock-a", "ela3-mock-b"] as QuizId[]).map(id => (
+              <button key={id} className="path-card path-quiz" onClick={() => startQuiz(id)}>
+                <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRACTICE TEST</small><strong>{quizCatalog[id].title}</strong><p>20 questions • all ten topics • hints and explanations.</p><em>Best: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span>
+              </button>
+            ))}
+            {isEla3 && <a className="path-card path-test" href="/ela3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>WRITING PRACTICE</small><strong>Atividades para imprimir</strong><p>10 atividades abertas e gabarito separado para consultar depois.</p><em>Abrir folha de atividades → imprimir ou salvar em PDF</em></span><span className="path-arrow">→</span></a>}
             {isHistory3 && history3Downloads.map(download => (
               <a key={download.id} className="path-card path-test" href={download.src} download>
                 <span className="path-art"><AppIcon name="note" /></span>
@@ -1196,7 +1219,7 @@ export default function Home() {
 
               <p className="lesson-intro">{activeLesson.intro}</p>
 
-              {isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
+              {isEla3 ? <Image className="history3-lesson-map" {...ela3ImageForLesson(activeLesson.id)} /> : isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
 
               <div className="fact-stack">
                 {activeLesson.facts.map((fact, index) => (
@@ -1221,6 +1244,7 @@ export default function Home() {
                 );
               })()}
 
+              {isEla3 && <Ela3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
               {activeSubject === "science" && <ScienceMatching key={activeLesson.id} lessonId={activeLesson.id} />}
 
               <div className="remember-box">

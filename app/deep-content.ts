@@ -1,3 +1,4 @@
+import { ela3DeepStudy } from './ela3-data';
 import { history3DeepStudy } from './history3-data';
 import { scienceDeepStudyByLesson } from "./science-data";
 export type DeepStudy = {
@@ -12,6 +13,7 @@ const deep = (title: string, paragraphs: string[], vocabulary: Array<[string, st
 
 export const deepStudyByLesson: Record<string, DeepStudy> = {
   ...scienceDeepStudyByLesson,
+  ...ela3DeepStudy,
   ...history3DeepStudy,
   "math-meaning-multiplication": deep("Veja a multiplicação de três jeitos", ["A mesma situação pode aparecer como grupos iguais, adição repetida ou array. Quatro grupos de 6 são 6 + 6 + 6 + 6 e também 4 × 6 = 24.", "Em um array, as quantidades ficam organizadas em linhas e colunas com o mesmo número de objetos."], [["🧺","Equal groups","grupos com a mesma quantidade"],["✖️","Factors","números multiplicados"],["🎯","Product","resultado"]], "5 grupos de 4: 4 + 4 + 4 + 4 + 4 = 20.", "Desenhe um array que represente 24."),
   "math-facts": deep("Use padrões para construir fatos", ["A contagem 6, 12, 18, 24 mostra os múltiplos de 6 e ajuda a recuperar a tabuada.", "Um fato conhecido vira ponte: se você sabe 6 × 5 = 30, pode somar mais um grupo de 6 para descobrir 6 × 6 = 36."], [["🪜","Skip counting","saltos iguais"],["🔁","Multiples","resultados da tabuada"],["🧠","Known fact","fato que já sabemos"]], "6 × 6 = 6 × 5 + 6 = 36.", "Use 9 × 5 para descobrir 9 × 6."),
