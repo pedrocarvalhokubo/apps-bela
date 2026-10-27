@@ -1414,7 +1414,7 @@ export default function Home() {
             </div>
 
             <div className="question-title">
-              <span>{currentQuestion.id}</span>
+              <span>{quizIndex + 1}</span>
               <div>
                 {currentQuestion.format === "association" && (
                   <div className="association-concept"><small>🔗 ASSOCIE O CONCEITO</small><strong>{currentQuestion.concept}</strong></div>
