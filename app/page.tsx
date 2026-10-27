@@ -1105,7 +1105,7 @@ export default function Home() {
             <div>
               <span className="eyebrow orange-text">{activeSubject === "ela" ? "VISUAL REVIEW" : "REVISÃO VISUAL"}</span>
               <h1>{activeSubject === "ela" ? "Bela's Exam Map" : `Mapas da prova de ${activeSubjectData.name}`}</h1>
-              <p>{activeSubject === "ela" ? "Review the seven Term 2 topics, then return to the quiz to practise." : "Revise cada mapa e depois pratique nos desafios interativos."}</p>
+              <p>{isEla3 ? "Review the ten Term 3 topics, then return to the quiz to practise." : activeSubject === "ela" ? "Review the seven Term 2 topics, then return to the quiz to practise." : "Revise cada mapa e depois pratique nos desafios interativos."}</p>
             </div>
             <a className="download-button" href={reviewInfographicPages[infographicPage].src} download>
               {activeSubject === "ela" ? "Download this page" : "Baixar esta página"} ↓
