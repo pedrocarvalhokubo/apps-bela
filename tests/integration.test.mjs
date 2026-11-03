@@ -42,8 +42,8 @@ test('Bela account, guest isolation and durable history',async(t)=>{
  await t.test('guest and old device tokens cannot read or write account data',async()=>{
   for(const p of ['/','/obmep']){const r=await fetch(`http://localhost:${port}${p}`);assert.equal(r.status,200);assert.match(await r.text(),/Estudos da Bela/);}
   assert.equal((await api('/api/auth')).data.authenticated,false);
-  for(const p of ['/api/study-plan','/api/sync','/api/obmep','/api/parent','/api/drafts'])assert.equal((await api(p)).status,401,p);
-  for(const p of ['/api/sync','/api/obmep','/api/parent','/api/drafts','/api/attempts','/api/history-import'])assert.equal((await api(p,null,{state:{},action:'import'})).status,401,p);
+  for(const p of ['/api/study-plan','/api/sync','/api/obmep','/api/parent','/api/drafts','/api/tutor','/api/tutor/media?id=invalid'])assert.equal((await api(p)).status,401,p);
+  for(const p of ['/api/sync','/api/obmep','/api/parent','/api/drafts','/api/attempts','/api/history-import','/api/tutor','/api/tutor/voice','/api/tutor/image','/api/tutor/parent'])assert.equal((await api(p,null,{state:{},action:'import'})).status,401,p);
   assert.equal((await api('/api/device',null,{action:'bootstrap'})).status,410);
   assert.equal((await api('/api/sync',null,null,null,{'x-bela-device-token':legacyToken})).status,401);
   assert.equal(db.prepare('SELECT COUNT(*) n FROM profiles').get().n,1);

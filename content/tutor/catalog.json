@@ -1,0 +1,429 @@
+[
+  {
+    "id": "math-2",
+    "subject": "math",
+    "term": 2,
+    "title": "Math",
+    "moduleTitle": "Numbers, data & time",
+    "file": "math-2.md",
+    "pages": [],
+    "lessons": [
+      {
+        "id": "math-meaning-multiplication",
+        "title": "Meaning of multiplication"
+      },
+      {
+        "id": "math-facts",
+        "title": "Facts and skip counting"
+      },
+      {
+        "id": "math-decompose",
+        "title": "Decomposing factors"
+      },
+      {
+        "id": "math-powers-ten",
+        "title": "Multiplying by 1, 10 and 100"
+      },
+      {
+        "id": "math-algorithm",
+        "title": "Multiplication algorithm"
+      },
+      {
+        "id": "math-division-meaning",
+        "title": "Meaning of division"
+      },
+      {
+        "id": "math-division-strategies",
+        "title": "Division strategies"
+      },
+      {
+        "id": "math-long-division",
+        "title": "Long division"
+      },
+      {
+        "id": "math-remainders",
+        "title": "Remainders in context"
+      },
+      {
+        "id": "math-bar-picto",
+        "title": "Bar graphs and pictographs"
+      },
+      {
+        "id": "math-line-pie",
+        "title": "Line and pie graphs"
+      },
+      {
+        "id": "math-time",
+        "title": "Telling time"
+      }
+    ]
+  },
+  {
+    "id": "ela-2",
+    "subject": "ela",
+    "term": 2,
+    "title": "E.L.A.",
+    "moduleTitle": "Stories, characters & imagery",
+    "file": "ela-2.md",
+    "pages": [],
+    "lessons": [
+      {
+        "id": "ela-story-elements",
+        "title": "Story elements"
+      },
+      {
+        "id": "ela-character-traits",
+        "title": "Character traits"
+      },
+      {
+        "id": "ela-georgie",
+        "title": "The Thing About Georgie"
+      },
+      {
+        "id": "ela-5w1h",
+        "title": "5Ws and 1H"
+      },
+      {
+        "id": "ela-chronology",
+        "title": "Chronological order"
+      },
+      {
+        "id": "ela-summary",
+        "title": "Writing a summary"
+      },
+      {
+        "id": "ela-imagery",
+        "title": "Imagery"
+      }
+    ]
+  },
+  {
+    "id": "geography-2",
+    "subject": "geography",
+    "term": 2,
+    "title": "Geografia",
+    "moduleTitle": "Do campo ao produto",
+    "file": "geography-2.md",
+    "pages": [],
+    "lessons": [
+      {
+        "id": "geography-sectors",
+        "title": "Setores da economia"
+      },
+      {
+        "id": "geography-field-city",
+        "title": "Campo e cidade"
+      },
+      {
+        "id": "geography-materials",
+        "title": "Do que são feitos os produtos?"
+      },
+      {
+        "id": "geography-origin",
+        "title": "Qual é a origem?"
+      },
+      {
+        "id": "geography-recycling",
+        "title": "Reciclagem e uso responsável"
+      }
+    ]
+  },
+  {
+    "id": "history-2",
+    "subject": "history",
+    "term": 2,
+    "title": "História",
+    "moduleTitle": "Do escambo ao Pix",
+    "file": "history-2.md",
+    "pages": [],
+    "lessons": [
+      {
+        "id": "history-trade",
+        "title": "Trocas comerciais"
+      },
+      {
+        "id": "history-wildlife",
+        "title": "O tráfico de animais no Brasil"
+      },
+      {
+        "id": "history-technology",
+        "title": "Os diferentes usos da tecnologia"
+      },
+      {
+        "id": "history-payments",
+        "title": "Novas tecnologias para pagamento"
+      }
+    ]
+  },
+  {
+    "id": "portuguese-2",
+    "subject": "portuguese",
+    "term": 2,
+    "title": "Português",
+    "moduleTitle": "Palavras, textos e atenção",
+    "file": "portuguese-2.md",
+    "pages": [],
+    "lessons": [
+      {
+        "id": "pt-interview",
+        "title": "Entrevista"
+      },
+      {
+        "id": "pt-nouns",
+        "title": "Substantivos"
+      },
+      {
+        "id": "pt-relations",
+        "title": "Sinônimos e antônimos"
+      },
+      {
+        "id": "pt-similar",
+        "title": "Palavras parecidas"
+      },
+      {
+        "id": "pt-spelling",
+        "title": "Terminações"
+      }
+    ]
+  },
+  {
+    "id": "geography-3",
+    "subject": "geography",
+    "term": 3,
+    "title": "Geografia",
+    "moduleTitle": "Pessoas, caminhos e culturas",
+    "file": "geography-3.md",
+    "pages": [
+      {
+        "label": "Lugares",
+        "description": "Pessoas em movimento: interna, externa, emigrante e imigrante"
+      },
+      {
+        "label": "Caminhos",
+        "description": "Ritmos das migrações: pendular, sazonal, êxodo rural e nomadismo"
+      },
+      {
+        "label": "Culturas",
+        "description": "Povos e saberes na formação do Brasil"
+      },
+      {
+        "label": "Proteção",
+        "description": "Refúgio, acolhimento e diáspora africana"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "g3-places",
+        "title": "Lugares e pontos de vista"
+      },
+      {
+        "id": "g3-paths",
+        "title": "Ritmos e caminhos"
+      },
+      {
+        "id": "g3-cultures",
+        "title": "Povos e culturas do Brasil"
+      },
+      {
+        "id": "g3-protection",
+        "title": "Proteção e deslocamentos forçados"
+      }
+    ]
+  },
+  {
+    "id": "history-3",
+    "subject": "history",
+    "term": 3,
+    "title": "História",
+    "moduleTitle": "África e a formação do Brasil",
+    "file": "history-3.md",
+    "pages": [
+      {
+        "label": "África e origens",
+        "description": "Diversidade africana e fósseis como evidência da origem humana"
+      },
+      {
+        "label": "Liberdade",
+        "description": "Variações da escravidão e a falta de liberdade"
+      },
+      {
+        "label": "Rotas",
+        "description": "Comparação entre rotas transaarianas e transatlânticas"
+      },
+      {
+        "label": "Colonização",
+        "description": "Sequência de sociedades, colonização e independências"
+      },
+      {
+        "label": "Cultura",
+        "description": "Exemplos de cultura afro-brasileira e resistência"
+      },
+      {
+        "label": "Diáspora",
+        "description": "Diáspora forçada, formação do Brasil e combate ao racismo"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "h3-diversity",
+        "title": "África: muitas histórias"
+      },
+      {
+        "id": "h3-origins",
+        "title": "O berço da humanidade"
+      },
+      {
+        "id": "h3-slavery",
+        "title": "Escravidão e falta de liberdade"
+      },
+      {
+        "id": "h3-routes",
+        "title": "Duas rotas, dois espaços"
+      },
+      {
+        "id": "h3-colonization",
+        "title": "Colonização e independências"
+      },
+      {
+        "id": "h3-culture",
+        "title": "Cultura afro-brasileira e resistência"
+      },
+      {
+        "id": "h3-diaspora",
+        "title": "Diáspora e formação do Brasil"
+      }
+    ]
+  },
+  {
+    "id": "ela-3",
+    "subject": "ela",
+    "term": 3,
+    "title": "E.L.A.",
+    "moduleTitle": "Words, stories & discoveries",
+    "file": "ela-3.md",
+    "pages": [
+      {
+        "label": "Sounds & actions",
+        "description": "Blends, digraphs, verbs and adverbs illustrated with clay objects"
+      },
+      {
+        "label": "Word detectives",
+        "description": "Homophones and homographs with illustrated examples"
+      },
+      {
+        "label": "Reading explorers",
+        "description": "Fiction, non-fiction, informational features and life stories"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "e3-blends",
+        "title": "Blends and digraphs"
+      },
+      {
+        "id": "e3-verbs",
+        "title": "Verbs"
+      },
+      {
+        "id": "e3-adverbs",
+        "title": "Adverbs of manner"
+      },
+      {
+        "id": "e3-homophones",
+        "title": "Homophones"
+      },
+      {
+        "id": "e3-homographs",
+        "title": "Homographs and homonyms"
+      },
+      {
+        "id": "e3-genres",
+        "title": "Fiction and non-fiction"
+      },
+      {
+        "id": "e3-informational",
+        "title": "Informational text features"
+      },
+      {
+        "id": "e3-biography",
+        "title": "Biography and autobiography"
+      },
+      {
+        "id": "e3-dahl",
+        "title": "Reading: Roald Dahl"
+      },
+      {
+        "id": "e3-spiders",
+        "title": "Reading: Spiders"
+      }
+    ]
+  },
+  {
+    "id": "science-3",
+    "subject": "science",
+    "term": 3,
+    "title": "Science",
+    "moduleTitle": "Sound, rocks & changing landscapes",
+    "file": "science-3.md",
+    "pages": [
+      {
+        "label": "Sound & hearing / Som e audição",
+        "description": "Bilíngue: vibrações, sons naturais e artificiais, altura versus volume e caminho do ouvido até o cérebro."
+      },
+      {
+        "label": "Rocks & minerals / Rochas e minerais",
+        "description": "Bilíngue: diferença entre rocha e mineral, formação de rochas ígneas, sedimentares e metamórficas e usos cotidianos."
+      },
+      {
+        "label": "Fossils & landscapes / Fósseis e paisagens",
+        "description": "Bilíngue: formação de fósseis e comparação entre paisagem e formas de relevo."
+      },
+      {
+        "label": "Weathering & erosion / Intemperismo e erosão",
+        "description": "Bilíngue: intemperismo fragmenta, erosão transporta e cinco métodos de proteção do solo."
+      }
+    ],
+    "lessons": [
+      {
+        "id": "s3-sound",
+        "title": "Sound starts with vibrations"
+      },
+      {
+        "id": "s3-hearing",
+        "title": "The journey through the ear"
+      },
+      {
+        "id": "s3-rocks-minerals",
+        "title": "Rocks, minerals and everyday objects"
+      },
+      {
+        "id": "s3-rock-types",
+        "title": "Three ways to form rocks"
+      },
+      {
+        "id": "s3-fossils",
+        "title": "Fossils are clues to the past"
+      },
+      {
+        "id": "s3-landscapes",
+        "title": "Landforms and landscapes"
+      },
+      {
+        "id": "s3-weathering-erosion",
+        "title": "Breaking down or moving away?"
+      },
+      {
+        "id": "s3-soil",
+        "title": "Keep soil in place"
+      },
+      {
+        "id": "s3-fossil-discovery",
+        "title": "Reading: a fossil discovery in Brazil"
+      },
+      {
+        "id": "s3-hurricane",
+        "title": "Reading: Hurricane Matthew"
+      }
+    ]
+  }
+]

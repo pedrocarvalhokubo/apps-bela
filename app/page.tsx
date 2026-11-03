@@ -5,6 +5,8 @@ import { useEffect, useMemo, useState, useRef } from "react";
 import Image from "next/image";
 import {useStudyAccount} from './components/AuthGate';
 import HistoryImport from './components/HistoryImport';
+import BelaTutor from './components/BelaTutor';
+import TutorParents from './components/TutorParents';
 import {studyStorage} from '../lib/study-storage';
 import {submitAttempt} from "../lib/attempt-client";
 import {mergeStudy} from '../lib/study-merge';
@@ -1367,6 +1369,7 @@ export default function Home() {
                 <aside className="parent-panel"><span className="eyebrow teal">EM QUALQUER APARELHO</span><h2>Uma conta, o mesmo histórico</h2><p>Entre como Bela com a senha dela no iPhone, iPad ou computador. O histórico fica associado à conta.</p><p>Para consultar este painel em outro aparelho, entre como Bela e informe o PIN exclusivo dos pais.</p><p>Última resposta: {parentAnalytics?.summary?.lastAt ? new Date(parentAnalytics.summary.lastAt).toLocaleString('pt-BR',{timeZone:'America/Bahia'}) : 'ainda não registrada'}.</p></aside>
               </div>
 
+              <TutorParents parentToken={parentToken} />
               <HistoryImport parentToken={parentToken} />
               <section className="parent-panel"><span className="eyebrow teal">EVOLUÇÃO</span><h2>Respostas por dia</h2><p>Últimos 30 dias com atividade. Cada tentativa conta, inclusive após uma pista. Horários da Bahia.</p>
                 {parentAnalytics?.timeline?.length ? <div className="history-table"><table><thead><tr><th>Dia</th><th>Respostas</th><th>Acertos</th><th>Aproveitamento</th></tr></thead><tbody>{parentAnalytics.timeline.map(day=><tr key={day.day}><td>{day.day.split('-').reverse().join('/')}</td><td>{day.attempts}</td><td>{day.correct}</td><td>{Math.round(day.correct/day.attempts*100)}%</td></tr>)}</tbody></table></div>:<p>As primeiras respostas formarão a evolução diária.</p>}
@@ -1666,6 +1669,8 @@ export default function Home() {
           </section>
         </div>
       )}
+
+      {!isGuest && view !== "home" && view !== "parent" && <BelaTutor title={activeSubjectData.name} context={{subject:activeSubject,term,view:view === "quiz" ? "quiz" : "study",...(view === "learn" ? {lessonId:activeLesson.id} : {}),...(view === "infographic" ? {page:infographicPage} : {})}} />}
 
       <footer>
         <span>{isGuest ? "Modo convidado • sem gravar avanço no banco" : "Feito para a Bela estudar no seu ritmo • histórico salvo na conta"}</span>

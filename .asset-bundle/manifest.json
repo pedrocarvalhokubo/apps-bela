@@ -537,7 +537,8 @@
     "public/infographics/geography3-places.png": "4cb2f07d33c494b85876fb27c225d6a5512be6b3789cf5bdcce5bd912f5a8c54",
     "public/infographics/geography3-paths.png": "2c5a5e6850171b998ba0537a4b0e4c90eafd9811c795a70ac0e9f89eb8f5ae20",
     "public/infographics/geography3-cultures.png": "1a8017ef1920ea5beb631de971234225d7530fef0e9cbb164e6b2b3fac642ab1",
-    "public/infographics/geography3-protection.png": "b4234a00d79cf68eacb77da0f1c3c78c69ebfbd325d7750ad45b371490a3b448"
+    "public/infographics/geography3-protection.png": "b4234a00d79cf68eacb77da0f1c3c78c69ebfbd325d7750ad45b371490a3b448",
+    "public/tutor/mascot.png": "09085b2284cd074e8ad42a57b00cf5c6561c52b0593933ebd6e78836896d7853"
   },
   "supplements": [
     {
@@ -603,6 +604,14 @@
         "geography3-012.part.b64",
         "geography3-013.part.b64",
         "geography3-014.part.b64"
+      ]
+    },
+    {
+      "sha256": "8aaada0afeacf4c74290259fa52e8f4f6b4c4d99ab06584d7f699e97d06e571f",
+      "parts": [
+        "tutor-000.part.b64",
+        "tutor-001.part.b64",
+        "tutor-002.part.b64"
       ]
     }
   ]

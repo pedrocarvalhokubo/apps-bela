@@ -13,6 +13,7 @@ COPY --from=build /app/.next/standalone ./
 COPY --from=build /app/.next/static ./.next/static
 COPY --from=build /app/public ./public
 COPY --from=build /app/drizzle ./drizzle
+COPY --from=build /app/content/tutor ./content/tutor
 COPY --from=build /app/scripts/start.mjs ./scripts/start.mjs
 EXPOSE 3000
 CMD ["node", "scripts/start.mjs"]

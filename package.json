@@ -13,14 +13,16 @@
     "prebuild": "node scripts/restore-assets.mjs",
     "predev": "node scripts/restore-assets.mjs",
     "prestart": "node scripts/restore-assets.mjs",
-    "assets:pack": "node scripts/pack-assets.mjs"
+    "assets:pack": "node scripts/pack-assets.mjs",
+    "tutor:content": "node scripts/build-tutor-content.mjs"
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
     "next": "16.2.6",
     "qrcode": "^1.5.4",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "ws": "^8.22.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",
@@ -30,9 +32,11 @@
     "@types/qrcode": "^1.5.6",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
+    "@types/ws": "^8.18.2",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.26",
     "drizzle-kit": "0.31.10",
+    "esbuild": "^0.28.2",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
     "react-server-dom-webpack": "19.2.6",

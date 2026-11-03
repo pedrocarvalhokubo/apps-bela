@@ -28,6 +28,13 @@ function connect() {
       CREATE TABLE IF NOT EXISTS auth_failures (bucket TEXT PRIMARY KEY, count INTEGER NOT NULL, window_start INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS history_imports (source_key TEXT PRIMARY KEY, profile_id TEXT NOT NULL, imported_at INTEGER NOT NULL);
       CREATE TABLE IF NOT EXISTS written_drafts (profile_id TEXT NOT NULL REFERENCES profiles(id), task_id TEXT NOT NULL, answer TEXT NOT NULL, updated_at INTEGER NOT NULL, PRIMARY KEY(profile_id,task_id));`);
+    db.exec(`CREATE TABLE IF NOT EXISTS tutor_settings (profile_id TEXT PRIMARY KEY REFERENCES profiles(id), encrypted_key TEXT NOT NULL DEFAULT '', enabled INTEGER NOT NULL DEFAULT 0, zdr_confirmed INTEGER NOT NULL DEFAULT 0, images_enabled INTEGER NOT NULL DEFAULT 1, daily_turns INTEGER NOT NULL DEFAULT 40, daily_images INTEGER NOT NULL DEFAULT 3, custom_prompt TEXT NOT NULL DEFAULT '', updated_at INTEGER NOT NULL);
+      CREATE TABLE IF NOT EXISTS tutor_sessions (id TEXT PRIMARY KEY, profile_id TEXT NOT NULL REFERENCES profiles(id), context_json TEXT NOT NULL, created_at INTEGER NOT NULL);
+      CREATE TABLE IF NOT EXISTS tutor_turns (id TEXT PRIMARY KEY, session_id TEXT NOT NULL REFERENCES tutor_sessions(id), profile_id TEXT NOT NULL REFERENCES profiles(id), user_text TEXT NOT NULL DEFAULT '', answer TEXT NOT NULL DEFAULT '', topic TEXT NOT NULL DEFAULT '', suggestion TEXT NOT NULL DEFAULT '', sources_json TEXT NOT NULL DEFAULT '[]', flagged INTEGER NOT NULL DEFAULT 0, status TEXT NOT NULL DEFAULT 'pending', visual_kind TEXT NOT NULL DEFAULT 'none', visual_prompt TEXT NOT NULL DEFAULT '', image_status TEXT NOT NULL DEFAULT 'none', created_at INTEGER NOT NULL);
+      CREATE INDEX IF NOT EXISTS tutor_turns_profile ON tutor_turns(profile_id,created_at);
+      CREATE TABLE IF NOT EXISTS tutor_usage (profile_id TEXT NOT NULL REFERENCES profiles(id), day TEXT NOT NULL, turns INTEGER NOT NULL DEFAULT 0, images INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(profile_id,day));
+      CREATE TABLE IF NOT EXISTS tutor_speech_requests (turn_id TEXT PRIMARY KEY REFERENCES tutor_turns(id), attempts INTEGER NOT NULL DEFAULT 0);
+      CREATE TABLE IF NOT EXISTS tutor_prompt_versions (id TEXT PRIMARY KEY, profile_id TEXT NOT NULL REFERENCES profiles(id), prompt TEXT NOT NULL, created_at INTEGER NOT NULL);`);
     db.exec("COMMIT");
   } catch (error) { db.exec("ROLLBACK"); db.close(); throw error; }
   connection = db;
