@@ -1412,6 +1412,7 @@ a.path-card:hover {
 
 .lightbox img {
   display: block;
+  height: auto;
   width: min(1100px, 100%);
   max-width: none;
   border: 8px solid white;
@@ -3582,3 +3583,6 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 .account-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px max(20px,calc((100vw - 1200px)/2));background:#e6f5f0;color:#165f5e;font-size:13px;font-weight:700}.account-bar button{background:white;border:1px solid #bfdcd5;border-radius:10px;padding:8px 12px;cursor:pointer;color:inherit}.account-guest-bar{background:#fff2d6;color:#825717}
 .history-import{margin:24px 0}.import-file{display:grid;gap:10px;margin:18px 0}.import-preview{background:#f2f8fa;padding:20px;border-radius:16px;margin-top:16px}.import-preview button{margin:8px 8px 0 0}.history-table{overflow:auto}.history-table table{width:100%;border-collapse:collapse}.history-table th,.history-table td{padding:12px;border-bottom:1px solid #dce5eb;text-align:left}.parent-panel details{padding:12px 0;border-bottom:1px solid #dce5eb}.parent-panel details p{overflow-wrap:anywhere}.parent-panel{margin-bottom:20px}
 @media(max-width:600px){.account-card{padding:26px 20px}.account-bar{padding:9px 14px;font-size:12px}.history-table th,.history-table td{padding:10px 8px;font-size:12px}}
+
+/* Geography: the study surface is a tappable PNG, with readable fallback text. */
+.geo-lesson-image{display:block;width:100%;border:0;background:#f5f0ff;border-radius:22px;padding:12px;cursor:zoom-in;color:#523979;font:inherit}.geo-lesson-image img{display:block;width:100%;height:auto;max-width:760px;margin:0 auto!important}.geo-lesson-image span{display:block;padding:9px;font-weight:700}.geo-assessment-date{display:inline-block;padding:8px 14px;background:#fff4bc;border-radius:12px;color:#493e1a!important;font-weight:700}

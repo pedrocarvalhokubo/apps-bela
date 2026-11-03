@@ -1,3 +1,4 @@
+import { geography3DeepStudy } from './geography3-data';
 import { ela3DeepStudy } from './ela3-data';
 import { history3DeepStudy } from './history3-data';
 import { scienceDeepStudyByLesson } from "./science-data";
@@ -12,6 +13,7 @@ export type DeepStudy = {
 const deep = (title: string, paragraphs: string[], vocabulary: Array<[string, string, string]>, example: string, challenge: string): DeepStudy => ({ title, paragraphs, vocabulary, example, challenge });
 
 export const deepStudyByLesson: Record<string, DeepStudy> = {
+  ...geography3DeepStudy,
   ...scienceDeepStudyByLesson,
   ...ela3DeepStudy,
   ...history3DeepStudy,

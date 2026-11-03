@@ -9,6 +9,7 @@ const load = async source => import('data:text/javascript;base64,' + Buffer.from
 const ela = await load(read('../app/ela3-data.ts').replace("import content from './ela3-content.json';", `const content=${JSON.stringify(content)};`));
 const routing = await load(read('../app/history3-data.ts')
   .replace("import { ela3Subject } from './ela3-data';", `const ela3Subject=${JSON.stringify(content.subject)};`)
+  .replace("import { geography3Subject } from './geography3-data';", `const geography3Subject=${JSON.stringify(JSON.parse(read('../app/geography3-content.json')).subject)};`)
   .replace("import content from './history3-content.json';", `const content=${read('../app/history3-content.json')};`));
 
 test('ELA term 3 and term 2 route independently, including resumed lessons and quizzes', () => {

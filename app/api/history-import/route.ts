@@ -23,7 +23,7 @@ export async function POST(request:Request) {
   if(!validIds.has(id)||!v||typeof v.solved!=='boolean'||typeof v.firstTry!=='boolean'||typeof v.attempts!=='number'||!Number.isInteger(v.attempts)||v.attempts<1||v.attempts>5)return Response.json({error:'Histórico OBMEP inválido.'},{status:400});
  }
  const drafts:Record<string,string>={};
- for(const [k,v]of Object.entries(b.drafts??{}))if(/^bela-(science-write-\d+|ela3-practice-e3-[a-z-]+)$/.test(k)&&typeof v==='string'&&v.length<=20000)drafts[k]=v;
+ for(const [k,v]of Object.entries(b.drafts??{}))if(/^bela-(science-write-\d+|ela3-practice-e3-[a-z-]+|geography3-practice-g3-[a-z-]+)$/.test(k)&&typeof v==='string'&&v.length<=20000)drafts[k]=v;
  const sourceKey=sourceId?'profile:'+sourceId:'file:'+await sha256(JSON.stringify({local,obmep,drafts}));
  if(b.action==='preview'){
   const old=sourceId?await db.prepare('SELECT state_json FROM study_state WHERE profile_id=?').bind(sourceId).first<{state_json:string}>():null;

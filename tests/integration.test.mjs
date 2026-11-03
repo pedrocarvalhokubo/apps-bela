@@ -13,7 +13,7 @@ const password='986532',salt='fixture-salt',setupCode='TEST-ONLY-SETUP',parentPi
 const hash=s=>createHash('sha256').update(s).digest('hex');
 let child,db;
 async function start(){
- child=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-H','127.0.0.1','-p',String(port)],{env:{...process.env,RAILWAY_ENVIRONMENT_ID:'',DB_PATH:join(dir,'test.sqlite'),BELA_LOGIN_SALT:salt,BELA_LOGIN_HASH:pbkdf2Sync(password,salt,100000,32,'sha256').toString('hex'),BELA_PARENT_SETUP_HASH:hash(setupCode.replaceAll('-',''))},stdio:['ignore','pipe','pipe']});
+ child=spawn(process.execPath,['node_modules/next/dist/bin/next','start','-H','127.0.0.1','-p',String(port)],{env:{...process.env,RAILWAY_ENVIRONMENT_ID:'',DB_PATH:join(dir,'test.sqlite'),BELA_GEOGRAPHY_ASSESSMENT_DATE:'2030-04-15',BELA_LOGIN_SALT:salt,BELA_LOGIN_HASH:pbkdf2Sync(password,salt,100000,32,'sha256').toString('hex'),BELA_PARENT_SETUP_HASH:hash(setupCode.replaceAll('-',''))},stdio:['ignore','pipe','pipe']});
  let logs='';child.stdout.on('data',b=>{logs+=b});child.stderr.on('data',b=>{logs+=b});
  for(let i=0;i<100;i++){
   try {if((await fetch(`http://localhost:${port}/api/health`, {signal:AbortSignal.timeout(1000)})).ok)return;}catch{}
@@ -42,7 +42,7 @@ test('Bela account, guest isolation and durable history',async(t)=>{
  await t.test('guest and old device tokens cannot read or write account data',async()=>{
   for(const p of ['/','/obmep']){const r=await fetch(`http://localhost:${port}${p}`);assert.equal(r.status,200);assert.match(await r.text(),/Estudos da Bela/);}
   assert.equal((await api('/api/auth')).data.authenticated,false);
-  for(const p of ['/api/sync','/api/obmep','/api/parent','/api/drafts'])assert.equal((await api(p)).status,401,p);
+  for(const p of ['/api/study-plan','/api/sync','/api/obmep','/api/parent','/api/drafts'])assert.equal((await api(p)).status,401,p);
   for(const p of ['/api/sync','/api/obmep','/api/parent','/api/drafts','/api/attempts','/api/history-import'])assert.equal((await api(p,null,{state:{},action:'import'})).status,401,p);
   assert.equal((await api('/api/device',null,{action:'bootstrap'})).status,410);
   assert.equal((await api('/api/sync',null,null,null,{'x-bela-device-token':legacyToken})).status,401);
@@ -58,6 +58,12 @@ test('Bela account, guest isolation and durable history',async(t)=>{
   assert.equal(db.prepare('SELECT COUNT(*) n FROM profiles').get().n,2);
   assert.equal((await api('/api/sync',a,{state:{}},null,{origin:'https://untrusted.invalid'})).status,401);
   assert.equal((await api('/api/sync',a,{state:{}},null,{origin:'not-a-url'})).status,401);
+ });
+ await t.test('private assessment date and new geography written drafts stay behind account login',async()=>{
+  const plan=await api('/api/study-plan',a);assert.equal(plan.status,200);assert.equal(plan.data.geography.date,'2030-04-15');
+  const r=await fetch(`http://localhost:${port}/api/study-plan`,{headers:{cookie:a}});assert.match(r.headers.get('cache-control'),/private.*no-store/);
+  const task='bela-geography3-practice-g3-places';assert.equal((await api('/api/drafts',a,{task,answer:'An independent geography answer'})).status,200);
+  assert.equal((await api('/api/drafts?task='+task,b)).data.draft.answer,'An independent geography answer');
  });
  await t.test('two devices preserve concurrent achievements and read the same notes',async()=>{
   const first=await api('/api/sync',a,{state:{completedLessons:['a'],quizStatsById:{quiz:{attempts:1,bestScore:2}},studyNotes:'A'},revision:0});assert.equal(first.status,200);
@@ -107,10 +113,18 @@ test('Bela account, guest isolation and durable history',async(t)=>{
   assert.equal((await api('/api/history-import',a,{...payload,action:'import'},parent)).data.changed,true);
   assert.equal((await api('/api/history-import',b,{...payload,action:'import'},parent)).data.changed,false);
   const state=(await api('/api/sync',b)).data.state;assert.deepEqual(new Set(state.completedLessons),new Set(['b','legacy-local','legacy-cloud']));
-  const report=(await api('/api/parent',a,{action:'analytics'},parent)).data;assert.equal(report.summary.attempts,3);assert.equal(report.drafts.length,2);assert.equal(report.timeline.length,2);
+  const report=(await api('/api/parent',a,{action:'analytics'},parent)).data;assert.equal(report.summary.attempts,3);assert.equal(report.drafts.length,3);assert.equal(report.timeline.length,2);
   assert.equal(db.prepare("SELECT COUNT(*) n FROM attempts WHERE profile_id='legacy-bela'").get().n,1);
   assert.equal(db.prepare("SELECT state_json FROM study_state WHERE profile_id='legacy-bela'").get().state_json,JSON.stringify({completedLessons:['legacy-cloud'],studyNotes:'Original note'}));
   assert.equal((await api('/api/obmep',b)).data.progress[q1.id].attempts,1);
+ });
+ await t.test('new Geography questions are graded from the independent bank on the server',async()=>{
+  const qs=JSON.parse(readFileSync(new URL('../app/geography3-content.json',import.meta.url),'utf8')).questions;
+  const q=qs.find(q=>q.pool==='mock-b');
+  const response=await api('/api/attempts',a,{eventId:randomUUID(),subject:'geography',quizId:'geography3-mock-b',questionId:q.id,topic:'ignored client topic',selected:q.correct,correct:false,isReview:false});
+  assert.equal(response.status,200);
+  const report=(await api('/api/parent',a,{action:'analytics'},parent)).data;
+  assert.ok(report.topics.some(t=>t.subject==='geography'&&t.topic===q.topic&&t.correct===1));
  });
  await t.test('server restart retains account, history and PIN; expiry and logout revoke access',async()=>{
   const before=(await api('/api/sync',a)).data;await stop();await start();

@@ -533,7 +533,11 @@
     "public/infographics/ela3-reading.webp": "9da70c34725bc416b1256061dfbaaac572699984a1ef3f0b0f3a8cfaeb8d3220",
     "public/science-term3/evidence/haiti-comparison.jpg": "fe999e35b6d644e2d708447d6242362dd5caa294aabd67cf276ff00882637862",
     "public/science-term3/assessment/science-complete-review.pdf": "4f74ab2337bfbfda727d801e5234feaf03ab5327f93e232d0ff531191eea9d2f",
-    "public/science-term3/assessment/science-complete-answer-key.pdf": "425f31a27541407301c017a0a341325e4ca1fdecf3f0cf21251ab3252fb7f341"
+    "public/science-term3/assessment/science-complete-answer-key.pdf": "425f31a27541407301c017a0a341325e4ca1fdecf3f0cf21251ab3252fb7f341",
+    "public/infographics/geography3-places.png": "4cb2f07d33c494b85876fb27c225d6a5512be6b3789cf5bdcce5bd912f5a8c54",
+    "public/infographics/geography3-paths.png": "2c5a5e6850171b998ba0537a4b0e4c90eafd9811c795a70ac0e9f89eb8f5ae20",
+    "public/infographics/geography3-cultures.png": "1a8017ef1920ea5beb631de971234225d7530fef0e9cbb164e6b2b3fac642ab1",
+    "public/infographics/geography3-protection.png": "b4234a00d79cf68eacb77da0f1c3c78c69ebfbd325d7750ad45b371490a3b448"
   },
   "supplements": [
     {
@@ -579,6 +583,26 @@
       "sha256": "9575b68b7e9b8a03734e93cb84adc34766a81d8f7e112f5cc1b179cc280eee81",
       "parts": [
         "auth-v2-000.part.b64"
+      ]
+    },
+    {
+      "sha256": "7f31c1be5f2fb6977120f3274dde5adcdc8887ce0d4da2c4a4c83637a9d561b8",
+      "parts": [
+        "geography3-000.part.b64",
+        "geography3-001.part.b64",
+        "geography3-002.part.b64",
+        "geography3-003.part.b64",
+        "geography3-004.part.b64",
+        "geography3-005.part.b64",
+        "geography3-006.part.b64",
+        "geography3-007.part.b64",
+        "geography3-008.part.b64",
+        "geography3-009.part.b64",
+        "geography3-010.part.b64",
+        "geography3-011.part.b64",
+        "geography3-012.part.b64",
+        "geography3-013.part.b64",
+        "geography3-014.part.b64"
       ]
     }
   ]
