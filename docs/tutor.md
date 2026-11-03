@@ -41,3 +41,5 @@ Implementação conferida na documentação oficial em novembro de 2026:
 Referências: [Terra](https://developers.openai.com/api/docs/models/gpt-6.1-terra), [voz](https://developers.openai.com/api/docs/guides/realtime-conversations), [imagens](https://developers.openai.com/api/reference/resources/images/methods/generate), [uso por menores](https://developers.openai.com/api/docs/guides/safety-checks/under-18-api-guidance), [controles de dados](https://developers.openai.com/api/docs/guides/your-data).
 
 `npm test` cobre isolamento de convidados, conta, PIN, criptografia, ativação, rascunhos de prompt, contexto, revisão, histórico, cotas, cache privado e contratos das APIs. Testes de geração usam transporte simulado, sem gastar API. A integração real de voz e imagens precisa ser conferida após o responsável configurar a chave e ZDR, no aparelho usado pela Bela.
+
+Na entrega do tutor, Next.js foi atualizado para 16.4.5 e as dependências transitivas de produção foram corrigidas. `npm audit --omit=dev` retornou zero alertas de produção. Isso não equivale a uma auditoria independente de toda a aplicação.
