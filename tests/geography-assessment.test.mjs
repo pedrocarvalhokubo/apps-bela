@@ -29,6 +29,7 @@ test('The general II-term quiz reuses 20 of 25 reviewed questions with the same 
 });
 test('August school scenarios remain; unsupported processing stages and machines are removed from assessed feedback',()=>{
  assert.match(geo.geographyFieldCityQuiz[2].prompt,/caminhão.*semana/);assert.match(geo.geographyFieldCityQuiz[3].prompt,/fazenda.*leite.*estrada/);
+ assert.deepEqual(geo.geographyFieldCityQuiz[0].sourceRefs,['G2-05','G2-02']);
  assert.match(correct(geo.geographyFieldCityQuiz[4]).label,/insumos e fertilizantes/);assert.doesNotMatch(correct(geo.geographyFieldCityQuiz[4]).label,/máquinas/);
  assert.doesNotMatch(correct(geo.geographyMaterialsQuiz[2]).explanation,/fio|tecido/);
  assert.match(written.questions[2].prompt,/pão/);assert.match(written.questions[11].prompt,/origem animal, vegetal ou mineral/);
@@ -37,6 +38,7 @@ test('August school scenarios remain; unsupported processing stages and machines
 test('November assessments replace invented demands with the exact school concepts',()=>{
  const q=id=>third.questions.find(q=>q.id===id);
  assert.equal(correct(q(3203)).label,'Econômicas, sociais, políticas e climáticas.');assert.deepEqual(q(3203).sourceRefs,['G3-03']);
+ assert.equal(q(3205).hints[0],'Releia o exemplo de Joana na Atividade 01.');
  assert.equal(correct(q(3116)).label,'Em outro país.');assert.match(correct(q(3216)).label,/solicitar refúgio/);
  assert.match(correct(q(3316)).label,/perseguição.*violações/);assert.match(correct(q(3318)).label,/segurança e dignidade/);
  for(const id of [3116,3203,3216,3316,3318])assert.doesNotMatch(JSON.stringify(q(id)),/avós|matrícula|biblioteca|privacidade|aprender.*idioma|necessidade familiar/);

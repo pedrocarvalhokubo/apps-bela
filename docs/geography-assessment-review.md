@@ -84,7 +84,7 @@ Quinze JPEGs da pasta privada “Bela”, do conjunto `WhatsApp Image 2026-11-03
 | Setores da economia | 3 | G2-04, G2-06: A sequência do pão termina com a venda na padaria; o setor terciário inclui comércio. |
 | Setores da economia | 4 | G2-06: As três atividades e seus personagens aparecem na questão 2 da Atividade 01. |
 | Setores da economia | 5 | G2-04, G2-05, G2-06: A sequência do pão e os textos de interdependência conectam produção, transformação e venda. |
-| Campo e cidade | 1 | G2-05: O texto descreve trocas de produtos, matérias-primas e serviços entre os dois espaços. |
+| Campo e cidade | 1 | G2-05, G2-02: G2-05 descreve as trocas de produtos, matérias-primas e serviços; a questão 4 de G2-02 trata da tecnologia que ajuda o agricultor e quem mora na cidade. |
 | Campo e cidade | 2 | G2-05, G2-07: O texto afirma que o campo depende da cidade e a cidade depende do campo. |
 | Campo e cidade | 3 | G2-05, G2-07: A questão 3 pede consequências de uma semana sem caminhões do campo para a cidade. |
 | Campo e cidade | 4 | G2-07: A questão 4 apresenta literalmente a fazenda de leite sem estrada e quem é prejudicado. |
@@ -199,6 +199,8 @@ Quinze JPEGs da pasta privada “Bela”, do conjunto `WhatsApp Image 2026-11-03
 | g3-paths — Compare os exemplos de Joana e dos trabalhadores na colheita de frutas. Qual movimento é pendular e qual é sazonal? Explique a diferença. | G3-04, G3-05 |
 | g3-cultures — Cite os três grupos de povos destacados no Texto I sobre a formação do Brasil. Escreva uma contribuição de cada grupo que apareça no material. | G3-08, G3-09, G3-10, G3-11 |
 | g3-protection — Na Atividade 01, uma família foge de uma guerra. Por que ela precisou sair? Segundo a Atividade 03, o que a proteção deve garantir às pessoas refugiadas? | G3-06, G3-15 |
+
+A conferência independente aprovou os 109 itens. Foram incorporados dois ajustes finais: a primeira dica de 3205 remete ao exemplo de Joana na Atividade 01, pois o enunciado não reproduz o relato; Campo e cidade, item 1, inclui G2-02 para sustentar a referência à tecnologia. A comparação entre guerra e turismo de 3315 foi confirmada na questão 5 da escola e preservada. Esses ajustes não alteram as respostas nem os PDFs.
 
 ## PDFs corrigidos
 

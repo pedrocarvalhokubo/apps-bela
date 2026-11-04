@@ -1131,7 +1131,7 @@
       "prompt": "Qual informação mostra que o deslocamento de Joana é pendular?",
       "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no enunciado o que Joana faz ao fim do dia.",
+        "Releia o exemplo de Joana na Atividade 01.",
         "Releia a definição de migração pendular."
       ],
       "correct": "b",

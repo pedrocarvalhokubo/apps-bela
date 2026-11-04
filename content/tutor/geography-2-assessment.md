@@ -108,7 +108,7 @@ Um fornece produtos; o outro concentra indústrias, comércio e serviços.
   Explicação: A cidade também oferece serviços e produtos.
 
 Resposta: b
-Fontes escolares: G2-05. O texto descreve trocas de produtos, matérias-primas e serviços entre os dois espaços.
+Fontes escolares: G2-05, G2-02. G2-05 descreve trocas de produtos, matérias-primas e serviços; a questão 4 de G2-02 trata da tecnologia que ajuda o agricultor e quem mora na cidade.
 
 ## Campo e cidade — 2
 
