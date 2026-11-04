@@ -1,11 +1,11 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {build} from 'esbuild';
-import {mkdtempSync,rmSync,readFileSync} from 'node:fs';
+import {mkdtempSync,rmSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {pathToFileURL} from 'node:url';
-import {randomUUID,randomBytes,createHash} from 'node:crypto';
+import {randomUUID,randomBytes} from 'node:crypto';
 const root=mkdtempSync(join(tmpdir(),'bela-tutor-tests-'));
 process.env.DB_PATH=join(root,'bela.sqlite');process.env.RAILWAY_ENVIRONMENT_ID='';process.env.RAILWAY_VOLUME_MOUNT_PATH='';process.env.BELA_TUTOR_ENCRYPTION_KEY=randomBytes(32).toString('hex');
 let calls=[],answerPatch={},review=true,visualReview=true;
@@ -15,10 +15,13 @@ globalThis.__tutorMock={
  moderate:async(_key,text)=>text==='unsafe fixture',
  transcribe:async()=>{calls.push(['transcribe']);return 'Quero entender migração interna.';},
  explain:async(_key,input)=>{calls.push(['explain',input]);return {...sample,...answerPatch};},
- verifyAnswer:async()=>review,
+ verifyAnswer:async(...args)=>{calls.push(['review',...args.slice(1)]);return review;},
+ providerMessage:()=> 'Falha de conexão com a API.',
+ speechFailureDetails:()=>({stage:'test',code:'synthetic'}),
+ checkModelAccess:async()=>{calls.push(['diagnose']);return [{feature:'text',model:'gpt-6.1-terra',available:true,status:200}];},
  generateVisual:async()=>{calls.push(['image']);return Buffer.from('89504e470d0a1a0a','hex');},
  reviewVisual:async()=>visualReview,
- speak:async()=>{calls.push(['speak']);return Buffer.from('RIFF fixture WAVE');},
+ speak:async(_key,text,identifier)=>{calls.push(['speak',text,identifier]);return Buffer.from('RIFF fixture WAVE');},
  structuredReply:async(_key,instructions,input)=>{calls.push(['prompt',instructions,input]);return {prompt:'Explique uma ideia por vez e use exemplos novos.',summary:'Frases curtas e exemplos variados.'};}
 };
 await build({stdin:{contents:`export * as tutor from './app/api/tutor/route';export * as parent from './app/api/tutor/parent/route';export * as image from './app/api/tutor/image/route';export * as voice from './app/api/tutor/voice/route';export * as media from './app/api/tutor/media/route';export * as security from './lib/tutor-security';export * as store from './lib/tutor-store';export * as content from './lib/tutor-content';export {getD1 as getDB,sha256} from './app/api/_lib';`,resolveDir:process.cwd()},outfile:join(root,'api.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',logLevel:'silent',plugins:[{name:'controlled-provider',setup(b){b.onLoad({filter:/lib\/tutor-provider\.ts$/},()=>({contents:`export const tutorModels={text:'gpt-6.1-terra',speech:'fixture',image:'fixture',transcription:'fixture'};export class ProviderError extends Error{};${Object.keys(globalThis.__tutorMock).map(name=>`export const ${name}=(...args)=>globalThis.__tutorMock.${name}(...args);`).join('\n')}`,loader:'js'}));}}]});
@@ -53,12 +56,22 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
   const saved=await api.store.settings(profile);assert.notEqual(saved.encrypted_key,key);assert.equal(api.security.openKey(saved.encrypted_key),key);
   const read=await post(api.parent,{action:'read'},token,true);assert.equal(read.data.settings.keyConfigured,true);assert.ok(!JSON.stringify(read.data).includes(key));assert.ok(!JSON.stringify(read.data).includes(saved.encrypted_key));
   assert.equal((await post(api.parent,{...config,enabled:true},token,true)).status,400);
+  const beforeVoice=calls.length;assert.equal((await post(api.parent,{action:'testVoice'})).status,401);assert.equal(calls.length,beforeVoice);
+  assert.equal((await api.parent.POST(req({action:'testVoice'},token,true))).status,200);
+  const voiceCall=calls.filter(c=>c[0]==='speak').at(-1);assert.equal(voiceCall[1],'Esta é uma frase de teste do tutor. Um triângulo tem três lados.');assert.ok(!voiceCall[2].includes(profile));
+
+  const beforePrompt=calls.length;assert.equal((await post(api.parent,{action:'suggestPrompt',prompt:'',instruction:'Use exemplos.'},token,true)).status,403);assert.equal(calls.length,beforePrompt);
   assert.equal((await post(api.parent,{...config,enabled:true,zdrConfirmed:true},token,true)).status,200);
   assert.equal((await api.tutor.GET(req())).status,200);
   const modified=saved.encrypted_key.split('.');modified[2]=(modified[2][0]==='A'?'B':'A')+modified[2].slice(1);assert.throws(()=>api.security.openKey(modified.join('.')));
  });
+ await t.test('model diagnostics stay PIN-protected and send no child data',async()=>{
+  const before=calls.length;assert.equal((await post(api.parent,{action:'diagnose'})).status,401);assert.equal(calls.length,before);
+  const originalNow=Date.now;Date.now=()=>originalNow()+11000;const result=await post(api.parent,{action:'diagnose'},token,true);Date.now=originalNow;assert.equal(result.status,200);assert.equal(result.data.models[0].available,true);assert.equal(result.data.privacyVerified,false);assert.match(result.data.note,/Não comprova/);assert.equal(JSON.stringify(result.data).includes(key),false);
+ });
  await t.test('prompt suggestions are drafts; saves create reviewable versions',async()=>{
-  const suggestion=await post(api.parent,{action:'suggestPrompt',prompt:'',instruction:'Use frases menores.'},token,true);assert.equal(suggestion.status,200);
+  const originalNow=Date.now;Date.now=()=>originalNow()+22000;
+  const suggestion=await post(api.parent,{action:'suggestPrompt',prompt:'',instruction:'Use frases menores.'},token,true);Date.now=originalNow;assert.equal(suggestion.status,200);
   assert.equal((await api.store.settings(profile)).custom_prompt,'');
   assert.equal((await post(api.parent,{action:'savePrompt',prompt:suggestion.data.prompt},token,true)).status,200);
   const read=await post(api.parent,{action:'read'},token,true);assert.equal(read.data.versions.length,1);assert.equal(read.data.settings.customPrompt,suggestion.data.prompt);
@@ -78,10 +91,15 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
   assert.equal((await post(api.tutor,{action:'turn',sessionId:session,requestId:randomUUID(),text:'hello'},foreign)).status,401);
   assert.equal((await turn(randomUUID())).status,409);
  });
+ await t.test('review receives conversation history for short follow-up questions',async()=>{
+  const session=await newSession();await turn(session,'O que é migração?');await turn(session,'E por quê?');
+  const reviewCall=calls.filter(c=>c[0]==='review').at(-1);assert.equal(reviewCall[3],'E por quê?');assert.equal(reviewCall[5].length,2);assert.equal(reviewCall[5][0].content,'O que é migração?');
+  const source=api.content.tutorSource(api.content.resolveTutorContext({subject:'geography',term:3}));assert.match(source.instructions,/conhecimento geral confiável/);assert.match(source.instructions,/não um limite de palavras/);assert.match(source.instructions,/não tem navegação/);
+ });
  await t.test('unknown sources and failed independent review do not escape the module',async()=>{
   const session=await newSession();answerPatch={sourceIds:['science-3']};let r=await turn(session);assert.match(r.data.turn.answer,/apoio suficiente/);
   answerPatch={allowed:false,visualKind:'image',visualPrompt:'Unrelated'};r=await turn(session);assert.match(r.data.turn.answer,/Geografia/);assert.equal(r.data.turn.visualKind,'none');
-  answerPatch={};review=false;r=await turn(session);assert.match(r.data.turn.answer,/assunto desta aula/);review=true;
+  answerPatch={};review=false;r=await turn(session);assert.match(r.data.turn.answer,/explicar isso com cuidado/);review=true;
   r=await turn(session,'unsafe fixture');assert.equal(r.data.turn.flagged,true);assert.match(r.data.turn.answer,/adulto/);
  });
  await t.test('private images and audio are owned, reviewed, budgeted and cached',async()=>{
@@ -89,8 +107,14 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
   assert.equal((await post(api.image,{turnId:id})).status,200);const imageCount=calls.filter(c=>c[0]==='image').length;assert.equal((await post(api.image,{turnId:id})).status,200);assert.equal(calls.filter(c=>c[0]==='image').length,imageCount);
   let media=await api.media.GET(req(null,token,false,'/media?id='+id+'&kind=image'));assert.equal(media.status,200);assert.equal(media.headers.get('content-type'),'image/png');assert.match(media.headers.get('cache-control'),/private, no-store/);
   assert.equal((await api.media.GET(req(null,foreign,false,'/media?id='+id+'&kind=image'))).status,401);
-  assert.equal((await api.voice.POST(req({turnId:id}))).status,200);assert.equal((await api.voice.POST(req({turnId:id}))).status,200);assert.equal(calls.filter(c=>c[0]==='speak').length,1);
+  assert.equal((await api.voice.POST(req({turnId:id}))).status,200);assert.equal((await api.voice.POST(req({turnId:id}))).status,200);assert.equal(calls.filter(c=>c[0]==='speak'&&c[1]===sample.answer).length,1);
   visualReview=false;const rejected=await turn(session,'Crie outro infográfico.');assert.equal((await post(api.image,{turnId:rejected.data.turn.id})).status,502);assert.equal((await api.media.GET(req(null,token,false,'/media?id='+rejected.data.turn.id))).status,404);visualReview=true;answerPatch={};
+ });
+ await t.test('a speech budget database failure releases the in-flight lock',async()=>{
+  const session=await newSession(),result=await turn(session,'Explique uma ideia.');const id=result.data.turn.id;
+  await db.prepare("CREATE TEMP TRIGGER fail_speech_budget BEFORE INSERT ON tutor_speech_requests BEGIN SELECT RAISE(FAIL, 'synthetic budget failure'); END").run();
+  try{assert.equal((await post(api.voice,{turnId:id})).status,502);}finally{await db.prepare('DROP TRIGGER fail_speech_budget').run();}
+  assert.equal((await api.voice.POST(req({turnId:id}))).status,200);
  });
  await t.test('quota is atomic and disabled tutor cannot spend through any endpoint',async()=>{
   const results=await Promise.all(Array.from({length:10},()=>api.store.quota('foreign-profile','turns',3)));assert.equal(results.filter(Boolean).length,3);

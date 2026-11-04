@@ -3,9 +3,9 @@ import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {getParentSession,getD1,unauthorized} from '../../_lib';
 import {getTutorDevice} from '../../../../lib/tutor-auth';
-import {boundedJson,json,encryptionReady,sealKey,openKey,uuid} from '../../../../lib/tutor-security';
+import {boundedJson,json,encryptionReady,sealKey,openKey,uuid,safetyId,privateHeaders} from '../../../../lib/tutor-security';
 import {settings,publicTurn,type TutorTurn} from '../../../../lib/tutor-store';
-import {validateKey,structuredReply,transcribe,tutorModels,ProviderError} from '../../../../lib/tutor-provider';
+import {validateKey,structuredReply,transcribe,tutorModels,ProviderError,checkModelAccess,speak,providerMessage,speechFailureDetails} from '../../../../lib/tutor-provider';
 import {tutorCatalog} from '../../../../lib/tutor-content';
 export const dynamic='force-dynamic';
 const fixedRules=()=>readFileSync(join(process.cwd(),'content/tutor/instructions.md'),'utf8');
@@ -27,6 +27,21 @@ export async function POST(request:Request){
    const turns=await db.prepare('SELECT * FROM tutor_turns WHERE session_id=? AND profile_id=? ORDER BY created_at LIMIT 250').bind(body.sessionId,profile).all<TutorTurn>();
    return json({turns:turns.results.map(publicTurn)});
   }
+  if(body.action==='testVoice'){
+   if(!current?.encrypted_key||!encryptionReady())return json({error:'Salve uma chave de API válida antes do teste de voz.'},400);
+   const last=aiRequests.get(profile)??0;if(Date.now()-last<10000)return json({error:'Aguarde alguns segundos antes de testar novamente.'},429);aiRequests.set(profile,Date.now());
+   try{
+    // Fixed, non-personal text: this never reads the child's prompt or conversation.
+    const audio=await speak(openKey(current.encrypted_key),'Esta é uma frase de teste do tutor. Um triângulo tem três lados.',safetyId('public-synthetic-voice-check'),request.signal);
+    return new Response(new Uint8Array(audio),{headers:{...privateHeaders,'content-type':'audio/wav'}});
+   }catch(error){console.warn('tutor_voice_test_failure',speechFailureDetails(error));return json({error:providerMessage(error,'voz')},502);}
+  }
+  if(body.action==='diagnose'){
+   if(!current?.encrypted_key||!encryptionReady())return json({error:'Salve uma chave de API válida antes de verificar a conexão.'},400);
+   const last=aiRequests.get(profile)??0;if(Date.now()-last<10000)return json({error:'Aguarde alguns segundos antes de verificar novamente.'},429);aiRequests.set(profile,Date.now());
+   const models=await checkModelAccess(openKey(current.encrypted_key));
+   return json({models,zdrAttested:Boolean(current.zdr_confirmed),privacyVerified:false,note:'Consulta apenas o acesso aos modelos, sem enviar perguntas, áudio ou histórico. Não comprova saldo, funcionamento de geração nem ZDR habilitado no projeto OpenAI.'});
+  }
   if(body.action==='save'){
    if(typeof body.enabled!=='boolean'||typeof body.zdrConfirmed!=='boolean'||typeof body.imagesEnabled!=='boolean'||!Number.isInteger(body.dailyTurns)||body.dailyTurns<1||body.dailyTurns>200||!Number.isInteger(body.dailyImages)||body.dailyImages<0||body.dailyImages>20)return json({error:'Confira as opções e os limites: 1–200 perguntas e 0–20 imagens por dia.'},400);
    const newKey=typeof body.apiKey==='string'?body.apiKey.trim():'';
@@ -42,6 +57,7 @@ export async function POST(request:Request){
    return json({ok:true});
   }
   if(body.action==='suggestPrompt'){
+   if(!current?.zdr_confirmed)return json({error:'Antes de usar o editor por IA, confirme que o projeto OpenAI tem Zero Data Retention habilitado. Você pode editar e salvar as instruções manualmente.'},403);
    if(!current?.encrypted_key||!encryptionReady())return json({error:'Salve uma chave de API válida para conversar com o editor de instruções.'},400);
    const last=aiRequests.get(profile)??0;if(Date.now()-last<10000)return json({error:'Aguarde alguns segundos antes de pedir outra sugestão.'},429);aiRequests.set(profile,Date.now());
    const key=openKey(current.encrypted_key);

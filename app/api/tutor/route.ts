@@ -4,7 +4,7 @@ import {getD1,unauthorized} from '../_lib';
 import {boundedJson,json,uuid,safetyId,encryptionReady} from '../../../lib/tutor-security';
 import {resolveTutorContext,tutorSource,type TutorContext} from '../../../lib/tutor-content';
 import {settings,readySettings,quota,turnFor,publicTurn} from '../../../lib/tutor-store';
-import {transcribe,moderate,explain,verifyAnswer} from '../../../lib/tutor-provider';
+import {transcribe,moderate,explain,verifyAnswer,providerMessage} from '../../../lib/tutor-provider';
 export const dynamic='force-dynamic';
 export async function GET(request:Request){const d=await getTutorDevice(request);if(!d)return unauthorized();const s=await settings(d.profileId);return json({available:Boolean(s?.enabled&&s.zdr_confirmed&&s.encrypted_key&&encryptionReady()),imagesEnabled:Boolean(s?.images_enabled),name:'Tutor da Bela'});}
 export async function POST(request:Request){
@@ -37,10 +37,10 @@ export async function POST(request:Request){
    if(!result.allowed){result.answer=`Posso ajudar com ${resolved.module.title} e com o assunto que está aberto. Vamos voltar a uma dúvida dessa matéria?`;result.visualKind='none';result.visualPrompt='';}
    else if(result.safety||await moderate(config.key,result.answer+'\n'+result.visualPrompt)){result={...result,safety:true,answer:'Vamos conversar com um adulto de confiança sobre isso antes de continuar. Ele pode ajudar você com cuidado.',visualKind:'none',visualPrompt:''};}
    else if(!result.sourceIds.length||result.sourceIds.some(id=>!source.sourceIds.includes(id))){result.answer='Não encontrei apoio suficiente no material para afirmar isso. Podemos explorar um exemplo da aula ou levar essa dúvida à professora.';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];}
-   else if(!await verifyAnswer(config.key,source.content,resolved.context,text,result)){result.answer='Vamos ficar no assunto desta aula. Posso explicar uma ideia do material com um exemplo novo. Qual parte você quer entender?';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];result.topic='Retomar o conteúdo da aula';result.suggestion='Ajudar a escolher uma dúvida relacionada à aula aberta.';}
+   else if(!await verifyAnswer(config.key,source.content,resolved.context,text,result,history)){result.answer='Quero explicar isso com cuidado. Você pode me dizer qual parte da pergunta ficou confusa ou pedir um exemplo mais simples?';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];result.topic='Retomar o conteúdo da aula';result.suggestion='Ajudar a escolher uma dúvida relacionada à aula aberta.';}
   }
   if(!config.images_enabled){result.visualKind='none';result.visualPrompt='';}
   await db.prepare("UPDATE tutor_turns SET answer=?,topic=?,suggestion=?,sources_json=?,flagged=?,status='done',visual_kind=?,visual_prompt=?,image_status=? WHERE id=?").bind(result.answer,result.topic.slice(0,120),result.suggestion.slice(0,600),JSON.stringify(result.sourceIds),result.safety?1:0,result.visualKind,result.visualPrompt,result.visualKind==='none'?'none':'requested',body.requestId).run();
   return json({turn:publicTurn((await turnFor(d.profileId,body.requestId))!)});
- }catch{await db.prepare("UPDATE tutor_turns SET status='failed' WHERE id=?").bind(body.requestId).run();return json({error:'Não consegui responder agora. Sua pergunta ficou registrada; tente novamente em instantes.'},502);}
+ }catch(error){await db.prepare("UPDATE tutor_turns SET status='failed' WHERE id=?").bind(body.requestId).run();return json({error:providerMessage(error,body.audio?'transcrição ou conversa':'conversa')},502);}
 }

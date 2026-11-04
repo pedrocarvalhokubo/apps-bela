@@ -9,15 +9,15 @@ Na conta da Bela, entre na área dos pais com o PIN e abra **Tutor da Bela**.
 3. Ajuste os limites de perguntas e imagens e ative o tutor. A cobrança é da API, separada da assinatura ChatGPT; configure também o orçamento do projeto OpenAI.
 4. Em **Instruções do tutor**, edite as preferências ou peça uma revisão à IA por texto/voz. A proposta é um rascunho. **Salvar instruções** aplica a versão e registra o histórico.
 
-O botão flutuante aparece nas matérias, aulas, infográficos e avaliações da Bela. Não aparece para convidados. O microfone começa somente após um toque. A conversa alterna gravação, transcrição, resposta revisada e fala; não é áudio simultâneo de duas vias. Pode ser minimizada enquanto o material permanece visível. Pausar, mudar de matéria, sair do app ou ocultar a aba interrompe a captura. Perguntas por texto e replay do áudio também estão disponíveis. Permissões e reprodução automática dependem do navegador.
+O botão flutuante aparece nas matérias, aulas, infográficos e avaliações da Bela. Não aparece para convidados. O microfone começa somente após um toque. A conversa alterna gravação, transcrição, resposta revisada e fala; não é áudio simultâneo de duas vias. Pode ser minimizada enquanto o material permanece visível. Pausar, mudar de matéria, sair do app ou ocultar a aba interrompe a captura. Perguntas por texto e replay do áudio também estão disponíveis. O botão **Interromper e falar** permite cortar a resposta e fazer outra pergunta. A geração de uma imagem não impede a retomada da escuta. Permissões e reprodução automática dependem do navegador. O gravador reutiliza o contexto de áudio desbloqueado pelo toque; se a análise de silêncio não estiver disponível, mantém envio manual em vez de descartar uma gravação válida.
 
 ## Conteúdo e revisão
 
 `content/tutor/instructions.md` contém as regras fixas. Cada módulo tem um arquivo `.md` com aulas, aprofundamentos e ampliação autoral; `enrichment.json` registra os exemplos adicionais e fontes de conferência. `catalog.json` controla matérias, aulas e páginas aceitas. Atualize tudo com `npm run tutor:content` após editar o currículo. Os arquivos `*-assessment.md` documentam exemplos e alternativas para o curador e **não são enviados ao tutor**.
 
-Somente o módulo validado no servidor é enviado. O modelo não navega, não chama ferramentas externas e não acessa o banco. Preferências dos pais não mudam autenticação, limites ou regras fixas. Uma segunda avaliação independente confere escopo e apoio no conteúdo. Na avaliação, o tutor dá pistas e exemplos análogos. Isso reduz erros de IA, mas não garante infalibilidade.
+Somente o módulo validado no servidor é enviado. O modelo não navega, não chama ferramentas externas e não acessa o banco. Preferências dos pais não mudam autenticação, limites ou regras fixas. O material é ponto de partida: o tutor também pode usar conhecimento geral confiável, analogias e exemplos novos ligados à matéria, sem fingir que pesquisou na internet ou que algo consta no livro. Uma segunda avaliação independente confere escopo, confiabilidade e segurança, usando o histórico para entender perguntas de continuação. Os IDs de fonte indicam vínculo curricular, não citação literal de cada ampliação. Na avaliação, o tutor dá pistas e exemplos análogos. Isso reduz erros de IA, mas não garante infalibilidade.
 
-Pedidos visuais passam por roteiro, moderação, limite diário, geração PNG e revisão visual antes da entrega. Voz usa o texto revisado; a transcrição da fala sintetizada é comparada e, se necessário, revisada antes de disponibilizar o áudio. As imagens e o áudio sintetizado são privados.
+Pedidos visuais passam por roteiro, moderação, limite diário, geração PNG e revisão visual antes da entrega. A síntese recebe o texto revisado como mensagem explícita, com detecção de fala de entrada desativada. Há limites de tempo por etapa e um prazo total de 120 segundos compartilhado entre geração e revisão da voz; cancelar a requisição também encerra o WebSocket. Falhas registram somente etapa, código, tempo e contagem de bytes, sem texto, áudio, chave ou identificadores da criança. Voz usa o texto revisado; a transcrição da fala sintetizada é comparada e, se necessário, revisada antes de disponibilizar o áudio. As imagens e o áudio sintetizado são privados.
 
 ## Servidor e dados
 
@@ -27,6 +27,12 @@ Pedidos visuais passam por roteiro, moderação, limite diário, geração PNG e
 - Perguntas transcritas, respostas, contexto, tópicos e sugestões ficam nas tabelas `tutor_*`. Não há gravação persistente da voz enviada pela criança. Respostas sintetizadas e PNGs ficam no volume persistente em `tutor-media`, fora de `public`, servidas mediante autorização. Não há expiração automática dos registros.
 - Limites diários são atômicos e seguem o fuso `America/Bahia`. Pedidos iniciados contam mesmo quando falham. Há idempotência por mensagem, limite de frequência e até três tentativas de síntese por resposta. Replays de áudio pronto e imagens prontas usam cache privado do servidor.
 - O volume SQLite e os arquivos precisam fazer parte do mesmo backup. Não copie chaves descriptografadas para backups ou logs.
+
+## Diagnóstico seguro
+
+Na área dos pais, **Testar voz com frase de exemplo** sintetiza apenas uma frase fixa sobre triângulos. Não lê preferências nem histórico, não usa a voz da criança e não salva o áudio no servidor. Consome uma chamada da API e testa somente a saída de voz. Não comprova captura do microfone nem ZDR.
+
+**Verificar acesso aos modelos** consulta somente os metadados dos quatro modelos usando a chave já salva. Não envia perguntas, voz ou histórico. A consulta pode indicar acesso negado, modelo indisponível ou falha de conexão, mas não prova saldo disponível, geração funcionando nem ZDR. O editor de instruções por IA também exige a confirmação de ZDR salva, mantendo edição e salvamento manual disponíveis. A confirmação de ZDR no app é declaração parental, não comprovação por consulta à OpenAI. Nenhum teste com dados reais da criança deve ser executado sem essa verificação.
 
 ## Modelos e conferência
 
