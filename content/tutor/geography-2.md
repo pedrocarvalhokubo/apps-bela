@@ -106,11 +106,11 @@ a madeira é processada para adquirir novas formas e usos.
 
 ### Algodão → camiseta
 
-a fibra vira fio, tecido e roupa.
+Exemplo complementar para estudar: a fibra vira fio, tecido e roupa. Essas etapas não são cobradas nas avaliações.
 
 ### Areia → vidro
 
-a areia é aquecida e transformada em vidro para garrafas e espelhos.
+Exemplo complementar para estudar: a areia pode ser transformada em vidro. As avaliações cobram a relação entre o produto e sua matéria-prima, como na tabela da escola.
 
 ### Leite → queijo
 

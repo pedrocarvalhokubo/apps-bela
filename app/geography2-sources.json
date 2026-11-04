@@ -1,0 +1,280 @@
+{
+  "term": 2,
+  "sources": [
+    {
+      "id": "G2-01",
+      "photo": "5C09EF95-6CEF-45AD-8454-4B6DD17D7EB8.jpeg",
+      "title": "Atividade 03, questões 7 a 9",
+      "section": "Classificação dos recursos; extrativismo responsável; floresta sem replantio"
+    },
+    {
+      "id": "G2-02",
+      "photo": "430B20F5-D96B-4AF6-A7B3-1ED6CF61468E.jpeg",
+      "title": "Reciclagem",
+      "section": "Definição, preservação dos recursos, separação e retorno dos materiais à produção"
+    },
+    {
+      "id": "G2-03",
+      "photo": "CC55AC11-D926-4B87-A106-8E7C1FE1450E.jpeg",
+      "title": "Atividade 03, questões 1 a 3",
+      "section": "Matéria-prima, produto industrializado e origem do papel"
+    },
+    {
+      "id": "G2-04",
+      "photo": "2F737DDD-3A4F-40BB-BB65-0B43667A5CD4.jpeg",
+      "title": "Atividade 03, questões 4 a 6",
+      "section": "Produtos e matérias-primas; origens; sequência da produção do pão"
+    },
+    {
+      "id": "G2-05",
+      "photo": "79ACFC62-8407-4486-9642-9EF60A1E4CD5.jpeg",
+      "title": "Atividade 02, texto",
+      "section": "Interdependência; alimentos, serviços, insumos e fertilizantes"
+    },
+    {
+      "id": "G2-06",
+      "photo": "3B9B9158-C0AB-46A9-BD43-010BD36F4F5D.jpeg",
+      "title": "Atividade 01, questões 1 a 3",
+      "section": "Setores econômicos; tomates, brinquedos, farmácia, galinhas e ônibus"
+    },
+    {
+      "id": "G2-07",
+      "photo": "D34AC2FF-7EBE-4481-859E-8E18696F5B57.jpeg",
+      "title": "Atividade 02, questões 1 a 4",
+      "section": "Campo e cidade; caminhão parado por uma semana; fazenda sem estrada"
+    },
+    {
+      "id": "G2-08",
+      "photo": "907818E6-8FD3-47BD-B849-1E2702E2E2DC.jpeg",
+      "title": "Extrativismo e questões sobre reciclagem",
+      "section": "Origens animal, vegetal e mineral; desperdício e novas matérias-primas"
+    },
+    {
+      "id": "G2-09",
+      "photo": "58853738-C7E9-434A-BDD2-30EBE94D23B5.jpeg",
+      "title": "Atividade 02, questão 5",
+      "section": "Produtos do campo e produtos ou serviços da cidade"
+    },
+    {
+      "id": "G2-10",
+      "photo": "F3C98356-0B1F-4B43-8567-733CF2E6D2DE.jpeg",
+      "title": "Guia do II trimestre",
+      "section": "Setores; campo e cidade; produtos, origem e matérias-primas"
+    }
+  ],
+  "quizEvidence": [
+    {
+      "topic": "Setores da economia",
+      "id": 1,
+      "sourceRefs": [
+        "G2-06"
+      ],
+      "evidenceNote": "O cultivo de tomates é uma das classificações solicitadas na Atividade 01."
+    },
+    {
+      "topic": "Setores da economia",
+      "id": 2,
+      "sourceRefs": [
+        "G2-06"
+      ],
+      "evidenceNote": "A fabricação de brinquedos é o exemplo industrial da Atividade 01."
+    },
+    {
+      "topic": "Setores da economia",
+      "id": 3,
+      "sourceRefs": [
+        "G2-04",
+        "G2-06"
+      ],
+      "evidenceNote": "A sequência do pão termina com a venda na padaria; o setor terciário inclui comércio."
+    },
+    {
+      "topic": "Setores da economia",
+      "id": 4,
+      "sourceRefs": [
+        "G2-06"
+      ],
+      "evidenceNote": "As três atividades e seus personagens aparecem na questão 2 da Atividade 01."
+    },
+    {
+      "topic": "Setores da economia",
+      "id": 5,
+      "sourceRefs": [
+        "G2-04",
+        "G2-05",
+        "G2-06"
+      ],
+      "evidenceNote": "A sequência do pão e os textos de interdependência conectam produção, transformação e venda."
+    },
+    {
+      "topic": "Campo e cidade",
+      "id": 1,
+      "sourceRefs": [
+        "G2-05"
+      ],
+      "evidenceNote": "O texto descreve trocas de produtos, matérias-primas e serviços entre os dois espaços."
+    },
+    {
+      "topic": "Campo e cidade",
+      "id": 2,
+      "sourceRefs": [
+        "G2-05",
+        "G2-07"
+      ],
+      "evidenceNote": "O texto afirma que o campo depende da cidade e a cidade depende do campo."
+    },
+    {
+      "topic": "Campo e cidade",
+      "id": 3,
+      "sourceRefs": [
+        "G2-05",
+        "G2-07"
+      ],
+      "evidenceNote": "A questão 3 pede consequências de uma semana sem caminhões do campo para a cidade."
+    },
+    {
+      "topic": "Campo e cidade",
+      "id": 4,
+      "sourceRefs": [
+        "G2-07"
+      ],
+      "evidenceNote": "A questão 4 apresenta literalmente a fazenda de leite sem estrada e quem é prejudicado."
+    },
+    {
+      "topic": "Campo e cidade",
+      "id": 5,
+      "sourceRefs": [
+        "G2-05"
+      ],
+      "evidenceNote": "O texto lista bancos, postos de saúde, hospitais, escolas, insumos e fertilizantes. Não lista máquinas nesse trecho."
+    },
+    {
+      "topic": "Matéria-prima e produtos",
+      "id": 1,
+      "sourceRefs": [
+        "G2-03",
+        "G2-04",
+        "G2-06"
+      ],
+      "evidenceNote": "As questões 1 e 2 distinguem matéria-prima de produto industrializado; a tabela fornece os exemplos."
+    },
+    {
+      "topic": "Matéria-prima e produtos",
+      "id": 2,
+      "sourceRefs": [
+        "G2-03",
+        "G2-04"
+      ],
+      "evidenceNote": "A tabela e a sequência do pão mostram a transformação do trigo em farinha e pão."
+    },
+    {
+      "topic": "Matéria-prima e produtos",
+      "id": 3,
+      "sourceRefs": [
+        "G2-04"
+      ],
+      "evidenceNote": "A tabela relaciona camiseta de algodão e algodão; não descreve fiação nem tecelagem."
+    },
+    {
+      "topic": "Matéria-prima e produtos",
+      "id": 4,
+      "sourceRefs": [
+        "G2-04"
+      ],
+      "evidenceNote": "As quatro etapas do pão constam literalmente na questão 6."
+    },
+    {
+      "topic": "Matéria-prima e produtos",
+      "id": 5,
+      "sourceRefs": [
+        "G2-04"
+      ],
+      "evidenceNote": "A tabela relaciona mesa e madeira, garrafa e areia, queijo e leite, papel e madeira."
+    },
+    {
+      "topic": "Origem e extrativismo",
+      "id": 1,
+      "sourceRefs": [
+        "G2-04"
+      ],
+      "evidenceNote": "A afirmação sobre a origem animal do leite aparece no verdadeiro ou falso."
+    },
+    {
+      "topic": "Origem e extrativismo",
+      "id": 2,
+      "sourceRefs": [
+        "G2-01",
+        "G2-08"
+      ],
+      "evidenceNote": "O texto classifica a madeira como recurso vegetal."
+    },
+    {
+      "topic": "Origem e extrativismo",
+      "id": 3,
+      "sourceRefs": [
+        "G2-01",
+        "G2-08"
+      ],
+      "evidenceNote": "A classificação da questão 7 inclui o granito; o texto o lista entre os recursos minerais."
+    },
+    {
+      "topic": "Origem e extrativismo",
+      "id": 4,
+      "sourceRefs": [
+        "G2-08"
+      ],
+      "evidenceNote": "O texto define a retirada de recursos naturais e seus três tipos de origem."
+    },
+    {
+      "topic": "Origem e extrativismo",
+      "id": 5,
+      "sourceRefs": [
+        "G2-01",
+        "G2-08"
+      ],
+      "evidenceNote": "A tabela e o texto apoiam mel animal, látex vegetal e petróleo mineral."
+    },
+    {
+      "topic": "Reciclagem e responsabilidade",
+      "id": 1,
+      "sourceRefs": [
+        "G2-02"
+      ],
+      "evidenceNote": "O texto define recuperar a parte reutilizável para reintroduzir na produção ou criar novos objetos."
+    },
+    {
+      "topic": "Reciclagem e responsabilidade",
+      "id": 2,
+      "sourceRefs": [
+        "G2-02",
+        "G2-08"
+      ],
+      "evidenceNote": "O texto e a questão 6 ligam reciclagem e redução da necessidade de novas matérias-primas."
+    },
+    {
+      "topic": "Reciclagem e responsabilidade",
+      "id": 3,
+      "sourceRefs": [
+        "G2-08"
+      ],
+      "evidenceNote": "A questão 5 pede por que evitar desperdício de papel, madeira, água e alimentos."
+    },
+    {
+      "topic": "Reciclagem e responsabilidade",
+      "id": 4,
+      "sourceRefs": [
+        "G2-01",
+        "G2-08"
+      ],
+      "evidenceNote": "A questão 8 pergunta pelo extrativismo responsável; a questão 9 trata dos efeitos da retirada total."
+    },
+    {
+      "topic": "Reciclagem e responsabilidade",
+      "id": 5,
+      "sourceRefs": [
+        "G2-01"
+      ],
+      "evidenceNote": "A questão 9 apresenta literalmente a floresta sem replantio e seus efeitos sobre animais e produtos."
+    }
+  ]
+}

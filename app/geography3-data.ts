@@ -15,3 +15,5 @@ export const geography3Catalog = Object.fromEntries([
  ['geography3-mock-b', {title: 'Geografia • Simulado B', subject: 'geography', questions: geography3Questions.filter(q => q.pool === 'mock-b')}],
 ]) as Partial<Record<QuizId, {title:string; subject:SubjectKey; questions:QuizQuestion[]}>>;
 export const geography3ImageForLesson = (id:string) => geography3Infographics[Math.max(0, geography3Subject.lessons.findIndex(l => l.id === id))];
+
+export {default as geography3Sources} from './geography3-sources.json';

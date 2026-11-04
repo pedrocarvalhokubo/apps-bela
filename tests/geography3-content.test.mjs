@@ -6,7 +6,7 @@ const read=p=>readFileSync(new URL(p,import.meta.url),'utf8');
 const c=JSON.parse(read('../app/geography3-content.json'));
 const load=async source=>import('data:text/javascript;base64,'+Buffer.from(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64'));
 const routing=await load(read('../app/history3-data.ts').replace("import { geography3Subject } from './geography3-data';",`const geography3Subject=${JSON.stringify(c.subject)};`).replace("import { ela3Subject } from './ela3-data';",`const ela3Subject=${JSON.stringify(JSON.parse(read('../app/ela3-content.json')).subject)};`).replace("import content from './history3-content.json';",`const content=${read('../app/history3-content.json')};`));
-test('Geography pools have no reused questions and each assesses all four content areas',()=>{
+test('Geography pools preserve 60 question IDs, varied wording and all four school content areas',()=>{
  assert.equal(c.questions.length,60);
  assert.equal(new Set(c.questions.map(q=>q.id)).size,60);
  assert.equal(new Set(c.questions.map(q=>q.prompt.normalize('NFD').replace(/[^a-z0-9]/gi,'').toLowerCase())).size,60);
@@ -15,7 +15,7 @@ test('Geography pools have no reused questions and each assesses all four conten
   const qs=c.questions.filter(q=>q.pool===pool);assert.equal(qs.length,20);
   for(const l of c.subject.lessons)assert.equal(qs.filter(q=>q.topic===l.title).length,5);
   for(const letter of 'abcd')assert.equal(qs.filter(q=>q.correct===letter).length,5);
-  for(const q of qs){assert.equal(new Set(q.options.map(o=>o.label)).size,4);assert.equal(q.options.filter(o=>o.id===q.correct).length,1);assert.equal(q.hints.length,2);assert.ok(q.options.every(o=>o.explanation.length>45));}
+  for(const q of qs){assert.equal(new Set(q.options.map(o=>o.label)).size,4);assert.equal(q.options.filter(o=>o.id===q.correct).length,1);assert.equal(q.hints.length,2);assert.ok(q.options.every(o=>o.explanation.trim().length>=15));assert.equal(new Set(q.options.map(o=>o.explanation)).size,4);}
  }
 });
 test('Geography preserves second-term routing and resumes third-term lessons and tests',()=>{

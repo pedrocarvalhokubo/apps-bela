@@ -136,2123 +136,2414 @@
       "id": 3100,
       "topic": "Lugares e pontos de vista",
       "pool": "quiz",
-      "scenarioId": "quiz-01",
-      "prompt": "Luana mudou de uma cidade para outra no mesmo estado. Um colega diz que isso não é migração porque ela não trocou de estado. Qual avaliação está correta?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3100",
+      "prompt": "Uma família saiu de Salvador e passou a morar em Curitiba. Que tipo de migração ocorreu?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Observe onde ficam as duas cidades.",
+        "Veja se houve mudança de país."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "É migração interna: a mudança ocorreu dentro do país.",
-          "explanation": "Isso mesmo. A fronteira nacional, e não a fronteira estadual ou a distância, distingue interna de externa."
+          "label": "Migração interna.",
+          "explanation": "Correto. A mudança entre Salvador e Curitiba ocorreu dentro do Brasil."
         },
         {
           "id": "b",
-          "label": "Só existe migração ao trocar de continente.",
-          "explanation": "Reveja essa alternativa. A fronteira nacional, e não a fronteira estadual ou a distância, distingue interna de externa."
+          "label": "Migração externa.",
+          "explanation": "A migração externa ocorre entre países; as duas cidades ficam no Brasil."
         },
         {
           "id": "c",
-          "label": "Toda mudança dentro de um estado é externa.",
-          "explanation": "Reveja essa alternativa. A fronteira nacional, e não a fronteira estadual ou a distância, distingue interna de externa."
+          "label": "Migração pendular.",
+          "explanation": "A família mudou de moradia; o relato não descreve ida e volta diária."
         },
         {
           "id": "d",
-          "label": "A classificação depende da distância em quilômetros.",
-          "explanation": "Reveja essa alternativa. A fronteira nacional, e não a fronteira estadual ou a distância, distingue interna de externa."
+          "label": "Migração sazonal.",
+          "explanation": "O relato não liga a mudança a uma época do ano ou a uma colheita."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05",
+        "G3-03"
+      ],
+      "evidenceNote": "A mudança entre Salvador e Curitiba ocorreu dentro do Brasil."
     },
     {
       "id": 3101,
       "topic": "Lugares e pontos de vista",
       "pool": "quiz",
-      "scenarioId": "quiz-02",
-      "prompt": "Na despedida, a família de Omar fala de sua saída do Marrocos. Na chegada a Portugal, os novos vizinhos falam da entrada dele. Qual par nomeia esses dois pontos de vista?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3101",
+      "prompt": "Pedro saiu do Brasil para morar no Canadá. Como ele é chamado em relação à saída e à chegada, nessa ordem?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Separe a saída do Brasil da chegada ao Canadá.",
+        "Confira no Texto I o sentido de emigrar e imigrar."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Nomadismo porque há dois pontos de vista.",
-          "explanation": "Reveja essa alternativa. Emigrar é sair; imigrar é chegar. A viagem é uma só, observada de dois lugares."
+          "label": "Imigrante do Brasil e emigrante no Canadá.",
+          "explanation": "A ordem está invertida: o material liga emigrar à saída e imigrar à chegada."
         },
         {
           "id": "b",
-          "label": "Emigração do Marrocos e imigração em Portugal.",
-          "explanation": "Isso mesmo. Emigrar é sair; imigrar é chegar. A viagem é uma só, observada de dois lugares."
+          "label": "Emigrante do Brasil e imigrante no Canadá.",
+          "explanation": "Correto. Emigrar é sair do lugar de origem; imigrar é chegar a outro lugar para morar."
         },
         {
           "id": "c",
-          "label": "Imigração do Marrocos e emigração em Portugal.",
-          "explanation": "Reveja essa alternativa. Emigrar é sair; imigrar é chegar. A viagem é uma só, observada de dois lugares."
+          "label": "Migrante interno nos dois países.",
+          "explanation": "A viagem ocorreu entre países diferentes, por isso não é migração interna."
         },
         {
           "id": "d",
-          "label": "Migração interna nos dois países.",
-          "explanation": "Reveja essa alternativa. Emigrar é sair; imigrar é chegar. A viagem é uma só, observada de dois lugares."
+          "label": "Refugiado na saída e turista na chegada.",
+          "explanation": "O exemplo só informa a mudança de país; não menciona guerra nem turismo."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-02",
+        "G3-05"
+      ],
+      "evidenceNote": "Emigrar é sair do lugar de origem; imigrar é chegar a outro lugar para morar."
     },
     {
       "id": 3102,
       "topic": "Lugares e pontos de vista",
       "pool": "quiz",
-      "scenarioId": "quiz-03",
-      "prompt": "Uma reportagem diz apenas: “Cinquenta famílias mudaram de residência”. O que falta saber para distinguir migração interna de externa?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3102",
+      "prompt": "Segundo o material, quando uma migração é interna?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Observe as fronteiras mencionadas no Texto I.",
+        "Compare a definição de interna com a de externa."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Se a viagem foi feita de ônibus.",
-          "explanation": "Reveja essa alternativa. A informação decisiva é a passagem ou não entre países."
+          "label": "Quando ocorre entre países diferentes.",
+          "explanation": "Entre países diferentes, a migração é externa."
         },
         {
           "id": "b",
-          "label": "Se as casas novas são maiores.",
-          "explanation": "Reveja essa alternativa. A informação decisiva é a passagem ou não entre países."
+          "label": "Quando sempre acontece durante uma colheita.",
+          "explanation": "A época de colheita pode indicar migração sazonal; não define a interna."
         },
         {
           "id": "c",
-          "label": "Se a origem e o destino ficam no mesmo país.",
-          "explanation": "Isso mesmo. A informação decisiva é a passagem ou não entre países."
+          "label": "Quando ocorre dentro de um mesmo país.",
+          "explanation": "Correto. O texto explica que a migração interna acontece dentro das fronteiras nacionais."
         },
         {
           "id": "d",
-          "label": "Se todas as famílias têm filhos.",
-          "explanation": "Reveja essa alternativa. A informação decisiva é a passagem ou não entre países."
+          "label": "Quando é sempre causada por uma guerra.",
+          "explanation": "A guerra é uma causa de deslocamento; não define se ele é interno."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03",
+        "G3-04"
+      ],
+      "evidenceNote": "O texto explica que a migração interna acontece dentro das fronteiras nacionais."
     },
     {
       "id": 3103,
       "topic": "Lugares e pontos de vista",
       "pool": "quiz",
-      "scenarioId": "quiz-04",
-      "prompt": "Uma técnica aceita um emprego com salário melhor em outra região e se muda. Qual motivo aparece diretamente nessa situação?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3103",
+      "prompt": "Qual motivo para migrar é citado no Texto I?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Releia o parágrafo sobre as principais causas da migração.",
+        "Procure a parte que fala de condições de vida e trabalho."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Perseguição religiosa.",
-          "explanation": "Reveja essa alternativa. O texto oferece evidência econômica: emprego e salário. Não informa perseguição, guerra ou trabalho sazonal."
+          "label": "A busca por piores condições de trabalho.",
+          "explanation": "O texto fala em melhorar as condições de trabalho e renda."
         },
         {
           "id": "b",
-          "label": "Conflito armado.",
-          "explanation": "Reveja essa alternativa. O texto oferece evidência econômica: emprego e salário. Não informa perseguição, guerra ou trabalho sazonal."
+          "label": "A proibição de procurar trabalho em outro lugar.",
+          "explanation": "O texto apresenta a procura por trabalho como uma causa, não uma proibição."
         },
         {
           "id": "c",
-          "label": "Mudança da estação do ano.",
-          "explanation": "Reveja essa alternativa. O texto oferece evidência econômica: emprego e salário. Não informa perseguição, guerra ou trabalho sazonal."
+          "label": "O desejo de não conhecer outras culturas.",
+          "explanation": "O texto destaca trocas culturais; essa não é a causa de migração citada."
         },
         {
           "id": "d",
-          "label": "Busca por trabalho e renda.",
-          "explanation": "Isso mesmo. O texto oferece evidência econômica: emprego e salário. Não informa perseguição, guerra ou trabalho sazonal."
+          "label": "A busca por melhores condições de trabalho e renda.",
+          "explanation": "Correto. O material apresenta a busca por trabalho e renda entre as causas da migração."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03"
+      ],
+      "evidenceNote": "O material apresenta a busca por trabalho e renda entre as causas da migração."
     },
     {
       "id": 3104,
       "topic": "Lugares e pontos de vista",
       "pool": "quiz",
-      "scenarioId": "quiz-05",
-      "prompt": "Um mapa mostra duas setas: uma fica toda no Brasil; outra começa no Brasil e termina no Uruguai. Qual comparação é válida?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3104",
+      "prompt": "Segundo o Texto I, o que as migrações permitem trocar entre as sociedades?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Volte ao primeiro parágrafo do Texto I.",
+        "Procure o que passa de uma sociedade para outra com as pessoas."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "A primeira indica migração interna; a segunda, externa.",
-          "explanation": "Isso mesmo. A localização da origem e do destino em relação à fronteira nacional permite comparar os movimentos."
+          "label": "Culturas, línguas, costumes e tradições.",
+          "explanation": "Correto. O texto relaciona os movimentos migratórios às trocas entre sociedades."
         },
         {
           "id": "b",
-          "label": "As duas são externas porque há setas.",
-          "explanation": "Reveja essa alternativa. A localização da origem e do destino em relação à fronteira nacional permite comparar os movimentos."
+          "label": "Apenas produtos, sem costumes ou línguas.",
+          "explanation": "O texto cita culturas, línguas, costumes e tradições, não apenas produtos."
         },
         {
           "id": "c",
-          "label": "A primeira é externa; a segunda, interna.",
-          "explanation": "Reveja essa alternativa. A localização da origem e do destino em relação à fronteira nacional permite comparar os movimentos."
+          "label": "Somente o lugar onde as pessoas moram.",
+          "explanation": "A mudança de lugar também permite as trocas culturais descritas no texto."
         },
         {
           "id": "d",
-          "label": "Só a seta mais longa pode representar migração.",
-          "explanation": "Reveja essa alternativa. A localização da origem e do destino em relação à fronteira nacional permite comparar os movimentos."
+          "label": "Apenas atividades de colheita.",
+          "explanation": "Colheitas aparecem como exemplo sazonal; não resumem as trocas entre sociedades."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-02"
+      ],
+      "evidenceNote": "O texto relaciona os movimentos migratórios às trocas entre sociedades."
     },
     {
       "id": 3105,
       "topic": "Ritmos e caminhos",
       "pool": "quiz",
-      "scenarioId": "quiz-06",
-      "prompt": "Um aprendiz pega um barco cedo para frequentar um curso em outra cidade e volta para sua casa todas as tardes. Que característica indica deslocamento pendular?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3105",
+      "prompt": "Todos os dias, Joana vai trabalhar em uma cidade vizinha e volta para casa ao final do dia. Que tipo de deslocamento é esse?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Observe com que frequência Joana vai e volta.",
+        "Compare a rotina de Joana com a definição de pendular."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "O curso ensinar uma profissão.",
-          "explanation": "Reveja essa alternativa. O ritmo diário com retorno à mesma casa é a pista decisiva; o meio de transporte não define a classificação."
+          "label": "Migração sazonal.",
+          "explanation": "Sazonal ocorre em determinada época do ano; Joana faz o trajeto todos os dias."
         },
         {
           "id": "b",
-          "label": "A ida e a volta diárias, mantendo sua residência.",
-          "explanation": "Isso mesmo. O ritmo diário com retorno à mesma casa é a pista decisiva; o meio de transporte não define a classificação."
+          "label": "Migração pendular.",
+          "explanation": "Correto. A ida e a volta diárias de Joana são o exemplo de movimento pendular do material."
         },
         {
           "id": "c",
-          "label": "O uso de barco como transporte.",
-          "explanation": "Reveja essa alternativa. O ritmo diário com retorno à mesma casa é a pista decisiva; o meio de transporte não define a classificação."
+          "label": "Êxodo rural.",
+          "explanation": "O relato de Joana não descreve uma mudança de moradia do campo para a cidade."
         },
         {
           "id": "d",
-          "label": "A mudança definitiva de residência.",
-          "explanation": "Reveja essa alternativa. O ritmo diário com retorno à mesma casa é a pista decisiva; o meio de transporte não define a classificação."
+          "label": "Nomadismo.",
+          "explanation": "Joana retorna à sua casa; o nomadismo envolve deslocamentos contínuos."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05",
+        "G3-04"
+      ],
+      "evidenceNote": "A ida e a volta diárias de Joana são o exemplo de movimento pendular do material."
     },
     {
       "id": 3106,
       "topic": "Ritmos e caminhos",
       "pool": "quiz",
-      "scenarioId": "quiz-07",
-      "prompt": "Uma cozinheira passa três meses por ano trabalhando em uma estação de esqui e retorna depois à sua cidade. Por que o movimento é sazonal?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3106",
+      "prompt": "Trabalhadores vão para outra região durante a colheita de frutas e retornam quando ela termina. Por que essa migração é sazonal?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Procure no relato quando os trabalhadores viajam.",
+        "Pense na relação entre colheita e época do ano."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Qualquer trabalho fora de casa é sazonal.",
-          "explanation": "Reveja essa alternativa. O trabalho acompanha uma temporada específica e tem retorno; não é uma simples ida e volta diária."
+          "label": "Porque acontece diariamente durante o ano inteiro.",
+          "explanation": "O exemplo liga o deslocamento à época da colheita, não ao ano inteiro."
         },
         {
           "id": "b",
-          "label": "Ela nunca retorna ao lugar onde vive.",
-          "explanation": "Reveja essa alternativa. O trabalho acompanha uma temporada específica e tem retorno; não é uma simples ida e volta diária."
+          "label": "Porque sempre envolve a mudança para outro país.",
+          "explanation": "O material define a sazonalidade pela época do ano, não pela fronteira."
         },
         {
           "id": "c",
-          "label": "Está ligado a uma temporada do ano.",
-          "explanation": "Isso mesmo. O trabalho acompanha uma temporada específica e tem retorno; não é uma simples ida e volta diária."
+          "label": "Porque acontece em determinada época do ano.",
+          "explanation": "Correto. A colheita é a temporada que explica o deslocamento apresentado na atividade."
         },
         {
           "id": "d",
-          "label": "Acontece necessariamente todos os dias.",
-          "explanation": "Reveja essa alternativa. O trabalho acompanha uma temporada específica e tem retorno; não é uma simples ida e volta diária."
+          "label": "Porque é causada por perseguições políticas.",
+          "explanation": "Nesse exemplo, o motivo é o trabalho na colheita, não a perseguição."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05",
+        "G3-04"
+      ],
+      "evidenceNote": "A colheita é a temporada que explica o deslocamento apresentado na atividade."
     },
     {
       "id": 3107,
       "topic": "Ritmos e caminhos",
       "pool": "quiz",
-      "scenarioId": "quiz-08",
-      "prompt": "O número de moradores da cidade cresceu com famílias que deixaram sítios para morar em bairros urbanos. Que relação isso mostra?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3107",
+      "prompt": "Como o êxodo rural contribuiu para a urbanização brasileira?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Observe o sentido do deslocamento: campo e cidade.",
+        "Releia a questão sobre o crescimento da população urbana."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Urbanização levando todos os moradores ao campo.",
-          "explanation": "Reveja essa alternativa. O deslocamento do campo para residência na cidade aumenta a população urbana."
+          "label": "Levou a população das cidades para o campo.",
+          "explanation": "Essa direção é contrária ao êxodo rural apresentado na atividade."
         },
         {
           "id": "b",
-          "label": "Imigração externa obrigatória.",
-          "explanation": "Reveja essa alternativa. O deslocamento do campo para residência na cidade aumenta a população urbana."
+          "label": "Impediu o crescimento dos centros urbanos.",
+          "explanation": "A atividade explica que a chegada de moradores do campo ampliou a população urbana."
         },
         {
           "id": "c",
-          "label": "Nomadismo de todos os novos moradores.",
-          "explanation": "Reveja essa alternativa. O deslocamento do campo para residência na cidade aumenta a população urbana."
+          "label": "Fez a população se mudar apenas para outros países.",
+          "explanation": "O êxodo rural citado envolve campo e cidade, não apenas outros países."
         },
         {
           "id": "d",
-          "label": "Êxodo rural contribuindo para a urbanização.",
-          "explanation": "Isso mesmo. O deslocamento do campo para residência na cidade aumenta a população urbana."
+          "label": "Aumentou a população das cidades com a chegada de moradores do campo.",
+          "explanation": "Correto. A atividade relaciona o êxodo rural à chegada de moradores do campo às cidades."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03",
+        "G3-06"
+      ],
+      "evidenceNote": "A atividade relaciona o êxodo rural à chegada de moradores do campo às cidades."
     },
     {
       "id": 3108,
       "topic": "Ritmos e caminhos",
       "pool": "quiz",
-      "scenarioId": "quiz-09",
+      "scenarioId": "school-3108",
       "prompt": "Qual informação diferencia um modo de vida nômade de um deslocamento pendular?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Compare a frequência dos dois movimentos no texto.",
+        "No exemplo de Joana, observe o que acontece ao fim do dia."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "No nomadismo não há residência fixa permanente; no pendular há retorno habitual à moradia.",
-          "explanation": "Isso mesmo. A continuidade dos deslocamentos sem residência fixa distingue o nomadismo da rotina de ida e volta."
+          "label": "No nomadismo os deslocamentos são contínuos; no pendular há ida e volta diária.",
+          "explanation": "Correto. O material diferencia o movimento contínuo da rotina diária de ida e volta."
         },
         {
           "id": "b",
-          "label": "No pendular nunca há retorno.",
-          "explanation": "Reveja essa alternativa. A continuidade dos deslocamentos sem residência fixa distingue o nomadismo da rotina de ida e volta."
+          "label": "No pendular nunca há retorno para casa.",
+          "explanation": "O exemplo de Joana mostra justamente o retorno diário para casa."
         },
         {
           "id": "c",
-          "label": "No nomadismo todos atravessam oceanos.",
-          "explanation": "Reveja essa alternativa. A continuidade dos deslocamentos sem residência fixa distingue o nomadismo da rotina de ida e volta."
+          "label": "O nomadismo acontece somente nas colheitas.",
+          "explanation": "A época das colheitas é o exemplo de migração sazonal, não de nomadismo."
         },
         {
           "id": "d",
-          "label": "Os dois movimentos sempre duram um dia.",
-          "explanation": "Reveja essa alternativa. A continuidade dos deslocamentos sem residência fixa distingue o nomadismo da rotina de ida e volta."
+          "label": "Os dois são sempre viagens para outro país.",
+          "explanation": "As definições de nomadismo e pendular não exigem a passagem entre países."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-04",
+        "G3-05"
+      ],
+      "evidenceNote": "O material diferencia o movimento contínuo da rotina diária de ida e volta."
     },
     {
       "id": 3109,
       "topic": "Ritmos e caminhos",
       "pool": "quiz",
-      "scenarioId": "quiz-10",
-      "prompt": "Uma pessoa muda do campo brasileiro para morar em uma cidade brasileira. Podemos chamar esse movimento de interno e de êxodo rural ao mesmo tempo?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3109",
+      "prompt": "No relato da Atividade 02, de onde Raimundo saiu e para onde foi?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Releia o início do relato de Raimundo.",
+        "Localize o lugar onde ele nasceu e o destino da mudança."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Sim, porque interno significa entrar numa casa.",
-          "explanation": "Reveja essa alternativa. As classificações observam critérios diferentes. Uma mudança pode ser interna e também rural–urbana."
+          "label": "Do Canadá para o Brasil.",
+          "explanation": "Brasil e Canadá aparecem no exemplo de Pedro, não no relato de Raimundo."
         },
         {
           "id": "b",
-          "label": "Sim: os termos descrevem o país e o caminho campo–cidade.",
-          "explanation": "Isso mesmo. As classificações observam critérios diferentes. Uma mudança pode ser interna e também rural–urbana."
+          "label": "Do interior da Bahia para São Paulo.",
+          "explanation": "Correto. Raimundo conta que deixou o interior da Bahia e foi para São Paulo."
         },
         {
           "id": "c",
-          "label": "Não: cada movimento só pode receber um nome.",
-          "explanation": "Reveja essa alternativa. As classificações observam critérios diferentes. Uma mudança pode ser interna e também rural–urbana."
+          "label": "De Curitiba para Salvador.",
+          "explanation": "Salvador e Curitiba aparecem na Atividade 01, não como o trajeto de Raimundo."
         },
         {
           "id": "d",
-          "label": "Não: todo êxodo rural é externo.",
-          "explanation": "Reveja essa alternativa. As classificações observam critérios diferentes. Uma mudança pode ser interna e também rural–urbana."
+          "label": "De São Paulo para outro país.",
+          "explanation": "Raimundo relata sua ida da Bahia para São Paulo; não diz que mudou de país."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-07"
+      ],
+      "evidenceNote": "Raimundo conta que deixou o interior da Bahia e foi para São Paulo."
     },
     {
       "id": 3110,
       "topic": "Povos e culturas do Brasil",
       "pool": "quiz",
-      "scenarioId": "quiz-11",
-      "prompt": "Em uma feira, uma comunidade indígena explica técnicas de cultivo aprendidas com seus antepassados. O que o exemplo evidencia?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3110",
+      "prompt": "Quais povos são destacados no Texto I como formadores do povo brasileiro?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o primeiro parágrafo sobre a formação do povo brasileiro.",
+        "Procure os três grupos destacados no texto."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Que todas as comunidades cultivam da mesma maneira.",
-          "explanation": "Reveja essa alternativa. A transmissão de técnicas evidencia saberes vivos e diversos, sem reduzir povos indígenas ao passado."
+          "label": "Somente os europeus.",
+          "explanation": "O texto também destaca a participação indígena e africana."
         },
         {
           "id": "b",
-          "label": "Que a agricultura não envolve conhecimentos.",
-          "explanation": "Reveja essa alternativa. A transmissão de técnicas evidencia saberes vivos e diversos, sem reduzir povos indígenas ao passado."
+          "label": "Somente os indígenas e os europeus.",
+          "explanation": "A alternativa deixa de fora os povos africanos citados no texto."
         },
         {
           "id": "c",
-          "label": "A transmissão de conhecimentos indígenas entre gerações.",
-          "explanation": "Isso mesmo. A transmissão de técnicas evidencia saberes vivos e diversos, sem reduzir povos indígenas ao passado."
+          "label": "Indígenas, africanos e europeus.",
+          "explanation": "Correto. O texto destaca a participação de povos indígenas, africanos e europeus."
         },
         {
           "id": "d",
-          "label": "Que os indígenas só contribuíram no passado.",
-          "explanation": "Reveja essa alternativa. A transmissão de técnicas evidencia saberes vivos e diversos, sem reduzir povos indígenas ao passado."
+          "label": "Somente os africanos.",
+          "explanation": "O texto também destaca os povos indígenas e europeus."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-08"
+      ],
+      "evidenceNote": "O texto destaca a participação de povos indígenas, africanos e europeus."
     },
     {
       "id": 3111,
       "topic": "Povos e culturas do Brasil",
       "pool": "quiz",
-      "scenarioId": "quiz-12",
-      "prompt": "Um aluno afirma que a influência portuguesa aparece apenas nas comidas. Qual informação amplia essa resposta?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3111",
+      "prompt": "Quais contribuições portuguesas aparecem no material?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o parágrafo que começa falando dos europeus.",
+        "Veja o que o texto diz sobre os portugueses."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "A influência portuguesa se limita a um único prato.",
-          "explanation": "Reveja essa alternativa. A colonização portuguesa também influenciou língua, religião e organização política; não é a única origem cultural do país."
+          "label": "Somente ritmos musicais de influência africana.",
+          "explanation": "O material associa esses ritmos aos povos africanos, não à contribuição portuguesa pedida."
         },
         {
           "id": "b",
-          "label": "Os portugueses foram os habitantes originários do Brasil.",
-          "explanation": "Reveja essa alternativa. A colonização portuguesa também influenciou língua, religião e organização política; não é a única origem cultural do país."
+          "label": "Apenas o uso da mandioca, do milho e de ervas.",
+          "explanation": "Esses alimentos aparecem entre as influências indígenas no material."
         },
         {
           "id": "c",
-          "label": "A cultura brasileira tem uma única origem.",
-          "explanation": "Reveja essa alternativa. A colonização portuguesa também influenciou língua, religião e organização política; não é a única origem cultural do país."
+          "label": "Nenhuma contribuição para a língua falada no Brasil.",
+          "explanation": "O texto cita a língua entre as contribuições portuguesas."
         },
         {
           "id": "d",
-          "label": "A língua portuguesa e formas de governo também são influências.",
-          "explanation": "Isso mesmo. A colonização portuguesa também influenciou língua, religião e organização política; não é a única origem cultural do país."
+          "label": "A língua, a religião e os sistemas de governo.",
+          "explanation": "Correto. Os textos relacionam essas contribuições à presença portuguesa no Brasil."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-08",
+        "G3-10"
+      ],
+      "evidenceNote": "Os textos relacionam essas contribuições à presença portuguesa no Brasil."
     },
     {
       "id": 3112,
       "topic": "Povos e culturas do Brasil",
       "pool": "quiz",
-      "scenarioId": "quiz-13",
-      "prompt": "Um centro cultural grava mestres ensinando técnicas e contando as histórias de sua comunidade aos jovens. O que está sendo preservado além das gravações?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3112",
+      "prompt": "Quais alimentos são citados como exemplos de influência indígena?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o final do Texto II sobre os povos indígenas.",
+        "Confira os ingredientes citados na questão 4."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Saberes, memórias e práticas culturais transmitidos entre gerações.",
-          "explanation": "Isso mesmo. O valor cultural está nos conhecimentos, memórias e modos de fazer compartilhados, e não apenas no objeto usado para registrá-los."
+          "label": "Mandioca, milho e ervas.",
+          "explanation": "Correto. O Texto II e a questão 4 apresentam mandioca, milho e ervas como exemplos."
         },
         {
           "id": "b",
-          "label": "Apenas o funcionamento de uma câmera.",
-          "explanation": "Reveja essa alternativa. O valor cultural está nos conhecimentos, memórias e modos de fazer compartilhados, e não apenas no objeto usado para registrá-los."
+          "label": "Pizza, hambúrguer e macarrão.",
+          "explanation": "Essa lista não é a resposta apresentada na atividade sobre influência indígena."
         },
         {
           "id": "c",
-          "label": "Uma regra que impede mudanças na cultura.",
-          "explanation": "Reveja essa alternativa. O valor cultural está nos conhecimentos, memórias e modos de fazer compartilhados, e não apenas no objeto usado para registrá-los."
+          "label": "Trigo, queijo e chocolate.",
+          "explanation": "Essa lista não corresponde aos exemplos citados na questão 4."
         },
         {
           "id": "d",
-          "label": "Uma tradição sem relação com pessoas.",
-          "explanation": "Reveja essa alternativa. O valor cultural está nos conhecimentos, memórias e modos de fazer compartilhados, e não apenas no objeto usado para registrá-los."
+          "label": "Pão, bolo e biscoito.",
+          "explanation": "A atividade pede os exemplos de influência indígena citados no texto."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-09",
+        "G3-10"
+      ],
+      "evidenceNote": "O Texto II e a questão 4 apresentam mandioca, milho e ervas como exemplos."
     },
     {
       "id": 3113,
       "topic": "Povos e culturas do Brasil",
       "pool": "quiz",
-      "scenarioId": "quiz-14",
-      "prompt": "Uma exposição cita italianos, alemães e espanhóis no século XIX e libaneses, sírios e japoneses no século XX. Qual conclusão combina com o material?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3113",
+      "prompt": "Quais ritmos musicais são citados como exemplos de influência africana?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Procure a pergunta sobre ritmos musicais na Atividade 02.",
+        "Compare os pares com os exemplos do texto sobre os africanos."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Os imigrantes não participaram do comércio.",
-          "explanation": "Reveja essa alternativa. A diversidade de origens e épocas impede reduzir a imigração a um só povo, período ou atividade."
+          "label": "Valsa e ópera.",
+          "explanation": "Esse par não é o exemplo de influência africana apresentado na atividade."
         },
         {
           "id": "b",
-          "label": "O Brasil recebeu diversos grupos, com contribuições culturais e econômicas.",
-          "explanation": "Isso mesmo. A diversidade de origens e épocas impede reduzir a imigração a um só povo, período ou atividade."
+          "label": "Samba e maracatu.",
+          "explanation": "Correto. A questão 8 apresenta samba e maracatu entre os ritmos de influência africana."
         },
         {
           "id": "c",
-          "label": "Todos chegaram no mesmo dia e pelo mesmo motivo.",
-          "explanation": "Reveja essa alternativa. A diversidade de origens e épocas impede reduzir a imigração a um só povo, período ou atividade."
+          "label": "Rock e música clássica.",
+          "explanation": "Esse par não corresponde à resposta da questão 8."
         },
         {
           "id": "d",
-          "label": "Só europeus migraram para o Brasil.",
-          "explanation": "Reveja essa alternativa. A diversidade de origens e épocas impede reduzir a imigração a um só povo, período ou atividade."
+          "label": "Tango e flamenco.",
+          "explanation": "Esse par não é o exemplo de influência africana destacado no material."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-11",
+        "G3-12"
+      ],
+      "evidenceNote": "A questão 8 apresenta samba e maracatu entre os ritmos de influência africana."
     },
     {
       "id": 3114,
       "topic": "Povos e culturas do Brasil",
       "pool": "quiz",
-      "scenarioId": "quiz-15",
+      "scenarioId": "school-3114",
       "prompt": "Após a abolição de 1888, políticas brasileiras atraíram imigrantes para as lavouras de café. Que necessidade econômica ajuda a explicar isso?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o trecho sobre o Brasil após a abolição.",
+        "Procure o motivo ligado às plantações de café."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
           "label": "O fim de toda atividade agrícola.",
-          "explanation": "Reveja essa alternativa. As plantações demandavam trabalhadores. A abolição não significou o fim da agricultura."
+          "explanation": "O texto fala da necessidade de trabalhadores para uma atividade agrícola: o café."
         },
         {
           "id": "b",
-          "label": "A obrigação de todos morarem no litoral.",
-          "explanation": "Reveja essa alternativa. As plantações demandavam trabalhadores. A abolição não significou o fim da agricultura."
+          "label": "A diminuição da produção agrícola como objetivo.",
+          "explanation": "O material explica a busca por trabalhadores, não um objetivo de reduzir a produção."
         },
         {
           "id": "c",
           "label": "A procura por trabalhadores nas plantações.",
-          "explanation": "Isso mesmo. As plantações demandavam trabalhadores. A abolição não significou o fim da agricultura."
+          "explanation": "Correto. O texto relaciona o incentivo à imigração à necessidade de mão de obra nas plantações de café."
         },
         {
           "id": "d",
-          "label": "A proibição de cultivar café.",
-          "explanation": "Reveja essa alternativa. As plantações demandavam trabalhadores. A abolição não significou o fim da agricultura."
+          "label": "A proibição do comércio no Brasil.",
+          "explanation": "O texto não aponta essa proibição; destaca a demanda por trabalhadores nas lavouras."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-12",
+        "G3-13"
+      ],
+      "evidenceNote": "O texto relaciona o incentivo à imigração à necessidade de mão de obra nas plantações de café."
     },
     {
       "id": 3115,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "quiz",
-      "scenarioId": "quiz-16",
-      "prompt": "Uma jornalista é perseguida por suas opiniões e precisa buscar proteção em outro país. Que motivo caracteriza esse deslocamento?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3115",
+      "prompt": "Na Atividade 01, uma família deixou seu país porque uma guerra colocou sua vida em perigo. Por que ela saiu?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Observe o que colocou a vida da família em perigo.",
+        "Compare proteção com os outros motivos apresentados nas alternativas."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Vontade de fazer turismo.",
-          "explanation": "Reveja essa alternativa. A saída ocorre por perseguição e busca de proteção, não por lazer ou rotina diária."
+          "label": "Para fazer uma viagem turística.",
+          "explanation": "O motivo apresentado é a guerra e o perigo, não o turismo."
         },
         {
           "id": "b",
-          "label": "Deslocamento diário para a escola.",
-          "explanation": "Reveja essa alternativa. A saída ocorre por perseguição e busca de proteção, não por lazer ou rotina diária."
+          "label": "Para ir e voltar diariamente do trabalho.",
+          "explanation": "A situação é uma saída por causa de guerra, não uma rotina pendular."
         },
         {
           "id": "c",
-          "label": "Trabalho em uma temporada de férias.",
-          "explanation": "Reveja essa alternativa. A saída ocorre por perseguição e busca de proteção, não por lazer ou rotina diária."
+          "label": "Para participar de uma colheita.",
+          "explanation": "O enunciado fala de guerra; não apresenta trabalho na colheita."
         },
         {
           "id": "d",
-          "label": "Ameaça à segurança por perseguição.",
-          "explanation": "Isso mesmo. A saída ocorre por perseguição e busca de proteção, não por lazer ou rotina diária."
+          "label": "Para buscar proteção.",
+          "explanation": "Correto. A atividade explica que a guerra obrigou a família a sair em busca de proteção."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-06",
+        "G3-15"
+      ],
+      "evidenceNote": "A atividade explica que a guerra obrigou a família a sair em busca de proteção."
     },
     {
       "id": 3116,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "quiz",
-      "scenarioId": "quiz-17",
-      "prompt": "Uma criança recém-chegada ainda está aprendendo português. Qual ação da turma ajuda sua participação?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3116",
+      "prompt": "Segundo a Atividade 03, onde as pessoas refugiadas buscam proteção?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Localize no texto onde essas pessoas procuram segurança.",
+        "Observe a relação entre o país de origem e o lugar onde buscam proteção."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Explicar as atividades com imagens e convidá-la para os grupos.",
-          "explanation": "Isso mesmo. Acolher é criar condições de participação e respeitar a língua e a história da criança."
+          "label": "Em outro país.",
+          "explanation": "Correto. O texto explica que elas deixam seu país de origem e buscam proteção em outro país."
         },
         {
           "id": "b",
-          "label": "Impedir que fale sua língua de origem.",
-          "explanation": "Reveja essa alternativa. Acolher é criar condições de participação e respeitar a língua e a história da criança."
+          "label": "Somente no mesmo lugar de onde precisaram fugir.",
+          "explanation": "O texto fala de buscar proteção em outro país."
         },
         {
           "id": "c",
-          "label": "Esperar que ela saiba tudo antes de acolhê-la.",
-          "explanation": "Reveja essa alternativa. Acolher é criar condições de participação e respeitar a língua e a história da criança."
+          "label": "Apenas em viagens diárias para trabalhar.",
+          "explanation": "A ida e volta diária caracteriza o exemplo pendular, não a busca de refúgio."
         },
         {
           "id": "d",
-          "label": "Rir quando ela pronuncia palavras de outra forma.",
-          "explanation": "Reveja essa alternativa. Acolher é criar condições de participação e respeitar a língua e a história da criança."
+          "label": "Somente em temporadas de colheita.",
+          "explanation": "A colheita é o exemplo sazonal; a atividade sobre refúgio trata de proteção."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15"
+      ],
+      "evidenceNote": "O texto explica que elas deixam seu país de origem e buscam proteção em outro país."
     },
     {
       "id": 3117,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "quiz",
-      "scenarioId": "quiz-18",
-      "prompt": "Uma enchente obriga moradores a se abrigar em outra cidade do mesmo país. Qual conclusão é segura com essas informações?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3117",
+      "prompt": "Qual motivo para deixar o país de origem aparece na Atividade 03?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia a primeira frase do texto sobre refugiados.",
+        "Procure as situações que impedem a pessoa de permanecer em segurança."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "A mudança foi apenas uma viagem de lazer.",
-          "explanation": "Reveja essa alternativa. O desastre e a permanência no mesmo país estão informados; o reconhecimento de refúgio não pode ser presumido."
+          "label": "Somente a vontade de passear.",
+          "explanation": "O texto trata de situações que ameaçam a vida e a segurança, não apenas de lazer."
         },
         {
           "id": "b",
-          "label": "Houve deslocamento interno forçado por um desastre.",
-          "explanation": "Isso mesmo. O desastre e a permanência no mesmo país estão informados; o reconhecimento de refúgio não pode ser presumido."
+          "label": "Perseguição ou conflito armado.",
+          "explanation": "Correto. O texto apresenta perseguição e conflitos armados entre os motivos da saída."
         },
         {
           "id": "c",
-          "label": "Todos receberam automaticamente reconhecimento de refugiados.",
-          "explanation": "Reveja essa alternativa. O desastre e a permanência no mesmo país estão informados; o reconhecimento de refúgio não pode ser presumido."
+          "label": "Apenas a época da colheita.",
+          "explanation": "A época da colheita está no exemplo sazonal, não no motivo de refúgio pedido."
         },
         {
           "id": "d",
-          "label": "Houve saída obrigatória para outro país.",
-          "explanation": "Reveja essa alternativa. O desastre e a permanência no mesmo país estão informados; o reconhecimento de refúgio não pode ser presumido."
+          "label": "Somente uma rotina diária de trabalho.",
+          "explanation": "A rotina diária é o exemplo pendular; aqui o texto trata de proteção."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15",
+        "G3-04"
+      ],
+      "evidenceNote": "O texto apresenta perseguição e conflitos armados entre os motivos da saída."
     },
     {
       "id": 3118,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "quiz",
-      "scenarioId": "quiz-19",
-      "prompt": "Em um museu, uma legenda diz que africanos escravizados “vieram livremente aproveitar oportunidades”. O que precisa ser corrigido?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3118",
+      "prompt": "Como milhões de africanos chegaram ao Brasil durante o período colonial, segundo o material?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia o trecho sobre os africanos escravizados.",
+        "Observe se a chegada foi uma escolha livre ou uma imposição."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "A travessia foi sempre uma escolha de trabalho.",
-          "explanation": "Reveja essa alternativa. O deslocamento ligado à escravização foi imposto, e os povos africanos trouxeram conhecimentos e culturas apesar da violência."
+          "label": "Vieram como turistas.",
+          "explanation": "O texto descreve uma chegada forçada, não uma viagem de turismo."
         },
         {
           "id": "b",
-          "label": "Eles chegaram sem trazer conhecimentos.",
-          "explanation": "Reveja essa alternativa. O deslocamento ligado à escravização foi imposto, e os povos africanos trouxeram conhecimentos e culturas apesar da violência."
+          "label": "Vieram livremente para estudar.",
+          "explanation": "O material fala de escravização e trabalho forçado, não de uma viagem livre de estudo."
         },
         {
           "id": "c",
-          "label": "Muitos foram trazidos à força, com privação de liberdade.",
-          "explanation": "Isso mesmo. O deslocamento ligado à escravização foi imposto, e os povos africanos trouxeram conhecimentos e culturas apesar da violência."
+          "label": "Foram trazidos à força e escravizados.",
+          "explanation": "Correto. O material afirma que essas pessoas foram trazidas à força e escravizadas."
         },
         {
           "id": "d",
-          "label": "Todos vieram para fazer turismo.",
-          "explanation": "Reveja essa alternativa. O deslocamento ligado à escravização foi imposto, e os povos africanos trouxeram conhecimentos e culturas apesar da violência."
+          "label": "Vieram para trabalhar livremente.",
+          "explanation": "O texto informa que foram escravizados; o trabalho não era livre."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-11",
+        "G3-12"
+      ],
+      "evidenceNote": "O material afirma que essas pessoas foram trazidas à força e escravizadas."
     },
     {
       "id": 3119,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "quiz",
-      "scenarioId": "quiz-20",
-      "prompt": "Por que oferecer proteção a uma pessoa refugiada não é um prêmio por ela ter boas notas ou muito dinheiro?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3119",
+      "prompt": "O direito de solicitar refúgio busca garantir o quê?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia o parágrafo sobre a proteção em outro país.",
+        "Procure os dois objetivos associados ao direito de solicitar refúgio."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Porque só adultos precisam de direitos.",
-          "explanation": "Reveja essa alternativa. Direitos e dignidade pertencem às pessoas e não são recompensas por riqueza, notas ou idioma."
+          "label": "A obrigação de voltar para o lugar de perigo.",
+          "explanation": "O texto apresenta uma medida de proteção, não uma obrigação de voltar ao perigo."
         },
         {
           "id": "b",
-          "label": "Porque ela deve abandonar sua cultura para ser protegida.",
-          "explanation": "Reveja essa alternativa. Direitos e dignidade pertencem às pessoas e não são recompensas por riqueza, notas ou idioma."
+          "label": "Somente uma viagem turística.",
+          "explanation": "O texto trata de proteção internacional, não de turismo."
         },
         {
           "id": "c",
-          "label": "Porque seus direitos valem menos até aprender a língua.",
-          "explanation": "Reveja essa alternativa. Direitos e dignidade pertencem às pessoas e não são recompensas por riqueza, notas ou idioma."
+          "label": "Uma ida e volta diária para o trabalho.",
+          "explanation": "Esse é o exemplo de movimento pendular; não é o objetivo do refúgio."
         },
         {
           "id": "d",
-          "label": "Porque dignidade, segurança e direitos não dependem de riqueza ou desempenho.",
-          "explanation": "Isso mesmo. Direitos e dignidade pertencem às pessoas e não são recompensas por riqueza, notas ou idioma."
+          "label": "Segurança e dignidade.",
+          "explanation": "Correto. A Atividade 03 apresenta o refúgio como uma medida de proteção para garantir segurança e dignidade."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15"
+      ],
+      "evidenceNote": "A Atividade 03 apresenta o refúgio como uma medida de proteção para garantir segurança e dignidade."
     },
     {
       "id": 3200,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-a",
-      "scenarioId": "mock-a-01",
-      "prompt": "Uma empresa transfere Ana de Recife para Fortaleza. As duas cidades ficam no Brasil. Ela passa a morar no novo destino. Que dado permite classificar a migração?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3200",
+      "prompt": "Por que a mudança de Salvador para Curitiba é uma migração interna?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Localize Salvador e Curitiba no exemplo da atividade.",
+        "Releia a definição de migração interna."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "As duas cidades estão no mesmo país: é interna.",
-          "explanation": "Isso mesmo. A fronteira nacional é o critério; emprego, malas e avião não mudam a classificação."
+          "label": "Porque as duas cidades ficam no mesmo país.",
+          "explanation": "Correto. A Atividade 01 usa Salvador e Curitiba para mostrar uma mudança dentro do Brasil."
         },
         {
           "id": "b",
-          "label": "Ela viajou de avião: é externa.",
-          "explanation": "Reveja essa alternativa. A fronteira nacional é o critério; emprego, malas e avião não mudam a classificação."
+          "label": "Porque toda mudança de cidade é externa.",
+          "explanation": "A definição de externa exige mudança entre países, não apenas entre cidades."
         },
         {
           "id": "c",
-          "label": "Ela tem emprego: é pendular.",
-          "explanation": "Reveja essa alternativa. A fronteira nacional é o critério; emprego, malas e avião não mudam a classificação."
+          "label": "Porque a família volta para casa ao fim de cada dia.",
+          "explanation": "O exemplo informa mudança de moradia, não retorno diário."
         },
         {
           "id": "d",
-          "label": "Ela levou malas: é nomadismo.",
-          "explanation": "Reveja essa alternativa. A fronteira nacional é o critério; emprego, malas e avião não mudam a classificação."
+          "label": "Porque a mudança acontece na época de uma colheita.",
+          "explanation": "A atividade não menciona uma colheita nesse caso."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05",
+        "G3-03"
+      ],
+      "evidenceNote": "A Atividade 01 usa Salvador e Curitiba para mostrar uma mudança dentro do Brasil."
     },
     {
       "id": 3201,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-a",
-      "scenarioId": "mock-a-02",
-      "prompt": "Hugo nasceu no Chile e agora mora no Peru. O jornal chileno anuncia sua saída; uma associação peruana registra sua chegada. Que descrição respeita os dois registros?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3201",
+      "prompt": "Na mudança de Pedro para o Canadá, qual termo se refere à saída do Brasil?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "A pergunta está olhando a mudança a partir do Brasil.",
+        "Compare os sentidos de sair e chegar no Texto I."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Migrante interno porque os países são vizinhos.",
-          "explanation": "Reveja essa alternativa. Ele saiu do Chile e chegou ao Peru. Países vizinhos continuam sendo países diferentes."
+          "label": "Imigração.",
+          "explanation": "Imigração se refere à chegada a outro país ou lugar para morar."
         },
         {
           "id": "b",
-          "label": "Emigrante do Chile e imigrante no Peru.",
-          "explanation": "Isso mesmo. Ele saiu do Chile e chegou ao Peru. Países vizinhos continuam sendo países diferentes."
+          "label": "Emigração.",
+          "explanation": "Correto. No Texto I, emigração é a saída do país ou lugar de origem para morar em outro."
         },
         {
           "id": "c",
-          "label": "Imigrante no Chile e emigrante do Peru.",
-          "explanation": "Reveja essa alternativa. Ele saiu do Chile e chegou ao Peru. Países vizinhos continuam sendo países diferentes."
+          "label": "Nomadismo.",
+          "explanation": "O material define nomadismo por deslocamentos contínuos, não pelo ponto de vista da saída."
         },
         {
           "id": "d",
-          "label": "Refugiado obrigatoriamente para os dois países.",
-          "explanation": "Reveja essa alternativa. Ele saiu do Chile e chegou ao Peru. Países vizinhos continuam sendo países diferentes."
+          "label": "Migração pendular.",
+          "explanation": "O exemplo de Pedro não descreve ida e volta diária."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-02",
+        "G3-05"
+      ],
+      "evidenceNote": "No Texto I, emigração é a saída do país ou lugar de origem para morar em outro."
     },
     {
       "id": 3202,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-a",
-      "scenarioId": "mock-a-03",
-      "prompt": "Uma mudança de 30 km cruza uma fronteira nacional. Outra, de 900 km, ocorre no mesmo país. Qual é externa?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3202",
+      "prompt": "O que caracteriza a migração externa, segundo o texto?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Releia a definição de migração externa.",
+        "Observe o que acontece em relação às fronteiras dos países."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "As duas, pois ultrapassam 10 km.",
-          "explanation": "Reveja essa alternativa. A distância não define a classificação; o cruzamento de fronteira nacional, sim."
+          "label": "O deslocamento somente dentro de um mesmo país.",
+          "explanation": "Essa é a característica da migração interna."
         },
         {
           "id": "b",
-          "label": "Nenhuma, pois só oceanos separam países.",
-          "explanation": "Reveja essa alternativa. A distância não define a classificação; o cruzamento de fronteira nacional, sim."
+          "label": "A ida e a volta diária entre casa e trabalho.",
+          "explanation": "Essa é a característica do exemplo pendular."
         },
         {
           "id": "c",
-          "label": "A de 30 km, pois passa de um país para outro.",
-          "explanation": "Isso mesmo. A distância não define a classificação; o cruzamento de fronteira nacional, sim."
+          "label": "O deslocamento entre países diferentes.",
+          "explanation": "Correto. A definição de migração externa no material destaca a passagem entre países."
         },
         {
           "id": "d",
-          "label": "A de 900 km, pois toda viagem longa é externa.",
-          "explanation": "Reveja essa alternativa. A distância não define a classificação; o cruzamento de fronteira nacional, sim."
+          "label": "O trabalho apenas na época das colheitas.",
+          "explanation": "Essa é a característica do exemplo sazonal."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-04"
+      ],
+      "evidenceNote": "A definição de migração externa no material destaca a passagem entre países."
     },
     {
       "id": 3203,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-a",
-      "scenarioId": "mock-a-04",
-      "prompt": "Uma família se muda para ficar perto de parentes que podem cuidar dos avós. Qual causa está mais bem apoiada pelo enunciado?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3203",
+      "prompt": "Quais causas da migração são citadas no Texto I?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Releia o parágrafo que apresenta as causas da migração.",
+        "Verifique se o texto cita um único motivo ou vários fatores."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Uma guerra em curso.",
-          "explanation": "Reveja essa alternativa. O motivo informado é a proximidade da família; não se deve inventar guerras ou perseguições."
+          "label": "Somente causas econômicas.",
+          "explanation": "O texto também cita questões sociais, políticas e climáticas."
         },
         {
           "id": "b",
-          "label": "Uma colheita agrícola.",
-          "explanation": "Reveja essa alternativa. O motivo informado é a proximidade da família; não se deve inventar guerras ou perseguições."
+          "label": "Somente causas climáticas.",
+          "explanation": "O texto não limita as causas ao clima; apresenta outros fatores."
         },
         {
           "id": "c",
-          "label": "Uma perseguição política.",
-          "explanation": "Reveja essa alternativa. O motivo informado é a proximidade da família; não se deve inventar guerras ou perseguições."
+          "label": "Apenas viagens para trabalhar e voltar no mesmo dia.",
+          "explanation": "Essa alternativa descreve um tipo de movimento, não a lista de causas do texto."
         },
         {
           "id": "d",
-          "label": "Uma necessidade familiar e social.",
-          "explanation": "Isso mesmo. O motivo informado é a proximidade da família; não se deve inventar guerras ou perseguições."
+          "label": "Econômicas, sociais, políticas e climáticas.",
+          "explanation": "Correto. O Texto I apresenta esses fatores entre as causas dos movimentos migratórios."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03"
+      ],
+      "evidenceNote": "O Texto I apresenta esses fatores entre as causas dos movimentos migratórios."
     },
     {
       "id": 3204,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-a",
-      "scenarioId": "mock-a-05",
-      "prompt": "Um estudante escreveu: “Imigração é quando alguém sai”. Qual mudança corrige a frase sem trocar o termo imigração?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3204",
+      "prompt": "Complete de acordo com o Texto I: imigração é quando a pessoa...",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Observe a definição de imigração no Texto I.",
+        "Compare o ponto de vista da chegada com o da saída."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Trocar “sai” por “chega a um lugar para morar”.",
-          "explanation": "Isso mesmo. Imigração descreve a chegada; emigração descreve a saída."
+          "label": "Chega a outro país ou lugar para morar.",
+          "explanation": "Correto. O material liga imigração à chegada a outro país ou lugar para morar."
         },
         {
           "id": "b",
-          "label": "Trocar “alguém” por “um turista”.",
-          "explanation": "Reveja essa alternativa. Imigração descreve a chegada; emigração descreve a saída."
+          "label": "Sai do país de origem para morar em outro.",
+          "explanation": "Essa é a definição de emigração, que trata da saída."
         },
         {
           "id": "c",
-          "label": "Acrescentar “de avião” ao final.",
-          "explanation": "Reveja essa alternativa. Imigração descreve a chegada; emigração descreve a saída."
+          "label": "Viaja apenas na época da colheita.",
+          "explanation": "Essa descrição corresponde ao exemplo sazonal, não à definição de imigração."
         },
         {
           "id": "d",
-          "label": "Acrescentar “sempre para trabalhar na colheita”.",
-          "explanation": "Reveja essa alternativa. Imigração descreve a chegada; emigração descreve a saída."
+          "label": "Faz sempre um trajeto diário de ida e volta.",
+          "explanation": "Essa descrição corresponde ao movimento pendular."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-02"
+      ],
+      "evidenceNote": "O material liga imigração à chegada a outro país ou lugar para morar."
     },
     {
       "id": 3205,
       "topic": "Ritmos e caminhos",
       "pool": "mock-a",
-      "scenarioId": "mock-a-06",
-      "prompt": "De segunda a sexta, uma enfermeira cruza uma ponte para trabalhar em outro município e dorme em sua própria casa todas as noites. Qual é a melhor classificação quanto ao ritmo?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3205",
+      "prompt": "Qual informação mostra que o deslocamento de Joana é pendular?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Procure no enunciado o que Joana faz ao fim do dia.",
+        "Releia a definição de migração pendular."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Sazonal, porque existe uma ponte.",
-          "explanation": "Reveja essa alternativa. O retorno diário à residência caracteriza o deslocamento pendular."
+          "label": "Ela muda de país para morar.",
+          "explanation": "O relato de Joana não apresenta uma mudança de país para morar."
         },
         {
           "id": "b",
-          "label": "Pendular.",
-          "explanation": "Isso mesmo. O retorno diário à residência caracteriza o deslocamento pendular."
+          "label": "Ela vai trabalhar e retorna para casa todos os dias.",
+          "explanation": "Correto. A frequência diária e o retorno para casa são as pistas dadas na atividade."
         },
         {
           "id": "c",
-          "label": "Êxodo rural definitivo.",
-          "explanation": "Reveja essa alternativa. O retorno diário à residência caracteriza o deslocamento pendular."
+          "label": "Ela só viaja durante a colheita.",
+          "explanation": "O relato informa uma rotina diária; a colheita pertence ao exemplo sazonal."
         },
         {
           "id": "d",
-          "label": "Nomadismo.",
-          "explanation": "Reveja essa alternativa. O retorno diário à residência caracteriza o deslocamento pendular."
+          "label": "Ela se desloca continuamente sem retornar para casa.",
+          "explanation": "A atividade diz que Joana retorna para casa ao final do dia."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05",
+        "G3-04"
+      ],
+      "evidenceNote": "A frequência diária e o retorno para casa são as pistas dadas na atividade."
     },
     {
       "id": 3206,
       "topic": "Ritmos e caminhos",
       "pool": "mock-a",
-      "scenarioId": "mock-a-07",
-      "prompt": "Em novembro, artesãos viajam para vender em uma feira anual durante um mês. Depois retornam e repetem o trajeto no ano seguinte. Qual pista indica sazonalidade?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3206",
+      "prompt": "Em qual situação do material a migração está ligada a uma época do ano?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Pense no exemplo chamado de sazonal.",
+        "Procure a atividade que acontece em uma temporada."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Os artesãos levam produtos.",
-          "explanation": "Reveja essa alternativa. A repetição ligada à temporada da feira diferencia esse movimento de uma rotina diária."
+          "label": "Na rotina diária de Joana.",
+          "explanation": "Joana vai e volta diariamente; o exemplo não depende de uma temporada."
         },
         {
           "id": "b",
-          "label": "Eles têm uma cidade de origem.",
-          "explanation": "Reveja essa alternativa. A repetição ligada à temporada da feira diferencia esse movimento de uma rotina diária."
+          "label": "Na mudança de Pedro do Brasil para o Canadá.",
+          "explanation": "Esse exemplo diferencia saída e chegada entre países; não cita época do ano."
         },
         {
           "id": "c",
-          "label": "A viagem se repete em uma época específica do ano.",
-          "explanation": "Isso mesmo. A repetição ligada à temporada da feira diferencia esse movimento de uma rotina diária."
+          "label": "No deslocamento para trabalhar na colheita de frutas.",
+          "explanation": "Correto. A atividade usa a colheita de frutas como exemplo de migração sazonal."
         },
         {
           "id": "d",
-          "label": "A viagem usa uma estrada.",
-          "explanation": "Reveja essa alternativa. A repetição ligada à temporada da feira diferencia esse movimento de uma rotina diária."
+          "label": "Na fuga de uma família por causa de guerra.",
+          "explanation": "Nesse caso, o motivo apresentado é a busca de proteção."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05"
+      ],
+      "evidenceNote": "A atividade usa a colheita de frutas como exemplo de migração sazonal."
     },
     {
       "id": 3207,
       "topic": "Ritmos e caminhos",
       "pool": "mock-a",
-      "scenarioId": "mock-a-08",
-      "prompt": "Um município ganhou novos bairros após a chegada de moradores de áreas rurais. Qual mudança está ligada a esse êxodo rural?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3207",
+      "prompt": "Raimundo conta que passou a trabalhar em quê ao chegar a São Paulo?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Leia o que Raimundo conta depois da chegada à cidade.",
+        "Procure a atividade de trabalho nomeada no relato."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Transformação automática de todas as cidades em fazendas.",
-          "explanation": "Reveja essa alternativa. Êxodo rural significa mudança do campo para a cidade e contribui para o crescimento urbano."
+          "label": "Na colheita de frutas descrita na Atividade 01.",
+          "explanation": "A colheita está em outro exemplo; Raimundo conta que trabalhou na construção."
         },
         {
           "id": "b",
-          "label": "Redução obrigatória da população urbana.",
-          "explanation": "Reveja essa alternativa. Êxodo rural significa mudança do campo para a cidade e contribui para o crescimento urbano."
+          "label": "Na criação de animais em sua antiga roça.",
+          "explanation": "Ele conta que criar os animais na roça estava difícil antes da mudança."
         },
         {
           "id": "c",
-          "label": "Saída de todos os habitantes do Brasil.",
-          "explanation": "Reveja essa alternativa. Êxodo rural significa mudança do campo para a cidade e contribui para o crescimento urbano."
+          "label": "Nas plantações de café citadas no texto sobre imigrantes.",
+          "explanation": "As plantações de café pertencem a outro trecho; não são o trabalho relatado por Raimundo."
         },
         {
           "id": "d",
-          "label": "Crescimento da população que vive na cidade.",
-          "explanation": "Isso mesmo. Êxodo rural significa mudança do campo para a cidade e contribui para o crescimento urbano."
+          "label": "Na construção de prédios.",
+          "explanation": "Correto. No relato, Raimundo diz que começou a trabalhar na construção de prédios em São Paulo."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-07"
+      ],
+      "evidenceNote": "No relato, Raimundo diz que começou a trabalhar na construção de prédios em São Paulo."
     },
     {
       "id": 3208,
       "topic": "Ritmos e caminhos",
       "pool": "mock-a",
-      "scenarioId": "mock-a-09",
-      "prompt": "Um grupo desloca sua moradia continuamente conforme seu modo de vida. Outro mantém a casa e vai diariamente ao trabalho. Qual comparação está correta?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3208",
+      "prompt": "Segundo o texto, como acontecem os deslocamentos no nomadismo?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Releia o trecho que tem o título Nomadismo.",
+        "Observe a palavra usada para descrever a continuidade do movimento."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "O primeiro apresenta nomadismo; o segundo, movimento pendular.",
-          "explanation": "Isso mesmo. A informação sobre moradia fixa e retorno habitual diferencia os dois ritmos."
+          "label": "De forma contínua pelo espaço geográfico.",
+          "explanation": "Correto. O material define o nomadismo como uma movimentação contínua pelo espaço."
         },
         {
           "id": "b",
-          "label": "Os dois têm obrigatoriamente o mesmo tipo de movimento.",
-          "explanation": "Reveja essa alternativa. A informação sobre moradia fixa e retorno habitual diferencia os dois ritmos."
+          "label": "Somente no trajeto diário de Joana.",
+          "explanation": "O trajeto de Joana é o exemplo de movimento pendular."
         },
         {
           "id": "c",
-          "label": "O primeiro é pendular; o segundo, nômade.",
-          "explanation": "Reveja essa alternativa. A informação sobre moradia fixa e retorno habitual diferencia os dois ritmos."
+          "label": "Apenas durante a colheita de frutas.",
+          "explanation": "A época da colheita é o exemplo de migração sazonal."
         },
         {
           "id": "d",
-          "label": "O uso de casas impede qualquer deslocamento.",
-          "explanation": "Reveja essa alternativa. A informação sobre moradia fixa e retorno habitual diferencia os dois ritmos."
+          "label": "Somente na saída de um país para morar em outro.",
+          "explanation": "Essa frase descreve emigração; não define o modo de deslocamento nômade."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-04"
+      ],
+      "evidenceNote": "O material define o nomadismo como uma movimentação contínua pelo espaço."
     },
     {
       "id": 3209,
       "topic": "Ritmos e caminhos",
       "pool": "mock-a",
-      "scenarioId": "mock-a-10",
-      "prompt": "Uma família deixa uma área rural e passa a viver em outra área rural do mesmo país. Isso basta para chamar a mudança de êxodo rural?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3209",
+      "prompt": "No caso de Raimundo, que dificuldade contribuiu para a saída do interior da Bahia?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Observe o que ficou difícil na vida de Raimundo na roça.",
+        "Releia o motivo que ele apresenta antes de contar a ida para São Paulo."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Não: êxodo rural só ocorre entre países.",
-          "explanation": "Reveja essa alternativa. A mudança é interna, mas o destino também é rural; não houve o caminho campo–cidade."
+          "label": "A obrigação de fazer uma viagem turística.",
+          "explanation": "O relato fala da dificuldade de sustento na roça, não de turismo."
         },
         {
           "id": "b",
-          "label": "Não: falta a mudança do campo para a cidade.",
-          "explanation": "Isso mesmo. A mudança é interna, mas o destino também é rural; não houve o caminho campo–cidade."
+          "label": "A dificuldade de plantar e criar os animais.",
+          "explanation": "Correto. Raimundo conta que plantar e criar os animais ficava mais difícil, ameaçando o sustento da família."
         },
         {
           "id": "c",
-          "label": "Sim: basta sair de qualquer casa.",
-          "explanation": "Reveja essa alternativa. A mudança é interna, mas o destino também é rural; não houve o caminho campo–cidade."
+          "label": "A vontade de participar de uma colheita em outro país.",
+          "explanation": "O relato não apresenta esse motivo nem uma mudança para outro país."
         },
         {
           "id": "d",
-          "label": "Sim: toda migração interna é êxodo rural.",
-          "explanation": "Reveja essa alternativa. A mudança é interna, mas o destino também é rural; não houve o caminho campo–cidade."
+          "label": "O trajeto diário para uma cidade vizinha e a volta à noite.",
+          "explanation": "Essa rotina pertence ao exemplo de Joana, não à saída de Raimundo."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-07"
+      ],
+      "evidenceNote": "Raimundo conta que plantar e criar os animais ficava mais difícil, ameaçando o sustento da família."
     },
     {
       "id": 3210,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-a",
-      "scenarioId": "mock-a-11",
-      "prompt": "Uma escola planeja um mural: “Indígenas: povos do passado que desapareceram”. Qual revisão torna o título adequado?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3210",
+      "prompt": "Segundo o Texto II, quem são os habitantes originários do território brasileiro?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Procure a expressão habitantes originários no Texto II.",
+        "Observe quem já estava no território antes da chegada dos europeus."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Povos indígenas: sem contribuição para o Brasil.",
-          "explanation": "Reveja essa alternativa. Povos indígenas são originários e continuam presentes, com diferentes línguas, culturas e saberes."
+          "label": "Os portugueses.",
+          "explanation": "O texto apresenta a chegada portuguesa depois da presença indígena."
         },
         {
           "id": "b",
-          "label": "Povos indígenas: chegaram depois dos portugueses.",
-          "explanation": "Reveja essa alternativa. Povos indígenas são originários e continuam presentes, com diferentes línguas, culturas e saberes."
+          "label": "Os imigrantes japoneses do século XX.",
+          "explanation": "Esses imigrantes chegaram muito depois dos povos originários."
         },
         {
           "id": "c",
-          "label": "Povos indígenas: presença, diversidade e conhecimentos vivos.",
-          "explanation": "Isso mesmo. Povos indígenas são originários e continuam presentes, com diferentes línguas, culturas e saberes."
+          "label": "Os povos indígenas.",
+          "explanation": "Correto. O texto apresenta os povos indígenas como habitantes originários, anteriores à chegada dos europeus."
         },
         {
           "id": "d",
-          "label": "Povos indígenas: todos com uma só língua.",
-          "explanation": "Reveja essa alternativa. Povos indígenas são originários e continuam presentes, com diferentes línguas, culturas e saberes."
+          "label": "Os europeus que chegaram no século XIX.",
+          "explanation": "O texto apresenta os indígenas como habitantes originários, não os imigrantes do século XIX."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-09",
+        "G3-10"
+      ],
+      "evidenceNote": "O texto apresenta os povos indígenas como habitantes originários, anteriores à chegada dos europeus."
     },
     {
       "id": 3211,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-a",
-      "scenarioId": "mock-a-12",
-      "prompt": "Em uma visita, a turma vê documentos escritos em português e registros da administração colonial. Que influência histórica está ligada a esses elementos?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3211",
+      "prompt": "Que conhecimentos indígenas o material destaca?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o parágrafo sobre o que os indígenas ensinaram.",
+        "Procure conhecimentos ligados às plantas."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "A ausência de influência europeia.",
-          "explanation": "Reveja essa alternativa. A língua portuguesa e a organização colonial remetem à colonização portuguesa."
+          "label": "Somente os sistemas de governo trazidos pelos portugueses.",
+          "explanation": "O texto liga essa contribuição aos portugueses, não aos conhecimentos indígenas pedidos."
         },
         {
           "id": "b",
-          "label": "Uma única cultura africana igual em todo o continente.",
-          "explanation": "Reveja essa alternativa. A língua portuguesa e a organização colonial remetem à colonização portuguesa."
+          "label": "Apenas os ritmos samba e maracatu.",
+          "explanation": "O material apresenta esses ritmos entre as influências africanas."
         },
         {
           "id": "c",
-          "label": "A chegada exclusiva de japoneses no século XVI.",
-          "explanation": "Reveja essa alternativa. A língua portuguesa e a organização colonial remetem à colonização portuguesa."
+          "label": "Somente o incentivo à imigração para as lavouras de café.",
+          "explanation": "Esse é outro assunto do material; não responde aos conhecimentos indígenas pedidos."
         },
         {
           "id": "d",
-          "label": "A colonização portuguesa.",
-          "explanation": "Isso mesmo. A língua portuguesa e a organização colonial remetem à colonização portuguesa."
+          "label": "Técnicas de cultivo e uso de plantas medicinais.",
+          "explanation": "Correto. O Texto II destaca o ensino de técnicas de cultivo e do uso de plantas medicinais."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-09"
+      ],
+      "evidenceNote": "O Texto II destaca o ensino de técnicas de cultivo e do uso de plantas medicinais."
     },
     {
       "id": 3212,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-a",
-      "scenarioId": "mock-a-13",
-      "prompt": "Um festival reúne maracatu e uma oficina sobre saberes de matriz africana. O que ele ajuda a reconhecer?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3212",
+      "prompt": "O que o material sobre as baianas do acarajé mostra?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o quadro sobre as baianas do acarajé.",
+        "Observe o que passa de pais para filhos e netos."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "A presença de contribuições africanas e afro-brasileiras na cultura.",
-          "explanation": "Isso mesmo. As contribuições incluem ritmos, conhecimentos e resistência; não se limitam ao trabalho imposto."
+          "label": "A transmissão de conhecimentos e tradições entre gerações.",
+          "explanation": "Correto. O texto descreve a transmissão oral de saberes e a continuidade do trabalho das baianas do acarajé."
         },
         {
           "id": "b",
-          "label": "Que os africanos contribuíram apenas com trabalho forçado.",
-          "explanation": "Reveja essa alternativa. As contribuições incluem ritmos, conhecimentos e resistência; não se limitam ao trabalho imposto."
+          "label": "Que os saberes deixaram de ser transmitidos.",
+          "explanation": "O texto descreve justamente a transmissão de saberes entre gerações."
         },
         {
           "id": "c",
-          "label": "Que a cultura brasileira se formou sem resistência.",
-          "explanation": "Reveja essa alternativa. As contribuições incluem ritmos, conhecimentos e resistência; não se limitam ao trabalho imposto."
+          "label": "Que não existem influências africanas no Brasil de hoje.",
+          "explanation": "O texto afirma que essas influências continuam presentes."
         },
         {
           "id": "d",
-          "label": "Que toda tradição brasileira tem uma origem única.",
-          "explanation": "Reveja essa alternativa. As contribuições incluem ritmos, conhecimentos e resistência; não se limitam ao trabalho imposto."
+          "label": "Que o trabalho das baianas não se relaciona à cultura.",
+          "explanation": "O material apresenta esse trabalho como um símbolo cultural."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-11"
+      ],
+      "evidenceNote": "O texto descreve a transmissão oral de saberes e a continuidade do trabalho das baianas do acarajé."
     },
     {
       "id": 3213,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-a",
-      "scenarioId": "mock-a-14",
-      "prompt": "Um comerciante descendente de sírios conta como sua família compartilhou conhecimentos no bairro. Isso contraria a frase “somente europeus participaram da imigração para o Brasil” por quê?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3213",
+      "prompt": "Além dos europeus, quais grupos de imigrantes chegaram ao Brasil no século XX, segundo o texto?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o trecho que começa com No século XX.",
+        "Confira os grupos citados na questão 10 da Atividade 02."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Porque toda pessoa no Brasil nasceu na Europa.",
-          "explanation": "Reveja essa alternativa. O material inclui sírios e libaneses do Oriente Médio, além de europeus e japoneses."
+          "label": "Apenas portugueses e espanhóis.",
+          "explanation": "A pergunta pede grupos além dos europeus; o texto cita outros povos."
         },
         {
           "id": "b",
-          "label": "Porque também vieram povos de outras regiões, como o Oriente Médio.",
-          "explanation": "Isso mesmo. O material inclui sírios e libaneses do Oriente Médio, além de europeus e japoneses."
+          "label": "Libaneses, sírios e japoneses.",
+          "explanation": "Correto. O texto e a questão 10 citam libaneses, sírios e japoneses na imigração do século XX."
         },
         {
           "id": "c",
-          "label": "Porque a Síria fica no Brasil.",
-          "explanation": "Reveja essa alternativa. O material inclui sírios e libaneses do Oriente Médio, além de europeus e japoneses."
+          "label": "Somente italianos e alemães.",
+          "explanation": "Esses grupos europeus não respondem ao que foi pedido."
         },
         {
           "id": "d",
-          "label": "Porque comerciantes nunca migram.",
-          "explanation": "Reveja essa alternativa. O material inclui sírios e libaneses do Oriente Médio, além de europeus e japoneses."
+          "label": "Apenas portugueses e alemães.",
+          "explanation": "O material cita libaneses, sírios e japoneses para essa pergunta."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-13",
+        "G3-14"
+      ],
+      "evidenceNote": "O texto e a questão 10 citam libaneses, sírios e japoneses na imigração do século XX."
     },
     {
       "id": 3214,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-a",
-      "scenarioId": "mock-a-15",
-      "prompt": "Dois cartazes dizem: I — imigrantes contribuíram para agricultura, comércio e indústria; II — a cultura de quem chega sempre desaparece. Qual leitura é adequada?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3214",
+      "prompt": "Segundo o texto, em quais atividades os imigrantes contribuíram para o desenvolvimento do Brasil?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Procure o trecho sobre os locais onde os imigrantes se estabeleceram.",
+        "Releia as atividades econômicas citadas depois dos nomes dos estados."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "I é falso porque só houve contribuição culinária.",
-          "explanation": "Reveja essa alternativa. Migrantes podem preservar, compartilhar e transformar suas culturas, contribuindo em vários campos."
+          "label": "Somente na agricultura, sem participação em outras atividades.",
+          "explanation": "O texto também menciona a indústria e o comércio."
         },
         {
           "id": "b",
-          "label": "II é correto porque toda cultura é imutável.",
-          "explanation": "Reveja essa alternativa. Migrantes podem preservar, compartilhar e transformar suas culturas, contribuindo em vários campos."
+          "label": "Apenas no comércio, sem novos conhecimentos.",
+          "explanation": "O material também cita conhecimentos e contribuições em outras atividades."
         },
         {
           "id": "c",
-          "label": "I é compatível com o material; II ignora a transmissão de costumes e saberes.",
-          "explanation": "Isso mesmo. Migrantes podem preservar, compartilhar e transformar suas culturas, contribuindo em vários campos."
+          "label": "Na agricultura, na indústria e no comércio.",
+          "explanation": "Correto. O material cita contribuições dos imigrantes para essas três atividades."
         },
         {
           "id": "d",
-          "label": "Os dois são corretos porque migrar apaga memórias.",
-          "explanation": "Reveja essa alternativa. Migrantes podem preservar, compartilhar e transformar suas culturas, contribuindo em vários campos."
+          "label": "Em nenhuma atividade econômica.",
+          "explanation": "O texto destaca a participação dos imigrantes na economia do país."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-13"
+      ],
+      "evidenceNote": "O material cita contribuições dos imigrantes para essas três atividades."
     },
     {
       "id": 3215,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-a",
-      "scenarioId": "mock-a-16",
-      "prompt": "Uma família atravessa a fronteira porque é ameaçada por sua religião. Qual informação distingue sua saída de uma viagem de férias?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3215",
+      "prompt": "Segundo a Atividade 03, por que conflitos armados podem levar pessoas a deixar seu país?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia os motivos da saída no texto sobre refugiados.",
+        "Observe o objetivo de buscar proteção em outro país."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Ela precisa levar uma mala.",
-          "explanation": "Reveja essa alternativa. A perseguição e a necessidade de proteção são decisivas; malas e estradas não distinguem refúgio de turismo."
+          "label": "Porque são sempre viagens de lazer.",
+          "explanation": "Conflitos armados estão ligados à busca de proteção nesse texto, não ao lazer."
         },
         {
           "id": "b",
-          "label": "Ela chega a um lugar novo.",
-          "explanation": "Reveja essa alternativa. A perseguição e a necessidade de proteção são decisivas; malas e estradas não distinguem refúgio de turismo."
+          "label": "Porque são a mesma coisa que uma colheita.",
+          "explanation": "A colheita é o exemplo sazonal; o conflito aparece como motivo de proteção."
         },
         {
           "id": "c",
-          "label": "Ela passa por uma estrada.",
-          "explanation": "Reveja essa alternativa. A perseguição e a necessidade de proteção são decisivas; malas e estradas não distinguem refúgio de turismo."
+          "label": "Porque garantem uma ida e volta diária ao trabalho.",
+          "explanation": "Essa rotina corresponde ao exemplo pendular, não à saída por conflito."
         },
         {
           "id": "d",
-          "label": "Ela busca proteção contra perseguição.",
-          "explanation": "Isso mesmo. A perseguição e a necessidade de proteção são decisivas; malas e estradas não distinguem refúgio de turismo."
+          "label": "Porque elas precisam buscar proteção e segurança.",
+          "explanation": "Correto. O texto apresenta os conflitos armados entre os motivos para buscar proteção em outro país."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15"
+      ],
+      "evidenceNote": "O texto apresenta os conflitos armados entre os motivos para buscar proteção em outro país."
     },
     {
       "id": 3216,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-a",
-      "scenarioId": "mock-a-17",
-      "prompt": "Uma biblioteca quer receber famílias refugiadas. Qual proposta enfrenta uma dificuldade real de integração?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3216",
+      "prompt": "Qual direito é apresentado no texto Desafios de um refugiado?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Procure no texto a palavra direito.",
+        "Releia o parágrafo sobre proteção internacional."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Sinalização com imagens e ajuda para conhecer os serviços.",
-          "explanation": "Isso mesmo. Informação acessível e acolhimento ajudam a superar barreiras de idioma e acesso a serviços."
+          "label": "O direito de solicitar refúgio em outro país.",
+          "explanation": "Correto. A Atividade 03 apresenta o direito de solicitar refúgio para buscar proteção internacional."
         },
         {
           "id": "b",
-          "label": "Proibir livros nas línguas das famílias.",
-          "explanation": "Reveja essa alternativa. Informação acessível e acolhimento ajudam a superar barreiras de idioma e acesso a serviços."
+          "label": "A obrigação de continuar no local de perigo.",
+          "explanation": "O texto apresenta o direito de buscar proteção, não de permanecer em perigo."
         },
         {
           "id": "c",
-          "label": "Exigir abandono de todas as tradições.",
-          "explanation": "Reveja essa alternativa. Informação acessível e acolhimento ajudam a superar barreiras de idioma e acesso a serviços."
+          "label": "O direito de trabalhar somente na época de colheita.",
+          "explanation": "A colheita é outro exemplo e não é o direito apresentado nesse texto."
         },
         {
           "id": "d",
-          "label": "Separar as crianças para que não façam amigos.",
-          "explanation": "Reveja essa alternativa. Informação acessível e acolhimento ajudam a superar barreiras de idioma e acesso a serviços."
+          "label": "A obrigação de viajar diariamente para trabalhar.",
+          "explanation": "Essa rotina é o exemplo pendular, não o direito tratado na Atividade 03."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15"
+      ],
+      "evidenceNote": "A Atividade 03 apresenta o direito de solicitar refúgio para buscar proteção internacional."
     },
     {
       "id": 3217,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-a",
-      "scenarioId": "mock-a-18",
+      "scenarioId": "school-3217",
       "prompt": "Um relato fala de pessoas levadas da África para as Américas contra sua vontade e escravizadas. Qual expressão do material se relaciona a esse processo?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia o último tipo de migração apresentado na Atividade 01.",
+        "Procure a expressão ligada à saída forçada de africanos para as Américas."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Mudança voluntária de emprego.",
-          "explanation": "Reveja essa alternativa. O relato descreve dispersão forçada de povos africanos ligada à escravização nas Américas."
+          "label": "Uma viagem turística.",
+          "explanation": "O relato descreve escravização e saída forçada, não turismo."
         },
         {
           "id": "b",
           "label": "Diáspora africana, no contexto da migração forçada.",
-          "explanation": "Isso mesmo. O relato descreve dispersão forçada de povos africanos ligada à escravização nas Américas."
+          "explanation": "Correto. O material apresenta a diáspora africana como a dispersão forçada de africanos para as Américas."
         },
         {
           "id": "c",
-          "label": "Migração pendular para estudar.",
-          "explanation": "Reveja essa alternativa. O relato descreve dispersão forçada de povos africanos ligada à escravização nas Américas."
+          "label": "Um deslocamento pendular diário.",
+          "explanation": "O relato não descreve uma rotina de ida e volta diária."
         },
         {
           "id": "d",
-          "label": "Turismo internacional.",
-          "explanation": "Reveja essa alternativa. O relato descreve dispersão forçada de povos africanos ligada à escravização nas Américas."
+          "label": "Uma temporada livre de trabalho na colheita.",
+          "explanation": "O material descreve migração forçada e escravização, não trabalho livre por uma temporada."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-04",
+        "G3-11"
+      ],
+      "evidenceNote": "O material apresenta a diáspora africana como a dispersão forçada de africanos para as Américas."
     },
     {
       "id": 3218,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-a",
-      "scenarioId": "mock-a-19",
-      "prompt": "Uma tempestade destrói casas. As famílias se mudam para um abrigo na própria região. Qual atitude é mais adequada?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3218",
+      "prompt": "Segundo o material, quais acontecimentos naturais podem levar pessoas a deixar o lugar onde vivem?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia as causas relacionadas à natureza e ao clima.",
+        "Procure o que pode tornar impossível continuar morando no local afetado."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Negar ajuda por permanecerem no mesmo país.",
-          "explanation": "Reveja essa alternativa. Desastres podem provocar deslocamentos forçados e necessidade de apoio, sem reconhecimento automático de refúgio."
+          "label": "Somente a vontade de fazer turismo.",
+          "explanation": "O turismo não é o acontecimento natural pedido na pergunta."
         },
         {
           "id": "b",
-          "label": "Dizer que só há deslocamento se atravessarem o mar.",
-          "explanation": "Reveja essa alternativa. Desastres podem provocar deslocamentos forçados e necessidade de apoio, sem reconhecimento automático de refúgio."
+          "label": "Apenas o trajeto diário de Joana para trabalhar.",
+          "explanation": "O trajeto de Joana não é um desastre ou um evento climático."
         },
         {
           "id": "c",
-          "label": "Oferecer proteção e apoio, sem presumir que todas já têm reconhecimento de refúgio.",
-          "explanation": "Isso mesmo. Desastres podem provocar deslocamentos forçados e necessidade de apoio, sem reconhecimento automático de refúgio."
+          "label": "Desastres naturais e eventos climáticos que impedem a moradia.",
+          "explanation": "Correto. Os textos citam desastres naturais e eventos climáticos entre os motivos de deslocamento."
         },
         {
           "id": "d",
-          "label": "Tratar o desastre como uma escolha de lazer.",
-          "explanation": "Reveja essa alternativa. Desastres podem provocar deslocamentos forçados e necessidade de apoio, sem reconhecimento automático de refúgio."
+          "label": "Somente a mudança voluntária para estudar.",
+          "explanation": "Essa alternativa não identifica os acontecimentos naturais citados no material."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03",
+        "G3-06",
+        "G3-15"
+      ],
+      "evidenceNote": "Os textos citam desastres naturais e eventos climáticos entre os motivos de deslocamento."
     },
     {
       "id": 3219,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-a",
-      "scenarioId": "mock-a-20",
-      "prompt": "Um colega diz que pessoas refugiadas devem perder seus costumes para serem respeitadas. Qual argumento responde melhor?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3219",
+      "prompt": "O que deve ser garantido às pessoas refugiadas, conforme a Atividade 03?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia o parágrafo sobre o objetivo da proteção.",
+        "Observe os termos usados na segunda pergunta da Atividade 03."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "O respeito só vale depois de falar sem sotaque.",
-          "explanation": "Reveja essa alternativa. Acolhimento e direitos não exigem apagar a identidade cultural."
+          "label": "A perda dos direitos ao deixar o país.",
+          "explanation": "O texto destaca a garantia de direitos, não a perda deles."
         },
         {
           "id": "b",
-          "label": "A cultura de quem chega é sempre inferior.",
-          "explanation": "Reveja essa alternativa. Acolhimento e direitos não exigem apagar a identidade cultural."
+          "label": "Somente oportunidades de turismo.",
+          "explanation": "O tema do texto é a proteção das pessoas refugiadas, não o turismo."
         },
         {
           "id": "c",
-          "label": "Somente a cultura da maioria pode existir.",
-          "explanation": "Reveja essa alternativa. Acolhimento e direitos não exigem apagar a identidade cultural."
+          "label": "A obrigação de voltar ao local de perigo.",
+          "explanation": "O texto trata da busca de segurança e proteção em outro país."
         },
         {
           "id": "d",
-          "label": "O respeito à dignidade inclui reconhecer suas culturas e direitos.",
-          "explanation": "Isso mesmo. Acolhimento e direitos não exigem apagar a identidade cultural."
+          "label": "Segurança, dignidade e direitos.",
+          "explanation": "Correto. A Atividade 03 destaca a proteção da segurança, da dignidade e dos direitos dessas pessoas."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15"
+      ],
+      "evidenceNote": "A Atividade 03 destaca a proteção da segurança, da dignidade e dos direitos dessas pessoas."
     },
     {
       "id": 3300,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-b",
-      "scenarioId": "mock-b-01",
-      "prompt": "Em um gráfico fictício, 12 famílias mudaram entre cidades argentinas e 8 foram da Argentina ao Paraguai. Quais grupos são internos e externos?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3300",
+      "prompt": "A mudança de Pedro do Brasil para o Canadá é interna ou externa?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Observe a origem e o destino no exemplo de Pedro.",
+        "Compare esse trajeto com as definições de interna e externa."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "12 internas e 8 externas.",
-          "explanation": "Isso mesmo. As 12 permaneceram no país; as 8 passaram a outro país. A origem comum não torna iguais os destinos."
+          "label": "Externa, pois ocorreu entre países diferentes.",
+          "explanation": "Correto. O exemplo de Pedro envolve dois países e corresponde à definição de migração externa."
         },
         {
           "id": "b",
-          "label": "8 internas e 12 externas.",
-          "explanation": "Reveja essa alternativa. As 12 permaneceram no país; as 8 passaram a outro país. A origem comum não torna iguais os destinos."
+          "label": "Interna, pois ocorreu dentro do mesmo país.",
+          "explanation": "Brasil e Canadá são países diferentes no exemplo da atividade."
         },
         {
           "id": "c",
-          "label": "20 internas, pois todas começaram na Argentina.",
-          "explanation": "Reveja essa alternativa. As 12 permaneceram no país; as 8 passaram a outro país. A origem comum não torna iguais os destinos."
+          "label": "Pendular, pois ele volta para casa todo dia.",
+          "explanation": "A atividade informa uma mudança para morar no Canadá, não um retorno diário."
         },
         {
           "id": "d",
-          "label": "20 externas, pois todas mudaram de cidade.",
-          "explanation": "Reveja essa alternativa. As 12 permaneceram no país; as 8 passaram a outro país. A origem comum não torna iguais os destinos."
+          "label": "Sazonal, pois ele foi participar de uma colheita.",
+          "explanation": "O exemplo de Pedro não menciona trabalho na colheita."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-04",
+        "G3-05"
+      ],
+      "evidenceNote": "O exemplo de Pedro envolve dois países e corresponde à definição de migração externa."
     },
     {
       "id": 3301,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-b",
-      "scenarioId": "mock-b-02",
-      "prompt": "Yara já é chamada de imigrante no país onde vive. Ao contar a saída dela, sua antiga cidade pode chamá-la de emigrante?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3301",
+      "prompt": "Na mudança de Pedro, qual termo se refere à chegada ao Canadá para morar?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "A pergunta considera a mudança a partir do destino.",
+        "Releia a definição de chegar a outro lugar para morar."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Sim: mas só se ela voltar no mesmo dia.",
-          "explanation": "Reveja essa alternativa. A mesma pessoa pode ser emigrante em relação à origem e imigrante em relação ao destino."
+          "label": "Emigração.",
+          "explanation": "Emigração é o ponto de vista da saída do lugar de origem."
         },
         {
           "id": "b",
-          "label": "Sim: o nome depende do ponto de vista de saída ou chegada.",
-          "explanation": "Isso mesmo. A mesma pessoa pode ser emigrante em relação à origem e imigrante em relação ao destino."
+          "label": "Imigração.",
+          "explanation": "Correto. O material define imigração como a chegada a outro país ou lugar para morar."
         },
         {
           "id": "c",
-          "label": "Não: só é permitido um nome para toda a vida.",
-          "explanation": "Reveja essa alternativa. A mesma pessoa pode ser emigrante em relação à origem e imigrante em relação ao destino."
+          "label": "Nomadismo.",
+          "explanation": "O material define nomadismo por deslocamentos contínuos, não pela chegada para morar."
         },
         {
           "id": "d",
-          "label": "Não: imigrante significa pessoa que nunca saiu.",
-          "explanation": "Reveja essa alternativa. A mesma pessoa pode ser emigrante em relação à origem e imigrante em relação ao destino."
+          "label": "Migração pendular.",
+          "explanation": "O exemplo não descreve ida e volta diária entre moradia e trabalho."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-02",
+        "G3-05"
+      ],
+      "evidenceNote": "O material define imigração como a chegada a outro país ou lugar para morar."
     },
     {
       "id": 3302,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-b",
-      "scenarioId": "mock-b-03",
-      "prompt": "Dois bairros pertencem à mesma cidade e ao mesmo país. Uma família transfere sua residência de um para o outro. Por que essa mudança não é externa?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3302",
+      "prompt": "Raimundo saiu da Bahia e foi para São Paulo. Por que esse movimento é interno?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Compare o trajeto de Raimundo com a definição de interna.",
+        "Verifique se Bahia e São Paulo ficam em países diferentes."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Porque migração externa depende do tamanho da casa.",
-          "explanation": "Reveja essa alternativa. A classificação externa exige mudança entre países; o enunciado não apresenta essa passagem."
+          "label": "Porque ele saiu do Brasil.",
+          "explanation": "Raimundo relata uma mudança entre lugares do Brasil."
         },
         {
           "id": "b",
-          "label": "Porque a família mantém os mesmos sobrenomes.",
-          "explanation": "Reveja essa alternativa. A classificação externa exige mudança entre países; o enunciado não apresenta essa passagem."
+          "label": "Porque todo deslocamento é externo.",
+          "explanation": "O texto distingue os movimentos internos dos externos."
         },
         {
           "id": "c",
-          "label": "Porque não ocorre entre países.",
-          "explanation": "Isso mesmo. A classificação externa exige mudança entre países; o enunciado não apresenta essa passagem."
+          "label": "Porque a mudança ocorreu dentro do Brasil.",
+          "explanation": "Correto. A origem e o destino de Raimundo estão no mesmo país, como na definição de migração interna."
         },
         {
           "id": "d",
-          "label": "Porque ninguém pode migrar dentro de uma cidade.",
-          "explanation": "Reveja essa alternativa. A classificação externa exige mudança entre países; o enunciado não apresenta essa passagem."
+          "label": "Porque ele fazia esse trajeto todos os dias.",
+          "explanation": "O relato fala da mudança para São Paulo, não de uma rotina diária de ida e volta."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-07",
+        "G3-03"
+      ],
+      "evidenceNote": "A origem e o destino de Raimundo estão no mesmo país, como na definição de migração interna."
     },
     {
       "id": 3303,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-b",
-      "scenarioId": "mock-b-04",
-      "prompt": "A casa de uma família foi destruída por um deslizamento, e ela precisou morar em outro município. Qual causa aparece no relato?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3303",
+      "prompt": "Quais duas causas de migração aparecem no Texto I?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Releia a lista das principais causas da migração.",
+        "Procure um motivo econômico e outro ligado a conflitos."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Uma escolha de turismo.",
-          "explanation": "Reveja essa alternativa. O deslizamento e a perda da casa explicam a mudança, sem necessidade de inventar outro motivo."
+          "label": "Apenas turismo, pois não existem outras causas.",
+          "explanation": "O material apresenta várias causas, incluindo trabalho e conflitos."
         },
         {
           "id": "b",
-          "label": "Uma temporada de trabalho em hotel.",
-          "explanation": "Reveja essa alternativa. O deslizamento e a perda da casa explicam a mudança, sem necessidade de inventar outro motivo."
+          "label": "Somente a ida e volta de Joana e as colheitas.",
+          "explanation": "Esses são exemplos de tipos de deslocamento; não respondem às duas causas pedidas."
         },
         {
           "id": "c",
-          "label": "Uma transferência de empresa.",
-          "explanation": "Reveja essa alternativa. O deslizamento e a perda da casa explicam a mudança, sem necessidade de inventar outro motivo."
+          "label": "A proibição de sair de casa e o fim das viagens.",
+          "explanation": "Essas não são as causas apresentadas no Texto I."
         },
         {
           "id": "d",
-          "label": "Um desastre que forçou a saída.",
-          "explanation": "Isso mesmo. O deslizamento e a perda da casa explicam a mudança, sem necessidade de inventar outro motivo."
+          "label": "A busca por trabalho e a ocorrência de conflitos armados.",
+          "explanation": "Correto. O texto cita a busca por trabalho e renda e os conflitos entre as causas da migração."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03"
+      ],
+      "evidenceNote": "O texto cita a busca por trabalho e renda e os conflitos entre as causas da migração."
     },
     {
       "id": 3304,
       "topic": "Lugares e pontos de vista",
       "pool": "mock-b",
-      "scenarioId": "mock-b-05",
-      "prompt": "Um cartaz classifica qualquer pessoa que entra no Brasil como migrante interna. Que pergunta ajuda a encontrar o erro?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3304",
+      "prompt": "Segundo o texto, os movimentos migratórios podem ser temporários ou...",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe a origem e o destino antes de escolher.",
-        "Compare as fronteiras e os sentidos de saída e chegada."
+        "Releia o parágrafo anterior à definição de migração interna.",
+        "Procure a dupla de palavras usada para falar da duração dos movimentos."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Ela veio de outro país ou apenas mudou de lugar dentro do Brasil?",
-          "explanation": "Isso mesmo. Entrar no Brasil vindo de outro país é migração externa. Interna significa permanecer dentro do mesmo país."
+          "label": "Permanentes.",
+          "explanation": "Correto. O Texto I afirma que os movimentos migratórios podem ser temporários ou permanentes."
         },
         {
           "id": "b",
-          "label": "Ela chegou de manhã ou à noite?",
-          "explanation": "Reveja essa alternativa. Entrar no Brasil vindo de outro país é migração externa. Interna significa permanecer dentro do mesmo país."
+          "label": "Sempre diários.",
+          "explanation": "Diário é o ritmo do exemplo pendular, não o outro termo da frase do texto."
         },
         {
           "id": "c",
-          "label": "Qual é a cor da mala dela?",
-          "explanation": "Reveja essa alternativa. Entrar no Brasil vindo de outro país é migração externa. Interna significa permanecer dentro do mesmo país."
+          "label": "Apenas turísticos.",
+          "explanation": "O texto não restringe os movimentos a viagens turísticas."
         },
         {
           "id": "d",
-          "label": "Ela gosta de viver na cidade?",
-          "explanation": "Reveja essa alternativa. Entrar no Brasil vindo de outro país é migração externa. Interna significa permanecer dentro do mesmo país."
+          "label": "Somente entre países.",
+          "explanation": "O material também apresenta a migração dentro do mesmo país."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03"
+      ],
+      "evidenceNote": "O Texto I afirma que os movimentos migratórios podem ser temporários ou permanentes."
     },
     {
       "id": 3305,
       "topic": "Ritmos e caminhos",
       "pool": "mock-b",
-      "scenarioId": "mock-b-06",
-      "prompt": "Uma estudante passa a semana morando perto de uma universidade e só visita a antiga casa nas férias. É correto afirmar que ela faz ida e volta diária?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3305",
+      "prompt": "Qual é o exemplo de deslocamento diário apresentado na Atividade 01?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Compare os exemplos da Atividade 01.",
+        "Procure a pessoa que volta para a mesma casa no fim do dia."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "Não: estudar impede qualquer migração.",
-          "explanation": "Reveja essa alternativa. A classificação deve usar o ritmo informado, não a profissão ou a condição de estudante."
+          "label": "Pedro sai do Brasil para morar no Canadá.",
+          "explanation": "Esse exemplo trata da mudança entre países, não de uma rotina diária."
         },
         {
           "id": "b",
-          "label": "Não: o relato não descreve o retorno diário necessário para esse exemplo pendular.",
-          "explanation": "Isso mesmo. A classificação deve usar o ritmo informado, não a profissão ou a condição de estudante."
+          "label": "Joana vai trabalhar em uma cidade vizinha e volta para casa.",
+          "explanation": "Correto. A atividade apresenta a ida e a volta diárias de Joana como exemplo pendular."
         },
         {
           "id": "c",
-          "label": "Sim: todo estudante faz migração pendular.",
-          "explanation": "Reveja essa alternativa. A classificação deve usar o ritmo informado, não a profissão ou a condição de estudante."
+          "label": "Trabalhadores viajam durante a colheita e retornam depois.",
+          "explanation": "Esse exemplo está ligado à temporada da colheita, não à ida e volta diária."
         },
         {
           "id": "d",
-          "label": "Sim: férias significam todos os dias.",
-          "explanation": "Reveja essa alternativa. A classificação deve usar o ritmo informado, não a profissão ou a condição de estudante."
+          "label": "Uma família deixa o país por causa de uma guerra.",
+          "explanation": "Esse exemplo trata de busca de proteção, não de deslocamento diário."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05",
+        "G3-06"
+      ],
+      "evidenceNote": "A atividade apresenta a ida e a volta diárias de Joana como exemplo pendular."
     },
     {
       "id": 3306,
       "topic": "Ritmos e caminhos",
       "pool": "mock-b",
-      "scenarioId": "mock-b-07",
-      "prompt": "Um salva-vidas se instala em outra cidade somente nos meses de alta temporada da praia e retorna depois. Como o calendário ajuda a classificar esse movimento?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3306",
+      "prompt": "Quando os trabalhadores do exemplo sazonal retornam ao lugar onde vivem?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Releia o exemplo dos trabalhadores na colheita de frutas.",
+        "Observe o que acontece ao final da temporada."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Mostra que ele nunca tem residência.",
-          "explanation": "Reveja essa alternativa. O período da alta temporada determina o deslocamento temporário e o retorno."
+          "label": "Todos os dias, ao fim do expediente de Joana.",
+          "explanation": "Essa rotina pertence ao exemplo pendular de Joana."
         },
         {
           "id": "b",
-          "label": "Transforma a viagem em refúgio.",
-          "explanation": "Reveja essa alternativa. O período da alta temporada determina o deslocamento temporário e o retorno."
+          "label": "Somente depois de mudarem para o Canadá.",
+          "explanation": "O Canadá aparece no exemplo de Pedro, não no da colheita."
         },
         {
           "id": "c",
-          "label": "Mostra que o trabalho está ligado a uma época do ano: sazonal.",
-          "explanation": "Isso mesmo. O período da alta temporada determina o deslocamento temporário e o retorno."
+          "label": "Quando a colheita termina.",
+          "explanation": "Correto. Na atividade, os trabalhadores retornam ao fim da colheita de frutas."
         },
         {
           "id": "d",
-          "label": "Prova que ele volta para casa todas as noites.",
-          "explanation": "Reveja essa alternativa. O período da alta temporada determina o deslocamento temporário e o retorno."
+          "label": "Nunca, pois o texto diz que não retornam.",
+          "explanation": "A atividade afirma que eles retornam quando a colheita termina."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-05"
+      ],
+      "evidenceNote": "Na atividade, os trabalhadores retornam ao fim da colheita de frutas."
     },
     {
       "id": 3307,
       "topic": "Ritmos e caminhos",
       "pool": "mock-b",
-      "scenarioId": "mock-b-08",
-      "prompt": "Em uma cidade fictícia, chegaram 30 famílias do campo e 10 de outras cidades. Qual grupo exemplifica êxodo rural?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3307",
+      "prompt": "Qual é o sentido do êxodo rural apresentado no material?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Releia a questão sobre o êxodo rural e a urbanização.",
+        "Observe de onde saem os moradores que chegam às cidades."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "As 10 que vieram de outras cidades.",
-          "explanation": "Reveja essa alternativa. Êxodo rural exige origem rural e destino urbano; a outra migração é entre cidades."
+          "label": "Da cidade para o campo.",
+          "explanation": "Essa direção é contrária ao êxodo rural apresentado."
         },
         {
           "id": "b",
-          "label": "Todas apenas por serem famílias.",
-          "explanation": "Reveja essa alternativa. Êxodo rural exige origem rural e destino urbano; a outra migração é entre cidades."
+          "label": "Sempre do Brasil para o Canadá.",
+          "explanation": "Esse é o exemplo de mudança entre países, não a definição de êxodo rural."
         },
         {
           "id": "c",
-          "label": "Nenhuma, porque o movimento ocorreu no Brasil.",
-          "explanation": "Reveja essa alternativa. Êxodo rural exige origem rural e destino urbano; a outra migração é entre cidades."
+          "label": "Apenas de uma cidade para outra cidade.",
+          "explanation": "O êxodo rural apresentado envolve a saída do campo para a cidade."
         },
         {
           "id": "d",
-          "label": "As 30 famílias que deixaram o campo para morar na cidade.",
-          "explanation": "Isso mesmo. Êxodo rural exige origem rural e destino urbano; a outra migração é entre cidades."
+          "label": "Do campo para a cidade.",
+          "explanation": "Correto. O material relaciona o êxodo rural à saída do campo e ao crescimento das cidades."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-03",
+        "G3-06"
+      ],
+      "evidenceNote": "O material relaciona o êxodo rural à saída do campo e ao crescimento das cidades."
     },
     {
       "id": 3308,
       "topic": "Ritmos e caminhos",
       "pool": "mock-b",
-      "scenarioId": "mock-b-09",
-      "prompt": "Um agricultor mora no sítio e vai diariamente à cidade vender produtos, voltando ao sítio. Por que isso não prova que houve êxodo rural?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3308",
+      "prompt": "No relato de Raimundo, por que alguns nordestinos estão voltando de São Paulo para o Nordeste?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Leia o final do relato de Raimundo.",
+        "Procure a explicação que ele dá para o retorno ao Nordeste."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Porque ele manteve a residência no campo.",
-          "explanation": "Isso mesmo. Êxodo rural envolve passar a morar na cidade, e não somente visitá-la para trabalhar."
+          "label": "Porque a situação melhorou por lá.",
+          "explanation": "Correto. Raimundo afirma que alguns estão voltando ao Nordeste porque a situação melhorou por lá."
         },
         {
           "id": "b",
-          "label": "Porque produtos não podem circular.",
-          "explanation": "Reveja essa alternativa. Êxodo rural envolve passar a morar na cidade, e não somente visitá-la para trabalhar."
+          "label": "Porque o relato afirma que todos precisam sair do Brasil.",
+          "explanation": "O relato descreve movimentos dentro do Brasil e não diz que todos devem sair do país."
         },
         {
           "id": "c",
-          "label": "Porque o uso de estrada impede migração.",
-          "explanation": "Reveja essa alternativa. Êxodo rural envolve passar a morar na cidade, e não somente visitá-la para trabalhar."
+          "label": "Porque Joana deixou de voltar para casa.",
+          "explanation": "Joana faz parte de outro exemplo; não explica o retorno descrito por Raimundo."
         },
         {
           "id": "d",
-          "label": "Porque todas as viagens ao mercado são internacionais.",
-          "explanation": "Reveja essa alternativa. Êxodo rural envolve passar a morar na cidade, e não somente visitá-la para trabalhar."
+          "label": "Porque a colheita de frutas terminou para todos.",
+          "explanation": "O relato de Raimundo não apresenta a colheita como motivo desse retorno."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-07"
+      ],
+      "evidenceNote": "Raimundo afirma que alguns estão voltando ao Nordeste porque a situação melhorou por lá."
     },
     {
       "id": 3309,
       "topic": "Ritmos e caminhos",
       "pool": "mock-b",
-      "scenarioId": "mock-b-10",
-      "prompt": "Um texto chama de nômade qualquer passageiro que pega ônibus todo dia. Qual evidência seria necessária para falar de nomadismo?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3309",
+      "prompt": "Qual tipo de movimento o material descreve como contínuo pelo espaço geográfico?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Procure no relato as pistas sobre moradia e retorno.",
-        "Compare o ritmo diário, a temporada e a mudança do campo para a cidade."
+        "Procure no texto o tipo ligado à continuidade dos deslocamentos.",
+        "Compare sua definição com a rotina de Joana e com a época da colheita."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "O retorno diário à mesma casa.",
-          "explanation": "Reveja essa alternativa. Nomadismo descreve um modo de vida e não se define pelo uso diário de transporte."
+          "label": "Migração pendular.",
+          "explanation": "O exemplo pendular é uma rotina diária de ida e volta."
         },
         {
           "id": "b",
-          "label": "Um modo de vida com deslocamentos contínuos e sem residência fixa permanente.",
-          "explanation": "Isso mesmo. Nomadismo descreve um modo de vida e não se define pelo uso diário de transporte."
+          "label": "Nomadismo.",
+          "explanation": "Correto. No texto, nomadismo é o movimento que acontece continuamente pelo espaço geográfico."
         },
         {
           "id": "c",
-          "label": "A simples compra de uma passagem.",
-          "explanation": "Reveja essa alternativa. Nomadismo descreve um modo de vida e não se define pelo uso diário de transporte."
+          "label": "Migração sazonal.",
+          "explanation": "O exemplo sazonal está ligado a uma época do ano, como a colheita."
         },
         {
           "id": "d",
-          "label": "A existência de horário de trabalho.",
-          "explanation": "Reveja essa alternativa. Nomadismo descreve um modo de vida e não se define pelo uso diário de transporte."
+          "label": "Apenas imigração.",
+          "explanation": "Imigração nomeia a chegada a outro país ou lugar para morar."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-04"
+      ],
+      "evidenceNote": "No texto, nomadismo é o movimento que acontece continuamente pelo espaço geográfico."
     },
     {
       "id": 3310,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-b",
-      "scenarioId": "mock-b-11",
-      "prompt": "Uma criança usa palavras de origem indígena e aprende sobre plantas cultivadas por povos originários. Que conclusão é adequada?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3310",
+      "prompt": "Além da alimentação, em que outros aspectos aparece a influência indígena citada no material?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o Texto II sobre os povos indígenas.",
+        "Procure contribuições além dos ingredientes usados na culinária."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Só existe influência europeia na língua e na alimentação.",
-          "explanation": "Reveja essa alternativa. O material destaca língua, cultivo, alimentação e conhecimentos sobre plantas, entre outras contribuições."
+          "label": "Somente nos sistemas de governo portugueses.",
+          "explanation": "O material liga essa contribuição aos portugueses, não aos povos indígenas."
         },
         {
           "id": "b",
-          "label": "Todos os conhecimentos indígenas são idênticos.",
-          "explanation": "Reveja essa alternativa. O material destaca língua, cultivo, alimentação e conhecimentos sobre plantas, entre outras contribuições."
+          "label": "Apenas nos ritmos samba e maracatu.",
+          "explanation": "Esses ritmos aparecem entre as influências africanas."
         },
         {
           "id": "c",
-          "label": "As influências indígenas aparecem na língua e em conhecimentos do cotidiano.",
-          "explanation": "Isso mesmo. O material destaca língua, cultivo, alimentação e conhecimentos sobre plantas, entre outras contribuições."
+          "label": "Na língua, nas técnicas de cultivo e no uso de plantas medicinais.",
+          "explanation": "Correto. O Texto II menciona essas contribuições dos povos indígenas."
         },
         {
           "id": "d",
-          "label": "As contribuições indígenas se limitam a objetos antigos.",
-          "explanation": "Reveja essa alternativa. O material destaca língua, cultivo, alimentação e conhecimentos sobre plantas, entre outras contribuições."
+          "label": "Em nenhum outro aspecto.",
+          "explanation": "O texto apresenta contribuições indígenas além da alimentação."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-09",
+        "G3-10"
+      ],
+      "evidenceNote": "O Texto II menciona essas contribuições dos povos indígenas."
     },
     {
       "id": 3311,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-b",
-      "scenarioId": "mock-b-12",
-      "prompt": "Um museu apresenta objetos de origens indígenas, africanas e europeias. O guia diz que o Brasil foi formado por um único povo. Qual evidência contradiz a fala?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3311",
+      "prompt": "Por que o Texto I não apresenta o Brasil como formado por um único povo?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o primeiro parágrafo sobre a formação do povo brasileiro.",
+        "Observe quantos grupos de povos são destacados."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "O museu ter várias salas.",
-          "explanation": "Reveja essa alternativa. As origens culturais diversas, e não características do prédio, sustentam a contestação."
+          "label": "Porque cita apenas os portugueses.",
+          "explanation": "O texto cita também povos indígenas e africanos."
         },
         {
           "id": "b",
-          "label": "Os objetos estarem atrás de vidro.",
-          "explanation": "Reveja essa alternativa. As origens culturais diversas, e não características do prédio, sustentam a contestação."
+          "label": "Porque afirma que nenhuma cultura contribuiu.",
+          "explanation": "O texto destaca as contribuições de diferentes povos."
         },
         {
           "id": "c",
-          "label": "A visita acontecer numa terça-feira.",
-          "explanation": "Reveja essa alternativa. As origens culturais diversas, e não características do prédio, sustentam a contestação."
+          "label": "Porque diz que todos os povos têm a mesma origem.",
+          "explanation": "O texto destaca origens e culturas diferentes na formação brasileira."
         },
         {
           "id": "d",
-          "label": "A diversidade de origens dos objetos e das histórias apresentadas.",
-          "explanation": "Isso mesmo. As origens culturais diversas, e não características do prédio, sustentam a contestação."
+          "label": "Porque destaca a participação de indígenas, africanos e europeus.",
+          "explanation": "Correto. O Texto I descreve a formação brasileira pelo encontro de diferentes povos e culturas."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-08"
+      ],
+      "evidenceNote": "O Texto I descreve a formação brasileira pelo encontro de diferentes povos e culturas."
     },
     {
       "id": 3312,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-b",
-      "scenarioId": "mock-b-13",
-      "prompt": "Jovens registram histórias orais de uma comunidade afro-brasileira para que as próximas gerações possam conhecê-las. Por que isso pode ser uma forma de resistência cultural?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3312",
+      "prompt": "Como os africanos escravizados transmitiram conhecimentos, tradições e crenças a filhos e netos, segundo o quadro das baianas?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o primeiro item do quadro sobre as baianas do acarajé.",
+        "Procure a expressão que explica a maneira de transmitir os saberes."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Mantém e transmite saberes que enfrentaram tentativas de apagamento.",
-          "explanation": "Isso mesmo. Preservar e transmitir conhecimentos afirma a cultura apesar de opressões e tentativas de apagamento."
+          "label": "De forma oral.",
+          "explanation": "Correto. O quadro sobre as baianas do acarajé afirma que esses saberes foram transmitidos oralmente."
         },
         {
           "id": "b",
-          "label": "Faz toda cultura deixar de mudar.",
-          "explanation": "Reveja essa alternativa. Preservar e transmitir conhecimentos afirma a cultura apesar de opressões e tentativas de apagamento."
+          "label": "Sem compartilhar seus conhecimentos.",
+          "explanation": "O texto afirma que houve transmissão de conhecimentos, tradições e crenças."
         },
         {
           "id": "c",
-          "label": "Prova que não houve violência durante a escravização.",
-          "explanation": "Reveja essa alternativa. Preservar e transmitir conhecimentos afirma a cultura apesar de opressões e tentativas de apagamento."
+          "label": "Somente deixando de praticar suas tradições.",
+          "explanation": "O texto relaciona a continuidade dos saberes à transmissão entre gerações."
         },
         {
           "id": "d",
-          "label": "Impede que pessoas de origens diferentes convivam.",
-          "explanation": "Reveja essa alternativa. Preservar e transmitir conhecimentos afirma a cultura apesar de opressões e tentativas de apagamento."
+          "label": "Apenas por viagens turísticas.",
+          "explanation": "O quadro trata de transmissão oral de saberes, não de turismo."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-11"
+      ],
+      "evidenceNote": "O quadro sobre as baianas do acarajé afirma que esses saberes foram transmitidos oralmente."
     },
     {
       "id": 3313,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-b",
-      "scenarioId": "mock-b-14",
-      "prompt": "Um pesquisador encontra registros de famílias japonesas contribuindo com práticas agrícolas no Brasil no século XX. Que afirmação esses registros apoiam?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3313",
+      "prompt": "Que incentivos o governo brasileiro ofereceu para atrair imigrantes europeus, segundo o texto?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Releia o trecho sobre as políticas de incentivo à imigração.",
+        "Procure o que o governo oferecia aos europeus."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "A imigração só ocorreu durante a colonização portuguesa.",
-          "explanation": "Reveja essa alternativa. O material menciona japoneses e suas contribuições, ampliando as origens e os períodos da imigração."
+          "label": "A proibição de trabalhar nas lavouras.",
+          "explanation": "O texto trata da atração de trabalhadores, não dessa proibição."
         },
         {
           "id": "b",
-          "label": "A imigração também trouxe conhecimentos de povos asiáticos.",
-          "explanation": "Isso mesmo. O material menciona japoneses e suas contribuições, ampliando as origens e os períodos da imigração."
+          "label": "Terras e outras vantagens.",
+          "explanation": "Correto. O material afirma que o governo ofereceu terras e outras vantagens para incentivar a imigração."
         },
         {
           "id": "c",
-          "label": "Todos os imigrantes eram europeus.",
-          "explanation": "Reveja essa alternativa. O material menciona japoneses e suas contribuições, ampliando as origens e os períodos da imigração."
+          "label": "O fim das atividades agrícolas.",
+          "explanation": "O texto associa a imigração ao trabalho e ao desenvolvimento da agricultura."
         },
         {
           "id": "d",
-          "label": "Nenhum imigrante participou da agricultura.",
-          "explanation": "Reveja essa alternativa. O material menciona japoneses e suas contribuições, ampliando as origens e os períodos da imigração."
+          "label": "A obrigação de abandonar o Brasil.",
+          "explanation": "O objetivo apresentado é atrair imigrantes para o Brasil."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-13"
+      ],
+      "evidenceNote": "O material afirma que o governo ofereceu terras e outras vantagens para incentivar a imigração."
     },
     {
       "id": 3314,
       "topic": "Povos e culturas do Brasil",
       "pool": "mock-b",
-      "scenarioId": "mock-b-15",
-      "prompt": "Uma aluna conclui: “Os povos só contribuíram com comidas”. Qual conjunto de evidências mostra que a resposta está incompleta?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3314",
+      "prompt": "Além das comidas, quais contribuições culturais aparecem nos textos?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Busque uma evidência de contribuição ou transmissão de conhecimentos.",
-        "Evite respostas que apagam a diversidade ou reduzem a cultura a um único aspecto."
+        "Compare os trechos sobre indígenas, africanos e europeus.",
+        "Procure contribuições que não sejam alimentos."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Só o tamanho das cidades.",
-          "explanation": "Reveja essa alternativa. As contribuições culturais e econômicas são amplas e não se resumem à alimentação."
+          "label": "Somente receitas culinárias.",
+          "explanation": "Essa alternativa deixa de fora as outras contribuições citadas."
         },
         {
           "id": "b",
-          "label": "Somente a quantidade de restaurantes.",
-          "explanation": "Reveja essa alternativa. As contribuições culturais e econômicas são amplas e não se resumem à alimentação."
+          "label": "Nenhuma contribuição para a língua.",
+          "explanation": "A língua aparece entre as influências indígenas e portuguesas."
         },
         {
           "id": "c",
-          "label": "Línguas, ritmos, religiosidades, técnicas de cultivo e formas de organização.",
-          "explanation": "Isso mesmo. As contribuições culturais e econômicas são amplas e não se resumem à alimentação."
+          "label": "Línguas, ritmos musicais, religiões e técnicas de cultivo.",
+          "explanation": "Correto. Os textos apresentam contribuições para a língua, a música, a religião e os conhecimentos agrícolas."
         },
         {
           "id": "d",
-          "label": "Apenas nomes de pratos diferentes.",
-          "explanation": "Reveja essa alternativa. As contribuições culturais e econômicas são amplas e não se resumem à alimentação."
+          "label": "Apenas a mudança de endereço das pessoas.",
+          "explanation": "Os textos também descrevem conhecimentos e práticas culturais."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-08",
+        "G3-09",
+        "G3-10",
+        "G3-11"
+      ],
+      "evidenceNote": "Os textos apresentam contribuições para a língua, a música, a religião e os conhecimentos agrícolas."
     },
     {
       "id": 3315,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-b",
-      "scenarioId": "mock-b-16",
-      "prompt": "Em dois relatos, uma pessoa viaja por lazer e outra foge de um conflito armado para outro país. Qual comparação é apoiada pelos relatos?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3315",
+      "prompt": "Qual é a diferença entre a fuga da família por causa de guerra e uma viagem turística, na Atividade 01?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia o motivo que obrigou a família a deixar o país.",
+        "Compare a busca de proteção com o motivo de uma viagem turística."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "As duas são obrigatoriamente refugiadas.",
-          "explanation": "Reveja essa alternativa. É o motivo da saída, e não só a viagem, que distingue os casos."
+          "label": "As duas situações são apenas passeios.",
+          "explanation": "O material apresenta a saída por guerra como uma busca de proteção."
         },
         {
           "id": "b",
-          "label": "A primeira precisa de refúgio porque comprou passagem.",
-          "explanation": "Reveja essa alternativa. É o motivo da saída, e não só a viagem, que distingue os casos."
+          "label": "A família faz uma ida e volta diária para o trabalho.",
+          "explanation": "Essa é a rotina do exemplo de Joana, não a fuga da família."
         },
         {
           "id": "c",
-          "label": "A segunda saiu apenas para conhecer paisagens.",
-          "explanation": "Reveja essa alternativa. É o motivo da saída, e não só a viagem, que distingue os casos."
+          "label": "A guerra é apresentada como uma temporada de colheita.",
+          "explanation": "Guerra e colheita são motivos diferentes nos exemplos da atividade."
         },
         {
           "id": "d",
-          "label": "A segunda busca segurança em uma saída forçada; a primeira viaja por lazer.",
-          "explanation": "Isso mesmo. É o motivo da saída, e não só a viagem, que distingue os casos."
+          "label": "A família sai para proteger a vida, não para passear.",
+          "explanation": "Correto. Na atividade, a guerra põe a vida da família em perigo e obriga a busca de proteção."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-06"
+      ],
+      "evidenceNote": "Na atividade, a guerra põe a vida da família em perigo e obriga a busca de proteção."
     },
     {
       "id": 3316,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-b",
-      "scenarioId": "mock-b-17",
-      "prompt": "Uma turma quer ajudar um novo colega refugiado, mas pretende falar por ele sem ouvir o que precisa. Qual melhoria torna o acolhimento mais respeitoso?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3316",
+      "prompt": "Segundo a Atividade 03, por que uma pessoa pode precisar deixar o país de origem?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia o primeiro parágrafo da Atividade 03.",
+        "Procure situações que ameaçam os direitos e a segurança das pessoas."
       ],
       "correct": "a",
       "options": [
         {
           "id": "a",
-          "label": "Ouvir suas necessidades e combinar formas de participação.",
-          "explanation": "Isso mesmo. Acolhimento respeita a pessoa, sua participação e sua privacidade; não deve impor exposição ou decisões."
+          "label": "Porque sofre perseguição ou graves violações de direitos humanos.",
+          "explanation": "Correto. O texto cita perseguição e violações graves de direitos humanos entre os motivos da saída."
         },
         {
           "id": "b",
-          "label": "Decidir tudo por ele porque não conhece o lugar.",
-          "explanation": "Reveja essa alternativa. Acolhimento respeita a pessoa, sua participação e sua privacidade; não deve impor exposição ou decisões."
+          "label": "Somente porque quer fazer turismo.",
+          "explanation": "O texto apresenta situações de risco e busca de proteção, não apenas turismo."
         },
         {
           "id": "c",
-          "label": "Exigir que conte experiências difíceis para toda a escola.",
-          "explanation": "Reveja essa alternativa. Acolhimento respeita a pessoa, sua participação e sua privacidade; não deve impor exposição ou decisões."
+          "label": "Apenas porque vai e volta diariamente do trabalho.",
+          "explanation": "Essa rotina é o exemplo pendular, não o motivo de refúgio pedido."
         },
         {
           "id": "d",
-          "label": "Proibir que participe até dominar o idioma.",
-          "explanation": "Reveja essa alternativa. Acolhimento respeita a pessoa, sua participação e sua privacidade; não deve impor exposição ou decisões."
+          "label": "Somente porque começou uma colheita de frutas.",
+          "explanation": "A colheita é o exemplo de migração sazonal na Atividade 01."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15"
+      ],
+      "evidenceNote": "O texto cita perseguição e violações graves de direitos humanos entre os motivos da saída."
     },
     {
       "id": 3317,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-b",
-      "scenarioId": "mock-b-18",
-      "prompt": "Uma rota histórica mostra África → Américas, acompanhada de relatos de captura e escravização. Que elemento impede classificá-la como uma viagem livre de trabalho?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3317",
+      "prompt": "Por que a diáspora africana estudada no material é uma migração forçada?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia a definição de diáspora africana e o texto sobre a escravização.",
+        "Observe se as pessoas podiam escolher livremente esse deslocamento."
       ],
       "correct": "b",
       "options": [
         {
           "id": "a",
-          "label": "O número de nomes no mapa.",
-          "explanation": "Reveja essa alternativa. A coerção e a escravização tornam a migração forçada, independentemente da forma do mapa."
+          "label": "Porque foi uma viagem turística.",
+          "explanation": "O material não descreve turismo, e sim deslocamento forçado e escravização."
         },
         {
           "id": "b",
-          "label": "A captura e a privação de liberdade.",
-          "explanation": "Isso mesmo. A coerção e a escravização tornam a migração forçada, independentemente da forma do mapa."
+          "label": "Porque africanos foram levados contra sua vontade e escravizados.",
+          "explanation": "Correto. O material descreve a retirada forçada de africanos e sua escravização nas Américas."
         },
         {
           "id": "c",
-          "label": "A presença de uma seta.",
-          "explanation": "Reveja essa alternativa. A coerção e a escravização tornam a migração forçada, independentemente da forma do mapa."
+          "label": "Porque foi uma escolha livre para estudar.",
+          "explanation": "O texto destaca que a saída foi forçada, não uma escolha livre de estudo."
         },
         {
           "id": "d",
-          "label": "O tamanho do oceano.",
-          "explanation": "Reveja essa alternativa. A coerção e a escravização tornam a migração forçada, independentemente da forma do mapa."
+          "label": "Porque foi uma ida e volta diária ao trabalho.",
+          "explanation": "A diáspora estudada não é o movimento pendular do exemplo de Joana."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-04",
+        "G3-11",
+        "G3-12"
+      ],
+      "evidenceNote": "O material descreve a retirada forçada de africanos e sua escravização nas Américas."
     },
     {
       "id": 3318,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-b",
-      "scenarioId": "mock-b-19",
-      "prompt": "Uma família recém-chegada não consegue entender como fazer matrícula escolar. Qual medida enfrenta o problema descrito?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3318",
+      "prompt": "Qual é o objetivo da proteção internacional apresentada no texto sobre refugiados?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Procure no texto a expressão proteção internacional.",
+        "Releia a finalidade apresentada logo depois dessa expressão."
       ],
       "correct": "c",
       "options": [
         {
           "id": "a",
-          "label": "Pedir que esqueça sua língua antes de buscar informações.",
-          "explanation": "Reveja essa alternativa. O problema é uma barreira de informação e idioma; orientação acessível ajuda a garantir participação."
+          "label": "Obrigar as pessoas a permanecer no local de perigo.",
+          "explanation": "O texto apresenta a busca de proteção em outro país, não a permanência no perigo."
         },
         {
           "id": "b",
-          "label": "Tratar a dificuldade de idioma como falta de capacidade.",
-          "explanation": "Reveja essa alternativa. O problema é uma barreira de informação e idioma; orientação acessível ajuda a garantir participação."
+          "label": "Transformar a fuga em uma viagem turística.",
+          "explanation": "A proteção apresentada se relaciona à segurança, não ao turismo."
         },
         {
           "id": "c",
-          "label": "Oferecer explicações acessíveis e apoio para compreender a matrícula.",
-          "explanation": "Isso mesmo. O problema é uma barreira de informação e idioma; orientação acessível ajuda a garantir participação."
+          "label": "Garantir segurança e dignidade às pessoas refugiadas.",
+          "explanation": "Correto. O texto associa a proteção internacional à garantia de segurança e dignidade."
         },
         {
           "id": "d",
-          "label": "Dizer que a escola não tem relação com acolhimento.",
-          "explanation": "Reveja essa alternativa. O problema é uma barreira de informação e idioma; orientação acessível ajuda a garantir participação."
+          "label": "Exigir uma viagem diária para o trabalho.",
+          "explanation": "A rotina diária é o exemplo pendular e não é o objetivo da proteção internacional."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-15"
+      ],
+      "evidenceNote": "O texto associa a proteção internacional à garantia de segurança e dignidade."
     },
     {
       "id": 3319,
       "topic": "Proteção e deslocamentos forçados",
       "pool": "mock-b",
-      "scenarioId": "mock-b-20",
-      "prompt": "Um aluno relaciona diáspora africana apenas à perda de vidas e liberdade. Que complemento reconhece também a ação dos povos africanos e seus descendentes?",
-      "support": "Leia a situação e escolha a resposta mais bem apoiada pelas informações.",
+      "scenarioId": "school-3319",
+      "prompt": "O trabalho das baianas do acarajé é apresentado como exemplo de quê?",
+      "support": "Responda com base no material da escola.",
       "hints": [
-        "Observe se houve escolha livre, ameaça, proteção ou acolhimento.",
-        "Use os fatos do relato e respeite a dignidade e os conhecimentos de cada pessoa."
+        "Releia o quadro sobre as baianas do acarajé.",
+        "Observe como o texto relaciona a continuidade da tradição à resistência."
       ],
       "correct": "d",
       "options": [
         {
           "id": "a",
-          "label": "Não houve violência, apenas troca cultural.",
-          "explanation": "Reveja essa alternativa. Reconhecer a violência e reconhecer a resistência são ideias complementares, não opostas."
+          "label": "Desaparecimento completo das tradições africanas.",
+          "explanation": "O material mostra a continuidade e a transmissão dessas tradições."
         },
         {
           "id": "b",
-          "label": "Todas as culturas desapareceram completamente.",
-          "explanation": "Reveja essa alternativa. Reconhecer a violência e reconhecer a resistência são ideias complementares, não opostas."
+          "label": "Ausência de influência africana na cultura brasileira.",
+          "explanation": "O texto destaca justamente essa influência cultural."
         },
         {
           "id": "c",
-          "label": "Os descendentes não participaram da formação do Brasil.",
-          "explanation": "Reveja essa alternativa. Reconhecer a violência e reconhecer a resistência são ideias complementares, não opostas."
+          "label": "Uma tradição sem transmissão entre gerações.",
+          "explanation": "O quadro descreve a transmissão dos modos de preparar, vestir e se relacionar."
         },
         {
           "id": "d",
-          "label": "Houve resistência, preservação e recriação de conhecimentos e culturas.",
-          "explanation": "Isso mesmo. Reconhecer a violência e reconhecer a resistência são ideias complementares, não opostas."
+          "label": "Resistência e manutenção de tradições de origem africana.",
+          "explanation": "Correto. O quadro apresenta a continuidade desse trabalho como resistência às mudanças impostas e transmissão de tradições."
         }
-      ]
+      ],
+      "sourceRefs": [
+        "G3-11"
+      ],
+      "evidenceNote": "O quadro apresenta a continuidade desse trabalho como resistência às mudanças impostas e transmissão de tradições."
     }
   ],
   "practice": [
     {
       "lesson": "g3-places",
-      "prompt": "Uma reportagem acompanha uma pessoa que deixou a Bolívia e passou a morar no Equador. Escreva duas legendas: uma sobre a saída e outra sobre a chegada. Explique por que as duas se referem à mesma pessoa.",
-      "answer": "Ela emigrou da Bolívia e imigrou no Equador. Saída e chegada são pontos de vista diferentes do mesmo deslocamento; a migração é externa."
+      "prompt": "Pedro saiu do Brasil para morar no Canadá. Como ele é chamado em relação à saída do Brasil e à chegada ao Canadá? Explique os dois termos.",
+      "answer": "Pedro é emigrante em relação à saída do Brasil e imigrante em relação à chegada ao Canadá. Emigrar é sair do lugar de origem; imigrar é chegar a outro lugar para morar.",
+      "sourceRefs": [
+        "G3-02",
+        "G3-05"
+      ]
     },
     {
       "lesson": "g3-paths",
-      "prompt": "Uma cidade registra dois movimentos: moradores de fazendas passam a viver em apartamentos; trabalhadores de uma vila chegam de manhã e voltam à vila à noite. Compare a mudança de moradia e o retorno em cada caso.",
-      "answer": "No primeiro caso há êxodo rural e mudança de residência para a cidade. No segundo há deslocamento pendular, com retorno diário e manutenção da moradia."
+      "prompt": "Compare os exemplos de Joana e dos trabalhadores na colheita de frutas. Qual movimento é pendular e qual é sazonal? Explique a diferença.",
+      "answer": "O movimento de Joana é pendular: ela vai trabalhar e volta para casa diariamente. O dos trabalhadores é sazonal: acontece na época da colheita e termina com o retorno ao lugar onde vivem.",
+      "sourceRefs": [
+        "G3-04",
+        "G3-05"
+      ]
     },
     {
       "lesson": "g3-cultures",
-      "prompt": "Você vai montar uma exposição chamada “Conhecimentos que continuam vivos”. Escolha duas contribuições de povos diferentes estudados e explique como podem ser transmitidas às novas gerações.",
-      "answer": "Aceite exemplos fundamentados: técnicas agrícolas indígenas ensinadas entre gerações; ritmos e práticas afro-brasileiras aprendidos na comunidade; língua portuguesa compartilhada no cotidiano. A resposta precisa explicar a transmissão, sem hierarquizar povos."
+      "prompt": "Cite os três grupos de povos destacados no Texto I sobre a formação do Brasil. Escreva uma contribuição de cada grupo que apareça no material.",
+      "answer": "Indígenas: técnicas de cultivo, plantas medicinais, língua ou alimentos como mandioca, milho e ervas. Europeus, principalmente portugueses: língua, religião ou sistemas de governo. Africanos: tradições religiosas, ritmos musicais ou culinária. Aceite outras contribuições expressamente citadas nessas páginas, com palavras equivalentes.",
+      "sourceRefs": [
+        "G3-08",
+        "G3-09",
+        "G3-10",
+        "G3-11"
+      ]
     },
     {
       "lesson": "g3-protection",
-      "prompt": "Um centro comunitário recebe uma família que saiu de seu país por perseguição. Ela não conhece o idioma local nem os serviços do bairro. Proponha duas ações de acolhimento e explique qual dificuldade cada uma ajuda a enfrentar.",
-      "answer": "Aceite orientação acessível com imagens ou tradução para enfrentar a barreira de idioma; ajuda para conhecer escola, saúde e moradia; oportunidades de convivência. As propostas devem respeitar a cultura, a participação e a privacidade da família."
+      "prompt": "Na Atividade 01, uma família foge de uma guerra. Por que ela precisou sair? Segundo a Atividade 03, o que a proteção deve garantir às pessoas refugiadas?",
+      "answer": "A guerra colocou a vida da família em perigo e ela precisou buscar proteção. A proteção deve garantir segurança, dignidade e direitos às pessoas refugiadas.",
+      "sourceRefs": [
+        "G3-06",
+        "G3-15"
+      ]
     }
   ],
   "infographics": [
@@ -2313,8 +2604,8 @@
           "trabalho, renda, família, estudo, perseguição, conflitos e desastres podem motivar deslocamentos."
         ]
       ],
-      "example": "Uma família muda de Manaus para Belém: migração interna. Uma pessoa muda de Angola para o Brasil: externa; emigrante de Angola e imigrante no Brasil.",
-      "challenge": "Uma reportagem acompanha uma pessoa que deixou a Bolívia e passou a morar no Equador. Escreva duas legendas: uma sobre a saída e outra sobre a chegada. Explique por que as duas se referem à mesma pessoa."
+      "example": "Exemplo complementar para estudar; não faz parte da avaliação: Uma família muda de Manaus para Belém: migração interna. Uma pessoa muda de Angola para o Brasil: externa; emigrante de Angola e imigrante no Brasil.",
+      "challenge": "Pedro saiu do Brasil para morar no Canadá. Como ele é chamado em relação à saída do Brasil e à chegada ao Canadá? Explique os dois termos."
     },
     "g3-paths": {
       "title": "Tempo, retorno e mudança de moradia",
@@ -2343,8 +2634,8 @@
           "deslocamentos contínuos, como modo de vida, sem residência fixa permanente. Não é o mesmo que ir trabalhar e voltar para casa."
         ]
       ],
-      "example": "Estudar em outro município e voltar à noite é pendular. Trabalhar em um hotel durante o verão e retornar depois é sazonal. Mudar de uma fazenda para um bairro urbano é êxodo rural.",
-      "challenge": "Uma cidade registra dois movimentos: moradores de fazendas passam a viver em apartamentos; trabalhadores de uma vila chegam de manhã e voltam à vila à noite. Compare a mudança de moradia e o retorno em cada caso."
+      "example": "Exemplo complementar para estudar; não faz parte da avaliação: Estudar em outro município e voltar à noite é pendular. Trabalhar em um hotel durante o verão e retornar depois é sazonal. Mudar de uma fazenda para um bairro urbano é êxodo rural.",
+      "challenge": "Compare os exemplos de Joana e dos trabalhadores na colheita de frutas. Qual movimento é pendular e qual é sazonal? Explique a diferença."
     },
     "g3-cultures": {
       "title": "Conhecimentos que atravessam gerações",
@@ -2374,8 +2665,8 @@
           "o Brasil recebeu, entre outros, italianos, espanhóis, alemães, libaneses, sírios e japoneses. Houve contribuição para agricultura, indústria e comércio."
         ]
       ],
-      "example": "Uma avó ensina uma receita e explica sua história. Uma comunidade mantém uma celebração e compartilha seus conhecimentos com os mais jovens. Assim, saberes circulam e permanecem vivos.",
-      "challenge": "Você vai montar uma exposição chamada “Conhecimentos que continuam vivos”. Escolha duas contribuições de povos diferentes estudados e explique como podem ser transmitidas às novas gerações."
+      "example": "Exemplo complementar para estudar; não faz parte da avaliação: Uma avó ensina uma receita e explica sua história. Uma comunidade mantém uma celebração e compartilha seus conhecimentos com os mais jovens. Assim, saberes circulam e permanecem vivos.",
+      "challenge": "Cite os três grupos de povos destacados no Texto I sobre a formação do Brasil. Escreva uma contribuição de cada grupo que apareça no material."
     },
     "g3-protection": {
       "title": "Segurança, dignidade e respeito",
@@ -2404,8 +2695,14 @@
           "no contexto estudado, milhões de africanos foram arrancados de seus lugares de origem, levados às Américas e escravizados. Houve violência, resistência e preservação de saberes."
         ]
       ],
-      "example": "Uma escola recebe uma criança que fugiu de perseguição. Acolher inclui explicar a rotina com imagens, ajudá-la a aprender o idioma e respeitar suas tradições.",
-      "challenge": "Um centro comunitário recebe uma família que saiu de seu país por perseguição. Ela não conhece o idioma local nem os serviços do bairro. Proponha duas ações de acolhimento e explique qual dificuldade cada uma ajuda a enfrentar."
+      "example": "Exemplo complementar para estudar; não faz parte da avaliação: Uma escola recebe uma criança que fugiu de perseguição. Acolher inclui explicar a rotina com imagens, ajudá-la a aprender o idioma e respeitar suas tradições.",
+      "challenge": "Na Atividade 01, uma família foge de uma guerra. Por que ela precisou sair? Segundo a Atividade 03, o que a proteção deve garantir às pessoas refugiadas?"
     }
+  },
+  "assessmentPolicy": {
+    "basis": "school-original-only",
+    "reviewedOn": "2026-11-04",
+    "sources": "geography3-sources.json",
+    "note": "Questões, alternativas, dicas e gabaritos usam somente conceitos e exemplos do material original. Repetir um exemplo da fonte em perguntas diferentes é permitido; inventar cenários para variar a prova não é."
   }
 }

@@ -1021,8 +1021,8 @@ export default function Home() {
               </button>
             )}
 
-            {isGeography3 && (["geography3-mock-a", "geography3-mock-b"] as QuizId[]).map(id => <button key={id} className="path-card path-quiz" onClick={()=>startQuiz(id)}><span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>APLIQUE O QUE APRENDEU</small><strong>{quizCatalog[id].title}</strong><p>20 questões com situações próprias. Compare, interprete e encontre evidências.</p><em>Melhor resultado: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span></button>)}
-            {isGeography3 && <a className="path-card path-test" href="/geografia3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Escolha o simulado A, B ou as respostas escritas. Gabarito separado.</p></span><span className="path-arrow">→</span></a>}
+            {isGeography3 && (["geography3-mock-a", "geography3-mock-b"] as QuizId[]).map(id => <button key={id} className="path-card path-quiz" onClick={()=>startQuiz(id)}><span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>APLIQUE O QUE APRENDEU</small><strong>{quizCatalog[id].title}</strong><p>20 questões baseadas nas atividades da escola. Leia, compare e encontre as pistas no material.</p><em>Melhor resultado: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span></button>)}
+            {isGeography3 && <a className="path-card path-test" href="/geografia3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Escolha o quiz, o simulado A, B ou as respostas escritas. PDFs e gabarito separado.</p></span><span className="path-arrow">→</span></a>}
             {isEla3 && (["ela3-mock-a", "ela3-mock-b"] as QuizId[]).map(id => (
               <button key={id} className="path-card path-quiz" onClick={() => startQuiz(id)}>
                 <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRACTICE TEST</small><strong>{quizCatalog[id].title}</strong><p>20 questions • all ten topics • hints and explanations.</p><em>Best: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span>
@@ -1053,6 +1053,8 @@ export default function Home() {
                 <span className="path-arrow">↓</span>
               </a>
             ))}
+
+            {activeSubject === "geography" && !isGeography3 && <a className="path-card path-test" href="/materials/gabarito-geografia-2.pdf" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>CONFERIR DEPOIS DE RESPONDER</small><strong>Gabarito da prova escrita</strong><p>Orientações de resposta e referências às atividades da escola.</p></span><span className="path-arrow">→</span></a>}
 
             {activeSubject === "geography" && !isGeography3 && (
               <a className="path-card path-test" href="/materials/prova-geografia.pdf" download>

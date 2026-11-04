@@ -82,7 +82,7 @@
     "public/infographics/portugues-4-homonimas-paronimas.webp": "583f253fe38a2f85b8c4f4fe482846a6a4cd87bea8aae1b03d20a1b24e8b821d",
     "public/infographics/portugues-5-isar-izar.webp": "14b1224accdfd4a9708e42fc76f3a41e0be689834681e6f1c5dbf71c93927c22",
     "public/manifest.webmanifest": "9063293128e6bf200f47a4a47fa6545c8be8fd887ef71368437e8fc88aa3919a",
-    "public/materials/prova-geografia.pdf": "9bed2dd77ab8f12dbc3bbd2402e28abb178e8cf21a1f28af069ca1167a53243d",
+    "public/materials/prova-geografia.pdf": "4c2fd77f31cce0ed82d395f9de9659d59de19867b3c29a3895c860a18d1b1709",
     "public/obmep/2023-f1-m1-q01-s1.webp": "55277a026703b0e11dce07bdcacef231f64c36cd0188fc088760602bf7593327",
     "public/obmep/2023-f1-m1-q01.webp": "26804c5b6e4a0a9ee43c0658988e5b7efcfa425007bc9730ff2e0883f4d60ba3",
     "public/obmep/2023-f1-m1-q02-s1.webp": "5d6b3aa2479d1f512f8a05a57178088e9d9ad7a3f86cd1e0b7d01bed8fc65052",
@@ -539,7 +539,13 @@
     "public/infographics/geography3-cultures.png": "1a8017ef1920ea5beb631de971234225d7530fef0e9cbb164e6b2b3fac642ab1",
     "public/infographics/geography3-protection.png": "b4234a00d79cf68eacb77da0f1c3c78c69ebfbd325d7750ad45b371490a3b448",
     "public/tutor/mascot.png": "09085b2284cd074e8ad42a57b00cf5c6561c52b0593933ebd6e78836896d7853",
-    "public/tutor/voice-capture-worklet.js": "8c593ea340c0706da07f4c0e18b56008c94730d5044ee04bf4381ab5e4307126"
+    "public/tutor/voice-capture-worklet.js": "8c593ea340c0706da07f4c0e18b56008c94730d5044ee04bf4381ab5e4307126",
+    "public/materials/gabarito-geografia-2.pdf": "0147961dd1055473cfa30ba0d4769064916bb740b1638b86f940b5a5d6d86937",
+    "public/materials/quiz-geografia-3.pdf": "319a113b203b76333ea673e0b39a44562259596eae185fd5987441e6566e9601",
+    "public/materials/simulado-a-geografia-3.pdf": "07e9a44d7bc73f3ff761703187d9ef0bc37053cac868818dcd4412e84da62aad",
+    "public/materials/simulado-b-geografia-3.pdf": "6f1d6159dbb54bb12d4112062ac5a14d992490fa4f6899ad2944d1b65727c5cc",
+    "public/materials/atividades-geografia-3.pdf": "b5d5c7055ef9e82648a8c0a88d96817f898bee972cbe797f9fb64730550dbe81",
+    "public/materials/gabaritos-geografia-3.pdf": "7964f4dc5f9135ad75d0cf7765142a3abbdbbe2dad7cf67ceeaf3883eb886d00"
   },
   "supplements": [
     {
@@ -619,6 +625,22 @@
       "sha256": "13c838a26879de986d5f65973b1c69933895bd9616a48512245a15e3da536372",
       "parts": [
         "voice-capture-000.part.b64"
+      ]
+    },
+    {
+      "name": "geography-review-20261104",
+      "sha256": "3d99360f5c6a0a39426a64e508d3343e2982defa85a0a337de6f26de49d528ab",
+      "parts": [
+        "geography-review-20261104-001.b64",
+        "geography-review-20261104-002.b64",
+        "geography-review-20261104-003.b64",
+        "geography-review-20261104-004.b64",
+        "geography-review-20261104-005.b64",
+        "geography-review-20261104-006.b64",
+        "geography-review-20261104-007.b64",
+        "geography-review-20261104-008.b64",
+        "geography-review-20261104-009.b64",
+        "geography-review-20261104-010.b64"
       ]
     }
   ]

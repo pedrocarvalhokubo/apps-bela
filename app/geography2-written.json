@@ -1,0 +1,285 @@
+{
+  "term": 2,
+  "title": "Geografia • II trimestre",
+  "assessmentPolicy": "school-original-only",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Setores da economia",
+      "prompt": "Explique com suas palavras o que fazem os setores primário, secundário e terciário.",
+      "answer": "Primário: obtém ou produz recursos da natureza. Secundário: transforma matérias-primas em produtos. Terciário: reúne comércio e prestação de serviços.",
+      "sourceRefs": [
+        "G2-06"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 2,
+      "topic": "Setores da economia",
+      "prompt": "Classifique cada atividade como setor primário, secundário ou terciário.",
+      "answer": "Cultivar tomates: primário. Fabricar brinquedos: secundário. Atender em uma farmácia: terciário. Criar galinhas para vender ovos: primário. Dirigir um ônibus: terciário.",
+      "sourceRefs": [
+        "G2-06"
+      ],
+      "lines": 0,
+      "rows": [
+        "Cultivar tomates",
+        "Fabricar brinquedos",
+        "Atender em uma farmácia",
+        "Criar galinhas para vender ovos",
+        "Dirigir um ônibus"
+      ],
+      "columns": [
+        "Atividade",
+        "Setor econômico"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "Setores da economia",
+      "prompt": "Use o exemplo do pão: explique como o cultivo do trigo, a fabricação do pão e sua venda se relacionam aos três setores.",
+      "answer": "Cultivar trigo: setor primário. Transformar a farinha em pão: setor secundário. Vender o pão na padaria: setor terciário. Não exigir detalhes de fabricação além da sequência escolar.",
+      "sourceRefs": [
+        "G2-04",
+        "G2-06"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 4,
+      "topic": "Setores da economia",
+      "prompt": "Por que os três setores dependem uns dos outros? Use a produção do pão para explicar.",
+      "answer": "O cultivo fornece trigo; a transformação produz farinha e pão; a venda faz o pão chegar ao consumidor. Cada etapa depende do trabalho de outra.",
+      "sourceRefs": [
+        "G2-04",
+        "G2-06"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 5,
+      "topic": "Campo e cidade",
+      "prompt": "Explique como o campo e a cidade estão interligados.",
+      "answer": "O campo fornece alimentos e matérias-primas consumidos ou transformados na cidade. A cidade oferece serviços, insumos e fertilizantes que ajudam quem vive no campo.",
+      "sourceRefs": [
+        "G2-05",
+        "G2-07"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 6,
+      "topic": "Campo e cidade",
+      "prompt": "Marque V ou F e corrija a afirmação falsa.",
+      "answer": "V, V, F, V. Correção: campo e cidade se relacionam e dependem um do outro.",
+      "sourceRefs": [
+        "G2-05",
+        "G2-07"
+      ],
+      "lines": 3,
+      "rows": [
+        "O campo produz muitos alimentos consumidos na cidade.",
+        "A cidade oferece serviços que ajudam quem vive no campo.",
+        "Campo e cidade não têm nenhuma relação.",
+        "Pessoas podem morar no campo e trabalhar na cidade."
+      ],
+      "columns": [
+        "Afirmação",
+        "V ou F"
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "Campo e cidade",
+      "prompt": "Imagine que nenhum caminhão consiga sair do campo para a cidade durante uma semana. Que problemas poderiam acontecer na cidade?",
+      "answer": "Poderiam faltar alimentos e matérias-primas para o consumo, o comércio e as indústrias. Explicar a dependência do abastecimento do campo, sem exigir outros efeitos não descritos.",
+      "sourceRefs": [
+        "G2-05",
+        "G2-07"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 8,
+      "topic": "Campo e cidade",
+      "prompt": "Escreva três exemplos do que o campo oferece à cidade e três do que a cidade oferece ao campo.",
+      "answer": "Exemplos do texto: campo — frutas, verduras e leite; cidade — bancos, hospitais e escolas. Também aceitar outros produtos e serviços explicitamente citados no texto, como insumos e fertilizantes.",
+      "sourceRefs": [
+        "G2-05",
+        "G2-09"
+      ],
+      "lines": 0,
+      "rows": [
+        "1.",
+        "2.",
+        "3."
+      ],
+      "columns": [
+        "O campo oferece",
+        "A cidade oferece"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "Matéria-prima e produtos",
+      "prompt": "O que é matéria-prima? Explique e dê dois exemplos da atividade da escola.",
+      "answer": "É o material usado como base para fabricar um produto. Exemplos da tabela: trigo, madeira, algodão, areia e leite. Aceitar dois desses exemplos.",
+      "sourceRefs": [
+        "G2-03",
+        "G2-04",
+        "G2-06"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 10,
+      "topic": "Matéria-prima e produtos",
+      "prompt": "Escreva a principal matéria-prima de cada produto.",
+      "answer": "Pão: trigo. Papel: madeira. Camiseta de algodão: algodão. Mesa de madeira: madeira. Garrafa de vidro: areia. Queijo: leite.",
+      "sourceRefs": [
+        "G2-04"
+      ],
+      "lines": 0,
+      "rows": [
+        "Pão",
+        "Papel",
+        "Camiseta de algodão",
+        "Mesa de madeira",
+        "Garrafa de vidro",
+        "Queijo"
+      ],
+      "columns": [
+        "Produto",
+        "Principal matéria-prima"
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "Matéria-prima e produtos",
+      "prompt": "Numere de 1 a 4 as etapas da produção do pão.",
+      "answer": "Na ordem em que as linhas aparecem: 4, 1, 3, 2. Sequência: trigo plantado e colhido; farinha produzida a partir do trigo; farinha transformada em pão; pão vendido na padaria.",
+      "sourceRefs": [
+        "G2-04"
+      ],
+      "lines": 0,
+      "rows": [
+        "O pão é vendido na padaria.",
+        "O trigo é plantado e colhido.",
+        "A farinha é transformada em pão.",
+        "A farinha é produzida a partir do trigo."
+      ],
+      "columns": [
+        "Etapa",
+        "Número"
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "Matéria-prima e produtos",
+      "prompt": "Qual é a matéria-prima da camiseta de algodão? Ela tem origem animal, vegetal ou mineral?",
+      "answer": "Algodão; origem vegetal. A tabela e o verdadeiro ou falso dão essas informações. Não exigir etapas de fio, tecido ou venda.",
+      "sourceRefs": [
+        "G2-04"
+      ],
+      "lines": 3
+    },
+    {
+      "id": 13,
+      "topic": "Origem e extrativismo",
+      "prompt": "Classifique cada recurso: A para animal, V para vegetal e M para mineral.",
+      "answer": "Ouro: M. Mel: A. Madeira: V. Ferro: M. Castanha-do-pará: V. Areia: M. Petróleo: M. Látex: V. Cera de abelha: A.",
+      "sourceRefs": [
+        "G2-01",
+        "G2-08"
+      ],
+      "lines": 0,
+      "rows": [
+        "Ouro",
+        "Mel",
+        "Madeira",
+        "Ferro",
+        "Castanha-do-pará",
+        "Areia",
+        "Petróleo",
+        "Látex",
+        "Cera de abelha"
+      ],
+      "columns": [
+        "Recurso",
+        "A, V ou M"
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "Origem e extrativismo",
+      "prompt": "Explique a diferença entre extrativismo animal, vegetal e mineral. Dê um exemplo de cada citado no texto.",
+      "answer": "Animal: retira produtos produzidos por animais, como mel ou cera. Vegetal: retira produtos das plantas, como madeira ou látex. Mineral: retira recursos do solo ou das rochas, como areia ou ouro.",
+      "sourceRefs": [
+        "G2-08"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 15,
+      "topic": "Origem e extrativismo",
+      "prompt": "Por que o extrativismo deve ser realizado de forma responsável?",
+      "answer": "Para atender às necessidades das pessoas sem esgotar recursos nem destruir os ambientes e a vida que dependem deles. Relacionar com os efeitos da retirada total descrita na atividade.",
+      "sourceRefs": [
+        "G2-01",
+        "G2-08"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 16,
+      "topic": "Origem e extrativismo",
+      "prompt": "Todas as árvores de uma floresta foram retiradas e nenhuma foi replantada. Explique duas consequências para os animais ou para a produção de madeira e frutas.",
+      "answer": "Os animais podem perder abrigo e alimento. A produção futura de madeira, frutas e outros produtos da floresta fica prejudicada. Aceitar duas consequências relacionadas às perguntas da escola.",
+      "sourceRefs": [
+        "G2-01"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 17,
+      "topic": "Reciclagem e responsabilidade",
+      "prompt": "O que é reciclagem e por que ela é importante para o meio ambiente?",
+      "answer": "É recuperar materiais reutilizáveis de produtos consumidos para voltarem à produção ou formarem novos objetos. Ajuda a preservar recursos naturais e a reduzir o que seria descartado.",
+      "sourceRefs": [
+        "G2-02"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 18,
+      "topic": "Reciclagem e responsabilidade",
+      "prompt": "Segundo o texto, quais são os dois destinos possíveis para os materiais recuperados pela reciclagem?",
+      "answer": "Voltar ao ciclo de produção original ou servir de matéria-prima para novos objetos. Não exigir técnicas de reciclagem de papel.",
+      "sourceRefs": [
+        "G2-02"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 19,
+      "topic": "Reciclagem e responsabilidade",
+      "prompt": "Como a reciclagem ajuda a diminuir o uso de novas matérias-primas?",
+      "answer": "Ao reaproveitar materiais que seriam descartados, a reciclagem os devolve à produção. Assim, reduz a necessidade de retirar novos recursos da natureza. Não exigir exemplo ou técnica ausente do texto.",
+      "sourceRefs": [
+        "G2-02",
+        "G2-08"
+      ],
+      "lines": 4
+    },
+    {
+      "id": 20,
+      "topic": "Reciclagem e responsabilidade",
+      "prompt": "Que pequena ação com os resíduos o texto apresenta para ajudar a preservar os recursos naturais?",
+      "answer": "Separar corretamente os próprios resíduos. Essa ação está expressamente citada no texto sobre reciclagem.",
+      "sourceRefs": [
+        "G2-02"
+      ],
+      "lines": 3
+    }
+  ]
+}

@@ -43,9 +43,9 @@ Migrar conecta lugares e culturas. Para classificar um deslocamento, observe as 
 - Emigrar e imigrar: quem sai emigra do lugar de origem; quem chega imigra no destino. A mesma pessoa pode ser descrita das duas formas.
 - As causas variam: trabalho, renda, família, estudo, perseguição, conflitos e desastres podem motivar deslocamentos.
 
-Exemplo: Uma família muda de Manaus para Belém: migração interna. Uma pessoa muda de Angola para o Brasil: externa; emigrante de Angola e imigrante no Brasil.
+Exemplo: Exemplo complementar para estudar; não faz parte da avaliação: Uma família muda de Manaus para Belém: migração interna. Uma pessoa muda de Angola para o Brasil: externa; emigrante de Angola e imigrante no Brasil.
 
-Desafio: Uma reportagem acompanha uma pessoa que deixou a Bolívia e passou a morar no Equador. Escreva duas legendas: uma sobre a saída e outra sobre a chegada. Explique por que as duas se referem à mesma pessoa.
+Desafio: Pedro saiu do Brasil para morar no Canadá. Como ele é chamado em relação à saída do Brasil e à chegada ao Canadá? Explique os dois termos.
 
 ## Ritmos e caminhos
 
@@ -82,9 +82,9 @@ Observe se a pessoa vai e volta todos os dias, se passa uma temporada fora ou se
 - Êxodo rural: saída do campo para morar na cidade. Esse fluxo contribui para a urbanização.
 - Nomadismo: deslocamentos contínuos, como modo de vida, sem residência fixa permanente. Não é o mesmo que ir trabalhar e voltar para casa.
 
-Exemplo: Estudar em outro município e voltar à noite é pendular. Trabalhar em um hotel durante o verão e retornar depois é sazonal. Mudar de uma fazenda para um bairro urbano é êxodo rural.
+Exemplo: Exemplo complementar para estudar; não faz parte da avaliação: Estudar em outro município e voltar à noite é pendular. Trabalhar em um hotel durante o verão e retornar depois é sazonal. Mudar de uma fazenda para um bairro urbano é êxodo rural.
 
-Desafio: Uma cidade registra dois movimentos: moradores de fazendas passam a viver em apartamentos; trabalhadores de uma vila chegam de manhã e voltam à vila à noite. Compare a mudança de moradia e o retorno em cada caso.
+Desafio: Compare os exemplos de Joana e dos trabalhadores na colheita de frutas. Qual movimento é pendular e qual é sazonal? Explique a diferença.
 
 ## Povos e culturas do Brasil
 
@@ -127,9 +127,9 @@ A colonização portuguesa começou em 1500. Nos séculos XIX e XX, novas migra�
 - Povos africanos: pessoas trazidas à força preservaram e transformaram saberes, religiosidades, ritmos e culinária. Seus descendentes continuam produzindo cultura.
 - Imigração nos séculos XIX e XX: o Brasil recebeu, entre outros, italianos, espanhóis, alemães, libaneses, sírios e japoneses. Houve contribuição para agricultura, indústria e comércio.
 
-Exemplo: Uma avó ensina uma receita e explica sua história. Uma comunidade mantém uma celebração e compartilha seus conhecimentos com os mais jovens. Assim, saberes circulam e permanecem vivos.
+Exemplo: Exemplo complementar para estudar; não faz parte da avaliação: Uma avó ensina uma receita e explica sua história. Uma comunidade mantém uma celebração e compartilha seus conhecimentos com os mais jovens. Assim, saberes circulam e permanecem vivos.
 
-Desafio: Você vai montar uma exposição chamada “Conhecimentos que continuam vivos”. Escolha duas contribuições de povos diferentes estudados e explique como podem ser transmitidas às novas gerações.
+Desafio: Cite os três grupos de povos destacados no Texto I sobre a formação do Brasil. Escreva uma contribuição de cada grupo que apareça no material.
 
 ## Proteção e deslocamentos forçados
 
@@ -166,9 +166,9 @@ Nem toda mudança é uma escolha livre. Algumas pessoas precisam deixar seu lar 
 - Desastres e clima: podem forçar deslocamentos. Nem toda pessoa deslocada por um desastre recebe automaticamente o reconhecimento de refugiada.
 - Diáspora africana: no contexto estudado, milhões de africanos foram arrancados de seus lugares de origem, levados às Américas e escravizados. Houve violência, resistência e preservação de saberes.
 
-Exemplo: Uma escola recebe uma criança que fugiu de perseguição. Acolher inclui explicar a rotina com imagens, ajudá-la a aprender o idioma e respeitar suas tradições.
+Exemplo: Exemplo complementar para estudar; não faz parte da avaliação: Uma escola recebe uma criança que fugiu de perseguição. Acolher inclui explicar a rotina com imagens, ajudá-la a aprender o idioma e respeitar suas tradições.
 
-Desafio: Um centro comunitário recebe uma família que saiu de seu país por perseguição. Ela não conhece o idioma local nem os serviços do bairro. Proponha duas ações de acolhimento e explique qual dificuldade cada uma ajuda a enfrentar.
+Desafio: Na Atividade 01, uma família foge de uma guerra. Por que ela precisou sair? Segundo a Atividade 03, o que a proteção deve garantir às pessoas refugiadas?
 
 ## Ampliação curada
 

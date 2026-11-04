@@ -1,5 +1,7 @@
 # Geografia • III trimestre
 
+> Registro histórico da implementação inicial. A regra e o inventário atuais estão em [Revisão das avaliações](geography-assessment-review.md); a revisão de 04/11/2026 substitui os contextos inventados e o contrato de avaliações abaixo.
+
 Implementação conduzida por Codex nesta frente, a partir da versão `91abd053dac9480853fdada59f6f70c68bd4f022`, confirmada como ativa no Railway. A pasta escolar canônica e o guia fotografado atual foram conferidos; as fotos enviadas são a fonte do conteúdo. Não foram copiados originais, anotações, nome completo, turma, escola ou agenda para o repositório público.
 
 ## Comportamento
@@ -8,15 +10,15 @@ Geografia passa a aparecer no 3º trimestre, com quatro aulas sobre lugares/pont
 
 Quatro infográficos novos em PNG, ilustrados com gatos conforme as referências atuais de Bela, aparecem tanto na revisão visual quanto dentro das aulas. É possível ampliar e baixar cada PNG. Não há PDF embutido no estudo. A impressão é uma opção separada, com os simulados A e B, atividades de escrita e gabarito consultado depois.
 
-O quiz tem 20 questões; os simulados A e B têm 20 questões cada. Os três conjuntos têm IDs, enunciados e situações independentes, com cinco questões por área em cada conjunto e respostas corretas equilibradas entre A/B/C/D. Os quizzes por aula são atalhos para as cinco questões daquele tema no quiz de descoberta, e não novas provas. Cada tentativa usa o conjunto escolhido; reabrir o mesmo simulado repete aquele simulado. As quatro atividades escritas têm outros contextos e salvam pelo mecanismo de rascunhos já existente.
+O quiz tem 20 questões; os simulados A e B têm 20 questões cada. Os três conjuntos têm IDs e enunciados próprios, com conceitos e exemplos restritos às fontes escolares, com cinco questões por área em cada conjunto e respostas corretas equilibradas entre A/B/C/D. Os quizzes por aula são atalhos para as cinco questões daquele tema no quiz de descoberta, e não novas provas. Cada tentativa usa o conjunto escolhido; reabrir o mesmo simulado repete aquele simulado. As quatro atividades escritas usam os casos das fontes e correspondem aos desafios das aulas e salvam pelo mecanismo de rascunhos já existente.
 
 A data da avaliação usa `BELA_GEOGRAPHY_ASSESSMENT_DATE` no ambiente do servidor. `/api/study-plan` exige a sessão da conta e responde com `private, no-store`. Não há data escolar em conteúdo público ou modo convidado. O volume SQLite, autenticação e histórico existentes são preservados.
 
 ## Contrato pedagógico para próximas provas
 
 - Aumentar o desafio por aplicação, comparação, justificativa e leitura de evidências; evitar vocabulário desnecessariamente difícil e pegadinhas.
-- Não gerar prova B apenas trocando nomes ou cidades da prova A. Variar o contexto, o tipo de evidência e a operação de raciocínio.
-- Não reciclar as mesmas questões do quiz em simulados apresentados como novos. Repetição de definições e respostas únicas pode ser inevitável; repetição de cenário deve ser deliberada e identificada.
+- A resposta correta deve estar no material original da escola do mesmo trimestre. Verificar também alternativas, dicas, explicações e gabaritos. Variar a pergunta e o raciocínio sem criar fatos ou cenários avaliativos novos.
+- Um caso original pode reaparecer em perguntas diferentes. Não inventar um cenário apenas para evitar repetição. Exemplos novos ficam no estudo e no tutor, marcados como complementares.
 - Distinguir conceito de critério: interna/externa descreve fronteiras; pendular/sazonal descreve ritmo; êxodo rural descreve campo–cidade. Classificações podem coexistir.
 - Explicar que interna não é sinônimo de entrada. Não inferir êxodo rural de qualquer visita à cidade.
 - Não tratar povos indígenas só no passado, não hierarquizar grupos, e não apresentar escravização como migração voluntária.
