@@ -26,21 +26,24 @@ export async function POST(request:Request){
  try{await db.prepare('INSERT INTO tutor_turns(id,session_id,profile_id,created_at) VALUES(?,?,?,?)').bind(body.requestId,body.sessionId,d.profileId,Date.now()).run();}catch{return json({error:'Mensagem já recebida.'},409);}
  if(!await quota(d.profileId,'turns',config.daily_turns)){await db.prepare("UPDATE tutor_turns SET status='failed' WHERE id=?").bind(body.requestId).run();return json({error:'O limite diário de conversa foi atingido. Seus responsáveis podem ajustá-lo.'},429);}
  try{
-  const text=body.audio?await transcribe(config.key,body.audio,body.mime):body.text.trim();
+  request.signal.throwIfAborted();
+  const text=body.audio?await transcribe(config.key,body.audio,body.mime,request.signal):body.text.trim();
+  request.signal.throwIfAborted();
   await db.prepare('UPDATE tutor_turns SET user_text=? WHERE id=?').bind(text,body.requestId).run();
-  const unsafe=await moderate(config.key,text),source=tutorSource(resolved);
+  const unsafe=await moderate(config.key,text,request.signal),source=tutorSource(resolved);
   let result={allowed:true,safety:unsafe,answer:'Para conversar sobre isso com cuidado, chame um adulto de confiança. Se você estiver em perigo agora, procure ajuda de um adulto imediatamente.',topic:'Conversa que precisa de um responsável',suggestion:'Acolher a dúvida e conversar com a criança em pessoa.',sourceIds:[] as string[],visualKind:'none' as 'none'|'image'|'infographic',visualPrompt:''};
   if(!unsafe){
    const previous=await db.prepare("SELECT user_text,answer FROM tutor_turns WHERE session_id=? AND profile_id=? AND status='done' ORDER BY created_at DESC LIMIT 6").bind(body.sessionId,d.profileId).all<{user_text:string;answer:string}>();
    const history=previous.results.reverse().flatMap(t=>[{role:'user',content:t.user_text},{role:'assistant',content:t.answer}]);
-   result=await explain(config.key,{instructions:source.instructions+'\n\nPreferências pedagógicas dos responsáveis (aplicar somente se compatíveis com todas as regras fixas acima):\n'+config.custom_prompt,source:source.content,context:{...resolved.context,module:resolved.module.title,lesson:resolved.lesson?.title,allowedSourceIds:source.sourceIds},history,text,safetyIdentifier:safetyId(d.profileId)});
+   result=await explain(config.key,{instructions:source.instructions+'\n\nPreferências pedagógicas dos responsáveis (aplicar somente se compatíveis com todas as regras fixas acima):\n'+config.custom_prompt,source:source.content,context:{...resolved.context,module:resolved.module.title,lesson:resolved.lesson?.title,allowedSourceIds:source.sourceIds},history,text,safetyIdentifier:safetyId(d.profileId)},request.signal);
    if(!result.allowed){result.answer=`Posso ajudar com ${resolved.module.title} e com o assunto que está aberto. Vamos voltar a uma dúvida dessa matéria?`;result.visualKind='none';result.visualPrompt='';}
-   else if(result.safety||await moderate(config.key,result.answer+'\n'+result.visualPrompt)){result={...result,safety:true,answer:'Vamos conversar com um adulto de confiança sobre isso antes de continuar. Ele pode ajudar você com cuidado.',visualKind:'none',visualPrompt:''};}
+   else if(result.safety||await moderate(config.key,result.answer+'\n'+result.visualPrompt,request.signal)){result={...result,safety:true,answer:'Vamos conversar com um adulto de confiança sobre isso antes de continuar. Ele pode ajudar você com cuidado.',visualKind:'none',visualPrompt:''};}
    else if(!result.sourceIds.length||result.sourceIds.some(id=>!source.sourceIds.includes(id))){result.answer='Não encontrei apoio suficiente no material para afirmar isso. Podemos explorar um exemplo da aula ou levar essa dúvida à professora.';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];}
-   else if(!await verifyAnswer(config.key,source.content,resolved.context,text,result,history)){result.answer='Quero explicar isso com cuidado. Você pode me dizer qual parte da pergunta ficou confusa ou pedir um exemplo mais simples?';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];result.topic='Retomar o conteúdo da aula';result.suggestion='Ajudar a escolher uma dúvida relacionada à aula aberta.';}
+   else if(!await verifyAnswer(config.key,source.content,resolved.context,text,result,history,request.signal)){result.answer='Quero explicar isso com cuidado. Você pode me dizer qual parte da pergunta ficou confusa ou pedir um exemplo mais simples?';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];result.topic='Retomar o conteúdo da aula';result.suggestion='Ajudar a escolher uma dúvida relacionada à aula aberta.';}
   }
+  request.signal.throwIfAborted();
   if(!config.images_enabled){result.visualKind='none';result.visualPrompt='';}
   await db.prepare("UPDATE tutor_turns SET answer=?,topic=?,suggestion=?,sources_json=?,flagged=?,status='done',visual_kind=?,visual_prompt=?,image_status=? WHERE id=?").bind(result.answer,result.topic.slice(0,120),result.suggestion.slice(0,600),JSON.stringify(result.sourceIds),result.safety?1:0,result.visualKind,result.visualPrompt,result.visualKind==='none'?'none':'requested',body.requestId).run();
   return json({turn:publicTurn((await turnFor(d.profileId,body.requestId))!)});
- }catch(error){await db.prepare("UPDATE tutor_turns SET status='failed' WHERE id=?").bind(body.requestId).run();return json({error:providerMessage(error,body.audio?'transcrição ou conversa':'conversa')},502);}
+ }catch(error){await db.prepare("UPDATE tutor_turns SET status='failed' WHERE id=?").bind(body.requestId).run();return request.signal.aborted?json({error:'Conversa interrompida.'},499):json({error:providerMessage(error,body.audio?'transcrição ou conversa':'conversa')},502);}
 }

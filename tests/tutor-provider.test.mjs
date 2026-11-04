@@ -66,6 +66,22 @@ test('OpenAI request contracts and defensive parsing (mock transport)',async t=>
  await t.test('Realtime rate limits remain distinguishable without upstream text',async()=>{
   globalThis.__voiceScenario='rate-limit';try{await assert.rejects(provider.speak(key,'Synthetic.','opaque'),error=>error.details.code==='provider_error'&&error.status===429);}finally{delete globalThis.__voiceScenario;}
  });
+ await t.test('conversation cancellation reaches transcription, moderation, answer and review requests',async()=>{
+  const mockFetch=globalThis.fetch;
+  try{
+   for(const operation of [
+    signal=>provider.transcribe(key,'A'.repeat(200),'audio/wav',signal),
+    signal=>provider.moderate(key,'Synthetic question.',signal),
+    signal=>provider.explain(key,{instructions:'Rules',source:'Source',context:{},history:[],text:'Synthetic.',safetyIdentifier:'opaque'},signal),
+    signal=>provider.verifyAnswer(key,'Source',{},'Synthetic.',{},[],signal),
+   ]){
+    const control=new AbortController();let received;
+    globalThis.fetch=async(_url,options)=>new Promise((_resolve,reject)=>{received=options.signal;options.signal.addEventListener('abort',()=>reject(options.signal.reason),{once:true});});
+    const pending=operation(control.signal);assert.ok(received instanceof AbortSignal);control.abort();
+    await assert.rejects(pending,error=>error.name==='AbortError');assert.equal(received.aborted,true);
+   }
+  }finally{globalThis.fetch=mockFetch;}
+ });
  await t.test('provider failures never echo keys or upstream bodies',async()=>{
   assert.match(provider.providerMessage(new provider.ProviderError(404),'voz'),/serviço de voz/);assert.match(provider.providerMessage(new provider.ProviderError(429),'voz'),/saldo/);
   globalThis.fetch=async()=>new Response('sensitive upstream body',{status:401});const diagnostics=await provider.checkModelAccess(key);assert.ok(diagnostics.every(item=>!item.available&&item.status===401));assert.ok(!JSON.stringify(diagnostics).includes(key));await assert.rejects(provider.validateKey(key),error=>error.status===401&&!error.message.includes(key)&&!error.message.includes('sensitive'));

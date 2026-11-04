@@ -96,6 +96,27 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
   const reviewCall=calls.filter(c=>c[0]==='review').at(-1);assert.equal(reviewCall[3],'E por quê?');assert.equal(reviewCall[5].length,2);assert.equal(reviewCall[5][0].content,'O que é migração?');
   const source=api.content.tutorSource(api.content.resolveTutorContext({subject:'geography',term:3}));assert.match(source.instructions,/conhecimento geral confiável/);assert.match(source.instructions,/não um limite de palavras/);assert.match(source.instructions,/não tem navegação/);
  });
+ await t.test('ending voice during transcription cancels provider work and never publishes a stale turn',async()=>{
+  const sessionId=await newSession(),requestId=randomUUID(),control=new AbortController(),previous=globalThis.__tutorMock.transcribe;
+  await db.prepare('UPDATE tutor_turns SET created_at=?').bind(Date.now()-120000).run();
+  const before=calls.filter(call=>call[0]==='explain').length;
+  globalThis.__tutorMock.transcribe=async(_key,_audio,_mime,signal)=>{assert.ok(signal instanceof AbortSignal);control.abort();signal.throwIfAborted();};
+  try{
+   const request=new Request(req({action:'turn',sessionId,requestId,audio:'A'.repeat(200),mime:'audio/wav'}),{signal:control.signal});
+   const result=await api.tutor.POST(request);assert.equal(result.status,499);
+   assert.equal((await api.store.turnFor(profile,requestId)).status,'failed');
+   assert.equal(calls.filter(call=>call[0]==='explain').length,before);
+  }finally{globalThis.__tutorMock.transcribe=previous;}
+ });
+ await t.test('a late review cannot publish a response after the client interrupted it',async()=>{
+  const sessionId=await newSession(),requestId=randomUUID(),control=new AbortController(),previous=globalThis.__tutorMock.verifyAnswer;
+  await db.prepare('UPDATE tutor_turns SET created_at=?').bind(Date.now()-120000).run();
+  globalThis.__tutorMock.verifyAnswer=async(...args)=>{assert.ok(args.at(-1) instanceof AbortSignal);control.abort();return true;};
+  try{
+   const request=new Request(req({action:'turn',sessionId,requestId,text:'Pergunta sintética.'}),{signal:control.signal});
+   assert.equal((await api.tutor.POST(request)).status,499);const saved=await api.store.turnFor(profile,requestId);assert.equal(saved.status,'failed');assert.equal(saved.answer,'');
+  }finally{globalThis.__tutorMock.verifyAnswer=previous;}
+ });
  await t.test('unknown sources and failed independent review do not escape the module',async()=>{
   const session=await newSession();answerPatch={sourceIds:['science-3']};let r=await turn(session);assert.match(r.data.turn.answer,/apoio suficiente/);
   answerPatch={allowed:false,visualKind:'image',visualPrompt:'Unrelated'};r=await turn(session);assert.match(r.data.turn.answer,/Geografia/);assert.equal(r.data.turn.visualKind,'none');

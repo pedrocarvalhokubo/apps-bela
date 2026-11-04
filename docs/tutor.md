@@ -9,7 +9,23 @@ Na conta da Bela, entre na área dos pais com o PIN e abra **Tutor da Bela**.
 3. Ajuste os limites de perguntas e imagens e ative o tutor. A cobrança é da API, separada da assinatura ChatGPT; configure também o orçamento do projeto OpenAI.
 4. Em **Instruções do tutor**, edite as preferências ou peça uma revisão à IA por texto/voz. A proposta é um rascunho. **Salvar instruções** aplica a versão e registra o histórico.
 
-O botão flutuante aparece nas matérias, aulas, infográficos e avaliações da Bela. Não aparece para convidados. O microfone começa somente após um toque. A conversa alterna gravação, transcrição, resposta revisada e fala; não é áudio simultâneo de duas vias. Pode ser minimizada enquanto o material permanece visível. Pausar, mudar de matéria, sair do app ou ocultar a aba interrompe a captura. Perguntas por texto e replay do áudio também estão disponíveis. O botão **Interromper e falar** permite cortar a resposta e fazer outra pergunta. A geração de uma imagem não impede a retomada da escuta. Permissões e reprodução automática dependem do navegador. O gravador reutiliza o contexto de áudio desbloqueado pelo toque; se a análise de silêncio não estiver disponível, mantém envio manual em vez de descartar uma gravação válida.
+O botão flutuante aparece nas matérias, aulas, infográficos e avaliações da Bela. Não aparece para convidados. **Iniciar conversa por voz** pede permissão e abre o microfone uma vez. A captura permanece ativa durante escuta, processamento e reprodução. O VAD local identifica o começo da fala, conserva cerca de 300 ms anteriores e envia a pergunta após aproximadamente um segundo de pausa. **Enviar minha fala** antecipa esse envio; silêncio e cliques não geram perguntas.
+
+A estudante pode começar a falar para interromper uma resposta ou usar **Interromper e falar**. Isso interrompe a reprodução, cancela a requisição em andamento e impede que uma resposta atrasada volte a tocar. **Encerrar conversa** libera o microfone. Trocar de matéria, ocultar a aba, sair da página, perder conexão ou desmontar o componente também encerra a captura. Ao minimizar o painel, a conversa pode continuar e o botão de encerramento permanece visível. Nenhuma reconexão reabre o microfone automaticamente.
+
+Este é um fluxo encadeado: fala → transcrição → tutor textual → revisão → síntese conferida → reprodução. A escuta é contínua e aceita interrupção por voz, mas a resposta ainda aguarda as verificações do servidor. Não é uma sessão GPT-Live nem fala simultânea direta do modelo. Essa escolha preserva a revisão independente antes da entrega, em vez de reproduzir conteúdo ainda não conferido. Texto, replay de respostas e imagens continuam disponíveis.
+
+## Captura e compatibilidade
+
+- AudioWorklet local com fallback PCM local para ScriptProcessor. Não usa o reconhecimento de voz do navegador nem outro provedor. O grafo não reproduz a própria entrada do microfone.
+- WAV mono de até 16 kHz. Fala que atingir 30 segundos é descartada por inteiro com aviso para fazer uma pergunta mais curta; não envia trechos incompletos.
+- Permissão/inicialização têm prazo de 45 segundos; ausência de frames e interrupção do contexto de áudio encerram a captura. Permissão concedida depois do cancelamento não reabre o microfone.
+- A sessão fecha após 60 segundos aguardando fala. O limite de dez minutos é aplicado quando ela volta a aguardar, sem cortar uma pergunta ou resposta já em andamento.
+- Requer HTTPS ou localhost, permissão de microfone e Web Audio. O código detecta recursos e solicita echoCancellation, noiseSuppression e autoGainControl; o suporte e o resultado acústico dependem do navegador e aparelho.
+- Safari/iOS, Safari/macOS, Chrome/Android, Chrome/Edge/Firefox desktop atuais são alvos de compatibilidade, não uma lista de aparelhos já homologados. Testar gesto inicial, alto-falante/fones, eco, revogação de permissão, troca de dispositivo, aba oculta e retorno ao app em cada aparelho usado.
+- Durante a reprodução, o limiar de interrupção é mais conservador para reduzir eco. Se o som do próprio tutor disparar interrupções ou a fala ficar baixa, usar fones ou o botão. A edição por texto não depende de microfone ou de Web Audio funcional.
+
+Referências de implementação: [arquiteturas de voice agents](https://developers.openai.com/api/docs/guides/voice-agents), [áudio OpenAI](https://developers.openai.com/api/docs/guides/audio), [AudioWorklet](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet), [getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
 
 ## Conteúdo e revisão
 
@@ -46,6 +62,6 @@ Implementação conferida na documentação oficial em novembro de 2026:
 
 Referências: [Terra](https://developers.openai.com/api/docs/models/gpt-6.1-terra), [voz](https://developers.openai.com/api/docs/guides/realtime-conversations), [imagens](https://developers.openai.com/api/reference/resources/images/methods/generate), [uso por menores](https://developers.openai.com/api/docs/guides/safety-checks/under-18-api-guidance), [controles de dados](https://developers.openai.com/api/docs/guides/your-data).
 
-`npm test` cobre isolamento de convidados, conta, PIN, criptografia, ativação, rascunhos de prompt, contexto, revisão, histórico, cotas, cache privado e contratos das APIs. Testes de geração usam transporte simulado, sem gastar API. A integração real de voz e imagens precisa ser conferida após o responsável configurar a chave e ZDR, no aparelho usado pela Bela.
+`npm test` cobre isolamento de convidados, conta, PIN, criptografia, ativação, rascunhos de prompt, contexto, revisão, histórico, cotas, cache privado e contratos das APIs. Testes de geração usam transporte simulado, sem gastar API. A sessão contínua tem testes de VAD com tons sintéticos, pré-roll, eco simulado, interrupção, teardown, permissão tardia, limites, falhas de áudio e cancelamento do processamento no servidor. Esses testes não equivalem a ensaio acústico em dispositivo real. A integração real de voz e imagens precisa ser conferida após o responsável configurar a chave e ZDR, no aparelho usado pela Bela.
 
 Na entrega do tutor, Next.js foi atualizado para 16.4.5 e as dependências transitivas de produção foram corrigidas. `npm audit --omit=dev` retornou zero alertas de produção. Isso não equivale a uma auditoria independente de toda a aplicação.
