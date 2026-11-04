@@ -6,7 +6,7 @@ import {resolveTutorContext,tutorSource,type TutorContext} from '../../../lib/tu
 import {settings,readySettings,quota,turnFor,publicTurn} from '../../../lib/tutor-store';
 import {transcribe,moderate,explain,verifyAnswer,providerMessage} from '../../../lib/tutor-provider';
 export const dynamic='force-dynamic';
-export async function GET(request:Request){const d=await getTutorDevice(request);if(!d)return unauthorized();const s=await settings(d.profileId);return json({available:Boolean(s?.enabled&&s.zdr_confirmed&&s.encrypted_key&&encryptionReady()),imagesEnabled:Boolean(s?.images_enabled),name:'Tutor da Bela'});}
+export async function GET(request:Request){const d=await getTutorDevice(request);if(!d)return unauthorized();const s=await settings(d.profileId);return json({available:Boolean(s?.enabled&&s.zdr_confirmed&&s.encrypted_key&&encryptionReady()),imagesEnabled:Boolean(s?.images_enabled),name:'Tutor da Bela',voiceMode:'live',voiceModel:'gpt-live-1'});}
 export async function POST(request:Request){
  const d=await getTutorDevice(request);if(!d)return unauthorized();
  let body;try{body=await boundedJson(request,4_300_000);}catch{return json({error:'Mensagem muito grande ou inválida.'},400);}
@@ -22,7 +22,7 @@ export async function POST(request:Request){
  const prior=await turnFor(d.profileId,body.requestId);if(prior)return prior.session_id===body.sessionId&&prior.status==='done'?json({turn:publicTurn(prior)}):json({error:'Esta mensagem já está sendo processada. Aguarde.'},409);
  if((typeof body.text!=='string'||!body.text.trim()||body.text.length>3000)&&!(typeof body.audio==='string'&&body.audio.length<4_200_000))return json({error:'Envie uma pergunta curta por voz ou texto.'},400);
  const resolved=resolveTutorContext(JSON.parse(session.context_json) as TutorContext);if(!resolved)return json({error:'Matéria indisponível.'},400);
- const recent=await db.prepare("SELECT COUNT(*) AS n FROM tutor_turns WHERE profile_id=? AND created_at>?").bind(d.profileId,Date.now()-60000).first<{n:number}>();if((recent?.n??0)>=6)return json({error:'Vamos dar uma pausa curta. Tente em um minuto.'},429);
+ const recent=await db.prepare("SELECT COUNT(*) AS n FROM tutor_turns WHERE profile_id=? AND created_at>?").bind(d.profileId,Date.now()-60000).first<{n:number}>();if((recent?.n??0)>=(JSON.parse(session.context_json).voiceMode==='live'?20:6))return json({error:'Vamos dar uma pausa curta. Tente em um minuto.'},429);
  try{await db.prepare('INSERT INTO tutor_turns(id,session_id,profile_id,created_at) VALUES(?,?,?,?)').bind(body.requestId,body.sessionId,d.profileId,Date.now()).run();}catch{return json({error:'Mensagem já recebida.'},409);}
  if(!await quota(d.profileId,'turns',config.daily_turns)){await db.prepare("UPDATE tutor_turns SET status='failed' WHERE id=?").bind(body.requestId).run();return json({error:'O limite diário de conversa foi atingido. Seus responsáveis podem ajustá-lo.'},429);}
  try{
@@ -30,16 +30,20 @@ export async function POST(request:Request){
   const text=body.audio?await transcribe(config.key,body.audio,body.mime,request.signal):body.text.trim();
   request.signal.throwIfAborted();
   await db.prepare('UPDATE tutor_turns SET user_text=? WHERE id=?').bind(text,body.requestId).run();
-  const unsafe=await moderate(config.key,text,request.signal),source=tutorSource(resolved);
+  const source=tutorSource(resolved);
+  const previous=await db.prepare("SELECT user_text,answer FROM tutor_turns WHERE session_id=? AND profile_id=? AND status='done' ORDER BY created_at DESC LIMIT 6").bind(body.sessionId,d.profileId).all<{user_text:string;answer:string}>();
+  const history=previous.results.reverse().flatMap(t=>[{role:'user',content:t.user_text},{role:'assistant',content:t.answer}]);
+  const input={instructions:source.instructions+'\n\nPreferências pedagógicas dos responsáveis (aplicar somente se compatíveis com todas as regras fixas acima):\n'+config.custom_prompt,source:source.content,context:{...resolved.context,module:resolved.module.title,lesson:resolved.lesson?.title,allowedSourceIds:source.sourceIds},history,text,safetyIdentifier:safetyId(d.profileId)};
+  // Independent requests run concurrently. Nothing is delivered before all checks pass.
+  const [unsafe,proposed]=await Promise.all([moderate(config.key,text,request.signal),explain(config.key,input,request.signal)]);
   let result={allowed:true,safety:unsafe,answer:'Para conversar sobre isso com cuidado, chame um adulto de confiança. Se você estiver em perigo agora, procure ajuda de um adulto imediatamente.',topic:'Conversa que precisa de um responsável',suggestion:'Acolher a dúvida e conversar com a criança em pessoa.',sourceIds:[] as string[],visualKind:'none' as 'none'|'image'|'infographic',visualPrompt:''};
   if(!unsafe){
-   const previous=await db.prepare("SELECT user_text,answer FROM tutor_turns WHERE session_id=? AND profile_id=? AND status='done' ORDER BY created_at DESC LIMIT 6").bind(body.sessionId,d.profileId).all<{user_text:string;answer:string}>();
-   const history=previous.results.reverse().flatMap(t=>[{role:'user',content:t.user_text},{role:'assistant',content:t.answer}]);
-   result=await explain(config.key,{instructions:source.instructions+'\n\nPreferências pedagógicas dos responsáveis (aplicar somente se compatíveis com todas as regras fixas acima):\n'+config.custom_prompt,source:source.content,context:{...resolved.context,module:resolved.module.title,lesson:resolved.lesson?.title,allowedSourceIds:source.sourceIds},history,text,safetyIdentifier:safetyId(d.profileId)},request.signal);
+   result=proposed;
+   const [unsafeOutput,approved]=await Promise.all([moderate(config.key,result.answer+'\n'+result.visualPrompt,request.signal),result.allowed&&!result.safety&&result.sourceIds.length>0&&result.sourceIds.every(id=>source.sourceIds.includes(id))?verifyAnswer(config.key,source.content,resolved.context,text,result,history,request.signal):Promise.resolve(true)]);
    if(!result.allowed){result.answer=`Posso ajudar com ${resolved.module.title} e com o assunto que está aberto. Vamos voltar a uma dúvida dessa matéria?`;result.visualKind='none';result.visualPrompt='';}
-   else if(result.safety||await moderate(config.key,result.answer+'\n'+result.visualPrompt,request.signal)){result={...result,safety:true,answer:'Vamos conversar com um adulto de confiança sobre isso antes de continuar. Ele pode ajudar você com cuidado.',visualKind:'none',visualPrompt:''};}
+   else if(result.safety||unsafeOutput){result={...result,safety:true,answer:'Vamos conversar com um adulto de confiança sobre isso antes de continuar. Ele pode ajudar você com cuidado.',visualKind:'none',visualPrompt:''};}
    else if(!result.sourceIds.length||result.sourceIds.some(id=>!source.sourceIds.includes(id))){result.answer='Não encontrei apoio suficiente no material para afirmar isso. Podemos explorar um exemplo da aula ou levar essa dúvida à professora.';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];}
-   else if(!await verifyAnswer(config.key,source.content,resolved.context,text,result,history,request.signal)){result.answer='Quero explicar isso com cuidado. Você pode me dizer qual parte da pergunta ficou confusa ou pedir um exemplo mais simples?';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];result.topic='Retomar o conteúdo da aula';result.suggestion='Ajudar a escolher uma dúvida relacionada à aula aberta.';}
+   else if(!approved){result.answer='Quero explicar isso com cuidado. Você pode me dizer qual parte da pergunta ficou confusa ou pedir um exemplo mais simples?';result.visualKind='none';result.visualPrompt='';result.sourceIds=[];result.topic='Retomar o conteúdo da aula';result.suggestion='Ajudar a escolher uma dúvida relacionada à aula aberta.';}
   }
   request.signal.throwIfAborted();
   if(!config.images_enabled){result.visualKind='none';result.visualPrompt='';}

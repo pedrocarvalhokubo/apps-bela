@@ -9,23 +9,24 @@ Na conta da Bela, entre na área dos pais com o PIN e abra **Tutor da Bela**.
 3. Ajuste os limites de perguntas e imagens e ative o tutor. A cobrança é da API, separada da assinatura ChatGPT; configure também o orçamento do projeto OpenAI.
 4. Em **Instruções do tutor**, edite as preferências ou peça uma revisão à IA por texto/voz. A proposta é um rascunho. **Salvar instruções** aplica a versão e registra o histórico.
 
-O botão flutuante aparece nas matérias, aulas, infográficos e avaliações da Bela. Não aparece para convidados. **Iniciar conversa por voz** pede permissão e abre o microfone uma vez. A captura permanece ativa durante escuta, processamento e reprodução. O VAD local identifica o começo da fala, conserva cerca de 300 ms anteriores e envia a pergunta após aproximadamente um segundo de pausa. **Enviar minha fala** antecipa esse envio; silêncio e cliques não geram perguntas.
+O botão flutuante aparece nas matérias da Bela autenticada. **Iniciar conversa ao vivo** abre uma sessão GPT-Live 1 por WebRTC. O navegador envia a fala e recebe a voz por trilhas de mídia; não grava uma pergunta, faz upload e espera um novo arquivo de síntese a cada resposta. O áudio recebido é ligado automaticamente ao Web Audio desbloqueado pelo toque inicial.
 
-A estudante pode começar a falar para interromper uma resposta ou usar **Interromper e falar**. Isso interrompe a reprodução, cancela a requisição em andamento e impede que uma resposta atrasada volte a tocar. **Encerrar conversa** libera o microfone. Trocar de matéria, ocultar a aba, sair da página, perder conexão ou desmontar o componente também encerra a captura. Ao minimizar o painel, a conversa pode continuar e o botão de encerramento permanece visível. Nenhuma reconexão reabre o microfone automaticamente.
+O modelo de voz pode ouvir enquanto fala e reconhecer interrupções. **Interromper e falar** silencia a saída imediatamente e pede ao servidor para interromper a fala atual. **Encerrar conversa**, mudar de matéria, sair da página ou ocultar a aba interrompem a captura. A mídia e o canal de eventos são finalizados; nenhuma reconexão reabre o microfone sozinha.
 
-Este é um fluxo encadeado: fala → transcrição → tutor textual → revisão → síntese conferida → reprodução. A escuta é contínua e aceita interrupção por voz, mas a resposta ainda aguarda as verificações do servidor. Não é uma sessão GPT-Live nem fala simultânea direta do modelo. Essa escolha preserva a revisão independente antes da entrega, em vez de reproduzir conteúdo ainda não conferido. Texto, replay de respostas e imagens continuam disponíveis.
+O frontend da OpenAI só pode receber comandos de fechamento e mute/unmute do navegador. Instruções, chave e permissões de ferramentas permanecem no servidor. Um WebSocket lateral autenticado observa as transcrições, guarda os fragmentos com seus tempos e atende delegações pelo tutor textual existente, incluindo moderação, Terra e revisão independente. Cumprimentos e repetições de resultados já revisados podem ser tratados pelo próprio GPT-Live; novas dúvidas escolares e imagens pedem o backend. Isso permite confirmações de voz enquanto o conteúdo é consultado, sem inventar o resultado. As verificações independentes de texto foram paralelizadas em duas etapas para diminuir espera.
 
-## Captura e compatibilidade
+## Limites e compatibilidade da voz ao vivo
 
-- AudioWorklet local com fallback PCM local para ScriptProcessor. Não usa o reconhecimento de voz do navegador nem outro provedor. O grafo não reproduz a própria entrada do microfone.
-- WAV mono de até 16 kHz. Fala que atingir 30 segundos é descartada por inteiro com aviso para fazer uma pergunta mais curta; não envia trechos incompletos.
-- Permissão/inicialização têm prazo de 45 segundos; ausência de frames e interrupção do contexto de áudio encerram a captura. Permissão concedida depois do cancelamento não reabre o microfone.
-- A sessão fecha após 60 segundos aguardando fala. O limite de dez minutos é aplicado quando ela volta a aguardar, sem cortar uma pergunta ou resposta já em andamento.
-- Requer HTTPS ou localhost, permissão de microfone e Web Audio. O código detecta recursos e solicita echoCancellation, noiseSuppression e autoGainControl; o suporte e o resultado acústico dependem do navegador e aparelho.
-- Safari/iOS, Safari/macOS, Chrome/Android, Chrome/Edge/Firefox desktop atuais são alvos de compatibilidade, não uma lista de aparelhos já homologados. Testar gesto inicial, alto-falante/fones, eco, revogação de permissão, troca de dispositivo, aba oculta e retorno ao app em cada aparelho usado.
-- Durante a reprodução, o limiar de interrupção é mais conservador para reduzir eco. Se o som do próprio tutor disparar interrupções ou a fala ficar baixa, usar fones ou o botão. A edição por texto não depende de microfone ou de Web Audio funcional.
+- Reutiliza a chave cifrada já salva; o projeto precisa ter acesso a `gpt-live-1`. A falta de acesso é exibida explicitamente, sem trocar silenciosamente para mensagens gravadas.
+- Limite inicial de 20 minutos de voz ao vivo por dia, ajustável de 1 a 120 na área dos pais. Sessões de até 10 minutos; uma sessão ativa por perfil. Consultas ao tutor continuam consumindo o limite diário de perguntas e imagens.
+- O servidor reserva o orçamento antes de criar a sessão e reconcilia com o uso final quando a API confirma o encerramento. Em uma perda sem confirmação, mantém a reserva de forma conservadora. Um heartbeat a cada dez segundos detecta uma página perdida; o servidor encerra após 35 segundos sem heartbeat. Uma reinicialização do servidor encerra a sessão no próximo status do navegador.
+- Requer HTTPS, WebRTC, Web Audio e permissão para microfone. Safari/iOS, Safari/macOS, Chrome/Android e Chrome/Edge/Firefox desktop atuais são alvos; teste acústico real depende do dispositivo. O dispositivo precisa permitir microfone e saída de som.
+- As transcrições em fluxo podem conter falas sobrepostas e erros de reconhecimento. São preservados fragmentos e tempos aproximados, sem gravação persistente da voz da criança.
+- Histórico completo continua exigindo PIN dos pais. Imagens solicitadas aparecem depois de geradas e revisadas, sem bloquear a mídia de voz.
+- O replay de respostas antigas e o teste de narração ainda usam `gpt-realtime-2.1-mini`; esses recursos são distintos da conversa ao vivo. A mensagem escrita permanece disponível.
+- A documentação informa US$ 0,05 por minuto para GPT-Live 1, mais chamadas do backend. O início WebRTC tem cobrança mínima de 15 segundos creditada ao tempo em uso. A aplicação não garante latência: rede, permissões, disponibilidade da API e revisão de conteúdo influenciam o tempo.
 
-Referências de implementação: [arquiteturas de voice agents](https://developers.openai.com/api/docs/guides/voice-agents), [áudio OpenAI](https://developers.openai.com/api/docs/guides/audio), [AudioWorklet](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorklet), [getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia).
+Referências: [GPT-Live 1](https://developers.openai.com/api/docs/models/gpt-live-1), [WebRTC](https://developers.openai.com/api/docs/guides/voice-webrtc), [delegações](https://developers.openai.com/api/docs/guides/live-delegation), [instruções de voz](https://developers.openai.com/api/docs/guides/live-prompting) e [dados](https://developers.openai.com/api/docs/guides/your-data).
 
 ## Conteúdo e revisão
 
@@ -46,9 +47,9 @@ Pedidos visuais passam por roteiro, moderação, limite diário, geração PNG e
 
 ## Diagnóstico seguro
 
-Na área dos pais, **Testar voz com frase de exemplo** sintetiza apenas uma frase fixa sobre triângulos. Não lê preferências nem histórico, não usa a voz da criança e não salva o áudio no servidor. Consome uma chamada da API e testa somente a saída de voz. Não comprova captura do microfone nem ZDR.
+Na área dos pais, **Testar narração e replay** sintetiza apenas uma frase fixa sobre triângulos. Não lê preferências nem histórico, não usa a voz da criança e não salva o áudio no servidor. Consome uma chamada da API e testa somente a saída de voz. Não comprova captura do microfone nem ZDR.
 
-**Verificar acesso aos modelos** consulta somente os metadados dos quatro modelos usando a chave já salva. Não envia perguntas, voz ou histórico. A consulta pode indicar acesso negado, modelo indisponível ou falha de conexão, mas não prova saldo disponível, geração funcionando nem ZDR. O editor de instruções por IA também exige a confirmação de ZDR salva, mantendo edição e salvamento manual disponíveis. A confirmação de ZDR no app é declaração parental, não comprovação por consulta à OpenAI. Nenhum teste com dados reais da criança deve ser executado sem essa verificação.
+**Verificar acesso aos modelos** consulta somente os metadados dos cinco modelos usando a chave já salva. Não envia perguntas, voz ou histórico. A consulta pode indicar acesso negado, modelo indisponível ou falha de conexão, mas não prova saldo disponível, geração funcionando nem ZDR. O editor de instruções por IA também exige a confirmação de ZDR salva, mantendo edição e salvamento manual disponíveis. A confirmação de ZDR no app é declaração parental, não comprovação por consulta à OpenAI. Nenhum teste com dados reais da criança deve ser executado sem essa verificação.
 
 ## Modelos e conferência
 
@@ -56,7 +57,8 @@ Implementação conferida na documentação oficial em novembro de 2026:
 
 - Texto e revisão: `gpt-6.1-terra`, Responses, structured outputs, `store:false`.
 - Entrada de voz: `gpt-transcribe`, Audio Transcriptions.
-- Saída de voz: `gpt-realtime-2.1-mini`, Realtime WebSocket, voz `marin`, PCM 24 kHz convertido em WAV.
+- Conversa ao vivo: `gpt-live-1`, WebRTC, voz `marin`, com backend próprio usando Terra.
+- Replay e narração: `gpt-realtime-2.1-mini`, Realtime WebSocket, voz `marin`, PCM 24 kHz convertido em WAV.
 - Imagens: `gpt-image-2.5-flare`, Images API, PNG.
 - Moderação: `omni-moderation-latest`.
 

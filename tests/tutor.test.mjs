@@ -9,8 +9,10 @@ import {randomUUID,randomBytes} from 'node:crypto';
 const root=mkdtempSync(join(tmpdir(),'bela-tutor-tests-'));
 process.env.DB_PATH=join(root,'bela.sqlite');process.env.RAILWAY_ENVIRONMENT_ID='';process.env.RAILWAY_VOLUME_MOUNT_PATH='';process.env.BELA_TUTOR_ENCRYPTION_KEY=randomBytes(32).toString('hex');
 let calls=[],answerPatch={},review=true,visualReview=true;
+globalThis.__liveSockets=[];
 const sample={allowed:true,safety:false,answer:'Uma mudança dentro do mesmo país é uma migração interna. Que pista ajuda você a perceber isso?',topic:'Migração interna',suggestion:'Comparar duas mudanças e identificar as fronteiras.',sourceIds:['geography-3'],visualKind:'none',visualPrompt:''};
 globalThis.__tutorMock={
+ apiFetch:async(path,_key,body)=>{calls.push(['live-create',path,body]);return Response.json({session:{id:'live_fixture_'+randomUUID()},transport:{sdp:'v=0 synthetic answer'}});},
  validateKey:async key=>{calls.push(['validateKey',key]);},
  moderate:async(_key,text)=>text==='unsafe fixture',
  transcribe:async()=>{calls.push(['transcribe']);return 'Quero entender migração interna.';},
@@ -24,7 +26,7 @@ globalThis.__tutorMock={
  speak:async(_key,text,identifier)=>{calls.push(['speak',text,identifier]);return Buffer.from('RIFF fixture WAVE');},
  structuredReply:async(_key,instructions,input)=>{calls.push(['prompt',instructions,input]);return {prompt:'Explique uma ideia por vez e use exemplos novos.',summary:'Frases curtas e exemplos variados.'};}
 };
-await build({stdin:{contents:`export * as tutor from './app/api/tutor/route';export * as parent from './app/api/tutor/parent/route';export * as image from './app/api/tutor/image/route';export * as voice from './app/api/tutor/voice/route';export * as media from './app/api/tutor/media/route';export * as security from './lib/tutor-security';export * as store from './lib/tutor-store';export * as content from './lib/tutor-content';export {getD1 as getDB,sha256} from './app/api/_lib';`,resolveDir:process.cwd()},outfile:join(root,'api.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',logLevel:'silent',plugins:[{name:'controlled-provider',setup(b){b.onLoad({filter:/lib\/tutor-provider\.ts$/},()=>({contents:`export const tutorModels={text:'gpt-6.1-terra',speech:'fixture',image:'fixture',transcription:'fixture'};export class ProviderError extends Error{};${Object.keys(globalThis.__tutorMock).map(name=>`export const ${name}=(...args)=>globalThis.__tutorMock.${name}(...args);`).join('\n')}`,loader:'js'}));}}]});
+await build({stdin:{contents:`export * as tutor from './app/api/tutor/route';export * as live from './app/api/tutor/live/route';export * as liveService from './lib/tutor-live';export * as parent from './app/api/tutor/parent/route';export * as image from './app/api/tutor/image/route';export * as voice from './app/api/tutor/voice/route';export * as media from './app/api/tutor/media/route';export * as security from './lib/tutor-security';export * as store from './lib/tutor-store';export * as content from './lib/tutor-content';export {getD1 as getDB,sha256} from './app/api/_lib';`,resolveDir:process.cwd()},outfile:join(root,'api.mjs'),bundle:true,platform:'node',format:'esm',packages:'external',logLevel:'silent',plugins:[{name:'controlled-provider',setup(b){b.onResolve({filter:/^ws$/},()=>({path:'ws',namespace:'loopback'}));b.onLoad({filter:/.*/,namespace:'loopback'},()=>({contents:`import {EventEmitter} from 'node:events';export default class WS extends EventEmitter {static OPEN=1;readyState=0;commands=[];constructor(url,options){super();this.url=url;this.options=options;globalThis.__liveSockets.push(this);queueMicrotask(()=>{this.readyState=1;this.emit('open');});}send(raw){const event=JSON.parse(raw);this.commands.push(event);if(event.type==='session.close')queueMicrotask(()=>this.emit('message',JSON.stringify({type:'session.closed',usage:{seconds:3}})));}close(){this.readyState=3;this.emit('close');}terminate(){this.close();}}`,loader:'js'}));b.onLoad({filter:/lib\/tutor-provider\.ts$/},()=>({contents:`export const tutorModels={text:'gpt-6.1-terra',speech:'fixture',image:'fixture',transcription:'fixture'};export class ProviderError extends Error{};${Object.keys(globalThis.__tutorMock).map(name=>`export const ${name}=(...args)=>globalThis.__tutorMock.${name}(...args);`).join('\n')}`,loader:'js'}));}}]});
 const api=await import(pathToFileURL(join(root,'api.mjs')).href),db=await api.getDB();
 const token='ab'.repeat(24),parentToken='parent-fixture',foreign='cd'.repeat(24),key='sk-'+ 'testonly'.repeat(8),profile='bela-account-v2';
 await db.prepare('INSERT INTO profiles(id,name,created_at) VALUES(?,?,?)').bind(profile,'Test fixture',Date.now()).run();
@@ -46,7 +48,7 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
  try{
  await t.test('guests and other profiles have no tutor access or AI spend',async()=>{
   const count=calls.length;
-  for(const route of [api.tutor,api.parent,api.image,api.voice])for(const cookie of [null,foreign])assert.equal((await post(route,{action:'read'},cookie,true)).status,401);
+  for(const route of [api.tutor,api.parent,api.image,api.voice,api.live])for(const cookie of [null,foreign])assert.equal((await post(route,{action:'read'},cookie,true)).status,401);
   assert.equal((await api.media.GET(req(null,null,false,'/media?id='+randomUUID()))).status,401);
   assert.equal((await post(api.parent,{action:'read'})).status,401);assert.equal(calls.length,count);
  });
@@ -136,6 +138,44 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
   await db.prepare("CREATE TEMP TRIGGER fail_speech_budget BEFORE INSERT ON tutor_speech_requests BEGIN SELECT RAISE(FAIL, 'synthetic budget failure'); END").run();
   try{assert.equal((await post(api.voice,{turnId:id})).status,502);}finally{await db.prepare('DROP TRIGGER fail_speech_budget').run();}
   assert.equal((await api.voice.POST(req({turnId:id}))).status,200);
+ });
+ await t.test('native voice configuration keeps the project key and instruction controls on the server',async()=>{
+  const config=api.liveService.liveConfiguration({subject:'geography',term:3,view:'quiz'},'Frases curtas.');
+  assert.equal(config.model,'gpt-live-1');assert.equal(config.store,false);assert.equal(config.delegation.type,'client');
+  assert.deepEqual(config.client.data_channel.allowed_client_events,['session.close','session.input_audio.mute','session.input_audio.unmute']);
+  assert.match(config.instructions,/Generate <\|SpawnThinking\|>/);assert.match(config.instructions,/só dê pistas/);assert.match(config.instructions,/Geografia/);
+  assert.throws(()=>api.liveService.liveConfiguration({subject:'unknown',term:3},''));
+  assert.equal((await post(api.live,{action:'start',sdp:'invalid',context:{subject:'geography',term:3}})).status,400);
+  assert.equal((await post(api.live,{action:'start',sdp:'v=0 fixture',context:{subject:'unknown',term:3}})).status,400);
+ });
+ await t.test('native voice persists server-observed captions and delegates only through the authenticated tutor',async()=>{
+  const first=await post(api.live,{action:'start',sdp:'v=0 fixture',context:{subject:'geography',term:3}});assert.equal(first.status,200);assert.equal(first.data.model,'gpt-live-1');
+  assert.ok(!JSON.stringify(first.data).includes(key));assert.ok(!JSON.stringify(first.data).includes('instructions'));
+  const sessionId=first.data.sessionId,socket=globalThis.__liveSockets.at(-1);
+  const send=event=>socket.emit('message',JSON.stringify(event));
+  send({type:'session.input_transcript.delta',event_id:'input-1',delta:'O que é migração?',start_ms:100,end_ms:1000});
+  send({type:'session.output_transcript.delta',event_id:'output-1',delta:'Vamos pensar juntos.',start_ms:900,end_ms:1500});
+  send({type:'session.delegation.created',offset_ms:1100,delegation:{id:'delegate-1',target:'client'}});
+  await new Promise(resolve=>setTimeout(resolve,20));
+  assert.ok(socket.commands.some(event=>event.type==='session.commentary.append'&&event.delegation_id==='delegate-1'&&event.content.includes(sample.answer)));
+  assert.equal((await post(api.live,{action:'status',sessionId},foreign)).status,401);
+  const status=await post(api.live,{action:'status',sessionId});assert.equal(status.data.events.length,2);
+  assert.equal(status.data.events[0].text,'O que é migração?');
+  const parent=await post(api.parent,{action:'conversation',sessionId},token,true);assert.equal(parent.data.liveTranscripts.length,2);
+  await post(api.live,{action:'interrupt',sessionId});assert.ok(socket.commands.some(event=>event.type==='session.instructions.append'));
+  await post(api.live,{action:'stop',sessionId});await new Promise(resolve=>setTimeout(resolve,10));
+  assert.equal((await post(api.live,{action:'status',sessionId})).data.state,'closed');
+  const saved=await db.prepare('SELECT reserved_seconds,used_seconds FROM tutor_live_sessions WHERE id=?').bind(sessionId).first();assert.equal(saved.reserved_seconds,3);assert.equal(saved.used_seconds,3);
+ });
+ await t.test('parents control daily live minutes and exhausted voice cannot open another provider session',async()=>{
+  assert.equal((await post(api.parent,{...config,enabled:true,zdrConfirmed:true,dailyVoiceMinutes:0},token,true)).status,400);
+  assert.equal((await post(api.parent,{...config,enabled:true,zdrConfirmed:true,dailyVoiceMinutes:1},token,true)).status,200);
+  const id=randomUUID(),day=new Date().toLocaleDateString('en-CA',{timeZone:'America/Bahia'});
+  await db.prepare('INSERT INTO tutor_sessions(id,profile_id,context_json,created_at) VALUES(?,?,?,?)').bind(id,profile,'{}',Date.now()).run();
+  await db.prepare("INSERT INTO tutor_live_sessions(id,profile_id,state,started_at,last_seen,day,reserved_seconds) VALUES(?,?,'closed',?,?,?,60)").bind(id,profile,Date.now()-120000,Date.now(),day).run();
+  const before=calls.filter(call=>call[0]==='live-create').length;
+  const rejected=await post(api.live,{action:'start',sdp:'v=0 fixture',context:{subject:'geography',term:3}});assert.equal(rejected.status,400);assert.match(rejected.data.error,/limite diário/);
+  assert.equal(calls.filter(call=>call[0]==='live-create').length,before);
  });
  await t.test('quota is atomic and disabled tutor cannot spend through any endpoint',async()=>{
   const results=await Promise.all(Array.from({length:10},()=>api.store.quota('foreign-profile','turns',3)));assert.equal(results.filter(Boolean).length,3);

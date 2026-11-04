@@ -18,14 +18,15 @@ export async function POST(request:Request){
  try{
   if(body.action==='read'){
    const versions=await db.prepare('SELECT id,prompt,created_at AS createdAt FROM tutor_prompt_versions WHERE profile_id=? ORDER BY created_at DESC LIMIT 15').bind(profile).all();
-   const sessions=await db.prepare("SELECT s.id,s.context_json AS context,s.created_at AS createdAt,COUNT(t.id) AS turns,MAX(t.created_at) AS lastAt,SUM(t.flagged) AS flagged FROM tutor_sessions s JOIN tutor_turns t ON t.session_id=s.id AND t.profile_id=s.profile_id WHERE s.profile_id=? GROUP BY s.id ORDER BY lastAt DESC LIMIT 100").bind(profile).all();
+   const sessions=await db.prepare("SELECT s.id,s.context_json AS context,s.created_at AS createdAt,COUNT(t.id) AS turns,COALESCE(MAX(t.created_at),s.created_at) AS lastAt,SUM(t.flagged) AS flagged FROM tutor_sessions s LEFT JOIN tutor_turns t ON t.session_id=s.id AND t.profile_id=s.profile_id WHERE s.profile_id=? GROUP BY s.id HAVING COUNT(t.id)>0 OR EXISTS(SELECT 1 FROM tutor_live_sessions l WHERE l.id=s.id) ORDER BY lastAt DESC LIMIT 100").bind(profile).all();
    const doubts=await db.prepare("SELECT topic,COUNT(*) AS count,MAX(created_at) AS lastAt FROM tutor_turns WHERE profile_id=? AND status='done' AND flagged=0 AND topic<>'' GROUP BY topic ORDER BY lastAt DESC LIMIT 12").bind(profile).all();
-   return json({settings:{keyConfigured:Boolean(current?.encrypted_key),encryptionReady:encryptionReady(),enabled:Boolean(current?.enabled),zdrConfirmed:Boolean(current?.zdr_confirmed),imagesEnabled:current?Boolean(current.images_enabled):true,dailyTurns:current?.daily_turns??40,dailyImages:current?.daily_images??3,customPrompt:current?.custom_prompt??''},models:tutorModels,fixedRules:fixedRules(),versions:versions.results,sessions:sessions.results,doubts:doubts.results,modules:tutorCatalog.map(m=>({id:m.id,title:m.title,term:m.term,lessons:m.lessons.length}))});
+   return json({settings:{keyConfigured:Boolean(current?.encrypted_key),encryptionReady:encryptionReady(),enabled:Boolean(current?.enabled),zdrConfirmed:Boolean(current?.zdr_confirmed),imagesEnabled:current?Boolean(current.images_enabled):true,dailyTurns:current?.daily_turns??40,dailyImages:current?.daily_images??3,dailyVoiceMinutes:current?.daily_voice_minutes??20,customPrompt:current?.custom_prompt??''},models:tutorModels,fixedRules:fixedRules(),versions:versions.results,sessions:sessions.results,doubts:doubts.results,modules:tutorCatalog.map(m=>({id:m.id,title:m.title,term:m.term,lessons:m.lessons.length}))});
   }
   if(body.action==='conversation'){
    if(!uuid.test(body.sessionId??''))return json({error:'Conversa inválida.'},400);
    const turns=await db.prepare('SELECT * FROM tutor_turns WHERE session_id=? AND profile_id=? ORDER BY created_at LIMIT 250').bind(body.sessionId,profile).all<TutorTurn>();
-   return json({turns:turns.results.map(publicTurn)});
+   const liveTranscripts=await db.prepare('SELECT e.id,e.role,e.text,e.start_ms AS startMs,e.end_ms AS endMs FROM tutor_live_transcripts e JOIN tutor_sessions s ON s.id=e.session_id WHERE e.session_id=? AND s.profile_id=? ORDER BY e.start_ms,e.created_at LIMIT 4000').bind(body.sessionId,profile).all();
+   return json({turns:turns.results.map(publicTurn),liveTranscripts:liveTranscripts.results});
   }
   if(body.action==='testVoice'){
    if(!current?.encrypted_key||!encryptionReady())return json({error:'Salve uma chave de API válida antes do teste de voz.'},400);
@@ -43,12 +44,14 @@ export async function POST(request:Request){
    return json({models,zdrAttested:Boolean(current.zdr_confirmed),privacyVerified:false,note:'Consulta apenas o acesso aos modelos, sem enviar perguntas, áudio ou histórico. Não comprova saldo, funcionamento de geração nem ZDR habilitado no projeto OpenAI.'});
   }
   if(body.action==='save'){
+   const voiceMinutes=body.dailyVoiceMinutes??current?.daily_voice_minutes??20;
+   if(!Number.isInteger(voiceMinutes)||voiceMinutes<1||voiceMinutes>120)return json({error:'Use de 1 a 120 minutos diários de voz ao vivo.'},400);
    if(typeof body.enabled!=='boolean'||typeof body.zdrConfirmed!=='boolean'||typeof body.imagesEnabled!=='boolean'||!Number.isInteger(body.dailyTurns)||body.dailyTurns<1||body.dailyTurns>200||!Number.isInteger(body.dailyImages)||body.dailyImages<0||body.dailyImages>20)return json({error:'Confira as opções e os limites: 1–200 perguntas e 0–20 imagens por dia.'},400);
    const newKey=typeof body.apiKey==='string'?body.apiKey.trim():'';
    let encrypted=current?.encrypted_key??'';
    if(newKey){if(!encryptionReady())return json({error:'A proteção da chave ainda não foi configurada no servidor.'},503);await validateKey(newKey);encrypted=sealKey(newKey);}
    if(body.enabled&&(!encrypted||!body.zdrConfirmed||!encryptionReady()))return json({error:'Para ativar, salve uma chave válida e confirme que o projeto OpenAI já tem Zero Data Retention habilitado.'},400);
-   await db.prepare('INSERT INTO tutor_settings(profile_id,encrypted_key,enabled,zdr_confirmed,images_enabled,daily_turns,daily_images,updated_at) VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(profile_id) DO UPDATE SET encrypted_key=excluded.encrypted_key,enabled=excluded.enabled,zdr_confirmed=excluded.zdr_confirmed,images_enabled=excluded.images_enabled,daily_turns=excluded.daily_turns,daily_images=excluded.daily_images,updated_at=excluded.updated_at').bind(profile,encrypted,body.enabled?1:0,body.zdrConfirmed?1:0,body.imagesEnabled?1:0,body.dailyTurns,body.dailyImages,Date.now()).run();
+   await db.prepare('INSERT INTO tutor_settings(profile_id,encrypted_key,enabled,zdr_confirmed,images_enabled,daily_turns,daily_images,daily_voice_minutes,updated_at) VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(profile_id) DO UPDATE SET encrypted_key=excluded.encrypted_key,enabled=excluded.enabled,zdr_confirmed=excluded.zdr_confirmed,images_enabled=excluded.images_enabled,daily_turns=excluded.daily_turns,daily_images=excluded.daily_images,daily_voice_minutes=excluded.daily_voice_minutes,updated_at=excluded.updated_at').bind(profile,encrypted,body.enabled?1:0,body.zdrConfirmed?1:0,body.imagesEnabled?1:0,body.dailyTurns,body.dailyImages,voiceMinutes,Date.now()).run();
    return json({ok:true});
   }
   if(body.action==='savePrompt'){

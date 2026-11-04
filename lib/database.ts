@@ -35,6 +35,10 @@ function connect() {
       CREATE TABLE IF NOT EXISTS tutor_usage (profile_id TEXT NOT NULL REFERENCES profiles(id), day TEXT NOT NULL, turns INTEGER NOT NULL DEFAULT 0, images INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(profile_id,day));
       CREATE TABLE IF NOT EXISTS tutor_speech_requests (turn_id TEXT PRIMARY KEY REFERENCES tutor_turns(id), attempts INTEGER NOT NULL DEFAULT 0);
       CREATE TABLE IF NOT EXISTS tutor_prompt_versions (id TEXT PRIMARY KEY, profile_id TEXT NOT NULL REFERENCES profiles(id), prompt TEXT NOT NULL, created_at INTEGER NOT NULL);`);
+    if(!db.prepare('PRAGMA table_info(tutor_settings)').all().some(column=>column.name==='daily_voice_minutes'))db.exec('ALTER TABLE tutor_settings ADD COLUMN daily_voice_minutes INTEGER NOT NULL DEFAULT 20');
+    db.exec(`CREATE TABLE IF NOT EXISTS tutor_live_sessions(id TEXT PRIMARY KEY REFERENCES tutor_sessions(id),profile_id TEXT NOT NULL,provider_id TEXT NOT NULL DEFAULT '',state TEXT NOT NULL DEFAULT 'starting',started_at INTEGER NOT NULL,last_seen INTEGER NOT NULL,day TEXT NOT NULL,reserved_seconds INTEGER NOT NULL,used_seconds INTEGER NOT NULL DEFAULT 0);
+      CREATE UNIQUE INDEX IF NOT EXISTS tutor_live_one_active ON tutor_live_sessions(profile_id) WHERE state IN ('starting','active','closing');
+      CREATE TABLE IF NOT EXISTS tutor_live_transcripts(id TEXT PRIMARY KEY,session_id TEXT NOT NULL REFERENCES tutor_sessions(id),role TEXT NOT NULL,text TEXT NOT NULL,start_ms INTEGER NOT NULL,end_ms INTEGER NOT NULL,created_at INTEGER NOT NULL);`);
     db.exec("COMMIT");
   } catch (error) { db.exec("ROLLBACK"); db.close(); throw error; }
   connection = db;

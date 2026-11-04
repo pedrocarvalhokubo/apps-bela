@@ -2,7 +2,7 @@ import {getDatabase} from './database';
 import {mkdirSync,writeFileSync,readFileSync,existsSync} from 'node:fs';
 import {join,dirname} from 'node:path';
 import {openKey,encryptionReady,uuid} from './tutor-security';
-export type TutorSettings={profile_id:string;encrypted_key:string;enabled:number;zdr_confirmed:number;images_enabled:number;daily_turns:number;daily_images:number;custom_prompt:string;updated_at:number};
+export type TutorSettings={profile_id:string;encrypted_key:string;enabled:number;zdr_confirmed:number;images_enabled:number;daily_turns:number;daily_images:number;daily_voice_minutes:number;custom_prompt:string;updated_at:number};
 export async function settings(profile:string){return (await getDatabase()).prepare('SELECT * FROM tutor_settings WHERE profile_id=?').bind(profile).first<TutorSettings>();}
 export async function readySettings(profile:string){const s=await settings(profile);if(!s?.enabled||!s.zdr_confirmed||!s.encrypted_key||!encryptionReady())return null;try{return {...s,key:openKey(s.encrypted_key)};}catch{return null;}}
 export async function quota(profile:string,kind:'turns'|'images',limit:number){const db=await getDatabase(),day=new Date().toLocaleDateString('en-CA',{timeZone:'America/Bahia'});await db.prepare('INSERT OR IGNORE INTO tutor_usage(profile_id,day) VALUES(?,?)').bind(profile,day).run();const r=await db.prepare(`UPDATE tutor_usage SET ${kind}=${kind}+1 WHERE profile_id=? AND day=? AND ${kind}<?`).bind(profile,day,limit).run();return Number(r.changes)===1;}

@@ -1,5 +1,5 @@
 import WebSocket from 'ws';
-export const tutorModels={text:'gpt-6.1-terra',transcription:'gpt-transcribe',speech:'gpt-realtime-2.1-mini',image:'gpt-image-2.5-flare'};
+export const tutorModels={text:'gpt-6.1-terra',live:'gpt-live-1',transcription:'gpt-transcribe',speech:'gpt-realtime-2.1-mini',image:'gpt-image-2.5-flare'};
 export class ProviderError extends Error {constructor(public status:number){super('AI provider unavailable');}}
 export function providerMessage(error:unknown,operation='conversa'){
  if(error instanceof ProviderError){

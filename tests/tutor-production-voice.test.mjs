@@ -53,6 +53,17 @@ test('compiled tutor voice routes send masked WebSocket frames and return replay
   assert.equal(db.prepare('SELECT attempts FROM tutor_speech_requests WHERE turn_id=?').get(turnId).attempts,1);
   const parent=await api('/api/tutor/parent',{action:'testVoice'},cookie,parentToken);assert.equal(parent.status,200,'Parent voice test must use the same working transport');
   assert.equal(Buffer.from(await parent.arrayBuffer()).subarray(0,4).toString(),'RIFF');
+  assert.equal((await api('/api/tutor/live',{action:'start',sdp:'v=0 fixture'})).status,401);
+  const access=await api('/api/tutor/live',{action:'checkAccess'},cookie);assert.equal(access.status,200);assert.equal((await access.json()).model,'gpt-live-1');
+  const live=await api('/api/tutor/live',{action:'start',sdp:'v=0 compiled fixture',context:{subject:'geography',term:3}},cookie);assert.equal(live.status,200);
+  const opened=await live.json();assert.equal(opened.model,'gpt-live-1');assert.ok(!JSON.stringify(opened).includes('sk-'));assert.ok(!JSON.stringify(opened).includes('instructions'));
+  await new Promise(resolve=>setTimeout(resolve,30));
+  const status=await api('/api/tutor/live',{action:'status',sessionId:opened.sessionId},cookie);assert.equal(status.status,200);const active=await status.json();assert.equal(active.state,'active');assert.equal(active.events.length,2);
+  const captions=await api('/api/tutor/parent',{action:'conversation',sessionId:opened.sessionId},cookie,parentToken);assert.equal((await captions.json()).liveTranscripts.length,2);
+  await api('/api/tutor/live',{action:'interrupt',sessionId:opened.sessionId},cookie);
+  await api('/api/tutor/live',{action:'stop',sessionId:opened.sessionId},cookie);
+  await new Promise(resolve=>setTimeout(resolve,30));
+  assert.equal(db.prepare('SELECT state FROM tutor_live_sessions WHERE id=?').get(opened.sessionId).state,'closed');
   assert.doesNotMatch(logs,/mask is not a function|uncaughtException/);
  }finally{
   db?.close();

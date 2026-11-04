@@ -3,6 +3,7 @@ import {useEffect,useRef,useState} from 'react';
 import {audioContext} from '../../lib/tutor-audio-client';
 import {startConversationCapture} from '../../lib/tutor-conversation-audio';
 import {TutorVoiceSession,type VoicePhase} from '../../lib/tutor-voice-session';
+import {TutorLiveSession,type LiveCaption} from '../../lib/tutor-live-client';
 import styles from './Tutor.module.css';
 
 export type TutorContext={subject:string;term:number;lessonId?:string;view?:string;page?:number};
@@ -31,9 +32,11 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
  const [open,setOpen]=useState(false),[available,setAvailable]=useState<boolean|null>(null),[images,setImages]=useState(false);
  const [turns,setTurns]=useState<TutorTurn[]>([]),[text,setText]=useState(''),[error,setError]=useState('');
  const [phase,setPhase]=useState<VoicePhase>('idle'),[loop,setLoop]=useState(false),[imageBusy,setImageBusy]=useState('');
+ const [native,setNative]=useState(false),[captions,setCaptions]=useState<LiveCaption[]>([]);
+ const [connectionCheck,setConnectionCheck]=useState('');
  const session=useRef(''),epoch=useRef(0),mounted=useRef(true),sound=useRef<AudioContext|null>(null);
  const playback=useRef<AudioBufferSourceNode|null>(null),abort=useRef<AbortController|null>(null);
- const voice=useRef<TutorVoiceSession<TutorTurn>|null>(null),conversation=useRef<HTMLDivElement|null>(null);
+ const voice=useRef<TutorVoiceSession<TutorTurn>|TutorLiveSession|null>(null),conversation=useRef<HTMLDivElement|null>(null);
  const imageRequests=useRef(new Set<AbortController>()),contextKey=JSON.stringify(context),currentContext=useRef(context);
 
  function cancelImages(){for(const control of imageRequests.current)control.abort();imageRequests.current.clear();}
@@ -121,6 +124,11 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
  async function startVoice(){
   if(!available||voice.current?.active)return;
   cancelTextWork();setError('');setLoop(true);
+  if(native){
+   setCaptions([]);
+   const live=new TutorLiveSession({context:currentContext.current,onSession:id=>{session.current=id;},onState:state=>{if(mounted.current&&voice.current===live){setPhase(state);if(state==='idle')setLoop(false);}},onError:message=>{if(mounted.current&&voice.current===live){setLoop(false);setError(message);}},onCaptions:events=>{if(mounted.current&&voice.current===live)setCaptions(events);},onVisual:turn=>{if(mounted.current&&voice.current===live)receivedTurn(turn as TutorTurn);}});
+   voice.current=live;await live.start();return;
+  }
   const controller=new TutorVoiceSession<TutorTurn>({
    openCapture:options=>startConversationCapture({...options,context:audioForConversation()}),
    submit:(audio,mime,signal)=>submit({audio,mime},signal),
@@ -162,9 +170,9 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
  useEffect(()=>{
   currentContext.current=JSON.parse(contextKey);voice.current?.stop();voice.current=null;epoch.current++;
   abort.current?.abort();cancelImages();stopPlayback();session.current='';const control=new AbortController();
-  queueMicrotask(()=>{if(!control.signal.aborted&&mounted.current){setLoop(false);setPhase('idle');setTurns([]);setError('');setImageBusy('');setAvailable(null);}});
+  queueMicrotask(()=>{if(!control.signal.aborted&&mounted.current){setLoop(false);setPhase('idle');setTurns([]);setCaptions([]);setError('');setImageBusy('');setAvailable(null);}});
   fetch('/api/tutor',{signal:control.signal}).then(response=>{if(!response.ok)throw new Error();return response.json();}).then(data=>{
-   if(!control.signal.aborted&&mounted.current){setAvailable(data.available);setImages(data.imagesEnabled);}
+   if(!control.signal.aborted&&mounted.current){setAvailable(data.available);setImages(data.imagesEnabled);setNative(data.voiceMode==='live');}
   }).catch(failure=>{if(failure.name!=='AbortError'&&!control.signal.aborted&&mounted.current){setAvailable(false);setError('Não consegui consultar o tutor. Abra a matéria novamente para tentar.');}});
   return()=>control.abort();
  },[contextKey]);
@@ -178,7 +186,7 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
   document.addEventListener('visibilitychange',hidden);window.addEventListener('pagehide',stop);window.addEventListener('offline',offline);
   return()=>{document.removeEventListener('visibilitychange',hidden);window.removeEventListener('pagehide',stop);window.removeEventListener('offline',offline);};
  },[]);
- useEffect(()=>{conversation.current?.scrollTo({top:conversation.current.scrollHeight,behavior:'smooth'});},[turns,phase,imageBusy,open]);
+ useEffect(()=>{conversation.current?.scrollTo({top:conversation.current.scrollHeight,behavior:'smooth'});},[turns,captions,phase,imageBusy,open]);
 
  const busy=!['idle','error'].includes(phase);
  const status=phase==='permission'?'Aguardando permissão do microfone…':phase==='listening'?'Ouvindo… Pode falar naturalmente.':phase==='thinking'?'Entendendo e conferindo sua pergunta…':phase==='audio'?'Preparando a resposta em voz…':phase==='speaking'?'Falando… Comece a falar para interromper.':phase==='error'?'Conversa pausada. Você pode tentar novamente.':imageBusy?'Desenhando e revisando…':'Seu ajudante de estudos';
@@ -187,20 +195,22 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
    <header className={styles.header}><img src="/tutor/mascot.png" alt="Gatinho ajudante"/><div><strong id="tutor-title">Tutor da Bela</strong><small>{title}</small></div><button aria-label="Minimizar tutor" onClick={()=>setOpen(false)}>−</button></header>
    <p className={styles.disclosure}>Tutor e voz gerados por IA. Seus responsáveis podem ver as conversas.</p>
    <div className={styles.conversation} ref={conversation} aria-live="polite" aria-relevant="additions">
-    {!turns.length&&<div className={styles.welcome}><span>Vamos descobrir juntos?</span><p>Pergunte sobre esta matéria. Você pode continuar olhando o material enquanto conversamos.</p>{context.view==='quiz'&&<small>Durante a prova, vou ajudar com pistas para você pensar.</small>}</div>}
+    {!turns.length&&!captions.length&&<div className={styles.welcome}><span>Vamos descobrir juntos?</span><p>Pergunte sobre esta matéria. Você pode continuar olhando o material enquanto conversamos.</p>{native&&<small>Voz ao vivo · GPT-Live 1. Inicie uma vez e converse sem enviar gravações.</small>}{context.view==='quiz'&&<small>Durante a prova, vou ajudar com pistas para você pensar.</small>}</div>}
+    {captions.length>0&&<div className={styles.turn} aria-label="Transcrição da conversa ao vivo">{captions.reduce<{role:string;text:string;id:string;endMs:number}[]>((groups,item)=>{const previous=groups.at(-1);if(previous&&previous.role===item.role&&item.startMs-previous.endMs<2500){previous.text+=item.text;previous.endMs=item.endMs;}else groups.push({...item});return groups;},[]).map(item=><p className={item.role==='user'?styles.question:styles.answer} key={item.id}><b>{item.role==='user'?'Você':'Tutor'}</b>{item.text}</p>)}</div>}
     {turns.map(turn=><article className={styles.turn} key={turn.id}><p className={styles.question}><b>Você</b>{turn.userText}</p><div className={styles.answer}><b>Tutor</b><p>{turn.answer}</p><button disabled={phase==='permission'} onClick={()=>void replay(turn)}>▶ Ouvir</button>{turn.imageStatus==='ready'&&<a href={turn.imageUrl||'/api/tutor/media?id='+turn.id+'&kind=image'} target="_blank" rel="noreferrer"><img className={styles.generated} src={turn.imageUrl||'/api/tutor/media?id='+turn.id+'&kind=image'} alt={'Imagem de estudo: '+turn.topic}/><small>Abrir imagem para ampliar</small></a>}{imageBusy===turn.id&&<p role="status">Criando e conferindo sua imagem…</p>}</div></article>)}
    </div>
    {error&&<p className={styles.error} role="alert">{error}</p>}
+   {error&&native&&available&&<div className={styles.controls}><button onClick={()=>{setConnectionCheck('Verificando…');void call('/api/tutor/live',{action:'checkAccess'},new AbortController().signal).then(()=>setConnectionCheck('A chave tem acesso ao GPT-Live 1. A captura e a saída de áudio também precisam funcionar neste dispositivo.')).catch(failure=>setConnectionCheck(messageOf(failure,'Não foi possível verificar agora.')));}}>Verificar conexão da voz</button>{connectionCheck&&<p role="status">{connectionCheck}</p>}</div>}
    {available===false?<p className={styles.setup}>Peça aos responsáveis para ativar o tutor na área dos pais.</p>:available===null?<p className={styles.setup}>Conectando ao tutor…</p>:<div className={styles.controls}>
     <div className={styles.status} role="status"><i className={phase==='listening'?styles.pulse:''}/>{status}</div>
     <div className={styles.actions}>
-     {!loop?<button className={styles.primary} disabled={busy} onClick={()=>void startVoice()}>● Iniciar conversa por voz</button>:<>
-      {phase==='listening'?<button className={styles.primary} onClick={()=>voice.current?.finish()}>Enviar minha fala</button>:<button className={styles.primary} disabled={phase==='permission'} onClick={()=>voice.current?.interrupt()}>Interromper e falar</button>}
+     {!loop?<button className={styles.primary} disabled={busy} onClick={()=>void startVoice()}>● {native?'Iniciar conversa ao vivo':'Iniciar conversa por voz'}</button>:<>
+      {phase==='listening'&&!native?<button className={styles.primary} onClick={()=>voice.current?.finish()}>Enviar minha fala</button>:<button className={styles.primary} disabled={phase==='permission'} onClick={()=>voice.current?.interrupt()}>Interromper e falar</button>}
       <button onClick={()=>{endVoice();cancelTextWork();}}>Encerrar conversa</button>
      </>}
      {!loop&&busy&&<button onClick={()=>{cancelTextWork();setPhase('idle');}}>Cancelar resposta</button>}
     </div>
-    {loop&&<p className={styles.voiceHint}>O microfone continua aberto até você encerrar. Fale para interromper a resposta. Se houver eco, use fones ou o botão de interrupção. <button onClick={()=>{endVoice();cancelTextWork();}}>Usar texto</button></p>}
+    {loop&&<p className={styles.voiceHint}>{native?'Conversa ao vivo: a resposta toca automaticamente. Pode falar para interromper.':'O microfone continua aberto até você encerrar. Fale para interromper a resposta. Se houver eco, use fones ou o botão de interrupção.'} <button onClick={()=>{endVoice();cancelTextWork();}}>Usar texto</button></p>}
     <form className={styles.inputRow} onSubmit={event=>{event.preventDefault();if(text.trim()&&!busy)void sendText();}}><input aria-label="Sua pergunta para o tutor" placeholder="Ou escreva sua dúvida…" maxLength={3000} value={text} onChange={event=>setText(event.target.value)} disabled={busy}/><button disabled={!text.trim()||busy||Boolean(imageBusy)} aria-label="Enviar pergunta">↑</button></form>
     {images&&<button className={styles.chip} disabled={busy||Boolean(imageBusy)} onClick={()=>setText('Crie um infográfico para me ajudar a entender o assunto desta aula, com um exemplo novo.')}>✦ Pedir um infográfico</button>}
    </div>}

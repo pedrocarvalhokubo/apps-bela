@@ -14,7 +14,7 @@ const bundle = await build({
   bundle: true, write: false, platform: 'node', format: 'esm', jsx: 'automatic',
   plugins: [{ name: 'synthetic-platform-only', setup(builder) {
     builder.onResolve({ filter: /^(react|react\/jsx-runtime)$/ }, args => ({ path: args.path, namespace: 'harness' }));
-    builder.onResolve({ filter: /tutor-(audio-client|conversation-audio)$/ }, args => ({ path: args.path, namespace: 'harness' }));
+    builder.onResolve({ filter: /tutor-(audio-client|conversation-audio|live-client)$/ }, args => ({ path: args.path, namespace: 'harness' }));
     builder.onResolve({ filter: /\.module\.css$/ }, args => ({ path: args.path, namespace: 'harness' }));
     builder.onLoad({ filter: /.*/, namespace: 'harness' }, args => {
       const bridge = `globalThis.${bridgeKey}`;
@@ -22,6 +22,7 @@ const bundle = await build({
       if (args.path === 'react') contents = `export const useState=(...a)=>${bridge}.useState(...a),useRef=(...a)=>${bridge}.useRef(...a),useEffect=(...a)=>${bridge}.useEffect(...a);`;
       else if (args.path === 'react/jsx-runtime') contents = 'export const Fragment=Symbol.for("fragment"),jsx=(type,props,key)=>({type,props:props||{},key}),jsxs=jsx;';
       else if (args.path.endsWith('tutor-audio-client')) contents = `export const audioContext=()=>${bridge}.audio;`;
+      else if (args.path.endsWith('tutor-live-client')) contents = `export class TutorLiveSession {active=false;stops=0;interrupts=0;constructor(options){this.options=options;${bridge}.live=this;}async start(){this.active=true;this.options.onState('listening');}stop(){this.active=false;this.stops++;this.options.onState('idle');}interrupt(){this.interrupts++;}finish(){}}`;
       else if (args.path.endsWith('tutor-conversation-audio')) contents = `export const startConversationCapture=(options)=>${bridge}.openCapture(options);`;
       else contents = 'export default new Proxy({}, {get:(_,key)=>key});';
       return { contents, loader: 'js' };
@@ -87,7 +88,7 @@ async function mount(t, options = {}) {
   Object.assign(globalThis, { [bridgeKey]: bridge, window, document, fetch: async (url, init = {}) => {
     const body = init.body ? JSON.parse(init.body) : undefined;
     const request = { url, body, signal: init.signal }; requests.push(request);
-    if (!body) return response({ available: true, imagesEnabled: false });
+    if (!body) return response({ available: true, imagesEnabled: false, ...(options.native?{voiceMode:'live'}:{}) });
     if (body.action === 'start') return response({ sessionId: `session-${requests.length}` });
     if (body.action === 'turn') return options.turnGate ? options.turnGate.promise : response({ turn: turn(`turn-${requests.filter(r => r.body?.action === 'turn').length}`) });
     if (url === '/api/tutor/voice') return options.voiceFailure ? response({ error: 'Áudio indisponível no teste.' }, 503) : response({});
@@ -95,7 +96,7 @@ async function mount(t, options = {}) {
   } });
   function render() { cursor = 0; effects = []; tree = BelaTutor(props); const pending = effects; effects = []; for (const effect of pending) effect(); }
   const h = {
-    captures, requests, sources, audio, window, document,
+    captures, requests, sources, audio, window, document, get native(){return bridge.live;},
     get text() { return textOf(tree); },
     find(type, label) { const node = nodes(tree).find(node => node.type === type && (node.props['aria-label'] === label || textOf(node) === label)); assert.ok(node, `Missing ${type}: ${label}\n${textOf(tree)}`); return node; },
     async click(label) { const button = this.find('button', label); assert.ok(!button.props.disabled, `Disabled: ${label}`); button.props.onClick(); await flush(); },
@@ -198,4 +199,15 @@ test('synthetic integration: unmount closes audio and makes late capture callbac
   assert.equal(capture.stops, 1); assert.equal(source.stops, 1); assert.equal(h.audio.closes, 1);
   capture.callbacks.onUtterance('late', 'audio/wav'); capture.callbacks.onError(new Error('late'));
   h.window.dispatchEvent(new Event('offline')); await flush(); assert.equal(h.requests.length, before);
+});
+
+
+test('native UI uses the live controller and captions, with no recorded upload or per-answer play control',async t=>{
+ const h=await mount(t,{native:true});
+ await h.click('● Iniciar conversa ao vivo');assert.ok(h.native.active);assert.equal(h.captures.length,0);
+ h.native.options.onCaptions([{id:'native-1',role:'assistant',text:'Oi! Pode falar.',startMs:0,endMs:400}]);await flush();
+ assert.match(h.text,/Oi! Pode falar/);assert.match(h.text,/resposta toca automaticamente/);
+ assert.equal(h.requests.filter(item=>item.url==='/api/tutor/voice').length,0);
+ await h.click('Interromper e falar');assert.equal(h.native.interrupts,1);
+ await h.click('Encerrar conversa');assert.equal(h.native.stops,1);assert.ok(!h.native.active);
 });

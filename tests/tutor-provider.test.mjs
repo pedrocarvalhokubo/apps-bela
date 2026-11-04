@@ -27,7 +27,7 @@ test('OpenAI request contracts and defensive parsing (mock transport)',async t=>
   const body=JSON.parse(captured.at(-1).options.body);assert.deepEqual(JSON.parse(body.input).history,history);assert.match(body.instructions,/conhecimento geral confiável/);assert.match(body.instructions,/ausência de uma palavra na fonte não é motivo de rejeição/);assert.match(body.instructions,/pesquisas inventadas/);
  });
  await t.test('model diagnostics use metadata only and do not claim generation or ZDR readiness',async()=>{
-  const before=captured.length;response={};const results=await provider.checkModelAccess(key);assert.equal(results.length,4);assert.ok(results.every(r=>r.available));
+  const before=captured.length;response={};const results=await provider.checkModelAccess(key);assert.equal(results.length,5);assert.ok(results.every(r=>r.available));assert.ok(results.some(r=>r.model==='gpt-live-1'));
   for(const call of captured.slice(before)){assert.equal(call.options.method,'GET');assert.equal(call.options.body,undefined);assert.match(call.url,/\/models\//);}
  });
  await t.test('unsupported or oversized audio is rejected before transmission',async()=>{
