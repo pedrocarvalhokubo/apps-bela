@@ -1,3 +1,4 @@
+import {withTutorUsage,tutorCostSummary} from '../../../../lib/tutor-costs';
 import {randomUUID} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
@@ -11,11 +12,16 @@ export const dynamic='force-dynamic';
 const fixedRules=()=>readFileSync(join(process.cwd(),'content/tutor/instructions.md'),'utf8');
 const aiRequests=new Map<string,number>();
 export async function POST(request:Request){
+ const device=await getTutorDevice(request);if(!device)return unauthorized();
+ return withTutorUsage(device.profileId,()=>handlePost(request));
+}
+async function handlePost(request:Request){
  const device=await getTutorDevice(request),parent=await getParentSession(request);
  if(!device||parent?.profileId!==device.profileId)return unauthorized('Entre na área dos pais com o PIN para continuar.');
  let body;try{body=await boundedJson(request,4_300_000);}catch{return json({error:'Pedido inválido ou muito grande.'},400);}
  const profile=device.profileId,db=await getD1(),current=await settings(profile);
  try{
+  if(body.action==='costs')return json(await tutorCostSummary(profile));
   if(body.action==='read'){
    const versions=await db.prepare('SELECT id,prompt,created_at AS createdAt FROM tutor_prompt_versions WHERE profile_id=? ORDER BY created_at DESC LIMIT 15').bind(profile).all();
    const sessions=await db.prepare("SELECT s.id,s.context_json AS context,s.created_at AS createdAt,COUNT(t.id) AS turns,COALESCE(MAX(t.created_at),s.created_at) AS lastAt,SUM(t.flagged) AS flagged FROM tutor_sessions s LEFT JOIN tutor_turns t ON t.session_id=s.id AND t.profile_id=s.profile_id WHERE s.profile_id=? GROUP BY s.id HAVING COUNT(t.id)>0 OR EXISTS(SELECT 1 FROM tutor_live_sessions l WHERE l.id=s.id) ORDER BY lastAt DESC LIMIT 100").bind(profile).all();

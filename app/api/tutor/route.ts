@@ -1,3 +1,4 @@
+import {withTutorUsage} from '../../../lib/tutor-costs';
 import {getTutorDevice} from '../../../lib/tutor-auth';
 import {randomUUID} from 'node:crypto';
 import {getD1,unauthorized} from '../_lib';
@@ -8,6 +9,10 @@ import {transcribe,moderate,explain,verifyAnswer,providerMessage} from '../../..
 export const dynamic='force-dynamic';
 export async function GET(request:Request){const d=await getTutorDevice(request);if(!d)return unauthorized();const s=await settings(d.profileId);return json({available:Boolean(s?.enabled&&s.zdr_confirmed&&s.encrypted_key&&encryptionReady()),imagesEnabled:Boolean(s?.images_enabled),name:'Tutor da Bela',voiceMode:'live',voiceModel:'gpt-live-1'});}
 export async function POST(request:Request){
+ const device=await getTutorDevice(request);if(!device)return unauthorized();
+ return withTutorUsage(device.profileId,()=>handlePost(request));
+}
+async function handlePost(request:Request){
  const d=await getTutorDevice(request);if(!d)return unauthorized();
  let body;try{body=await boundedJson(request,4_300_000);}catch{return json({error:'Mensagem muito grande ou inválida.'},400);}
  const config=await readySettings(d.profileId);if(!config)return json({error:'Peça aos responsáveis para configurar o tutor na área dos pais.'},503);

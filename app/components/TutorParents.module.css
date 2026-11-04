@@ -50,7 +50,7 @@
 .activeBadge { color: #256a55; background: #eaf6ef; border-color: #cce7d7; }
 .inactiveBadge { color: #62717d; background: #edf1f4; border-color: #dce4e9; }
 .activeBadge i, .inactiveBadge i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-.tabList { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; padding: 6px; border: 1px solid #dce5e9; border-radius: 14px; background: #eaf0f3; }
+.tabList { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; padding: 6px; border: 1px solid #dce5e9; border-radius: 14px; background: #eaf0f3; }
 .parents .tabList button { position: relative; display: flex; align-items: center; justify-content: center; gap: 7px; padding: 12px 8px; border: 1px solid transparent; background: transparent; color: #627481; font-size: 13px; }
 .parents .tabList button[aria-selected="true"] { border-color: #d9e4e8; background: #fff; color: #225c63; box-shadow: 0 2px 5px #18364b07; }
 .parents .tabList button:hover:not(:disabled) { background: #f5f8fa; }
@@ -204,3 +204,5 @@
   .columns, .modelList { grid-template-columns: minmax(0, 1fr); }
   .heading h2 { font-size: 19px; }
 }
+
+.costCards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}.costCards>div{padding:20px;border:1px solid #dce8e4;border-radius:14px;background:#f4faf7;min-width:0}.costCards span{display:block;color:#63847b;font-size:9px;font-weight:750;letter-spacing:.08em}.costCards strong{display:block;color:#245d57;font-size:26px;margin:9px 0;overflow-wrap:anywhere}.costCards small{color:#71847e;font-size:11px}.costTable{overflow-x:auto;margin-top:24px}.costTable table{width:100%;border-collapse:collapse;font-size:12px;text-align:left;white-space:nowrap}.costTable caption{text-align:left;font-size:14px;font-weight:700;margin:0 0 14px;color:#355867}.costTable th,.costTable td{padding:13px 12px;border-bottom:1px solid #e1e9ed}.costTable thead th{background:#f5f8fa;font-size:10px;color:#748793}.costTable tbody th{font-weight:600}.costTable td:last-child{font-variant-numeric:tabular-nums}.costTable small{display:block;font-size:10px;color:#8b7040;margin-top:4px}@media(max-width:820px){.costCards{grid-template-columns:1fr}.costCards strong{font-size:24px}}

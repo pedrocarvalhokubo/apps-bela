@@ -39,6 +39,8 @@ function connect() {
     db.exec(`CREATE TABLE IF NOT EXISTS tutor_live_sessions(id TEXT PRIMARY KEY REFERENCES tutor_sessions(id),profile_id TEXT NOT NULL,provider_id TEXT NOT NULL DEFAULT '',state TEXT NOT NULL DEFAULT 'starting',started_at INTEGER NOT NULL,last_seen INTEGER NOT NULL,day TEXT NOT NULL,reserved_seconds INTEGER NOT NULL,used_seconds INTEGER NOT NULL DEFAULT 0);
       CREATE UNIQUE INDEX IF NOT EXISTS tutor_live_one_active ON tutor_live_sessions(profile_id) WHERE state IN ('starting','active','closing');
       CREATE TABLE IF NOT EXISTS tutor_live_transcripts(id TEXT PRIMARY KEY,session_id TEXT NOT NULL REFERENCES tutor_sessions(id),role TEXT NOT NULL,text TEXT NOT NULL,start_ms INTEGER NOT NULL,end_ms INTEGER NOT NULL,created_at INTEGER NOT NULL);`);
+    db.exec(`CREATE TABLE IF NOT EXISTS tutor_api_costs(id TEXT PRIMARY KEY,profile_id TEXT NOT NULL REFERENCES profiles(id),model TEXT NOT NULL,operation TEXT NOT NULL,day TEXT NOT NULL,created_at INTEGER NOT NULL,input_tokens INTEGER NOT NULL,output_tokens INTEGER NOT NULL,seconds REAL NOT NULL,cost_nano_usd INTEGER,price_date TEXT NOT NULL);
+      CREATE INDEX IF NOT EXISTS tutor_costs_profile_day ON tutor_api_costs(profile_id,day);`);
     db.exec("COMMIT");
   } catch (error) { db.exec("ROLLBACK"); db.close(); throw error; }
   connection = db;

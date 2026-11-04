@@ -1,10 +1,11 @@
 "use client";
 import {useEffect,useRef,useState} from 'react';
 import {recordQuestion,type Recording} from '../../lib/tutor-audio-client';
+import TutorUsage from './TutorUsage';
 import type {TutorTurn} from './BelaTutor';
 import styles from './TutorParents.module.css';
-type TabName='connection'|'instructions'|'content'|'history';
-const tabs:ReadonlyArray<{id:TabName;label:string}>=[{id:'connection',label:'Conexão e limites'},{id:'instructions',label:'Instruções'},{id:'content',label:'Conteúdo'},{id:'history',label:'Conversas'}];
+type TabName='connection'|'instructions'|'content'|'history'|'costs';
+const tabs:ReadonlyArray<{id:TabName;label:string}>=[{id:'connection',label:'Conexão e limites'},{id:'instructions',label:'Instruções'},{id:'content',label:'Conteúdo'},{id:'history',label:'Conversas'},{id:'costs',label:'Uso e gastos'}];
 type Settings={keyConfigured:boolean;encryptionReady:boolean;enabled:boolean;zdrConfirmed:boolean;imagesEnabled:boolean;dailyTurns:number;dailyImages:number;dailyVoiceMinutes:number;customPrompt:string};
 type ParentData={settings:Settings;models:{text:string;live:string;transcription:string;speech:string;image:string};fixedRules:string;versions:{id:string;prompt:string;createdAt:number}[];sessions:{id:string;context:string;createdAt:number;lastAt:number;turns:number;flagged:number}[];doubts:{topic:string;count:number}[];modules:{id:string;title:string;term:number;lessons:number}[]};
 const date=(n:number)=>new Date(n).toLocaleString('pt-BR',{timeZone:'America/Bahia'});
@@ -99,6 +100,7 @@ export default function TutorParents({parentToken}:{parentToken:string}){
     {!data.sessions.length?<div className={styles.empty}><strong>Ainda não há conversas registradas</strong><p>As dúvidas, respostas e sugestões de revisão aparecerão aqui após os primeiros estudos com o tutor.</p></div>:<div className={styles.historyGrid}><div className={styles.sessions} aria-label="Conversas registradas">{data.sessions.map(session=>{const context=JSON.parse(session.context);const subjectModule=data.modules.find(item=>item.id===context.subject+'-'+context.term);return <button key={session.id} className={selected===session.id?styles.selected:''} aria-pressed={selected===session.id} disabled={blocked} onClick={()=>void openHistory(session.id)}><strong>{subjectModule?.title??'Conversa de estudo'}</strong><small>{date(session.lastAt)} · {session.turns} pergunta(s)</small>{Boolean(session.flagged)&&<em>Para acompanhar com cuidado</em>}</button>;})}</div><div className={styles.history} aria-live="polite">{liveHistory.length>0&&<article><strong>Transcrição da conversa ao vivo</strong><p>Fragmentos com tempo aproximado, em ordem de início; pode haver falas sobrepostas.</p>{liveHistory.map(event=><p key={event.id}><small>{Math.floor(event.startMs/1000)} s · {event.role==='user'?'Bela':'Tutor'}</small>{event.text}</p>)}</article>}{busy==='history'?<p>Carregando conversa…</p>:!selected?<div className={styles.empty}><p>Escolha uma conversa ao lado para ver os detalhes.</p></div>:history.map(turn=><article key={turn.id}><small>{date(turn.createdAt)}</small><p><b>Bela:</b> {turn.userText||'Áudio não transcrito'}</p><p><b>Tutor:</b> {turn.answer||'Resposta não concluída. A pergunta foi registrada.'}</p>{turn.suggestion&&<p className={styles.followup}><b>Para retomar:</b> {turn.suggestion}</p>}{turn.imageStatus==='ready'&&<a href={'/api/tutor/media?id='+turn.id+'&kind=image'} target="_blank" rel="noreferrer"><img className={styles.generated} src={'/api/tutor/media?id='+turn.id+'&kind=image'} alt={'Imagem: '+turn.topic}/></a>}{turn.answer&&<details className={styles.disclosure}><summary>Áudio da resposta, se disponível</summary><audio controls preload="none" src={'/api/tutor/media?id='+turn.id+'&kind=voice'}/></details>}</article>)}</div></div>}
     <details className={styles.disclosure}><summary>Como as conversas ficam registradas</summary><p>As perguntas transcritas, respostas e imagens ficam na conta. A gravação da voz da Bela não é salva no app. A voz sintetizada do tutor pode ficar disponível junto à resposta.</p></details>
    </section>
+   <section className={styles.section} role="tabpanel" id="parent-tutor-panel-costs" aria-labelledby="parent-tutor-tab-costs" hidden={tab!=='costs'} tabIndex={0}>{tab==='costs'&&<TutorUsage parentToken={parentToken}/>}</section>
   </>}
  </section>;
 }

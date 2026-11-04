@@ -1,3 +1,4 @@
+import {withTutorUsage} from '../../../../lib/tutor-costs';
 import {getTutorDevice} from '../../../../lib/tutor-auth';
 import {getD1,unauthorized} from '../../_lib';
 import {boundedJson,json,safetyId,privateHeaders} from '../../../../lib/tutor-security';
@@ -6,6 +7,10 @@ import {speak,providerMessage,speechFailureDetails} from '../../../../lib/tutor-
 export const dynamic='force-dynamic';
 const running=new Set<string>();
 export async function POST(request:Request){
+ const device=await getTutorDevice(request);if(!device)return unauthorized();
+ return withTutorUsage(device.profileId,()=>handlePost(request));
+}
+async function handlePost(request:Request){
  const d=await getTutorDevice(request);if(!d)return unauthorized();let body;try{body=await boundedJson(request);}catch{return json({error:'Pedido inválido.'},400);}
  const config=await readySettings(d.profileId),turn=await turnFor(d.profileId,body.turnId??'');if(!config||!turn||turn.status!=='done')return json({error:'Resposta indisponível.'},404);
  const response=(bytes:Buffer)=>new Response(new Uint8Array(bytes),{headers:{...privateHeaders,'content-type':'audio/wav'}});

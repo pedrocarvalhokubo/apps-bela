@@ -64,6 +64,12 @@ test('compiled tutor voice routes send masked WebSocket frames and return replay
   await api('/api/tutor/live',{action:'stop',sessionId:opened.sessionId},cookie);
   await new Promise(resolve=>setTimeout(resolve,30));
   assert.equal(db.prepare('SELECT state FROM tutor_live_sessions WHERE id=?').get(opened.sessionId).state,'closed');
+  assert.equal((await api('/api/tutor/parent',{action:'costs'},cookie)).status,401);
+  const costs=await api('/api/tutor/parent',{action:'costs'},cookie,parentToken);assert.equal(costs.status,200);
+  const report=await costs.json();assert.equal(report.currency,'USD');assert.equal(report.basis,'estimate');
+  assert.equal(report.models.find(row=>row.model==='gpt-realtime-2.1-mini').calls,2,'Cached replay must not add a provider charge');
+  assert.equal(report.models.find(row=>row.model==='gpt-realtime-2.1-mini').unpriced,2,'Synthetic provider omits usage; must remain visibly unknown');
+  assert.equal(report.models.find(row=>row.model==='gpt-live-1').seconds,3);assert.equal(report.models.find(row=>row.model==='gpt-live-1').usd,.0125);assert.ok(!JSON.stringify(report).includes('sk-'));
   assert.doesNotMatch(logs,/mask is not a function|uncaughtException/);
  }finally{
   db?.close();

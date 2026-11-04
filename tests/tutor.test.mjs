@@ -71,6 +71,11 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
   const before=calls.length;assert.equal((await post(api.parent,{action:'diagnose'})).status,401);assert.equal(calls.length,before);
   const originalNow=Date.now;Date.now=()=>originalNow()+11000;const result=await post(api.parent,{action:'diagnose'},token,true);Date.now=originalNow;assert.equal(result.status,200);assert.equal(result.data.models[0].available,true);assert.equal(result.data.privacyVerified,false);assert.match(result.data.note,/Não comprova/);assert.equal(JSON.stringify(result.data).includes(key),false);
  });
+ await t.test('spend reports require the parent PIN and expose only this account metering',async()=>{
+  assert.equal((await post(api.parent,{action:'costs'})).status,401);
+  assert.equal((await post(api.parent,{action:'costs'},foreign,true)).status,401);
+  const report=await post(api.parent,{action:'costs'},token,true);assert.equal(report.status,200);assert.equal(report.data.basis,'estimate');assert.equal(report.data.currency,'USD');assert.ok(!JSON.stringify(report.data).includes(key));assert.equal(report.data.turns,undefined);
+ });
  await t.test('prompt suggestions are drafts; saves create reviewable versions',async()=>{
   const originalNow=Date.now;Date.now=()=>originalNow()+22000;
   const suggestion=await post(api.parent,{action:'suggestPrompt',prompt:'',instruction:'Use frases menores.'},token,true);Date.now=originalNow;assert.equal(suggestion.status,200);

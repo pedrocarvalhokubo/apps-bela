@@ -1,3 +1,4 @@
+import {withTutorUsage} from '../../../../lib/tutor-costs';
 import {getTutorDevice} from '../../../../lib/tutor-auth';
 import {getD1,unauthorized} from '../../_lib';
 import {boundedJson,json} from '../../../../lib/tutor-security';
@@ -5,6 +6,10 @@ import {readySettings,turnFor,quota,saveMedia} from '../../../../lib/tutor-store
 import {generateVisual,moderate,reviewVisual} from '../../../../lib/tutor-provider';
 export const dynamic='force-dynamic';
 export async function POST(request:Request){
+ const device=await getTutorDevice(request);if(!device)return unauthorized();
+ return withTutorUsage(device.profileId,()=>handlePost(request));
+}
+async function handlePost(request:Request){
  const d=await getTutorDevice(request);if(!d)return unauthorized();let body;try{body=await boundedJson(request);}catch{return json({error:'Pedido inválido.'},400);}
  const config=await readySettings(d.profileId),turn=await turnFor(d.profileId,body.turnId??'');
  if(!config?.images_enabled)return json({error:'A criação de imagens está desativada pelos responsáveis.'},403);

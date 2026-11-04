@@ -33,7 +33,7 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
  const [turns,setTurns]=useState<TutorTurn[]>([]),[text,setText]=useState(''),[error,setError]=useState('');
  const [phase,setPhase]=useState<VoicePhase>('idle'),[loop,setLoop]=useState(false),[imageBusy,setImageBusy]=useState('');
  const [native,setNative]=useState(false),[captions,setCaptions]=useState<LiveCaption[]>([]);
- const [connectionCheck,setConnectionCheck]=useState('');
+ const [connectionCheck,setConnectionCheck]=useState(''),[menu,setMenu]=useState(false);
  const session=useRef(''),epoch=useRef(0),mounted=useRef(true),sound=useRef<AudioContext|null>(null);
  const playback=useRef<AudioBufferSourceNode|null>(null),abort=useRef<AbortController|null>(null);
  const voice=useRef<TutorVoiceSession<TutorTurn>|TutorLiveSession|null>(null),conversation=useRef<HTMLDivElement|null>(null);
@@ -109,7 +109,7 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
   });
  }
  async function makeImage(turn:TutorTurn){
-  const control=new AbortController();imageRequests.current.add(control);setImageBusy(turn.id);
+  const control=new AbortController();imageRequests.current.add(control);setImageBusy(turn.id);setOpen(true);setMenu(false);
   try{
    const result=await call('/api/tutor/image',{turnId:turn.id},control.signal);
    if(!control.signal.aborted&&mounted.current)setTurns(list=>list.map(item=>item.id===turn.id?{...item,imageStatus:'ready',imageUrl:result.imageUrl}:item));
@@ -123,7 +123,7 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
  }
  async function startVoice(){
   if(!available||voice.current?.active)return;
-  cancelTextWork();setError('');setLoop(true);
+  cancelTextWork();setError('');setMenu(false);setLoop(true);
   if(native){
    setCaptions([]);
    const live=new TutorLiveSession({context:currentContext.current,onSession:id=>{session.current=id;},onState:state=>{if(mounted.current&&voice.current===live){setPhase(state);if(state==='idle')setLoop(false);}},onError:message=>{if(mounted.current&&voice.current===live){setLoop(false);setError(message);}},onCaptions:events=>{if(mounted.current&&voice.current===live)setCaptions(events);},onVisual:turn=>{if(mounted.current&&voice.current===live)receivedTurn(turn as TutorTurn);}});
@@ -140,19 +140,28 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
   voice.current=controller;
   await controller.start();
  }
- async function sendText(){
-  const question=text.trim();if(!question)return;
+ async function sendText(question=text.trim()){
+  if(!question)return;setOpen(true);setMenu(false);
   endVoice();cancelTextWork();const version=epoch.current,control=new AbortController();abort.current=control;
   setPhase('thinking');setError('');
-  void unlockedAudio(control.signal).catch(()=>null);
   try{
    const turn=await submit({text:question},control.signal);
-   if(version!==epoch.current||!mounted.current)return;receivedTurn(turn);setPhase('audio');
-   control.signal.throwIfAborted();
-   await playTurn(turn,control.signal,()=>{if(version===epoch.current&&mounted.current)setPhase('speaking');});
+   if(version!==epoch.current||!mounted.current)return;receivedTurn(turn);
    if(version===epoch.current&&mounted.current)setPhase('idle');
   }catch(failure){if(version===epoch.current&&mounted.current){setPhase('error');setError(messageOf(failure,'Não consegui responder. Tente novamente.'));}}
  }
+ async function requestInfographic(){
+  if(imageBusy)return;
+  const recent=captions.filter(item=>item.role==='user').slice(-4).map(item=>item.text).join(' ').slice(-900);
+  const question='Crie um infográfico para me ajudar a entender o assunto desta aula, com um exemplo novo.'+(recent?' Use como referência o assunto das minhas últimas falas: '+recent:'');
+  if(!loop){await sendText(question);return;}
+  // A visual request is independent of the open voice transport.
+  const control=new AbortController();imageRequests.current.add(control);setImageBusy('request');setOpen(true);setMenu(false);setError('');
+  try{const turn=await submit({text:question},control.signal);if(!control.signal.aborted&&mounted.current)receivedTurn(turn);}
+  catch(failure){if(!control.signal.aborted&&mounted.current)setError(messageOf(failure,'Não consegui preparar o infográfico.'));}
+  finally{imageRequests.current.delete(control);if(!control.signal.aborted&&mounted.current)setImageBusy(id=>id==='request'?'':id);}
+ }
+ function useText(){endVoice();cancelTextWork();setOpen(true);setMenu(false);}
  async function replay(turn:TutorTurn){
   endVoice();cancelTextWork();const version=epoch.current,control=new AbortController();abort.current=control;
   setPhase('audio');setError('');
@@ -170,7 +179,7 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
  useEffect(()=>{
   currentContext.current=JSON.parse(contextKey);voice.current?.stop();voice.current=null;epoch.current++;
   abort.current?.abort();cancelImages();stopPlayback();session.current='';const control=new AbortController();
-  queueMicrotask(()=>{if(!control.signal.aborted&&mounted.current){setLoop(false);setPhase('idle');setTurns([]);setCaptions([]);setError('');setImageBusy('');setAvailable(null);}});
+  queueMicrotask(()=>{if(!control.signal.aborted&&mounted.current){setLoop(false);setPhase('idle');setTurns([]);setCaptions([]);setError('');setImageBusy('');setAvailable(null);setMenu(false);}});
   fetch('/api/tutor',{signal:control.signal}).then(response=>{if(!response.ok)throw new Error();return response.json();}).then(data=>{
    if(!control.signal.aborted&&mounted.current){setAvailable(data.available);setImages(data.imagesEnabled);setNative(data.voiceMode==='live');}
   }).catch(failure=>{if(failure.name!=='AbortError'&&!control.signal.aborted&&mounted.current){setAvailable(false);setError('Não consegui consultar o tutor. Abra a matéria novamente para tentar.');}});
@@ -189,32 +198,42 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
  useEffect(()=>{conversation.current?.scrollTo({top:conversation.current.scrollHeight,behavior:'smooth'});},[turns,captions,phase,imageBusy,open]);
 
  const busy=!['idle','error'].includes(phase);
- const status=phase==='permission'?'Aguardando permissão do microfone…':phase==='listening'?'Ouvindo… Pode falar naturalmente.':phase==='thinking'?'Entendendo e conferindo sua pergunta…':phase==='audio'?'Preparando a resposta em voz…':phase==='speaking'?'Falando… Comece a falar para interromper.':phase==='error'?'Conversa pausada. Você pode tentar novamente.':imageBusy?'Desenhando e revisando…':'Seu ajudante de estudos';
- return <aside className={styles.widget} aria-label="Tutor da Bela">
+ const status=phase==='permission'?'Permita o microfone para começar':phase==='listening'?'Ouvindo você…':phase==='thinking'?'Pensando com carinho…':phase==='audio'?'Preparando a voz…':phase==='speaking'?'Falando… Pode me interromper':phase==='error'?'Vamos tentar de novo?':imageBusy?'Preparando seu infográfico…':'Toque para conversar';
+ const mascotState=imageBusy?'working':phase==='thinking'||phase==='audio'?'working':phase==='speaking'?'speaking':phase==='listening'?'listening':'idle';
+ const mascotLabel=loop?(phase==='listening'&&!native?'Enviar minha fala':'Interromper e falar'):'Conversar por voz';
+ function touchMascot(){if(loop){if(phase==='listening'&&!native)voice.current?.finish();else voice.current?.interrupt();}else void startVoice();}
+ return <aside className={styles.widget} aria-label="Ajudante de estudos">
   {open&&<section className={styles.panel} aria-labelledby="tutor-title">
-   <header className={styles.header}><img src="/tutor/mascot.png" alt="Gatinho ajudante"/><div><strong id="tutor-title">Tutor da Bela</strong><small>{title}</small></div><button aria-label="Minimizar tutor" onClick={()=>setOpen(false)}>−</button></header>
-   <p className={styles.disclosure}>Tutor e voz gerados por IA. Seus responsáveis podem ver as conversas.</p>
+   <header className={styles.header}><div><small>VAMOS APRENDER</small><strong id="tutor-title">{title}</strong></div><button aria-label="Fechar chat" onClick={()=>setOpen(false)}>×</button></header>
+   <p className={styles.disclosure}>Ajudante e voz de IA. Seus responsáveis podem ver as conversas.</p>
    <div className={styles.conversation} ref={conversation} aria-live="polite" aria-relevant="additions">
-    {!turns.length&&!captions.length&&<div className={styles.welcome}><span>Vamos descobrir juntos?</span><p>Pergunte sobre esta matéria. Você pode continuar olhando o material enquanto conversamos.</p>{native&&<small>Voz ao vivo · GPT-Live 1. Inicie uma vez e converse sem enviar gravações.</small>}{context.view==='quiz'&&<small>Durante a prova, vou ajudar com pistas para você pensar.</small>}</div>}
-    {captions.length>0&&<div className={styles.turn} aria-label="Transcrição da conversa ao vivo">{captions.reduce<{role:string;text:string;id:string;endMs:number}[]>((groups,item)=>{const previous=groups.at(-1);if(previous&&previous.role===item.role&&item.startMs-previous.endMs<2500){previous.text+=item.text;previous.endMs=item.endMs;}else groups.push({...item});return groups;},[]).map(item=><p className={item.role==='user'?styles.question:styles.answer} key={item.id}><b>{item.role==='user'?'Você':'Tutor'}</b>{item.text}</p>)}</div>}
-    {turns.map(turn=><article className={styles.turn} key={turn.id}><p className={styles.question}><b>Você</b>{turn.userText}</p><div className={styles.answer}><b>Tutor</b><p>{turn.answer}</p><button disabled={phase==='permission'} onClick={()=>void replay(turn)}>▶ Ouvir</button>{turn.imageStatus==='ready'&&<a href={turn.imageUrl||'/api/tutor/media?id='+turn.id+'&kind=image'} target="_blank" rel="noreferrer"><img className={styles.generated} src={turn.imageUrl||'/api/tutor/media?id='+turn.id+'&kind=image'} alt={'Imagem de estudo: '+turn.topic}/><small>Abrir imagem para ampliar</small></a>}{imageBusy===turn.id&&<p role="status">Criando e conferindo sua imagem…</p>}</div></article>)}
+    {!turns.length&&!captions.length&&<div className={styles.welcome}><span>Uma dúvida de cada vez ✨</span><p>Escreva sobre esta matéria ou toque no gatinho para conversar. Estou aqui para pensar com você.</p>{context.view==='quiz'&&<small>Durante a prova, vou ajudar com pistas para você pensar.</small>}</div>}
+    {captions.length>0&&<div className={styles.turn} aria-label="Transcrição da conversa ao vivo">{captions.reduce<{role:string;text:string;id:string;endMs:number}[]>((groups,item)=>{const previous=groups.at(-1);if(previous&&previous.role===item.role&&item.startMs-previous.endMs<2500){previous.text+=item.text;previous.endMs=item.endMs;}else groups.push({...item});return groups;},[]).map(item=><p className={item.role==='user'?styles.question:styles.answer} key={item.id}><b>{item.role==='user'?'Você':'Gatinho'}</b>{item.text}</p>)}</div>}
+    {turns.map(turn=><article className={styles.turn} key={turn.id}><p className={styles.question}><b>Você</b>{turn.userText}</p><div className={styles.answer}><b>Gatinho</b><p>{turn.answer}</p><button disabled={phase==='permission'} onClick={()=>void replay(turn)}>▶ Ouvir</button>{turn.imageStatus==='ready'&&<a href={turn.imageUrl||'/api/tutor/media?id='+turn.id+'&kind=image'} target="_blank" rel="noreferrer"><img className={styles.generated} src={turn.imageUrl||'/api/tutor/media?id='+turn.id+'&kind=image'} alt={'Imagem de estudo: '+turn.topic}/><small>Abrir imagem para ampliar</small></a>}{imageBusy===turn.id&&<p className={styles.drawing} role="status"><span aria-hidden="true">✦</span> Desenhando e conferindo as ideias…</p>}</div></article>)}
+    {imageBusy==='request'&&<p className={styles.drawing} role="status">✦ Organizando as ideias para o infográfico…</p>}
+    {phase==='thinking'&&!loop&&<p className={styles.drawing} role="status">✦ Pensando na sua pergunta…</p>}
    </div>
-   {error&&<p className={styles.error} role="alert">{error}</p>}
-   {error&&native&&available&&<div className={styles.controls}><button onClick={()=>{setConnectionCheck('Verificando…');void call('/api/tutor/live',{action:'checkAccess'},new AbortController().signal).then(()=>setConnectionCheck('A chave tem acesso ao GPT-Live 1. A captura e a saída de áudio também precisam funcionar neste dispositivo.')).catch(failure=>setConnectionCheck(messageOf(failure,'Não foi possível verificar agora.')));}}>Verificar conexão da voz</button>{connectionCheck&&<p role="status">{connectionCheck}</p>}</div>}
-   {available===false?<p className={styles.setup}>Peça aos responsáveis para ativar o tutor na área dos pais.</p>:available===null?<p className={styles.setup}>Conectando ao tutor…</p>:<div className={styles.controls}>
-    <div className={styles.status} role="status"><i className={phase==='listening'?styles.pulse:''}/>{status}</div>
-    <div className={styles.actions}>
-     {!loop?<button className={styles.primary} disabled={busy} onClick={()=>void startVoice()}>● {native?'Iniciar conversa ao vivo':'Iniciar conversa por voz'}</button>:<>
-      {phase==='listening'&&!native?<button className={styles.primary} onClick={()=>voice.current?.finish()}>Enviar minha fala</button>:<button className={styles.primary} disabled={phase==='permission'} onClick={()=>voice.current?.interrupt()}>Interromper e falar</button>}
-      <button onClick={()=>{endVoice();cancelTextWork();}}>Encerrar conversa</button>
-     </>}
-     {!loop&&busy&&<button onClick={()=>{cancelTextWork();setPhase('idle');}}>Cancelar resposta</button>}
-    </div>
-    {loop&&<p className={styles.voiceHint}>{native?'Conversa ao vivo: a resposta toca automaticamente. Pode falar para interromper.':'O microfone continua aberto até você encerrar. Fale para interromper a resposta. Se houver eco, use fones ou o botão de interrupção.'} <button onClick={()=>{endVoice();cancelTextWork();}}>Usar texto</button></p>}
-    <form className={styles.inputRow} onSubmit={event=>{event.preventDefault();if(text.trim()&&!busy)void sendText();}}><input aria-label="Sua pergunta para o tutor" placeholder="Ou escreva sua dúvida…" maxLength={3000} value={text} onChange={event=>setText(event.target.value)} disabled={busy}/><button disabled={!text.trim()||busy||Boolean(imageBusy)} aria-label="Enviar pergunta">↑</button></form>
-    {images&&<button className={styles.chip} disabled={busy||Boolean(imageBusy)} onClick={()=>setText('Crie um infográfico para me ajudar a entender o assunto desta aula, com um exemplo novo.')}>✦ Pedir um infográfico</button>}
+   {available===false?<p className={styles.setup}>Peça aos responsáveis para ativar o ajudante na área dos pais.</p>:<div className={styles.controls}>
+    {loop?<div className={styles.chatVoice}><span>● A conversa por voz continua</span><button onClick={useText}>Digitar</button></div>:<form className={styles.inputRow} onSubmit={event=>{event.preventDefault();if(text.trim()&&!busy)void sendText();}}><input aria-label="Sua pergunta para o tutor" placeholder="Escreva sua dúvida…" maxLength={3000} value={text} onChange={event=>setText(event.target.value)} disabled={busy}/><button disabled={!text.trim()||busy||Boolean(imageBusy)} aria-label="Enviar pergunta">↑</button></form>}
+    {images&&<button className={styles.chip} disabled={(!loop&&busy)||Boolean(imageBusy)} onClick={()=>void requestInfographic()}>✦ Pedir um infográfico</button>}
    </div>}
   </section>}
-  <div className={styles.floatingRow}>{!open&&(loop||busy)&&<button className={styles.pauseFloating} onClick={stopAll}>Encerrar voz</button>}<button className={styles.launcher} onClick={()=>setOpen(!open)} aria-expanded={open} aria-label={open?'Minimizar Tutor da Bela':'Abrir Tutor da Bela'}><img src="/tutor/mascot.png" alt=""/><span>{!open&&(loop||busy)?'Conversando…':'Tutor da Bela'}</span></button></div>
+  {error&&<div className={styles.error} role="alert"><p>{error}</p><button onClick={useText}>Escrever minha pergunta</button>{native&&available&&<button onClick={()=>{setConnectionCheck('Verificando…');void call('/api/tutor/live',{action:'checkAccess'},new AbortController().signal).then(()=>setConnectionCheck('A conexão está disponível. Toque no gatinho para tentar novamente.')).catch(failure=>setConnectionCheck(messageOf(failure,'Não foi possível verificar agora.')));}}>Verificar conexão</button>}{connectionCheck&&<p role="status">{connectionCheck}</p>}</div>}
+  {menu&&<div className={styles.menu} role="group" aria-label="Opções de estudo" onKeyDown={event=>{if(event.key==='Escape')setMenu(false);}}>
+   <span>COMO VAMOS ESTUDAR?</span>
+   <button onClick={useText}>✎ Escrever uma pergunta</button>
+   <button onClick={()=>{setOpen(true);setMenu(false);}}>☷ Acompanhar o chat</button>
+   {images&&<button disabled={(!loop&&busy)||Boolean(imageBusy)} onClick={()=>void requestInfographic()}>✦ Pedir um infográfico</button>}
+   {loop&&<button onClick={()=>{stopAll();setMenu(false);}}>Encerrar conversa</button>}
+  </div>}
+  <div className={styles.dock}>
+   <div className={styles.bubble} role="status">{available===null?'Só um instante…':available===false?'Vamos configurar?':status}{loop&&<small>Voz de IA · responsáveis podem acompanhar</small>}</div>
+   <div className={styles.floatingRow}>
+    <button className={styles.menuToggle} aria-label="Opções do gatinho" aria-expanded={menu} onClick={()=>setMenu(!menu)}>•••</button>
+    <button className={styles.launcher} data-state={mascotState} onClick={touchMascot} disabled={available!==true||(!loop&&busy)||phase==='permission'} aria-label={mascotLabel} aria-pressed={loop} aria-describedby="cat-help"><span className={styles.halo} aria-hidden="true"/><img src="/tutor/mascot.png" alt="Gatinho ajudante" draggable={false}/><span className={styles.sparkle} aria-hidden="true">✦</span></button>
+    {(loop||busy)&&<button className={styles.stop} onClick={stopAll} aria-label={loop?'Encerrar conversa':'Cancelar resposta'} title={loop?'Encerrar conversa':'Cancelar resposta'}>■</button>}
+   </div>
+   <span id="cat-help" className={styles.srOnly}>Toque no gatinho para conversar por voz. Durante a resposta, toque para interromper. Abra as opções para digitar ou pedir um infográfico.</span>
+  </div>
  </aside>;
 }

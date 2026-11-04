@@ -88,9 +88,10 @@ async function mount(t, options = {}) {
   Object.assign(globalThis, { [bridgeKey]: bridge, window, document, fetch: async (url, init = {}) => {
     const body = init.body ? JSON.parse(init.body) : undefined;
     const request = { url, body, signal: init.signal }; requests.push(request);
-    if (!body) return response({ available: true, imagesEnabled: false, ...(options.native?{voiceMode:'live'}:{}) });
+    if (!body) return response({ available: true, imagesEnabled: Boolean(options.images), ...(options.native?{voiceMode:'live'}:{}) });
     if (body.action === 'start') return response({ sessionId: `session-${requests.length}` });
-    if (body.action === 'turn') return options.turnGate ? options.turnGate.promise : response({ turn: turn(`turn-${requests.filter(r => r.body?.action === 'turn').length}`) });
+    if (body.action === 'turn') return options.turnGate ? options.turnGate.promise : response({ turn: {...turn(`turn-${requests.filter(r => r.body?.action === 'turn').length}`),...(options.images?{visualKind:'infographic',imageStatus:'requested'}:{})} });
+    if (url === '/api/tutor/image') return options.imageGate?.promise??response({imageUrl:'/private-infographic.png'});
     if (url === '/api/tutor/voice') return options.voiceFailure ? response({ error: 'Áudio indisponível no teste.' }, 503) : response({});
     throw new Error(`Unexpected synthetic request: ${url}`);
   } });
@@ -98,7 +99,8 @@ async function mount(t, options = {}) {
   const h = {
     captures, requests, sources, audio, window, document, get native(){return bridge.live;},
     get text() { return textOf(tree); },
-    find(type, label) { const node = nodes(tree).find(node => node.type === type && (node.props['aria-label'] === label || textOf(node) === label)); assert.ok(node, `Missing ${type}: ${label}\n${textOf(tree)}`); return node; },
+    has(type,label){return nodes(tree).some(node=>node.type===type&&(node.props['aria-label']===label||textOf(node)===label));},
+    find(type, label) { const node = nodes(tree).find(node => node.type === type && (node.props['aria-label'] === label || node.props.alt === label || textOf(node) === label)); assert.ok(node, `Missing ${type}: ${label}\n${textOf(tree)}`); return node; },
     async click(label) { const button = this.find('button', label); assert.ok(!button.props.disabled, `Disabled: ${label}`); button.props.onClick(); await flush(); },
     async speak(capture = captures.at(-1)) { capture.callbacks.onSpeechStart(); capture.callbacks.onUtterance('synthetic-audio', 'audio/wav'); await flush(); },
     async sendText(value = 'Quanto é dois mais dois?') { this.find('input', 'Sua pergunta para o tutor').props.onChange({ target: { value } }); await flush(); nodes(tree).find(n => n.type === 'form').props.onSubmit({ preventDefault() {} }); await flush(); },
@@ -106,12 +108,12 @@ async function mount(t, options = {}) {
     unmount() { if (disposed) return; disposed = true; for (const slot of slots) slot.cleanup?.(); },
   };
   t.after(async () => { h.unmount(); await flush(); for (const [key, descriptor] of saved) { if (descriptor) Object.defineProperty(globalThis, key, descriptor); else delete globalThis[key]; } });
-  render(); await flush(); await h.click('Abrir Tutor da Bela'); return h;
+  render(); await flush(); if(options.openChat!==false){await h.click('Opções do gatinho');await h.click('☷ Acompanhar o chat');} return h;
 }
 
 test('synthetic integration: start, finish, interrupt playback, continue and end use the real session', async t => {
   const h = await mount(t);
-  await h.click('● Iniciar conversa por voz');
+  await h.click('Conversar por voz');
   const capture = h.captures[0];
   assert.match(h.text, /Ouvindo/);
   await h.click('Enviar minha fala'); assert.equal(capture.finishes, 1);
@@ -127,51 +129,51 @@ test('synthetic integration: start, finish, interrupt playback, continue and end
   assert.equal(h.captures.length, 1);
   assert.equal(h.requests.filter(r => r.body?.action === 'start').length, 1);
   await h.click('Encerrar conversa'); assert.equal(capture.stops, 1); assert.equal(capture.callbacks.signal.aborted, true);
-  assert.ok(h.find('button', '● Iniciar conversa por voz'));
+  assert.ok(h.find('button', 'Conversar por voz'));
 });
 
 test('synthetic integration: ending during capture permission discards late callbacks and capture', async t => {
   const captureGate = deferred(), h = await mount(t, { captureGate });
-  await h.click('● Iniciar conversa por voz'); const capture = h.captures[0];
+  await h.click('Conversar por voz'); const capture = h.captures[0];
   await h.click('Encerrar conversa');
   capture.callbacks.onUtterance('late', 'audio/wav'); capture.callbacks.onError(new Error('stale failure'));
   captureGate.resolve(); await flush();
   assert.equal(capture.stops, 1); assert.doesNotMatch(h.text, /stale failure/);
   assert.equal(h.requests.filter(r => r.body).length, 0);
-  assert.ok(!h.find('button', '● Iniciar conversa por voz').props.disabled);
+  assert.ok(!h.find('button', 'Conversar por voz').props.disabled);
 });
 
 test('synthetic integration: subject change aborts pending turn and rejects stale results', async t => {
   const turnGate = deferred(), h = await mount(t, { turnGate });
-  await h.click('● Iniciar conversa por voz'); await h.speak();
+  await h.click('Conversar por voz'); await h.speak();
   const old = h.captures[0], request = h.requests.find(r => r.body?.action === 'turn');
   await h.context({ subject: 'historia', term: 2 });
   assert.equal(request.signal.aborted, true); assert.equal(old.stops, 1);
   turnGate.resolve(response({ turn: turn('stale-subject') })); await flush();
   old.callbacks.onSpeechStart(); old.callbacks.onError(new Error('old subject error')); await flush();
   assert.doesNotMatch(h.text, /stale-subject|old subject error/); assert.equal(h.sources.length, 0);
-  await h.click('● Iniciar conversa por voz'); await h.speak();
+  await h.click('Conversar por voz'); await h.speak();
   assert.deepEqual(h.requests.filter(r => r.body?.action === 'start').at(-1).body.context, { subject: 'historia', term: 2 });
 });
 
 test('synthetic integration: offline, pagehide and hidden document release active voice and playback', async t => {
   const h = await mount(t);
   for (const event of ['offline', 'pagehide', 'visibilitychange']) {
-    await h.click('● Iniciar conversa por voz'); await h.speak();
+    await h.click('Conversar por voz'); await h.speak();
     const capture = h.captures.at(-1), source = h.sources.at(-1);
     if (event === 'visibilitychange') { h.document.hidden = true; h.document.dispatchEvent(new Event(event)); }
     else h.window.dispatchEvent(new Event(event));
     await flush();
     assert.equal(capture.stops, 1, event); assert.equal(source.stops, 1, event);
     assert.equal(capture.callbacks.signal.aborted, true, event);
-    assert.ok(!h.find('button', '● Iniciar conversa por voz').props.disabled);
+    assert.ok(!h.find('button', 'Conversar por voz').props.disabled);
     if (event === 'offline') assert.match(h.text, /A conexão caiu/);
   }
 });
 
 test('synthetic integration: voice audio failure preserves the written answer and enables text', async t => {
   const h = await mount(t, { voiceFailure: true });
-  await h.click('● Iniciar conversa por voz'); await h.speak();
+  await h.click('Conversar por voz'); await h.speak();
   assert.match(h.text, /Resposta escrita turn-1/); assert.match(h.text, /Áudio indisponível no teste/);
   assert.equal(h.captures[0].stops, 1); assert.equal(h.sources.length, 0);
   assert.ok(!h.find('input', 'Sua pergunta para o tutor').props.disabled);
@@ -182,7 +184,7 @@ test('synthetic integration: voice audio failure preserves the written answer an
 
 test('synthetic integration: absent WebAudio does not prevent written questions or answers', async t => {
   const h = await mount(t, { noAudio: true });
-  await h.click('● Iniciar conversa por voz');
+  await h.click('Conversar por voz');
   assert.match(h.text, /Este navegador não oferece o áudio necessário/); assert.equal(h.captures.length, 0);
   await h.sendText('Pergunta sem WebAudio');
   assert.match(h.text, /Resposta escrita turn-1/);
@@ -193,7 +195,7 @@ test('synthetic integration: absent WebAudio does not prevent written questions 
 
 test('synthetic integration: unmount closes audio and makes late capture callbacks inert', async t => {
   const h = await mount(t);
-  await h.click('● Iniciar conversa por voz'); await h.speak();
+  await h.click('Conversar por voz'); await h.speak();
   const capture = h.captures[0], source = h.sources[0], before = h.requests.length;
   h.unmount(); await flush();
   assert.equal(capture.stops, 1); assert.equal(source.stops, 1); assert.equal(h.audio.closes, 1);
@@ -204,10 +206,31 @@ test('synthetic integration: unmount closes audio and makes late capture callbac
 
 test('native UI uses the live controller and captions, with no recorded upload or per-answer play control',async t=>{
  const h=await mount(t,{native:true});
- await h.click('● Iniciar conversa ao vivo');assert.ok(h.native.active);assert.equal(h.captures.length,0);
+ await h.click('Conversar por voz');assert.ok(h.native.active);assert.equal(h.captures.length,0);
  h.native.options.onCaptions([{id:'native-1',role:'assistant',text:'Oi! Pode falar.',startMs:0,endMs:400}]);await flush();
- assert.match(h.text,/Oi! Pode falar/);assert.match(h.text,/resposta toca automaticamente/);
+ assert.match(h.text,/Oi! Pode falar/);assert.match(h.text,/conversa por voz continua/);
  assert.equal(h.requests.filter(item=>item.url==='/api/tutor/voice').length,0);
  await h.click('Interromper e falar');assert.equal(h.native.interrupts,1);
  await h.click('Encerrar conversa');assert.equal(h.native.stops,1);assert.ok(!h.native.active);
+});
+
+
+test('cat starts live voice in one tap and chat stays closed until requested',async t=>{
+ const h=await mount(t,{native:true,openChat:false});
+ assert.ok(!h.has('section','Geografia'));assert.doesNotMatch(h.text,/Uma dúvida de cada vez/);
+ await h.click('Conversar por voz');assert.ok(h.native.active);assert.doesNotMatch(h.text,/Uma dúvida de cada vez/);
+ await h.click('Opções do gatinho');await h.click('☷ Acompanhar o chat');assert.ok(h.native.active);assert.equal(h.native.stops,0);
+ await h.click('Fechar chat');assert.ok(h.native.active);
+ await h.click('Opções do gatinho');await h.click('✎ Escrever uma pergunta');assert.equal(h.native.stops,1);
+ await h.sendText();assert.equal(h.requests.filter(r=>r.url==='/api/tutor/voice').length,0);assert.match(h.text,/Resposta escrita/);
+});
+test('infographic menu works during live voice, opens chat and displays a private image without replay',async t=>{
+ const imageGate=deferred(),h=await mount(t,{native:true,images:true,imageGate,openChat:false});
+ await h.click('Conversar por voz');await h.click('Opções do gatinho');await h.click('✦ Pedir um infográfico');
+ assert.equal(h.native.stops,0);assert.ok(h.native.active);assert.match(h.text,/Desenhando e conferindo/);
+ assert.match(h.requests.find(r=>r.body?.action==='turn').body.text,/Crie um infográfico/);
+ assert.equal(h.requests.filter(r=>r.url==='/api/tutor/image').length,1);
+ imageGate.resolve(response({imageUrl:'/private-infographic.png'}));await flush();
+ assert.equal(h.find('img','Imagem de estudo: Teste').props.src,'/private-infographic.png');
+ assert.equal(h.requests.filter(r=>r.url==='/api/tutor/voice').length,0);
 });
