@@ -65,3 +65,9 @@ Referências: [Terra](https://developers.openai.com/api/docs/models/gpt-6.1-terr
 `npm test` cobre isolamento de convidados, conta, PIN, criptografia, ativação, rascunhos de prompt, contexto, revisão, histórico, cotas, cache privado e contratos das APIs. Testes de geração usam transporte simulado, sem gastar API. A sessão contínua tem testes de VAD com tons sintéticos, pré-roll, eco simulado, interrupção, teardown, permissão tardia, limites, falhas de áudio e cancelamento do processamento no servidor. Esses testes não equivalem a ensaio acústico em dispositivo real. A integração real de voz e imagens precisa ser conferida após o responsável configurar a chave e ZDR, no aparelho usado pela Bela.
 
 Na entrega do tutor, Next.js foi atualizado para 16.4.5 e as dependências transitivas de produção foram corrigidas. `npm audit --omit=dev` retornou zero alertas de produção. Isso não equivale a uma auditoria independente de toda a aplicação.
+
+### Correção do transporte de voz — 04/11/2026
+
+O bundle do servidor substituía o addon opcional de `ws` por um módulo incompleto. O envio de frames mascarados falhava com `mask is not a function`, antes de a síntese produzir áudio; a interface recebia texto, exibia erro e encerrava a conversa. `ws` agora está em `serverExternalPackages`, preservando o carregamento Node e o fallback JavaScript da biblioteca.
+
+`tests/tutor-production-voice.test.mjs` executa as rotas Next compiladas, autenticação, cifra da chave fictícia, frames WebSocket reais, retorno WAV privado, replay em cache e teste parental. O destino é um servidor de teste local com PCM sintético, carregado somente pelo processo do teste. O teste falhou antes da correção e passou depois. Ele não usa a OpenAI, não comprova a chave real nem substitui validação acústica no dispositivo. Os testes anteriores de provider simulavam a biblioteca WebSocket e por isso não detectaram a falha de empacotamento.
