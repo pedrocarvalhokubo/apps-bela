@@ -218,10 +218,10 @@ A cópia sanitizada já entregue no Drive foi atualizada no mesmo arquivo, prese
 
 ## Verificação local concluída
 
-- 169 testes aprovados, 0 falhas: autenticação, dados sintéticos de tentativas, correção no servidor, roteamento por trimestre, rascunhos, tutor, voz e novas regras de fonte.
+- 170 testes aprovados, 0 falhas: autenticação, dados sintéticos de tentativas, correção no servidor, roteamento por trimestre, rascunhos, tutor, voz e novas regras de fonte.
 - `npm run build`: compilação, TypeScript e geração das páginas concluídas.
 - Sete PDFs, 47 páginas, renderizados e inspecionados visualmente. Ajustadas a paginação das questões e a distribuição das referências; sem cortes nas tabelas ou alternativas. Checagem de texto confirma todos os enunciados, alternativas e respostas esperadas.
 - Restauração a partir dos arquivos de transporte conferiu 491 arquivos. Os arquivos de transporte anteriores e os hashes dos materiais de outras matérias permanecem intactos; só a prova antiga de Geografia foi substituída na versão ativa e seis PDFs foram acrescentados.
 - Atualização do conteúdo do tutor limitada a Geografia; os arquivos das demais matérias permanecem intactos.
 
-A validação em produção e o registro do deploy são feitos após publicar este commit. Testes locais não substituem a leitura humana das fontes. A verificação do tutor usa transporte simulado; não foram feitas chamadas pagas à IA para esta revisão. A conferência de produção não deve gravar respostas de teste no histórico real da estudante.
+A primeira publicação foi conferida em produção: sete PDFs com bytes idênticos aos verificados, sessão preservada e página de impressão carregada. A inspeção visual revelou que o estilo global escondia as letras das alternativas na impressão HTML; a regra de lista foi corrigida e ganhou teste de regressão. O resultado do deploy final é registrado na entrega. Testes locais não substituem a leitura humana das fontes. A verificação do tutor usa transporte simulado; não foram feitas chamadas pagas à IA para esta revisão. A conferência de produção não deve gravar respostas de teste no histórico real da estudante.

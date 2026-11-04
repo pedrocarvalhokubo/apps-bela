@@ -47,3 +47,9 @@ test('Four assessed written tasks match the repeated lesson challenges; new stud
  const instructions=readFileSync('content/tutor/instructions.md','utf8');assert.match(instructions,/resposta correta de cada avaliação deve estar no material original da escola do mesmo trimestre/);assert.match(instructions,/Enunciados, alternativas, dicas, explicações e gabaritos/);assert.match(instructions,/Se a fonte não estiver disponível/);
  const reviewer=readFileSync('lib/tutor-provider.ts','utf8');assert.match(reviewer,/Em avaliações, a resposta correta deve estar no material original da escola do mesmo trimestre/);
 });
+
+test('HTML print keeps visible option letters despite the global list reset',()=>{
+ const page=readFileSync('app/geografia3/imprimir/page.tsx','utf8');
+ assert.match(page,/list-style-type:lower-alpha/);assert.match(page,/display:list-item/);
+ assert.match(page,/<ol type="a">/);
+});
