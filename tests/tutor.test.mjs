@@ -87,7 +87,7 @@ test('Tutor authorization, encrypted settings, curation and durable conversation
  await t.test('only catalog modules and lessons resolve, with no assessment answers in source',()=>{
   assert.equal(api.content.resolveTutorContext({subject:'arbitrary',term:3}),null);
   assert.equal(api.content.resolveTutorContext({subject:'geography',term:3,lessonId:'e3-verbs'}),null);
-  assert.equal(api.content.tutorCatalog.length,9);assert.equal(api.content.tutorCatalog.reduce((sum,m)=>sum+m.lessons.length,0),64);
+  assert.equal(api.content.tutorCatalog.length,10);assert.equal(api.content.tutorCatalog.reduce((sum,m)=>sum+m.lessons.length,0),70);
   for(const m of api.content.tutorCatalog){const source=api.content.tutorSource(api.content.resolveTutorContext({subject:m.subject,term:m.term,view:'quiz'}));assert.ok(source.content.includes(m.id));assert.ok(!source.content.includes('Referência do curador'));assert.ok(!source.content.includes('undefined'));for(const lesson of m.lessons)assert.ok(source.content.includes(lesson.id));}
  });
  await t.test('turns are scoped, saved once and exposed to PIN-protected history',async()=>{

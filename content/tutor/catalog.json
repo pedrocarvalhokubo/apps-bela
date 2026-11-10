@@ -425,5 +425,53 @@
         "title": "Reading: Hurricane Matthew"
       }
     ]
+  },
+  {
+    "id": "portuguese-3",
+    "subject": "portuguese",
+    "term": 3,
+    "title": "Português",
+    "moduleTitle": "Verbos, números e sílabas",
+    "file": "portuguese-3.md",
+    "pages": [
+      {
+        "label": "Verbos e pronomes",
+        "description": "Tempos verbais na linha do tempo e quando usar eu ou mim"
+      },
+      {
+        "label": "Numerais",
+        "description": "Numerais cardinais, ordinais, multiplicativos e fracionários e algarismos romanos"
+      },
+      {
+        "label": "Tonicidade",
+        "description": "Sílaba tônica: oxítonas, paroxítonas e proparoxítonas"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "p3-reading",
+        "title": "Leitura e compreensão"
+      },
+      {
+        "id": "p3-tenses",
+        "title": "Tempos verbais"
+      },
+      {
+        "id": "p3-eu-mim",
+        "title": "Eu ou mim?"
+      },
+      {
+        "id": "p3-numerals",
+        "title": "Numerais"
+      },
+      {
+        "id": "p3-roman",
+        "title": "Algarismos romanos"
+      },
+      {
+        "id": "p3-stress",
+        "title": "Tonicidade"
+      }
+    ]
   }
 ]

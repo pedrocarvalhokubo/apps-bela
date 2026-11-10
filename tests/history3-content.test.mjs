@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import ts from 'typescript';
 
 const content = JSON.parse(readFileSync(new URL('../app/history3-content.json', import.meta.url), 'utf8'));
-const source = readFileSync(new URL('../app/history3-data.ts', import.meta.url), 'utf8')
+const source = readFileSync(new URL('../app/history3-data.ts', import.meta.url), 'utf8').replace("import { portuguese3Subject } from './portuguese3-data';",`const portuguese3Subject=${JSON.stringify(JSON.parse(readFileSync(new URL('../app/portuguese3-content.json',import.meta.url),'utf8')).subject)};`)
   .replace("import { geography3Subject } from './geography3-data';", `const geography3Subject = ${JSON.stringify(JSON.parse(readFileSync(new URL('../app/geography3-content.json', import.meta.url), 'utf8')).subject)};`)
   .replace("import { ela3Subject } from './ela3-data';", `const ela3Subject = ${JSON.stringify(JSON.parse(readFileSync(new URL('../app/ela3-content.json', import.meta.url), 'utf8')).subject)};`)
   .replace("import content from './history3-content.json';", `const content = ${JSON.stringify(content)};`);

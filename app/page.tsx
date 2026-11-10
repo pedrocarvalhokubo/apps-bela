@@ -21,6 +21,8 @@ import {
 import { ela3Subject, ela3Infographics, ela3ImageForLesson } from "./ela3-data";
 import {geography3Subject,geography3Infographics,geography3ImageForLesson} from "./geography3-data";
 import Geography3Practice from "./components/Geography3Practice";
+import Portuguese3Practice from "./components/Portuguese3Practice";
+import {portuguese3Subject,portuguese3Infographics,portuguese3ImageForLesson} from "./portuguese3-data";
 import Ela3Practice from "./components/Ela3Practice";
 import SciencePractice from "./components/SciencePractice";
 import ScienceMatching from "./components/ScienceMatching";
@@ -173,6 +175,15 @@ const emptyQuizStats = (): Record<QuizId, QuizStats> => ({
   "science3-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "science3-mock-a": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "science3-mock-b": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-reading": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-tenses": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-eu-mim": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-numerals": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-roman": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-stress": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-general": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-mock-a": { bestScore: 0, attempts: 0, totalAnswered: 0 },
+  "portuguese3-mock-b": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "geography3-places": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "geography3-paths": { bestScore: 0, attempts: 0, totalAnswered: 0 },
   "geography3-cultures": { bestScore: 0, attempts: 0, totalAnswered: 0 },
@@ -226,7 +237,7 @@ const defaultQuiz: QuizId = "ela3-general";
 const defaultLesson = ela3Subject.lessons[0].id;
 const availableSubjects = new Set<SubjectKey>(["science", "math", "ela", "geography", "history", "portuguese"]);
 const availableQuizzes = new Set<QuizId>(Object.keys(quizCatalog) as QuizId[]);
-const availableLessonIds = new Set([...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject].flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
+const availableLessonIds = new Set([...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject, portuguese3Subject].flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
 
 const elaInfographicPages = [
   { src: "/infographics/ela-term2-review-v1.webp", alt: "E.L.A. Term 2 exam map", width: 1024, height: 1536, label: "Map" },
@@ -532,12 +543,13 @@ export default function Home() {
   const isEla3 = activeSubject === "ela" && term === 3;
   const isGeography3 = activeSubject === "geography" && term === 3;
   const isHistory3 = activeSubject === "history" && term === 3;
-  const reviewInfographicPages = isGeography3 ? geography3Infographics : isEla3 ? ela3Infographics : isHistory3 ? history3Infographics : activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
+  const isPortuguese3 = activeSubject === "portuguese" && term === 3;
+  const reviewInfographicPages = isPortuguese3 ? portuguese3Infographics : isGeography3 ? geography3Infographics : isEla3 ? ela3Infographics : isHistory3 ? history3Infographics : activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
   const currentLessons = activeSubjectData.lessons;
   const completedCurrentLessons = currentLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const learnProgress = Math.round((completedCurrentLessons / currentLessons.length) * 100);
   const currentQuestions = quizCatalog[activeQuizId].questions;
-  const allLessons = [...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject].flatMap((subject) => subject.lessons);
+  const allLessons = [...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject, portuguese3Subject].flatMap((subject) => subject.lessons);
   const completedAllLessons = allLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const totalBestAnswers = Object.values(quizStatsById).reduce((sum, stats) => sum + stats.bestScore, 0);
   const totalQuizQuestions = Object.values(quizCatalog).reduce((sum, quiz) => sum + quiz.questions.length, 0);
@@ -585,6 +597,7 @@ export default function Home() {
 
   const nextSteps = useMemo(() => {
     const schedule: Array<{ subject: SubjectKey; name: string; date: string; shortDate: string; lessons: StudyLesson[] }> = [
+      { subject: "portuguese", name: "Português", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "portuguese", term).lessons },
       { subject: "science", name: "Science", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.science.lessons },
       { subject: "geography", name: "Geografia", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "geography", term).lessons },
       { subject: "ela", name: "E.L.A.", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "ela", term).lessons },
@@ -597,7 +610,7 @@ export default function Home() {
       .sort((a, b) => a.correct / a.attempts - b.correct / b.attempts)[0];
     if (weak) {
       steps.push({
-        term: weak.subject === "science" || ela3Subject.lessons.some(l => l.title === weak.topic) || history3Subject.lessons.some(l => l.title === weak.topic) || geography3Subject.lessons.some(l => l.title === weak.topic) ? 3 : 2,
+        term: weak.subject === "science" || ela3Subject.lessons.some(l => l.title === weak.topic) || history3Subject.lessons.some(l => l.title === weak.topic) || geography3Subject.lessons.some(l => l.title === weak.topic) || portuguese3Subject.lessons.some(l => l.title === weak.topic) ? 3 : 2,
         subject: weak.subject as SubjectKey,
         title: `Reforçar: ${weak.subject === "science" ? scienceTopicTitle(weak.topic) : weak.topic}`,
         detail: `Você acertou ${Math.round((weak.correct / weak.attempts) * 100)}% até agora. Vamos praticar com calma.`,
@@ -605,7 +618,7 @@ export default function Home() {
         kind: "weak",
       });
     }
-    for (const item of schedule.filter(item => term === 3 ? ["science", "ela", "history", "geography"].includes(item.subject) : term === 2 && item.subject !== "science")) {
+    for (const item of schedule.filter(item => term === 3 ? ["portuguese", "science", "ela", "history", "geography"].includes(item.subject) : term === 2 && item.subject !== "science" && item.subject !== "portuguese")) {
       const pending = item.lessons.find((lesson) => !completedLessons.includes(lesson.id));
       if (!pending) continue;
       steps.push({ term, subject: item.subject, title: pending.title, detail: `${item.name} • continuar os estudos`, badge: item.shortDate, kind: "lesson" });
@@ -613,7 +626,7 @@ export default function Home() {
     }
     const review = topicSignals.find((topic) => topic.attempts >= 3 && topic.correct / topic.attempts >= 0.8 && topic.reviewAttempts === 0);
     if (review && steps.length < 3) {
-      steps.push({ term: review.subject === "science" || ela3Subject.lessons.some(l => l.title === review.topic) || history3Subject.lessons.some(l => l.title === review.topic) || geography3Subject.lessons.some(l => l.title === review.topic) ? 3 : 2, subject: review.subject as SubjectKey, title: `Revisão: ${review.subject === "science" ? scienceTopicTitle(review.topic) : review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
+      steps.push({ term: review.subject === "science" || ela3Subject.lessons.some(l => l.title === review.topic) || history3Subject.lessons.some(l => l.title === review.topic) || geography3Subject.lessons.some(l => l.title === review.topic) || portuguese3Subject.lessons.some(l => l.title === review.topic) ? 3 : 2, subject: review.subject as SubjectKey, title: `Revisão: ${review.subject === "science" ? scienceTopicTitle(review.topic) : review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
     }
     return steps.slice(0, 3);
   }, [completedLessons, topicSignals, term]);
@@ -725,7 +738,7 @@ export default function Home() {
     go("quiz");
   };
 
-  const openSubject = (subject: SubjectKey, selectedTerm = subject === "science" ? 3 : subject === "history" || subject === "ela" || subject === "geography" ? term : 2) => {
+  const openSubject = (subject: SubjectKey, selectedTerm = subject === "science" ? 3 : subject === "history" || subject === "ela" || subject === "geography" || subject === "portuguese" ? term : 2) => {
     setActiveSubject(subject);
     setTerm(selectedTerm);
     setInfographicPage(0);
@@ -822,6 +835,27 @@ export default function Home() {
     setResultAnswers(quizAnswers);
     go("results");
   };
+
+  const infographicCardShown = (activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || isHistory3 || (activeSubject === "science" && scienceMaterialsReady)) && reviewInfographicPages.length > 0;
+  const mockQuizIds: QuizId[] = isGeography3 ? ["geography3-mock-a", "geography3-mock-b"] : isEla3 ? ["ela3-mock-a", "ela3-mock-b"] : isHistory3 ? ["history3-mock-a", "history3-mock-b"] : isPortuguese3 ? ["portuguese3-mock-a", "portuguese3-mock-b"] : activeSubject === "science" ? ["science3-mock-a", "science3-mock-b"] : [];
+  const mockCopy = isGeography3 ? { small: "APLIQUE O QUE APRENDEU", text: "20 questões baseadas nas atividades da escola. Leia, compare e encontre as pistas no material.", best: "Melhor resultado:" }
+    : isEla3 || activeSubject === "science" ? { small: "PRACTICE TEST", text: "20 questions • all ten topics • hints and explanations.", best: "Best:" }
+    : isHistory3 ? { small: "PRATICAR NO APP", text: "Quatorze questões, pistas graduais e explicações para cada alternativa.", best: "Melhor:" }
+    : { small: "SIMULADO", text: "18 questões novas sobre os seis assuntos, com pistas e explicações.", best: "Melhor:" };
+  const reviewQuizNumber = activeSubject === "geography" && !isGeography3 ? 4 : infographicCardShown ? 3 : 2;
+  const reviewQuizCard = (
+            <button className="path-card path-quiz" disabled={!quizCatalog[activeSubjectData.quizId].questions.length} onClick={() => startQuiz(activeSubjectData.quizId)}>
+              <span className="path-number">{reviewQuizNumber}</span>
+              <span className="path-art"><AppIcon name="medal" /></span>
+              <span className="path-content">
+                <small>DEPOIS</small>
+                <strong>{activeSubject === "history" || activeSubject === "geography" || activeSubject === "portuguese" ? "Desafio interativo" : "Quiz de revisão"}</strong>
+                <p>Pratique e leia por que cada uma das quatro alternativas está certa ou errada.</p>
+                <em>{quizCatalog[activeSubjectData.quizId].questions.length} questões • melhor: {quizStatsById[activeSubjectData.quizId].bestScore}/{quizCatalog[activeSubjectData.quizId].questions.length}</em>
+              </span>
+              <span className="path-arrow">→</span>
+            </button>
+  );
 
   return (
     <main className="app-shell">
@@ -947,7 +981,7 @@ export default function Home() {
 
             {term === 2 || term === 3 ? (
               <div className="subject-grid">
-                {subjects.filter(subject => term === 3 ? subject.key === "science" || subject.key === "history" || subject.key === "ela" || subject.key === "geography" : subject.key !== "science").map((subject) => (
+                {subjects.filter(subject => term === 3 ? subject.key === "science" || subject.key === "history" || subject.key === "ela" || subject.key === "geography" || subject.key === "portuguese" : subject.key !== "science").map((subject) => (
                   <button
                     key={subject.name}
                     className={`subject-card ${subject.color} ${subject.status === "soon" ? "subject-soon" : ""}`}
@@ -957,7 +991,7 @@ export default function Home() {
                     <span className="subject-icon"><AppIcon name={subject.icon} /></span>
                     <span className="subject-copy">
                       <strong>{subject.name}</strong>
-                      <small>{term === 3 && subject.key === "geography" ? "Migrações e culturas • 4 aulas" : term === 3 && subject.key === "ela" ? "Words & reading • 10 aulas" : term === 3 && subject.key === "history" ? "África e Brasil • 7 aulas" : subject.detail}</small>
+                      <small>{term === 3 && subject.key === "geography" ? "Migrações e culturas • 4 aulas" : term === 3 && subject.key === "ela" ? "Words & reading • 10 aulas" : term === 3 && subject.key === "history" ? "África e Brasil • 7 aulas" : term === 3 && subject.key === "portuguese" ? "Verbos, numerais e sílabas • 6 aulas" : subject.detail}</small>
                     </span>
                     {subject.status === "ready" ? <span className="subject-arrow">→</span> : <span className="soon-pill">Em breve</span>}
                   </button>
@@ -1007,7 +1041,7 @@ export default function Home() {
               <span className="path-arrow">→</span>
             </button>
 
-            {(activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || isHistory3 || (activeSubject === "science" && scienceMaterialsReady)) && (
+            {infographicCardShown && (
               <button className="path-card path-info" onClick={() => { setInfographicPage(0); go("infographic"); }}>
                 <span className="path-number">2</span>
                 <span className="path-art"><AppIcon name="art" /></span>
@@ -1021,13 +1055,16 @@ export default function Home() {
               </button>
             )}
 
-            {isGeography3 && (["geography3-mock-a", "geography3-mock-b"] as QuizId[]).map(id => <button key={id} className="path-card path-quiz" onClick={()=>startQuiz(id)}><span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>APLIQUE O QUE APRENDEU</small><strong>{quizCatalog[id].title}</strong><p>20 questões baseadas nas atividades da escola. Leia, compare e encontre as pistas no material.</p><em>Melhor resultado: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span></button>)}
-            {isGeography3 && <a className="path-card path-test" href="/geografia3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Escolha o quiz, o simulado A, B ou as respostas escritas. PDFs e gabarito separado.</p></span><span className="path-arrow">→</span></a>}
-            {isEla3 && (["ela3-mock-a", "ela3-mock-b"] as QuizId[]).map(id => (
+            {mockQuizIds.length > 0 && reviewQuizCard}
+            {mockQuizIds.map((id, index) => (
               <button key={id} className="path-card path-quiz" onClick={() => startQuiz(id)}>
-                <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRACTICE TEST</small><strong>{quizCatalog[id].title}</strong><p>20 questions • all ten topics • hints and explanations.</p><em>Best: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span>
+                <span className="path-number">{reviewQuizNumber + 1 + index}</span>
+                <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>{mockCopy.small}</small><strong>{quizCatalog[id].title}</strong><p>{mockCopy.text}</p><em>{mockCopy.best} {quizStatsById[id].bestScore}/{quizCatalog[id].questions.length}</em></span><span className="path-arrow">→</span>
               </button>
             ))}
+
+            {isGeography3 && <a className="path-card path-test" href="/geografia3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Escolha o quiz, o simulado A, B ou as respostas escritas. PDFs e gabarito separado.</p></span><span className="path-arrow">→</span></a>}
+            {isPortuguese3 && <a className="path-card path-test" href="/portugues3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Quiz, simulado A, simulado B ou atividades escritas, com gabarito separado.</p><em>Abrir folha → imprimir ou salvar em PDF</em></span><span className="path-arrow">→</span></a>}
             {isEla3 && <a className="path-card path-test" href="/ela3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>WRITING PRACTICE</small><strong>Atividades para imprimir</strong><p>10 atividades abertas e gabarito separado para consultar depois.</p><em>Abrir folha de atividades → imprimir ou salvar em PDF</em></span><span className="path-arrow">→</span></a>}
             {isHistory3 && history3Downloads.map(download => (
               <a key={download.id} className="path-card path-test" href={download.src} download>
@@ -1035,16 +1072,6 @@ export default function Home() {
                 <span className="path-content"><small>MATERIAL PARA IMPRIMIR</small><strong>{download.label}</strong><p>{download.id === "key" ? "Confira depois de responder. Respostas abertas aceitam outras palavras com a mesma ideia." : "Leia com calma e responda com suas palavras."}</p><em>PDF A4 • {download.pages} páginas</em></span>
                 <span className="path-arrow">↓</span>
               </a>
-            ))}
-            {isHistory3 && (["history3-mock-a", "history3-mock-b"] as QuizId[]).map(id => (
-              <button key={id} className="path-card path-quiz" onClick={() => startQuiz(id)}>
-                <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRATICAR NO APP</small><strong>{quizCatalog[id].title}</strong><p>Quatorze questões, pistas graduais e explicações para cada alternativa.</p><em>Melhor: {quizStatsById[id].bestScore}/14</em></span><span className="path-arrow">→</span>
-              </button>
-            ))}
-            {activeSubject === "science" && (["science3-mock-a", "science3-mock-b"] as QuizId[]).map(id => (
-              <button key={id} className="path-card path-quiz" onClick={() => startQuiz(id)}>
-                <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>PRACTICE TEST</small><strong>{quizCatalog[id].title}</strong><p>20 questions • all ten topics • hints and explanations.</p><em>Best: {quizStatsById[id].bestScore}/20</em></span><span className="path-arrow">→</span>
-              </button>
             ))}
             {activeSubject === "science" && scienceMaterialsReady && scienceDownloads.map(download => (
               <a key={download.id} className="path-card path-test" href={download.src} download>
@@ -1070,17 +1097,7 @@ export default function Home() {
               </a>
             )}
 
-            <button className="path-card path-quiz" disabled={!quizCatalog[activeSubjectData.quizId].questions.length} onClick={() => startQuiz(activeSubjectData.quizId)}>
-              <span className="path-number">{activeSubject === "geography" ? "4" : activeSubject === "ela" || activeSubject === "science" ? "3" : "2"}</span>
-              <span className="path-art"><AppIcon name="medal" /></span>
-              <span className="path-content">
-                <small>DEPOIS</small>
-                <strong>{activeSubject === "history" || activeSubject === "geography" || activeSubject === "portuguese" ? "Desafio interativo" : "Quiz de revisão"}</strong>
-                <p>Pratique e leia por que cada uma das quatro alternativas está certa ou errada.</p>
-                <em>{quizCatalog[activeSubjectData.quizId].questions.length} questões • melhor: {quizStatsById[activeSubjectData.quizId].bestScore}/{quizCatalog[activeSubjectData.quizId].questions.length}</em>
-              </span>
-              <span className="path-arrow">→</span>
-            </button>
+            {!mockQuizIds.length && reviewQuizCard}
           </section>
 
           <section className="quick-review">
@@ -1256,7 +1273,7 @@ export default function Home() {
 
               <p className="lesson-intro">{activeLesson.intro}</p>
 
-              {isGeography3 ? <button className="geo-lesson-image" onClick={()=>{setInfographicPage(geography3Subject.lessons.findIndex(l=>l.id===activeLesson.id));setEnlargedInfographic(true);}} aria-label="Ampliar o infográfico desta aula"><Image className="history3-lesson-map" {...geography3ImageForLesson(activeLesson.id)} unoptimized /><span>Toque para ampliar ↗</span></button> : isEla3 ? <Image className="history3-lesson-map" {...ela3ImageForLesson(activeLesson.id)} /> : isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : activeSubject === "science" ? <Image className="history3-lesson-map" src={scienceImageForLesson(activeLesson.id).src} alt={scienceImageForLesson(activeLesson.id).alt} width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
+              {isPortuguese3 && portuguese3ImageForLesson(activeLesson.id) ? <button className="geo-lesson-image" onClick={()=>{setInfographicPage(portuguese3Infographics.indexOf(portuguese3ImageForLesson(activeLesson.id)!));setEnlargedInfographic(true);}} aria-label="Ampliar o infográfico desta aula"><Image className="history3-lesson-map" src={portuguese3ImageForLesson(activeLesson.id)!.src} alt={portuguese3ImageForLesson(activeLesson.id)!.alt} width={1024} height={1536} unoptimized /><span>Toque para ampliar ↗</span></button> : isPortuguese3 ? null : isGeography3 ? <button className="geo-lesson-image" onClick={()=>{setInfographicPage(geography3Subject.lessons.findIndex(l=>l.id===activeLesson.id));setEnlargedInfographic(true);}} aria-label="Ampliar o infográfico desta aula"><Image className="history3-lesson-map" {...geography3ImageForLesson(activeLesson.id)} unoptimized /><span>Toque para ampliar ↗</span></button> : isEla3 ? <Image className="history3-lesson-map" {...ela3ImageForLesson(activeLesson.id)} /> : isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : activeSubject === "science" ? <Image className="history3-lesson-map" src={scienceImageForLesson(activeLesson.id).src} alt={scienceImageForLesson(activeLesson.id).alt} width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
 
               <div className="fact-stack">
                 {activeLesson.facts.map((fact, index) => (
@@ -1282,6 +1299,7 @@ export default function Home() {
               })()}
 
               {isGeography3 && <Geography3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
+              {isPortuguese3 && <Portuguese3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
               {isEla3 && <Ela3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
               {activeSubject === "science" && <><ScienceMatching key={activeLesson.id} lessonId={activeLesson.id} /><SciencePractice key={`practice-${activeLesson.id}`} lessonId={activeLesson.id} /></>}
 
@@ -1376,7 +1394,7 @@ export default function Home() {
               <section className="parent-panel"><span className="eyebrow teal">EVOLUÇÃO</span><h2>Respostas por dia</h2><p>Últimos 30 dias com atividade. Cada tentativa conta, inclusive após uma pista. Horários da Bahia.</p>
                 {parentAnalytics?.timeline?.length ? <div className="history-table"><table><thead><tr><th>Dia</th><th>Respostas</th><th>Acertos</th><th>Aproveitamento</th></tr></thead><tbody>{parentAnalytics.timeline.map(day=><tr key={day.day}><td>{day.day.split('-').reverse().join('/')}</td><td>{day.attempts}</td><td>{day.correct}</td><td>{Math.round(day.correct/day.attempts*100)}%</td></tr>)}</tbody></table></div>:<p>As primeiras respostas formarão a evolução diária.</p>}
               </section>
-              <section className="parent-panel"><h2>Atividades escritas</h2><p>Rascunhos da conta, sem correção automática.</p>{parentAnalytics?.drafts?.filter(d=>d.answer).length?parentAnalytics.drafts.filter(d=>d.answer).map(d=><details key={d.taskId}><summary>{d.taskId.replace('bela-science-write-','Ciências • atividade ').replace('bela-ela3-practice-e3-','ELA • ').replace('bela-geography3-practice-g3-','Geografia • ')} — {new Date(d.updatedAt).toLocaleDateString('pt-BR',{timeZone:'America/Bahia'})}</summary><p style={{whiteSpace:'pre-wrap'}}>{d.answer}</p></details>):<p>Ainda não há respostas escritas salvas.</p>}</section>
+              <section className="parent-panel"><h2>Atividades escritas</h2><p>Rascunhos da conta, sem correção automática.</p>{parentAnalytics?.drafts?.filter(d=>d.answer).length?parentAnalytics.drafts.filter(d=>d.answer).map(d=><details key={d.taskId}><summary>{d.taskId.replace('bela-science-write-','Ciências • atividade ').replace('bela-ela3-practice-e3-','ELA • ').replace('bela-geography3-practice-g3-','Geografia • ').replace('bela-portuguese3-practice-p3-','Português • ')} — {new Date(d.updatedAt).toLocaleDateString('pt-BR',{timeZone:'America/Bahia'})}</summary><p style={{whiteSpace:'pre-wrap'}}>{d.answer}</p></details>):<p>Ainda não há respostas escritas salvas.</p>}</section>
               <section className="parent-panel errors-panel">
                 <div className="panel-heading"><div><span className="eyebrow teal">RESPOSTAS QUE PRECISARAM DE AJUDA</span><h2>Erros recentes</h2></div><small>O app registra cada tentativa, inclusive quando ela acerta depois da pista.</small></div>
                 {parentAnalytics?.wrongAnswers.length ? (

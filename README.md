@@ -44,7 +44,11 @@ Os 463 arquivos públicos estão no pacote sem perdas `.asset-bundle`, com verif
 
 ## Science • III trimestre
 
-O módulo Science inclui oito aulas bilíngues, 74 vocabulários, quiz de vinte questões com duas pistas graduais e explicações, quatro atividades de associação, quatro infográficos e PDFs de prova/gabarito. Materiais derivados das fontes autorizadas; nenhuma foto original de apostila de aluno é publicada. Veja `docs/science-release-review.md` para validação e plano de publicação.
+O módulo Science inclui dez aulas bilíngues (oito do material original e duas de extensão), 74 vocabulários, quiz de vinte questões com duas pistas graduais e explicações, quatro atividades de associação, quatro infográficos e PDFs de prova/gabarito. Materiais derivados das fontes autorizadas; nenhuma foto original de apostila de aluno é publicada. Veja `docs/science-release-review.md` para validação e plano de publicação.
+
+## Português • III trimestre
+
+Seis aulas baseadas no guia de estudo: leitura e compreensão, tempos verbais, eu e mim, numerais, algarismos romanos e tonicidade. São 54 questões autorais com duas pistas e explicação para cada alternativa (quiz de revisão, simulado A e simulado B, 18 questões cada), seis atividades escritas com resposta de apoio, três infográficos ilustrados e uma página de impressão em `/portugues3/imprimir`. As questões treinam as habilidades do guia sem copiar os exercícios. O conteúdo é gerado por `python3 scripts/create-portuguese3-content.py`; os infográficos ficam no pacote suplementar criado por `scripts/pack-portuguese3-assets.py`. Depois de alterar as aulas, execute `npm run tutor:content`.
 
 ## Conversa com o gatinho e consumo da API
 

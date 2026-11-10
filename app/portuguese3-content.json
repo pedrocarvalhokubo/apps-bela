@@ -1,0 +1,2454 @@
+{
+ "subject": {
+  "key": "portuguese",
+  "name": "Português",
+  "icon": "📝",
+  "eyebrow": "PORTUGUÊS • III TRIMESTRE",
+  "title": "Verbos, números e sílabas",
+  "description": "6 aulas • leitura, tempos verbais, eu e mim, numerais, algarismos romanos e tonicidade.",
+  "assessmentDate": "",
+  "quizId": "portuguese3-general",
+  "lessons": [
+   {
+    "id": "p3-reading",
+    "number": "01",
+    "icon": "📖",
+    "title": "Leitura e compreensão",
+    "subtitle": "Ler, localizar e concluir",
+    "tone": "purple",
+    "quizId": "portuguese3-reading",
+    "intro": "Compreender um texto é entender o que está escrito e também o que podemos concluir a partir das pistas. Leia o texto inteiro antes de responder.",
+    "facts": [
+     {
+      "term": "Antes",
+      "text": "leia o título e observe sobre o que o texto fala."
+     },
+     {
+      "term": "Localizar",
+      "text": "algumas respostas estão escritas no texto. Volte ao trecho e procure a informação."
+     },
+     {
+      "term": "Retirar do texto",
+      "text": "significa copiar a palavra ou o trecho exatamente como aparece no texto."
+     },
+     {
+      "term": "Concluir",
+      "text": "outras respostas pedem pistas: ações, sentimentos e palavras de tempo ajudam a entender o que aconteceu."
+     }
+    ],
+    "remember": "Leia tudo, volte ao trecho e confira se a resposta está no texto ou pode ser concluída por ele."
+   },
+   {
+    "id": "p3-tenses",
+    "number": "02",
+    "icon": "⏳",
+    "title": "Tempos verbais",
+    "subtitle": "Pretérito, presente e futuro",
+    "tone": "blue",
+    "quizId": "portuguese3-tenses",
+    "intro": "Verbos indicam ações, estados ou fenômenos da natureza. O tempo verbal mostra quando a ação acontece: no passado, no presente ou no futuro.",
+    "facts": [
+     {
+      "term": "Pretérito",
+      "text": "já aconteceu: Ontem eu estudei. Ela escreveu. Eles comeram."
+     },
+     {
+      "term": "Presente",
+      "text": "acontece agora: Hoje eu estudo. Ela escreve. Eles comem."
+     },
+     {
+      "term": "Futuro",
+      "text": "ainda acontecerá: Amanhã eu estudarei. Ela escreverá. Eles comerão."
+     },
+     {
+      "term": "Palavras de tempo",
+      "text": "ontem, hoje, agora, amanhã, depois, no mês passado e na próxima semana ajudam a descobrir o tempo."
+     }
+    ],
+    "remember": "Ontem → pretérito. Hoje/agora → presente. Amanhã → futuro."
+   },
+   {
+    "id": "p3-eu-mim",
+    "number": "03",
+    "icon": "🙋",
+    "title": "Eu ou mim?",
+    "subtitle": "Quem faz a ação?",
+    "tone": "orange",
+    "quizId": "portuguese3-eu-mim",
+    "intro": "Eu e mim são pronomes pessoais. Usamos EU quando o pronome realiza a ação de um verbo. Usamos MIM depois de preposições como para, de, por e entre, quando ele não é sujeito de um verbo.",
+    "facts": [
+     {
+      "term": "EU",
+      "text": "faz a ação: Eu gosto de ler. Este livro é para eu estudar. Minha mãe pediu para eu organizar o quarto."
+     },
+     {
+      "term": "MIM",
+      "text": "vem depois de preposição e não faz a ação: Este presente é para mim. Ela gosta de mim."
+     },
+     {
+      "term": "Entre",
+      "text": "o correto é “entre mim e você”, nunca “entre eu e você”."
+     },
+     {
+      "term": "Teste rápido",
+      "text": "depois de “para”, veja se vem um verbo que você mesmo faz: para eu ler; para mim, sem verbo depois."
+     }
+    ],
+    "remember": "Mim não faz nada: “para mim fazer” está errado. O certo é “para eu fazer”."
+   },
+   {
+    "id": "p3-numerals",
+    "number": "04",
+    "icon": "🔢",
+    "title": "Numerais",
+    "subtitle": "Quantidade, ordem, multiplicação e divisão",
+    "tone": "green",
+    "quizId": "portuguese3-numerals",
+    "intro": "Numerais são palavras que indicam quantidade, ordem, multiplicação ou divisão de uma quantidade. Existem quatro tipos principais.",
+    "facts": [
+     {
+      "term": "Cardinal",
+      "text": "indica quantidade: Tenho quatro livros. Três maçãs. Vinte estudantes."
+     },
+     {
+      "term": "Ordinal",
+      "text": "indica posição ou ordem: Ela chegou em primeiro lugar. Segundo, terceiro, décimo."
+     },
+     {
+      "term": "Multiplicativo",
+      "text": "indica multiplicação: Ganhei o dobro de pontos. Triplo, quádruplo."
+     },
+     {
+      "term": "Fracionário",
+      "text": "indica parte de um todo: Comi metade da maçã. Um terço, um quarto."
+     }
+    ],
+    "remember": "Quantos? cardinal. Em que posição? ordinal. Quantas vezes mais? multiplicativo. Que parte? fracionário."
+   },
+   {
+    "id": "p3-roman",
+    "number": "05",
+    "icon": "🏛️",
+    "title": "Algarismos romanos",
+    "subtitle": "I, V, X, L, C, D e M",
+    "tone": "purple",
+    "quizId": "portuguese3-roman",
+    "intro": "Os romanos escreviam números com letras. Ainda usamos algarismos romanos em séculos, nomes de reis e imperadores, capítulos e relógios.",
+    "facts": [
+     {
+      "term": "Valores",
+      "text": "I = 1, V = 5, X = 10, L = 50, C = 100, D = 500 e M = 1000."
+     },
+     {
+      "term": "Somar",
+      "text": "símbolo menor depois do maior soma: VI = 6, XV = 15, LX = 60."
+     },
+     {
+      "term": "Subtrair",
+      "text": "I antes de V ou X, X antes de L ou C, C antes de D ou M subtrai: IV = 4, IX = 9, XL = 40, XC = 90."
+     },
+     {
+      "term": "Repetir",
+      "text": "I, X, C e M podem ser repetidos até três vezes seguidas: III = 3, XXX = 30. V, L e D não se repetem."
+     }
+    ],
+    "remember": "Menor depois soma; menor antes subtrai. No máximo três símbolos iguais seguidos."
+   },
+   {
+    "id": "p3-stress",
+    "number": "06",
+    "icon": "🗣️",
+    "title": "Tonicidade",
+    "subtitle": "Oxítonas, paroxítonas e proparoxítonas",
+    "tone": "blue",
+    "quizId": "portuguese3-stress",
+    "intro": "Toda palavra com mais de uma sílaba tem uma sílaba pronunciada com mais força: a sílaba tônica. A posição dela classifica a palavra. Separe as sílabas e conte de trás para frente.",
+    "facts": [
+     {
+      "term": "Oxítona",
+      "text": "a tônica é a última sílaba: ca-FÉ, so-FÁ, ja-ca-RÉ, pa-PEL, co-ra-ÇÃO, a-ba-ca-XI."
+     },
+     {
+      "term": "Paroxítona",
+      "text": "a tônica é a penúltima sílaba: ca-DER-no, es-CO-la, LÁ-pis."
+     },
+     {
+      "term": "Proparoxítona",
+      "text": "a tônica é a antepenúltima sílaba: MÚ-si-ca, LÂM-pa-da, MÉ-di-co, ÁR-vo-re."
+     },
+     {
+      "term": "Acento",
+      "text": "toda proparoxítona tem acento gráfico. Mas a tônica nem sempre tem acento: pa-PEL, ca-DER-no."
+     }
+    ],
+    "remember": "Conte do fim: última = oxítona; penúltima = paroxítona; antepenúltima = proparoxítona."
+   }
+  ]
+ },
+ "questions": [
+  {
+   "id": 3500,
+   "topic": "Leitura e compreensão",
+   "pool": "quiz",
+   "prompt": "Leia: “Lia acordou cedo, pegou a mochila e correu para o ponto. Quando chegou, o ônibus já tinha partido.” O que aconteceu quando Lia chegou ao ponto?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Volte à última frase do texto.",
+    "A resposta está escrita no texto."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "O ônibus já tinha partido.",
+     "explanation": "Correto. O texto diz que, quando Lia chegou, o ônibus já tinha partido."
+    },
+    {
+     "id": "b",
+     "label": "Lia encontrou uma amiga no ponto.",
+     "explanation": "O texto não fala de nenhuma amiga; essa informação foi inventada."
+    },
+    {
+     "id": "c",
+     "label": "O ônibus estava atrasado.",
+     "explanation": "É o contrário: o ônibus já tinha ido embora quando ela chegou."
+    },
+    {
+     "id": "d",
+     "label": "Lia voltou para dormir.",
+     "explanation": "O texto não conta o que Lia fez depois; não podemos afirmar isso."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3501,
+   "topic": "Leitura e compreensão",
+   "pool": "quiz",
+   "prompt": "Uma questão pede: “Retire do texto um numeral”. O que você deve fazer?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Pense no significado de “retirar”.",
+    "A palavra deve aparecer igualzinha no texto."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "Inventar uma palavra parecida.",
+     "explanation": "A resposta precisa vir do texto, não da imaginação."
+    },
+    {
+     "id": "b",
+     "label": "Copiar a palavra exatamente como aparece no texto.",
+     "explanation": "Correto. Retirar do texto é copiar a palavra ou o trecho do jeito que está escrito."
+    },
+    {
+     "id": "c",
+     "label": "Resumir o texto inteiro.",
+     "explanation": "Resumir é outra tarefa; aqui basta copiar a palavra pedida."
+    },
+    {
+     "id": "d",
+     "label": "Apagar o numeral do texto.",
+     "explanation": "Retirar, nesse caso, não significa apagar, e sim copiar."
+    }
+   ],
+   "sourceRefs": [
+    "P3-07"
+   ]
+  },
+  {
+   "id": 3502,
+   "topic": "Leitura e compreensão",
+   "pool": "quiz",
+   "prompt": "Leia: “O gato Tufo dormia no sofá. De repente, um trovão forte ecoou e Tufo correu para debaixo da cama.” Por que Tufo se escondeu?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Veja o que aconteceu logo antes de ele correr.",
+    "Pense no que um barulho forte causa em um gato."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "Porque estava com fome.",
+     "explanation": "O texto não fala de comida; não há pista de fome."
+    },
+    {
+     "id": "b",
+     "label": "Porque queria brincar.",
+     "explanation": "Correr para debaixo da cama logo após um trovão não indica brincadeira."
+    },
+    {
+     "id": "c",
+     "label": "Porque se assustou com o trovão.",
+     "explanation": "Correto. O trovão forte veio “de repente”; a pista mostra que Tufo ficou assustado."
+    },
+    {
+     "id": "d",
+     "label": "Porque o sofá quebrou.",
+     "explanation": "O texto não diz que o sofá quebrou."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3600,
+   "topic": "Leitura e compreensão",
+   "pool": "mock-a",
+   "prompt": "Leia: “A feira de ciências teve doze projetos. O vulcão de argila da turma do 4º ano foi o mais visitado.” Qual projeto foi o mais visitado?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Procure a palavra “visitado”.",
+    "A resposta está escrita na segunda frase."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "Um projeto do 5º ano.",
+     "explanation": "O texto fala da turma do 4º ano, não do 5º."
+    },
+    {
+     "id": "b",
+     "label": "O vulcão de argila.",
+     "explanation": "Correto. O texto afirma que o vulcão de argila foi o mais visitado."
+    },
+    {
+     "id": "c",
+     "label": "O décimo segundo projeto.",
+     "explanation": "Doze é a quantidade de projetos, não a posição do mais visitado."
+    },
+    {
+     "id": "d",
+     "label": "Todos os projetos empataram.",
+     "explanation": "O texto diz que um projeto foi o mais visitado, então não houve empate."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3601,
+   "topic": "Leitura e compreensão",
+   "pool": "mock-a",
+   "prompt": "Qual é a melhor atitude para entender bem um texto antes de responder às perguntas?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Pense no que um bom leitor faz primeiro.",
+    "Ler só um pedaço pode deixar informações de fora."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "Ler apenas a primeira linha.",
+     "explanation": "A resposta pode estar em qualquer parte do texto."
+    },
+    {
+     "id": "b",
+     "label": "Olhar só as figuras.",
+     "explanation": "As figuras ajudam, mas não substituem a leitura do texto."
+    },
+    {
+     "id": "c",
+     "label": "Ler o título e o texto inteiro com atenção.",
+     "explanation": "Correto. Ler tudo com atenção ajuda a encontrar as informações e as pistas."
+    },
+    {
+     "id": "d",
+     "label": "Responder primeiro e ler depois.",
+     "explanation": "Responder antes de ler aumenta a chance de erro."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3602,
+   "topic": "Leitura e compreensão",
+   "pool": "mock-a",
+   "prompt": "Leia: “Mesmo cansado depois do treino, Caio ajudou o avô a carregar as compras.” O que podemos concluir sobre Caio?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Ele estava cansado, mas fez algo pelo avô.",
+    "Que qualidade tem quem ajuda os outros?"
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "Ele não gosta do avô.",
+     "explanation": "Ele ajudou o avô; isso mostra cuidado, não desgosto."
+    },
+    {
+     "id": "b",
+     "label": "Ele faltou ao treino.",
+     "explanation": "O texto diz que ele estava cansado depois do treino, então foi ao treino."
+    },
+    {
+     "id": "c",
+     "label": "Ele estava descansado.",
+     "explanation": "O texto diz claramente que Caio estava cansado."
+    },
+    {
+     "id": "d",
+     "label": "Ele é prestativo.",
+     "explanation": "Correto. Ajudar o avô mesmo cansado mostra que Caio gosta de ajudar."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3700,
+   "topic": "Leitura e compreensão",
+   "pool": "mock-b",
+   "prompt": "Leia: “Choveu a semana toda. No sábado, o sol finalmente apareceu, e as crianças foram ao parque.” Quando as crianças foram ao parque?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Procure uma palavra que indique o dia.",
+    "Releia a segunda frase."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "Durante a semana de chuva.",
+     "explanation": "Durante a semana choveu; elas foram depois, no sábado."
+    },
+    {
+     "id": "b",
+     "label": "Antes de começar a chover.",
+     "explanation": "O texto não fala de antes da chuva."
+    },
+    {
+     "id": "c",
+     "label": "No sábado, quando o sol apareceu.",
+     "explanation": "Correto. O texto diz que foram ao parque no sábado, quando o sol apareceu."
+    },
+    {
+     "id": "d",
+     "label": "O texto não informa.",
+     "explanation": "O texto informa: no sábado."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3701,
+   "topic": "Leitura e compreensão",
+   "pool": "mock-b",
+   "prompt": "Leia: “Marina plantou um feijão no copo e regou todos os dias. Depois de uma semana, apareceram as primeiras folhas.” Quanto tempo levou para as folhas aparecerem?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Procure uma expressão de tempo.",
+    "Ela aparece na segunda frase."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "Um dia.",
+     "explanation": "Marina regava todos os dias, mas as folhas surgiram depois de uma semana."
+    },
+    {
+     "id": "b",
+     "label": "Um mês.",
+     "explanation": "O texto não fala em mês."
+    },
+    {
+     "id": "c",
+     "label": "Duas semanas.",
+     "explanation": "O texto fala em uma semana, não duas."
+    },
+    {
+     "id": "d",
+     "label": "Uma semana.",
+     "explanation": "Correto. O texto diz: “Depois de uma semana, apareceram as primeiras folhas”."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3702,
+   "topic": "Leitura e compreensão",
+   "pool": "mock-b",
+   "prompt": "Leia: “Pedro olhou o boletim, deu um pulo e abraçou a mãe, sorrindo.” Como Pedro provavelmente se sentiu?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Observe as ações: pular, abraçar, sorrir.",
+    "Essas ações combinam com qual sentimento?"
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "Feliz com o resultado.",
+     "explanation": "Correto. Pular, abraçar e sorrir são pistas de alegria."
+    },
+    {
+     "id": "b",
+     "label": "Triste com as notas.",
+     "explanation": "Quem está triste normalmente não pula sorrindo."
+    },
+    {
+     "id": "c",
+     "label": "Com medo da mãe.",
+     "explanation": "Ele abraçou a mãe sorrindo; não há sinal de medo."
+    },
+    {
+     "id": "d",
+     "label": "Entediado com o boletim.",
+     "explanation": "Um pulo e um abraço mostram empolgação, não tédio."
+    }
+   ],
+   "sourceRefs": [
+    "P3-01"
+   ]
+  },
+  {
+   "id": 3503,
+   "topic": "Tempos verbais",
+   "pool": "quiz",
+   "prompt": "“Ontem, os alunos visitaram o museu.” Em que tempo está o verbo?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Encontre o verbo da frase.",
+    "A palavra “ontem” é uma pista."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "Presente, porque acontece agora.",
+     "explanation": "Se fosse agora, seria “visitam”. “Ontem” indica passado."
+    },
+    {
+     "id": "b",
+     "label": "Futuro, porque ainda vai acontecer.",
+     "explanation": "No futuro seria “visitarão”."
+    },
+    {
+     "id": "c",
+     "label": "A frase não tem verbo.",
+     "explanation": "“Visitaram” é o verbo da frase."
+    },
+    {
+     "id": "d",
+     "label": "Pretérito, porque a ação já aconteceu.",
+     "explanation": "Correto. “Visitaram” e “ontem” mostram uma ação que já aconteceu."
+    }
+   ],
+   "sourceRefs": [
+    "P3-02",
+    "P3-05"
+   ]
+  },
+  {
+   "id": 3504,
+   "topic": "Tempos verbais",
+   "pool": "quiz",
+   "prompt": "Qual frase está no futuro?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Procure uma ação que ainda vai acontecer.",
+    "Observe a palavra de tempo e a terminação do verbo."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "Amanhã eu estudarei para a prova.",
+     "explanation": "Correto. “Amanhã” e “estudarei” indicam algo que ainda acontecerá."
+    },
+    {
+     "id": "b",
+     "label": "Ontem eu estudei para a prova.",
+     "explanation": "“Estudei” e “ontem” indicam pretérito."
+    },
+    {
+     "id": "c",
+     "label": "Hoje eu estudo para a prova.",
+     "explanation": "“Estudo” e “hoje” indicam presente."
+    },
+    {
+     "id": "d",
+     "label": "Eu estudava todos os dias no ano passado.",
+     "explanation": "“Estudava” e “ano passado” indicam passado."
+    }
+   ],
+   "sourceRefs": [
+    "P3-02"
+   ]
+  },
+  {
+   "id": 3505,
+   "topic": "Tempos verbais",
+   "pool": "quiz",
+   "prompt": "Complete: “Agora, o treinador ____ o time no campo.” (reunir)",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "“Agora” indica qual tempo?",
+    "Escolha a forma do presente."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "reuniu",
+     "explanation": "“Reuniu” é pretérito e não combina com “agora”."
+    },
+    {
+     "id": "b",
+     "label": "reúne",
+     "explanation": "Correto. “Agora” pede o presente: o treinador reúne o time."
+    },
+    {
+     "id": "c",
+     "label": "reunirá",
+     "explanation": "“Reunirá” é futuro e não combina com “agora”."
+    },
+    {
+     "id": "d",
+     "label": "reunir",
+     "explanation": "“Reunir” é o nome do verbo; não mostra quando a ação acontece."
+    }
+   ],
+   "sourceRefs": [
+    "P3-06"
+   ]
+  },
+  {
+   "id": 3603,
+   "topic": "Tempos verbais",
+   "pool": "mock-a",
+   "prompt": "Quais palavras ajudam a perceber que uma ação ainda vai acontecer?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Pense no que vem depois de hoje.",
+    "Procure o grupo do futuro."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "amanhã, depois, na próxima semana",
+     "explanation": "Correto. Essas expressões apontam para o futuro."
+    },
+    {
+     "id": "b",
+     "label": "ontem, no mês passado, anteontem",
+     "explanation": "Essas palavras indicam passado."
+    },
+    {
+     "id": "c",
+     "label": "hoje, agora, neste momento",
+     "explanation": "Essas palavras indicam presente."
+    },
+    {
+     "id": "d",
+     "label": "sempre, nunca, talvez",
+     "explanation": "Essas palavras não mostram um tempo específico da ação."
+    }
+   ],
+   "sourceRefs": [
+    "P3-02"
+   ]
+  },
+  {
+   "id": 3604,
+   "topic": "Tempos verbais",
+   "pool": "mock-a",
+   "prompt": "Passe para o futuro: “Os meninos jogaram bola.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "No futuro, a ação ainda vai acontecer.",
+    "Lembre: eles comerão, eles brincarão…"
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "Os meninos jogam bola.",
+     "explanation": "“Jogam” está no presente."
+    },
+    {
+     "id": "b",
+     "label": "Os meninos jogarão bola.",
+     "explanation": "Correto. “Jogarão” é a forma do futuro."
+    },
+    {
+     "id": "c",
+     "label": "Os meninos jogavam bola.",
+     "explanation": "“Jogavam” ainda indica passado."
+    },
+    {
+     "id": "d",
+     "label": "Os meninos jogaram bola amanhã.",
+     "explanation": "Só acrescentar “amanhã” não muda o verbo; “jogaram” continua no passado."
+    }
+   ],
+   "sourceRefs": [
+    "P3-05"
+   ]
+  },
+  {
+   "id": 3605,
+   "topic": "Tempos verbais",
+   "pool": "mock-a",
+   "prompt": "A forma “viajamos” aparece em “Nós viajamos ontem” e em “Nós viajamos hoje”. Como descobrir o tempo de cada frase?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "O verbo é igual nas duas frases.",
+    "O que muda entre elas?"
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "Contando as letras do verbo.",
+     "explanation": "As duas formas têm as mesmas letras; contar não ajuda."
+    },
+    {
+     "id": "b",
+     "label": "Pelo tamanho da frase.",
+     "explanation": "O tamanho da frase não indica o tempo."
+    },
+    {
+     "id": "c",
+     "label": "Pelas palavras de tempo, como ontem e hoje.",
+     "explanation": "Correto. Quando a forma é igual, “ontem” mostra pretérito e “hoje” mostra presente."
+    },
+    {
+     "id": "d",
+     "label": "Não é possível descobrir.",
+     "explanation": "É possível: as palavras de tempo resolvem."
+    }
+   ],
+   "sourceRefs": [
+    "P3-02"
+   ]
+  },
+  {
+   "id": 3703,
+   "topic": "Tempos verbais",
+   "pool": "mock-b",
+   "prompt": "Em “Mariana escreve uma história sobre sua família”, qual é o verbo e em que tempo ele está?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "O verbo indica a ação de Mariana.",
+    "Essa ação acontece agora?"
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "história — pretérito",
+     "explanation": "“História” é um substantivo, não um verbo."
+    },
+    {
+     "id": "b",
+     "label": "escreve — presente",
+     "explanation": "Correto. “Escreve” é a ação e está no presente."
+    },
+    {
+     "id": "c",
+     "label": "escreve — futuro",
+     "explanation": "No futuro seria “escreverá”."
+    },
+    {
+     "id": "d",
+     "label": "família — presente",
+     "explanation": "“Família” é um substantivo, não um verbo."
+    }
+   ],
+   "sourceRefs": [
+    "P3-05"
+   ]
+  },
+  {
+   "id": 3704,
+   "topic": "Tempos verbais",
+   "pool": "mock-b",
+   "prompt": "Complete: “No ano passado, minha tia ____ para o Japão.” (mudar)",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "“No ano passado” indica qual tempo?",
+    "Escolha a forma do pretérito."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "muda",
+     "explanation": "“Muda” está no presente."
+    },
+    {
+     "id": "b",
+     "label": "mudará",
+     "explanation": "“Mudará” está no futuro."
+    },
+    {
+     "id": "c",
+     "label": "mudou",
+     "explanation": "Correto. “No ano passado” pede o pretérito: mudou."
+    },
+    {
+     "id": "d",
+     "label": "mudar",
+     "explanation": "“Mudar” é o nome do verbo e não indica tempo."
+    }
+   ],
+   "sourceRefs": [
+    "P3-06"
+   ]
+  },
+  {
+   "id": 3705,
+   "topic": "Tempos verbais",
+   "pool": "mock-b",
+   "prompt": "Qual frase tem verbos que indicam ações que já aconteceram?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Procure terminações do passado.",
+    "Exemplos: brinquei, escreveu, comeram."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "Lucas pinta o desenho e guarda os lápis.",
+     "explanation": "“Pinta” e “guarda” estão no presente."
+    },
+    {
+     "id": "b",
+     "label": "Lucas pintará o desenho e guardará os lápis.",
+     "explanation": "“Pintará” e “guardará” estão no futuro."
+    },
+    {
+     "id": "c",
+     "label": "Lucas vai pintar o desenho amanhã.",
+     "explanation": "“Vai pintar amanhã” indica futuro."
+    },
+    {
+     "id": "d",
+     "label": "Lucas pintou o desenho e guardou os lápis.",
+     "explanation": "Correto. “Pintou” e “guardou” estão no pretérito."
+    }
+   ],
+   "sourceRefs": [
+    "P3-05"
+   ]
+  },
+  {
+   "id": 3506,
+   "topic": "Eu ou mim?",
+   "pool": "quiz",
+   "prompt": "Complete: “A vovó fez um bolo para ____.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Depois do espaço vem algum verbo?",
+    "Sem verbo depois de “para”, qual pronome usamos?"
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "eu",
+     "explanation": "Eu só aparece depois de “para” quando vem um verbo: para eu comer."
+    },
+    {
+     "id": "b",
+     "label": "comigo",
+     "explanation": "“Para comigo” não combina com esta frase."
+    },
+    {
+     "id": "c",
+     "label": "mim",
+     "explanation": "Correto. Depois de “para”, sem verbo seguinte, usamos mim: o bolo é para mim."
+    },
+    {
+     "id": "d",
+     "label": "me",
+     "explanation": "“Para me” não é usado no fim dessa frase."
+    }
+   ],
+   "sourceRefs": [
+    "P3-03",
+    "P3-06"
+   ]
+  },
+  {
+   "id": 3507,
+   "topic": "Eu ou mim?",
+   "pool": "quiz",
+   "prompt": "Complete: “O professor pediu para ____ apagar o quadro.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Quem vai apagar o quadro?",
+    "Se o pronome faz a ação, qual usamos?"
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "mim",
+     "explanation": "Mim não faz ações. “Para mim apagar” está inadequado."
+    },
+    {
+     "id": "b",
+     "label": "me",
+     "explanation": "“Para me apagar” muda o sentido: seria apagar a si mesmo."
+    },
+    {
+     "id": "c",
+     "label": "comigo",
+     "explanation": "“Para comigo apagar” não forma uma frase correta."
+    },
+    {
+     "id": "d",
+     "label": "eu",
+     "explanation": "Correto. Eu vou apagar o quadro; quem faz a ação é EU."
+    }
+   ],
+   "sourceRefs": [
+    "P3-03",
+    "P3-06"
+   ]
+  },
+  {
+   "id": 3508,
+   "topic": "Eu ou mim?",
+   "pool": "quiz",
+   "prompt": "Qual frase usa o pronome corretamente?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Lembre a regra da palavra “entre”.",
+    "Depois de preposição sem verbo, usamos mim."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "Entre mim e você não há segredos.",
+     "explanation": "Correto. Com “entre”, usamos mim."
+    },
+    {
+     "id": "b",
+     "label": "Entre eu e você não há segredos.",
+     "explanation": "Com “entre”, o correto é “entre mim e você”."
+    },
+    {
+     "id": "c",
+     "label": "Esse lanche é para eu.",
+     "explanation": "No fim da frase, depois de “para”, usamos mim."
+    },
+    {
+     "id": "d",
+     "label": "Minha irmã trouxe um livro para eu.",
+     "explanation": "Sem verbo depois, o correto é “para mim”."
+    }
+   ],
+   "sourceRefs": [
+    "P3-03",
+    "P3-07"
+   ]
+  },
+  {
+   "id": 3606,
+   "topic": "Eu ou mim?",
+   "pool": "mock-a",
+   "prompt": "Complete: “Este jogo é para ____ montar sozinha.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Quem vai montar?",
+    "Há um verbo logo depois do espaço."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "mim",
+     "explanation": "“Para mim montar” está inadequado, porque mim não faz ações."
+    },
+    {
+     "id": "b",
+     "label": "me",
+     "explanation": "“Para me montar” mudaria o sentido da frase."
+    },
+    {
+     "id": "c",
+     "label": "comigo",
+     "explanation": "“Para comigo montar” não está correto."
+    },
+    {
+     "id": "d",
+     "label": "eu",
+     "explanation": "Correto. Eu vou montar: o pronome faz a ação, então usamos eu."
+    }
+   ],
+   "sourceRefs": [
+    "P3-03"
+   ]
+  },
+  {
+   "id": 3607,
+   "topic": "Eu ou mim?",
+   "pool": "mock-a",
+   "prompt": "Complete: “Meu primo sentou perto de ____ no cinema.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "“De” é uma preposição.",
+    "Há algum verbo depois do espaço?"
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "mim",
+     "explanation": "Correto. Depois da preposição “de”, sem verbo, usamos mim."
+    },
+    {
+     "id": "b",
+     "label": "eu",
+     "explanation": "“Perto de eu” está inadequado; o pronome não faz ação aqui."
+    },
+    {
+     "id": "c",
+     "label": "comigo",
+     "explanation": "“Perto de comigo” não é usado."
+    },
+    {
+     "id": "d",
+     "label": "me",
+     "explanation": "“Perto de me” não está correto."
+    }
+   ],
+   "sourceRefs": [
+    "P3-03"
+   ]
+  },
+  {
+   "id": 3608,
+   "topic": "Eu ou mim?",
+   "pool": "mock-a",
+   "prompt": "Quando usamos EU depois da palavra “para”?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Lembre o exemplo “Este livro é para eu estudar”.",
+    "O que vem depois de “eu” nesse exemplo?"
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "Sempre que aparece a palavra “para”.",
+     "explanation": "Nem sempre: “O presente é para mim” usa mim."
+    },
+    {
+     "id": "b",
+     "label": "Quando depois vem um verbo que eu vou fazer.",
+     "explanation": "Correto. Para eu ler, para eu estudar: eu faço a ação."
+    },
+    {
+     "id": "c",
+     "label": "Nunca; depois de “para” só se usa mim.",
+     "explanation": "Usamos eu quando há um verbo: “para eu fazer”."
+    },
+    {
+     "id": "d",
+     "label": "Só quando a palavra está no fim da frase.",
+     "explanation": "No fim da frase, sem verbo, usamos mim."
+    }
+   ],
+   "sourceRefs": [
+    "P3-03"
+   ]
+  },
+  {
+   "id": 3706,
+   "topic": "Eu ou mim?",
+   "pool": "mock-b",
+   "prompt": "Qual frase apresenta uso INADEQUADO do pronome?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Procure a frase que termina com o pronome.",
+    "Sem verbo depois de “para”, qual pronome é o certo?"
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "A mamãe deixou um bilhete para eu.",
+     "explanation": "Correto, esta é a inadequada: sem verbo depois, deveria ser “para mim”."
+    },
+    {
+     "id": "b",
+     "label": "A mamãe deixou um bilhete para eu ler.",
+     "explanation": "Esta está adequada: eu vou ler, então usamos eu."
+    },
+    {
+     "id": "c",
+     "label": "A mamãe deixou um bilhete para mim.",
+     "explanation": "Esta está adequada: mim depois de “para”, sem verbo."
+    },
+    {
+     "id": "d",
+     "label": "Eu li o bilhete da mamãe.",
+     "explanation": "Esta está adequada: eu é quem lê."
+    }
+   ],
+   "sourceRefs": [
+    "P3-07"
+   ]
+  },
+  {
+   "id": 3707,
+   "topic": "Eu ou mim?",
+   "pool": "mock-b",
+   "prompt": "Complete: “Minha amiga gosta muito de ____.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "“De” é uma preposição.",
+    "O pronome recebe o carinho, não faz a ação."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "eu",
+     "explanation": "“Gosta de eu” está inadequado."
+    },
+    {
+     "id": "b",
+     "label": "mim",
+     "explanation": "Correto. Depois de “de”, sem verbo seguinte, usamos mim: gosta de mim."
+    },
+    {
+     "id": "c",
+     "label": "comigo",
+     "explanation": "“Gosta de comigo” não está correto."
+    },
+    {
+     "id": "d",
+     "label": "me",
+     "explanation": "“Gosta de me” não está correto nessa frase."
+    }
+   ],
+   "sourceRefs": [
+    "P3-03"
+   ]
+  },
+  {
+   "id": 3708,
+   "topic": "Eu ou mim?",
+   "pool": "mock-b",
+   "prompt": "Complete: “O treinador passou a bola para ____ chutar.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Quem vai chutar?",
+    "Há verbo depois do espaço."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "mim",
+     "explanation": "Mim não faz ações; “para mim chutar” está inadequado."
+    },
+    {
+     "id": "b",
+     "label": "me",
+     "explanation": "“Para me chutar” mudaria totalmente o sentido."
+    },
+    {
+     "id": "c",
+     "label": "eu",
+     "explanation": "Correto. Eu vou chutar; quem faz a ação é eu."
+    },
+    {
+     "id": "d",
+     "label": "comigo",
+     "explanation": "“Para comigo chutar” não está correto."
+    }
+   ],
+   "sourceRefs": [
+    "P3-06"
+   ]
+  },
+  {
+   "id": 3509,
+   "topic": "Numerais",
+   "pool": "quiz",
+   "prompt": "“Ganhei o triplo de figurinhas.” Como se classifica o numeral “triplo”?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Triplo é três vezes mais.",
+    "Que tipo indica multiplicação?"
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "Cardinal",
+     "explanation": "Cardinal indica quantidade, como três ou quatro."
+    },
+    {
+     "id": "b",
+     "label": "Multiplicativo",
+     "explanation": "Correto. Triplo indica multiplicação: três vezes a quantidade."
+    },
+    {
+     "id": "c",
+     "label": "Ordinal",
+     "explanation": "Ordinal indica posição, como terceiro."
+    },
+    {
+     "id": "d",
+     "label": "Fracionário",
+     "explanation": "Fracionário indica parte, como um terço."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04",
+    "P3-08"
+   ]
+  },
+  {
+   "id": 3510,
+   "topic": "Numerais",
+   "pool": "quiz",
+   "prompt": "Qual destes numerais é ordinal?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Ordinal indica posição.",
+    "Qual palavra responde “em que lugar”?"
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "cinco",
+     "explanation": "Cinco indica quantidade: é cardinal."
+    },
+    {
+     "id": "b",
+     "label": "quíntuplo",
+     "explanation": "Quíntuplo indica multiplicação: é multiplicativo."
+    },
+    {
+     "id": "c",
+     "label": "quinto",
+     "explanation": "Correto. Quinto indica posição: o quinto da fila."
+    },
+    {
+     "id": "d",
+     "label": "um quinto",
+     "explanation": "Um quinto indica parte de um todo: é fracionário."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04"
+   ]
+  },
+  {
+   "id": 3511,
+   "topic": "Numerais",
+   "pool": "quiz",
+   "prompt": "“Comi um terço da pizza.” O numeral “um terço” indica:",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "A pizza foi dividida.",
+    "Pense em parte de um todo."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "Uma quantidade inteira: cardinal.",
+     "explanation": "Cardinal seria “três pizzas”, por exemplo."
+    },
+    {
+     "id": "b",
+     "label": "Uma posição: ordinal.",
+     "explanation": "Ordinal seria “a terceira pizza”."
+    },
+    {
+     "id": "c",
+     "label": "Uma multiplicação: multiplicativo.",
+     "explanation": "Multiplicativo seria “o triplo de pizza”."
+    },
+    {
+     "id": "d",
+     "label": "Uma parte de um todo: fracionário.",
+     "explanation": "Correto. Um terço é uma das três partes iguais da pizza."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04"
+   ]
+  },
+  {
+   "id": 3609,
+   "topic": "Numerais",
+   "pool": "mock-a",
+   "prompt": "Leia: “Trinta crianças correram. Bia chegou em terceiro lugar e ganhou o dobro de medalhas do ano passado.” Qual é o numeral cardinal?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Cardinal indica quantidade.",
+    "Qual palavra diz quantas crianças?"
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "terceiro",
+     "explanation": "Terceiro indica posição: é ordinal."
+    },
+    {
+     "id": "b",
+     "label": "dobro",
+     "explanation": "Dobro indica multiplicação: é multiplicativo."
+    },
+    {
+     "id": "c",
+     "label": "trinta",
+     "explanation": "Correto. Trinta indica a quantidade de crianças."
+    },
+    {
+     "id": "d",
+     "label": "lugar",
+     "explanation": "Lugar não é numeral; é um substantivo."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04",
+    "P3-07"
+   ]
+  },
+  {
+   "id": 3610,
+   "topic": "Numerais",
+   "pool": "mock-a",
+   "prompt": "Complete com um numeral ordinal: “Meu irmão está no ____ ano.”",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "O ano da escola indica uma ordem.",
+    "Procure a palavra de posição."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "dois",
+     "explanation": "Dois é cardinal; indica quantidade."
+    },
+    {
+     "id": "b",
+     "label": "duplo",
+     "explanation": "Duplo é multiplicativo."
+    },
+    {
+     "id": "c",
+     "label": "metade",
+     "explanation": "Metade é fracionário."
+    },
+    {
+     "id": "d",
+     "label": "segundo",
+     "explanation": "Correto. Segundo indica a ordem do ano escolar."
+    }
+   ],
+   "sourceRefs": [
+    "P3-08"
+   ]
+  },
+  {
+   "id": 3611,
+   "topic": "Numerais",
+   "pool": "mock-a",
+   "prompt": "Qual par está classificado corretamente?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Lembre: metade é parte de um todo.",
+    "Confira cada par com a tabela dos quatro tipos."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "metade — fracionário",
+     "explanation": "Correto. Metade indica parte de um todo."
+    },
+    {
+     "id": "b",
+     "label": "dobro — ordinal",
+     "explanation": "Dobro é multiplicativo, não ordinal."
+    },
+    {
+     "id": "c",
+     "label": "décimo — cardinal",
+     "explanation": "Décimo indica posição: é ordinal."
+    },
+    {
+     "id": "d",
+     "label": "doze — multiplicativo",
+     "explanation": "Doze indica quantidade: é cardinal."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04",
+    "P3-08"
+   ]
+  },
+  {
+   "id": 3709,
+   "topic": "Numerais",
+   "pool": "mock-b",
+   "prompt": "“O ônibus levou quarenta passageiros.” O numeral “quarenta” é:",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Ele responde à pergunta “quantos?”.",
+    "Quantidade é qual tipo?"
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "ordinal",
+     "explanation": "Ordinal seria “quadragésimo”, uma posição."
+    },
+    {
+     "id": "b",
+     "label": "multiplicativo",
+     "explanation": "Multiplicativo seria dobro, triplo…"
+    },
+    {
+     "id": "c",
+     "label": "fracionário",
+     "explanation": "Fracionário seria metade, um terço…"
+    },
+    {
+     "id": "d",
+     "label": "cardinal",
+     "explanation": "Correto. Quarenta indica a quantidade de passageiros."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04"
+   ]
+  },
+  {
+   "id": 3710,
+   "topic": "Numerais",
+   "pool": "mock-b",
+   "prompt": "Qual destes numerais é multiplicativo?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Multiplicativo indica quantas vezes.",
+    "Qual palavra significa “duas vezes”?"
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "dobro",
+     "explanation": "Correto. Dobro significa duas vezes a quantidade."
+    },
+    {
+     "id": "b",
+     "label": "dois",
+     "explanation": "Dois é cardinal."
+    },
+    {
+     "id": "c",
+     "label": "segundo",
+     "explanation": "Segundo é ordinal."
+    },
+    {
+     "id": "d",
+     "label": "meio",
+     "explanation": "Meio indica parte: é fracionário."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04"
+   ]
+  },
+  {
+   "id": 3711,
+   "topic": "Numerais",
+   "pool": "mock-b",
+   "prompt": "“Rafael ficou em 1º lugar.” Como se escreve 1º por extenso?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "O símbolo º indica ordinal.",
+    "Qual palavra mostra a primeira posição?"
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "um",
+     "explanation": "Um é cardinal; 1º indica posição."
+    },
+    {
+     "id": "b",
+     "label": "primeiro",
+     "explanation": "Correto. 1º lê-se primeiro, um numeral ordinal."
+    },
+    {
+     "id": "c",
+     "label": "único",
+     "explanation": "Único não é a leitura de 1º."
+    },
+    {
+     "id": "d",
+     "label": "primo",
+     "explanation": "Primo é um parente, não um numeral."
+    }
+   ],
+   "sourceRefs": [
+    "P3-04"
+   ]
+  },
+  {
+   "id": 3512,
+   "topic": "Algarismos romanos",
+   "pool": "quiz",
+   "prompt": "Quanto vale XXVI?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe: XX + VI.",
+    "XX = 20 e VI = 6."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "26",
+     "explanation": "Correto. XX (20) + VI (6) = 26."
+    },
+    {
+     "id": "b",
+     "label": "24",
+     "explanation": "24 seria XXIV; aqui o I vem depois do V, então soma."
+    },
+    {
+     "id": "c",
+     "label": "31",
+     "explanation": "Não é 31: 31 se escreve XXXI."
+    },
+    {
+     "id": "d",
+     "label": "16",
+     "explanation": "Não é 16: 16 se escreve XVI."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3513,
+   "topic": "Algarismos romanos",
+   "pool": "quiz",
+   "prompt": "Como se escreve 9 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "9 é 1 a menos que 10.",
+    "Símbolo menor antes do maior subtrai."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "VIIII",
+     "explanation": "Não podemos repetir I quatro vezes seguidas."
+    },
+    {
+     "id": "b",
+     "label": "IX",
+     "explanation": "Correto. I antes de X subtrai: 10 − 1 = 9."
+    },
+    {
+     "id": "c",
+     "label": "XI",
+     "explanation": "XI vale 11: o I depois do X soma."
+    },
+    {
+     "id": "d",
+     "label": "VIV",
+     "explanation": "VIV não é uma forma usada para escrever 9."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3514,
+   "topic": "Algarismos romanos",
+   "pool": "quiz",
+   "prompt": "Em “Dom João VI”, que número aparece no nome?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "V vale 5.",
+    "O I depois do V soma."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "4",
+     "explanation": "4 seria IV, com o I antes do V."
+    },
+    {
+     "id": "b",
+     "label": "5",
+     "explanation": "Não é 5: 5 se escreve apenas V."
+    },
+    {
+     "id": "c",
+     "label": "6",
+     "explanation": "Correto. VI = 5 + 1 = 6: Dom João foi o sexto rei com esse nome em Portugal."
+    },
+    {
+     "id": "d",
+     "label": "7",
+     "explanation": "Não é 7: 7 se escreve VII."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3612,
+   "topic": "Algarismos romanos",
+   "pool": "mock-a",
+   "prompt": "Quanto vale LX?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "L = 50.",
+    "O X vem depois do L: soma ou subtrai?"
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "40",
+     "explanation": "40 seria XL, com o X antes do L."
+    },
+    {
+     "id": "b",
+     "label": "60",
+     "explanation": "Correto. L (50) + X (10) = 60."
+    },
+    {
+     "id": "c",
+     "label": "15",
+     "explanation": "L não vale 5; L vale 50."
+    },
+    {
+     "id": "d",
+     "label": "510",
+     "explanation": "Não se juntam os algarismos como no nosso sistema; somamos 50 + 10."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3613,
+   "topic": "Algarismos romanos",
+   "pool": "mock-a",
+   "prompt": "A que século corresponde o número XXI?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "XX = 20.",
+    "Depois vem I = 1."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "Século 19",
+     "explanation": "Século 19 seria XIX."
+    },
+    {
+     "id": "b",
+     "label": "Século 22",
+     "explanation": "Século 22 seria XXII."
+    },
+    {
+     "id": "c",
+     "label": "Século 21",
+     "explanation": "Correto. XXI = 20 + 1 = 21. É o século em que vivemos."
+    },
+    {
+     "id": "d",
+     "label": "Século 12",
+     "explanation": "Século 12 seria XII."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3614,
+   "topic": "Algarismos romanos",
+   "pool": "mock-a",
+   "prompt": "Qual afirmação sobre algarismos romanos é verdadeira?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Lembre quais símbolos podem se repetir.",
+    "Confira o valor de cada símbolo."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "I pode ser repetido quatro vezes seguidas.",
+     "explanation": "O limite é três vezes: III."
+    },
+    {
+     "id": "b",
+     "label": "IV representa o número 6.",
+     "explanation": "IV representa 4; 6 é VI."
+    },
+    {
+     "id": "c",
+     "label": "X representa o número 5.",
+     "explanation": "X representa 10; 5 é V."
+    },
+    {
+     "id": "d",
+     "label": "V, L e D não se repetem.",
+     "explanation": "Correto. Só I, X, C e M podem se repetir, até três vezes."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3712,
+   "topic": "Algarismos romanos",
+   "pool": "mock-b",
+   "prompt": "Como se escreve 35 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "35 = 30 + 5.",
+    "30 = XXX e 5 = V."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "XXV",
+     "explanation": "XXV vale 25, não 35."
+    },
+    {
+     "id": "b",
+     "label": "VXXX",
+     "explanation": "O V antes do X não forma 35; a ordem está errada."
+    },
+    {
+     "id": "c",
+     "label": "XXXV",
+     "explanation": "Correto. XXX (30) + V (5) = 35."
+    },
+    {
+     "id": "d",
+     "label": "XXXIIIII",
+     "explanation": "Não podemos repetir I mais de três vezes."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3713,
+   "topic": "Algarismos romanos",
+   "pool": "mock-b",
+   "prompt": "Quanto vale XLV?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe: XL + V.",
+    "XL = 50 − 10."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "55",
+     "explanation": "55 seria LV; aqui o X vem antes do L e subtrai."
+    },
+    {
+     "id": "b",
+     "label": "65",
+     "explanation": "Não é 65: 65 se escreve LXV."
+    },
+    {
+     "id": "c",
+     "label": "35",
+     "explanation": "Não é 35: 35 se escreve XXXV."
+    },
+    {
+     "id": "d",
+     "label": "45",
+     "explanation": "Correto. XL (40) + V (5) = 45."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3714,
+   "topic": "Algarismos romanos",
+   "pool": "mock-b",
+   "prompt": "Quando um símbolo menor vem antes de um maior, como em IV, o que fazemos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Pense em IV = 4.",
+    "4 é maior ou menor que 5?"
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "Subtraímos: 5 − 1 = 4.",
+     "explanation": "Correto. Menor antes do maior subtrai."
+    },
+    {
+     "id": "b",
+     "label": "Somamos: 5 + 1 = 6.",
+     "explanation": "Somamos quando o menor vem depois: VI = 6."
+    },
+    {
+     "id": "c",
+     "label": "Multiplicamos: 5 × 1 = 5.",
+     "explanation": "Algarismos romanos não usam multiplicação."
+    },
+    {
+     "id": "d",
+     "label": "Ignoramos o símbolo menor.",
+     "explanation": "O símbolo menor muda o valor; não pode ser ignorado."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3515,
+   "topic": "Tonicidade",
+   "pool": "quiz",
+   "prompt": "Como separar e classificar a palavra “sabiá”?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Fale a palavra chamando: sa-bi-Á!",
+    "Qual sílaba sai mais forte?"
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "sa-bi-á — paroxítona",
+     "explanation": "Paroxítona teria a tônica em “bi”, a penúltima."
+    },
+    {
+     "id": "b",
+     "label": "sab-iá — oxítona",
+     "explanation": "A separação está errada: são três sílabas, sa-bi-á."
+    },
+    {
+     "id": "c",
+     "label": "sa-bi-á — proparoxítona",
+     "explanation": "Proparoxítona teria a tônica em “sa”, a antepenúltima."
+    },
+    {
+     "id": "d",
+     "label": "sa-bi-á — oxítona",
+     "explanation": "Correto. A tônica é a última sílaba (á): oxítona."
+    }
+   ],
+   "sourceRefs": [
+    "P3-08"
+   ]
+  },
+  {
+   "id": 3516,
+   "topic": "Tonicidade",
+   "pool": "quiz",
+   "prompt": "Qual grupo tem apenas palavras proparoxítonas?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Proparoxítonas têm a tônica na antepenúltima sílaba.",
+    "Toda proparoxítona tem acento."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "pássaro, árvore, sílaba",
+     "explanation": "Correto. PÁS-sa-ro, ÁR-vo-re, SÍ-la-ba: tônica na antepenúltima."
+    },
+    {
+     "id": "b",
+     "label": "caneta, livro, mesa",
+     "explanation": "São paroxítonas: ca-NE-ta, LI-vro, ME-sa."
+    },
+    {
+     "id": "c",
+     "label": "sofá, café, jiló",
+     "explanation": "São oxítonas: tônica na última sílaba."
+    },
+    {
+     "id": "d",
+     "label": "lápis, médico, cipó",
+     "explanation": "Grupo misturado: lápis é paroxítona e cipó é oxítona."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3517,
+   "topic": "Tonicidade",
+   "pool": "quiz",
+   "prompt": "O que é a sílaba tônica?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Fale “caderno” devagar.",
+    "Uma sílaba sai com mais força."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "Sempre a primeira sílaba da palavra.",
+     "explanation": "Nem sempre: em café, a tônica é a última."
+    },
+    {
+     "id": "b",
+     "label": "A sílaba pronunciada com mais força.",
+     "explanation": "Correto. A tônica é a sílaba falada com mais intensidade."
+    },
+    {
+     "id": "c",
+     "label": "Só a sílaba que tem acento gráfico.",
+     "explanation": "Caderno não tem acento, mas tem tônica: DER."
+    },
+    {
+     "id": "d",
+     "label": "A última letra da palavra.",
+     "explanation": "A tônica é uma sílaba, não uma letra."
+    }
+   ],
+   "sourceRefs": [
+    "P3-08"
+   ]
+  },
+  {
+   "id": 3615,
+   "topic": "Tonicidade",
+   "pool": "mock-a",
+   "prompt": "Como separar e classificar a palavra “tomate”?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Fale chamando: to-MA-te!",
+    "Conte as sílabas do fim para o começo."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "to-ma-te — paroxítona",
+     "explanation": "Correto. A tônica é “ma”, a penúltima: paroxítona."
+    },
+    {
+     "id": "b",
+     "label": "to-ma-te — oxítona",
+     "explanation": "Oxítona teria a tônica em “te”, e não é assim que falamos."
+    },
+    {
+     "id": "c",
+     "label": "tom-a-te — paroxítona",
+     "explanation": "A separação está errada: to-ma-te."
+    },
+    {
+     "id": "d",
+     "label": "to-ma-te — proparoxítona",
+     "explanation": "Proparoxítona teria a tônica em “to”."
+    }
+   ],
+   "sourceRefs": [
+    "P3-08"
+   ]
+  },
+  {
+   "id": 3616,
+   "topic": "Tonicidade",
+   "pool": "mock-a",
+   "prompt": "Qual destas palavras é oxítona?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Oxítona tem a tônica na última sílaba.",
+    "Fale cada palavra em voz alta."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "lápis",
+     "explanation": "LÁ-pis é paroxítona."
+    },
+    {
+     "id": "b",
+     "label": "abacaxi",
+     "explanation": "Correto. a-ba-ca-XI: tônica na última sílaba."
+    },
+    {
+     "id": "c",
+     "label": "árvore",
+     "explanation": "ÁR-vo-re é proparoxítona."
+    },
+    {
+     "id": "d",
+     "label": "janela",
+     "explanation": "ja-NE-la é paroxítona."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3617,
+   "topic": "Tonicidade",
+   "pool": "mock-a",
+   "prompt": "O que é verdade sobre as palavras proparoxítonas?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Pense em música, lâmpada, médico.",
+    "O que essas palavras têm em comum na escrita?"
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "Terminam sempre em sílaba tônica.",
+     "explanation": "Isso descreve as oxítonas."
+    },
+    {
+     "id": "b",
+     "label": "Têm sempre só duas sílabas.",
+     "explanation": "Precisam de pelo menos três sílabas."
+    },
+    {
+     "id": "c",
+     "label": "Todas têm acento gráfico, como lâmpada e música.",
+     "explanation": "Correto. Toda proparoxítona é acentuada."
+    },
+    {
+     "id": "d",
+     "label": "Nunca recebem acento.",
+     "explanation": "É o contrário: todas recebem acento."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3715,
+   "topic": "Tonicidade",
+   "pool": "mock-b",
+   "prompt": "Como separar e classificar a palavra “relâmpago”?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "O acento ajuda a achar a tônica.",
+    "Conte do fim: go (1), pa (2), lâm (3)."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "re-lâm-pa-go — paroxítona",
+     "explanation": "Paroxítona teria a tônica em “pa”."
+    },
+    {
+     "id": "b",
+     "label": "re-lâm-pa-go — proparoxítona",
+     "explanation": "Correto. A tônica “lâm” é a antepenúltima sílaba."
+    },
+    {
+     "id": "c",
+     "label": "rel-âm-pa-go — proparoxítona",
+     "explanation": "A separação está errada: re-lâm-pa-go."
+    },
+    {
+     "id": "d",
+     "label": "re-lâm-pa-go — oxítona",
+     "explanation": "Oxítona teria a tônica em “go”."
+    }
+   ],
+   "sourceRefs": [
+    "P3-08"
+   ]
+  },
+  {
+   "id": 3716,
+   "topic": "Tonicidade",
+   "pool": "mock-b",
+   "prompt": "Qual grupo tem apenas palavras paroxítonas?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Paroxítona: tônica na penúltima sílaba.",
+    "Fale cada palavra do grupo."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "boné, ônibus, mesa",
+     "explanation": "Grupo misturado: boné é oxítona e ônibus é proparoxítona."
+    },
+    {
+     "id": "b",
+     "label": "sofá, Pará, você",
+     "explanation": "São oxítonas: tônica na última sílaba."
+    },
+    {
+     "id": "c",
+     "label": "bola, caderno, fácil",
+     "explanation": "Correto. BO-la, ca-DER-no, FÁ-cil: tônica na penúltima."
+    },
+    {
+     "id": "d",
+     "label": "sábado, mágico, médico",
+     "explanation": "São proparoxítonas."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3717,
+   "topic": "Tonicidade",
+   "pool": "mock-b",
+   "prompt": "Em “coração”, qual é a sílaba tônica e como a palavra se classifica?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe: co-ra-ção.",
+    "Fale chamando: co-ra-ÇÃO!"
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "ra, por isso é paroxítona.",
+     "explanation": "“Ra” é a penúltima, mas não é a mais forte."
+    },
+    {
+     "id": "b",
+     "label": "co, por isso é proparoxítona.",
+     "explanation": "“Co” é a antepenúltima, mas não é a mais forte."
+    },
+    {
+     "id": "c",
+     "label": "A palavra não tem sílaba tônica.",
+     "explanation": "Toda palavra com mais de uma sílaba tem uma tônica."
+    },
+    {
+     "id": "d",
+     "label": "ção, por isso é oxítona.",
+     "explanation": "Correto. A tônica é a última sílaba: co-ra-ÇÃO."
+    }
+   ],
+   "sourceRefs": [
+    "P3-08",
+    "P3-09"
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "lesson": "p3-reading",
+   "prompt": "Leia: “Na corrida da escola, participaram quinze crianças. Júlia chegou em segundo lugar e ganhou uma medalha. No caminho de volta, dividiu metade do lanche com o amigo.” Responda: quantas crianças participaram? Em que lugar Júlia chegou? O que ela fez no caminho de volta? Depois, retire do texto um numeral ordinal.",
+   "answer": "Participaram quinze crianças. Júlia chegou em segundo lugar. No caminho de volta, dividiu metade do lanche com o amigo. Numeral ordinal retirado do texto: segundo.",
+   "sourceRefs": [
+    "P3-01",
+    "P3-07"
+   ]
+  },
+  {
+   "lesson": "p3-tenses",
+   "prompt": "Reescreva no futuro: “Os alunos plantaram mudas e regaram a horta.” Depois escreva uma frase no presente usando a palavra “hoje” e circule o verbo.",
+   "answer": "Os alunos plantarão mudas e regarão a horta. Exemplo no presente: “Hoje eu leio um livro.” (verbo: leio). Outras frases no presente também valem.",
+   "sourceRefs": [
+    "P3-02",
+    "P3-05"
+   ]
+  },
+  {
+   "lesson": "p3-eu-mim",
+   "prompt": "Explique com suas palavras quando usamos EU e quando usamos MIM. Depois complete: “O bilhete é para ___.” e “O bilhete é para ___ ler.”",
+   "answer": "Usamos EU quando o pronome faz a ação de um verbo (eu leio; para eu ler). Usamos MIM depois de preposições como para, de, por e entre, quando não há verbo que eu realize. Respostas: “O bilhete é para mim.” e “O bilhete é para eu ler.”",
+   "sourceRefs": [
+    "P3-03",
+    "P3-07"
+   ]
+  },
+  {
+   "lesson": "p3-numerals",
+   "prompt": "Escreva uma frase com cada tipo de numeral: cardinal, ordinal, multiplicativo e fracionário. Sublinhe o numeral em cada frase.",
+   "answer": "Exemplos: “Tenho sete lápis.” (cardinal) “Fiquei em quarto lugar.” (ordinal) “Meu irmão comeu o dobro de pipoca.” (multiplicativo) “Bebi metade do suco.” (fracionário). Outras frases valem se o numeral estiver correto.",
+   "sourceRefs": [
+    "P3-04",
+    "P3-08"
+   ]
+  },
+  {
+   "lesson": "p3-roman",
+   "prompt": "Escreva em algarismos romanos: 8, 19, 33 e 44. Depois escreva o valor de XXIX e de LV. Explique por que IV vale 4.",
+   "answer": "8 = VIII; 19 = XIX; 33 = XXXIII; 44 = XLIV. XXIX = 29; LV = 55. IV vale 4 porque o I (menor) vem antes do V (maior), então subtraímos: 5 − 1 = 4.",
+   "sourceRefs": [
+    "P3-09",
+    "P3-10"
+   ]
+  },
+  {
+   "lesson": "p3-stress",
+   "prompt": "Separe as sílabas, sublinhe a sílaba tônica e classifique: sapato, picolé, pássaro, chocolate, Paraná.",
+   "answer": "sa-PA-to: paroxítona. pi-co-LÉ: oxítona. PÁS-sa-ro: proparoxítona. cho-co-LA-te: paroxítona. Pa-ra-NÁ: oxítona.",
+   "sourceRefs": [
+    "P3-08",
+    "P3-09"
+   ]
+  }
+ ],
+ "infographics": [
+  {
+   "src": "/infographics/portugues3-verbos.png",
+   "alt": "Tempos verbais na linha do tempo e quando usar eu ou mim",
+   "width": 1024,
+   "height": 1536,
+   "label": "Verbos e pronomes",
+   "lessons": [
+    "p3-tenses",
+    "p3-eu-mim"
+   ]
+  },
+  {
+   "src": "/infographics/portugues3-numerais.png",
+   "alt": "Numerais cardinais, ordinais, multiplicativos e fracionários e algarismos romanos",
+   "width": 1024,
+   "height": 1536,
+   "label": "Numerais",
+   "lessons": [
+    "p3-numerals",
+    "p3-roman"
+   ]
+  },
+  {
+   "src": "/infographics/portugues3-tonicidade.png",
+   "alt": "Sílaba tônica: oxítonas, paroxítonas e proparoxítonas",
+   "width": 1024,
+   "height": 1536,
+   "label": "Tonicidade",
+   "lessons": [
+    "p3-stress"
+   ]
+  }
+ ],
+ "deepStudy": {
+  "p3-reading": {
+   "title": "Detetive da leitura",
+   "paragraphs": [
+    "Um bom leitor faz perguntas: quem participa? O que aconteceu? Quando? Onde? Por quê? As respostas ajudam a organizar o texto na cabeça.",
+    "Há dois tipos de resposta. A informação explícita está escrita no texto. A informação implícita é concluída pelas pistas: se alguém pulou e abraçou a mãe sorrindo, podemos concluir que estava feliz."
+   ],
+   "vocabulary": [
+    [
+     "🔎",
+     "explícito",
+     "está escrito no texto"
+    ],
+    [
+     "💡",
+     "implícito",
+     "concluído pelas pistas"
+    ],
+    [
+     "✂️",
+     "retirar do texto",
+     "copiar exatamente a palavra do texto"
+    ]
+   ],
+   "example": "Texto: “Choveu a semana toda. No sábado, o sol apareceu e as crianças foram ao parque.” Quando foram ao parque? No sábado (explícito). Por que não foram antes? Porque estava chovendo (implícito).",
+   "challenge": "Escolha um parágrafo de um livro e faça três perguntas sobre ele: uma de quem, uma de quando e uma de por quê."
+  },
+  "p3-tenses": {
+   "title": "A linha do tempo do verbo",
+   "paragraphs": [
+    "Imagine uma linha: à esquerda fica o que já passou, no meio o agora, à direita o que ainda vai acontecer. Cada verbo muda a terminação para mostrar em que ponto da linha a ação está.",
+    "Às vezes a mesma forma serve para dois tempos: “Nós viajamos ontem” (pretérito) e “Nós viajamos hoje” (presente). Por isso as palavras de tempo da frase são pistas importantes."
+   ],
+   "vocabulary": [
+    [
+     "⬅️",
+     "pretérito",
+     "ação que já aconteceu"
+    ],
+    [
+     "⏺️",
+     "presente",
+     "ação que acontece agora"
+    ],
+    [
+     "➡️",
+     "futuro",
+     "ação que ainda acontecerá"
+    ]
+   ],
+   "example": "brincar: eu brinquei (pretérito), eu brinco (presente), eu brincarei (futuro).",
+   "challenge": "Conte o seu dia em três frases: uma sobre ontem, uma sobre hoje e uma sobre amanhã. Circule os verbos."
+  },
+  "p3-eu-mim": {
+   "title": "O truque do verbo",
+   "paragraphs": [
+    "Quando aparecer “para eu” ou “para mim”, olhe o que vem depois. Se vier um verbo que você vai realizar (ler, fazer, guardar), use EU, porque você é quem faz a ação.",
+    "Se a frase terminar ou não vier um verbo seu, use MIM: “O bolo é para mim.” Com “entre”, use sempre mim: “entre mim e ela”."
+   ],
+   "vocabulary": [
+    [
+     "🙋",
+     "sujeito",
+     "quem realiza a ação do verbo"
+    ],
+    [
+     "🔗",
+     "preposição",
+     "palavra de ligação: para, de, por, entre"
+    ],
+    [
+     "🎁",
+     "mim",
+     "recebe ou completa o sentido depois da preposição"
+    ]
+   ],
+   "example": "A professora pediu para eu apagar o quadro (eu apago). A professora trouxe um livro para mim (eu não faço ação).",
+   "challenge": "Invente duas frases com “para eu” + verbo e duas com “para mim”. Leia em voz alta."
+  },
+  "p3-numerals": {
+   "title": "Quatro perguntas para os numerais",
+   "paragraphs": [
+    "Para classificar, pergunte o que o numeral mostra. “Quinze” responde quantos (cardinal). “Terceiro” responde em que posição (ordinal).",
+    "“Triplo” responde quantas vezes maior (multiplicativo). “Um terço” responde que parte de um inteiro (fracionário)."
+   ],
+   "vocabulary": [
+    [
+     "🍎",
+     "cardinal",
+     "quantidade: três maçãs"
+    ],
+    [
+     "🥇",
+     "ordinal",
+     "ordem: primeiro lugar"
+    ],
+    [
+     "✖️",
+     "multiplicativo",
+     "dobro, triplo"
+    ],
+    [
+     "🍕",
+     "fracionário",
+     "metade, um terço"
+    ]
+   ],
+   "example": "“Vinte estudantes participaram. Ana ficou em primeiro lugar, Lucas fez o dobro de pontos e metade da turma ganhou medalha.” vinte = cardinal; primeiro = ordinal; dobro = multiplicativo; metade = fracionário.",
+   "challenge": "Procure numerais em uma receita ou em um jogo e classifique cada um."
+  },
+  "p3-roman": {
+   "title": "Montando números romanos",
+   "paragraphs": [
+    "Para escrever um número, separe dezenas e unidades. 24 = 20 + 4 = XX + IV = XXIV. 39 = 30 + 9 = XXX + IX = XXXIX.",
+    "Em nomes como Dom Pedro II, o número romano indica a ordem: Pedro II foi o segundo imperador chamado Pedro. Séculos também usam romanos: século XIX é o século 19; século XXI é o século 21, em que vivemos."
+   ],
+   "vocabulary": [
+    [
+     "🕰️",
+     "algarismo romano",
+     "símbolo usado pelos romanos para escrever números"
+    ],
+    [
+     "➕",
+     "somar",
+     "menor depois do maior"
+    ],
+    [
+     "➖",
+     "subtrair",
+     "menor antes do maior"
+    ]
+   ],
+   "example": "16 = X + V + I = XVI. 50 = L. 63 = L + X + III = LXIII.",
+   "challenge": "Escreva a sua idade, o ano em que você está na escola e o número da sua casa em algarismos romanos."
+  },
+  "p3-stress": {
+   "title": "Chame a palavra em voz alta",
+   "paragraphs": [
+    "Uma dica é falar a palavra como se estivesse chamando alguém de longe: a sílaba que sai mais forte é a tônica. Ca-fééé! Ca-deeer-no! Múúú-si-ca!",
+    "Depois de achar a tônica, conte de trás para frente: 1ª do fim é a última, 2ª é a penúltima e 3ª é a antepenúltima."
+   ],
+   "vocabulary": [
+    [
+     "💪",
+     "sílaba tônica",
+     "falada com mais força"
+    ],
+    [
+     "1️⃣",
+     "oxítona",
+     "tônica na última"
+    ],
+    [
+     "2️⃣",
+     "paroxítona",
+     "tônica na penúltima"
+    ],
+    [
+     "3️⃣",
+     "proparoxítona",
+     "tônica na antepenúltima"
+    ]
+   ],
+   "example": "pás-sa-ro: tônica PÁS, 3ª do fim → proparoxítona. sa-pa-to: tônica PA, 2ª do fim → paroxítona. pi-co-lé: tônica LÉ, última → oxítona.",
+   "challenge": "Encontre em casa um objeto com nome oxítono, um paroxítono e um proparoxítono."
+  }
+ }
+}

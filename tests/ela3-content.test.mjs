@@ -7,7 +7,7 @@ const read = path => readFileSync(new URL(path, import.meta.url), 'utf8');
 const content = JSON.parse(read('../app/ela3-content.json'));
 const load = async source => import('data:text/javascript;base64,' + Buffer.from(ts.transpileModule(source, {compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64'));
 const ela = await load(read('../app/ela3-data.ts').replace("import content from './ela3-content.json';", `const content=${JSON.stringify(content)};`));
-const routing = await load(read('../app/history3-data.ts')
+const routing = await load(read('../app/history3-data.ts').replace("import { portuguese3Subject } from './portuguese3-data';",`const portuguese3Subject=${JSON.stringify(JSON.parse(readFileSync(new URL('../app/portuguese3-content.json',import.meta.url),'utf8')).subject)};`)
   .replace("import { ela3Subject } from './ela3-data';", `const ela3Subject=${JSON.stringify(content.subject)};`)
   .replace("import { geography3Subject } from './geography3-data';", `const geography3Subject=${JSON.stringify(JSON.parse(read('../app/geography3-content.json')).subject)};`)
   .replace("import content from './history3-content.json';", `const content=${read('../app/history3-content.json')};`));
