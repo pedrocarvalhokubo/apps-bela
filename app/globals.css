@@ -2431,7 +2431,7 @@ footer {
 @media (max-width: 650px) {
   .sync-chip { display:none; }
   .parent-trigger,.reset-trigger,.install-trigger { width:38px; padding:0; justify-content:center; }
-  .parent-trigger span,.reset-trigger span,.install-trigger span:last-child { display:none; }
+  .parent-trigger span:not(.app-icon),.reset-trigger span:not(.app-icon),.install-trigger span:last-child { display:none; }
   .mission-list,.home-tools-grid,.parent-summary-grid { grid-template-columns:1fr; }
   .mission-card:last-child { grid-column:auto; }
   .plan-rule { display:none; }
@@ -3592,3 +3592,5 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 @media (max-width: 900px) {
   .topbar { backdrop-filter: none; background: rgba(255, 253, 248, 0.97); }
 }
+.app-icon svg { display: block; }
+.parent-trigger .app-icon, .reset-trigger .app-icon { font-size: 17px; }

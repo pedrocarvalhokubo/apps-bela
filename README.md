@@ -16,6 +16,10 @@ npm start
 
 `npm test` executa a verificação das APIs após o build. O teste usa um banco temporário e verifica isolamento de perfis, persistência após reiniciar, PIN, bloqueio após tentativas inválidas, uso único do pareamento e união de progresso OBMEP.
 
+## Estrutura do código
+
+`app/page.tsx` monta a página e a barra superior. O estado e as ações ficam em `app/components/study/useStudyApp.tsx` e chegam às telas por `StudyContext`. Cada tela tem seu arquivo em `app/components/study/` (`HomeView`, `SubjectView`, `LearnView`, `InfographicView`, `QuizView`, `ResultsView`, `ParentView`). Tipos, listas fixas e ilustrações simples ficam em `types.ts`, `data.ts` e `Visuals.tsx`. Os ícones são SVG em `app/components/AppIcon.tsx`.
+
 ## Railway
 
 O repositório inclui Dockerfile e `railway.toml`. Criar um serviço a partir deste repositório, branch `main`, com uma réplica. Anexar um volume persistente em `/data` antes da publicação. O app usa `RAILWAY_VOLUME_MOUNT_PATH/bela.sqlite` e se recusa a iniciar no Railway sem volume. A verificação de saúde é `/api/health`.
