@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {getStudyMode} from "../../lib/study-storage";
 import {useStudyAccount} from "../components/AuthGate";
 import {submitAttempt} from "../../lib/attempt-client";
@@ -20,7 +20,6 @@ type ProgressRecord = Record<
 >;
 type SessionResult = { id: string; firstTry: boolean };
 
-const STORAGE_KEY = "bela-obmep-progress-v1";
 const letters = ["A", "B", "C", "D", "E"];
 
 const themeMeta: Record<
@@ -59,7 +58,7 @@ export default function Home() {
   const {mode: accountMode} = useStudyAccount();
   const [view, setView] = useState<View>("home");
   const [level, setLevel] = useState<LevelId>("m2");
-  const { progress, setProgress, syncMessage, deviceToken } = useObmepProgress();
+  const { progress, setProgress, syncMessage } = useObmepProgress();
   const [session, setSession] = useState<OfficialQuestion[]>([]);
   const [sessionName, setSessionName] = useState("Treino misto");
   const [sessionResult, setSessionResult] = useState<SessionResult[]>([]);

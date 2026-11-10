@@ -6,7 +6,6 @@ import {
   getParentSession,
   hashPin,
   now,
-  randomCode,
   randomToken,
   sha256,
   unauthorized,

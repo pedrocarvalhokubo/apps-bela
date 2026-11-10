@@ -2,7 +2,7 @@ import WebSocket from 'ws';
 import {randomUUID} from 'node:crypto';
 import {getD1} from '../app/api/_lib';
 import {POST as tutorTurn} from '../app/api/tutor/route';
-import {apiFetch,tutorModels} from './tutor-provider';
+import {apiFetch} from './tutor-provider';
 import {resolveTutorContext,type TutorContext} from './tutor-content';
 import {publicTurn,type TutorSettings,type TutorTurn} from './tutor-store';
 

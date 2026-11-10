@@ -174,6 +174,8 @@ export default function BelaTutor({context,title}:{context:TutorContext;title:st
 
  useEffect(()=>{
   mounted.current=true;
+  // epoch is a counter, not a DOM node: bumping it in cleanup cancels in-flight work.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   return()=>{mounted.current=false;voice.current?.stop();epoch.current++;abort.current?.abort();cancelImages();stopPlayback();void sound.current?.close();};
  },[]);
  useEffect(()=>{

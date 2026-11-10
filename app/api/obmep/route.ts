@@ -1,5 +1,5 @@
 export const dynamic='force-dynamic';
-import { getD1, getDevice, now, unauthorized } from "../_lib";
+import { getD1, getDevice, unauthorized } from "../_lib";
 import { type ProgressRecord } from "../../../lib/obmep-progress";
 import { officialQuestions } from "../../obmep/officialQuestions";
 const ids = new Set(officialQuestions.map((q) => q.id));

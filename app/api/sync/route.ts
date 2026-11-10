@@ -1,6 +1,6 @@
 import {validStudy} from '../../../lib/study-merge';
 export const dynamic='force-dynamic';
-import { getD1, getDevice, now, unauthorized } from "../_lib";
+import { getD1, getDevice, unauthorized } from "../_lib";
 
 export async function GET(request: Request) {
   const device = await getDevice(request);

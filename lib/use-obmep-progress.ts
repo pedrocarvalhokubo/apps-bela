@@ -1,7 +1,7 @@
 "use client";
 import {registerPendingSave} from './pending-saves';
 import { useEffect, useState } from "react";
-import {getStudyMode,studyStorage} from "./study-storage";
+import {studyStorage} from "./study-storage";
 import { ensureDevice } from "./device-client";
 import { mergeProgress, type ProgressRecord } from "./obmep-progress";
 
