@@ -62,10 +62,10 @@ export async function getDevice(request: Request): Promise<DeviceContext | null>
   const row=await d1.prepare("SELECT profile_id AS profileId FROM login_sessions WHERE token_hash=? AND expires_at>?").bind(tokenHash,now()).first<{profileId:string}>();
   return row?{profileId:row.profileId,tokenHash}:null;
 }
-export async function rateLimited(bucket: string) {
+export async function rateLimited(bucket: string, max = 5) {
   const db=await getD1();
   const row=await db.prepare('SELECT count,window_start FROM auth_failures WHERE bucket=?').bind(bucket).first<{count:number;window_start:number}>();
-  return Boolean(row && row.count>=5 && row.window_start>now()-15*60*1000);
+  return Boolean(row && row.count>=max && row.window_start>now()-15*60*1000);
 }
 export async function failedAuth(bucket: string) {
   const db=await getD1(),time=now();

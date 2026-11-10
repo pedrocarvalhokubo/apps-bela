@@ -3586,3 +3586,9 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
 
 /* Geography: the study surface is a tappable PNG, with readable fallback text. */
 .geo-lesson-image{display:block;width:100%;border:0;background:#f5f0ff;border-radius:22px;padding:12px;cursor:zoom-in;color:#523979;font:inherit}.geo-lesson-image img{display:block;width:100%;height:auto;max-width:760px;margin:0 auto!important}.geo-lesson-image span{display:block;padding:9px;font-weight:700}.geo-assessment-date{display:inline-block;padding:8px 14px;background:#fff4bc;border-radius:12px;color:#493e1a!important;font-weight:700}
+
+/* On phones and tablets the nav is fixed to the bottom of the screen. A backdrop-filter on the
+   top bar would turn it into the nav's containing block and pull the nav over the header. */
+@media (max-width: 900px) {
+  .topbar { backdrop-filter: none; background: rgba(255, 253, 248, 0.97); }
+}

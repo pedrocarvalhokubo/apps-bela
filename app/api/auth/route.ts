@@ -1,5 +1,6 @@
 import { ACCOUNT_PROFILE_ID,AUTH_COOKIE,clearFailures,failedAuth,getD1,getDevice,now,randomToken,rateLimited,safeMutation,sessionCookie,sha256,validBelaPassword } from '../_lib';
 export const dynamic='force-dynamic';
+const ACCOUNT_LOGIN_LIMIT=20;
 const headers={'Cache-Control':'no-store'};
 function cookie(value:string,age:number) {return `${AUTH_COOKIE}=${value}; HttpOnly; SameSite=Strict; Path=/; Max-Age=${age}${process.env.RAILWAY_ENVIRONMENT_ID ? '; Secure' : ''}`;}
 export async function GET(request:Request) {
@@ -16,9 +17,11 @@ export async function POST(request:Request) {
   }
   if(body.action!=='login' || typeof body.password!=='string' || body.password.length>64)return Response.json({error:'Informe a senha da Bela'},{status:400,headers});
   if(!process.env.BELA_LOGIN_HASH || !process.env.BELA_LOGIN_SALT)return Response.json({error:'O login está sendo preparado. Tente novamente em instantes.'},{status:503,headers});
-  const ip=request.headers.get('x-real-ip') || request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+  // Railway overwrites x-real-ip. The last x-forwarded-for hop is added by the proxy; earlier hops can be forged by the client.
+  const ip=request.headers.get('x-real-ip') || request.headers.get('x-forwarded-for')?.split(',').at(-1)?.trim() || 'unknown';
   const bucket='login:'+await sha256(ip);
-  if(await rateLimited(bucket)||await rateLimited('login:account'))return Response.json({error:'Muitas tentativas. Aguarde 15 minutos.'},{status:429,headers});
+  // Per address: 5 failures. Whole account: 20, so a few wrong guesses from elsewhere do not lock Bela out.
+  if(await rateLimited(bucket)||await rateLimited('login:account',ACCOUNT_LOGIN_LIMIT))return Response.json({error:'Muitas tentativas. Aguarde 15 minutos.'},{status:429,headers});
   if(!await validBelaPassword(body.password)){await failedAuth(bucket);await failedAuth('login:account');return Response.json({error:'Senha incorreta'},{status:401,headers});}
   await clearFailures(bucket);await clearFailures('login:account');
   const db=await getD1(),token=randomToken(),time=now();

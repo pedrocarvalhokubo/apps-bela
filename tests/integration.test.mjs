@@ -137,7 +137,9 @@ test('Bela account, guest isolation and durable history',async(t)=>{
  await t.test('password and parental PIN attempts are rate limited',async()=>{
   for(let i=0;i<5;i++)assert.equal((await api('/api/auth',null,{action:'login',password:'bad'},null,{'x-real-ip':'test-limited'})).status,401);
   assert.equal((await api('/api/auth',null,{action:'login',password},null,{'x-real-ip':'test-limited'})).status,429);
-  assert.equal((await api('/api/auth',null,{action:'login',password},null,{'x-real-ip':'different-test-ip'})).status,429);
+  const other=await api('/api/auth',null,{action:'login',password},null,{'x-real-ip':'different-test-ip'});assert.equal(other.status,200,'five failures from one address must not lock the account everywhere');
+  for(let i=0;i<20;i++)await api('/api/auth',null,{action:'login',password:'bad'},null,{'x-real-ip':'spread-'+i});
+  assert.equal((await api('/api/auth',null,{action:'login',password},null,{'x-real-ip':'another-test-ip'})).status,429);
   for(let i=0;i<5;i++)assert.equal((await api('/api/parent',b,{action:'verify-pin',pin:'654321'})).status,401);
   assert.equal((await api('/api/parent',b,{action:'verify-pin',pin:'654321'})).status,429);
  });

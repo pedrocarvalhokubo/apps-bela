@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {getStudyMode} from "../../lib/study-storage";
+import {useStudyAccount} from "../components/AuthGate";
 import {submitAttempt} from "../../lib/attempt-client";
 import { useObmepProgress } from "../../lib/use-obmep-progress";
 import {
@@ -55,6 +56,7 @@ function solvedIn(
 }
 
 export default function Home() {
+  const {mode: accountMode} = useStudyAccount();
   const [view, setView] = useState<View>("home");
   const [level, setLevel] = useState<LevelId>("m2");
   const { progress, setProgress, syncMessage, deviceToken } = useObmepProgress();
@@ -466,7 +468,7 @@ export default function Home() {
         <div className="hero-copy">
           <span className="level-pill">{levelLabel(level)} • 90 oficiais</span>
           <h2 id="welcome-title">
-            Oi, Bela! <span>Vamos treinar?</span>
+            {accountMode === "bela" ? "Oi, Bela!" : "Oi!"} <span>Vamos treinar?</span>
           </h2>
           <p>
             Questões oficiais de 2023, 2024 e 2025, com pistas e soluções.

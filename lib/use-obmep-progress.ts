@@ -15,6 +15,7 @@ export function useObmepProgress() {
     let cancelled = false;
     let local: ProgressRecord = {};
     try { local = JSON.parse(studyStorage.getItem("bela-obmep-progress-v1") || "{}"); } catch {}
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- browser storage is only readable after hydration
     setProgress(local);
     void ensureDevice().then(async (token) => {
       if (cancelled) return;

@@ -11,6 +11,7 @@ export default function AuthGate({children}:{children:React.ReactNode}){
  const enter=(next:StudyMode)=>{setStudyMode(next);setMode(next);if(next==='bela'){void flushAttempts().catch(()=>{});void flushDrafts().catch(()=>{});}};
  useEffect(()=>{
   let cancelled=false;
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- browser storage is only readable after hydration
   if(sessionStorage.getItem('bela-guest-mode')==='yes'){enter('guest');setLoading(false);}
   else void fetch('/api/auth',{cache:'no-store'}).then(r=>r.json()).then(r=>{if(!cancelled&&r.authenticated)enter('bela');}).catch(()=>{if(!cancelled)setError('Conecte-se à internet para entrar como Bela. Você pode praticar como convidado.');}).finally(()=>{if(!cancelled)setLoading(false);});
   const onStorage=(e:StorageEvent)=>{if(e.key==='bela-auth-event'&&e.newValue?.startsWith('logout:')){clearAccountCache();window.location.reload();}};

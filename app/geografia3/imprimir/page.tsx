@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import {useState} from 'react';
 import {geography3Questions,geography3Practice,geography3Sources} from '../../geography3-data';
 const activities = {
@@ -14,7 +15,7 @@ export default function GeographyPrint(){
  const refs=[...new Set((pool==='written'?geography3Practice:questions).flatMap(q=>q.sourceRefs))];
  return <main className="geo-print">
   <nav aria-label="Impressão de Geografia">
-   <a href="/">← Voltar ao app</a>
+   <Link href="/">← Voltar ao app</Link>
    <label>Atividade <select value={pool} onChange={e=>{setPool(e.target.value as Pool);setShowKey(false);}}>{Object.entries(activities).map(([id,a])=><option key={id} value={id}>{a.title}</option>)}</select></label>
    <button onClick={()=>setShowKey(!showKey)}>{showKey?'Voltar às questões':'Consultar gabarito'}</button>
    <button onClick={()=>window.print()}>Imprimir esta versão</button>

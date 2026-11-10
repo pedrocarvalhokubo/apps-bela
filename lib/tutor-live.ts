@@ -78,6 +78,7 @@ async function attachLive(input:{id:string;providerId:string;profile:string;conf
   socket.on('open',()=>{opened=true;running.set(input.id,{socket,stop,interrupt});resolve();});
   let queue=Promise.resolve();
   socket.on('message',raw=>{
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- untyped JSON from the provider
    let event:Record<string,any>;try{event=JSON.parse(raw.toString());}catch{stop();return;}
    // Serialize persistence, while independent backend work runs outside this queue.
    queue=queue.then(async()=>{

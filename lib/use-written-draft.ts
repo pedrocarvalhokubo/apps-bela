@@ -6,6 +6,7 @@ export function useWrittenDraft(task:string){
  const [draft,setDraft]=useState(''),[ready,setReady]=useState(false),[status,setStatus]=useState(''),[retry,setRetry]=useState(0);
  const dirty=useRef(false);
  useEffect(()=>{
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- browser storage is only readable after hydration
   let cancelled=false;const cached=studyStorage.getItem(task)??'';dirty.current=studyStorage.getItem(task+':pending')==='yes';setDraft(cached);
   if(getStudyMode()==='guest'){setStatus('Rascunho da sessão de convidado. Não será gravado no banco.');setReady(true);return;}
   void fetch('/api/drafts?task='+encodeURIComponent(task),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error();return r.json();}).then(r=>{if(!cancelled){setDraft(dirty.current?cached:r.draft?.answer??cached);setStatus('Rascunho salvo na conta da Bela.');}}).catch(()=>{if(!cancelled)setStatus('Sem conexão. O rascunho ficará neste aparelho até sincronizar.');}).finally(()=>{if(!cancelled)setReady(true);});

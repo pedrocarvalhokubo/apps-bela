@@ -9,6 +9,7 @@ export const priceDate='2026-11-04';
 export const priceSource='https://developers.openai.com/api/docs/pricing';
 const day=(time:number)=>new Intl.DateTimeFormat('en-CA',{timeZone:'America/Bahia',year:'numeric',month:'2-digit',day:'2-digit'}).format(time);
 const number=(value:unknown)=>typeof value==='number'&&Number.isFinite(value)&&value>=0?value:null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- untyped JSON from the provider
 type Usage=Record<string,any>;
 export function usageEstimate(model:string,usage:Usage|undefined){
  const input=number(usage?.input_tokens),output=number(usage?.output_tokens),seconds=number(usage?.seconds);

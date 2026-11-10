@@ -70,6 +70,7 @@ export class TutorLiveSession {
    const channel=peer.createDataChannel('oai-events');this.channel=channel;
    channel.addEventListener('message',event=>{
     if(!this.current(control))return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- untyped JSON from the provider
     let message:Record<string,any>;try{message=JSON.parse(event.data);}catch{this.fail(new Error('O serviço enviou um evento de áudio inválido.'));return;}
     if(message.type==='session.started'){
      this.started=true;if(this.startup)clearTimeout(this.startup);this.options.onState('listening');

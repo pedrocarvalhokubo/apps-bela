@@ -1,12 +1,13 @@
 "use client";
 
+import Link from 'next/link';
 import { useState } from 'react';
 import { ela3Practice, ela3Subject } from '../../ela3-data';
 
 export default function Ela3Print() {
   const [key, setKey] = useState(false);
   return <main className="ela3-print">
-    <nav className="print-controls"><a href="/">← Voltar ao app</a><button onClick={() => setKey(!key)}>{key ? 'Voltar às atividades' : 'Consultar gabarito'}</button><button onClick={() => window.print()}>Imprimir / salvar PDF</button></nav>
+    <nav className="print-controls"><Link href="/">← Voltar ao app</Link><button onClick={() => setKey(!key)}>{key ? 'Voltar às atividades' : 'Consultar gabarito'}</button><button onClick={() => window.print()}>Imprimir / salvar PDF</button></nav>
     <h1>ELA • Term 3</h1><p>{key ? 'Suggested answers • Gabarito de apoio' : 'Writing practice • Atividades de revisão'}</p>
     <p>{key ? 'Accept other answers with the same meaning and evidence. These are practice materials, not an official assessment.' : 'Read the lessons first. Answer in English. These are practice activities, not an official assessment.'}</p>
     {ela3Practice.map((task, i) => <section key={task.lesson} className="print-question">
