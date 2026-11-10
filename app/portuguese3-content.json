@@ -2191,6 +2191,894 @@
     "P3-08",
     "P3-09"
    ]
+  },
+  {
+   "id": 3800,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale XII?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "22",
+     "explanation": "Não é 22: 22 se escreve XXII."
+    },
+    {
+     "id": "b",
+     "label": "11",
+     "explanation": "Não é 11: 11 se escreve XI."
+    },
+    {
+     "id": "c",
+     "label": "17",
+     "explanation": "Não é 17: 17 se escreve XVII."
+    },
+    {
+     "id": "d",
+     "label": "12",
+     "explanation": "Correto. XII = X (10) + II (2) = 12."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3801,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale XIX?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "19",
+     "explanation": "Correto. XIX = X (10) + IX (9) = 19."
+    },
+    {
+     "id": "b",
+     "label": "21",
+     "explanation": "Não é 21: em XIX, o símbolo menor antes do maior subtrai."
+    },
+    {
+     "id": "c",
+     "label": "29",
+     "explanation": "Não é 29: 29 se escreve XXIX."
+    },
+    {
+     "id": "d",
+     "label": "18",
+     "explanation": "Não é 18: 18 se escreve XVIII."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3802,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale XXIV?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "26",
+     "explanation": "Não é 26: em XXIV, o símbolo menor antes do maior subtrai."
+    },
+    {
+     "id": "b",
+     "label": "24",
+     "explanation": "Correto. XXIV = XX (20) + IV (4) = 24."
+    },
+    {
+     "id": "c",
+     "label": "34",
+     "explanation": "Não é 34: 34 se escreve XXXIV."
+    },
+    {
+     "id": "d",
+     "label": "23",
+     "explanation": "Não é 23: 23 se escreve XXIII."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3803,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale XXXVIII?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "48",
+     "explanation": "Não é 48: 48 se escreve XLVIII."
+    },
+    {
+     "id": "b",
+     "label": "37",
+     "explanation": "Não é 37: 37 se escreve XXXVII."
+    },
+    {
+     "id": "c",
+     "label": "38",
+     "explanation": "Correto. XXXVIII = XXX (30) + VIII (8) = 38."
+    },
+    {
+     "id": "d",
+     "label": "43",
+     "explanation": "Não é 43: 43 se escreve XLIII."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3804,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale XLIV?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "66",
+     "explanation": "Não é 66: em XLIV, o símbolo menor antes do maior subtrai."
+    },
+    {
+     "id": "b",
+     "label": "54",
+     "explanation": "Não é 54: 54 se escreve LIV."
+    },
+    {
+     "id": "c",
+     "label": "43",
+     "explanation": "Não é 43: 43 se escreve XLIII."
+    },
+    {
+     "id": "d",
+     "label": "44",
+     "explanation": "Correto. XLIV = XL (40) + IV (4) = 44."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3805,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale XLIX?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "49",
+     "explanation": "Correto. XLIX = XL (40) + IX (9) = 49."
+    },
+    {
+     "id": "b",
+     "label": "71",
+     "explanation": "Não é 71: em XLIX, o símbolo menor antes do maior subtrai."
+    },
+    {
+     "id": "c",
+     "label": "59",
+     "explanation": "Não é 59: 59 se escreve LIX."
+    },
+    {
+     "id": "d",
+     "label": "48",
+     "explanation": "Não é 48: 48 se escreve XLVIII."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3806,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale LXXVI?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "86",
+     "explanation": "Não é 86: 86 se escreve LXXXVI."
+    },
+    {
+     "id": "b",
+     "label": "76",
+     "explanation": "Correto. LXXVI = LXX (70) + VI (6) = 76."
+    },
+    {
+     "id": "c",
+     "label": "75",
+     "explanation": "Não é 75: 75 se escreve LXXV."
+    },
+    {
+     "id": "d",
+     "label": "81",
+     "explanation": "Não é 81: 81 se escreve LXXXI."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3807,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto vale XC?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades.",
+    "Menor antes do maior subtrai; menor depois soma."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "110",
+     "explanation": "Não é 110: em XC, o símbolo menor antes do maior subtrai."
+    },
+    {
+     "id": "b",
+     "label": "100",
+     "explanation": "Não é 100: 100 se escreve C."
+    },
+    {
+     "id": "c",
+     "label": "90",
+     "explanation": "Correto. XC = XC (90) = 90."
+    },
+    {
+     "id": "d",
+     "label": "89",
+     "explanation": "Não é 89: 89 se escreve LXXXIX."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3808,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 14 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "XIIII",
+     "explanation": "Não podemos repetir o mesmo símbolo quatro vezes seguidas."
+    },
+    {
+     "id": "b",
+     "label": "XV",
+     "explanation": "XV vale 15, não 14."
+    },
+    {
+     "id": "c",
+     "label": "XIII",
+     "explanation": "XIII vale 13, não 14."
+    },
+    {
+     "id": "d",
+     "label": "XIV",
+     "explanation": "Correto. 14 = X (10) + IV (4) = XIV."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3809,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 29 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "XXIX",
+     "explanation": "Correto. 29 = XX (20) + IX (9) = XXIX."
+    },
+    {
+     "id": "b",
+     "label": "XXVIIII",
+     "explanation": "Não podemos repetir o mesmo símbolo quatro vezes seguidas."
+    },
+    {
+     "id": "c",
+     "label": "XXX",
+     "explanation": "XXX vale 30, não 29."
+    },
+    {
+     "id": "d",
+     "label": "XXVIII",
+     "explanation": "XXVIII vale 28, não 29."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3810,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 40 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "XXXX",
+     "explanation": "Não podemos repetir o mesmo símbolo quatro vezes seguidas."
+    },
+    {
+     "id": "b",
+     "label": "XL",
+     "explanation": "Correto. 40 = XL (40) = XL."
+    },
+    {
+     "id": "c",
+     "label": "XLI",
+     "explanation": "XLI vale 41, não 40."
+    },
+    {
+     "id": "d",
+     "label": "XXXIX",
+     "explanation": "XXXIX vale 39, não 40."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3811,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 47 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "XXXXVII",
+     "explanation": "Não podemos repetir o mesmo símbolo quatro vezes seguidas."
+    },
+    {
+     "id": "b",
+     "label": "XLVIII",
+     "explanation": "XLVIII vale 48, não 47."
+    },
+    {
+     "id": "c",
+     "label": "XLVII",
+     "explanation": "Correto. 47 = XL (40) + VII (7) = XLVII."
+    },
+    {
+     "id": "d",
+     "label": "XLVI",
+     "explanation": "XLVI vale 46, não 47."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3812,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 58 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "LIX",
+     "explanation": "LIX vale 59, não 58."
+    },
+    {
+     "id": "b",
+     "label": "LVII",
+     "explanation": "LVII vale 57, não 58."
+    },
+    {
+     "id": "c",
+     "label": "LXVIII",
+     "explanation": "LXVIII vale 68, não 58."
+    },
+    {
+     "id": "d",
+     "label": "LVIII",
+     "explanation": "Correto. 58 = L (50) + VIII (8) = LVIII."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3813,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 83 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "LXXXIII",
+     "explanation": "Correto. 83 = LXXX (80) + III (3) = LXXXIII."
+    },
+    {
+     "id": "b",
+     "label": "LXXXIV",
+     "explanation": "LXXXIV vale 84, não 83."
+    },
+    {
+     "id": "c",
+     "label": "LXXXII",
+     "explanation": "LXXXII vale 82, não 83."
+    },
+    {
+     "id": "d",
+     "label": "XCIII",
+     "explanation": "XCIII vale 93, não 83."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3814,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 95 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "LXXXXV",
+     "explanation": "Não podemos repetir o mesmo símbolo quatro vezes seguidas."
+    },
+    {
+     "id": "b",
+     "label": "XCV",
+     "explanation": "Correto. 95 = XC (90) + V (5) = XCV."
+    },
+    {
+     "id": "c",
+     "label": "XCVI",
+     "explanation": "XCVI vale 96, não 95."
+    },
+    {
+     "id": "d",
+     "label": "XCIV",
+     "explanation": "XCIV vale 94, não 95."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3815,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Como se escreve 100 em algarismos romanos?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe dezenas e unidades e escreva cada parte.",
+    "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "CI",
+     "explanation": "CI vale 101, não 100."
+    },
+    {
+     "id": "b",
+     "label": "XCIX",
+     "explanation": "XCIX vale 99, não 100."
+    },
+    {
+     "id": "c",
+     "label": "C",
+     "explanation": "Correto. 100 = C (100) = C."
+    },
+    {
+     "id": "d",
+     "label": "CX",
+     "explanation": "CX vale 110, não 100."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3816,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "No livro, o capítulo está numerado como XVII. Qual é o número do capítulo?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "X = 10, V = 5 e I = 1.",
+    "Todos os símbolos menores estão depois do maior."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "16",
+     "explanation": "Não é 16: 16 se escreve XVI."
+    },
+    {
+     "id": "b",
+     "label": "13",
+     "explanation": "Não é 13: 13 se escreve XIII."
+    },
+    {
+     "id": "c",
+     "label": "22",
+     "explanation": "Não é 22: 22 se escreve XXII."
+    },
+    {
+     "id": "d",
+     "label": "17",
+     "explanation": "Correto. XVII = 10 + 5 + 1 + 1 = 17."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3817,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "O século XVIII corresponde a qual século?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe: X + V + III.",
+    "Some todos os valores."
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "Século 18",
+     "explanation": "Correto. XVIII = 10 + 5 + 3 = 18."
+    },
+    {
+     "id": "b",
+     "label": "Século 13",
+     "explanation": "Não é 13: 13 se escreve XIII."
+    },
+    {
+     "id": "c",
+     "label": "Século 23",
+     "explanation": "Não é 23: 23 se escreve XXIII."
+    },
+    {
+     "id": "d",
+     "label": "Século 8",
+     "explanation": "Não é 8: 8 se escreve VIII, sem o X."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3818,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "O rei Luís XIV ficou famoso na França. Que número aparece no nome dele?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Separe: X + IV.",
+    "IV = 5 − 1."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "16",
+     "explanation": "Não é 16: 16 se escreve XVI. Em XIV, o I vem antes do V."
+    },
+    {
+     "id": "b",
+     "label": "14",
+     "explanation": "Correto. XIV = 10 + 4 = 14. Ele foi o 14º rei chamado Luís."
+    },
+    {
+     "id": "c",
+     "label": "9",
+     "explanation": "Não é 9: 9 se escreve IX."
+    },
+    {
+     "id": "d",
+     "label": "4",
+     "explanation": "Não é 4: o X na frente acrescenta 10."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3819,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Qual destes números romanos representa o MAIOR valor?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Calcule o valor de cada um.",
+    "C = 100; um X antes do C subtrai 10."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "LX",
+     "explanation": "LX vale 60, menor que XC (90)."
+    },
+    {
+     "id": "b",
+     "label": "XL",
+     "explanation": "XL vale 40, menor que XC (90)."
+    },
+    {
+     "id": "c",
+     "label": "XC",
+     "explanation": "Correto. XC = 100 − 10 = 90, o maior das opções."
+    },
+    {
+     "id": "d",
+     "label": "XXXIX",
+     "explanation": "XXXIX vale 39, menor que XC (90)."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3820,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Qual número romano está escrito corretamente?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Lembre: no máximo três símbolos iguais seguidos.",
+    "V, L e D não se repetem."
+   ],
+   "correct": "d",
+   "options": [
+    {
+     "id": "a",
+     "label": "XIIII",
+     "explanation": "Está errado: não podemos repetir I quatro vezes; 14 é XIV."
+    },
+    {
+     "id": "b",
+     "label": "VV",
+     "explanation": "Está errado: V não se repete; 10 é X."
+    },
+    {
+     "id": "c",
+     "label": "IIX",
+     "explanation": "Está errado: só um símbolo menor pode vir antes; 8 é VIII."
+    },
+    {
+     "id": "d",
+     "label": "XIV",
+     "explanation": "Correto. XIV = 10 + 4 = 14, escrito do jeito certo."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3821,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Qual símbolo NÃO pode ser repetido em sequência?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "Pense em III, XX e CC.",
+    "Quais símbolos nunca aparecem dobrados?"
+   ],
+   "correct": "a",
+   "options": [
+    {
+     "id": "a",
+     "label": "V",
+     "explanation": "Correto. V, L e D não se repetem: 10 é X, e não VV."
+    },
+    {
+     "id": "b",
+     "label": "I",
+     "explanation": "I pode ser repetido até três vezes: III = 3."
+    },
+    {
+     "id": "c",
+     "label": "X",
+     "explanation": "X pode ser repetido até três vezes: XXX = 30."
+    },
+    {
+     "id": "d",
+     "label": "C",
+     "explanation": "C pode ser repetido até três vezes: CCC = 300."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
+  },
+  {
+   "id": 3822,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Quanto é XX + VII? Escolha a resposta em algarismos romanos.",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "XX = 20 e VII = 7.",
+    "Some e escreva o resultado em romanos."
+   ],
+   "correct": "b",
+   "options": [
+    {
+     "id": "a",
+     "label": "XXIII",
+     "explanation": "XXIII vale 23, não 27."
+    },
+    {
+     "id": "b",
+     "label": "XXVII",
+     "explanation": "Correto. 20 + 7 = 27 = XXVII."
+    },
+    {
+     "id": "c",
+     "label": "XXVIII",
+     "explanation": "XXVIII vale 28, não 27."
+    },
+    {
+     "id": "d",
+     "label": "XVII",
+     "explanation": "XVII vale 17, não 27."
+    }
+   ],
+   "sourceRefs": [
+    "P3-09"
+   ]
+  },
+  {
+   "id": 3823,
+   "topic": "Algarismos romanos",
+   "pool": "roman-practice",
+   "prompt": "Um relógio com algarismos romanos mostra o ponteiro das horas no IX. Que horas são?",
+   "support": "Leia com atenção e use as dicas da aula.",
+   "hints": [
+    "IX = 10 − 1.",
+    "O I vem antes do X."
+   ],
+   "correct": "c",
+   "options": [
+    {
+     "id": "a",
+     "label": "11 horas",
+     "explanation": "11 seria XI, com o I depois do X."
+    },
+    {
+     "id": "b",
+     "label": "4 horas",
+     "explanation": "4 horas seria IV, não IX."
+    },
+    {
+     "id": "c",
+     "label": "9 horas",
+     "explanation": "Correto. IX = 10 − 1 = 9."
+    },
+    {
+     "id": "d",
+     "label": "6 horas",
+     "explanation": "6 horas seria VI, não IX."
+    }
+   ],
+   "sourceRefs": [
+    "P3-10"
+   ]
   }
  ],
  "practice": [

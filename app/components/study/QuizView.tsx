@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import AppIcon from "../AppIcon";
-import { GeographyQuestionVisual } from "../study/Visuals";
+import { GeographyQuestionVisual } from "./Visuals";
 import { scienceTopicTitle } from "../../science-data";
 import { useStudy } from "./StudyContext";
 

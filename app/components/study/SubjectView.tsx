@@ -61,6 +61,12 @@ export default function SubjectView() {
                 <span className="path-art"><AppIcon name="medal" /></span><span className="path-content"><small>{mockCopy.small}</small><strong>{quizCatalog[id].title}</strong><p>{mockCopy.text}</p><em>{mockCopy.best} {quizStatsById[id].bestScore}/{quizCatalog[id].questions.length}</em></span><span className="path-arrow">→</span>
               </button>
             ))}
+            {isPortuguese3 && (
+              <button className="path-card path-quiz" onClick={() => startQuiz("portuguese3-roman-practice")}>
+                <span className="path-number">{reviewQuizNumber + 1 + mockQuizIds.length}</span>
+                <span className="path-art"><AppIcon name="history" /></span><span className="path-content"><small>TREINO EXTRA</small><strong>{quizCatalog["portuguese3-roman-practice"].title}</strong><p>{quizCatalog["portuguese3-roman-practice"].questions.length} questões só de números romanos: ler, escrever, séculos, reis e relógios.</p><em>Melhor: {quizStatsById["portuguese3-roman-practice"].bestScore}/{quizCatalog["portuguese3-roman-practice"].questions.length}</em></span><span className="path-arrow">→</span>
+              </button>
+            )}
 
             {isGeography3 && <a className="path-card path-test" href="/geografia3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Escolha o quiz, o simulado A, B ou as respostas escritas. PDFs e gabarito separado.</p></span><span className="path-arrow">→</span></a>}
             {isPortuguese3 && <a className="path-card path-test" href="/portugues3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Quiz, simulado A, simulado B ou atividades escritas, com gabarito separado.</p><em>Abrir folha → imprimir ou salvar em PDF</em></span><span className="path-arrow">→</span></a>}
@@ -132,6 +138,11 @@ export default function SubjectView() {
                       {lesson.quizId && (
                         <button className="topic-quiz-button" onClick={() => startQuiz(lesson.quizId!)}>
                           Quiz • {quizCatalog[lesson.quizId].questions.length} questões
+                        </button>
+                      )}
+                      {isPortuguese3 && lesson.id === "p3-roman" && (
+                        <button className="topic-quiz-button" onClick={() => startQuiz("portuguese3-roman-practice")}>
+                          Treino extra • {quizCatalog["portuguese3-roman-practice"].questions.length} questões
                         </button>
                       )}
                     </div>

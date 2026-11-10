@@ -1,6 +1,6 @@
 "use client";
 import AppIcon from "../AppIcon";
-import { subjects } from "../study/data";
+import { subjects } from "./data";
 import { type SubjectKey } from "../../curriculum-data";
 import { useStudy } from "./StudyContext";
 

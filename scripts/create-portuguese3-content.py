@@ -499,6 +499,105 @@ q("p3-stress", "mock-b", "Em “coração”, qual é a sílaba tônica e como a
    ("co, por isso é proparoxítona.", "“Co” é a antepenúltima, mas não é a mais forte."),
    ("A palavra não tem sílaba tônica.", "Toda palavra com mais de uma sílaba tem uma tônica.")], ["P3-08", "P3-09"])
 
+# ---------- Treino de algarismos romanos (pool "roman-practice") ----------
+# As respostas e os distratores são calculados, para que nenhuma conta saia errada.
+ROMAN_VALUES = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), (50, "L"), (40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")]
+SYMBOL = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+
+def to_roman(n):
+    out = ""
+    for value, sym in ROMAN_VALUES:
+        while n >= value:
+            out += sym
+            n -= value
+    return out
+
+def from_roman(r):
+    return sum(-SYMBOL[c] if SYMBOL[c] < SYMBOL.get(r[i + 1:i + 2], 0) else SYMBOL[c] for i, c in enumerate(r))
+
+def additive(r):
+    return sum(SYMBOL[c] for c in r)
+
+def parts(n):
+    return " + ".join(f"{to_roman(v)} ({v})" for v in [n // 10 * 10, n % 10] if v)
+
+def value_question(r):
+    n = from_roman(r)
+    wrong = []
+    for w, why in [(additive(r), f"Não é {additive(r)}: em {r}, o símbolo menor antes do maior subtrai."),
+                   (n + 10, f"Não é {n + 10}: {n + 10} se escreve {to_roman(n + 10)}."),
+                   (n - 1, f"Não é {n - 1}: {n - 1} se escreve {to_roman(n - 1)}."),
+                   (n + 5, f"Não é {n + 5}: {n + 5} se escreve {to_roman(n + 5)}."),
+                   (n - 10, f"Não é {n - 10}: {n - 10} se escreve {to_roman(n - 10)}.")]:
+        if w > 0 and w != n and str(w) not in [x[0] for x in wrong]:
+            wrong.append((str(w), why))
+    q("p3-roman", "roman-practice", f"Quanto vale {r}?",
+      ["Separe dezenas e unidades.", "Menor antes do maior subtrai; menor depois soma."],
+      (str(n), f"Correto. {r} = {parts(n)} = {n}."), wrong[:3], ["P3-10"])
+
+def writing_question(n):
+    r = to_roman(n)
+    candidates = []
+    # forma ingênua sem subtração: 4 vira IIII, 9 vira VIIII, 40 vira XXXX, 90 vira LXXXX
+    def naive_form(x):
+        out = ""
+        for v, sym in [(100, "C"), (50, "L"), (10, "X"), (5, "V"), (1, "I")]:
+            out += sym * (x // v)
+            x %= v
+        return out
+    nf = naive_form(n)
+    if nf != r:
+        candidates.append((nf, "Não podemos repetir o mesmo símbolo quatro vezes seguidas."))
+    for w in [n + 1, n - 1, n + 10, n - 10, n + 5]:
+        if 0 < w and to_roman(w) != r:
+            candidates.append((to_roman(w), f"{to_roman(w)} vale {w}, não {n}."))
+    seen, wrong = set(), []
+    for label, why in candidates:
+        if label not in seen:
+            seen.add(label)
+            wrong.append((label, why))
+    q("p3-roman", "roman-practice", f"Como se escreve {n} em algarismos romanos?",
+      ["Separe dezenas e unidades e escreva cada parte.", "4, 9, 40 e 90 usam subtração: IV, IX, XL, XC."],
+      (r, f"Correto. {n} = {parts(n)} = {r}."), wrong[:3], ["P3-09"])
+
+for r in ["XII", "XIX", "XXIV", "XXXVIII", "XLIV", "XLIX", "LXXVI", "XC"]:
+    value_question(r)
+for n in [14, 29, 40, 47, 58, 83, 95, 100]:
+    writing_question(n)
+
+q("p3-roman", "roman-practice", "No livro, o capítulo está numerado como XVII. Qual é o número do capítulo?",
+  ["X = 10, V = 5 e I = 1.", "Todos os símbolos menores estão depois do maior."],
+  ("17", "Correto. XVII = 10 + 5 + 1 + 1 = 17."),
+  [("16", "Não é 16: 16 se escreve XVI."), ("13", "Não é 13: 13 se escreve XIII."), ("22", "Não é 22: 22 se escreve XXII.")], ["P3-10"])
+q("p3-roman", "roman-practice", "O século XVIII corresponde a qual século?",
+  ["Separe: X + V + III.", "Some todos os valores."],
+  ("Século 18", "Correto. XVIII = 10 + 5 + 3 = 18."),
+  [("Século 13", "Não é 13: 13 se escreve XIII."), ("Século 23", "Não é 23: 23 se escreve XXIII."), ("Século 8", "Não é 8: 8 se escreve VIII, sem o X.")], ["P3-10"])
+q("p3-roman", "roman-practice", "O rei Luís XIV ficou famoso na França. Que número aparece no nome dele?",
+  ["Separe: X + IV.", "IV = 5 − 1."],
+  ("14", "Correto. XIV = 10 + 4 = 14. Ele foi o 14º rei chamado Luís."),
+  [("16", "Não é 16: 16 se escreve XVI. Em XIV, o I vem antes do V."), ("9", "Não é 9: 9 se escreve IX."), ("4", "Não é 4: o X na frente acrescenta 10.")], ["P3-10"])
+q("p3-roman", "roman-practice", "Qual destes números romanos representa o MAIOR valor?",
+  ["Calcule o valor de cada um.", "C = 100; um X antes do C subtrai 10."],
+  ("XC", "Correto. XC = 100 − 10 = 90, o maior das opções."),
+  [("LX", "LX vale 60, menor que XC (90)."), ("XL", "XL vale 40, menor que XC (90)."), ("XXXIX", "XXXIX vale 39, menor que XC (90).")], ["P3-10"])
+q("p3-roman", "roman-practice", "Qual número romano está escrito corretamente?",
+  ["Lembre: no máximo três símbolos iguais seguidos.", "V, L e D não se repetem."],
+  ("XIV", "Correto. XIV = 10 + 4 = 14, escrito do jeito certo."),
+  [("XIIII", "Está errado: não podemos repetir I quatro vezes; 14 é XIV."), ("VV", "Está errado: V não se repete; 10 é X."), ("IIX", "Está errado: só um símbolo menor pode vir antes; 8 é VIII.")], ["P3-10"])
+q("p3-roman", "roman-practice", "Qual símbolo NÃO pode ser repetido em sequência?",
+  ["Pense em III, XX e CC.", "Quais símbolos nunca aparecem dobrados?"],
+  ("V", "Correto. V, L e D não se repetem: 10 é X, e não VV."),
+  [("I", "I pode ser repetido até três vezes: III = 3."), ("X", "X pode ser repetido até três vezes: XXX = 30."), ("C", "C pode ser repetido até três vezes: CCC = 300.")], ["P3-10"])
+q("p3-roman", "roman-practice", "Quanto é XX + VII? Escolha a resposta em algarismos romanos.",
+  ["XX = 20 e VII = 7.", "Some e escreva o resultado em romanos."],
+  ("XXVII", "Correto. 20 + 7 = 27 = XXVII."),
+  [("XXIII", "XXIII vale 23, não 27."), ("XXVIII", "XXVIII vale 28, não 27."), ("XVII", "XVII vale 17, não 27.")], ["P3-09"])
+q("p3-roman", "roman-practice", "Um relógio com algarismos romanos mostra o ponteiro das horas no IX. Que horas são?",
+  ["IX = 10 − 1.", "O I vem antes do X."],
+  ("9 horas", "Correto. IX = 10 − 1 = 9."),
+  [("11 horas", "11 seria XI, com o I depois do X."), ("4 horas", "4 horas seria IV, não IX."), ("6 horas", "6 horas seria VI, não IX.")], ["P3-10"])
+
 PRACTICE = [
     ("p3-reading", "Leia: “Na corrida da escola, participaram quinze crianças. Júlia chegou em segundo lugar e ganhou uma medalha. No caminho de volta, dividiu metade do lanche com o amigo.” Responda: quantas crianças participaram? Em que lugar Júlia chegou? O que ela fez no caminho de volta? Depois, retire do texto um numeral ordinal.",
      "Participaram quinze crianças. Júlia chegou em segundo lugar. No caminho de volta, dividiu metade do lanche com o amigo. Numeral ordinal retirado do texto: segundo.", ["P3-01", "P3-07"]),
@@ -524,12 +623,12 @@ INFOGRAPHICS = [
 def build():
     titles = {l["id"]: l["title"] for l in LESSONS}
     questions = []
-    counters = {"quiz": 0, "mock-a": 0, "mock-b": 0}
-    base = {"quiz": 3500, "mock-a": 3600, "mock-b": 3700}
+    counters = {"quiz": 0, "mock-a": 0, "mock-b": 0, "roman-practice": 0}
+    base = {"quiz": 3500, "mock-a": 3600, "mock-b": 3700, "roman-practice": 3800}
     for lesson, pool, prompt, hints, right, wrongs, refs in Q:
         i = counters[pool]
         counters[pool] += 1
-        pos = (i + {"quiz": 0, "mock-a": 1, "mock-b": 2}[pool]) % 4
+        pos = (i + {"quiz": 0, "mock-a": 1, "mock-b": 2, "roman-practice": 3}[pool]) % 4
         opts = list(wrongs)
         opts.insert(pos, right)
         letters = "abcd"

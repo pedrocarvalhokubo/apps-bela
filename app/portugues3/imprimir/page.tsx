@@ -6,6 +6,7 @@ const activities = {
   quiz: 'Quiz de revisão',
   'mock-a': 'Simulado A',
   'mock-b': 'Simulado B',
+  'roman-practice': 'Treino de algarismos romanos',
   written: 'Atividades escritas',
 };
 type Pool = keyof typeof activities;

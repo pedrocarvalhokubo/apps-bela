@@ -973,3 +973,435 @@ Leia com atenção e use as dicas da aula.
 
 Resposta: d
 Fontes escolares: P3-08, P3-09. 
+
+## Algarismos romanos — 3800
+
+Quanto vale XII?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 22
+  Explicação: Não é 22: 22 se escreve XXII.
+- B. 11
+  Explicação: Não é 11: 11 se escreve XI.
+- C. 17
+  Explicação: Não é 17: 17 se escreve XVII.
+- D. 12
+  Explicação: Correto. XII = X (10) + II (2) = 12.
+
+Resposta: d
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3801
+
+Quanto vale XIX?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 19
+  Explicação: Correto. XIX = X (10) + IX (9) = 19.
+- B. 21
+  Explicação: Não é 21: em XIX, o símbolo menor antes do maior subtrai.
+- C. 29
+  Explicação: Não é 29: 29 se escreve XXIX.
+- D. 18
+  Explicação: Não é 18: 18 se escreve XVIII.
+
+Resposta: a
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3802
+
+Quanto vale XXIV?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 26
+  Explicação: Não é 26: em XXIV, o símbolo menor antes do maior subtrai.
+- B. 24
+  Explicação: Correto. XXIV = XX (20) + IV (4) = 24.
+- C. 34
+  Explicação: Não é 34: 34 se escreve XXXIV.
+- D. 23
+  Explicação: Não é 23: 23 se escreve XXIII.
+
+Resposta: b
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3803
+
+Quanto vale XXXVIII?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 48
+  Explicação: Não é 48: 48 se escreve XLVIII.
+- B. 37
+  Explicação: Não é 37: 37 se escreve XXXVII.
+- C. 38
+  Explicação: Correto. XXXVIII = XXX (30) + VIII (8) = 38.
+- D. 43
+  Explicação: Não é 43: 43 se escreve XLIII.
+
+Resposta: c
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3804
+
+Quanto vale XLIV?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 66
+  Explicação: Não é 66: em XLIV, o símbolo menor antes do maior subtrai.
+- B. 54
+  Explicação: Não é 54: 54 se escreve LIV.
+- C. 43
+  Explicação: Não é 43: 43 se escreve XLIII.
+- D. 44
+  Explicação: Correto. XLIV = XL (40) + IV (4) = 44.
+
+Resposta: d
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3805
+
+Quanto vale XLIX?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 49
+  Explicação: Correto. XLIX = XL (40) + IX (9) = 49.
+- B. 71
+  Explicação: Não é 71: em XLIX, o símbolo menor antes do maior subtrai.
+- C. 59
+  Explicação: Não é 59: 59 se escreve LIX.
+- D. 48
+  Explicação: Não é 48: 48 se escreve XLVIII.
+
+Resposta: a
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3806
+
+Quanto vale LXXVI?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 86
+  Explicação: Não é 86: 86 se escreve LXXXVI.
+- B. 76
+  Explicação: Correto. LXXVI = LXX (70) + VI (6) = 76.
+- C. 75
+  Explicação: Não é 75: 75 se escreve LXXV.
+- D. 81
+  Explicação: Não é 81: 81 se escreve LXXXI.
+
+Resposta: b
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3807
+
+Quanto vale XC?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 110
+  Explicação: Não é 110: em XC, o símbolo menor antes do maior subtrai.
+- B. 100
+  Explicação: Não é 100: 100 se escreve C.
+- C. 90
+  Explicação: Correto. XC = XC (90) = 90.
+- D. 89
+  Explicação: Não é 89: 89 se escreve LXXXIX.
+
+Resposta: c
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3808
+
+Como se escreve 14 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. XIIII
+  Explicação: Não podemos repetir o mesmo símbolo quatro vezes seguidas.
+- B. XV
+  Explicação: XV vale 15, não 14.
+- C. XIII
+  Explicação: XIII vale 13, não 14.
+- D. XIV
+  Explicação: Correto. 14 = X (10) + IV (4) = XIV.
+
+Resposta: d
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3809
+
+Como se escreve 29 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. XXIX
+  Explicação: Correto. 29 = XX (20) + IX (9) = XXIX.
+- B. XXVIIII
+  Explicação: Não podemos repetir o mesmo símbolo quatro vezes seguidas.
+- C. XXX
+  Explicação: XXX vale 30, não 29.
+- D. XXVIII
+  Explicação: XXVIII vale 28, não 29.
+
+Resposta: a
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3810
+
+Como se escreve 40 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. XXXX
+  Explicação: Não podemos repetir o mesmo símbolo quatro vezes seguidas.
+- B. XL
+  Explicação: Correto. 40 = XL (40) = XL.
+- C. XLI
+  Explicação: XLI vale 41, não 40.
+- D. XXXIX
+  Explicação: XXXIX vale 39, não 40.
+
+Resposta: b
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3811
+
+Como se escreve 47 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. XXXXVII
+  Explicação: Não podemos repetir o mesmo símbolo quatro vezes seguidas.
+- B. XLVIII
+  Explicação: XLVIII vale 48, não 47.
+- C. XLVII
+  Explicação: Correto. 47 = XL (40) + VII (7) = XLVII.
+- D. XLVI
+  Explicação: XLVI vale 46, não 47.
+
+Resposta: c
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3812
+
+Como se escreve 58 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. LIX
+  Explicação: LIX vale 59, não 58.
+- B. LVII
+  Explicação: LVII vale 57, não 58.
+- C. LXVIII
+  Explicação: LXVIII vale 68, não 58.
+- D. LVIII
+  Explicação: Correto. 58 = L (50) + VIII (8) = LVIII.
+
+Resposta: d
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3813
+
+Como se escreve 83 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. LXXXIII
+  Explicação: Correto. 83 = LXXX (80) + III (3) = LXXXIII.
+- B. LXXXIV
+  Explicação: LXXXIV vale 84, não 83.
+- C. LXXXII
+  Explicação: LXXXII vale 82, não 83.
+- D. XCIII
+  Explicação: XCIII vale 93, não 83.
+
+Resposta: a
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3814
+
+Como se escreve 95 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. LXXXXV
+  Explicação: Não podemos repetir o mesmo símbolo quatro vezes seguidas.
+- B. XCV
+  Explicação: Correto. 95 = XC (90) + V (5) = XCV.
+- C. XCVI
+  Explicação: XCVI vale 96, não 95.
+- D. XCIV
+  Explicação: XCIV vale 94, não 95.
+
+Resposta: b
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3815
+
+Como se escreve 100 em algarismos romanos?
+
+Leia com atenção e use as dicas da aula.
+
+- A. CI
+  Explicação: CI vale 101, não 100.
+- B. XCIX
+  Explicação: XCIX vale 99, não 100.
+- C. C
+  Explicação: Correto. 100 = C (100) = C.
+- D. CX
+  Explicação: CX vale 110, não 100.
+
+Resposta: c
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3816
+
+No livro, o capítulo está numerado como XVII. Qual é o número do capítulo?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 16
+  Explicação: Não é 16: 16 se escreve XVI.
+- B. 13
+  Explicação: Não é 13: 13 se escreve XIII.
+- C. 22
+  Explicação: Não é 22: 22 se escreve XXII.
+- D. 17
+  Explicação: Correto. XVII = 10 + 5 + 1 + 1 = 17.
+
+Resposta: d
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3817
+
+O século XVIII corresponde a qual século?
+
+Leia com atenção e use as dicas da aula.
+
+- A. Século 18
+  Explicação: Correto. XVIII = 10 + 5 + 3 = 18.
+- B. Século 13
+  Explicação: Não é 13: 13 se escreve XIII.
+- C. Século 23
+  Explicação: Não é 23: 23 se escreve XXIII.
+- D. Século 8
+  Explicação: Não é 8: 8 se escreve VIII, sem o X.
+
+Resposta: a
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3818
+
+O rei Luís XIV ficou famoso na França. Que número aparece no nome dele?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 16
+  Explicação: Não é 16: 16 se escreve XVI. Em XIV, o I vem antes do V.
+- B. 14
+  Explicação: Correto. XIV = 10 + 4 = 14. Ele foi o 14º rei chamado Luís.
+- C. 9
+  Explicação: Não é 9: 9 se escreve IX.
+- D. 4
+  Explicação: Não é 4: o X na frente acrescenta 10.
+
+Resposta: b
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3819
+
+Qual destes números romanos representa o MAIOR valor?
+
+Leia com atenção e use as dicas da aula.
+
+- A. LX
+  Explicação: LX vale 60, menor que XC (90).
+- B. XL
+  Explicação: XL vale 40, menor que XC (90).
+- C. XC
+  Explicação: Correto. XC = 100 − 10 = 90, o maior das opções.
+- D. XXXIX
+  Explicação: XXXIX vale 39, menor que XC (90).
+
+Resposta: c
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3820
+
+Qual número romano está escrito corretamente?
+
+Leia com atenção e use as dicas da aula.
+
+- A. XIIII
+  Explicação: Está errado: não podemos repetir I quatro vezes; 14 é XIV.
+- B. VV
+  Explicação: Está errado: V não se repete; 10 é X.
+- C. IIX
+  Explicação: Está errado: só um símbolo menor pode vir antes; 8 é VIII.
+- D. XIV
+  Explicação: Correto. XIV = 10 + 4 = 14, escrito do jeito certo.
+
+Resposta: d
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3821
+
+Qual símbolo NÃO pode ser repetido em sequência?
+
+Leia com atenção e use as dicas da aula.
+
+- A. V
+  Explicação: Correto. V, L e D não se repetem: 10 é X, e não VV.
+- B. I
+  Explicação: I pode ser repetido até três vezes: III = 3.
+- C. X
+  Explicação: X pode ser repetido até três vezes: XXX = 30.
+- D. C
+  Explicação: C pode ser repetido até três vezes: CCC = 300.
+
+Resposta: a
+Fontes escolares: P3-10. 
+
+## Algarismos romanos — 3822
+
+Quanto é XX + VII? Escolha a resposta em algarismos romanos.
+
+Leia com atenção e use as dicas da aula.
+
+- A. XXIII
+  Explicação: XXIII vale 23, não 27.
+- B. XXVII
+  Explicação: Correto. 20 + 7 = 27 = XXVII.
+- C. XXVIII
+  Explicação: XXVIII vale 28, não 27.
+- D. XVII
+  Explicação: XVII vale 17, não 27.
+
+Resposta: b
+Fontes escolares: P3-09. 
+
+## Algarismos romanos — 3823
+
+Um relógio com algarismos romanos mostra o ponteiro das horas no IX. Que horas são?
+
+Leia com atenção e use as dicas da aula.
+
+- A. 11 horas
+  Explicação: 11 seria XI, com o I depois do X.
+- B. 4 horas
+  Explicação: 4 horas seria IV, não IX.
+- C. 9 horas
+  Explicação: Correto. IX = 10 − 1 = 9.
+- D. 6 horas
+  Explicação: 6 horas seria VI, não IX.
+
+Resposta: c
+Fontes escolares: P3-10. 

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import AppIcon from "../AppIcon";
-import { LessonVisual } from "../study/Visuals";
+import { LessonVisual } from "./Visuals";
 import { quizCatalog } from "../../curriculum-data";
 import { ela3ImageForLesson } from "../../ela3-data";
 import { geography3Subject, geography3ImageForLesson } from "../../geography3-data";
@@ -89,6 +89,11 @@ export default function LearnView() {
 
               {isGeography3 && <Geography3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
               {isPortuguese3 && <Portuguese3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
+              {isPortuguese3 && activeLesson.id === "p3-roman" && (
+                <button className="lesson-quiz-button" onClick={() => startQuiz("portuguese3-roman-practice")}>
+                  🏛️ Treino extra de algarismos romanos • {quizCatalog["portuguese3-roman-practice"].questions.length} questões
+                </button>
+              )}
               {isEla3 && <Ela3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
               {activeSubject === "science" && <><ScienceMatching key={activeLesson.id} lessonId={activeLesson.id} /><SciencePractice key={`practice-${activeLesson.id}`} lessonId={activeLesson.id} /></>}
 

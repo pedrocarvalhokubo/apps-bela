@@ -15,9 +15,9 @@ const routing=await load(read('../app/history3-data.ts')
 const roman=s=>{const v={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};let n=0;for(let i=0;i<s.length;i++)n+=v[s[i]]<(v[s[i+1]]??0)?-v[s[i]]:v[s[i]];return n;};
 
 test('Portuguese pools have 54 distinct questions covering every lesson with balanced answers',()=>{
- assert.equal(c.questions.length,54);
- assert.equal(new Set(c.questions.map(q=>q.id)).size,54);
- assert.equal(new Set(c.questions.map(q=>q.prompt)).size,54);
+ assert.equal(c.questions.length,78);
+ assert.equal(new Set(c.questions.map(q=>q.id)).size,78);
+ assert.equal(new Set(c.questions.map(q=>q.prompt)).size,78);
  const ids=new Set(sources.map(s=>s.id));
  for(const pool of ['quiz','mock-a','mock-b']){
   const qs=c.questions.filter(q=>q.pool===pool);assert.equal(qs.length,18);
@@ -33,6 +33,22 @@ test('Portuguese pools have 54 distinct questions covering every lesson with bal
    assert.ok(q.sourceRefs.length&&q.sourceRefs.every(r=>ids.has(r)));
   }
  }
+});
+
+test('Roman numeral practice has 24 checked questions with balanced answers and valid options',()=>{
+ const qs=c.questions.filter(q=>q.pool==='roman-practice');
+ assert.equal(qs.length,24);
+ for(const letter of 'abcd')assert.equal(qs.filter(q=>q.correct===letter).length,6);
+ for(const q of qs){
+  assert.equal(q.topic,'Algarismos romanos');
+  assert.equal(new Set(q.options.map(o=>o.label)).size,4);
+  assert.equal(new Set(q.options.map(o=>o.explanation)).size,4);
+  assert.ok(q.options.every(o=>o.explanation.trim().length>=15),q.prompt);
+  assert.ok(q.options.find(o=>o.id===q.correct).explanation.startsWith('Correto'),q.prompt);
+ }
+ const write=qs.filter(q=>/^Como se escreve/.test(q.prompt));assert.equal(write.length,8);
+ const read=qs.filter(q=>/^Quanto vale/.test(q.prompt));assert.equal(read.length,8);
+ for(const q of read)for(const o of q.options)if(o.id!==q.correct)assert.notEqual(o.label,String(roman(q.prompt.match(/vale (\w+)/)[1])));
 });
 
 test('Roman numeral answers are arithmetically correct',()=>{

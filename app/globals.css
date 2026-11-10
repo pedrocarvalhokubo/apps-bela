@@ -2549,7 +2549,7 @@ footer {
     font-size: 15px;
   }
 
-  .reset-trigger span,
+  .reset-trigger span:not(.app-icon),
   .install-trigger span:last-child {
     display: none;
   }
@@ -3386,7 +3386,7 @@ button.path-card:hover { transform: translateY(-5px) scale(1.01); }
   .topbar nav button { flex: 1; justify-content: center; min-height: 45px; }
   .profile-chip { display: none; }
   .install-trigger, .reset-trigger { width: 39px; padding: 0; justify-content: center; }
-  .install-trigger > span:last-child, .reset-trigger > span { display: none; }
+  .install-trigger > span:last-child, .reset-trigger > span:not(.app-icon) { display: none; }
 
   .welcome-card { grid-template-columns: 1fr; min-height: auto; border-radius: 27px; }
   .welcome-copy { padding: 34px 24px 10px; }

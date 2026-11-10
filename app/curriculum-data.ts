@@ -15,7 +15,7 @@ export type QuizId =
   | "science3-sound" | "science3-hearing" | "science3-rocks-minerals" | "science3-rock-types" | "science3-fossils" | "science3-landscapes" | "science3-weathering-erosion" | "science3-soil" | "science3-fossil-discovery" | "science3-hurricane" | "science3-general" | "science3-mock-a" | "science3-mock-b"
   | "ela3-blends" | "ela3-verbs" | "ela3-adverbs" | "ela3-homophones" | "ela3-homographs" | "ela3-genres" | "ela3-informational" | "ela3-biography" | "ela3-dahl" | "ela3-spiders" | "ela3-general" | "ela3-mock-a" | "ela3-mock-b"
   | "history3-diversity" | "history3-origins" | "history3-slavery" | "history3-routes" | "history3-colonization" | "history3-culture" | "history3-diaspora" | "history3-general" | "history3-mock-a" | "history3-mock-b"
-  | "portuguese3-reading" | "portuguese3-tenses" | "portuguese3-eu-mim" | "portuguese3-numerals" | "portuguese3-roman" | "portuguese3-stress" | "portuguese3-general" | "portuguese3-mock-a" | "portuguese3-mock-b"
+  | "portuguese3-reading" | "portuguese3-tenses" | "portuguese3-eu-mim" | "portuguese3-numerals" | "portuguese3-roman" | "portuguese3-stress" | "portuguese3-general" | "portuguese3-mock-a" | "portuguese3-mock-b" | "portuguese3-roman-practice"
   | "science-general"
   | "math"
   | "ela"
