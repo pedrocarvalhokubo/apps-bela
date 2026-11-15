@@ -88,7 +88,7 @@ export default function HomeView() {
 
             {term === 2 || term === 3 ? (
               <div className="subject-grid">
-                {subjects.filter(subject => term === 3 ? subject.key === "science" || subject.key === "history" || subject.key === "ela" || subject.key === "geography" || subject.key === "portuguese" : subject.key !== "science").map((subject) => (
+                {subjects.filter(subject => term === 3 ? subject.key === "math" || subject.key === "science" || subject.key === "history" || subject.key === "ela" || subject.key === "geography" || subject.key === "portuguese" : subject.key !== "science").map((subject) => (
                   <button
                     key={subject.name}
                     className={`subject-card ${subject.color} ${subject.status === "soon" ? "subject-soon" : ""}`}
@@ -98,7 +98,7 @@ export default function HomeView() {
                     <span className="subject-icon"><AppIcon name={subject.icon} /></span>
                     <span className="subject-copy">
                       <strong>{subject.name}</strong>
-                      <small>{term === 3 && subject.key === "geography" ? "Migrações e culturas • 4 aulas" : term === 3 && subject.key === "ela" ? "Words & reading • 10 aulas" : term === 3 && subject.key === "history" ? "África e Brasil • 7 aulas" : term === 3 && subject.key === "portuguese" ? "Verbos, numerais e sílabas • 6 aulas" : subject.detail}</small>
+                      <small>{term === 3 && subject.key === "math" ? "Frações, decimais e formas • 8 aulas + jogos" : term === 3 && subject.key === "geography" ? "Migrações e culturas • 4 aulas" : term === 3 && subject.key === "ela" ? "Words & reading • 10 aulas" : term === 3 && subject.key === "history" ? "África e Brasil • 7 aulas" : term === 3 && subject.key === "portuguese" ? "Verbos, numerais e sílabas • 6 aulas" : subject.detail}</small>
                     </span>
                     {subject.status === "ready" ? <span className="subject-arrow">→</span> : <span className="soon-pill">Em breve</span>}
                   </button>

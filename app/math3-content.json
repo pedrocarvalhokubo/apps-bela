@@ -1,0 +1,3393 @@
+{
+  "subject": {
+    "key": "math",
+    "name": "Math",
+    "icon": "🔢",
+    "eyebrow": "MATH • III TRIMESTRE",
+    "title": "Fractions, decimals and shapes",
+    "description": "8 aulas • laboratórios de toque, frações, decimais, problemas, perímetro e área.",
+    "assessmentDate": "",
+    "quizId": "math3-general",
+    "lessons": [
+      {
+        "id": "m3-fractions",
+        "number": "01",
+        "icon": "🍕",
+        "title": "Fractions of a whole",
+        "subtitle": "Numerator, denominator and equal parts",
+        "intro": "A fraction represents equal parts of a whole. The denominator tells how many equal parts make one whole; the numerator tells how many of those parts are selected.",
+        "facts": [
+          {
+            "term": "Equal parts",
+            "text": "The pieces must have the same size. Four unequal pieces do not make fourths."
+          },
+          {
+            "term": "Numerator",
+            "text": "In 3/4, 3 is the numerator: three parts are selected."
+          },
+          {
+            "term": "Denominator",
+            "text": "In 3/4, 4 is the denominator: one whole is split into four equal parts."
+          },
+          {
+            "term": "Fraction names",
+            "text": "1/2 = one half; 1/3 = one third; 1/4 = one fourth; 1/5 = one fifth; 1/6 = one sixth; 1/7 = one seventh; 1/8 = one eighth."
+          },
+          {
+            "term": "One whole",
+            "text": "All the parts together make one whole: 4/4 = 1 and 6/6 = 1."
+          }
+        ],
+        "remember": "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "tone": "purple",
+        "quizId": "math3-fractions"
+      },
+      {
+        "id": "m3-sets",
+        "number": "02",
+        "icon": "🧺",
+        "title": "Fraction of a set",
+        "subtitle": "Share equally, then choose groups",
+        "intro": "To find a fraction of a set, divide the total into the number of equal groups shown by the denominator. Then take the number of groups shown by the numerator.",
+        "facts": [
+          {
+            "term": "Divide first",
+            "text": "1/5 of 20 marbles: 20 ÷ 5 = 4 marbles."
+          },
+          {
+            "term": "Multiply next",
+            "text": "3/4 of 56 students: 56 ÷ 4 × 3 = 42 students."
+          },
+          {
+            "term": "One group",
+            "text": "1/4 of 56 students = 14 students."
+          },
+          {
+            "term": "Equal sharing",
+            "text": "24 cupcakes shared equally by 6 teachers: 24 ÷ 6 = 4 cupcakes each."
+          },
+          {
+            "term": "Do not mix up the total",
+            "text": "When finding 1/5 of 20, the denominator is 5. The total number of objects is 20."
+          }
+        ],
+        "remember": "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "tone": "green",
+        "quizId": "math3-sets"
+      },
+      {
+        "id": "m3-equivalence",
+        "number": "03",
+        "icon": "⚖️",
+        "title": "Equivalent fractions and mixed numbers",
+        "subtitle": "Same value, different parts",
+        "intro": "Equivalent fractions represent the same amount of the same whole. A mixed number combines a whole-number part and a fraction.",
+        "facts": [
+          {
+            "term": "Equivalent fractions",
+            "text": "Multiply or divide BOTH numerator and denominator by the same nonzero number: 2/5 = 4/10; 12/24 = 6/12."
+          },
+          {
+            "term": "Proper fraction",
+            "text": "The numerator is smaller than the denominator: 2/5 is less than one."
+          },
+          {
+            "term": "Improper fraction",
+            "text": "The numerator is at least the denominator. 7/3 is greater than one; 3/3 is exactly one."
+          },
+          {
+            "term": "Mixed to improper",
+            "text": "Whole × denominator + numerator gives the new numerator. Keep the denominator: 2 1/3 = 7/3."
+          },
+          {
+            "term": "Improper to mixed",
+            "text": "Divide numerator by denominator: 7 ÷ 3 = 2 remainder 1, so 7/3 = 2 1/3."
+          }
+        ],
+        "remember": "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "tone": "orange",
+        "quizId": "math3-equivalence"
+      },
+      {
+        "id": "m3-decimals",
+        "number": "04",
+        "icon": "💯",
+        "title": "Tenths and hundredths",
+        "subtitle": "Fractions, grids and decimal numbers",
+        "intro": "A decimal point separates the whole-number part from the decimal part. The first place after the point is tenths; the second is hundredths.",
+        "facts": [
+          {
+            "term": "Reading",
+            "text": "1.2 = one and two tenths. 71.82 = seventy-one and eighty-two hundredths. You can also read digits after “point”."
+          },
+          {
+            "term": "Tenths",
+            "text": "7/10 = 0.7; 16/10 = 1 6/10 = 1.6."
+          },
+          {
+            "term": "Hundredths",
+            "text": "35/100 = 0.35; 5/100 = 0.05. The zero in the tenths place matters."
+          },
+          {
+            "term": "More than one",
+            "text": "1 6/100 = 1.06; 1 60/100 = 1.60; 2 82/100 = 2.82."
+          },
+          {
+            "term": "Back to fractions",
+            "text": "1.9 = 1 9/10 = 19/10; 3.04 = 3 4/100; 1.23 = 1 23/100; 0.09 = 9/100."
+          },
+          {
+            "term": "Compare and order",
+            "text": "Compare wholes, then tenths, then hundredths. 0.89 < 0.90. Increasing order: 0.09, 0.89, 0.9, 1.4, 1.45, 2.65, 4.09."
+          }
+        ],
+        "remember": "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "tone": "blue",
+        "quizId": "math3-decimals"
+      },
+      {
+        "id": "m3-operations",
+        "number": "05",
+        "icon": "➕",
+        "title": "Adding and subtracting decimals",
+        "subtitle": "Line up the decimal points",
+        "intro": "Write the numbers in columns with decimal points directly under each other. Add or subtract from right to left, regrouping when needed.",
+        "facts": [
+          {
+            "term": "Align",
+            "text": "Ones under ones, tenths under tenths, hundredths under hundredths."
+          },
+          {
+            "term": "Add zeros",
+            "text": "3.2 = 3.20. A final zero helps line up places without changing the value."
+          },
+          {
+            "term": "Addition",
+            "text": "22.3 + 34.1 = 56.4."
+          },
+          {
+            "term": "Subtraction",
+            "text": "76.3 − 34.1 = 42.2. For 3.20 − 2.85, regroup: the result is 0.35."
+          },
+          {
+            "term": "Keep the point",
+            "text": "Write the answer’s decimal point directly under the points above."
+          }
+        ],
+        "remember": "Line up the POINTS, not the last digits. Check each column.",
+        "tone": "purple",
+        "quizId": "math3-operations"
+      },
+      {
+        "id": "m3-problems",
+        "number": "06",
+        "icon": "🗺️",
+        "title": "Money, distance and temperature",
+        "subtitle": "Choose the operation and explain",
+        "intro": "Read what the question asks before choosing an operation. Keep money, distance and temperature units in the answer.",
+        "facts": [
+          {
+            "term": "Money",
+            "text": "Saved i$260; i$5 left means spending i$255. Check how many activities the question asks for."
+          },
+          {
+            "term": "School activity prices",
+            "text": "Free play 25; movie 200; movie with popcorn 140; digital center 60; all centers 100; free clothing 150; buddy reading 30, all in i$."
+          },
+          {
+            "term": "Four activities",
+            "text": "Free play + movie with popcorn + digital center + buddy reading: 25 + 140 + 60 + 30 = 255; 260 − 255 = 5."
+          },
+          {
+            "term": "Distance difference",
+            "text": "Liam ran 3.2 km; Jack ran 2.85 km. “How much farther?” means subtract: 3.20 − 2.85 = 0.35 km."
+          },
+          {
+            "term": "Order a table",
+            "text": "From Salvador: Belo Horizonte 1,370 km; Brasília 1,460; Rio de Janeiro 1,640; São Paulo 1,960; Curitiba 2,100, in increasing order."
+          },
+          {
+            "term": "Temperature rise",
+            "text": "29.8°C rising by 2.5°C: 29.8 + 2.5 = 32.3°C."
+          }
+        ],
+        "remember": "Read → choose an operation → calculate → check the unit and the question.",
+        "tone": "green",
+        "quizId": "math3-problems"
+      },
+      {
+        "id": "m3-perimeter",
+        "number": "07",
+        "icon": "📏",
+        "title": "Perimeter",
+        "subtitle": "Walk around the outside",
+        "intro": "Perimeter is the total distance around the outside of a flat shape. Add all the side lengths, using the same unit.",
+        "facts": [
+          {
+            "term": "Rectangle",
+            "text": "Opposite sides are equal. With length 5 m and width 3 m: 5 + 3 + 5 + 3 = 16 m."
+          },
+          {
+            "term": "Square",
+            "text": "Four equal sides. A square with side 25 cm has perimeter 100 cm."
+          },
+          {
+            "term": "Regular polygons",
+            "text": "All sides are equal. To find one side, divide the perimeter by the number of sides."
+          },
+          {
+            "term": "Find a side",
+            "text": "Square: 20 ÷ 4 = 5 cm. Regular pentagon: 25 ÷ 5 = 5 cm. Regular hexagon: 60 ÷ 6 = 10 cm."
+          },
+          {
+            "term": "Compare units",
+            "text": "500 m = 0.5 km. A square with 500 m sides has perimeter 2 km; a triangle with three 1 km sides has 3 km; a 1.2 km × 0.5 km rectangle has 3.4 km."
+          },
+          {
+            "term": "Missing information",
+            "text": "Do not assume two triangle sides are equal just because they look equal. You need lengths, equality marks or a statement."
+          }
+        ],
+        "remember": "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "tone": "orange",
+        "quizId": "math3-perimeter"
+      },
+      {
+        "id": "m3-area",
+        "number": "08",
+        "icon": "🏠",
+        "title": "Area and a house on a grid",
+        "subtitle": "Count square units inside",
+        "intro": "Area measures the space inside a shape. Count the square units that cover it. For a rectangle or square, multiply length by width.",
+        "facts": [
+          {
+            "term": "Square units",
+            "text": "One 1 cm × 1 cm square has area 1 cm². Area units include cm² and m²."
+          },
+          {
+            "term": "Rectangle",
+            "text": "A 9 m × 6 m rectangle has area 9 × 6 = 54 m² and perimeter 30 m."
+          },
+          {
+            "term": "Square",
+            "text": "A 5 × 5 square covers 25 square units."
+          },
+          {
+            "term": "Count cells",
+            "text": "A 4 × 3 grid has 12 square units. A 5 × 6 grid has 30. A 3 × 3 grid has 9."
+          },
+          {
+            "term": "Draw a house",
+            "text": "First bedroom: 8 cm² blue; second bedroom: 6 cm² yellow; bathroom: 4 cm² red; kitchen: 12 cm² green; living room: 16 cm² orange; balcony: 2 cm² pink."
+          },
+          {
+            "term": "Area is not perimeter",
+            "text": "The same area can have different perimeters. A 2 × 6 rectangle and a 3 × 4 rectangle both cover 12 square units, but their perimeters are 16 and 14 units."
+          }
+        ],
+        "remember": "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "tone": "blue",
+        "quizId": "math3-area"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": 35000,
+      "pool": "quiz",
+      "topic": "Fractions of a whole",
+      "prompt": "A whole is split into 6 equal parts. Four are shaded. Which fraction is shaded?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "The numerator counts 4 shaded parts; the denominator counts 6 equal parts."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "4/6",
+          "explanation": "Correct. The numerator counts 4 shaded parts; the denominator counts 6 equal parts."
+        },
+        {
+          "id": "b",
+          "label": "6/4",
+          "explanation": "Try again. The numerator counts 4 shaded parts; the denominator counts 6 equal parts."
+        },
+        {
+          "id": "c",
+          "label": "4/10",
+          "explanation": "Try again. The numerator counts 4 shaded parts; the denominator counts 6 equal parts."
+        },
+        {
+          "id": "d",
+          "label": "2/6",
+          "explanation": "Try again. The numerator counts 4 shaded parts; the denominator counts 6 equal parts."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35001,
+      "pool": "quiz",
+      "topic": "Fractions of a whole",
+      "prompt": "In 3/8, what does 8 tell you?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "The denominator counts all equal parts in one whole."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Unshaded parts only",
+          "explanation": "Try again. The denominator counts all equal parts in one whole."
+        },
+        {
+          "id": "b",
+          "label": "Equal parts in one whole",
+          "explanation": "Correct. The denominator counts all equal parts in one whole."
+        },
+        {
+          "id": "c",
+          "label": "Shaded parts",
+          "explanation": "Try again. The denominator counts all equal parts in one whole."
+        },
+        {
+          "id": "d",
+          "label": "Number of wholes",
+          "explanation": "Try again. The denominator counts all equal parts in one whole."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35002,
+      "pool": "quiz",
+      "topic": "Fractions of a whole",
+      "prompt": "Which shows one whole?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "All six of the six equal parts are selected."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "5/6",
+          "explanation": "Try again. All six of the six equal parts are selected."
+        },
+        {
+          "id": "b",
+          "label": "6/12",
+          "explanation": "Try again. All six of the six equal parts are selected."
+        },
+        {
+          "id": "c",
+          "label": "6/6",
+          "explanation": "Correct. All six of the six equal parts are selected."
+        },
+        {
+          "id": "d",
+          "label": "1/6",
+          "explanation": "Try again. All six of the six equal parts are selected."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35003,
+      "pool": "quiz",
+      "topic": "Fraction of a set",
+      "prompt": "Find 1/4 of 56 students.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "56 ÷ 4 = 14."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "4 students",
+          "explanation": "Try again. 56 ÷ 4 = 14."
+        },
+        {
+          "id": "b",
+          "label": "42 students",
+          "explanation": "Try again. 56 ÷ 4 = 14."
+        },
+        {
+          "id": "c",
+          "label": "52 students",
+          "explanation": "Try again. 56 ÷ 4 = 14."
+        },
+        {
+          "id": "d",
+          "label": "14 students",
+          "explanation": "Correct. 56 ÷ 4 = 14."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35004,
+      "pool": "quiz",
+      "topic": "Fraction of a set",
+      "prompt": "Find 3/4 of 56 students.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "56 ÷ 4 × 3 = 42."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "42 students",
+          "explanation": "Correct. 56 ÷ 4 × 3 = 42."
+        },
+        {
+          "id": "b",
+          "label": "14 students",
+          "explanation": "Try again. 56 ÷ 4 × 3 = 42."
+        },
+        {
+          "id": "c",
+          "label": "21 students",
+          "explanation": "Try again. 56 ÷ 4 × 3 = 42."
+        },
+        {
+          "id": "d",
+          "label": "53 students",
+          "explanation": "Try again. 56 ÷ 4 × 3 = 42."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35005,
+      "pool": "quiz",
+      "topic": "Fraction of a set",
+      "prompt": "Share 24 cupcakes equally among 6 teachers. How many each?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "24 ÷ 6 = 4."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "144 cupcakes",
+          "explanation": "Try again. 24 ÷ 6 = 4."
+        },
+        {
+          "id": "b",
+          "label": "4 cupcakes",
+          "explanation": "Correct. 24 ÷ 6 = 4."
+        },
+        {
+          "id": "c",
+          "label": "6 cupcakes",
+          "explanation": "Try again. 24 ÷ 6 = 4."
+        },
+        {
+          "id": "d",
+          "label": "18 cupcakes",
+          "explanation": "Try again. 24 ÷ 6 = 4."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35006,
+      "pool": "quiz",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Which fraction is equivalent to 2/5?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "Multiply both 2 and 5 by 2."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "4/5",
+          "explanation": "Try again. Multiply both 2 and 5 by 2."
+        },
+        {
+          "id": "b",
+          "label": "3/6",
+          "explanation": "Try again. Multiply both 2 and 5 by 2."
+        },
+        {
+          "id": "c",
+          "label": "4/10",
+          "explanation": "Correct. Multiply both 2 and 5 by 2."
+        },
+        {
+          "id": "d",
+          "label": "2/10",
+          "explanation": "Try again. Multiply both 2 and 5 by 2."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35007,
+      "pool": "quiz",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Convert 2 1/3 to an improper fraction.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "2 × 3 + 1 = 7; keep denominator 3."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "3/3",
+          "explanation": "Try again. 2 × 3 + 1 = 7; keep denominator 3."
+        },
+        {
+          "id": "b",
+          "label": "5/3",
+          "explanation": "Try again. 2 × 3 + 1 = 7; keep denominator 3."
+        },
+        {
+          "id": "c",
+          "label": "7/6",
+          "explanation": "Try again. 2 × 3 + 1 = 7; keep denominator 3."
+        },
+        {
+          "id": "d",
+          "label": "7/3",
+          "explanation": "Correct. 2 × 3 + 1 = 7; keep denominator 3."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35008,
+      "pool": "quiz",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Which is a proper fraction?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "2 is smaller than 5, so 2/5 is less than one."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "2/5",
+          "explanation": "Correct. 2 is smaller than 5, so 2/5 is less than one."
+        },
+        {
+          "id": "b",
+          "label": "7/3",
+          "explanation": "Try again. 2 is smaller than 5, so 2/5 is less than one."
+        },
+        {
+          "id": "c",
+          "label": "8/6",
+          "explanation": "Try again. 2 is smaller than 5, so 2/5 is less than one."
+        },
+        {
+          "id": "d",
+          "label": "17/6",
+          "explanation": "Try again. 2 is smaller than 5, so 2/5 is less than one."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35009,
+      "pool": "quiz",
+      "topic": "Tenths and hundredths",
+      "prompt": "Write 5/100 as a decimal.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "5 hundredths is 0.05, with zero tenths."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.005",
+          "explanation": "Try again. 5 hundredths is 0.05, with zero tenths."
+        },
+        {
+          "id": "b",
+          "label": "0.05",
+          "explanation": "Correct. 5 hundredths is 0.05, with zero tenths."
+        },
+        {
+          "id": "c",
+          "label": "0.5",
+          "explanation": "Try again. 5 hundredths is 0.05, with zero tenths."
+        },
+        {
+          "id": "d",
+          "label": "5.00",
+          "explanation": "Try again. 5 hundredths is 0.05, with zero tenths."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35010,
+      "pool": "quiz",
+      "topic": "Tenths and hundredths",
+      "prompt": "Which number is greatest: 0.89, 0.9, 0.09, 0.19?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "0.9 = 0.90, greater than 0.89."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.09",
+          "explanation": "Try again. 0.9 = 0.90, greater than 0.89."
+        },
+        {
+          "id": "b",
+          "label": "0.19",
+          "explanation": "Try again. 0.9 = 0.90, greater than 0.89."
+        },
+        {
+          "id": "c",
+          "label": "0.9",
+          "explanation": "Correct. 0.9 = 0.90, greater than 0.89."
+        },
+        {
+          "id": "d",
+          "label": "0.89",
+          "explanation": "Try again. 0.9 = 0.90, greater than 0.89."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35011,
+      "pool": "quiz",
+      "topic": "Tenths and hundredths",
+      "prompt": "Write 1 6/100 as a decimal.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "One whole and six hundredths is 1.06."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "1.6",
+          "explanation": "Try again. One whole and six hundredths is 1.06."
+        },
+        {
+          "id": "b",
+          "label": "0.16",
+          "explanation": "Try again. One whole and six hundredths is 1.06."
+        },
+        {
+          "id": "c",
+          "label": "1.006",
+          "explanation": "Try again. One whole and six hundredths is 1.06."
+        },
+        {
+          "id": "d",
+          "label": "1.06",
+          "explanation": "Correct. One whole and six hundredths is 1.06."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35012,
+      "pool": "quiz",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Calculate 22.3 + 34.1.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "22.30 + 34.10 = 56.40."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "56.4",
+          "explanation": "Correct. 22.30 + 34.10 = 56.40."
+        },
+        {
+          "id": "b",
+          "label": "56.04",
+          "explanation": "Try again. 22.30 + 34.10 = 56.40."
+        },
+        {
+          "id": "c",
+          "label": "55.4",
+          "explanation": "Try again. 22.30 + 34.10 = 56.40."
+        },
+        {
+          "id": "d",
+          "label": "57.4",
+          "explanation": "Try again. 22.30 + 34.10 = 56.40."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35013,
+      "pool": "quiz",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Calculate 76.3 − 34.1.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "76.30 − 34.10 = 42.20."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "110.4",
+          "explanation": "Try again. 76.30 − 34.10 = 42.20."
+        },
+        {
+          "id": "b",
+          "label": "42.2",
+          "explanation": "Correct. 76.30 − 34.10 = 42.20."
+        },
+        {
+          "id": "c",
+          "label": "42.02",
+          "explanation": "Try again. 76.30 − 34.10 = 42.20."
+        },
+        {
+          "id": "d",
+          "label": "41.2",
+          "explanation": "Try again. 76.30 − 34.10 = 42.20."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35014,
+      "pool": "quiz",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Calculate 3.2 − 2.85.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "Write 3.20, line up the points and regroup."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "1.65",
+          "explanation": "Try again. Write 3.20, line up the points and regroup."
+        },
+        {
+          "id": "b",
+          "label": "0.07",
+          "explanation": "Try again. Write 3.20, line up the points and regroup."
+        },
+        {
+          "id": "c",
+          "label": "0.35",
+          "explanation": "Correct. Write 3.20, line up the points and regroup."
+        },
+        {
+          "id": "d",
+          "label": "0.45",
+          "explanation": "Try again. Write 3.20, line up the points and regroup."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35015,
+      "pool": "quiz",
+      "topic": "Money, distance and temperature",
+      "prompt": "Liam ran 3.2 km and Jack ran 2.85 km. How much farther did Liam run?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "Compare the distances: 3.20 − 2.85 = 0.35 km."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.45 km",
+          "explanation": "Try again. Compare the distances: 3.20 − 2.85 = 0.35 km."
+        },
+        {
+          "id": "b",
+          "label": "6.05 km",
+          "explanation": "Try again. Compare the distances: 3.20 − 2.85 = 0.35 km."
+        },
+        {
+          "id": "c",
+          "label": "1.35 km",
+          "explanation": "Try again. Compare the distances: 3.20 − 2.85 = 0.35 km."
+        },
+        {
+          "id": "d",
+          "label": "0.35 km",
+          "explanation": "Correct. Compare the distances: 3.20 − 2.85 = 0.35 km."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35016,
+      "pool": "quiz",
+      "topic": "Money, distance and temperature",
+      "prompt": "The temperature is 29.8°C and rises by 2.5°C. What is the new temperature?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "29.8 + 2.5 = 32.3°C."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "32.3°C",
+          "explanation": "Correct. 29.8 + 2.5 = 32.3°C."
+        },
+        {
+          "id": "b",
+          "label": "31.3°C",
+          "explanation": "Try again. 29.8 + 2.5 = 32.3°C."
+        },
+        {
+          "id": "c",
+          "label": "27.3°C",
+          "explanation": "Try again. 29.8 + 2.5 = 32.3°C."
+        },
+        {
+          "id": "d",
+          "label": "32.03°C",
+          "explanation": "Try again. 29.8 + 2.5 = 32.3°C."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35017,
+      "pool": "quiz",
+      "topic": "Money, distance and temperature",
+      "prompt": "You save i$260 and want i$5 change. How much may you spend?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "260 − 5 = 255."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "i$5",
+          "explanation": "Try again. 260 − 5 = 255."
+        },
+        {
+          "id": "b",
+          "label": "i$255",
+          "explanation": "Correct. 260 − 5 = 255."
+        },
+        {
+          "id": "c",
+          "label": "i$265",
+          "explanation": "Try again. 260 − 5 = 255."
+        },
+        {
+          "id": "d",
+          "label": "i$250",
+          "explanation": "Try again. 260 − 5 = 255."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35018,
+      "pool": "quiz",
+      "topic": "Perimeter",
+      "prompt": "Find the perimeter of a 5 m by 3 m rectangle.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "5 + 3 + 5 + 3 = 16 m."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "8 m",
+          "explanation": "Try again. 5 + 3 + 5 + 3 = 16 m."
+        },
+        {
+          "id": "b",
+          "label": "16 m²",
+          "explanation": "Try again. 5 + 3 + 5 + 3 = 16 m."
+        },
+        {
+          "id": "c",
+          "label": "16 m",
+          "explanation": "Correct. 5 + 3 + 5 + 3 = 16 m."
+        },
+        {
+          "id": "d",
+          "label": "15 m",
+          "explanation": "Try again. 5 + 3 + 5 + 3 = 16 m."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35019,
+      "pool": "quiz",
+      "topic": "Perimeter",
+      "prompt": "A square has perimeter 20 cm. Find one side.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "A square has four equal sides: 20 ÷ 4 = 5."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "4 cm",
+          "explanation": "Try again. A square has four equal sides: 20 ÷ 4 = 5."
+        },
+        {
+          "id": "b",
+          "label": "10 cm",
+          "explanation": "Try again. A square has four equal sides: 20 ÷ 4 = 5."
+        },
+        {
+          "id": "c",
+          "label": "80 cm",
+          "explanation": "Try again. A square has four equal sides: 20 ÷ 4 = 5."
+        },
+        {
+          "id": "d",
+          "label": "5 cm",
+          "explanation": "Correct. A square has four equal sides: 20 ÷ 4 = 5."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35020,
+      "pool": "quiz",
+      "topic": "Perimeter",
+      "prompt": "A regular hexagon has perimeter 60 cm. Find one side.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "Six equal sides: 60 ÷ 6 = 10."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "10 cm",
+          "explanation": "Correct. Six equal sides: 60 ÷ 6 = 10."
+        },
+        {
+          "id": "b",
+          "label": "6 cm",
+          "explanation": "Try again. Six equal sides: 60 ÷ 6 = 10."
+        },
+        {
+          "id": "c",
+          "label": "12 cm",
+          "explanation": "Try again. Six equal sides: 60 ÷ 6 = 10."
+        },
+        {
+          "id": "d",
+          "label": "15 cm",
+          "explanation": "Try again. Six equal sides: 60 ÷ 6 = 10."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35021,
+      "pool": "quiz",
+      "topic": "Area and a house on a grid",
+      "prompt": "Find the area of a 9 m by 6 m rectangle.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "9 × 6 = 54 square metres."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "54 m",
+          "explanation": "Try again. 9 × 6 = 54 square metres."
+        },
+        {
+          "id": "b",
+          "label": "54 m²",
+          "explanation": "Correct. 9 × 6 = 54 square metres."
+        },
+        {
+          "id": "c",
+          "label": "30 m²",
+          "explanation": "Try again. 9 × 6 = 54 square metres."
+        },
+        {
+          "id": "d",
+          "label": "15 m²",
+          "explanation": "Try again. 9 × 6 = 54 square metres."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35022,
+      "pool": "quiz",
+      "topic": "Area and a house on a grid",
+      "prompt": "How many square units are in a 4 by 3 grid?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "4 columns × 3 rows = 12 squares."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "14 square units",
+          "explanation": "Try again. 4 columns × 3 rows = 12 squares."
+        },
+        {
+          "id": "b",
+          "label": "16 square units",
+          "explanation": "Try again. 4 columns × 3 rows = 12 squares."
+        },
+        {
+          "id": "c",
+          "label": "12 square units",
+          "explanation": "Correct. 4 columns × 3 rows = 12 squares."
+        },
+        {
+          "id": "d",
+          "label": "7 square units",
+          "explanation": "Try again. 4 columns × 3 rows = 12 squares."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35023,
+      "pool": "quiz",
+      "topic": "Area and a house on a grid",
+      "prompt": "Which measures the space inside a shape?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "Area counts the square units covering the inside."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Perimeter",
+          "explanation": "Try again. Area counts the square units covering the inside."
+        },
+        {
+          "id": "b",
+          "label": "Length of one edge",
+          "explanation": "Try again. Area counts the square units covering the inside."
+        },
+        {
+          "id": "c",
+          "label": "Outside boundary",
+          "explanation": "Try again. Area counts the square units covering the inside."
+        },
+        {
+          "id": "d",
+          "label": "Area",
+          "explanation": "Correct. Area counts the square units covering the inside."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35024,
+      "pool": "mock-a",
+      "topic": "Fractions of a whole",
+      "prompt": "A circle has 8 equal parts; 3 are selected. Write the fraction.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "3 selected out of 8 equal parts."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "3/8",
+          "explanation": "Correct. 3 selected out of 8 equal parts."
+        },
+        {
+          "id": "b",
+          "label": "8/3",
+          "explanation": "Try again. 3 selected out of 8 equal parts."
+        },
+        {
+          "id": "c",
+          "label": "5/8",
+          "explanation": "Try again. 3 selected out of 8 equal parts."
+        },
+        {
+          "id": "d",
+          "label": "3/5",
+          "explanation": "Try again. 3 selected out of 8 equal parts."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35025,
+      "pool": "mock-a",
+      "topic": "Fractions of a whole",
+      "prompt": "In 2/5, which is the numerator?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "The numerator is the number above the fraction line."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "3",
+          "explanation": "Try again. The numerator is the number above the fraction line."
+        },
+        {
+          "id": "b",
+          "label": "2",
+          "explanation": "Correct. The numerator is the number above the fraction line."
+        },
+        {
+          "id": "c",
+          "label": "5",
+          "explanation": "Try again. The numerator is the number above the fraction line."
+        },
+        {
+          "id": "d",
+          "label": "7",
+          "explanation": "Try again. The numerator is the number above the fraction line."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35026,
+      "pool": "mock-a",
+      "topic": "Fractions of a whole",
+      "prompt": "Which is larger for the same whole: 1/4 or 1/6?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "Four equal pieces are larger than six equal pieces of the same whole."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "They are equal",
+          "explanation": "Try again. Four equal pieces are larger than six equal pieces of the same whole."
+        },
+        {
+          "id": "b",
+          "label": "Both are one whole",
+          "explanation": "Try again. Four equal pieces are larger than six equal pieces of the same whole."
+        },
+        {
+          "id": "c",
+          "label": "1/4",
+          "explanation": "Correct. Four equal pieces are larger than six equal pieces of the same whole."
+        },
+        {
+          "id": "d",
+          "label": "1/6",
+          "explanation": "Try again. Four equal pieces are larger than six equal pieces of the same whole."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35027,
+      "pool": "mock-a",
+      "topic": "Fraction of a set",
+      "prompt": "Find 1/5 of 20 marbles.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "20 ÷ 5 = 4."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "5 marbles",
+          "explanation": "Try again. 20 ÷ 5 = 4."
+        },
+        {
+          "id": "b",
+          "label": "15 marbles",
+          "explanation": "Try again. 20 ÷ 5 = 4."
+        },
+        {
+          "id": "c",
+          "label": "100 marbles",
+          "explanation": "Try again. 20 ÷ 5 = 4."
+        },
+        {
+          "id": "d",
+          "label": "4 marbles",
+          "explanation": "Correct. 20 ÷ 5 = 4."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35028,
+      "pool": "mock-a",
+      "topic": "Fraction of a set",
+      "prompt": "Find 5/6 of 24 counters.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "24 ÷ 6 × 5 = 20."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "20 counters",
+          "explanation": "Correct. 24 ÷ 6 × 5 = 20."
+        },
+        {
+          "id": "b",
+          "label": "4 counters",
+          "explanation": "Try again. 24 ÷ 6 × 5 = 20."
+        },
+        {
+          "id": "c",
+          "label": "18 counters",
+          "explanation": "Try again. 24 ÷ 6 × 5 = 20."
+        },
+        {
+          "id": "d",
+          "label": "23 counters",
+          "explanation": "Try again. 24 ÷ 6 × 5 = 20."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35029,
+      "pool": "mock-a",
+      "topic": "Fraction of a set",
+      "prompt": "Find 2/3 of 18 counters.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "18 ÷ 3 × 2 = 12."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "15 counters",
+          "explanation": "Try again. 18 ÷ 3 × 2 = 12."
+        },
+        {
+          "id": "b",
+          "label": "12 counters",
+          "explanation": "Correct. 18 ÷ 3 × 2 = 12."
+        },
+        {
+          "id": "c",
+          "label": "6 counters",
+          "explanation": "Try again. 18 ÷ 3 × 2 = 12."
+        },
+        {
+          "id": "d",
+          "label": "9 counters",
+          "explanation": "Try again. 18 ÷ 3 × 2 = 12."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35030,
+      "pool": "mock-a",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Convert 2 5/6 to an improper fraction.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "2 × 6 + 5 = 17."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "7/6",
+          "explanation": "Try again. 2 × 6 + 5 = 17."
+        },
+        {
+          "id": "b",
+          "label": "17/12",
+          "explanation": "Try again. 2 × 6 + 5 = 17."
+        },
+        {
+          "id": "c",
+          "label": "17/6",
+          "explanation": "Correct. 2 × 6 + 5 = 17."
+        },
+        {
+          "id": "d",
+          "label": "12/6",
+          "explanation": "Try again. 2 × 6 + 5 = 17."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35031,
+      "pool": "mock-a",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Convert 1 3/8 to an improper fraction.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "1 × 8 + 3 = 11."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "4/8",
+          "explanation": "Try again. 1 × 8 + 3 = 11."
+        },
+        {
+          "id": "b",
+          "label": "8/11",
+          "explanation": "Try again. 1 × 8 + 3 = 11."
+        },
+        {
+          "id": "c",
+          "label": "3/8",
+          "explanation": "Try again. 1 × 8 + 3 = 11."
+        },
+        {
+          "id": "d",
+          "label": "11/8",
+          "explanation": "Correct. 1 × 8 + 3 = 11."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35032,
+      "pool": "mock-a",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Convert 8/3 to a mixed number.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "8 ÷ 3 = 2 remainder 2."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "2 2/3",
+          "explanation": "Correct. 8 ÷ 3 = 2 remainder 2."
+        },
+        {
+          "id": "b",
+          "label": "2 1/3",
+          "explanation": "Try again. 8 ÷ 3 = 2 remainder 2."
+        },
+        {
+          "id": "c",
+          "label": "3 2/3",
+          "explanation": "Try again. 8 ÷ 3 = 2 remainder 2."
+        },
+        {
+          "id": "d",
+          "label": "1 5/3",
+          "explanation": "Try again. 8 ÷ 3 = 2 remainder 2."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35033,
+      "pool": "mock-a",
+      "topic": "Tenths and hundredths",
+      "prompt": "Write 47/100 as a decimal.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "47 hundredths is 0.47."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "47.0",
+          "explanation": "Try again. 47 hundredths is 0.47."
+        },
+        {
+          "id": "b",
+          "label": "0.47",
+          "explanation": "Correct. 47 hundredths is 0.47."
+        },
+        {
+          "id": "c",
+          "label": "4.7",
+          "explanation": "Try again. 47 hundredths is 0.47."
+        },
+        {
+          "id": "d",
+          "label": "0.047",
+          "explanation": "Try again. 47 hundredths is 0.47."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35034,
+      "pool": "mock-a",
+      "topic": "Tenths and hundredths",
+      "prompt": "Write 3.04 as a mixed number.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "The 4 is in the hundredths place."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "3 40/100",
+          "explanation": "Try again. The 4 is in the hundredths place."
+        },
+        {
+          "id": "b",
+          "label": "34/100",
+          "explanation": "Try again. The 4 is in the hundredths place."
+        },
+        {
+          "id": "c",
+          "label": "3 4/100",
+          "explanation": "Correct. The 4 is in the hundredths place."
+        },
+        {
+          "id": "d",
+          "label": "3 4/10",
+          "explanation": "Try again. The 4 is in the hundredths place."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35035,
+      "pool": "mock-a",
+      "topic": "Tenths and hundredths",
+      "prompt": "Which equals 0.6?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "Six tenths is sixty hundredths."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.06",
+          "explanation": "Try again. Six tenths is sixty hundredths."
+        },
+        {
+          "id": "b",
+          "label": "6.0",
+          "explanation": "Try again. Six tenths is sixty hundredths."
+        },
+        {
+          "id": "c",
+          "label": "0.006",
+          "explanation": "Try again. Six tenths is sixty hundredths."
+        },
+        {
+          "id": "d",
+          "label": "0.60",
+          "explanation": "Correct. Six tenths is sixty hundredths."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35036,
+      "pool": "mock-a",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Calculate 29.8 + 2.5.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "8 tenths + 5 tenths = 13 tenths; carry one whole."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "32.3",
+          "explanation": "Correct. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        },
+        {
+          "id": "b",
+          "label": "31.3",
+          "explanation": "Try again. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        },
+        {
+          "id": "c",
+          "label": "32.03",
+          "explanation": "Try again. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        },
+        {
+          "id": "d",
+          "label": "27.3",
+          "explanation": "Try again. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35037,
+      "pool": "mock-a",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Calculate 1.06 + 0.84.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "106 hundredths + 84 hundredths = 190 hundredths."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.90",
+          "explanation": "Try again. 106 hundredths + 84 hundredths = 190 hundredths."
+        },
+        {
+          "id": "b",
+          "label": "1.90",
+          "explanation": "Correct. 106 hundredths + 84 hundredths = 190 hundredths."
+        },
+        {
+          "id": "c",
+          "label": "1.10",
+          "explanation": "Try again. 106 hundredths + 84 hundredths = 190 hundredths."
+        },
+        {
+          "id": "d",
+          "label": "1.80",
+          "explanation": "Try again. 106 hundredths + 84 hundredths = 190 hundredths."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35038,
+      "pool": "mock-a",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Calculate 4.09 − 1.45.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "409 hundredths − 145 hundredths = 264 hundredths."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "2.74",
+          "explanation": "Try again. 409 hundredths − 145 hundredths = 264 hundredths."
+        },
+        {
+          "id": "b",
+          "label": "5.54",
+          "explanation": "Try again. 409 hundredths − 145 hundredths = 264 hundredths."
+        },
+        {
+          "id": "c",
+          "label": "2.64",
+          "explanation": "Correct. 409 hundredths − 145 hundredths = 264 hundredths."
+        },
+        {
+          "id": "d",
+          "label": "3.64",
+          "explanation": "Try again. 409 hundredths − 145 hundredths = 264 hundredths."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35039,
+      "pool": "mock-a",
+      "topic": "Money, distance and temperature",
+      "prompt": "Which city is nearest Salvador: São Paulo 1,960 km, Rio 1,640 km, Belo Horizonte 1,370 km or Brasília 1,460 km?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "1,370 km is the smallest listed distance."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "São Paulo",
+          "explanation": "Try again. 1,370 km is the smallest listed distance."
+        },
+        {
+          "id": "b",
+          "label": "Rio de Janeiro",
+          "explanation": "Try again. 1,370 km is the smallest listed distance."
+        },
+        {
+          "id": "c",
+          "label": "Brasília",
+          "explanation": "Try again. 1,370 km is the smallest listed distance."
+        },
+        {
+          "id": "d",
+          "label": "Belo Horizonte",
+          "explanation": "Correct. 1,370 km is the smallest listed distance."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35040,
+      "pool": "mock-a",
+      "topic": "Money, distance and temperature",
+      "prompt": "Four activities cost i$25, i$140, i$60 and i$30. How much change from i$260?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "25 + 140 + 60 + 30 = 255; 260 − 255 = 5."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "i$5",
+          "explanation": "Correct. 25 + 140 + 60 + 30 = 255; 260 − 255 = 5."
+        },
+        {
+          "id": "b",
+          "label": "i$15",
+          "explanation": "Try again. 25 + 140 + 60 + 30 = 255; 260 − 255 = 5."
+        },
+        {
+          "id": "c",
+          "label": "i$25",
+          "explanation": "Try again. 25 + 140 + 60 + 30 = 255; 260 − 255 = 5."
+        },
+        {
+          "id": "d",
+          "label": "i$0",
+          "explanation": "Try again. 25 + 140 + 60 + 30 = 255; 260 − 255 = 5."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35041,
+      "pool": "mock-a",
+      "topic": "Money, distance and temperature",
+      "prompt": "A distance increases from 1.4 km to 2.65 km. Find the increase.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "2.65 − 1.40 = 1.25 km."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.25 km",
+          "explanation": "Try again. 2.65 − 1.40 = 1.25 km."
+        },
+        {
+          "id": "b",
+          "label": "1.25 km",
+          "explanation": "Correct. 2.65 − 1.40 = 1.25 km."
+        },
+        {
+          "id": "c",
+          "label": "4.05 km",
+          "explanation": "Try again. 2.65 − 1.40 = 1.25 km."
+        },
+        {
+          "id": "d",
+          "label": "1.35 km",
+          "explanation": "Try again. 2.65 − 1.40 = 1.25 km."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35042,
+      "pool": "mock-a",
+      "topic": "Perimeter",
+      "prompt": "A regular pentagon has perimeter 25 cm. Find one side.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "A pentagon has 5 sides: 25 ÷ 5 = 5."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "6 cm",
+          "explanation": "Try again. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        },
+        {
+          "id": "b",
+          "label": "125 cm",
+          "explanation": "Try again. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        },
+        {
+          "id": "c",
+          "label": "5 cm",
+          "explanation": "Correct. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        },
+        {
+          "id": "d",
+          "label": "4 cm",
+          "explanation": "Try again. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35043,
+      "pool": "mock-a",
+      "topic": "Perimeter",
+      "prompt": "Find the perimeter of a 30 cm by 20 cm rectangle.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "30 + 20 + 30 + 20 = 100."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "50 cm",
+          "explanation": "Try again. 30 + 20 + 30 + 20 = 100."
+        },
+        {
+          "id": "b",
+          "label": "600 cm",
+          "explanation": "Try again. 30 + 20 + 30 + 20 = 100."
+        },
+        {
+          "id": "c",
+          "label": "100 cm²",
+          "explanation": "Try again. 30 + 20 + 30 + 20 = 100."
+        },
+        {
+          "id": "d",
+          "label": "100 cm",
+          "explanation": "Correct. 30 + 20 + 30 + 20 = 100."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35044,
+      "pool": "mock-a",
+      "topic": "Perimeter",
+      "prompt": "Find the perimeter of a 1.2 km by 0.5 km rectangle.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "1.2 + 0.5 + 1.2 + 0.5 = 3.4 km."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "3.4 km",
+          "explanation": "Correct. 1.2 + 0.5 + 1.2 + 0.5 = 3.4 km."
+        },
+        {
+          "id": "b",
+          "label": "1.7 km",
+          "explanation": "Try again. 1.2 + 0.5 + 1.2 + 0.5 = 3.4 km."
+        },
+        {
+          "id": "c",
+          "label": "0.6 km",
+          "explanation": "Try again. 1.2 + 0.5 + 1.2 + 0.5 = 3.4 km."
+        },
+        {
+          "id": "d",
+          "label": "2.4 km",
+          "explanation": "Try again. 1.2 + 0.5 + 1.2 + 0.5 = 3.4 km."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35045,
+      "pool": "mock-a",
+      "topic": "Area and a house on a grid",
+      "prompt": "Find the area of an 11 m by 7 m rectangle.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "11 × 7 = 77 m²."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "77 m",
+          "explanation": "Try again. 11 × 7 = 77 m²."
+        },
+        {
+          "id": "b",
+          "label": "77 m²",
+          "explanation": "Correct. 11 × 7 = 77 m²."
+        },
+        {
+          "id": "c",
+          "label": "36 m²",
+          "explanation": "Try again. 11 × 7 = 77 m²."
+        },
+        {
+          "id": "d",
+          "label": "18 m²",
+          "explanation": "Try again. 11 × 7 = 77 m²."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35046,
+      "pool": "mock-a",
+      "topic": "Area and a house on a grid",
+      "prompt": "A grid has 5 columns and 6 rows. Find its area.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "5 × 6 = 30 squares."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "22 square units",
+          "explanation": "Try again. 5 × 6 = 30 squares."
+        },
+        {
+          "id": "b",
+          "label": "25 square units",
+          "explanation": "Try again. 5 × 6 = 30 squares."
+        },
+        {
+          "id": "c",
+          "label": "30 square units",
+          "explanation": "Correct. 5 × 6 = 30 squares."
+        },
+        {
+          "id": "d",
+          "label": "11 square units",
+          "explanation": "Try again. 5 × 6 = 30 squares."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35047,
+      "pool": "mock-a",
+      "topic": "Area and a house on a grid",
+      "prompt": "Which room needs exactly 8 cells of 1 cm² in the house activity?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "The first bedroom must cover 8 cm²; each cell is 1 cm²."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "Second bedroom",
+          "explanation": "Try again. The first bedroom must cover 8 cm²; each cell is 1 cm²."
+        },
+        {
+          "id": "b",
+          "label": "Kitchen",
+          "explanation": "Try again. The first bedroom must cover 8 cm²; each cell is 1 cm²."
+        },
+        {
+          "id": "c",
+          "label": "Balcony",
+          "explanation": "Try again. The first bedroom must cover 8 cm²; each cell is 1 cm²."
+        },
+        {
+          "id": "d",
+          "label": "First bedroom",
+          "explanation": "Correct. The first bedroom must cover 8 cm²; each cell is 1 cm²."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35048,
+      "pool": "mock-b",
+      "topic": "Fractions of a whole",
+      "prompt": "Check your understanding: In 3/8, what does 8 tell you?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "The denominator counts all equal parts in one whole."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "Equal parts in one whole",
+          "explanation": "Correct. The denominator counts all equal parts in one whole."
+        },
+        {
+          "id": "b",
+          "label": "Shaded parts",
+          "explanation": "Try again. The denominator counts all equal parts in one whole."
+        },
+        {
+          "id": "c",
+          "label": "Number of wholes",
+          "explanation": "Try again. The denominator counts all equal parts in one whole."
+        },
+        {
+          "id": "d",
+          "label": "Unshaded parts only",
+          "explanation": "Try again. The denominator counts all equal parts in one whole."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35049,
+      "pool": "mock-b",
+      "topic": "Fractions of a whole",
+      "prompt": "Check your understanding: Which shows one whole?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "All six of the six equal parts are selected."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "6/12",
+          "explanation": "Try again. All six of the six equal parts are selected."
+        },
+        {
+          "id": "b",
+          "label": "6/6",
+          "explanation": "Correct. All six of the six equal parts are selected."
+        },
+        {
+          "id": "c",
+          "label": "1/6",
+          "explanation": "Try again. All six of the six equal parts are selected."
+        },
+        {
+          "id": "d",
+          "label": "5/6",
+          "explanation": "Try again. All six of the six equal parts are selected."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35050,
+      "pool": "mock-b",
+      "topic": "Fractions of a whole",
+      "prompt": "Check your understanding: A circle has 8 equal parts; 3 are selected. Write the fraction.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Denominator = equal parts in ONE whole. Numerator = parts selected.",
+        "3 selected out of 8 equal parts."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "5/8",
+          "explanation": "Try again. 3 selected out of 8 equal parts."
+        },
+        {
+          "id": "b",
+          "label": "3/5",
+          "explanation": "Try again. 3 selected out of 8 equal parts."
+        },
+        {
+          "id": "c",
+          "label": "3/8",
+          "explanation": "Correct. 3 selected out of 8 equal parts."
+        },
+        {
+          "id": "d",
+          "label": "8/3",
+          "explanation": "Try again. 3 selected out of 8 equal parts."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "id": 35051,
+      "pool": "mock-b",
+      "topic": "Fraction of a set",
+      "prompt": "Check your understanding: Find 3/4 of 56 students.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "56 ÷ 4 × 3 = 42."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "14 students",
+          "explanation": "Try again. 56 ÷ 4 × 3 = 42."
+        },
+        {
+          "id": "b",
+          "label": "21 students",
+          "explanation": "Try again. 56 ÷ 4 × 3 = 42."
+        },
+        {
+          "id": "c",
+          "label": "53 students",
+          "explanation": "Try again. 56 ÷ 4 × 3 = 42."
+        },
+        {
+          "id": "d",
+          "label": "42 students",
+          "explanation": "Correct. 56 ÷ 4 × 3 = 42."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35052,
+      "pool": "mock-b",
+      "topic": "Fraction of a set",
+      "prompt": "Check your understanding: Share 24 cupcakes equally among 6 teachers. How many each?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "24 ÷ 6 = 4."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "4 cupcakes",
+          "explanation": "Correct. 24 ÷ 6 = 4."
+        },
+        {
+          "id": "b",
+          "label": "6 cupcakes",
+          "explanation": "Try again. 24 ÷ 6 = 4."
+        },
+        {
+          "id": "c",
+          "label": "18 cupcakes",
+          "explanation": "Try again. 24 ÷ 6 = 4."
+        },
+        {
+          "id": "d",
+          "label": "144 cupcakes",
+          "explanation": "Try again. 24 ÷ 6 = 4."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35053,
+      "pool": "mock-b",
+      "topic": "Fraction of a set",
+      "prompt": "Check your understanding: Find 1/5 of 20 marbles.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Total ÷ denominator × numerator. Keep the unit in your answer.",
+        "20 ÷ 5 = 4."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "100 marbles",
+          "explanation": "Try again. 20 ÷ 5 = 4."
+        },
+        {
+          "id": "b",
+          "label": "4 marbles",
+          "explanation": "Correct. 20 ÷ 5 = 4."
+        },
+        {
+          "id": "c",
+          "label": "5 marbles",
+          "explanation": "Try again. 20 ÷ 5 = 4."
+        },
+        {
+          "id": "d",
+          "label": "15 marbles",
+          "explanation": "Try again. 20 ÷ 5 = 4."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "id": 35054,
+      "pool": "mock-b",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Check your understanding: Convert 2 1/3 to an improper fraction.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "2 × 3 + 1 = 7; keep denominator 3."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "5/3",
+          "explanation": "Try again. 2 × 3 + 1 = 7; keep denominator 3."
+        },
+        {
+          "id": "b",
+          "label": "7/6",
+          "explanation": "Try again. 2 × 3 + 1 = 7; keep denominator 3."
+        },
+        {
+          "id": "c",
+          "label": "7/3",
+          "explanation": "Correct. 2 × 3 + 1 = 7; keep denominator 3."
+        },
+        {
+          "id": "d",
+          "label": "3/3",
+          "explanation": "Try again. 2 × 3 + 1 = 7; keep denominator 3."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35055,
+      "pool": "mock-b",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Check your understanding: Which is a proper fraction?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "2 is smaller than 5, so 2/5 is less than one."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "7/3",
+          "explanation": "Try again. 2 is smaller than 5, so 2/5 is less than one."
+        },
+        {
+          "id": "b",
+          "label": "8/6",
+          "explanation": "Try again. 2 is smaller than 5, so 2/5 is less than one."
+        },
+        {
+          "id": "c",
+          "label": "17/6",
+          "explanation": "Try again. 2 is smaller than 5, so 2/5 is less than one."
+        },
+        {
+          "id": "d",
+          "label": "2/5",
+          "explanation": "Correct. 2 is smaller than 5, so 2/5 is less than one."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35056,
+      "pool": "mock-b",
+      "topic": "Equivalent fractions and mixed numbers",
+      "prompt": "Check your understanding: Convert 2 5/6 to an improper fraction.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Equal value needs the SAME whole. Change numerator and denominator together.",
+        "2 × 6 + 5 = 17."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "17/6",
+          "explanation": "Correct. 2 × 6 + 5 = 17."
+        },
+        {
+          "id": "b",
+          "label": "12/6",
+          "explanation": "Try again. 2 × 6 + 5 = 17."
+        },
+        {
+          "id": "c",
+          "label": "7/6",
+          "explanation": "Try again. 2 × 6 + 5 = 17."
+        },
+        {
+          "id": "d",
+          "label": "17/12",
+          "explanation": "Try again. 2 × 6 + 5 = 17."
+        }
+      ],
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "id": 35057,
+      "pool": "mock-b",
+      "topic": "Tenths and hundredths",
+      "prompt": "Check your understanding: Which number is greatest: 0.89, 0.9, 0.09, 0.19?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "0.9 = 0.90, greater than 0.89."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.19",
+          "explanation": "Try again. 0.9 = 0.90, greater than 0.89."
+        },
+        {
+          "id": "b",
+          "label": "0.9",
+          "explanation": "Correct. 0.9 = 0.90, greater than 0.89."
+        },
+        {
+          "id": "c",
+          "label": "0.89",
+          "explanation": "Try again. 0.9 = 0.90, greater than 0.89."
+        },
+        {
+          "id": "d",
+          "label": "0.09",
+          "explanation": "Try again. 0.9 = 0.90, greater than 0.89."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35058,
+      "pool": "mock-b",
+      "topic": "Tenths and hundredths",
+      "prompt": "Check your understanding: Write 1 6/100 as a decimal.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "One whole and six hundredths is 1.06."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.16",
+          "explanation": "Try again. One whole and six hundredths is 1.06."
+        },
+        {
+          "id": "b",
+          "label": "1.006",
+          "explanation": "Try again. One whole and six hundredths is 1.06."
+        },
+        {
+          "id": "c",
+          "label": "1.06",
+          "explanation": "Correct. One whole and six hundredths is 1.06."
+        },
+        {
+          "id": "d",
+          "label": "1.6",
+          "explanation": "Try again. One whole and six hundredths is 1.06."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35059,
+      "pool": "mock-b",
+      "topic": "Tenths and hundredths",
+      "prompt": "Check your understanding: Write 47/100 as a decimal.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "0.6 = 0.60, but 0.06 is different. One whole grid contains 100 hundredths.",
+        "47 hundredths is 0.47."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "4.7",
+          "explanation": "Try again. 47 hundredths is 0.47."
+        },
+        {
+          "id": "b",
+          "label": "0.047",
+          "explanation": "Try again. 47 hundredths is 0.47."
+        },
+        {
+          "id": "c",
+          "label": "47.0",
+          "explanation": "Try again. 47 hundredths is 0.47."
+        },
+        {
+          "id": "d",
+          "label": "0.47",
+          "explanation": "Correct. 47 hundredths is 0.47."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "id": 35060,
+      "pool": "mock-b",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Check your understanding: Calculate 76.3 − 34.1.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "76.30 − 34.10 = 42.20."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "42.2",
+          "explanation": "Correct. 76.30 − 34.10 = 42.20."
+        },
+        {
+          "id": "b",
+          "label": "42.02",
+          "explanation": "Try again. 76.30 − 34.10 = 42.20."
+        },
+        {
+          "id": "c",
+          "label": "41.2",
+          "explanation": "Try again. 76.30 − 34.10 = 42.20."
+        },
+        {
+          "id": "d",
+          "label": "110.4",
+          "explanation": "Try again. 76.30 − 34.10 = 42.20."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35061,
+      "pool": "mock-b",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Check your understanding: Calculate 3.2 − 2.85.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "Write 3.20, line up the points and regroup."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "0.07",
+          "explanation": "Try again. Write 3.20, line up the points and regroup."
+        },
+        {
+          "id": "b",
+          "label": "0.35",
+          "explanation": "Correct. Write 3.20, line up the points and regroup."
+        },
+        {
+          "id": "c",
+          "label": "0.45",
+          "explanation": "Try again. Write 3.20, line up the points and regroup."
+        },
+        {
+          "id": "d",
+          "label": "1.65",
+          "explanation": "Try again. Write 3.20, line up the points and regroup."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35062,
+      "pool": "mock-b",
+      "topic": "Adding and subtracting decimals",
+      "prompt": "Check your understanding: Calculate 29.8 + 2.5.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Line up the POINTS, not the last digits. Check each column.",
+        "8 tenths + 5 tenths = 13 tenths; carry one whole."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "32.03",
+          "explanation": "Try again. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        },
+        {
+          "id": "b",
+          "label": "27.3",
+          "explanation": "Try again. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        },
+        {
+          "id": "c",
+          "label": "32.3",
+          "explanation": "Correct. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        },
+        {
+          "id": "d",
+          "label": "31.3",
+          "explanation": "Try again. 8 tenths + 5 tenths = 13 tenths; carry one whole."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "id": 35063,
+      "pool": "mock-b",
+      "topic": "Money, distance and temperature",
+      "prompt": "Check your understanding: The temperature is 29.8°C and rises by 2.5°C. What is the new temperature?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "29.8 + 2.5 = 32.3°C."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "31.3°C",
+          "explanation": "Try again. 29.8 + 2.5 = 32.3°C."
+        },
+        {
+          "id": "b",
+          "label": "27.3°C",
+          "explanation": "Try again. 29.8 + 2.5 = 32.3°C."
+        },
+        {
+          "id": "c",
+          "label": "32.03°C",
+          "explanation": "Try again. 29.8 + 2.5 = 32.3°C."
+        },
+        {
+          "id": "d",
+          "label": "32.3°C",
+          "explanation": "Correct. 29.8 + 2.5 = 32.3°C."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35064,
+      "pool": "mock-b",
+      "topic": "Money, distance and temperature",
+      "prompt": "Check your understanding: You save i$260 and want i$5 change. How much may you spend?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "260 − 5 = 255."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "i$255",
+          "explanation": "Correct. 260 − 5 = 255."
+        },
+        {
+          "id": "b",
+          "label": "i$265",
+          "explanation": "Try again. 260 − 5 = 255."
+        },
+        {
+          "id": "c",
+          "label": "i$250",
+          "explanation": "Try again. 260 − 5 = 255."
+        },
+        {
+          "id": "d",
+          "label": "i$5",
+          "explanation": "Try again. 260 − 5 = 255."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35065,
+      "pool": "mock-b",
+      "topic": "Money, distance and temperature",
+      "prompt": "Check your understanding: Which city is nearest Salvador: São Paulo 1,960 km, Rio 1,640 km, Belo Horizonte 1,370 km or Brasília 1,460 km?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Read → choose an operation → calculate → check the unit and the question.",
+        "1,370 km is the smallest listed distance."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "Brasília",
+          "explanation": "Try again. 1,370 km is the smallest listed distance."
+        },
+        {
+          "id": "b",
+          "label": "Belo Horizonte",
+          "explanation": "Correct. 1,370 km is the smallest listed distance."
+        },
+        {
+          "id": "c",
+          "label": "São Paulo",
+          "explanation": "Try again. 1,370 km is the smallest listed distance."
+        },
+        {
+          "id": "d",
+          "label": "Rio de Janeiro",
+          "explanation": "Try again. 1,370 km is the smallest listed distance."
+        }
+      ],
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "id": 35066,
+      "pool": "mock-b",
+      "topic": "Perimeter",
+      "prompt": "Check your understanding: A square has perimeter 20 cm. Find one side.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "A square has four equal sides: 20 ÷ 4 = 5."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "10 cm",
+          "explanation": "Try again. A square has four equal sides: 20 ÷ 4 = 5."
+        },
+        {
+          "id": "b",
+          "label": "80 cm",
+          "explanation": "Try again. A square has four equal sides: 20 ÷ 4 = 5."
+        },
+        {
+          "id": "c",
+          "label": "5 cm",
+          "explanation": "Correct. A square has four equal sides: 20 ÷ 4 = 5."
+        },
+        {
+          "id": "d",
+          "label": "4 cm",
+          "explanation": "Try again. A square has four equal sides: 20 ÷ 4 = 5."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35067,
+      "pool": "mock-b",
+      "topic": "Perimeter",
+      "prompt": "Check your understanding: A regular hexagon has perimeter 60 cm. Find one side.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "Six equal sides: 60 ÷ 6 = 10."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "6 cm",
+          "explanation": "Try again. Six equal sides: 60 ÷ 6 = 10."
+        },
+        {
+          "id": "b",
+          "label": "12 cm",
+          "explanation": "Try again. Six equal sides: 60 ÷ 6 = 10."
+        },
+        {
+          "id": "c",
+          "label": "15 cm",
+          "explanation": "Try again. Six equal sides: 60 ÷ 6 = 10."
+        },
+        {
+          "id": "d",
+          "label": "10 cm",
+          "explanation": "Correct. Six equal sides: 60 ÷ 6 = 10."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35068,
+      "pool": "mock-b",
+      "topic": "Perimeter",
+      "prompt": "Check your understanding: A regular pentagon has perimeter 25 cm. Find one side.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Perimeter = outside boundary. Use cm, m or km, without a square sign.",
+        "A pentagon has 5 sides: 25 ÷ 5 = 5."
+      ],
+      "correct": "a",
+      "options": [
+        {
+          "id": "a",
+          "label": "5 cm",
+          "explanation": "Correct. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        },
+        {
+          "id": "b",
+          "label": "4 cm",
+          "explanation": "Try again. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        },
+        {
+          "id": "c",
+          "label": "6 cm",
+          "explanation": "Try again. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        },
+        {
+          "id": "d",
+          "label": "125 cm",
+          "explanation": "Try again. A pentagon has 5 sides: 25 ÷ 5 = 5."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "id": 35069,
+      "pool": "mock-b",
+      "topic": "Area and a house on a grid",
+      "prompt": "Check your understanding: How many square units are in a 4 by 3 grid?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "4 columns × 3 rows = 12 squares."
+      ],
+      "correct": "b",
+      "options": [
+        {
+          "id": "a",
+          "label": "16 square units",
+          "explanation": "Try again. 4 columns × 3 rows = 12 squares."
+        },
+        {
+          "id": "b",
+          "label": "12 square units",
+          "explanation": "Correct. 4 columns × 3 rows = 12 squares."
+        },
+        {
+          "id": "c",
+          "label": "7 square units",
+          "explanation": "Try again. 4 columns × 3 rows = 12 squares."
+        },
+        {
+          "id": "d",
+          "label": "14 square units",
+          "explanation": "Try again. 4 columns × 3 rows = 12 squares."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35070,
+      "pool": "mock-b",
+      "topic": "Area and a house on a grid",
+      "prompt": "Check your understanding: Which measures the space inside a shape?",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "Area counts the square units covering the inside."
+      ],
+      "correct": "c",
+      "options": [
+        {
+          "id": "a",
+          "label": "Length of one edge",
+          "explanation": "Try again. Area counts the square units covering the inside."
+        },
+        {
+          "id": "b",
+          "label": "Outside boundary",
+          "explanation": "Try again. Area counts the square units covering the inside."
+        },
+        {
+          "id": "c",
+          "label": "Area",
+          "explanation": "Correct. Area counts the square units covering the inside."
+        },
+        {
+          "id": "d",
+          "label": "Perimeter",
+          "explanation": "Try again. Area counts the square units covering the inside."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    },
+    {
+      "id": 35071,
+      "pool": "mock-b",
+      "topic": "Area and a house on a grid",
+      "prompt": "Check your understanding: Find the area of an 11 m by 7 m rectangle.",
+      "support": "Use the model in the lesson. Work it out before choosing.",
+      "hints": [
+        "Area = inside squares. Perimeter = outside edges. Label each with the right unit.",
+        "11 × 7 = 77 m²."
+      ],
+      "correct": "d",
+      "options": [
+        {
+          "id": "a",
+          "label": "36 m²",
+          "explanation": "Try again. 11 × 7 = 77 m²."
+        },
+        {
+          "id": "b",
+          "label": "18 m²",
+          "explanation": "Try again. 11 × 7 = 77 m²."
+        },
+        {
+          "id": "c",
+          "label": "77 m",
+          "explanation": "Try again. 11 × 7 = 77 m²."
+        },
+        {
+          "id": "d",
+          "label": "77 m²",
+          "explanation": "Correct. 11 × 7 = 77 m²."
+        }
+      ],
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    }
+  ],
+  "deepStudy": {
+    "m3-fractions": {
+      "title": "Numerator, denominator and equal parts",
+      "paragraphs": [
+        "For the same whole, a larger denominator means smaller pieces. One sixth is smaller than one fourth, because the whole was divided into more pieces.",
+        "Português: denominador indica em quantas partes iguais o inteiro foi dividido; numerador conta as partes escolhidas."
+      ],
+      "vocabulary": [
+        [
+          "🍕",
+          "Whole",
+          "inteiro"
+        ],
+        [
+          "🔢",
+          "Numerator",
+          "numerador: partes escolhidas"
+        ],
+        [
+          "🧩",
+          "Denominator",
+          "denominador: partes iguais em um inteiro"
+        ]
+      ],
+      "example": "Divide one circle into 6 equal parts. Select 4: the fraction is 4/6.",
+      "challenge": "Draw a whole divided into 8 equal parts and shade 3. Label the numerator and denominator."
+    },
+    "m3-sets": {
+      "title": "Share equally, then choose groups",
+      "paragraphs": [
+        "A set is a collection of objects. The denominator tells how many equal groups to form; it is not automatically the number of objects.",
+        "Português: primeiro divida pelo número de grupos; depois pegue a quantidade de grupos pedida."
+      ],
+      "vocabulary": [
+        [
+          "🧺",
+          "Set",
+          "coleção ou conjunto"
+        ],
+        [
+          "➗",
+          "Share equally",
+          "dividir em grupos iguais"
+        ],
+        [
+          "✖️",
+          "Of",
+          "de: encontrar a parte da quantidade"
+        ]
+      ],
+      "example": "3/4 of 56: four groups of 14; select three groups, so 14 + 14 + 14 = 42.",
+      "challenge": "There are 24 counters. Find 1/6 and 5/6 of the set. Show the equal groups."
+    },
+    "m3-equivalence": {
+      "title": "Same value, different parts",
+      "paragraphs": [
+        "Examples in the school material: 1 2/6 = 8/6; 2 2/3 = 8/3; 2 5/6 = 17/6; 1 3/8 = 11/8. Count all selected parts across the wholes.",
+        "Português: número misto tem inteiro e fração. Para transformar, conte quantas partes cabem nos inteiros e acrescente as restantes."
+      ],
+      "vocabulary": [
+        [
+          "⚖️",
+          "Equivalent",
+          "equivalente: mesmo valor"
+        ],
+        [
+          "🍕",
+          "Improper fraction",
+          "fração imprópria"
+        ],
+        [
+          "🧩",
+          "Mixed number",
+          "número misto"
+        ]
+      ],
+      "example": "2 5/6: two wholes contain 12 sixths; add 5 sixths: 17/6.",
+      "challenge": "Show that 1/2 = 3/6. Then convert 2 1/3 to an improper fraction."
+    },
+    "m3-decimals": {
+      "title": "Fractions, grids and decimal numbers",
+      "paragraphs": [
+        "Each square in a 10 × 10 chart is one hundredth; each complete row of ten squares is one tenth. Ten tenths and one hundred hundredths both make one whole.",
+        "The material uses both decimal points and decimal commas. In the games, 1.06 and 1,06 are accepted as the same value. Commas in the distance table, such as 1,960 km, separate thousands."
+      ],
+      "vocabulary": [
+        [
+          "🔟",
+          "Tenth",
+          "décimo: 1/10"
+        ],
+        [
+          "💯",
+          "Hundredth",
+          "centésimo: 1/100"
+        ],
+        [
+          "🔢",
+          "Whole part",
+          "parte inteira"
+        ]
+      ],
+      "example": "Shade 47 of 100 cells: 47/100 = 0.47. Shade a whole grid and 6 more cells: 1.06.",
+      "challenge": "Write 0.8 and 0.09 as fractions. Put 1.4, 0.89 and 0.9 in increasing order."
+    },
+    "m3-operations": {
+      "title": "Line up the decimal points",
+      "paragraphs": [
+        "If a column adds to ten or more, carry to the next place. In subtraction, exchange one unit for ten tenths or one tenth for ten hundredths when needed.",
+        "Português: alinhe os separadores, complete com zeros e faça a conta da direita para a esquerda."
+      ],
+      "vocabulary": [
+        [
+          "📏",
+          "Align",
+          "alinhar"
+        ],
+        [
+          "🔄",
+          "Regroup",
+          "reagrupar: vai um ou troca"
+        ],
+        [
+          "➖",
+          "Difference",
+          "diferença: resultado da subtração"
+        ]
+      ],
+      "example": "3.20 − 2.85: exchange one tenth for ten hundredths, then one unit for ten tenths. Result: 0.35.",
+      "challenge": "Set out and solve 22.3 + 34.1 and 3.2 − 2.85 in columns."
+    },
+    "m3-problems": {
+      "title": "Choose the operation and explain",
+      "paragraphs": [
+        "“Left as change” asks how much remains after spending. “Farther than” compares two distances. “Rise by” tells how much to add.",
+        "Português: procure o que está sendo pedido; não escolha a operação só porque viu uma palavra. Confira o sentido da resposta no problema."
+      ],
+      "vocabulary": [
+        [
+          "💰",
+          "Change",
+          "troco"
+        ],
+        [
+          "🏃",
+          "Farther",
+          "mais longe"
+        ],
+        [
+          "🌡️",
+          "Rise by",
+          "aumentar em"
+        ]
+      ],
+      "example": "A budget of 260 with 5 left allows a total cost of 255. Select exactly four activities and check both conditions.",
+      "challenge": "Find how much farther Liam ran than Jack and tomorrow’s temperature after a 2.5°C rise from 29.8°C."
+    },
+    "m3-perimeter": {
+      "title": "Walk around the outside",
+      "paragraphs": [
+        "Perimeter can also be counted along the exposed edges of square cells. An edge shared by two cells is inside the shape, so do not count it.",
+        "Português: contorno é diferente de espaço por dentro. Em polígonos regulares, divida o contorno pelo número de lados para descobrir um lado."
+      ],
+      "vocabulary": [
+        [
+          "📏",
+          "Perimeter",
+          "perímetro: contorno"
+        ],
+        [
+          "⬟",
+          "Regular",
+          "regular: todos os lados iguais"
+        ],
+        [
+          "↔️",
+          "Length / width",
+          "comprimento / largura"
+        ]
+      ],
+      "example": "A 30 cm × 20 cm rectangle: 30 + 20 + 30 + 20 = 100 cm.",
+      "challenge": "Find the perimeter of a 40 cm × 10 cm rectangle. A regular hexagon has perimeter 60 cm: find one side."
+    },
+    "m3-area": {
+      "title": "Count square units inside",
+      "paragraphs": [
+        "For an irregular shape made of full squares, count each square once. In the house, rooms must not overlap and the cells of each room should connect along edges.",
+        "Português: área conta os quadradinhos por dentro. No retângulo, linhas × colunas dá a quantidade de quadradinhos."
+      ],
+      "vocabulary": [
+        [
+          "🟩",
+          "Area",
+          "área: espaço interno"
+        ],
+        [
+          "🔲",
+          "Square unit",
+          "unidade quadrada"
+        ],
+        [
+          "🏠",
+          "Grid",
+          "malha quadriculada"
+        ]
+      ],
+      "example": "A room 11 m long and 7 m wide has area 77 m² and perimeter 36 m.",
+      "challenge": "Draw a room with area 12 square units. Give its length, width, area and perimeter."
+    }
+  },
+  "practice": [
+    {
+      "lesson": "m3-fractions",
+      "prompt": "Draw a whole divided into 8 equal parts and shade 3. Label the numerator and denominator.",
+      "answer": "3/8: numerator 3, denominator 8; exactly three of the eight equal parts are shaded.",
+      "sourceRefs": [
+        "M3-F1",
+        "M3-F2"
+      ]
+    },
+    {
+      "lesson": "m3-sets",
+      "prompt": "There are 24 counters. Find 1/6 and 5/6 of the set. Show the equal groups.",
+      "answer": "24 ÷ 6 = 4; 1/6 is 4 counters and 5/6 is 4 × 5 = 20 counters.",
+      "sourceRefs": [
+        "M3-F2",
+        "M3-F3"
+      ]
+    },
+    {
+      "lesson": "m3-equivalence",
+      "prompt": "Show that 1/2 = 3/6. Then convert 2 1/3 to an improper fraction.",
+      "answer": "1 × 3 / (2 × 3) = 3/6. The same half is selected. 2 1/3 = (2 × 3 + 1)/3 = 7/3.",
+      "sourceRefs": [
+        "M3-F3",
+        "M3-F4"
+      ]
+    },
+    {
+      "lesson": "m3-decimals",
+      "prompt": "Write 0.8 and 0.09 as fractions. Put 1.4, 0.89 and 0.9 in increasing order.",
+      "answer": "0.8 = 8/10; 0.09 = 9/100. Increasing order: 0.89 < 0.9 < 1.4.",
+      "sourceRefs": [
+        "M3-D1",
+        "M3-D2",
+        "M3-D3"
+      ]
+    },
+    {
+      "lesson": "m3-operations",
+      "prompt": "Set out and solve 22.3 + 34.1 and 3.2 − 2.85 in columns.",
+      "answer": "22.30 + 34.10 = 56.40; 3.20 − 2.85 = 0.35.",
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5"
+      ]
+    },
+    {
+      "lesson": "m3-problems",
+      "prompt": "Find how much farther Liam ran than Jack and tomorrow’s temperature after a 2.5°C rise from 29.8°C.",
+      "answer": "Liam ran 0.35 km farther. Tomorrow’s temperature is 32.3°C.",
+      "sourceRefs": [
+        "M3-D4",
+        "M3-D5",
+        "M3-D6"
+      ]
+    },
+    {
+      "lesson": "m3-perimeter",
+      "prompt": "Find the perimeter of a 40 cm × 10 cm rectangle. A regular hexagon has perimeter 60 cm: find one side.",
+      "answer": "Rectangle: 40 + 10 + 40 + 10 = 100 cm. Hexagon: 60 ÷ 6 = 10 cm.",
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G2",
+        "M3-G3"
+      ]
+    },
+    {
+      "lesson": "m3-area",
+      "prompt": "Draw a room with area 12 square units. Give its length, width, area and perimeter.",
+      "answer": "One possible answer: 3 × 4 units; area 12 square units; perimeter 3 + 4 + 3 + 4 = 14 units.",
+      "sourceRefs": [
+        "M3-G1",
+        "M3-G4",
+        "M3-G5"
+      ]
+    }
+  ],
+  "infographics": [
+    {
+      "src": "/infographics/math3-1.svg",
+      "alt": "Fractions and equal parts",
+      "width": 1024,
+      "height": 1448,
+      "label": "Fractions and equal parts",
+      "lessons": [
+        "m3-fractions",
+        "m3-sets",
+        "m3-equivalence"
+      ]
+    },
+    {
+      "src": "/infographics/math3-2.svg",
+      "alt": "Decimals and calculations",
+      "width": 1024,
+      "height": 1448,
+      "label": "Decimals and calculations",
+      "lessons": [
+        "m3-decimals",
+        "m3-operations",
+        "m3-problems"
+      ]
+    },
+    {
+      "src": "/infographics/math3-3.svg",
+      "alt": "Perimeter and area",
+      "width": 1024,
+      "height": 1448,
+      "label": "Perimeter and area",
+      "lessons": [
+        "m3-perimeter",
+        "m3-area"
+      ]
+    }
+  ]
+}

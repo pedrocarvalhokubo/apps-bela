@@ -7,7 +7,7 @@ const c=JSON.parse(read('../app/portuguese3-content.json'));
 const sources=JSON.parse(read('../app/portuguese3-sources.json')).sources;
 const load=async source=>import('data:text/javascript;base64,'+Buffer.from(ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText).toString('base64'));
 const subject=file=>JSON.stringify(JSON.parse(read(file)).subject);
-const routing=await load(read('../app/history3-data.ts')
+const routing=await load(read('../app/history3-data.ts').replace("import {math3Subject} from './math3-data';",`const math3Subject=${JSON.stringify(JSON.parse(read('../app/math3-content.json')).subject)};`)
  .replace("import { geography3Subject } from './geography3-data';",`const geography3Subject=${subject('../app/geography3-content.json')};`)
  .replace("import { ela3Subject } from './ela3-data';",`const ela3Subject=${subject('../app/ela3-content.json')};`)
  .replace("import { portuguese3Subject } from './portuguese3-data';",`const portuguese3Subject=${JSON.stringify(c.subject)};`)

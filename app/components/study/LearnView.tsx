@@ -1,5 +1,8 @@
 "use client";
 import Image from "next/image";
+import Math3Lab from "../math3/Math3Lab";
+import Math3Written from "../math3/Math3Written";
+import {math3Infographics} from "../../math3-data";
 import AppIcon from "../AppIcon";
 import { LessonVisual } from "./Visuals";
 import { quizCatalog } from "../../curriculum-data";
@@ -17,7 +20,7 @@ import { history3Infographics } from "../../history3-data";
 import { useStudy } from "./StudyContext";
 
 export default function LearnView() {
-  const { openLesson, setOpenLesson, completedLessons, activeSubject, setEnlargedInfographic, setInfographicPage, activeSubjectData, isEla3, isGeography3, isHistory3, isPortuguese3, currentLessons, learnProgress, go, toggleLesson, activeLesson, startQuiz } = useStudy();
+  const { openLesson, setOpenLesson, completedLessons, activeSubject, setEnlargedInfographic, setInfographicPage, activeSubjectData, isEla3, isGeography3, isHistory3, isPortuguese3, isMath3, currentLessons, learnProgress, go, toggleLesson, activeLesson, startQuiz } = useStudy();
   return (
     <div className="page learn-page">
           <button className="back-button" onClick={() => go("science")}>
@@ -62,8 +65,9 @@ export default function LearnView() {
 
               <p className="lesson-intro">{activeLesson.intro}</p>
 
-              {isPortuguese3 && portuguese3ImageForLesson(activeLesson.id) ? <button className="geo-lesson-image" onClick={()=>{setInfographicPage(portuguese3Infographics.indexOf(portuguese3ImageForLesson(activeLesson.id)!));setEnlargedInfographic(true);}} aria-label="Ampliar o infográfico desta aula"><Image className="history3-lesson-map" src={portuguese3ImageForLesson(activeLesson.id)!.src} alt={portuguese3ImageForLesson(activeLesson.id)!.alt} width={1024} height={1536} unoptimized /><span>Toque para ampliar ↗</span></button> : isPortuguese3 ? null : isGeography3 ? <button className="geo-lesson-image" onClick={()=>{setInfographicPage(geography3Subject.lessons.findIndex(l=>l.id===activeLesson.id));setEnlargedInfographic(true);}} aria-label="Ampliar o infográfico desta aula"><Image className="history3-lesson-map" {...geography3ImageForLesson(activeLesson.id)} alt={geography3ImageForLesson(activeLesson.id).alt} unoptimized /><span>Toque para ampliar ↗</span></button> : isEla3 ? <Image className="history3-lesson-map" {...ela3ImageForLesson(activeLesson.id)} alt={ela3ImageForLesson(activeLesson.id).alt} /> : isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : activeSubject === "science" ? <Image className="history3-lesson-map" src={scienceImageForLesson(activeLesson.id).src} alt={scienceImageForLesson(activeLesson.id).alt} width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
+              {isMath3 ? <Math3Lab key={activeLesson.id} lessonId={activeLesson.id}/> : isPortuguese3 && portuguese3ImageForLesson(activeLesson.id) ? <button className="geo-lesson-image" onClick={()=>{setInfographicPage(portuguese3Infographics.indexOf(portuguese3ImageForLesson(activeLesson.id)!));setEnlargedInfographic(true);}} aria-label="Ampliar o infográfico desta aula"><Image className="history3-lesson-map" src={portuguese3ImageForLesson(activeLesson.id)!.src} alt={portuguese3ImageForLesson(activeLesson.id)!.alt} width={1024} height={1536} unoptimized /><span>Toque para ampliar ↗</span></button> : isPortuguese3 ? null : isGeography3 ? <button className="geo-lesson-image" onClick={()=>{setInfographicPage(geography3Subject.lessons.findIndex(l=>l.id===activeLesson.id));setEnlargedInfographic(true);}} aria-label="Ampliar o infográfico desta aula"><Image className="history3-lesson-map" {...geography3ImageForLesson(activeLesson.id)} alt={geography3ImageForLesson(activeLesson.id).alt} unoptimized /><span>Toque para ampliar ↗</span></button> : isEla3 ? <Image className="history3-lesson-map" {...ela3ImageForLesson(activeLesson.id)} alt={ela3ImageForLesson(activeLesson.id).alt} /> : isHistory3 ? <Image className="history3-lesson-map" src={history3Infographics[activeLesson.id === "h3-diversity" || activeLesson.id === "h3-origins" ? 0 : ["h3-slavery","h3-routes","h3-colonization","h3-culture","h3-diaspora"].indexOf(activeLesson.id)+1].src} alt="Mapa visual do assunto; amplie na área de infográficos" width={1024} height={1536} /> : activeSubject === "science" ? <Image className="history3-lesson-map" src={scienceImageForLesson(activeLesson.id).src} alt={scienceImageForLesson(activeLesson.id).alt} width={1024} height={1536} /> : <LessonVisual subject={activeSubject} lessonId={activeLesson.id} />}
 
+              {isMath3 && <button className="download-button" onClick={()=>{setInfographicPage(Math.max(0,math3Infographics.findIndex(p=>p.lessons.includes(activeLesson.id))));setEnlargedInfographic(true);}}>Ver o infográfico deste assunto ↗</button>}
               <div className="fact-stack">
                 {activeLesson.facts.map((fact, index) => (
                   <div key={fact.term}>
@@ -87,6 +91,7 @@ export default function LearnView() {
                 );
               })()}
 
+              {isMath3 && <Math3Written key={`written-${activeLesson.id}`} lessonId={activeLesson.id}/>}
               {isGeography3 && <Geography3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
               {isPortuguese3 && <Portuguese3Practice key={activeLesson.id} lessonId={activeLesson.id} />}
               {isPortuguese3 && activeLesson.id === "p3-roman" && (

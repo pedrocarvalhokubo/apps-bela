@@ -126,6 +126,17 @@ test('Bela account, guest isolation and durable history',async(t)=>{
   const report=(await api('/api/parent',a,{action:'analytics'},parent)).data;
   assert.ok(report.topics.some(t=>t.subject==='geography'&&t.topic===q.topic&&t.correct===1));
  });
+ await t.test('Math term 3 games, written drafts and quiz grading sync across devices',async()=>{
+  for(const [task,answer] of [['bela-math3-lab-decimals',JSON.stringify({base:100,cells:[0,1,2],task:0,answer:'0.03'})],['bela-math3-written-m3-area','3 × 4 = 12 cm²']]){
+   assert.equal((await api('/api/drafts',a,{task,answer})).status,200);
+   assert.equal((await api('/api/drafts?task='+task,b)).data.draft.answer,answer);
+  }
+  assert.equal((await api('/api/drafts',a,{task:'bela-math3-lab-arbitrary',answer:'x'})).status,400);
+  const q=JSON.parse(readFileSync(new URL('../app/math3-content.json',import.meta.url),'utf8')).questions[0];
+  assert.equal((await api('/api/attempts',a,{eventId:randomUUID(),subject:'math',quizId:'math3-general',questionId:q.id,topic:q.topic,selected:q.correct,correct:false})).status,200);
+  const report=(await api('/api/parent',a,{action:'analytics'},parent)).data;
+  assert.ok(report.topics.some(t=>t.subject==='math'&&t.topic===q.topic&&t.correct===1));
+ });
  await t.test('server restart retains account, history and PIN; expiry and logout revoke access',async()=>{
   const before=(await api('/api/sync',a)).data;await stop();await start();
   assert.deepEqual((await api('/api/sync',a)).data,before);

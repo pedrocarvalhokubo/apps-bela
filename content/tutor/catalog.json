@@ -473,5 +473,61 @@
         "title": "Tonicidade"
       }
     ]
+  },
+  {
+    "id": "math-3",
+    "subject": "math",
+    "term": 3,
+    "title": "Math",
+    "moduleTitle": "Fractions, decimals and shapes",
+    "file": "math-3.md",
+    "pages": [
+      {
+        "label": "Fractions and equal parts",
+        "description": "Fractions and equal parts"
+      },
+      {
+        "label": "Decimals and calculations",
+        "description": "Decimals and calculations"
+      },
+      {
+        "label": "Perimeter and area",
+        "description": "Perimeter and area"
+      }
+    ],
+    "lessons": [
+      {
+        "id": "m3-fractions",
+        "title": "Fractions of a whole"
+      },
+      {
+        "id": "m3-sets",
+        "title": "Fraction of a set"
+      },
+      {
+        "id": "m3-equivalence",
+        "title": "Equivalent fractions and mixed numbers"
+      },
+      {
+        "id": "m3-decimals",
+        "title": "Tenths and hundredths"
+      },
+      {
+        "id": "m3-operations",
+        "title": "Adding and subtracting decimals"
+      },
+      {
+        "id": "m3-problems",
+        "title": "Money, distance and temperature"
+      },
+      {
+        "id": "m3-perimeter",
+        "title": "Perimeter"
+      },
+      {
+        "id": "m3-area",
+        "title": "Area and a house on a grid"
+      }
+    ]
   }
 ]

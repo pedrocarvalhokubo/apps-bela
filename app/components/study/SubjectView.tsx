@@ -6,7 +6,7 @@ import { history3Downloads } from "../../history3-data";
 import { useStudy } from "./StudyContext";
 
 export default function SubjectView() {
-  const { geographyDate, setOpenLesson, quizStatsById, activeSubject, setInfographicPage, activeSubjectData, isEla3, isGeography3, isHistory3, isPortuguese3, reviewInfographicPages, currentLessons, completedCurrentLessons, learnProgress, go, startQuiz, infographicCardShown, mockQuizIds, mockCopy, reviewQuizNumber, reviewQuizCard } = useStudy();
+  const { geographyDate, setOpenLesson, quizStatsById, activeSubject, setInfographicPage, activeSubjectData, isEla3, isGeography3, isHistory3, isPortuguese3, isMath3, reviewInfographicPages, currentLessons, completedCurrentLessons, learnProgress, go, startQuiz, infographicCardShown, mockQuizIds, mockCopy, reviewQuizNumber, reviewQuizCard } = useStudy();
   return (
     <div className="page subject-page">
           <button className="back-button" onClick={() => go("home")}>← Voltar às matérias</button>
@@ -27,6 +27,7 @@ export default function SubjectView() {
             </div>
           </section>
 
+          {isMath3 && <section className="quick-review"><span className="eyebrow teal">MATEMÁTICA PARA TOCAR E DESCOBRIR</span><h2>Seu laboratório está aberto 🐱</h2><p>Escolha uma missão: toque nas fatias, pinte a malha, preencha as contas ou desenhe uma casa.</p><div className="quick-grid">{activeSubjectData.lessons.map(l=><button key={l.id} className="primary-button" onClick={()=>{setOpenLesson(l.id);go("learn");}}>{l.icon} {l.title} →</button>)}</div></section>}
           <section className={`path-grid compact-path-grid ${activeSubject === "ela" ? "ela-path-grid" : ""}`} aria-label={`Formas de estudar ${activeSubjectData.name}`}>
             <button className="path-card path-learn" onClick={() => go("learn")}>
               <span className="path-number">1</span>
@@ -69,6 +70,7 @@ export default function SubjectView() {
             )}
 
             {isGeography3 && <a className="path-card path-test" href="/geografia3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Escolha o quiz, o simulado A, B ou as respostas escritas. PDFs e gabarito separado.</p></span><span className="path-arrow">→</span></a>}
+            {isMath3 && <a className="path-card path-test" href="/matematica3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>PRÁTICA NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Revisão, simulados A e B, atividades abertas e gabarito separado.</p><em>Imprimir ou salvar PDF</em></span><span className="path-arrow">→</span></a>}
             {isPortuguese3 && <a className="path-card path-test" href="/portugues3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>SE QUISER ESCREVER NO PAPEL</small><strong>Provas e atividades para imprimir</strong><p>Quiz, simulado A, simulado B ou atividades escritas, com gabarito separado.</p><em>Abrir folha → imprimir ou salvar em PDF</em></span><span className="path-arrow">→</span></a>}
             {isEla3 && <a className="path-card path-test" href="/ela3/imprimir" target="_blank" rel="noopener noreferrer"><span className="path-art"><AppIcon name="note" /></span><span className="path-content"><small>WRITING PRACTICE</small><strong>Atividades para imprimir</strong><p>10 atividades abertas e gabarito separado para consultar depois.</p><em>Abrir folha de atividades → imprimir ou salvar em PDF</em></span><span className="path-arrow">→</span></a>}
             {isHistory3 && history3Downloads.map(download => (

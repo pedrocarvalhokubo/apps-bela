@@ -1,3 +1,4 @@
+import {math3Catalog} from './math3-data';
 import { geography3Catalog } from './geography3-data';
 import { ela3Catalog } from './ela3-data';
 import { history3Catalog } from './history3-data';
@@ -11,6 +12,7 @@ import { scienceSubject, scienceQuiz, science3Catalog } from "./science-data";
 
 export type SubjectKey = "math" | "ela" | "geography" | "history" | "portuguese" | "science";
 export type QuizId =
+  | "math3-fractions" | "math3-sets" | "math3-equivalence" | "math3-decimals" | "math3-operations" | "math3-problems" | "math3-perimeter" | "math3-area" | "math3-general" | "math3-mock-a" | "math3-mock-b"
   | "geography3-places" | "geography3-paths" | "geography3-cultures" | "geography3-protection" | "geography3-general" | "geography3-mock-a" | "geography3-mock-b"
   | "science3-sound" | "science3-hearing" | "science3-rocks-minerals" | "science3-rock-types" | "science3-fossils" | "science3-landscapes" | "science3-weathering-erosion" | "science3-soil" | "science3-fossil-discovery" | "science3-hurricane" | "science3-general" | "science3-mock-a" | "science3-mock-b"
   | "ela3-blends" | "ela3-verbs" | "ela3-adverbs" | "ela3-homophones" | "ela3-homographs" | "ela3-genres" | "ela3-informational" | "ela3-biography" | "ela3-dahl" | "ela3-spiders" | "ela3-general" | "ela3-mock-a" | "ela3-mock-b"
@@ -328,6 +330,7 @@ export const curriculumSubjects: Record<SubjectKey, StudySubject> = {
 };
 
 export const quizCatalog: Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }> = {
+  ...math3Catalog as Record<QuizId, {title:string;subject:SubjectKey;questions:QuizQuestion[]}>,
   ...geography3Catalog as Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }>,
   ...science3Catalog as Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }>,
   ...ela3Catalog as Record<QuizId, { title: string; subject: SubjectKey; questions: QuizQuestion[] }>,

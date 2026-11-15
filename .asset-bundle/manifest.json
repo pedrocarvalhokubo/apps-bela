@@ -548,7 +548,10 @@
     "public/materials/gabaritos-geografia-3.pdf": "7964f4dc5f9135ad75d0cf7765142a3abbdbbe2dad7cf67ceeaf3883eb886d00",
     "public/infographics/portugues3-verbos.png": "65a6a4ec04bec0fd6c7433dce3ce0c24ec5431795bf97b63cc5fd847408eda20",
     "public/infographics/portugues3-numerais.png": "caecd84b3ac9c41e1ea33a10c34569e4fd16da305bd11a648f9ee2ebe1c94e7b",
-    "public/infographics/portugues3-tonicidade.png": "7c3e27eba6b64aff70ff676670a4a1eedc9c7da6a769ccfd23c8d2767f60a14e"
+    "public/infographics/portugues3-tonicidade.png": "7c3e27eba6b64aff70ff676670a4a1eedc9c7da6a769ccfd23c8d2767f60a14e",
+    "public/infographics/math3-1.svg": "188ab752d6b8023876130fb6d34ede9e45203c749cdb57526219b5b4454f176d",
+    "public/infographics/math3-2.svg": "fb1cf7cc52fa32ea3e8a0638b7dbb5919fb0b268458dd3155a56ddb41788fd9d",
+    "public/infographics/math3-3.svg": "db6d79f18f8871e256b44e73510418f5d8fec7e542ca578caef0d60ee2e46c9b"
   },
   "supplements": [
     {
@@ -793,6 +796,13 @@
         "portuguese3-20261110-141.b64",
         "portuguese3-20261110-142.b64",
         "portuguese3-20261110-143.b64"
+      ]
+    },
+    {
+      "name": "math3-20261115",
+      "sha256": "08b765d0105b60e8d85bca3cbc2a6ac3c19df40c62d314ced817465280fccca9",
+      "parts": [
+        "math3-20261115-001.b64"
       ]
     }
   ]

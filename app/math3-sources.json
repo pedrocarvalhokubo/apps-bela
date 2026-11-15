@@ -1,0 +1,90 @@
+{
+  "received": "2026-11-15",
+  "term": 3,
+  "year": 2026,
+  "grade": "Year 4",
+  "scope": "Math Study Material — III trimestre; no exam date printed in the supplied pages.",
+  "sources": [
+    {
+      "id": "M3-F1",
+      "title": "Fractions",
+      "section": "What is a fraction? Fraction of a whole."
+    },
+    {
+      "id": "M3-F2",
+      "title": "Equal parts and fraction of a set",
+      "section": "Numerator, denominator, equal grouping."
+    },
+    {
+      "id": "M3-F3",
+      "title": "Equivalent fractions",
+      "section": "Same value, multiplying and dividing both terms."
+    },
+    {
+      "id": "M3-F4",
+      "title": "Proper, improper and mixed",
+      "section": "Represent mixed numbers; students and cupcakes problems."
+    },
+    {
+      "id": "M3-D1",
+      "title": "Decimals",
+      "section": "Whole part, decimal part, reading numbers."
+    },
+    {
+      "id": "M3-D2",
+      "title": "Converting fractions into decimals",
+      "section": "Tenths and hundredths grids, mixed numbers."
+    },
+    {
+      "id": "M3-D3",
+      "title": "Decimal practice",
+      "section": "Shade grids, order numbers, write fractions."
+    },
+    {
+      "id": "M3-D4",
+      "title": "Adding and subtracting decimals",
+      "section": "Align decimal points; activity prices."
+    },
+    {
+      "id": "M3-D5",
+      "title": "Applied problems",
+      "section": "Change, running distances, city-distance table."
+    },
+    {
+      "id": "M3-D6",
+      "title": "Order and temperature",
+      "section": "Order cities; 29.8°C rises by 2.5°C."
+    },
+    {
+      "id": "M3-G1",
+      "title": "Perimeter and area",
+      "section": "Boundary, inside, rectangles and squares."
+    },
+    {
+      "id": "M3-G2",
+      "title": "Compare and find perimeter",
+      "section": "500 m square, triangle, 1.2 × 0.5 km rectangle."
+    },
+    {
+      "id": "M3-G3",
+      "title": "Regular polygons",
+      "section": "Square, pentagon and hexagon side lengths."
+    },
+    {
+      "id": "M3-G4",
+      "title": "Area practice",
+      "section": "Count cells; perimeter and area of rectangles."
+    },
+    {
+      "id": "M3-G5",
+      "title": "House on a grid",
+      "section": "Bedroom 8 and 6; bathroom 4; kitchen 12; living 16; balcony 2 cm²."
+    }
+  ],
+  "notes": [
+    "The school text calls the total number of objects the denominator in one step. The app corrects this: the denominator is the number of equal groups in the fraction being found.",
+    "One school diagram shows five squares but labels six. The app counts actual cells.",
+    "The red triangle has an unknown side without equality marks. The app does not assume that side length.",
+    "Study content and exercises are derived; original student photos and full name are not published."
+  ]
+}

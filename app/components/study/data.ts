@@ -1,3 +1,4 @@
+import {math3Subject} from '../../math3-data';
 import type { IconName } from "../AppIcon";
 import { curriculumSubjects, quizCatalog, type QuizId, type SubjectKey } from "../../curriculum-data";
 import { ela3Subject } from "../../ela3-data";
@@ -41,7 +42,7 @@ export const defaultQuiz: QuizId = "ela3-general";
 export const defaultLesson = ela3Subject.lessons[0].id;
 export const availableSubjects = new Set<SubjectKey>(["science", "math", "ela", "geography", "history", "portuguese"]);
 export const availableQuizzes = new Set<QuizId>(Object.keys(quizCatalog) as QuizId[]);
-export const availableLessonIds = new Set([...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject, portuguese3Subject].flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
+export const availableLessonIds = new Set([...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject, portuguese3Subject, math3Subject].flatMap((subject) => subject.lessons.map((lesson) => lesson.id)));
 
 export const elaInfographicPages = [
   { src: "/infographics/ela-term2-review-v1.webp", alt: "E.L.A. Term 2 exam map", width: 1024, height: 1536, label: "Map" },

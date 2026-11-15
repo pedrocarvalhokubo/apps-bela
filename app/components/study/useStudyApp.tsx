@@ -1,4 +1,5 @@
 "use client";
+import {math3Subject,math3Infographics} from '../../math3-data';
 import { registerPendingSave } from "../../../lib/pending-saves";
 import { useEffect, useMemo, useState, useRef } from "react";
 import { useStudyAccount } from "../AuthGate";
@@ -246,13 +247,14 @@ export function useStudyApp() {
   const isEla3 = activeSubject === "ela" && term === 3;
   const isGeography3 = activeSubject === "geography" && term === 3;
   const isHistory3 = activeSubject === "history" && term === 3;
+  const isMath3 = activeSubject === "math" && term === 3;
   const isPortuguese3 = activeSubject === "portuguese" && term === 3;
-  const reviewInfographicPages = isPortuguese3 ? portuguese3Infographics : isGeography3 ? geography3Infographics : isEla3 ? ela3Infographics : isHistory3 ? history3Infographics : activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
+  const reviewInfographicPages = isMath3 ? math3Infographics : isPortuguese3 ? portuguese3Infographics : isGeography3 ? geography3Infographics : isEla3 ? ela3Infographics : isHistory3 ? history3Infographics : activeSubject === "science" ? scienceInfographicPages : activeSubject === "geography" ? geographyInfographicPages : activeSubject === "portuguese" ? portugueseInfographicPages : elaInfographicPages;
   const currentLessons = activeSubjectData.lessons;
   const completedCurrentLessons = currentLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const learnProgress = Math.round((completedCurrentLessons / currentLessons.length) * 100);
   const currentQuestions = quizCatalog[activeQuizId].questions;
-  const allLessons = [...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject, portuguese3Subject].flatMap((subject) => subject.lessons);
+  const allLessons = [...Object.values(curriculumSubjects), history3Subject, ela3Subject, geography3Subject, portuguese3Subject, math3Subject].flatMap((subject) => subject.lessons);
   const completedAllLessons = allLessons.filter((lesson) => completedLessons.includes(lesson.id)).length;
   const totalBestAnswers = Object.values(quizStatsById).reduce((sum, stats) => sum + stats.bestScore, 0);
   const totalQuizQuestions = Object.values(quizCatalog).reduce((sum, quiz) => sum + quiz.questions.length, 0);
@@ -304,7 +306,7 @@ export function useStudyApp() {
       { subject: "science", name: "Science", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.science.lessons },
       { subject: "geography", name: "Geografia", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "geography", term).lessons },
       { subject: "ela", name: "E.L.A.", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "ela", term).lessons },
-      { subject: "math", name: "Math", date: "", shortDate: "ESTUDAR", lessons: curriculumSubjects.math.lessons },
+      { subject: "math", name: "Math", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects,"math",term).lessons },
       { subject: "history", name: "História", date: "", shortDate: "ESTUDAR", lessons: studySubject(curriculumSubjects, "history", term).lessons },
     ];
     const steps: Array<{ term: number; subject: SubjectKey; title: string; detail: string; badge: string; kind: string }> = [];
@@ -313,7 +315,7 @@ export function useStudyApp() {
       .sort((a, b) => a.correct / a.attempts - b.correct / b.attempts)[0];
     if (weak) {
       steps.push({
-        term: weak.subject === "science" || ela3Subject.lessons.some(l => l.title === weak.topic) || history3Subject.lessons.some(l => l.title === weak.topic) || geography3Subject.lessons.some(l => l.title === weak.topic) || portuguese3Subject.lessons.some(l => l.title === weak.topic) ? 3 : 2,
+        term: weak.subject === "science" || ela3Subject.lessons.some(l => l.title === weak.topic) || history3Subject.lessons.some(l => l.title === weak.topic) || geography3Subject.lessons.some(l => l.title === weak.topic) || math3Subject.lessons.some(l => l.title === weak.topic) || portuguese3Subject.lessons.some(l => l.title === weak.topic) ? 3 : 2,
         subject: weak.subject as SubjectKey,
         title: `Reforçar: ${weak.subject === "science" ? scienceTopicTitle(weak.topic) : weak.topic}`,
         detail: `Você acertou ${Math.round((weak.correct / weak.attempts) * 100)}% até agora. Vamos praticar com calma.`,
@@ -321,7 +323,7 @@ export function useStudyApp() {
         kind: "weak",
       });
     }
-    for (const item of schedule.filter(item => term === 3 ? ["portuguese", "science", "ela", "history", "geography"].includes(item.subject) : term === 2 && item.subject !== "science" && item.subject !== "portuguese")) {
+    for (const item of schedule.filter(item => term === 3 ? ["portuguese", "science", "ela", "history", "geography", "math"].includes(item.subject) : term === 2 && item.subject !== "science" && item.subject !== "portuguese")) {
       const pending = item.lessons.find((lesson) => !completedLessons.includes(lesson.id));
       if (!pending) continue;
       steps.push({ term, subject: item.subject, title: pending.title, detail: `${item.name} • continuar os estudos`, badge: item.shortDate, kind: "lesson" });
@@ -329,7 +331,7 @@ export function useStudyApp() {
     }
     const review = topicSignals.find((topic) => topic.attempts >= 3 && topic.correct / topic.attempts >= 0.8 && topic.reviewAttempts === 0);
     if (review && steps.length < 3) {
-      steps.push({ term: review.subject === "science" || ela3Subject.lessons.some(l => l.title === review.topic) || history3Subject.lessons.some(l => l.title === review.topic) || geography3Subject.lessons.some(l => l.title === review.topic) || portuguese3Subject.lessons.some(l => l.title === review.topic) ? 3 : 2, subject: review.subject as SubjectKey, title: `Revisão: ${review.subject === "science" ? scienceTopicTitle(review.topic) : review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
+      steps.push({ term: review.subject === "science" || ela3Subject.lessons.some(l => l.title === review.topic) || history3Subject.lessons.some(l => l.title === review.topic) || geography3Subject.lessons.some(l => l.title === review.topic) || math3Subject.lessons.some(l => l.title === review.topic) || portuguese3Subject.lessons.some(l => l.title === review.topic) ? 3 : 2, subject: review.subject as SubjectKey, title: `Revisão: ${review.subject === "science" ? scienceTopicTitle(review.topic) : review.topic}`, detail: "Você já chegou a 80%. Faça uma revisão posterior para dominar o assunto.", badge: "REVISAR", kind: "review" });
     }
     return steps.slice(0, 3);
   }, [completedLessons, topicSignals, term]);
@@ -441,7 +443,7 @@ export function useStudyApp() {
     go("quiz");
   };
 
-  const openSubject = (subject: SubjectKey, selectedTerm = subject === "science" ? 3 : subject === "history" || subject === "ela" || subject === "geography" || subject === "portuguese" ? term : 2) => {
+  const openSubject = (subject: SubjectKey, selectedTerm = subject === "science" ? 3 : subject === "history" || subject === "ela" || subject === "geography" || subject === "portuguese" || subject === "math" ? term : 2) => {
     setActiveSubject(subject);
     setTerm(selectedTerm);
     setInfographicPage(0);
@@ -539,9 +541,9 @@ export function useStudyApp() {
     go("results");
   };
 
-  const infographicCardShown = (activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || isHistory3 || (activeSubject === "science" && scienceMaterialsReady)) && reviewInfographicPages.length > 0;
-  const mockQuizIds: QuizId[] = isGeography3 ? ["geography3-mock-a", "geography3-mock-b"] : isEla3 ? ["ela3-mock-a", "ela3-mock-b"] : isHistory3 ? ["history3-mock-a", "history3-mock-b"] : isPortuguese3 ? ["portuguese3-mock-a", "portuguese3-mock-b"] : activeSubject === "science" ? ["science3-mock-a", "science3-mock-b"] : [];
-  const mockCopy = isGeography3 ? { small: "APLIQUE O QUE APRENDEU", text: "20 questões baseadas nas atividades da escola. Leia, compare e encontre as pistas no material.", best: "Melhor resultado:" }
+  const infographicCardShown = (isMath3 || activeSubject === "ela" || activeSubject === "geography" || activeSubject === "portuguese" || isHistory3 || (activeSubject === "science" && scienceMaterialsReady)) && reviewInfographicPages.length > 0;
+  const mockQuizIds: QuizId[] = isMath3 ? ["math3-mock-a", "math3-mock-b"] : isGeography3 ? ["geography3-mock-a", "geography3-mock-b"] : isEla3 ? ["ela3-mock-a", "ela3-mock-b"] : isHistory3 ? ["history3-mock-a", "history3-mock-b"] : isPortuguese3 ? ["portuguese3-mock-a", "portuguese3-mock-b"] : activeSubject === "science" ? ["science3-mock-a", "science3-mock-b"] : [];
+  const mockCopy = isMath3 ? {small:"PRATICAR NO APP",text:"24 questões sobre os oito assuntos, com pistas e explicações.",best:"Melhor:"} : isGeography3 ? { small: "APLIQUE O QUE APRENDEU", text: "20 questões baseadas nas atividades da escola. Leia, compare e encontre as pistas no material.", best: "Melhor resultado:" }
     : isEla3 || activeSubject === "science" ? { small: "PRACTICE TEST", text: "20 questions • all ten topics • hints and explanations.", best: "Best:" }
     : isHistory3 ? { small: "PRATICAR NO APP", text: "Quatorze questões, pistas graduais e explicações para cada alternativa.", best: "Melhor:" }
     : { small: "SIMULADO", text: "18 questões novas sobre os seis assuntos, com pistas e explicações.", best: "Melhor:" };
@@ -642,6 +644,7 @@ export function useStudyApp() {
     isGeography3,
     isHistory3,
     isPortuguese3,
+    isMath3,
     reviewInfographicPages,
     currentLessons,
     completedCurrentLessons,
