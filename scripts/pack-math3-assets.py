@@ -16,7 +16,7 @@ with tarfile.open(fileobj=archive,mode='w',format=tarfile.USTAR_FORMAT) as tar:
   manifest['files'][path]=hashlib.sha256(raw).hexdigest()
 raw=gzip.compress(archive.getvalue(),mtime=0)
 sha=hashlib.sha256(raw).hexdigest()
-prefix='math3-20261115'
+prefix='math3-20261115-v2'
 existing=[x for x in manifest.get('supplements',[]) if x.get('name')==prefix]
 if existing and existing[0]['sha256']!=sha:
  raise SystemExit('A different Math archive already exists. Use a new revision name; never overwrite a published archive.')

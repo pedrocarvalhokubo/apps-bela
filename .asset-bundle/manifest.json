@@ -550,7 +550,7 @@
     "public/infographics/portugues3-numerais.png": "caecd84b3ac9c41e1ea33a10c34569e4fd16da305bd11a648f9ee2ebe1c94e7b",
     "public/infographics/portugues3-tonicidade.png": "7c3e27eba6b64aff70ff676670a4a1eedc9c7da6a769ccfd23c8d2767f60a14e",
     "public/infographics/math3-1.svg": "188ab752d6b8023876130fb6d34ede9e45203c749cdb57526219b5b4454f176d",
-    "public/infographics/math3-2.svg": "fb1cf7cc52fa32ea3e8a0638b7dbb5919fb0b268458dd3155a56ddb41788fd9d",
+    "public/infographics/math3-2.svg": "8ef9746b0960063a5480ea42a3b326756d317e916b02eb6f068d7f582db96226",
     "public/infographics/math3-3.svg": "db6d79f18f8871e256b44e73510418f5d8fec7e542ca578caef0d60ee2e46c9b"
   },
   "supplements": [
@@ -803,6 +803,13 @@
       "sha256": "08b765d0105b60e8d85bca3cbc2a6ac3c19df40c62d314ced817465280fccca9",
       "parts": [
         "math3-20261115-001.b64"
+      ]
+    },
+    {
+      "name": "math3-20261115-v2",
+      "sha256": "66c199dae9a41f2122432381497fd0affe3ad1cd2430083ee45e7b55c530d292",
+      "parts": [
+        "math3-20261115-v2-001.b64"
       ]
     }
   ]

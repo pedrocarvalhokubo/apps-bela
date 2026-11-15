@@ -23,10 +23,14 @@ p+=box(1084,255,'4. Same value • mixed numbers','Change numerator AND denomina
 Path('public/infographics/math3-1.svg').write_text(p+'</svg>')
 p=base('Decimals, one cell at a time','Tenths • hundredths • aligned calculations',2)
 p+=box(210,400,'1. A hundred chart','100 cells = one whole. Each cell = 1/100 = 0.01.')+grid(90,330,10,10,35,23)+text(390,375,'35/100 = 0.35',38,INK,800)+text(390,430,'1 full row = 10/100 = 0.1',25)+text(390,480,'5/100 = 0.05',29,PURPLE,800)+text(390,530,'1 6/100 = 1.06',29)+text(390,575,'1 60/100 = 1.60 = 1.6',27)
-p+=box(638,245,'2. Compare by place value','Compare wholes, then tenths, then hundredths.')+text(85,777,'0.89 < 0.90        0.9 = 0.90',34,INK,800)+text(85,835,'3.04 = 3 4/100       1.9 = 1 9/10',29)
+p+=box(638,245,'2. Compare by place value','Compare wholes, then tenths, then hundredths.')+text(85,777,'0.89 < 0.90;  0.9 = 0.90',34,INK,800)+text(85,835,'3.04 = 3 4/100;  1.9 = 1 9/10',29)
 p+=box(911,255,'3. Line up the decimal points','Add zeros if needed. Regroup from right to left.')
 for x,lines in [(150,['22.30','+ 34.10','56.40']),(590,['3.20','− 2.85','0.35'])]:
- for j,line in enumerate(lines):p+=text(x,1030+48*j,line,35,INK if j<2 else PURPLE,800)
+ for j,line in enumerate(lines):
+  sign = '+' if line.startswith('+') else '−' if line.startswith('−') else ''
+  number = line.lstrip('+− ').strip()
+  p+=text(x+180,1030+48*j,number,35,INK if j<2 else PURPLE,800).replace('<text ', '<text text-anchor="end" ')
+  if sign:p+=text(x-25,1030+48*j,sign,35,INK,800)
  p+=f'<path d="M{x-15} 1092H{x+180}" stroke="{INK}" stroke-width="2"/>'
 p+=box(1194,145,'4. Read the problem, then choose','Distance difference: 3.20 − 2.85 = 0.35 km.')+text(85,1310,'Temperature rise: 29.8 + 2.5 = 32.3°C.',25)
 Path('public/infographics/math3-2.svg').write_text(p+'</svg>')
